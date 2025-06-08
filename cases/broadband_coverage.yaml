@@ -1,0 +1,14 @@
+title: "Broadband Coverage Estimates"
+url: "https://arxiv.org/pdf/2103.14035"
+organization: "Microsoft"
+epsilon: 0.1
+delta: null
+rho: null
+model: "Not specified"
+dynamic: "Static"
+description: "For each of the counts queries from Microsoft Services Telemetry Data, we use the Laplace Mechanism, with an epsilon of 0.1, to obtain diﬀerentially private counts."
+year: 2021
+application: "Geographical Broadband Statistics"
+mechanism: "Laplace Mechanism"
+scope: "Aggregate statistics"
+region: "USA"

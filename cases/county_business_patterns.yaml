@@ -1,0 +1,14 @@
+title: "Census County Business Patterns"
+url: "https://www.census.gov/topics/business-economy/disclosure/about.html"
+organization: "United States Census Bureau"
+epsilon: null
+delta: null
+rho: 12.058
+model: "Central"
+dynamic: "Static"
+description: "Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058."
+year: 2023
+application: "Geographical Buisness Statistics"
+mechanism: "Gaussian"
+scope: "Aggregate-level"
+region: "USA"

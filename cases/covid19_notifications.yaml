@@ -1,0 +1,14 @@
+title: "COVID-19 Exposure Notification Framework"
+url: "https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf"
+organization: "Google, Apple"
+epsilon: 8
+delta: "1e-6"
+rho: null
+model: "Varies"
+dynamic: "Varies"
+description: "The central diﬀerential privacy guarantees εc that result from unlinkable aggregation of ε0 = 8 metric report binary vectors, as used in ENPA."
+year: 2021
+application: "Healthcare Exposure Notification"
+mechanism: "Randomized Response"
+scope: "User-level"
+region: "Not specified"
