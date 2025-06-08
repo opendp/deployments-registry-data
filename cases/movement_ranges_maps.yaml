@@ -1,0 +1,14 @@
+title: "Movement Ranges Map"
+url: "https://research.fb.com/blog/2020/06/protecting-privacy-in-facebook-mobility-data-during-the-covid-19-response/"
+organization: "Meta"
+epsilon: 2
+delta: null
+rho: null
+model: "Central"
+dynamic: "Static"
+description: "Resulting in a total differential privacy epsilon value of 2.0."
+year: 2020
+application: "Health Crisis Mobility Data"
+mechanism: "Laplace"
+scope: "Aggregate-level"
+region: "Global"

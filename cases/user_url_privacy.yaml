@@ -1,0 +1,14 @@
+title: "User-URL Privacy Dataset"
+url: "https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2"
+organization: "Meta"
+epsilon: 1.453
+delta: "1e-5"
+rho: null
+model: "Central"
+dynamic: "Static"
+description: "εuser = 1.453 for δ = 10−5."
+year: 2020
+application: "Web Browsing"
+mechanism: "Laplace"
+scope: "User-level"
+region: "Global"
