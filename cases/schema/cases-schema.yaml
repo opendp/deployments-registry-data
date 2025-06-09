@@ -40,6 +40,12 @@ properties:
     type: "string"
   scope:
     type: "string"
+    enum:
+      - User-level
+      - Birth-level
+      - Aggregate Statistics # TODO: Change to "Aggregate-level"?
+      - Aggregate-level
+      - Aggregate Statistics and user-level # TODO: Change to multi-valued?
   region:
     type: "string"
 required:
