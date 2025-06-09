@@ -1,0 +1,5 @@
+---
+name: Bug
+type: Bug
+
+---
