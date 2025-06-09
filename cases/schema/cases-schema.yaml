@@ -19,7 +19,9 @@ properties:
   description:
     type: "string"
   year:
-    type: "integer"
+    anyOf:
+      - const: "Unknown"
+      - type: "integer"
   application:
     type: "string"
   mechanism:
