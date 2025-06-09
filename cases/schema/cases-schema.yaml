@@ -14,6 +14,11 @@ properties:
     type: ["number", "null"]
   model:
     type: "string"
+    enum:
+      - Central
+      - Local
+      - Not specified
+      - Varies
   dynamic:
     type: "string"
   description:
