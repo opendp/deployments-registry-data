@@ -21,6 +21,13 @@ properties:
       - Varies
   dynamic:
     type: "string"
+    enum:
+      - Not specified
+      - Monthly
+      - Daily
+      - Static
+      - 6 hours
+      - Varies
   description:
     type: "string"
   year:
