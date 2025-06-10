@@ -10,5 +10,5 @@ description: "For each of the counts queries from Microsoft Services Telemetry D
 year: 2021
 application: "Geographical Broadband Statistics"
 mechanism: "Laplace Mechanism"
-scope: "Aggregate statistics"
+scope: "Aggregate Statistics"
 region: "USA"

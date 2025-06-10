@@ -14,18 +14,38 @@ properties:
     type: ["number", "null"]
   model:
     type: "string"
+    enum:
+      - Central
+      - Local
+      - Not specified
+      - Varies
   dynamic:
     type: "string"
+    enum:
+      - Not specified
+      - Monthly
+      - Daily
+      - Static
+      - 6 hours
+      - Varies
   description:
     type: "string"
   year:
-    type: "integer"
+    anyOf:
+      - const: "Unknown"
+      - type: "integer"
   application:
     type: "string"
   mechanism:
     type: "string"
   scope:
     type: "string"
+    enum:
+      - User-level
+      - Birth-level
+      - Aggregate Statistics # TODO: Change to "Aggregate-level"?
+      - Aggregate-level
+      - Aggregate Statistics and user-level # TODO: Change to multi-valued?
   region:
     type: "string"
 required:
