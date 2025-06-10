@@ -30,6 +30,9 @@ source .venv/bin/activate
 # Install dependencies:
 pip install -r requirements.txt
 
+# Precommit hook:
+pre-commit install
+
 # Run tests:
 pytest
 ```
@@ -40,7 +43,3 @@ The tests will make sure the record is valid, so focus on things the computer do
 Is the description readable?
 If this is a new contributor, spot check the original source for accuracy.
 If a new enumeration value is proposed, consider getting more opinions before approving.
-
-
-
-
