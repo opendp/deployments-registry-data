@@ -1,0 +1,67 @@
+# Descriptions are formatted as markdowndown.
+
+type: object
+additionalProperties: False
+required:
+  - approved
+  - deployment
+properties:
+  approved:
+    description: Has this deployment been reviewed and approved by the board?
+    type: boolean
+  deployment:
+    type: object
+    additionalProperties: False
+    required:
+      - name
+      - data_curator
+      - intended_use
+      - data_product_type
+      - data_product_description
+      - publication_date
+    properties:
+      # Tier 1
+      name:
+        # TODO: Confirm that it's ok to add "name" as required field.
+        description: The name of the data product.
+        type: string
+      data_curator:
+        description: The name of the entity publishing the data product.
+        type: string
+      intended_use:
+        description: Intended use(s) of the data product.
+        type: string
+      data_product_type:
+        description: Type of data product, like “summary statistics” or “machine learning model.”
+        # TODO: Make this an enumeration which can grow over time, just to catch typos?
+        type: string
+      data_product_description:
+        # TODO: Add this field? Present in sample data. Maybe just "description?"
+        description: TODO!
+        type: string
+      publication_date:
+        description: When the data product was published, in YYYY-MM-DD format. Day can be set to "01" if unknown. In cases of continual release, the publication date can be expressed as the date of first publication.
+        type: string
+        format: date
+      additional_information_url:
+        # Note: the only optional tier 1 property
+        type: string
+        format: url
+
+      # Tier 2
+      dp_flavor:
+        type: object
+        # TODO!
+      privacy:
+        type: object
+        # TODO!
+      model:
+        type: object
+        # TODO!
+      additional_dp_information:
+        # TODO: Can this fit inside one of the other objects?
+        type: object
+        # TODO!
+      implementation:
+        type: object
+        # TODO!

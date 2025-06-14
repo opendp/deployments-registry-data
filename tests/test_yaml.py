@@ -7,9 +7,9 @@ from yaml import load, Loader
 
 root = Path(__file__).parent.parent
 
-yaml_paths = list(root.glob("cases/*.yaml"))
+yaml_paths = list(root.glob("deployments/*.yaml"))
 
-schema = load((root / "schemas/cases-schema.yaml").open(), Loader=Loader)
+schema = load((root / "schemas/deployments-schema.yaml").open(), Loader=Loader)
 
 
 @pytest.mark.parametrize("yaml_path", yaml_paths, ids=lambda path: path.name)
