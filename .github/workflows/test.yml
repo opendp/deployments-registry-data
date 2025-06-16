@@ -26,4 +26,4 @@ jobs:
         run: pre-commit run --all-files
 
       - name: Test (schema checks)
-        run: pytest
+        run: pytest -vv
