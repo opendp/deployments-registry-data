@@ -17,6 +17,8 @@ def test_format_check_fails(no_date):
     # > If a dependency is not installed when using a checker that requires it,
     # > validation will succeed without throwing an error, as also specified by the specification.
     # https://python-jsonschema.readthedocs.io/en/latest/validate/#validating-formats
+    #
+    # If this test fails, it may mean that not all dependencies are installed.
     with pytest.raises(ValidationError):
         validate_date(no_date)
 
