@@ -20,7 +20,7 @@ deployment:
     # > Privacy parameters: epsilon = 1.68
     # > Symptom counts: ε_sym = 1.638 + Normalization counts: ε_norm = 0.042
   model:
-    model_type: Central DP
+    model_type: Central
     # TODO: Style: Ok to remove "Central DP" from description?
     model_type_description: 'Central DP: a trusted Google curator applies the Laplace mechanism via Google’s open-source DP library before any data release.'
     release_type: Continual # TODO: ok property name?
