@@ -1,6 +1,6 @@
 approved: False
 deployment:
-  name: TODO!
+  short_name: Google COVID-19 search statistics
   data_curator: Google
   intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
   data_product_type: Summary statistics
@@ -10,21 +10,17 @@ deployment:
     name: Pure DP
     data_domain: Per-user Google search queries classified as “symptom searches” (from a predefined list of ~400 symptoms) and total search activity for normalization, aggregated as <day or week, symptom, region> at three geographic granularity levels
     unprotected_quantities: The predefined list of ~400 symptoms and the set of <day, symptom, region> combinations for which metrics are published, per-symptom contribution bound = 1, cross-symptom bound ≤ 3, normalization bound = 1 per user per region per period, scaling factor c for mapping to [0,100], and the DP daily-vs-weekly granularity decision step
-  privacy:
+  privacy_loss:
     privacy_unit: user-day
     privacy_parameters:
       epsilon: 1.68
     privacy_unit_description: '“user-day”, with contribution bounding. A single privacy unit is all of one user’s searches on one day. Before adding noise, each user’s day is bounded so that they can contribute at most: 1 count per symptom and at most 3 symptom counts in total, plus at most 1 normalization count (one per day).'
-
-    # TODO: Should the following be represented in a structured form?
-    # > Privacy parameters: epsilon = 1.68
-    # > Symptom counts: ε_sym = 1.638 + Normalization counts: ε_norm = 0.042
+privacy_parameters_description: Symptom counts: ε_sym = 1.638 + Normalization counts: ε_norm = 0.042
   model:
     model_type: Central
-    # TODO: Style: Ok to remove "Central DP" from description?
-    model_type_description: 'Central DP: a trusted Google curator applies the Laplace mechanism via Google’s open-source DP library before any data release.'
+    model_type_description: 'A trusted Google curator applies the Laplace mechanism via Google’s open-source DP library before any data release.'
     release_type: Continual # TODO: ok property name?
-    release_type_description: 'Continual: new noisy aggregates are generated and published daily (or weekly).'
+    release_type_description: 'New noisy aggregates are generated and published daily (or weekly).'
     interactivity: Non-interactive # TODO: ok property name?
     # TODO: In this case "interactivity_description" didn't add information: Ok to drop?
 
@@ -44,4 +40,4 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: Not available
     mechanisms: Laplace mechanism for both symptom search and normalization counts via Google’s open-source DP library
     # TODO: Shorter name possible?
-    justification_for_implementation_decisions: Not available
+    justification: Not available
