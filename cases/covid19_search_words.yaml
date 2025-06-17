@@ -10,5 +10,5 @@ description: "More precisely, we protect every user’s symptom search activity 
 year: 2020
 application: "Search Data"
 mechanism: "Laplace"
-scope: "Aggregted Statistics"
+scope: "Aggregate Statistics"
 region: "Global"

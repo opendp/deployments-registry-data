@@ -7,7 +7,7 @@ rho: null
 model: "Local"
 dynamic: "Daily"
 description: "For Lookup Hints, Apple uses a privacy budget with epsilon of 4, and limits user contributions to two donations per day."
-year: Unkown
+year: Unknown
 application: "Web Browsing"
 mechanism: "Unknown"
 scope: "User-level"
