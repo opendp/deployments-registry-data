@@ -1,5 +1,9 @@
 pytest
 pyyaml
+<<<<<<< HEAD
 jsonschema[format]
+=======
+jsonschema
+>>>>>>> main
 pre-commit
 black
