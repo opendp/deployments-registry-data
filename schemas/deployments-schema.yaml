@@ -1,5 +1,6 @@
-# Descriptions are formatted as markdowndown.
-
+description: >
+  Description of a differential privacy deployment.
+  All strings will be interpretted as markdown when rendered.
 type: object
 additionalProperties: False
 required:
@@ -35,15 +36,18 @@ properties:
         description: Intended use(s) of the data product.
         type: string
       data_product_type:
-        description: Type of data product, like “summary statistics” or “machine learning model.”
-        # TODO: Make this an enumeration which can grow over time, just to catch typos?
+        description: Type of data product, like “Summary statistics” or “Machine learning model.”
         type: string
+        enum:
+          - Summary statistics
+          - Machine learning model
+          # Add to this list as needed.
       data_product_description:
         # TODO: Add this field? Present in sample data. Maybe just "description?"
         description: TODO!
         type: string
       publication_date:
-        description: When the data product was published, in YYYY-MM-DD format. Day can be set to "01" if unknown. In cases of continual release, the publication date can be expressed as the date of first publication.
+        description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of continual release, the publication date can be expressed as the date of first publication.
         type: string
         format: date
       additional_information_url:
@@ -66,8 +70,9 @@ properties:
               - Pure DP
               - Approximate DP
               - Zero Concentrated DP
+              - Renyi DP
               - other
-              # TODO: Add more detail if "other"
+              # TODO: If we have a deployment with "other", we should consider whether a structured representation is useful and sustainable.
           data_domain:
             description: Actual, potential, or counterfactual datasets eligible for protection
             type: string
