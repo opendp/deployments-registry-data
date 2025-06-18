@@ -2,7 +2,7 @@
 
 approved: False
 deployment:
-  name: TODO!
+  short_name: TODO!
   data_curator: Google
   intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
   data_product_type: Summary statistics
@@ -12,7 +12,7 @@ deployment:
     name: Pure DP
     data_domain: Per-user Google search queries classified as “symptom searches” (from a predefined list of ~400 symptoms) and total search activity for normalization, aggregated as <day or week, symptom, region> at three geographic granularity levels
     unprotected_quantities: The predefined list of ~400 symptoms and the set of <day, symptom, region> combinations for which metrics are published, per-symptom contribution bound = 1, cross-symptom bound ≤ 3, normalization bound = 1 per user per region per period, scaling factor c for mapping to [0,100], and the DP daily-vs-weekly granularity decision step
-  privacy:
+  privacy_loss:
     privacy_unit: user-day
     privacy_parameters:
       epsilon: 1.68
@@ -34,4 +34,4 @@ deployment:
   # implementation:
   #   pre_processing_eda_hyperparameter_tuning: Not available
   #   mechanisms: Laplace mechanism for both symptom search and normalization counts via Google’s open-source DP library
-  #   justification_for_implementation_decisions: Not available
+  #   justification: Not available
