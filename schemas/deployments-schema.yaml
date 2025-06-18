@@ -13,7 +13,7 @@ properties:
     type: object
     additionalProperties: False
     required:
-      - name
+      - short_name
       - data_curator
       - intended_use
       - data_product_type
@@ -21,8 +21,7 @@ properties:
       - publication_date
     properties:
       # Tier 1
-      name:
-        # TODO: Confirm that it's ok to add "name" as required field.
+      short_name:
         description: The name of the data product.
         type: string
       data_curator:
@@ -71,7 +70,7 @@ properties:
           unprotected_quantities:
             description: Any quantities in the data product that are unprotected by DP (e.g., statistics computed over a dataset that are released in the clear, i.e., without DP noise. Sometimes these are called “invariants.”)
             type: string
-      privacy:
+      privacy_loss:
         type: object
         additionalProperties: False
         required:
@@ -96,6 +95,8 @@ properties:
                 type: number
               delta:
                 type: number
+          privacy_parameters_description:
+            description: More detail on the parameters, if necessary.
       model:
         type: object
         additionalProperties: False
@@ -165,7 +166,7 @@ properties:
         required:
           - pre_processing_eda_hyperparameter_tuning
           - mechanisms
-          - justification_for_implementation_decisions
+          - justification
         properties:
           pre_processing_eda_hyperparameter_tuning:
             description: Description of any pre-processing of the data before DP protections and any exploratory data analysis conducted before DP protections, and whether privacy loss was accounted for. How were hyperparameters, like privacy loss parameters, tuned? Was privacy loss associated with this tuning accounted for?
@@ -181,7 +182,7 @@ properties:
               - What security measures are in place to protect the underlying data (i.e., the data before being processed under DP)? What access controls are in place?
               - Version of the code & github link, if available
             type: string
-          justification_for_implementation_decisions:
+          justification:
             description: >
               Process by which any of the above choices surrounding implementation of DP were made, and well as any rationale around these decisions. Some questions that this section may answer include, but are not limited to:
 
