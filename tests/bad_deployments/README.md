@@ -1,0 +1,1 @@
+Note that the message on failed validation is just the first error: There may be more, and if it's useful, we could report them all using [`iter_errors`](https://python-jsonschema.readthedocs.io/en/stable/api/jsonschema/protocols/#jsonschema.protocols.Validator.iter_errors).
