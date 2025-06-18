@@ -1,0 +1,42 @@
+approved: False
+registry_author: ''
+deployment:
+  # Tier 1:
+  short_name: ''
+  data_curator: ''
+  intended_use: ''
+  data_product_type: 'Summary statistics' # Fill in correct value.
+  data_product_description: ''
+  publication_date: '1900-01-01' # Fill in correct value.
+
+  # Tiers 2 and 3:
+  dp_flavor:
+    name: Pure DP # Fill in correct value.
+    data_domain: ''
+    unprotected_quantities: ''
+
+  privacy_loss:
+    privacy_unit: ''
+    privacy_unit_description: ''
+    privacy_parameters: # Fill in correct value.
+      epsilon: 1.0
+      # delta: ?
+      # rho: ?
+    privacy_parameters_description: ''
+
+  model:
+    model_type: Central # Fill in correct value.
+    model_type_description: ''
+    release_type: Continual # Fill in correct value.
+    release_type_description: ''
+    interactivity: Non-interactive # Fill in correct value.
+    interactivity_description: ''
+
+  additional_dp_information:
+    post_processing: ''
+    composition: ''
+
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: ''
+    mechanisms: ''
+    justification: ''
