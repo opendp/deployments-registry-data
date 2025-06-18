@@ -1,4 +1,5 @@
 approved: False
+registry_author: Elana Ghazi
 deployment:
   short_name: Google COVID-19 search statistics
   data_curator: Google
@@ -19,12 +20,11 @@ deployment:
   model:
     model_type: Central
     model_type_description: 'A trusted Google curator applies the Laplace mechanism via Google’s open-source DP library before any data release.'
-    release_type: Continual # TODO: ok property name?
+    release_type: Continual
     release_type_description: 'New noisy aggregates are generated and published daily (or weekly).'
-    interactivity: Non-interactive # TODO: ok property name?
-    # TODO: In this case "interactivity_description" didn't add information: Ok to drop?
+    interactivity: Non-interactive
+    # No "interactivity_description" for this deployment
 
-  # NOTE: In the example, this is labeled as "Post-processing and composition".
   additional_dp_information:
     post_processing: >
       A region-specific constant c is chosen once based on the February-July 2020 window to ensure we end up in a [0,100] percent scale.
@@ -36,8 +36,6 @@ deployment:
       Basic sequential composition (counting symptoms + normalization)
 
   implementation:
-    # TODO: Is a shorter name possible?
     pre_processing_eda_hyperparameter_tuning: Not available
     mechanisms: Laplace mechanism for both symptom search and normalization counts via Google’s open-source DP library
-    # TODO: Shorter name possible?
     justification: Not available

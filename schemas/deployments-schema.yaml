@@ -4,11 +4,15 @@ type: object
 additionalProperties: False
 required:
   - approved
+  - registry_author
   - deployment
 properties:
   approved:
     description: Has this deployment been reviewed and approved by the board?
     type: boolean
+  registry_author:
+    description: The author of this record.
+    type: string
   deployment:
     type: object
     additionalProperties: False
