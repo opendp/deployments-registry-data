@@ -43,3 +43,25 @@ The tests will make sure the record is valid, so focus on things the computer do
 Is the description readable?
 If this is a new contributor, spot check the original source for accuracy.
 If a new enumeration value is proposed, consider getting more opinions before approving.
+
+## Relationship to other metadata standards
+
+The Privacy Deployments Registry can be partially mapped to [Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/).
+
+| Registry | DC |
+|---|---|
+| | contributor |
+| | coverage |
+| data_curator | creator |
+| publication_date | date |
+| data_product_description | description |
+| | format |
+| | identifier |
+| | language |
+| | publisher |
+| | relation |
+| | rights |
+| | source |
+| dp_flavor.data_domain | subject |
+| short_name | title |
+| | type |
