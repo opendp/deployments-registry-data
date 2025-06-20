@@ -3,3 +3,4 @@ pyyaml
 jsonschema[format]
 pre-commit
 black
+pyspellchecker
