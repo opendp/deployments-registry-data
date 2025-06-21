@@ -13,7 +13,7 @@ def convert(old_path: Path):
             "data_curator": old_case["organization"],
             "intended_use": old_case["application"],
             "data_product_type": "TODO",
-            # TODO: Add a new field for scope and region info?
+            # TODO: Add a new field for region info?
             "data_product_description": f"{old_case['scope']}. {old_case['region']}. {old_case['description']}",
             "publication_date": f'{old_case["year"]}-01-01',
             "additional_information_url": old_case["url"],
@@ -24,7 +24,9 @@ def convert(old_path: Path):
             #     'unprotected_quantities': 'TODO',
             # },
             "privacy_loss": {
-                "privacy_unit": old_case["scope"],
+                "privacy_unit": old_case[
+                    "scope"
+                ],  # TODO: Not sure I understand the semantics here.
                 "privacy_unit_description": "TODO",
                 "privacy_parameters": {
                     "epsilon": old_case["epsilon"],
