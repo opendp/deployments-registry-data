@@ -1,0 +1,7 @@
+pytest
+pyyaml
+jsonschema[format]
+pre-commit
+black
+pyspellchecker
+pip-tools
