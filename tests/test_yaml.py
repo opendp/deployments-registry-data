@@ -30,6 +30,10 @@ def test_yaml_schema(yaml_path):
 
 
 def get_all_values_paths(node, path=""):
+    """
+    >>> list(get_all_values_paths({'a': 1, 'b': {'c': 2}}))
+    [('/a', 1), ('/b/c', 2)]
+    """
     # Revisit this if we add any lists to the schema.
     for key, value in node.items():
         new_path = f"{path}/{key}"
