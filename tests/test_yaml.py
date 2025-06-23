@@ -57,4 +57,6 @@ def test_yaml_spelling(yaml_path):
             correction = spell.correction(lc_word)
             if lc_word != spell.correction(lc_word):
                 errors.append(f'{path}: "{word}" -> "{correction}"?')
-    assert not errors, "\n".join(errors)
+    assert not errors, (
+        "\n".join(errors) + "\n(If any of these are correct, add to dictionary.txt.)"
+    )
