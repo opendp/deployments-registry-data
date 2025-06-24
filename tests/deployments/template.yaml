@@ -12,8 +12,8 @@ deployment:
   # Tiers 2 and 3:
   dp_flavor:
     name: Pure DP # Fill in correct value.
-    data_domain: ''
-    unprotected_quantities: ''
+    data_domain: '' # Tier 3
+    unprotected_quantities: '' # Tier 3
 
   privacy_loss:
     privacy_unit: ''
@@ -33,10 +33,10 @@ deployment:
     interactivity_description: ''
 
   additional_dp_information:
-    post_processing: ''
-    composition: ''
+    post_processing: '' # Tier 3
+    composition: '' # Tier 3
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: ''
-    mechanisms: ''
-    justification: ''
+    pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    mechanisms: '' # Tier 3
+    justification: '' # Tier 3
