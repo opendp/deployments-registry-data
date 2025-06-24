@@ -16,7 +16,7 @@ spell.word_frequency.load_words((root / "dictionary.txt").read_text().splitlines
 
 
 def check_name(yaml_path: Path):
-    if not re.fullmatch(r"[a-z][a-z0-9_]+\.yaml", yaml_path.name):
+    if not re.fullmatch(r"[a-z0-9_]+\.yaml", yaml_path.name):
         return "File names should be lowercase letters, numbers, and underscores."
 
 
