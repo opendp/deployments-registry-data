@@ -7,7 +7,7 @@ from jsonschema.exceptions import ValidationError
 from spellchecker import SpellChecker
 
 
-root = Path(__file__).parent
+root = Path(__file__).parent.parent
 
 schema = load((root / "schemas/deployments-schema.yaml").open(), Loader=Loader)
 
@@ -26,6 +26,36 @@ def check_schema(yaml_path):
     return [error.message for error in validator.iter_errors(instance)]
 
 
+def get_all_values_paths(node, path=""):
+    """
+    >>> list(get_all_values_paths({'a': 1, 'b': {'c': 2}}))
+    [('/a', 1), ('/b/c', 2)]
+    """
+    # Revisit this if we add any lists to the schema.
+    for key, value in node.items():
+        new_path = f"{path}/{key}"
+        if isinstance(value, dict):
+            yield from get_all_values_paths(value, new_path)
+        else:
+            yield (new_path, value)
+
+
+def check_spelling(yaml_path):
+    deployment = load(yaml_path.open(), Loader=Loader)
+    pairs = get_all_values_paths(deployment)
+    errors = []
+    for path, text in pairs:
+        if not isinstance(text, str):
+            continue
+        words = re.findall(r"\w+", text)
+        for word in words:
+            lc_word = word.lower()
+            correction = spell.correction(lc_word)
+            if lc_word != spell.correction(lc_word):
+                errors.append(f'{path}: "{word}" -> "{correction}"?')
+    return errors
+
+
 def check(yaml_path: Path):
     detail_checks = [
         function for name, function in globals().items() if name.startswith("check_")
@@ -33,7 +63,7 @@ def check(yaml_path: Path):
     errors = {}
     for detail_check in detail_checks:
         name = detail_check.__name__
-        print(f"\t{name}...")
+        print(f"\t{name.replace('_', ' ')}...")
         error = detail_check(yaml_path)
         if error:
             errors[name] = error
