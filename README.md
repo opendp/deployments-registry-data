@@ -61,3 +61,12 @@ The tests will make sure the record is valid, so focus on things the computer do
 Is the description readable?
 If this is a new contributor, spot check the original source for accuracy.
 If a new enumeration value is proposed, consider getting more opinions before approving.
+
+## FAQ
+
+### Are there plans to support RDF or connect to `schema.org`?
+
+Not currently. The plain YAML/JSON representation of the data is sufficient for our needs.
+That said, we keep the principles of the [`schema.org` naming conventions](https://schema.org/docs/styleguide.html) in mind,
+and distinguish nested types in the schema, instead of just having a flat list of fields.
+We do use underscores in names for readability.
