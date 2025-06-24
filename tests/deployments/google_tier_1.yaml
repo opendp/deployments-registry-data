@@ -1,7 +1,7 @@
 # Copied from google_tier_2.yaml, but with the level 2 data commented out.
 
 approved: False
-registry_author: Elana Ghazi
+registry_author: Elena Ghazi
 deployment:
   short_name: TODO!
   data_curator: Google
