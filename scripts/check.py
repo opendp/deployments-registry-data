@@ -47,6 +47,7 @@ def check_spelling(yaml_path):
     for path, text in pairs:
         if not isinstance(text, str):
             continue
+        text = re.sub(r"https?://\S+", "", text)
         words = re.findall(r"\w+", text)
         for word in words:
             lc_word = word.lower()
@@ -62,8 +63,8 @@ def check(yaml_path: Path):
     ]
     errors = {}
     for detail_check in detail_checks:
-        name = detail_check.__name__
-        print(f"\t{name.replace('_', ' ')}...")
+        name = detail_check.__name__.replace("_", " ")
+        print(f"\t{name}...")
         error = detail_check(yaml_path)
         if error:
             errors[name] = error
