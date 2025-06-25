@@ -53,10 +53,12 @@ properties:
         description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of continual release, the publication date can be expressed as the date of first publication.
         type: string
         format: date
-      additional_information_url:
-        # Note: the only optional tier 1 property
-        type: string
-        format: url
+      additional_information_urls:
+        # Required, but may be empty. Requiring a list makes the display logic a little simpler.
+        type: array
+        items:
+          type: string
+          format: url
 
       # Tiers 2 and 3
       dp_flavor:
