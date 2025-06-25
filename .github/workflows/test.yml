@@ -25,5 +25,8 @@ jobs:
       - name: Pre-commit (format checks)
         run: pre-commit run --all-files
 
-      - name: Test (schema checks)
+      - name: Check deployments
+        run: python scripts/check.py
+
+      - name: Unit tests
         run: pytest -vv
