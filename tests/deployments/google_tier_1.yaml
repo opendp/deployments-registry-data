@@ -4,7 +4,7 @@ approved: False
 registry_authors:
   - Elena Ghazi
 deployment:
-  short_name: TODO!
+  name: TODO!
   data_curator: Google
   intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
   data_product_type: Summary statistics
