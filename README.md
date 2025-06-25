@@ -33,7 +33,10 @@ pip install -r requirements.txt
 # Precommit hook:
 pre-commit install
 
-# Run tests:
+# Check one or more deployments:
+python scripts/check.py
+
+# Run all tests:
 pytest
 ```
 
