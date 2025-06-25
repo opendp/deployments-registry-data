@@ -9,7 +9,7 @@ deployment:
   data_product_type: Summary statistics
   data_product_description: >
     A publicly released dataset of daily or weekly time series giving the relative frequency of searches for ~400 predefined symptoms in each geographic region, normalized by total search activity
-    This line is just to exercise URL handling: https://example.com/intenshunal-mispeling
+    This line is just to exercise URL handling: https://opendp.org/
   publication_date: "2020-09-01"
 
   # Tier 2?:

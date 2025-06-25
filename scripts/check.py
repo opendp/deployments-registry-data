@@ -5,6 +5,7 @@ import re
 from jsonschema import validate, Draft7Validator
 from jsonschema.exceptions import ValidationError
 from spellchecker import SpellChecker
+import requests
 
 
 root = Path(__file__).parent.parent
@@ -54,6 +55,21 @@ def check_spelling(yaml_path):
             correction = spell.correction(lc_word)
             if lc_word != spell.correction(lc_word):
                 errors.append(f'{path}: "{word}" -> "{correction}"?')
+    return errors
+
+
+def check_urls(yaml_path):
+    deployment = load(yaml_path.open(), Loader=Loader)
+    pairs = get_all_values_paths(deployment)
+    errors = []
+    for path, text in pairs:
+        if not isinstance(text, str):
+            continue
+        urls = re.findall(r"https?://\S+", text)
+        for url in urls:
+            request = requests.get(url)
+            if request.status_code != 200:
+                errors.append(f"HTTP {request.status_code} for {url}")
     return errors
 
 
