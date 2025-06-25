@@ -25,6 +25,7 @@ properties:
       - data_curator
       - intended_use
       - data_product_type
+      - data_product_region
       - data_product_description
       - publication_date
     properties:
@@ -45,6 +46,9 @@ properties:
           - Summary statistics
           - Machine learning model
           # Add to this list as needed.
+      data_product_region:
+        description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
+        type: string
       data_product_description:
         # TODO: Add this field? Present in sample data. Maybe just "description?"
         description: TODO!
