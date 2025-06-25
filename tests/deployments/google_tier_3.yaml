@@ -1,5 +1,6 @@
 approved: False
-registry_author: Elena Ghazi
+registry_authors:
+  - Elena Ghazi
 deployment:
   short_name: TODO!
   data_curator: Google

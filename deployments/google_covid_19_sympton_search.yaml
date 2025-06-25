@@ -1,5 +1,6 @@
 approved: False
-registry_author: Elena Ghazi
+registry_authors:
+  - Elena Ghazi
 deployment:
   short_name: Google COVID-19 search statistics
   data_curator: Google

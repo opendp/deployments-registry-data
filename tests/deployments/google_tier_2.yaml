@@ -1,7 +1,8 @@
 # Copied from google_tier_3.yaml, but with the TODO comments stripped, and the level 3 data commented out.
 
 approved: False
-registry_author: Elena Ghazi
+registry_authors:
+  - Elena Ghazi
 deployment:
   short_name: TODO!
   data_curator: Google

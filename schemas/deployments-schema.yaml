@@ -5,15 +5,18 @@ type: object
 additionalProperties: False
 required:
   - approved
-  - registry_author
+  - registry_authors
   - deployment
 properties:
   approved:
     description: Has this deployment been reviewed and approved by the board?
     type: boolean
-  registry_author:
-    description: The author of this record.
-    type: string
+  registry_authors:
+    description: The authors of this record.
+    type: array
+    items:
+      type: string
+    minItems: 1
   deployment:
     type: object
     additionalProperties: False
