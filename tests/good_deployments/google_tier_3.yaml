@@ -1,10 +1,12 @@
 approved: False
-registry_author: Elena Ghazi
+registry_authors:
+  - Elena Ghazi
 deployment:
-  short_name: TODO!
+  name: TODO!
   data_curator: Google
   intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
   data_product_type: Summary statistics
+  data_product_region: Global
   data_product_description: A publicly released dataset of daily or weekly time series giving the relative frequency of searches for ~400 predefined symptoms in each geographic region, normalized by total search activity
   publication_date: "2020-09-01"
   dp_flavor:

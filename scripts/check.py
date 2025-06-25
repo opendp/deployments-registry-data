@@ -3,7 +3,6 @@ from sys import exit
 from yaml import load, Loader, dump
 import re
 from jsonschema import validate, Draft7Validator
-from jsonschema.exceptions import ValidationError
 from spellchecker import SpellChecker
 
 
@@ -28,14 +27,16 @@ def check_schema(yaml_path):
 
 def get_all_values_paths(node, path=""):
     """
-    >>> list(get_all_values_paths({'a': 1, 'b': {'c': 2}}))
-    [('/a', 1), ('/b/c', 2)]
+    >>> list(get_all_values_paths({'a': 1, 'b': {'c': [2, 3]}}))
+    [('/a', 1), ('/b/c/0', 2), ('/b/c/1', 3)]
     """
     # Revisit this if we add any lists to the schema.
     for key, value in node.items():
         new_path = f"{path}/{key}"
         if isinstance(value, dict):
             yield from get_all_values_paths(value, new_path)
+        elif isinstance(value, list):
+            yield from get_all_values_paths(dict(enumerate(value)), new_path)
         else:
             yield (new_path, value)
 
