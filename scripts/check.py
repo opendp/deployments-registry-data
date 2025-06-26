@@ -4,6 +4,7 @@ from yaml import load, Loader, dump
 import re
 from jsonschema import validate, Draft7Validator
 from spellchecker import SpellChecker
+import requests
 
 
 root = Path(__file__).parent.parent
@@ -48,6 +49,7 @@ def check_spelling(yaml_path):
     for path, text in pairs:
         if not isinstance(text, str):
             continue
+        text = re.sub(r"https?://\S+", "", text)
         words = re.findall(r"\w+", text)
         for word in words:
             lc_word = word.lower()
@@ -57,14 +59,29 @@ def check_spelling(yaml_path):
     return errors
 
 
+def check_urls(yaml_path):
+    deployment = load(yaml_path.open(), Loader=Loader)
+    pairs = get_all_values_paths(deployment)
+    errors = []
+    for path, text in pairs:
+        if not isinstance(text, str):
+            continue
+        urls = re.findall(r"https?://\S+", text)
+        for url in urls:
+            request = requests.get(url)
+            if request.status_code != 200:
+                errors.append(f"HTTP {request.status_code} for {url}")
+    return errors
+
+
 def check(yaml_path: Path):
     detail_checks = [
         function for name, function in globals().items() if name.startswith("check_")
     ]
     errors = {}
     for detail_check in detail_checks:
-        name = detail_check.__name__
-        print(f"\t{name.replace('_', ' ')}...")
+        name = detail_check.__name__.replace("_", " ")
+        print(f"\t{name}...")
         error = detail_check(yaml_path)
         if error:
             errors[name] = error

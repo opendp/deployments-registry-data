@@ -12,11 +12,11 @@ and then make a [local clone](https://docs.github.com/en/pull-requests/collabora
 - If you are a member of the core team, just make a local clone of this repo, rather than forking.
 
 In your local clone:
-- Copy `tests/deployments/template.yaml` to `deployments/` and give the copy a distinctive name. The organization, title, and year are good pieces of information to include in the file name.
+- Copy `tests/good_deployments/template.yaml` to `deployments/` and give the copy a distinctive name. The organization, title, and year are good pieces of information to include in the file name.
 - Inside the file, fill in as many of the fields as you are able.
   - "Tier 1" fields are required.
   - "Tier 2" adds more fields, and "tier 3" adds more detailed information.
-  - If you including "tier 2" and "tier 3" fields, try to fill out all the fields of that tier.
+  - If you are including "tier 2" and "tier 3" fields, try to fill out all the fields of that tier.
 - Feel free to use comments (`#`) for notes to reviewers, but information about the deployment should not be in a comment.
 - For some fields (for example `data_product_type`) we have an enumeration of expected values. If you need a new value, make changes to `deployments-schema.yaml`.
 
