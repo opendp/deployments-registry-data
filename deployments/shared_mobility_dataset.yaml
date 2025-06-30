@@ -2,32 +2,32 @@ status: Converted
 registry_authors:
 - Shlomi Hod
 deployment:
-  short_name: Shared Mobility Dataset
+  name: Shared Mobility Dataset
   data_curator: Google
   intended_use: Mobility Data
-  # data_product_type: TODO
+  data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global
   data_product_description: The automated Laplace mechanism adds random noise drawn
     from a zero mean Laplace distribution and yields (ϵ, δ)-differential privacy guarantee
     of ϵ = 0.66 and δ = 2.1 × 10−29, which is very strong.
   publication_date: '2022-01-01'
-  additional_information_url: https://www.nature.com/articles/s41467-019-12809-y
+  additional_information_urls:
+  - https://www.nature.com/articles/s41467-019-12809-y
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate Statistics
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 0.66
-      rho: null
-      delta: '2.1e-29'
+      delta: 2.1e-29
   model:
     model_type: Central
     # model_type_description: TODO
-    # release_type: TODO
+    release_type: One-shot # TODO: Is this correct?
     release_type_description: Static
-    # interactivity: TODO
+    interactivity: Non-interactive # TODO: Is this correct?
   # additional_dp_information: TODO
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: TODO
+    pre_processing_eda_hyperparameter_tuning: ''
     mechanisms: Laplace Mechanism
-    # justification: TODO
+    justification: ''

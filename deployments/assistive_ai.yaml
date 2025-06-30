@@ -2,31 +2,31 @@ status: Converted
 registry_authors:
 - Shlomi Hod
 deployment:
-  short_name: Assistive AI
+  name: Assistive AI
   data_curator: Microsoft
   intended_use: Email AI suggestions
-  # data_product_type: TODO
+  data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global, restricted to some languages (EN, ES, FR, PR, IT)
   data_product_description: Currently we use differentially private algorithms with
     privacy parameters (ε=4, δ< 10-7).
   publication_date: '2020-01-01'
-  additional_information_url: https://www.microsoft.com/en-us/research/group/msai/articles/assistive-ai-makes-replying-easier-2/
+  additional_information_urls:
+  - https://www.microsoft.com/en-us/research/group/msai/articles/assistive-ai-makes-replying-easier-2/
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description: TODO
     privacy_parameters:
-      epsilon: 4
-      rho: null
-      delta: 1e-7
+      epsilon: 4.0
+      delta: 1.0e-07
   model:
     model_type: Not specified
     # model_type_description: TODO
-    # release_type: TODO
+    release_type: One-shot # TODO: Is this correct?
     release_type_description: Not specified
-    # interactivity: TODO
+    interactivity: Non-interactive # TODO: Is this correct?
   # additional_dp_information: TODO
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: TODO
+    pre_processing_eda_hyperparameter_tuning: ''
     mechanisms: Randomized Response
-    # justification: TODO
+    justification: ''

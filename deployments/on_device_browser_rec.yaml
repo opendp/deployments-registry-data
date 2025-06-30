@@ -2,31 +2,29 @@ status: Converted
 registry_authors:
 - Shlomi Hod
 deployment:
-  short_name: On-device browser recommendations
+  name: On-device browser recommendations
   data_curator: Brave
   intended_use: Browsing Recommendations
-  # data_product_type: TODO
+  data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global
   data_product_description: Brave is leveraging federated learning and differential
     privacy to provide on-device browser recommendations.
   publication_date: '2021-01-01'
-  additional_information_url: https://brave.com/blog/federated-learning/
+  additional_information_urls:
+  - https://brave.com/blog/federated-learning/
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description: TODO
-    privacy_parameters:
-      epsilon: null
-      rho: null
-      delta: null
+    privacy_parameters: {}
   model:
     model_type: Central
     # model_type_description: TODO
-    # release_type: TODO
+    release_type: One-shot # TODO: Is this correct?
     release_type_description: Not specified
-    # interactivity: TODO
+    interactivity: Non-interactive # TODO: Is this correct?
   # additional_dp_information: TODO
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: TODO
+    pre_processing_eda_hyperparameter_tuning: ''
     mechanisms: DP SGD*
-    # justification: TODO
+    justification: ''

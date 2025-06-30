@@ -1,7 +1,7 @@
-TODO
-DP
-COVID
 ε_sym
 ε_norm
 dataset
-URL
+zCDP
+unlinkable
+emojis
+anonymization

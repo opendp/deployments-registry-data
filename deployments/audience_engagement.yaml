@@ -2,31 +2,31 @@ status: Converted
 registry_authors:
 - Shlomi Hod
 deployment:
-  short_name: Audience Engagement API
+  name: Audience Engagement API
   data_curator: LinkedIn
   intended_use: Statistics API
-  # data_product_type: TODO
+  data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global
   data_product_description: With these proposed parameter values (...) and applying
     Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee.
   publication_date: '2020-01-01'
-  additional_information_url: https://arxiv.org/abs/2002.05839
+  additional_information_urls:
+  - https://arxiv.org/abs/2002.05839
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate statistics
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 34.9
-      rho: null
-      delta: 7e-9
+      delta: 7.0e-09
   model:
     model_type: Central
     # model_type_description: TODO
-    # release_type: TODO
+    release_type: One-shot # TODO: Is this correct?
     release_type_description: Monthly
-    # interactivity: TODO
+    interactivity: Non-interactive # TODO: Is this correct?
   # additional_dp_information: TODO
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: TODO
+    pre_processing_eda_hyperparameter_tuning: ''
     mechanisms: Laplace, Gumbel
-    # justification: TODO
+    justification: ''

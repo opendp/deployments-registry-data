@@ -2,31 +2,30 @@ status: Converted
 registry_authors:
 - Shlomi Hod
 deployment:
-  short_name: COVID-19 Search Trends Symptoms Dataset
+  name: COVID-19 Search Trends Symptoms Dataset
   data_curator: Google
   intended_use: Search Data
-  # data_product_type: TODO
+  data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global
   data_product_description: More precisely, we protect every user’s symptom search
     activity on a particular day with ε-diﬀerential privacy for ε = 1.68.
   publication_date: '2020-01-01'
-  additional_information_url: https://arxiv.org/abs/2009.01265
+  additional_information_urls:
+  - https://arxiv.org/abs/2009.01265
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregted Statistics
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 1.68
-      rho: null
-      delta: null
   model:
     model_type: Central
     # model_type_description: TODO
-    # release_type: TODO
+    release_type: One-shot # TODO: Is this correct?
     release_type_description: Daily
-    # interactivity: TODO
+    interactivity: Non-interactive # TODO: Is this correct?
   # additional_dp_information: TODO
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: TODO
+    pre_processing_eda_hyperparameter_tuning: ''
     mechanisms: Laplace
-    # justification: TODO
+    justification: ''

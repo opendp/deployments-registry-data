@@ -139,6 +139,8 @@ properties:
               - Central
               - Shuffle
               - Federated
+              - Not specified # TODO: Present in converted records. Find value, or make field optional?
+              - Varies # TODO: Present in converted records. Make this a list, instead of a single value?
           actors:
             description: Who are the relevant actors in the deployment? This includes anyone who may see the data product, even partially, and including adversaries. What are their trust assumptions and what is the rationale for these trust assumptions?
             type: string

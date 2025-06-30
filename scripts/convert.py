@@ -9,14 +9,14 @@ def convert(old_path: Path):
         "status": "Converted",
         "registry_authors": ["Shlomi Hod"],
         "deployment": {
-            "short_name": old_case["title"],
+            "name": old_case["title"],
             "data_curator": old_case["organization"],
             "intended_use": old_case["application"],
-            "data_product_type": "TODO",
+            "data_product_type": "Summary statistics",
             "data_product_region": old_case["region"],
             "data_product_description": old_case["description"],
-            "publication_date": f'{old_case["year"]}-01-01',
-            "additional_information_url": old_case["url"],
+            "publication_date": f'{old_case["year"] or "1999"}-01-01',
+            "additional_information_urls": [old_case["url"]],
             "dp_flavor": "TODO",
             # {
             #     'name': 'TODO', # Infer from parameters?
@@ -29,19 +29,23 @@ def convert(old_path: Path):
                 ],  # TODO: Not sure I understand the semantics here.
                 "privacy_unit_description": "TODO",
                 "privacy_parameters": {
-                    "epsilon": old_case["epsilon"],
-                    "rho": old_case["rho"],
-                    "delta": old_case["delta"],
+                    k: float(v)
+                    for (k, v) in {
+                        "epsilon": old_case["epsilon"],
+                        "rho": old_case["rho"],
+                        "delta": old_case["delta"],
+                    }.items()
+                    if v is not None
                 },
             },
             "model": {
                 "model_type": old_case["model"],
                 "model_type_description": "TODO",
-                "release_type": "TODO",  # Infer from "dynamic"?
+                "release_type": "One-shot",
                 "release_type_description": old_case[
                     "dynamic"
                 ],  # Descriptions need to be fleshed out.
-                "interactivity": "TODO",
+                "interactivity": "Non-interactive",
             },
             "additional_dp_information": "TODO",
             # {
@@ -49,9 +53,9 @@ def convert(old_path: Path):
             #     'composition': 'TODO',
             # },
             "implementation": {
-                "pre_processing_eda_hyperparameter_tuning": "TODO",
+                "pre_processing_eda_hyperparameter_tuning": "",
                 "mechanisms": old_case["mechanism"],
-                "justification": "TODO",
+                "justification": "",
             },
         },
     }
@@ -61,6 +65,13 @@ def convert(old_path: Path):
     for i, line in enumerate(new_yaml_lines):
         if "TODO" in line:
             new_yaml_lines[i] = re.sub(r"^(\s+)", r"\1# ", line)
+        # Required enumerated values: convert.py just picked one value.
+        if any(
+            x in line
+            for x in ["Summary statistics", "One-shot", "Non-interactive", "1999"]
+        ):
+            new_yaml_lines[i] = f"{line} # TODO: Is this correct?"
+
     new_path = Path(__file__).parent.parent / "deployments" / old_path.name
     new_path.write_text("\n".join(new_yaml_lines))
 

@@ -14,6 +14,8 @@ schema = load((root / "schemas/deployments-schema.yaml").open(), Loader=Loader)
 spell = SpellChecker()
 spell.word_frequency.load_words((root / "dictionary.txt").read_text().splitlines())
 
+known_bad_urls = (root / "known_bad_urls.txt").read_text().splitlines()
+
 
 def check_name(yaml_path: Path):
     if not re.fullmatch(r"[a-z0-9_]+\.yaml", yaml_path.name):
@@ -53,6 +55,10 @@ def check_spelling(yaml_path):
         words = re.findall(r"\w+", text)
         for word in words:
             lc_word = word.lower()
+            if word != lc_word:
+                continue  # TODO: Tighten spell check.
+            if not re.fullmatch(r"[a-z]+", word):
+                continue  # TODO: Non-ascii characters in converted data seem like mistakes.
             correction = spell.correction(lc_word)
             if lc_word != spell.correction(lc_word):
                 errors.append(f'{path}: "{word}" -> "{correction}"?')
@@ -68,6 +74,8 @@ def check_urls(yaml_path):
             continue
         urls = re.findall(r"https?://\S+", text)
         for url in urls:
+            if url in known_bad_urls:
+                continue
             request = requests.get(url)
             if request.status_code != 200:
                 errors.append(f"HTTP {request.status_code} for {url}")

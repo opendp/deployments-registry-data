@@ -2,32 +2,31 @@ status: Converted
 registry_authors:
 - Shlomi Hod
 deployment:
-  short_name: Broadband Coverage Estimates
+  name: Broadband Coverage Estimates
   data_curator: Microsoft
   intended_use: Geographical Broadband Statistics
-  # data_product_type: TODO
+  data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: USA
   data_product_description: For each of the counts queries from Microsoft Services
     Telemetry Data, we use the Laplace Mechanism, with an epsilon of 0.1, to obtain
     diﬀerentially private counts.
   publication_date: '2021-01-01'
-  additional_information_url: https://arxiv.org/pdf/2103.14035
+  additional_information_urls:
+  - https://arxiv.org/pdf/2103.14035
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate statistics
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 0.1
-      rho: null
-      delta: null
   model:
     model_type: Not specified
     # model_type_description: TODO
-    # release_type: TODO
+    release_type: One-shot # TODO: Is this correct?
     release_type_description: Static
-    # interactivity: TODO
+    interactivity: Non-interactive # TODO: Is this correct?
   # additional_dp_information: TODO
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: TODO
+    pre_processing_eda_hyperparameter_tuning: ''
     mechanisms: Laplace Mechanism
-    # justification: TODO
+    justification: ''
