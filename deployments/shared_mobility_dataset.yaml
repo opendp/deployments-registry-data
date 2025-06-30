@@ -1,13 +1,15 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Shared Mobility Dataset
   data_curator: Google
   intended_use: Mobility Data
   # data_product_type: TODO
-  data_product_description: Aggregate Statistics. Global. The automated Laplace mechanism
-    adds random noise drawn from a zero mean Laplace distribution and yields (ϵ, δ)-differential
-    privacy guarantee of ϵ = 0.66 and δ = 2.1 × 10−29, which is very strong.
+  data_product_region: Global
+  data_product_description: The automated Laplace mechanism adds random noise drawn
+    from a zero mean Laplace distribution and yields (ϵ, δ)-differential privacy guarantee
+    of ϵ = 0.66 and δ = 2.1 × 10−29, which is very strong.
   publication_date: '2022-01-01'
   additional_information_url: https://www.nature.com/articles/s41467-019-12809-y
   # dp_flavor: TODO

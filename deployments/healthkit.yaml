@@ -1,13 +1,14 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: HealthKit
   data_curator: Apple
   intended_use: Health Data
   # data_product_type: TODO
-  data_product_description: 'User-level. Not specified. We deploy CMS to observe the
-    most popular health data types with the following parameters: m = 256, k = 65,536,
-    and ✏ = 2.'
+  data_product_region: Not specified
+  data_product_description: 'We deploy CMS to observe the most popular health data
+    types with the following parameters: m = 256, k = 65,536, and ✏ = 2.'
   publication_date: '2017-01-01'
   additional_information_url: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   # dp_flavor: TODO

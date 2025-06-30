@@ -1,13 +1,15 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Synthetic Data for Public Use
   data_curator: Office of National Statistics UK
   intended_use: Synthetic Data
   # data_product_type: TODO
-  data_product_description: Aggregate Statistics. Not specified. We recommend the
-    use of generative adversarial networks (GANs) possibly in conjunction with privacy-preserving
-    mechanisms such as differential privacy.
+  data_product_region: Not specified
+  data_product_description: We recommend the use of generative adversarial networks
+    (GANs) possibly in conjunction with privacy-preserving mechanisms such as differential
+    privacy.
   publication_date: '2020-01-01'
   additional_information_url: https://datasciencecampus.ons.gov.uk/projects/generative-adversarial-networks-gans-for-synthetic-dataset-generation-with-binary-classes/
   # dp_flavor: TODO

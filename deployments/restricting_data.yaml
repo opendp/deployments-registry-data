@@ -1,13 +1,15 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Disclosure Avoidance System for Redistricting Data
   data_curator: United States Census Bureau
   intended_use: Data Disclosure
   # data_product_type: TODO
-  data_product_description: Aggregate-level. United States. The approved DAS production
-    settings reflect a total privacy-loss budget for the redistricting data product
-    (represented by “ε,” the Greek letter “epsilon”) of ε=19.61.
+  data_product_region: United States
+  data_product_description: The approved DAS production settings reflect a total privacy-loss
+    budget for the redistricting data product (represented by “ε,” the Greek letter
+    “epsilon”) of ε=19.61.
   publication_date: '2020-01-01'
   additional_information_url: https://www.census.gov/newsroom/press-releases/2021/2020-census-key-parameters.html
   # dp_flavor: TODO

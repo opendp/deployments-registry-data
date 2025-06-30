@@ -1,12 +1,13 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Wikipedia Usage Data
   data_curator: Wikimedia Foundation
   intended_use: Website Usage Data
   # data_product_type: TODO
-  data_product_description: Aggregate Statistics and user-level. Global. Pure DP with
-    ε = 1 for the historical data.
+  data_product_region: Global
+  data_product_description: Pure DP with ε = 1 for the historical data.
   publication_date: '2023-01-01'
   additional_information_url: https://arxiv.org/abs/2308.16298
   # dp_flavor: TODO

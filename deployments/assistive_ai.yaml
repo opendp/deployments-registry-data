@@ -1,13 +1,14 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Assistive AI
   data_curator: Microsoft
   intended_use: Email AI suggestions
   # data_product_type: TODO
-  data_product_description: User-level. Global, restricted to some languages (EN,
-    ES, FR, PR, IT). Currently we use differentially private algorithms with privacy
-    parameters (ε=4, δ< 10-7).
+  data_product_region: Global, restricted to some languages (EN, ES, FR, PR, IT)
+  data_product_description: Currently we use differentially private algorithms with
+    privacy parameters (ε=4, δ< 10-7).
   publication_date: '2020-01-01'
   additional_information_url: https://www.microsoft.com/en-us/research/group/msai/articles/assistive-ai-makes-replying-easier-2/
   # dp_flavor: TODO

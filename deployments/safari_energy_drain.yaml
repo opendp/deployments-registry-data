@@ -1,12 +1,14 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Safari Energy Draining and Crashing Domains
   data_curator: Apple
   intended_use: Browser Statistics
   # data_product_type: TODO
-  data_product_description: User-level. Global. For this use case, we set the parameters
-    for HCMS to be m = 32,768, k = 1024, and ✏ = 4 with p = 250,000 web domains.
+  data_product_region: Global
+  data_product_description: For this use case, we set the parameters for HCMS to be
+    m = 32,768, k = 1024, and ✏ = 4 with p = 250,000 web domains.
   publication_date: '2017-01-01'
   additional_information_url: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   # dp_flavor: TODO

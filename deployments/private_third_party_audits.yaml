@@ -1,16 +1,18 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Private Third Party Audits
   data_curator: Twitter, OpenMined
   intended_use: Synthetic Data Releases for Audits
   # data_product_type: TODO
-  data_product_description: Aggregate-level. Global. In September, 2022, in conjunction
-    with the UN General Assembly and Christchurch Call leaders summit, New Zealand
-    Prime Minister Jacinda Ardern and French President Emmanuel Macron announced the
-    Christchurch Initiative on Algorithmic Outcomes, a partnership between New Zealand,
-    the United States, Twitter, Microsoft and OpenMined to develop and test a differential
-    privacy system to enable privacy preserving research across multiple online platforms.
+  data_product_region: Global
+  data_product_description: In September, 2022, in conjunction with the UN General
+    Assembly and Christchurch Call leaders summit, New Zealand Prime Minister Jacinda
+    Ardern and French President Emmanuel Macron announced the Christchurch Initiative
+    on Algorithmic Outcomes, a partnership between New Zealand, the United States,
+    Twitter, Microsoft and OpenMined to develop and test a differential privacy system
+    to enable privacy preserving research across multiple online platforms.
   publication_date: '2022-01-01'
   additional_information_url: https://unstats.un.org/wiki/display/UGTTOPPT/14.+Twitter+and+OpenMined%3A+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets
   # dp_flavor: TODO

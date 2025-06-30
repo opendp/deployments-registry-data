@@ -1,11 +1,13 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Israel's National Registry of Live Births of 2014
   data_curator: Israeli Ministriy of Health
   intended_use: Health Data
   # data_product_type: TODO
-  data_product_description: 'Birth-level. Israel. '
+  data_product_region: Israel
+  data_product_description: ''
   publication_date: '2024-01-01'
   additional_information_url: https://birth.dataset.pub
   # dp_flavor: TODO

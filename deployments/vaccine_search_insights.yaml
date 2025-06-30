@@ -1,13 +1,15 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Vaccine Search Insights
   data_curator: Google
   intended_use: Health Data
   # data_product_type: TODO
-  data_product_description: User-level. Global. The applied anonymization techniques
-    protect every user’s daily search activity related to COVID-19 vaccinations with
-    (ε, δ)-diﬀerential privacy for ε = 2.19 and δ = 10−5.
+  data_product_region: Global
+  data_product_description: The applied anonymization techniques protect every user’s
+    daily search activity related to COVID-19 vaccinations with (ε, δ)-diﬀerential
+    privacy for ε = 2.19 and δ = 10−5.
   publication_date: '2021-01-01'
   additional_information_url: https://arxiv.org/abs/2107.01179
   # dp_flavor: TODO

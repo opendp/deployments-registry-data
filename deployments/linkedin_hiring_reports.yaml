@@ -1,13 +1,14 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: LinkedIn Hiring Reports
   data_curator: LinkedIn
   intended_use: Labor Market Reports
   # data_product_type: TODO
-  data_product_description: Aggregate Statistics. Not specified. Therefore each report
-    is (1.2, 10−10)-DP because the ratio that uses both counts accumulates the privacy
-    loss.
+  data_product_region: Not specified
+  data_product_description: Therefore each report is (1.2, 10−10)-DP because the ratio
+    that uses both counts accumulates the privacy loss.
   publication_date: '2020-01-01'
   additional_information_url: https://arxiv.org/abs/2010.13981
   # dp_flavor: TODO

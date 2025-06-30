@@ -1,13 +1,15 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Mobility Trends During Hurricane
   data_curator: Spectus
   intended_use: Mobility Catastrophe Data
   # data_product_type: TODO
-  data_product_description: 'Aggregate Statistics. USA. In this case, the Laplace
-    mechanism is used for all four operations. Finally, the privacy budget, E, is
-    set as follows: • E = 4 for CTU • E = 2 for CE • E = 1 for CED • E = 3 for SD.'
+  data_product_region: USA
+  data_product_description: 'In this case, the Laplace mechanism is used for all four
+    operations. Finally, the privacy budget, E, is set as follows: • E = 4 for CTU
+    • E = 2 for CE • E = 1 for CED • E = 3 for SD.'
   publication_date: '2022-01-01'
   additional_information_url: https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
   # dp_flavor: TODO

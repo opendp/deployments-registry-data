@@ -1,12 +1,14 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Movement Ranges Map
   data_curator: Meta
   intended_use: Health Crisis Mobility Data
   # data_product_type: TODO
-  data_product_description: Aggregate-level. Global. Resulting in a total differential
-    privacy epsilon value of 2.0.
+  data_product_region: Global
+  data_product_description: Resulting in a total differential privacy epsilon value
+    of 2.0.
   publication_date: '2020-01-01'
   additional_information_url: https://research.fb.com/blog/2020/06/protecting-privacy-in-facebook-mobility-data-during-the-covid-19-response/
   # dp_flavor: TODO

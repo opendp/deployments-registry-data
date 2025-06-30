@@ -1,14 +1,15 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Lookup Hints
   data_curator: Apple
   intended_use: Web Browsing
   # data_product_type: TODO
-  data_product_description: User-level. Not specified. For Lookup Hints, Apple uses
-    a privacy budget with epsilon of 4, and limits user contributions to two donations
-    per day.
-  publication_date: Unkown-01-01
+  data_product_region: Not specified
+  data_product_description: For Lookup Hints, Apple uses a privacy budget with epsilon
+    of 4, and limits user contributions to two donations per day.
+  publication_date: 0-01-01
   additional_information_url: https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
   # dp_flavor: TODO
   privacy_loss:

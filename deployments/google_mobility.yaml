@@ -1,18 +1,20 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Google Community Mobility Place Visits
   data_curator: Google
   intended_use: Mobility Statistics
   # data_product_type: TODO
-  data_product_description: Aggregate Statistics. Global. Thus, each daily place visit
-    is protected by diﬀerential privacy with ε = 0.44. These multiple metrics apply
-    to the same dataset, so standard composition results apply, and the total daily
-    contribution of each user is protected by diﬀerential privacy with a maximum of
-    ε = 1.76. (...) We are generating a ﬁxed set of metrics (all possible combinations
-    of geographic regions, days within the periods, and public place categories),
-    and we are also adding noise to zero-valued metrics. As such, the process outlined
-    above is ε-diﬀerentially private with δ = 0.
+  data_product_region: Global
+  data_product_description: Thus, each daily place visit is protected by diﬀerential
+    privacy with ε = 0.44. These multiple metrics apply to the same dataset, so standard
+    composition results apply, and the total daily contribution of each user is protected
+    by diﬀerential privacy with a maximum of ε = 1.76. (...) We are generating a ﬁxed
+    set of metrics (all possible combinations of geographic regions, days within the
+    periods, and public place categories), and we are also adding noise to zero-valued
+    metrics. As such, the process outlined above is ε-diﬀerentially private with δ
+    = 0.
   publication_date: '2020-01-01'
   additional_information_url: https://arxiv.org/pdf/2004.04145
   # dp_flavor: TODO

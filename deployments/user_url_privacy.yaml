@@ -1,11 +1,13 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: User-URL Privacy Dataset
   data_curator: Meta
   intended_use: Web Browsing
   # data_product_type: TODO
-  data_product_description: User-level. Global. εuser = 1.453 for δ = 10−5.
+  data_product_region: Global
+  data_product_description: εuser = 1.453 for δ = 10−5.
   publication_date: '2020-01-01'
   additional_information_url: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2
   # dp_flavor: TODO

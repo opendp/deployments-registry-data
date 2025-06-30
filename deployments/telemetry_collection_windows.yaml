@@ -1,12 +1,13 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Telemetry Collection in Windows
   data_curator: Microsoft
   intended_use: Telemetry Data
   # data_product_type: TODO
-  data_product_description: User-level. Global. Data collection is performed every
-    6 hours, with ε = 1.
+  data_product_region: Global
+  data_product_description: Data collection is performed every 6 hours, with ε = 1.
   publication_date: '2017-01-01'
   additional_information_url: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
   # dp_flavor: TODO

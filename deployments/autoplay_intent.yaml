@@ -1,12 +1,14 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: AutoPlay Intent
   data_curator: Apple
   intended_use: Video Browser Play
   # data_product_type: TODO
-  data_product_description: User-level. Not Specified. For this use case, we set the
-    parameters for CMS to be m = 1024, k = 65,536, and ✏ = 8.
+  data_product_region: Not Specified
+  data_product_description: For this use case, we set the parameters for CMS to be
+    m = 1024, k = 65,536, and ✏ = 8.
   publication_date: '2017-01-01'
   additional_information_url: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   # dp_flavor: TODO

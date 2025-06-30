@@ -1,13 +1,15 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Census County Business Patterns
   data_curator: United States Census Bureau
   intended_use: Geographical Buisness Statistics
   # data_product_type: TODO
-  data_product_description: Aggregate-level. USA. Noise added in the PRDP stage is
-    randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP
-    privacy loss budget is 12.058.
+  data_product_region: USA
+  data_product_description: Noise added in the PRDP stage is randomly sampled from
+    a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is
+    12.058.
   publication_date: '2023-01-01'
   additional_information_url: https://www.census.gov/topics/business-economy/disclosure/about.html
   # dp_flavor: TODO

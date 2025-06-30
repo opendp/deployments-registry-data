@@ -1,13 +1,15 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: COVID-19 Exposure Notification Framework
   data_curator: Google, Apple
   intended_use: Healthcare Exposure Notification
   # data_product_type: TODO
-  data_product_description: User-level. Not specified. The central diﬀerential privacy
-    guarantees εc that result from unlinkable aggregation of ε0 = 8 metric report
-    binary vectors, as used in ENPA.
+  data_product_region: Not specified
+  data_product_description: The central diﬀerential privacy guarantees εc that result
+    from unlinkable aggregation of ε0 = 8 metric report binary vectors, as used in
+    ENPA.
   publication_date: '2021-01-01'
   additional_information_url: https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf
   # dp_flavor: TODO

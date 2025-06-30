@@ -1,14 +1,15 @@
-status: Draft
-registry_author: Shlomi Hod
+status: Converted
+registry_authors:
+- Shlomi Hod
 deployment:
   short_name: Spanish-language Keyword Next-word Prediction
   data_curator: Google
   intended_use: Language Model
   # data_product_type: TODO
-  data_product_description: User-level. Spanish-Speaking Users. Our analysis gives
-    ρ=0.81 zCDP at the user level (treating all the data on each device as a different
-    user), where smaller numbers correspond to better privacy in a mathematically
-    precise way.
+  data_product_region: Spanish-Speaking Users
+  data_product_description: Our analysis gives ρ=0.81 zCDP at the user level (treating
+    all the data on each device as a different user), where smaller numbers correspond
+    to better privacy in a mathematically precise way.
   publication_date: '2022-01-01'
   additional_information_url: https://research.google/blog/federated-learning-with-formal-differential-privacy-guarantees/
   # dp_flavor: TODO
