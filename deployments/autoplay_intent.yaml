@@ -1,21 +1,20 @@
-approved: false
+status: Draft
 registry_author: Shlomi Hod
 deployment:
-  short_name: Lookup Hints
+  short_name: AutoPlay Intent
   data_curator: Apple
-  intended_use: Web Browsing
+  intended_use: Video Browser Play
   # data_product_type: TODO
-  data_product_description: User-level. Not specified. For Lookup Hints, Apple uses
-    a privacy budget with epsilon of 4, and limits user contributions to two donations
-    per day.
-  publication_date: Unkown-01-01
-  additional_information_url: https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
+  data_product_description: User-level. Not Specified. For this use case, we set the
+    parameters for CMS to be m = 1024, k = 65,536, and ✏ = 8.
+  publication_date: '2017-01-01'
+  additional_information_url: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description: TODO
     privacy_parameters:
-      epsilon: 4
+      epsilon: 8
       rho: null
       delta: null
   model:
@@ -27,5 +26,5 @@ deployment:
   # additional_dp_information: TODO
   implementation:
     # pre_processing_eda_hyperparameter_tuning: TODO
-    mechanisms: Unknown
+    mechanisms: Count-Min Sketch
     # justification: TODO

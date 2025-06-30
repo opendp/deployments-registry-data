@@ -4,13 +4,21 @@ description: >
 type: object
 additionalProperties: False
 required:
-  - approved
+  - status
   - registry_authors
   - deployment
 properties:
-  approved:
-    description: Has this deployment been reviewed and approved by the board?
-    type: boolean
+  status:
+    description: Approval status of this record.
+    type: string
+    enum:
+      - "Converted" # Automatically converted from earlier collection of "cases".
+      - "Draft" # Newly authored record.
+      - "Pending" # Waiting for review by the board.
+      - "Changes Required" # Board requires changes.
+      - "Approved" # Yay!
+      - "Approved (Update Requested)" # Small updates requested, but still can be displayed as "Approved".
+      - "Approved (Pending)" # Small updates made.
   registry_authors:
     description: The authors of this record.
     type: array

@@ -1,12 +1,13 @@
-approved: false
+status: Draft
 registry_author: Shlomi Hod
 deployment:
-  short_name: Safari Energy Draining and Crashing Domains
+  short_name: HealthKit
   data_curator: Apple
-  intended_use: Browser Statistics
+  intended_use: Health Data
   # data_product_type: TODO
-  data_product_description: User-level. Global. For this use case, we set the parameters
-    for HCMS to be m = 32,768, k = 1024, and ✏ = 4 with p = 250,000 web domains.
+  data_product_description: 'User-level. Not specified. We deploy CMS to observe the
+    most popular health data types with the following parameters: m = 256, k = 65,536,
+    and ✏ = 2.'
   publication_date: '2017-01-01'
   additional_information_url: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   # dp_flavor: TODO
@@ -14,7 +15,7 @@ deployment:
     privacy_unit: User-level
     # privacy_unit_description: TODO
     privacy_parameters:
-      epsilon: 4
+      epsilon: 2
       rho: null
       delta: null
   model:
@@ -26,5 +27,5 @@ deployment:
   # additional_dp_information: TODO
   implementation:
     # pre_processing_eda_hyperparameter_tuning: TODO
-    mechanisms: Hierarchical Count-Min Sketch
+    mechanisms: Count-Min Sketch
     # justification: TODO

@@ -3,6 +3,36 @@
 This repo provides backing data for the privacy deployments registry.
 It is intended to be referenced by the front-end repo which is responsible for display.
 
+## Workflow
+
+In the schema, `status` is a required, enumerated field with the following allowed values:
+
+- "Converted": Automatically converted from earlier collection of "cases".
+- "Draft": Newly authored record; Author has responsibility for completing work.
+- "Pending": Waiting for review by the board.
+- "Changes Required": Board requires changes.
+- "Approved": Yay!
+- "Approved (Update Requested)": Small updates requested, but still can be displayed as "Approved".
+- "Approved (Pending)": Small updates made; Awaiting re-approval by board.
+
+These are the expected state transitions:
+
+```mermaid
+graph TD
+    subgraph Unpublished
+        Converted --> Draft
+        Converted --> Pending
+        Draft --> Pending
+        Pending --> Changes["Changes Required"] --> Pending
+    end
+    subgraph Published
+        Approved --> Update["Approved (Update Requested)"] --> Repending["Approved (Pending)"] --> Approved
+        Repending --> Update
+
+    end
+    Pending --> Approved
+```
+
 ## Adding new deployment records
 
 New records should be submitted as PRs.

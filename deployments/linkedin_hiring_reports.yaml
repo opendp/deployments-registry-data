@@ -1,23 +1,23 @@
-approved: false
+status: Draft
 registry_author: Shlomi Hod
 deployment:
-  short_name: Audience Engagement API
+  short_name: LinkedIn Hiring Reports
   data_curator: LinkedIn
-  intended_use: Statistics API
+  intended_use: Labor Market Reports
   # data_product_type: TODO
-  data_product_description: Aggregate statistics. Global. With these proposed parameter
-    values (...) and applying Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly
-    guarantee.
+  data_product_description: Aggregate Statistics. Not specified. Therefore each report
+    is (1.2, 10−10)-DP because the ratio that uses both counts accumulates the privacy
+    loss.
   publication_date: '2020-01-01'
-  additional_information_url: https://arxiv.org/abs/2002.05839
+  additional_information_url: https://arxiv.org/abs/2010.13981
   # dp_flavor: TODO
   privacy_loss:
-    privacy_unit: Aggregate statistics
+    privacy_unit: Aggregate Statistics
     # privacy_unit_description: TODO
     privacy_parameters:
-      epsilon: 34.9
+      epsilon: 1.2
       rho: null
-      delta: 7e-9
+      delta: 1e-10
   model:
     model_type: Central
     # model_type_description: TODO

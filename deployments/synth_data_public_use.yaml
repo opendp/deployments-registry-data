@@ -1,4 +1,4 @@
-approved: false
+status: Draft
 registry_author: Shlomi Hod
 deployment:
   short_name: Synthetic Data for Public Use

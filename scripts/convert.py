@@ -6,15 +6,15 @@ from yaml import load, Loader, dump
 def convert(old_path: Path):
     old_case = load(old_path.open(), Loader=Loader)
     new_deployment = {
-        "approved": False,
-        "registry_author": "Shlomi Hod",  # TODO: Change this field to a list, so we can fit multiple authors.
+        "status": "Converted",
+        "registry_authors": ["Shlomi Hod"],
         "deployment": {
             "short_name": old_case["title"],
             "data_curator": old_case["organization"],
             "intended_use": old_case["application"],
             "data_product_type": "TODO",
-            # TODO: Add a new field for region info?
-            "data_product_description": f"{old_case['scope']}. {old_case['region']}. {old_case['description']}",
+            "data_product_region": old_case["region"],
+            "data_product_description": old_case["description"],
             "publication_date": f'{old_case["year"]}-01-01',
             "additional_information_url": old_case["url"],
             "dp_flavor": "TODO",
@@ -61,7 +61,7 @@ def convert(old_path: Path):
     for i, line in enumerate(new_yaml_lines):
         if "TODO" in line:
             new_yaml_lines[i] = re.sub(r"^(\s+)", r"\1# ", line)
-    new_path = Path(__file__).parent / "deployments_from_cases" / old_path.name
+    new_path = Path(__file__).parent.parent / "deployments" / old_path.name
     new_path.write_text("\n".join(new_yaml_lines))
 
 

@@ -1,6 +1,6 @@
 # Copied from google_tier_2.yaml, but with the level 2 data commented out.
 
-approved: False
+status: Draft
 registry_authors:
   - Elena Ghazi
 deployment:

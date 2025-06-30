@@ -1,30 +1,30 @@
-approved: false
+status: Draft
 registry_author: Shlomi Hod
 deployment:
-  short_name: Telemetry Collection in Windows
-  data_curator: Microsoft
-  intended_use: Telemetry Data
+  short_name: Emoji Suggestions
+  data_curator: Apple
+  intended_use: Emoji Suggestions
   # data_product_type: TODO
-  data_product_description: User-level. Global. Data collection is performed every
-    6 hours, with ε = 1.
+  data_product_description: User-level. Not specified. We set the parameters for CMS
+    to be m = 1024, k = 65,536, and e = 4 with p = 2600 emojis.
   publication_date: '2017-01-01'
-  additional_information_url: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
+  additional_information_url: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description: TODO
     privacy_parameters:
-      epsilon: 1
+      epsilon: 4
       rho: null
       delta: null
   model:
     model_type: Local
     # model_type_description: TODO
     # release_type: TODO
-    release_type_description: 6 hours
+    release_type_description: Daily
     # interactivity: TODO
   # additional_dp_information: TODO
   implementation:
     # pre_processing_eda_hyperparameter_tuning: TODO
-    mechanisms: Laplace, Randomized Rounding
+    mechanisms: Count-Min Sketch
     # justification: TODO
