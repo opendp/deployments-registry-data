@@ -7,7 +7,7 @@ deployment:
   intended_use: Health Data
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Israel
-  data_product_description: ''
+  data_product_description: '' # TODO: Fill in correct value
   publication_date: '2024-01-01'
   additional_information_urls:
   - https://birth.dataset.pub
@@ -25,6 +25,6 @@ deployment:
     interactivity: Non-interactive # TODO: Is this correct?
   # additional_dp_information: TODO
   implementation:
-    pre_processing_eda_hyperparameter_tuning: ''
+    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: PrivBayes with Private Selection (Universal Microdata Scheme)
-    justification: ''
+    justification: '' # TODO: Fill in correct value

@@ -65,6 +65,8 @@ def convert(old_path: Path):
     for i, line in enumerate(new_yaml_lines):
         if "TODO" in line:
             new_yaml_lines[i] = re.sub(r"^(\s+)", r"\1# ", line)
+        if "''" in line:
+            new_yaml_lines[i] = f"{line} # TODO: Fill in correct value"
         # Required enumerated values: convert.py just picked one value.
         if any(
             x in line
