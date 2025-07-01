@@ -1,0 +1,30 @@
+status: Converted
+registry_authors:
+- Shlomi Hod
+deployment:
+  name: Israel's National Registry of Live Births of 2014
+  data_curator: Israeli Ministriy of Health
+  intended_use: Health Data
+  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_region: Israel
+  data_product_description: '' # TODO: Fill in correct value
+  publication_date: '2024-01-01'
+  additional_information_urls:
+  - https://birth.dataset.pub
+  # dp_flavor: TODO
+  privacy_loss:
+    privacy_unit: Birth-level
+    # privacy_unit_description: TODO
+    privacy_parameters:
+      epsilon: 9.98
+  model:
+    model_type: Central
+    # model_type_description: TODO
+    release_type: One-shot # TODO: Is this correct?
+    release_type_description: Static
+    interactivity: Non-interactive # TODO: Is this correct?
+  # additional_dp_information: TODO
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    mechanisms: PrivBayes with Private Selection (Universal Microdata Scheme)
+    justification: '' # TODO: Fill in correct value

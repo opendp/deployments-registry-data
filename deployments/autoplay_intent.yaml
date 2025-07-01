@@ -1,0 +1,31 @@
+status: Converted
+registry_authors:
+- Shlomi Hod
+deployment:
+  name: AutoPlay Intent
+  data_curator: Apple
+  intended_use: Video Browser Play
+  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_region: Not Specified
+  data_product_description: For this use case, we set the parameters for CMS to be
+    m = 1024, k = 65,536, and ✏ = 8.
+  publication_date: '2017-01-01'
+  additional_information_urls:
+  - https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+  # dp_flavor: TODO
+  privacy_loss:
+    privacy_unit: User-level
+    # privacy_unit_description: TODO
+    privacy_parameters:
+      epsilon: 8.0
+  model:
+    model_type: Local
+    # model_type_description: TODO
+    release_type: One-shot # TODO: Is this correct?
+    release_type_description: Daily
+    interactivity: Non-interactive # TODO: Is this correct?
+  # additional_dp_information: TODO
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    mechanisms: Count-Min Sketch
+    justification: '' # TODO: Fill in correct value

@@ -1,0 +1,30 @@
+status: Converted
+registry_authors:
+- Shlomi Hod
+deployment:
+  name: Wikipedia Usage Data
+  data_curator: Wikimedia Foundation
+  intended_use: Website Usage Data
+  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_region: Global
+  data_product_description: Pure DP with ε = 1 for the historical data.
+  publication_date: '2023-01-01'
+  additional_information_urls:
+  - https://arxiv.org/abs/2308.16298
+  # dp_flavor: TODO
+  privacy_loss:
+    privacy_unit: Aggregate Statistics and user-level
+    # privacy_unit_description: TODO
+    privacy_parameters:
+      epsilon: 1.0
+  model:
+    model_type: Central
+    # model_type_description: TODO
+    release_type: One-shot # TODO: Is this correct?
+    release_type_description: Varies
+    interactivity: Non-interactive # TODO: Is this correct?
+  # additional_dp_information: TODO
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    mechanisms: zCDP
+    justification: '' # TODO: Fill in correct value

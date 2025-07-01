@@ -1,0 +1,32 @@
+status: Converted
+registry_authors:
+- Shlomi Hod
+deployment:
+  name: LinkedIn Hiring Reports
+  data_curator: LinkedIn
+  intended_use: Labor Market Reports
+  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_region: Not specified
+  data_product_description: Therefore each report is (1.2, 10−10)-DP because the ratio
+    that uses both counts accumulates the privacy loss.
+  publication_date: '2020-01-01'
+  additional_information_urls:
+  - https://arxiv.org/abs/2010.13981
+  # dp_flavor: TODO
+  privacy_loss:
+    privacy_unit: Aggregate Statistics
+    # privacy_unit_description: TODO
+    privacy_parameters:
+      epsilon: 1.2
+      delta: 1.0e-10
+  model:
+    model_type: Central
+    # model_type_description: TODO
+    release_type: One-shot # TODO: Is this correct?
+    release_type_description: Monthly
+    interactivity: Non-interactive # TODO: Is this correct?
+  # additional_dp_information: TODO
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    mechanisms: Laplace, Gumbel
+    justification: '' # TODO: Fill in correct value

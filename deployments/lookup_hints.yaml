@@ -1,0 +1,31 @@
+status: Converted
+registry_authors:
+- Shlomi Hod
+deployment:
+  name: Lookup Hints
+  data_curator: Apple
+  intended_use: Web Browsing
+  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_region: Not specified
+  data_product_description: For Lookup Hints, Apple uses a privacy budget with epsilon
+    of 4, and limits user contributions to two donations per day.
+  publication_date: '1999-01-01' # TODO: Is this correct?
+  additional_information_urls:
+  - https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
+  # dp_flavor: TODO
+  privacy_loss:
+    privacy_unit: User-level
+    # privacy_unit_description: TODO
+    privacy_parameters:
+      epsilon: 4.0
+  model:
+    model_type: Local
+    # model_type_description: TODO
+    release_type: One-shot # TODO: Is this correct?
+    release_type_description: Daily
+    interactivity: Non-interactive # TODO: Is this correct?
+  # additional_dp_information: TODO
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    mechanisms: Unknown
+    justification: '' # TODO: Fill in correct value

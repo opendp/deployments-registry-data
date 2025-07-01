@@ -1,6 +1,6 @@
 # Copied from google_tier_3.yaml, but with the TODO comments stripped, and the level 3 data commented out.
 
-approved: False
+status: Draft
 registry_authors:
   - Elena Ghazi
 deployment:

@@ -1,0 +1,31 @@
+status: Converted
+registry_authors:
+- Shlomi Hod
+deployment:
+  name: Korean Government Statistical Data Hub Platform
+  data_curator: KOSTAT (National Statistics Office of Korea)
+  intended_use: Goverment Data Hub
+  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_region: Korea
+  data_product_description: Statistics Korea is promoting the establishment of a public
+    big data system that leverages cutting-edge privacy-preserving techniques to enable
+    the safe linkage and use of scattered governmental data.
+  publication_date: '2021-01-01'
+  additional_information_urls:
+  - https://unstats.un.org/wiki/display/UGTTOPPT/11.+Statistics+Korea%3A+Developing+a+privacy-preserving+Statistical+Data+Hub+Platform
+  # dp_flavor: TODO
+  privacy_loss:
+    privacy_unit: Aggregate-level
+    # privacy_unit_description: TODO
+    privacy_parameters: {}
+  model:
+    model_type: Central
+    # model_type_description: TODO
+    release_type: One-shot # TODO: Is this correct?
+    release_type_description: Not specified
+    interactivity: Non-interactive # TODO: Is this correct?
+  # additional_dp_information: TODO
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    mechanisms: Unknown
+    justification: '' # TODO: Fill in correct value
