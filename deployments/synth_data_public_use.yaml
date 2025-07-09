@@ -1,6 +1,7 @@
 status: Converted
 registry_authors:
-- Shlomi Hod
+- Nicolas Berrios
+- Jack Fitzsimons
 deployment:
   name: Synthetic Data for Public Use
   data_curator: Office of National Statistics UK

@@ -1,6 +1,7 @@
 status: Converted
 registry_authors:
-- Shlomi Hod
+- Nicolas Berrios
+- Jack Fitzsimons
 deployment:
   name: Census County Business Patterns
   data_curator: United States Census Bureau
