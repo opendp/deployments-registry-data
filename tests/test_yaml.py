@@ -31,7 +31,5 @@ def test_good_yaml(yaml_path):
 )
 def test_bad_yaml(bad_yaml_path):
     errors = check(bad_yaml_path)
-    clean_error = (
-        re.sub(r"\W+", " ", errors["check schema"][0]).strip().replace(" ", "_").lower()
-    )
+    clean_error = re.sub(r"\W+", " ", str(errors)).strip().replace(" ", "_").lower()
     assert clean_error == bad_yaml_path.stem

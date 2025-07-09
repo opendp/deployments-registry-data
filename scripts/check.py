@@ -1,6 +1,6 @@
 from pathlib import Path
 from sys import exit
-from yaml import load, Loader, dump
+from yaml import load, Loader, dump, scan
 import re
 from jsonschema import validate, Draft7Validator
 from spellchecker import SpellChecker
@@ -79,6 +79,19 @@ def check_urls(yaml_path):
             request = requests.get(url)
             if request.status_code != 200:
                 errors.append(f"HTTP {request.status_code} for {url}")
+    return errors
+
+
+def check_quoting(yaml_path):
+    errors = []
+    for token in scan(yaml_path.open(), Loader=Loader):
+        if hasattr(token, "style"):
+            style = token.style
+            if style is None or style in ["|", '"', "'"]:
+                continue
+            errors.append(
+                f'instead of "{style}", use "|" to preserve whitespace in "{token.value}"'
+            )
     return errors
 
 

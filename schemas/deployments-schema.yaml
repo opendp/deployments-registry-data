@@ -1,4 +1,4 @@
-description: >
+description: |
   Description of a differential privacy deployment.
   All strings will be interpretted as markdown when rendered.
 type: object
@@ -148,7 +148,7 @@ properties:
             # TODO: Description for this field?
             type: string
           release_type:
-            description: >
+            description: |
               One-shot: The data product is published once.
               - Are there any plans for future uses or publications of the underlying data?
 
@@ -162,7 +162,7 @@ properties:
           # TODO: Description for this field?
             type: string
           interactivity:
-            description: >
+            description: |
               Interactive: Data users can interactively make queries under DP of a sensitive database
 
               Non-interactive: Data users may not interactively make queries under DP of a sensitive database
@@ -201,7 +201,7 @@ properties:
             type: string
           mechanisms:
             # TODO: Suggest splitting this into subfields if the bullet points are authoritative.
-            description: >
+            description: |
               - Differentially private mechanisms (i.e., algorithms) used to produce the data product, like the Laplace or Gaussian Mechanisms.
               - How the mechanisms were implemented. If via a library, which one?
               - If interactive, what measures, if any, were taken to protect against timing channel attacks?
@@ -211,7 +211,7 @@ properties:
               - Version of the code & github link, if available
             type: string
           justification:
-            description: >
+            description: |
               Process by which any of the above choices surrounding implementation of DP were made, and well as any rationale around these decisions. Some questions that this section may answer include, but are not limited to:
 
               “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?” (Expose your epsilons)
