@@ -33,13 +33,13 @@ deployment:
 
   # NOTE: In the example, this is labeled as "Post-processing and composition".
   additional_dp_information:
-    post_processing: >
+    post_processing: |
       A region-specific constant c is chosen once based on the February-July 2020 window to ensure we end up in a [0,100] percent scale.
 
       Unreliable metrics are removed based on a 50% confidence for the ratio deviating more than 25% from the true one.
 
       Deciding whether to release daily or weekly granularity is made once on the initial window for top-level geopolitical subdivisions (e.g., US states) or higher-resolution granularity (e.g., US counties). Release per country is always daily.
-    composition: >
+    composition: |
       Basic sequential composition (counting symptoms + normalization)
 
   implementation:
