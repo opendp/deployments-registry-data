@@ -1,6 +1,7 @@
 status: Converted
 registry_authors:
-- Shlomi Hod
+- Nicolas Berrios
+- Jack Fitzsimons
 deployment:
   name: COVID-19 Search Trends Symptoms Dataset
   data_curator: Google

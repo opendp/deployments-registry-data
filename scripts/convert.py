@@ -7,7 +7,7 @@ def convert(old_path: Path):
     old_case = load(old_path.open(), Loader=Loader)
     new_deployment = {
         "status": "Converted",
-        "registry_authors": ["Shlomi Hod"],
+        "registry_authors": ["Nicolas Berrios", "Jack Fitzsimons"],
         "deployment": {
             "name": old_case["title"],
             "data_curator": old_case["organization"],

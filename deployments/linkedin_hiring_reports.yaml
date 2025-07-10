@@ -1,6 +1,7 @@
 status: Converted
 registry_authors:
-- Shlomi Hod
+- Nicolas Berrios
+- Jack Fitzsimons
 deployment:
   name: LinkedIn Hiring Reports
   data_curator: LinkedIn

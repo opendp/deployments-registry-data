@@ -1,6 +1,7 @@
 status: Converted
 registry_authors:
-- Shlomi Hod
+- Nicolas Berrios
+- Jack Fitzsimons
 deployment:
   name: Korean Government Statistical Data Hub Platform
   data_curator: KOSTAT (National Statistics Office of Korea)
