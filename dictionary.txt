@@ -5,3 +5,4 @@ zCDP
 unlinkable
 emojis
 anonymization
+sym
