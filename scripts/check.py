@@ -100,8 +100,11 @@ def check_quoting(yaml_path):
 
 
 def infer_tier(deployment):
-    # TODO
-    return 1, []
+    tier = 1
+    deployment_fields = set(deployment["deployment"].keys())
+    if deployment_fields > {"dp_flavor", "privacy_loss", "model"}:
+        tier = 2
+    return tier, []
 
 
 def check_tier(yaml_path):
