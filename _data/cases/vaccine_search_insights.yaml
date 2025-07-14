@@ -1,0 +1,14 @@
+title: "Vaccine Search Insights"
+url: "https://arxiv.org/abs/2107.01179"
+organization: "Google"
+epsilon: 2.19
+delta: "1e-5"
+rho: null
+model: "Central"
+dynamic: "Daily"
+description: "The applied anonymization techniques protect every user’s daily search activity related to COVID-19 vaccinations with (ε, δ)-diﬀerential privacy for ε = 2.19 and δ = 10−5."
+year: 2021
+application: "Health Data"
+mechanism: "Gaussian"
+scope: "User-level"
+region: "Global"

@@ -1,0 +1,14 @@
+title: "HealthKit"
+url: "https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf"
+organization: "Apple"
+epsilon: 2
+delta: null
+rho: null
+model: "Local"
+dynamic: "Daily"
+description: "We deploy CMS to observe the most popular health data types with the following parameters: m = 256, k = 65,536, and ✏ = 2."
+year: 2017
+application: "Health Data"
+mechanism: "Count-Min Sketch"
+scope: "User-level"
+region: "Not specified"

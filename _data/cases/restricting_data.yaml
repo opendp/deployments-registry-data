@@ -1,0 +1,14 @@
+title: "Disclosure Avoidance System for Redistricting Data"
+url: "https://www.census.gov/newsroom/press-releases/2021/2020-census-key-parameters.html"
+organization: "United States Census Bureau"
+epsilon: 19.61
+delta: null
+rho: null
+model: "Central"
+dynamic: "Static"
+description: "The approved DAS production settings reflect a total privacy-loss budget for the redistricting data product (represented by “ε,” the Greek letter “epsilon”) of ε=19.61."
+year: 2020
+application: "Data Disclosure"
+mechanism: "Not Specified"
+scope: "Aggregate-level"
+region: "United States"

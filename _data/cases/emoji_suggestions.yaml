@@ -1,0 +1,14 @@
+title: "Emoji Suggestions"
+url: "https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf"
+organization: "Apple"
+epsilon: 4
+delta: null
+rho: null
+model: "Local"
+dynamic: "Daily"
+description: "We set the parameters for CMS to be m = 1024, k = 65,536, and e = 4 with p = 2600 emojis."
+year: 2017
+application: "Emoji Suggestions"
+mechanism: "Count-Min Sketch"
+scope: "User-level"
+region: "Not specified"

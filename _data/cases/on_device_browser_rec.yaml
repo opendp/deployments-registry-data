@@ -1,0 +1,14 @@
+title: "On-device browser recommendations"
+url: "https://brave.com/blog/federated-learning/"
+organization: "Brave"
+epsilon: null
+delta: null
+rho: null
+model: "Central"
+dynamic: "Not specified"
+description: "Brave is leveraging federated learning and differential privacy to provide on-device browser recommendations."
+year: 2021
+application: "Browsing Recommendations"
+mechanism: "DP SGD*"
+scope: "User-level"
+region: "Global"

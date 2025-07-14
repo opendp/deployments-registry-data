@@ -1,0 +1,14 @@
+title: "Spanish-language Keyword Next-word Prediction"
+url: "https://research.google/blog/federated-learning-with-formal-differential-privacy-guarantees/"
+organization: "Google"
+epsilon: null
+delta: null
+rho: 0.81
+model: "Local"
+dynamic: "Not specified"
+description: "Our analysis gives ρ=0.81 zCDP at the user level (treating all the data on each device as a different user), where smaller numbers correspond to better privacy in a mathematically precise way."
+year: 2022
+application: "Language Model"
+mechanism: "zCDP"
+scope: "User-level"
+region: "Spanish-Speaking Users"

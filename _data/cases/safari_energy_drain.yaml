@@ -1,0 +1,14 @@
+title: "Safari Energy Draining and Crashing Domains"
+url: "https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf"
+organization: "Apple"
+epsilon: 4
+delta: null
+rho: null
+model: "Local"
+dynamic: "Daily"
+description: "For this use case, we set the parameters for HCMS to be m = 32,768, k = 1024, and ✏ = 4 with p = 250,000 web domains."
+year: 2017
+application: "Browser Statistics"
+mechanism: "Hierarchical Count-Min Sketch"
+scope: "User-level"
+region: "Global"

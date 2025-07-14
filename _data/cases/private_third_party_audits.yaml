@@ -1,0 +1,14 @@
+title: "Private Third Party Audits"
+url: "https://unstats.un.org/wiki/display/UGTTOPPT/14.+Twitter+and+OpenMined%3A+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets"
+organization: "Twitter, OpenMined"
+epsilon: null
+delta: null
+rho: null
+model: "Central"
+dynamic: "Static"
+description: "In September, 2022, in conjunction with the UN General Assembly and Christchurch Call leaders summit, New Zealand Prime Minister Jacinda Ardern and French President Emmanuel Macron announced the Christchurch Initiative on Algorithmic Outcomes, a partnership between New Zealand, the United States, Twitter, Microsoft and OpenMined to develop and test a differential privacy system to enable privacy preserving research across multiple online platforms."
+year: 2022
+application: "Synthetic Data Releases for Audits"
+mechanism: "Not Specificed, Synthetic Data"
+scope: "Aggregate-level"
+region: "Global"

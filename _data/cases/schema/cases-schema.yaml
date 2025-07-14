@@ -1,0 +1,42 @@
+type: "object"
+properties:
+  title:
+    type: "string"
+  cite:
+    type: "string"
+  organization:
+    type: "string"
+  epsilon:
+    type: ["number", "null"]
+  delta:
+    type: ["number", "string", "null"]
+  rho:
+    type: ["number", "null"]
+  model:
+    type: "string"
+  dynamic:
+    type: "string"
+  description:
+    type: "string"
+  year:
+    type: "integer"
+  application:
+    type: "string"
+  mechanism:
+    type: "string"
+  scope:
+    type: "string"
+  region:
+    type: "string"
+required:
+  - title
+  - url
+  - organization
+  - model
+  - dynamic
+  - description
+  - year
+  - application
+  - mechanism
+  - scope
+  - region
