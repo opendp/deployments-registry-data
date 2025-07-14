@@ -11,6 +11,8 @@ deployment:
   data_product_region: Global
   data_product_description: A publicly released dataset of daily or weekly time series giving the relative frequency of searches for ~400 predefined symptoms in each geographic region, normalized by total search activity
   publication_date: "2020-09-01"
+  additional_information_urls:
+    - https://arxiv.org/abs/2009.01265
   dp_flavor:
     name: Pure DP
     data_domain: Per-user Google search queries classified as “symptom searches” (from a predefined list of ~400 symptoms) and total search activity for normalization, aggregated as <day or week, symptom, region> at three geographic granularity levels
