@@ -2,6 +2,7 @@ status: Converted
 registry_authors:
 - Nicolas Berrios
 - Jack Fitzsimons
+tier: 1
 deployment:
   name: Korean Government Statistical Data Hub Platform
   data_curator: KOSTAT (National Statistics Office of Korea)

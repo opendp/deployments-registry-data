@@ -95,6 +95,28 @@ def check_quoting(yaml_path):
     return errors
 
 
+def infer_tier(deployment):
+    # TODO
+    return 1, []
+
+
+def check_tier(yaml_path):
+    errors = []
+    deployment = load(yaml_path.open(), Loader=Loader)
+    expected_tier = deployment["tier"]
+    inferred_tier, missing_fields = infer_tier(deployment)
+    if expected_tier < inferred_tier:
+        assert not missing_fields
+        errors.append(
+            f"tier could be increased from {expected_tier} to {inferred_tier}"
+        )
+    if expected_tier > inferred_tier:
+        errors.append(
+            f"record is actually only tier {inferred_tier}; "
+            f'for tier {expected_tier} fill in {", ".join(missing_fields)}'
+        )
+
+
 def check(yaml_path: Path):
     detail_checks = [
         function for name, function in globals().items() if name.startswith("check_")

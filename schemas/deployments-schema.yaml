@@ -6,6 +6,7 @@ additionalProperties: False
 required:
   - status
   - registry_authors
+  - tier
   - deployment
 properties:
   status:
@@ -25,6 +26,13 @@ properties:
     items:
       type: string
     minItems: 1
+  tier:
+    describe: The completeness of the description. For higher tiers, we confirm that more fields are filled in.
+    type: integer
+    enum:
+      - 1
+      - 2
+      - 3
   deployment:
     type: object
     additionalProperties: False

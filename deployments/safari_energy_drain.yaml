@@ -2,6 +2,7 @@ status: Converted
 registry_authors:
 - Nicolas Berrios
 - Jack Fitzsimons
+tier: 1
 deployment:
   name: Safari Energy Draining and Crashing Domains
   data_curator: Apple

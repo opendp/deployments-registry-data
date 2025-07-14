@@ -1,6 +1,7 @@
 status: Draft
 registry_authors:
   - ''
+tier: 1
 deployment:
   # Tier 1:
   name: ''
