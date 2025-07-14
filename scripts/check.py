@@ -29,7 +29,10 @@ def check_name(yaml_path: Path):
 def check_schema(yaml_path):
     instance = load(yaml_path.open(), Loader=Loader)
     validator = Draft7Validator(schema, format_checker=Draft7Validator.FORMAT_CHECKER)
-    return [error.message for error in validator.iter_errors(instance)]
+    return [
+        f'{".".join(error.path)}: {error.message}'
+        for error in validator.iter_errors(instance)
+    ]
 
 
 def get_all_values_paths(node, path=""):
@@ -108,6 +111,10 @@ def infer_tier(deployment):
         return 1, 2, sorted(tier_2_missing_fields)
 
     tier_3_expected_fields = {
+        "dp_flavor": {
+            "data_domain",
+            "unprotected_quantities",
+        },
         "privacy_loss": {
             "privacy_unit_description",
             "privacy_parameters_description",
@@ -117,11 +124,20 @@ def infer_tier(deployment):
             "release_type_description",
             "interactivity_description",
         },
+        "additional_dp_information": {
+            "post_processing",
+            "composition",
+        },
+        "implementation": {
+            "pre_processing_eda_hyperparameter_tuning",
+            "mechanisms",
+            "justification",
+        },
     }
     tier_3_missing_fields = set()
     for field_group, expected_fields in tier_3_expected_fields.items():
         missing_sub_fields = (
-            expected_fields - deployment["deployment"][field_group].keys()
+            expected_fields - deployment["deployment"].get(field_group, {}).keys()
         )
         tier_3_missing_fields |= {
             f"{field_group}.{sub_field}" for sub_field in missing_sub_fields
@@ -136,6 +152,9 @@ def check_tier(yaml_path):
     errors = []
     deployment = load(yaml_path.open(), Loader=Loader)
     expected_tier = deployment["tier"]
+    if expected_tier not in {1, 2, 3}:
+        # Exit early: JSON Schema will provide message.
+        return errors
     inferred_tier, next_tier, missing_fields = infer_tier(deployment)
     if expected_tier < inferred_tier:
         errors.append(
