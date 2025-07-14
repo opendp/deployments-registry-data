@@ -100,27 +100,51 @@ def check_quoting(yaml_path):
 
 
 def infer_tier(deployment):
-    tier = 1
-    deployment_fields = set(deployment["deployment"].keys())
-    if deployment_fields > {"dp_flavor", "privacy_loss", "model"}:
-        tier = 2
-    return tier, []
+    deployment_fields = deployment["deployment"].keys()
+
+    tier_2_expected_fields = {"dp_flavor", "privacy_loss", "model"}
+    tier_2_missing_fields = tier_2_expected_fields - deployment_fields
+    if tier_2_missing_fields:
+        return 1, 2, tier_2_missing_fields
+
+    tier_3_expected_fields = {
+        "privacy_loss": {
+            "privacy_unit_description",
+            "privacy_parameters_description",
+        },
+        "model": {
+            "model_type_description",
+            "release_type_description",
+            "interactivity_description",
+        },
+    }
+    tier_3_missing_fields = set()
+    for field_group, expected_fields in tier_3_expected_fields.items():
+        missing_sub_fields = (
+            expected_fields - deployment["deployment"][field_group].keys()
+        )
+        tier_3_missing_fields |= {
+            f"{field_group}.{sub_field}" for sub_field in missing_sub_fields
+        }
+    if tier_3_missing_fields:
+        return 2, 3, tier_3_missing_fields
+
+    return 3, None, {}
 
 
 def check_tier(yaml_path):
     errors = []
     deployment = load(yaml_path.open(), Loader=Loader)
     expected_tier = deployment["tier"]
-    inferred_tier, missing_fields = infer_tier(deployment)
+    inferred_tier, next_tier, missing_fields = infer_tier(deployment)
     if expected_tier < inferred_tier:
-        assert not missing_fields
         errors.append(
             f"tier could be increased from {expected_tier} to {inferred_tier}"
         )
     if expected_tier > inferred_tier:
         errors.append(
-            f"record is actually only tier {inferred_tier}; "
-            f'for tier {expected_tier} fill in {", ".join(missing_fields)}'
+            f"record is only tier {inferred_tier} not tier {expected_tier}; "
+            f'for tier {next_tier} fill in {", ".join(missing_fields)}'
         )
     return errors
 
