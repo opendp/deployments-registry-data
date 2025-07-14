@@ -105,7 +105,7 @@ def infer_tier(deployment):
     tier_2_expected_fields = {"dp_flavor", "privacy_loss", "model"}
     tier_2_missing_fields = tier_2_expected_fields - deployment_fields
     if tier_2_missing_fields:
-        return 1, 2, tier_2_missing_fields
+        return 1, 2, sorted(tier_2_missing_fields)
 
     tier_3_expected_fields = {
         "privacy_loss": {
@@ -127,7 +127,7 @@ def infer_tier(deployment):
             f"{field_group}.{sub_field}" for sub_field in missing_sub_fields
         }
     if tier_3_missing_fields:
-        return 2, 3, tier_3_missing_fields
+        return 2, 3, sorted(tier_3_missing_fields)
 
     return 3, None, {}
 
@@ -158,7 +158,7 @@ def check(yaml_path: Path):
         name = detail_check.__name__.replace("_", " ")
         print(f"\t{name}...")
         error = detail_check(yaml_path)
-        assert isinstance(error, list)
+        assert isinstance(error, list), f"Expected list, not {error}"
         if error:
             errors[name] = error
     return errors
@@ -182,7 +182,7 @@ if __name__ == "__main__":
     for yaml_path in yaml_paths:
         print(f"Validating {yaml_path.name}...")
         error = check(yaml_path)
-        assert isinstance(error, list)
+        assert isinstance(error, dict), f"Expected list, not {error}"
         if error:
             errors[yaml_path.name] = error
     if errors:
