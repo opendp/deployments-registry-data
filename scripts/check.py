@@ -18,8 +18,12 @@ known_bad_urls = (root / "known_bad_urls.txt").read_text().splitlines()
 
 
 def check_name(yaml_path: Path):
+    errors = []
     if not re.fullmatch(r"[a-z0-9_]+\.yaml", yaml_path.name):
-        return "File names should be lowercase letters, numbers, and underscores."
+        errors.append(
+            "File names should be lowercase letters, numbers, and underscores."
+        )
+    return errors
 
 
 def check_schema(yaml_path):
@@ -127,6 +131,7 @@ def check(yaml_path: Path):
         name = detail_check.__name__.replace("_", " ")
         print(f"\t{name}...")
         error = detail_check(yaml_path)
+        assert isinstance(error, list)
         if error:
             errors[name] = error
     return errors
