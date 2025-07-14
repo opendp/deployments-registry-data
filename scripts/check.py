@@ -115,6 +115,7 @@ def check_tier(yaml_path):
             f"record is actually only tier {inferred_tier}; "
             f'for tier {expected_tier} fill in {", ".join(missing_fields)}'
         )
+    return errors
 
 
 def check(yaml_path: Path):
@@ -149,6 +150,7 @@ if __name__ == "__main__":
     for yaml_path in yaml_paths:
         print(f"Validating {yaml_path.name}...")
         error = check(yaml_path)
+        assert isinstance(error, list)
         if error:
             errors[yaml_path.name] = error
     if errors:
