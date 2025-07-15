@@ -38,33 +38,22 @@ properties:
       - publication_date
     properties:
       # Tier 1
-      name:
-        description: The name of the data product.
-        type: string
       data_curator:
         description: The name of the entity publishing the data product.
         type: string
+      description:
+        description: Brief description of the data product.
+        type: string
       intended_use:
         description: Intended use(s) of the data product.
-        type: string
-      data_product_type:
-        description: Type of data product, like “Summary statistics” or “Machine learning model.”
-        type: string
-        enum:
-          - Summary statistics
-          - Machine learning model
-          # Add to this list as needed.
-      data_product_region:
-        description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
-        type: string
-      data_product_description:
-        # TODO: Add this field? Present in sample data. Maybe just "description?"
-        description: TODO!
         type: string
       publication_date:
         description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of continual release, the publication date can be expressed as the date of first publication.
         type: string
         format: date
+      data_product_region:
+        description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
+        type: string
       additional_information_urls:
         # Required, but may be empty. Requiring a list makes the display logic a little simpler.
         type: array
@@ -82,14 +71,31 @@ properties:
           - unprotected_quantities
         properties:
           name:
+            description: |
+              The name of the DP flavor used, like "Pure DP", or "Approximate DP".
+
+              If a commonly-known flavor was not used, it can be expressed as "other".
+
+              If "other" is used, then specify the `input_metric`, `bound_on_input_distance`, `output_measure`, `bound_on_output_distance`
             type: string
             enum:
-              - Pure DP
-              - Approximate DP
-              - Zero Concentrated DP
+              - pure DP
+              - approximate DP
+              - zero concentrated DP
               - Renyi DP
               - other
-              # TODO: If we have a deployment with "other", we should consider whether a structured representation is useful and sustainable.
+          input_metric:
+            description: Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55)
+            type: string
+          bound_on_input_distance:
+            description: Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
+            type: string
+          output_measure:
+            description: Function that computes the distance between probability distributions of the differentially private mechanism applied to datasets in the data domain.
+            type: string
+          bound_on_output_distance:
+            description: Maximum distance, computed by the output metric, between probability distributions of the differentially private mechanism applied to adjacent datasets.
+            type: string
           data_domain:
             description: Actual, potential, or counterfactual datasets eligible for protection
             type: string
@@ -104,10 +110,9 @@ properties:
           - privacy_parameters
         properties:
           privacy_unit:
-            description: The entity whose data changes under adjacent datasets (see above), like a user or a user’s contribution (among multiple) (based partly on Bailie et al. 2025)
+            description: The entity whose data changes under adjacent datasets (see above), like a user or a user’s contribution (among multiple) (based partly on Bailie et al. 2025). High-level description of the granularity of protection (e.g., user level; user-day).
             type: string
           privacy_unit_description:
-            # TODO: This represents the level 3 data. Confirm that it's ok to have a separate field? I think this will be cleaner than having a single field whose detail will vary.
             description: A precise specification of what constitutes adjacent datasets (e.g., in terms of your dataset schema. Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55) Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
             type: string
           privacy_parameters:
@@ -127,55 +132,59 @@ properties:
         type: object
         additionalProperties: False
         required:
-          - model_type
+          - model_name
           - release_type
           - interactivity
         properties:
-          model_type:
+          model_name:
             description: Name of the deployment model. “The models differ based on how much trust individuals in the data have in a central authority data system.” (HoDP, pg 34)
             type: string
             enum:
-              - Local
-              - Central
-              - Shuffle
-              - Federated
-              - Not specified # TODO: Present in converted records. Find value, or make field optional?
-              - Varies # TODO: Present in converted records. Make this a list, instead of a single value?
+              - local
+              - central
+              - shuffle
+              - federated
+              - not specified # TODO: Present in converted records. Find value, or make field optional?
+              - varies # TODO: Present in converted records. Make this a list, instead of a single value?
           actors:
             description: Who are the relevant actors in the deployment? This includes anyone who may see the data product, even partially, and including adversaries. What are their trust assumptions and what is the rationale for these trust assumptions?
             type: string
           model_type_description:
             # TODO: Description for this field?
             type: string
-          release_type:
+          one_or_many_shot:
             description: |
-              One-shot: The data product is published once.
-              - Are there any plans for future uses or publications of the underlying data?
+               If the data product is `one-shot`, it is published once.
 
-              Continual: The data product is continually published as new data are collected.
-              - Refreshment timeframe, how privacy loss is managed over time, whether a fixed amount of privacy loss is allowed before the underlying dataset is no longer queried.
+               If the data product is `many-shot`, there are many publications of it over time.
             type: string
             enum:
-              - One-shot
-              - Continual
-          release_type_description:
-          # TODO: Description for this field?
-            type: string
-          interactivity:
+              - one-shot
+              - many-shot
+          one_or_many_shot_description:
             description: |
-              Interactive: Data users can interactively make queries under DP of a sensitive database
+              For `one-shot` deployments, entries should state if there are plans for future uses or publications of the data used to create the data product.
 
-              Non-interactive: Data users may not interactively make queries under DP of a sensitive database
+              For `many-shot` deployments, entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
+            type: string
+          dynamic_or_static:
+            description: If the underlying data are dynamic, it means that new underlying data come in over time. On the other hand, if the underlying data are static, new data do not come in over time.
+            enum:
+              - dynamic
+              - static
+          dynamic_or_static_description:
+            description: If more description is useful
+          interactive_or_noninteractive:
+            description: |
+              Under interactive deployments, people with permission, like data analysts, can interactively query the underlying data under differential privacy. They will be returned privacy-protected query estimates.
             type: string
             enum:
-              - Interactive
-              - Non-interactive
-          interactivity_description:
-            # TODO: Confirm that this is a good place for the level 3 data?
-            description: How is privacy loss budget apportioned to analysts (or is non-collusion between analysts assumed)?
+              - interactive
+              - non-interactive
+          interactive_or_noninteractive_description:
+            description: Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
             type: string
-      additional_dp_information:
-        # TODO: Can this fit inside one of the other objects?
+      accounting:
         type: object
         additionalProperties: False
         required:
@@ -200,7 +209,6 @@ properties:
             description: Description of any pre-processing of the data before DP protections and any exploratory data analysis conducted before DP protections, and whether privacy loss was accounted for. How were hyperparameters, like privacy loss parameters, tuned? Was privacy loss associated with this tuning accounted for?
             type: string
           mechanisms:
-            # TODO: Suggest splitting this into subfields if the bullet points are authoritative.
             description: |
               - Differentially private mechanisms (i.e., algorithms) used to produce the data product, like the Laplace or Gaussian Mechanisms.
               - How the mechanisms were implemented. If via a library, which one?
