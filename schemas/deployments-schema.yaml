@@ -38,6 +38,7 @@ properties:
       - data_product_region
       - data_product_description
       - publication_date
+      - additional_information_urls
     properties:
       data_curator:
         tier: 1
