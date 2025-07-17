@@ -27,6 +27,13 @@ properties:
     items:
       type: string
     minItems: 1
+  tier:
+    describe: The completeness of the description. For higher tiers, more fields are filled in, but this is guidance, rather than a requirement.
+    type: integer
+    enum:
+      - 1
+      - 2
+      - 3
   deployment:
     type: object
     additionalProperties: False
@@ -41,9 +48,13 @@ properties:
       - additional_information_urls
     properties:
       data_curator:
-        tier: 1
-        description: The name of the entity publishing the data product.
-        type: string
+        type: object
+        additionalProperties: False
+        properties:
+          name:
+            tier: 1
+            description: The name of the entity publishing the data product.
+            type: string
       description:
         tier: 1
         description: Brief description of the data product.
@@ -52,6 +63,13 @@ properties:
         tier: 1
         description: Intended use(s) of the data product.
         type: string
+      data_product_type:
+        description: Type of data product. This enumeration will grow over time with more examples.
+        type: string
+        enum:
+          - Summary statistics
+          - Machine learning model
+          # Add to this list as needed.
       publication_date:
         tier: 1
         description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of continual release, the publication date can be expressed as the date of first publication.
