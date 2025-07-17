@@ -1,13 +1,12 @@
 description: |
   Description of a differential privacy deployment.
   All strings will be rendered as markdown with latex in the frontend.
-  The `tiers` in this schema are suggested, but except for the fields
-  marked as `required`, there are not rigorous requirements.
 type: object
 additionalProperties: False
 required:
   - status
   - registry_authors
+  - tier
   - deployment
 properties:
   status:
@@ -28,7 +27,7 @@ properties:
       type: string
     minItems: 1
   tier:
-    describe: The completeness of the description. For higher tiers, more fields are filled in, but this is guidance, rather than a requirement.
+    description: The completeness of the description. For higher tiers, more fields are filled in, but this is guidance, rather than a requirement.
     type: integer
     enum:
       - 1
@@ -40,6 +39,7 @@ properties:
     required:
       - name
       - data_curator
+      - description
       - intended_use
       - data_product_type
       - data_product_region
@@ -49,6 +49,8 @@ properties:
     properties:
       data_curator:
         type: object
+        required:
+          - name
         additionalProperties: False
         properties:
           name:
@@ -64,6 +66,7 @@ properties:
         description: Intended use(s) of the data product.
         type: string
       data_product_type:
+        tier: 1
         description: Type of data product. This enumeration will grow over time with more examples.
         type: string
         enum:
