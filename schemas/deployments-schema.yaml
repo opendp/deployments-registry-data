@@ -22,7 +22,7 @@ properties:
       - "Approved (Update Requested)" # Small updates requested, but still can be displayed as "Approved".
       - "Approved (Pending)" # Small updates made.
   registry_authors:
-    description: The authors of this record.
+    description: The author(s) of this record. This refers to who filled out the entry, which might be different from who made the deployment.
     type: array
     items:
       type: string
