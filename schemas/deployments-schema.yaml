@@ -3,6 +3,8 @@ description: |
   All strings will be rendered as markdown with latex in the frontend.
   The `tiers` in this schema are suggested, but except for the fields
   marked as `required`, there are not rigorous requirements.
+
+  This schema is based on ongoing research by Elena Ghazi, Priyanka Nanayakkara, and Salil Vadhan
 type: object
 additionalProperties: False
 required:
@@ -49,13 +51,9 @@ properties:
       - additional_information_urls
     properties:
       data_curator:
-        type: object
-        additionalProperties: False
-        properties:
-          name:
-            tier: 1
-            description: The name of the entity publishing the data product.
-            type: string
+        tier: 1
+        description: The name of the entity publishing the data product.
+        type: string
       description:
         tier: 1
         description: Brief description of the data product.
@@ -73,20 +71,22 @@ properties:
           # Add to this list as needed.
       publication_date:
         tier: 1
-        description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of continual release, the publication date can be expressed as the date of first publication.
+        description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of many releases, the publication date can be expressed as the date of first publication.
         type: string
         format: date
       data_product_region:
         tier: 1
         description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
         type: string
-      additional_information_urls:
+      data_product_sector:
         tier: 1
-        # Required, but may be empty. Requiring a list makes the display logic a little simpler.
-        type: array
-        items:
-          type: string
-          format: url
+        description: The industry or domain described by the data product.
+        type: string
+        enum:
+          - Technology
+          - Healthcare
+          - Education
+          # Add to this list as needed.
 
       # Tiers 2 and 3
       dp_flavor:
@@ -258,3 +258,6 @@ properties:
 
               “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?” (Expose your epsilons)
             type: string
+      additional_information:
+        tier: 1
+        type: string
