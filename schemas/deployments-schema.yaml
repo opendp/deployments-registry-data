@@ -31,7 +31,7 @@ properties:
       type: string
     minItems: 1
   tier:
-    describe: The completeness of the description. For higher tiers, more fields are filled in, but this is guidance, rather than a requirement.
+    description: The completeness of the description. For higher tiers, more fields are filled in, but this is guidance, rather than a requirement.
     type: integer
     enum:
       - 1
@@ -66,6 +66,7 @@ properties:
         description: Intended use(s) of the data product.
         type: string
       data_product_type:
+        tier: 1
         description: Type of data product. This enumeration will grow over time with more examples.
         type: string
         enum:
