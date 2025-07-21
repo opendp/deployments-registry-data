@@ -39,15 +39,15 @@ def convert(old_path: Path):
                 },
             },
             "model": {
-                "model_type": old_case["model"],
-                "model_type_description": "TODO",
+                "model_name": old_case["model"],
+                "model_name_description": "TODO",
                 "release_type": "One-shot",
-                "release_type_description": old_case[
+                "is_many_release_description": old_case[
                     "dynamic"
                 ],  # Descriptions need to be fleshed out.
                 "interactivity": "Non-interactive",
             },
-            "additional_dp_information": "TODO",
+            "additional_information": "TODO",
             # {
             #     'post_processing': 'TODO',
             #     'composition': 'TODO',
