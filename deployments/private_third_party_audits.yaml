@@ -9,15 +9,14 @@ deployment:
   intended_use: Synthetic Data Releases for Audits
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global
-  data_product_description: In September, 2022, in conjunction with the UN General
+  description: In September, 2022, in conjunction with the UN General
     Assembly and Christchurch Call leaders summit, New Zealand Prime Minister Jacinda
     Ardern and French President Emmanuel Macron announced the Christchurch Initiative
     on Algorithmic Outcomes, a partnership between New Zealand, the United States,
     Twitter, Microsoft and OpenMined to develop and test a differential privacy system
     to enable privacy preserving research across multiple online platforms.
   publication_date: '2022-01-01'
-  additional_information_urls:
-  - https://unstats.un.org/wiki/display/UGTTOPPT/14.+Twitter+and+OpenMined%3A+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets
+  additional_information: https://unstats.un.org/wiki/display/UGTTOPPT/14.+Twitter+and+OpenMined%3A+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate-level
@@ -27,7 +26,7 @@ deployment:
     model_name: Central
     # model_name_description: TODO
     is_many_release: False # TODO: Is this correct?
-    release_type_description: Static
+    is_many_release_description: Static
     is_interactive: False # TODO: Is this correct?
   # additional_information: TODO
   implementation:

@@ -9,12 +9,11 @@ deployment:
   intended_use: Mobility Catastrophe Data
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: USA
-  data_product_description: 'In this case, the Laplace mechanism is used for all four
+  description: 'In this case, the Laplace mechanism is used for all four
     operations. Finally, the privacy budget, E, is set as follows: • E = 4 for CTU
     • E = 2 for CE • E = 1 for CED • E = 3 for SD.'
   publication_date: '2022-01-01'
-  additional_information_urls:
-  - https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
+  additional_information: https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate Statistics
@@ -25,7 +24,7 @@ deployment:
     model_name: Central
     # model_name_description: TODO
     is_many_release: False # TODO: Is this correct?
-    release_type_description: Not specified
+    is_many_release_description: Not specified
     is_interactive: False # TODO: Is this correct?
   # additional_information: TODO
   implementation:

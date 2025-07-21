@@ -8,7 +8,7 @@ deployment:
   intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
   data_product_type: Summary statistics
   data_product_region: Global
-  data_product_description: A publicly released dataset of daily or weekly time series giving the relative frequency of searches for ~400 predefined symptoms in each geographic region, normalized by total search activity
+  description: A publicly released dataset of daily or weekly time series giving the relative frequency of searches for ~400 predefined symptoms in each geographic region, normalized by total search activity
   publication_date: "2020-09-01"
   dp_flavor:
     name: Pure DP
@@ -24,11 +24,11 @@ deployment:
     model_name: Central
     model_name_description: 'A trusted Google curator applies the Laplace mechanism via Google’s open-source DP library before any data release.'
     is_many_release: True
-    release_type_description: 'New noisy aggregates are generated and published daily (or weekly).'
+    is_many_release_description: 'New noisy aggregates are generated and published daily (or weekly).'
     is_interactive: False
     # No "interactivity_description" for this deployment
 
-  additional_information:
+  accounting:
     post_processing: |
       A region-specific constant c is chosen once based on the February-July 2020 window to ensure we end up in a [0,100] percent scale.
 

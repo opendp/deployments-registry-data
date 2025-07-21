@@ -170,9 +170,6 @@ properties:
         additionalProperties: False
         required:
           - model_name
-          - is_many_release
-          - is_dynamic
-          - is_interactive
         properties:
           model_name:
             tier: 2
