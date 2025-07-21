@@ -43,13 +43,16 @@ properties:
     required:
       - name
       - data_curator
+      - description
       - intended_use
       - data_product_type
       - data_product_region
-      - data_product_description
       - publication_date
-      - additional_information_urls
     properties:
+      name:
+        tier: 1
+        description: The name of the data product
+        type: string
       data_curator:
         tier: 1
         description: The name of the entity publishing the data product.
@@ -167,8 +170,9 @@ properties:
         additionalProperties: False
         required:
           - model_name
-          - release_type
-          - interactivity
+          - is_many_release
+          - is_dynamic
+          - is_interactive
         properties:
           model_name:
             tier: 2
@@ -180,22 +184,24 @@ properties:
               - Shuffle
               - Federated
               - Varies # Present in converted records
+          model_name_description:
+            type: string
           actors:
             tier: 3
             description: Who are the relevant actors in the deployment? This includes anyone who may see the data product, even partially, and including adversaries. What are their trust assumptions and what is the rationale for these trust assumptions?
             type: string
-          is_many_shot:
+          is_many_release:
             tier: 2
             description: |
-               If `False`, the data product is "one-shot" and it is published once.
+               If `False`, the data product is comprised of one relase and it is published once.
 
-               If `True`, the data product is "many-shot" and there are many publications of it over time.
+               If `True`, the data product is comprised of many release and there are many publications of it over time.
             type: boolean
-          is_many_shot_description:
+          is_many_release_description:
             description: |
-              For "one-shot" deployments, entries should state if there are plans for future uses or publications of the data used to create the data product.
+              For one-release deployments, entries should state if there are plans for future uses or publications of the data used to create the data product.
 
-              For "many-shot" deployments, entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
+              For many-release deployments, entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
             type: string
           is_dynamic:
             tier: 2

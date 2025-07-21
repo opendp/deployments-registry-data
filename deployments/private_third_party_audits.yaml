@@ -24,12 +24,12 @@ deployment:
     # privacy_unit_description: TODO
     privacy_parameters: {}
   model:
-    model_type: Central
-    # model_type_description: TODO
-    release_type: One-shot # TODO: Is this correct?
+    model_name: Central
+    # model_name_description: TODO
+    is_many_release: False # TODO: Is this correct?
     release_type_description: Static
-    interactivity: Non-interactive # TODO: Is this correct?
-  # additional_dp_information: TODO
+    is_interactive: False # TODO: Is this correct?
+  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Not Specificed, Synthetic Data

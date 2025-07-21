@@ -3,12 +3,12 @@ registry_authors:
   - Elena Ghazi
 tier: 3
 deployment:
-  name: PLACEHOLDER FOR TEST
+  name: Placeholder
   data_curator: Google
+  description: Placeholder for tests
   intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
   data_product_type: Summary statistics
   data_product_region: Global
-  data_product_description: A publicly released dataset of daily or weekly time series giving the relative frequency of searches for ~400 predefined symptoms in each geographic region, normalized by total search activity
   publication_date: "2020-09-01"
   dp_flavor:
     name: Pure DP
@@ -21,14 +21,15 @@ deployment:
     privacy_unit_description: '“user-day”, with contribution bounding. A single privacy unit is all of one user’s searches on one day. Before adding noise, each user’s day is bounded so that they can contribute at most: 1 count per symptom and at most 3 symptom counts in total, plus at most 1 normalization count (one per day).'
     privacy_parameters_description: PLACEHOLDER FOR TEST
   model:
-    model_type: Central
-    model_type_description: 'Central DP: a trusted Google curator applies the Laplace mechanism via Google’s open-source DP library before any data release.'
-    release_type: Continual
-    release_type_description: 'Continual: new noisy aggregates are generated and published daily (or weekly).'
-    interactivity: Non-interactive
-    interactivity_description: PLACEHOLDER FOR TEST
+    model_name: Central
+    model_name_description: 'Central DP: a trusted Google curator applies the Laplace mechanism via Google’s open-source DP library before any data release.'
+    is_many_release: True
+    is_many_release_description: 'Continual: new noisy aggregates are generated and published daily (or weekly).'
+    is_interactive: False
+    is_interactive_description: PLACEHOLDER FOR TEST
+    is_dynamic: False
 
-  additional_dp_information:
+  accounting:
     post_processing: |
       A region-specific constant c is chosen once based on the February-July 2020 window to ensure we end up in a [0,100] percent scale.
 
