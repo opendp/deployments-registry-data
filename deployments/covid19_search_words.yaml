@@ -2,6 +2,7 @@ status: Converted
 registry_authors:
 - Nicolas Berrios
 - Jack Fitzsimons
+tier: 1
 deployment:
   name: COVID-19 Search Trends Symptoms Dataset
   data_curator: Google
