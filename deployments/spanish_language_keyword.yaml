@@ -2,6 +2,7 @@ status: Converted
 registry_authors:
 - Nicolas Berrios
 - Jack Fitzsimons
+tier: 1
 deployment:
   name: Spanish-language Keyword Next-word Prediction
   data_curator: Google

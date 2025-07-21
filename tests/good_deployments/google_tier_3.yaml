@@ -1,8 +1,9 @@
 status: Draft
 registry_authors:
   - Elena Ghazi
+tier: 3
 deployment:
-  name: TODO!
+  name: PLACEHOLDER FOR TEST
   data_curator: Google
   intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
   data_product_type: Summary statistics
@@ -18,20 +19,15 @@ deployment:
     privacy_parameters:
       epsilon: 1.68
     privacy_unit_description: '“user-day”, with contribution bounding. A single privacy unit is all of one user’s searches on one day. Before adding noise, each user’s day is bounded so that they can contribute at most: 1 count per symptom and at most 3 symptom counts in total, plus at most 1 normalization count (one per day).'
-
-    # TODO: Should the following be represented in a structured form?
-    # > Privacy parameters: epsilon = 1.68
-    # > Symptom counts: ε_sym = 1.638 + Normalization counts: ε_norm = 0.042
+    privacy_parameters_description: PLACEHOLDER FOR TEST
   model:
     model_type: Central
-    # TODO: Style: Ok to remove "Central DP" from description?
     model_type_description: 'Central DP: a trusted Google curator applies the Laplace mechanism via Google’s open-source DP library before any data release.'
-    release_type: Continual # TODO: ok property name?
+    release_type: Continual
     release_type_description: 'Continual: new noisy aggregates are generated and published daily (or weekly).'
-    interactivity: Non-interactive # TODO: ok property name?
-    # TODO: In this case "interactivity_description" didn't add information: Ok to drop?
+    interactivity: Non-interactive
+    interactivity_description: PLACEHOLDER FOR TEST
 
-  # NOTE: In the example, this is labeled as "Post-processing and composition".
   additional_dp_information:
     post_processing: |
       A region-specific constant c is chosen once based on the February-July 2020 window to ensure we end up in a [0,100] percent scale.
@@ -43,8 +39,6 @@ deployment:
       Basic sequential composition (counting symptoms + normalization)
 
   implementation:
-    # TODO: Is a shorter name possible?
     pre_processing_eda_hyperparameter_tuning: Not available
     mechanisms: Laplace mechanism for both symptom search and normalization counts via Google’s open-source DP library
-    # TODO: Shorter name possible?
     justification: Not available
