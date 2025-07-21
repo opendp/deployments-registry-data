@@ -4,7 +4,7 @@ description: |
   The `tiers` in this schema are suggested, but except for the fields
   marked as `required`, there are not rigorous requirements.
 
-  This schema is based on ongoing research by Elena Ghazi, Priyanka Nanayakkara, and Salil Vadhan
+  This schema is based on ongoing research by Elena Ghazi, Priyanka Nanayakkara, and Salil Vadhan.
 type: object
 additionalProperties: False
 required:
