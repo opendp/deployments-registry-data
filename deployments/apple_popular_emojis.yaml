@@ -1,65 +1,63 @@
 status: Draft
 registry_authors:
-  - 'Elena Ghazi' # Fill in correct value.
+  - Elena Ghazi
+  - Nicolas Berrios
+  - Jack Fitzsimons
 tier: 3
 deployment:
-  # Tier 1:
-  name: 'Popular Emojis'
-  data_curator: 'Apple'
-  description: 'Summary statistics of frequency histograms of emoji usage per locale.'
-  intended_use: 'For measurement (within Apple) of which emojis are most used, and their relative frequencies, across keyboard locales, to improve QuickType’s predictive emoji suggestions.'
-  data_product_type: 'Summary statistics' # Fill in correct value.
-  data_product_region: 'Global'
-  publication_date: '2017-01-01' # Fill in correct value.
+  name: Popular Emojis
+  data_curator: Apple
+  description: Summary statistics of frequency histograms of emoji usage per locale.
+  intended_use: For measurement (within Apple) of which emojis are most used, and their relative frequencies, across keyboard locales, to improve QuickType’s predictive emoji suggestions.
+  data_product_type: Summary statistics
+  data_product_region: Global
+  publication_date: '2017-01-01'
 
-  # Tiers 2 and 3:
   dp_flavor:
-    name: Pure DP # Fill in correct value.
-    data_domain: 'Event-level dataset where one “event” is a user typing an emoji.' # Tier 3
-    unprotected_quantities: | # Tier 3
-      - The Dictionary of Emojis (a predefined set of $2,600$ emojis).
+    name: Pure DP
+    data_domain: Event-level dataset where one “event” is a user typing an emoji.
+    unprotected_quantities: |
+      - The dictionary of emojis (a predefined set of 2,600 emojis).
       - Algorithm parameters: The Count Mean Sketch (CMS) algorithm requires the number of hash functions (k = 65,546) and the size of the privatized vector (m = 1024).
       - The total number of records (known by the server, although not released).
 
   privacy_loss:
-    privacy_unit: 'Event-level'
+    privacy_unit: Event-level
     privacy_unit_description: |
       Each individual record corresponds to a single emoji-typing event on a user’s device.
       - We infer that the function that computes the distance between between any two datasets in the data domain is the symmetric distance.
-      - The maximum distance between any two datasets in the data domain is $1$.
-    privacy_parameters: # Fill in correct value.
+      - The maximum distance between any two datasets in the data domain is 1.
+    privacy_parameters:
       epsilon: 4.0
-      # delta: ?
-      # rho: ?
-    privacy_parameters_description: ''
+    # privacy_parameters_description: ''
 
   model:
-    model_name: Local # Fill in correct value.
+    model_name: Local
     model_name_description: |
       - User’s device (client): Hosts raw emoji-selection events and applies the LDP randomizer before any transmission. Users must trust the device’s operating system and DP library to implement DP correctly.
       - Network adversary: Any eavesdropper on the transmission channel. They rely on Transport Layer Security encryption. In the worst case, they will see the LDP version of the data, since each emoji event is randomized on device so no raw data ever leaves the user’s device.
       - Restricted-access server: Receives privatized records, discards IPs and timestamps, permutes records, then runs sketch-based algorithms to build aggregate histograms. It is assumed that the server correctly strips metadata, but it is not trusted with raw data.
       - Internal Apple teams: View the final aggregated, thresholded emoji-frequency histogram.
 
-    is_many_release: True # Fill in correct value.
-    is_many_release_description: "The histogram is continually refreshed on a daily basis. Data transmission from a user's device occurs once per day, and there is a limit on the number of privatized records that can be transmitted daily."
-    is_interactive: False # Fill in correct value.
+    is_many_release: True
+    is_many_release_description: The histogram is continually refreshed on a daily basis. Data transmission from a user's device occurs once per day, and there is a limit on the number of privatized records that can be transmitted daily.
+    is_interactive: False
     is_interactive_description: ''
-    is_dynamic: True # Fill in correct value.
-    is_dynamic_description: "The transmission of privatized records from a user's device to the server happens once per day."
+    is_dynamic: True
+    is_dynamic_description: The transmission of privatized records from a user's device to the server happens once per day.
 
   accounting:
-    post_processing: | # Tier 3
+    post_processing: |
       - Server discards IP addresses associated with each record.
       - Aggregation and Sketch Matrix Construction: The server aggregates the anonymized, private records into a sketch matrix, which is a summary grid with 65,536 rows and 1,024 columns. Each row corresponds to a possible hash function that the user’s device could have used. For each private report received, the server uses the included index to identify which row to update , and then adds the user's noisy data to that specific row. The random noise tends to average out, allowing the underlying patterns of popular emojis to be estimated in the next step.
       - Frequency Estimation and Debiasing: The server estimates the frequency of each emoji in the dictionary based on the sketch matrix, averages these values, and debiases the result, producing a final estimated count for that emoji.
       - Final Histogram Generation and Thresholding: The estimated counts for all emojis are assembled into a histogram, and thresholding is performed so that only emojis whose estimated counts are above a predetermined threshold are included in the final data product.
 
-    composition: 'Parallel (inferred)' # Tier 3
+    composition: No information were provided about composition.
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: 'Three parameters are explicitly set: $\epsilon = 4$, number of hash functions $k = 65,546$ and the size of the privatized vector $m = 1024$. These were predetermined by the authors based on an analysis of the tradeoff between utility, server computation cost (related to $k$), and device bandwidth (related to m).' # Tier 3
-    mechanisms: | # Tier 3
+    pre_processing_eda_hyperparameter_tuning: 'Three parameters are explicitly set: \\(\epsilon = 4\\), number of hash functions k = 65,546 and the size of the privatized vector m = 1024. These were predetermined by the authors based on an analysis of the tradeoff between utility, server computation cost (related to k), and device bandwidth (related to m).'
+    mechanisms: |
       - The differential privacy algorithm used is Private Count Mean Sketch (CMS).
       - No information was provided about the implementation of the mechanism.
       - No information was provided about protection against floating point errors.
@@ -71,6 +69,6 @@ deployment:
         - After the data is privatized, the resulting records are not sent instantaneously, but are stored on-device using data protection and sent as part of a random batch once a day.
         - The privatized records are sent to the server with TLS encryption.
 
-    justification: | # Tier 3
+    justification: |
       - The choice of epsilon was “based on the privacy characteristics of the underlying dataset” and is “consistent with the parameters proposed in the differential privacy research community”.
       - The CMS algorithm yields a high number of hash collisions (mapping 2,600 emojis to 1024 bits) providing further plausible deniability.
