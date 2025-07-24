@@ -34,7 +34,7 @@ deployment:
     privacy_unit: Event-level
     privacy_unit_description: |
       Each individual record corresponds to a single emoji-typing event on a user’s device.
-      - We infer that the function that computes the distance between between any two datasets in the data domain is the symmetric distance.
+      - No information was provided about the function that computes the distance between between any two datasets in the data domain.
       - The maximum distance between any two datasets in the data domain is 1.
     privacy_parameters:
       epsilon: 4.0
@@ -80,5 +80,5 @@ deployment:
         - The privatized records are sent to the server with TLS encryption.
 
     justification: |
-      - The choice of epsilon was “based on the privacy characteristics of the underlying dataset” and is “consistent with the parameters proposed in the differential privacy research community”.
+      - The choice of \\(\epsilon\\) was “based on the privacy characteristics of the underlying dataset” and is “consistent with the parameters proposed in the differential privacy research community”.
       - The CMS algorithm yields a high number of hash collisions (mapping 2,600 emojis to 1024 bits) providing further plausible deniability.

@@ -1,39 +1,102 @@
-status: Converted
+status: Draft
 registry_authors:
+- Elena Ghazi
 - Nicolas Berrios
 - Jack Fitzsimons
-tier: 1
+tier: 3
 deployment:
-  name: Google Community Mobility Place Visits
+  name: Community Mobility Place Visits
   data_curator: Google
-  intended_use: Mobility Statistics
-  data_product_type: Summary statistics # TODO: Is this correct?
+  intended_use: Provide public-health authorities insights into how mobility patterns changed in response to COVID-19 policies (e.g., work-from-home, shelter-in-place) to help with decision-making during the pandemic.
+  data_product_type: Summary statistics
   data_product_region: Global
-  description: Thus, each daily place visit is protected by diﬀerential
-    privacy with ε = 0.44. These multiple metrics apply to the same dataset, so standard
-    composition results apply, and the total daily contribution of each user is protected
-    by diﬀerential privacy with a maximum of ε = 1.76. (...) We are generating a ﬁxed
-    set of metrics (all possible combinations of geographic regions, days within the
-    periods, and public place categories), and we are also adding noise to zero-valued
-    metrics. As such, the process outlined above is ε-diﬀerentially private with δ
-    = 0.
-  publication_date: '2020-01-01'
+  description: Summary statistics, published as the COVID-19 Community Mobility Reports, that charts percentage changes in movement trends for various location categories relative to a historical baseline. These trends analyze the number of visits to public places like retail, parks, and workplaces, and also measure the change in duration of time spent in residences.
+  publication_date: '2020-04-01'
   additional_information: https://arxiv.org/pdf/2004.04145
-  # dp_flavor: TODO
+  dp_flavor:
+    name: Pure DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: |
+      Location information from the subset of Google users who have opted into the Location History feature. This dataset contains records of user visits to various locations, including the time and duration of those stays. Namely, a single user’s entry for a given day at a specific geographic level would include:
+        - A set of up to four (category, location) pairs for public places.
+        - Total time in hours spent per day at their place of residence.
+        - Counts of user spending >1h at work.
+    unprotected_quantities: |
+      - 5-week baseline period (2020-01-03 through 2020-02-06).
+      - Rule to discard metrics for any geographic region smaller than 3km^2.
+      - Contribution-bounding (<= 4 category-location pairs/day for public places, <=1 region/day for residential & work).
+      - Statistical reliability rule used to filter metrics: removes data if there is a 5% or higher chance of the percentage change being incorrect by more than ±10 absolute percentage points.
+
   privacy_loss:
-    privacy_unit: Aggregate Statistics
-    # privacy_unit_description: TODO
+    privacy_unit: User-day
+    privacy_unit_description: Adjacent datasets are obtained by adding or removing a single user’s data in a single day.
     privacy_parameters:
-      epsilon: 1.76
-      delta: 0.0
+      epsilon: 2.64
+    privacy_parameters_description: |
+      - Daily Visits in Public Places: counts unique user visits to categories like retail, parks, and transit stations: \\(\epsilon\\) = 1.76
+      - Residential Metrics: calculates average time users spend at their residences: \\(\epsilon\\) = 0.44
+      - Workplaces Metrics: counts how many users spent more than one hour at their workplace: \\(\epsilon\\) = 0.44
+
   model:
     model_name: Central
-    # model_name_description: TODO
-    is_many_release: False # TODO: Is this correct?
-    is_many_release_description: Daily
-    is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
+    # model_name_description: ''
+    actors: |
+      - Google users who have opted in to Location History. The model assumes that Google users trust Google to access their raw data and correctly apply the DP mechanisms before publication.
+      - Curator (Google)
+      - Data users: primary intended audience is "public health authorities", but the reports are also available to the general public
+
+    is_many_release: True
+    is_many_release_description: |
+      - Refreshment timeframe: The reports are generated on an ongoing, daily basis. The metrics are generated for each day starting on 2020-01-01. The publicly released reports show trends over several weeks, with the most recent data representing 48 hours prior.
+      - Management of privacy loss over time: A method called "scaling factors" is used to manage privacy loss when the underlying computation logic needs to be updated for accuracy improvements, and re-querying all historical data with new logic would consume a significant privacy budget.
+    is_interactive: False
+    # is_interactive_description: ''
+    is_dynamic: True
+    is_dynamic_description: Metrics are generated for each day, starting on 2020-01-01 and ending on 2022-10-15
+
+  accounting:
+    post_processing: |
+      - Percentage Change Calculation: the final published value is a percentage change from the baseline. This is calculated by taking the ratio between the noisy metric for a specific day and the computed baseline for that day of the week (the baseline metric uses a fixed 5-week period from January 3, 2020 to February 6, 2020, by taking the median of the 5 corresponding daily noisy metrics from within that 5-week range.)
+      - Filtering Unreliable Metrics:
+      - Statistical Reliability: A metric is not published if there is a 5% or greater chance that the percentage change is wrong by more than ±10 absolute percentage points. This is determined by calculating confidence intervals for both the daily metric and its baseline.
+      - Geographic Size: All metrics for any geographic region smaller than 3km^2 are discarded.
+      - User Count: Metrics are also discarded if the noisy count of contributing users for a given region is smaller than 100.
+
+    composition: |
+      Basic composition
+      - Daily Visits in Public Places: counts unique user visits to categories like retail, parks, and transit stations:
+        - Base epsilon:
+          - \\(\epsilon\\) = 0.11 for country/region (granularity 0) and state-level (granularity 1)
+          - \\(\epsilon\\) = 0.22 for county-level (granularity 2)
+        - Composition:
+          - A single visit to a place is recorded at all three geographic levels simultaneously. The total budget for one visit is the sum of the \\(\epsilon\\)'s for each level: 0.11 * 2 + 0.22 = 0.44
+          - A user’s contribution is capped at a maximum of four distinct (category, location) pairs per day. Since each of these potential visits costs \\(\epsilon\\) = 0.44, the total maximum daily privacy budget for a user’s public place visits is 4 * 0.44 = 1.76
+      - Residential Metrics: calculates average time users spend at their residences.
+        - Base \\(\epsilon\\):
+          - \\(\epsilon\\) = 0.11 for country/region (granularity 0) and state-level (granularity 1)
+          - \\(\epsilon\\) = 0.22 for county-level (granularity 2)
+        - Composition: A user can contribute to the residential metric in at most one region per granularity level. The total budget is the sum of the budget spent at each level: 0.11 * 2 + 0.22 = 0.44
+      - Workplaces Metrics: counts how many users spent more than one hour at their workplace:
+        - Base \\(\epsilon\\):
+          - \\(\epsilon\\) = 0.11 for country/region (granularity 0) and state-level (granularity 1)
+          - \\(\epsilon\\) = 0.22 for county-level (granularity 2)
+        - Composition: A user contributes at most once per geographic level. The total budget is the sum across the levels: 0.11*2 + 0.22 = 0.44
+
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
-    mechanisms: Laplace
-    justification: '' # TODO: Fill in correct value
+    pre_processing_eda_hyperparameter_tuning: 'User contributions for public places are bounded: If a user visits more than four (category, location) pairs on a given day at a specific geographic level, four are chosen at random, and the rest are discarded. Each user can also contribute at most once per category at a given location.'
+    mechanisms: |
+      - The Laplace mechanism was used for simple counts, like the number of daily visits to public places and workplaces. The DP Mean Mechanism: used to calculate the average time spent at residences.
+      - The mechanisms were implemented via Google's open-source C++ Differential Privacy Library:
+        - github.com/google/differential-privacy
+        - The provided DP bounded-mean GitHub link is broken. Possible path to new file: github.com/google/differential-privacy/blob/main/cc/algorithms/bounded-mean.h
+      - No information was provided about protection against floating point errors.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - No information was provided about security measures in place to protect the underlying data.
+
+    justification: |
+      - Using scaling factors allows for continuous accuracy improvements with minimal impact on the overall privacy budget by grouping metrics and reusing previously generated data, rather than performing a full, costly re-computation.
+      - Statistically insignificant metrics are filtered out to ensure utility and reliability of the data. This is done through a strict confidence threshold, ensuring there is at most a 5% risk of any published value being wrong by more than 10 absolute percentage points.
+      - The implementation decision to bound each user's contribution to a maximum of four (category, location) pairs per day is justified by an analysis of user behavior. This threshold was chosen because it "does not significantly affect data accuracy," given that 99% of users at the U.S. county level contribute to three or fewer pairs on average.
