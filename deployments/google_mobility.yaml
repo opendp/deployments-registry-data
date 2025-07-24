@@ -10,6 +10,7 @@ deployment:
   intended_use: Provide public-health authorities insights into how mobility patterns changed in response to COVID-19 policies (e.g., work-from-home, shelter-in-place) to help with decision-making during the pandemic.
   data_product_type: Summary statistics
   data_product_region: Global
+  data_product_sector: Healthcare
   description: Summary statistics, published as the COVID-19 Community Mobility Reports, that charts percentage changes in movement trends for various location categories relative to a historical baseline. These trends analyze the number of visits to public places like retail, parks, and workplaces, and also measure the change in duration of time spent in residences.
   publication_date: '2020-04-01'
   additional_information: https://arxiv.org/pdf/2004.04145
