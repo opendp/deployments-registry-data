@@ -11,11 +11,20 @@ deployment:
   intended_use: For measurement (within Apple) of which emojis are most used, and their relative frequencies, across keyboard locales, to improve QuickType’s predictive emoji suggestions.
   data_product_type: Summary statistics
   data_product_region: Global
+  data_product_sector: Technology
   publication_date: '2017-01-01'
+  additional_information: |
+    - Link to paper: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+    - Under "Security Measures": "The privatized records are temporarily stored on-device using data protection"; the paper points to this link https://www.apple.com/business/docs/iOS_Security_Guide.pdf
+    - The paper covers collecting aggregate statistics for different use cases: trending new words, popular emojis, popular HealthKit data types, Safari media-playback preferences, and high energy/memory domains. We only treated the popular emojis use case, treating it as one deployment.
 
   dp_flavor:
     name: Pure DP
-    data_domain: Event-level dataset where one “event” is a user typing an emoji.
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: Event-level dataset where one "event" is a user typing an emoji.
     unprotected_quantities: |
       - The dictionary of emojis (a predefined set of 2,600 emojis).
       - Algorithm parameters: The Count Mean Sketch (CMS) algorithm requires the number of hash functions (k = 65,546) and the size of the privatized vector (m = 1024).
@@ -33,7 +42,8 @@ deployment:
 
   model:
     model_name: Local
-    model_name_description: |
+    # model_name_description: ''
+    actors: |
       - User’s device (client): Hosts raw emoji-selection events and applies the LDP randomizer before any transmission. Users must trust the device’s operating system and DP library to implement DP correctly.
       - Network adversary: Any eavesdropper on the transmission channel. They rely on Transport Layer Security encryption. In the worst case, they will see the LDP version of the data, since each emoji event is randomized on device so no raw data ever leaves the user’s device.
       - Restricted-access server: Receives privatized records, discards IPs and timestamps, permutes records, then runs sketch-based algorithms to build aggregate histograms. It is assumed that the server correctly strips metadata, but it is not trusted with raw data.
@@ -42,7 +52,7 @@ deployment:
     is_many_release: True
     is_many_release_description: The histogram is continually refreshed on a daily basis. Data transmission from a user's device occurs once per day, and there is a limit on the number of privatized records that can be transmitted daily.
     is_interactive: False
-    is_interactive_description: ''
+    # is_interactive_description: ''
     is_dynamic: True
     is_dynamic_description: The transmission of privatized records from a user's device to the server happens once per day.
 
