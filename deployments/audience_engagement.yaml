@@ -1,5 +1,6 @@
 status: Converted
 registry_authors:
+- James Honaker
 - Nicolas Berrios
 - Jack Fitzsimons
 tier: 1
@@ -13,16 +14,18 @@ deployment:
     Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee.
   publication_date: '2020-01-01'
   additional_information: https://arxiv.org/abs/2002.05839
-  # dp_flavor: TODO
+  dp_flavor: 
+    name: Approximate DP
   privacy_loss:
-    privacy_unit: Aggregate statistics
-    # privacy_unit_description: TODO
+    privacy_unit: User-level
+    privacy_unit_description: insights about members' content engagements while ensuring member (user) data is protected.
     privacy_parameters:
       epsilon: 34.9
       delta: 7.0e-09
   model:
     model_name: Central
-    # model_name_description: TODO
+    model_name_description: The privacy model we are interested in for this work is the global privacy setting, where data
+is already stored centrally, but we want to ensure each result computed on the data is privatized.
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Monthly
     is_interactive: False # TODO: Is this correct?
