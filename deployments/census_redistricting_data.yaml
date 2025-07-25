@@ -1,0 +1,106 @@
+status: Draft
+registry_authors:
+  - Elena Ghazi
+  - Nicolas Berrios
+  - Jack Fitzsimons
+tier: 3
+deployment:
+  name: Disclosure Avoidance System for Redistricting Data
+  data_curator: U.S. Census Bureau
+  description: Set of summary statistics (tables with counts of individuals, households, group quarters residents, or housing units with certain characteristics) published as the 2020 Census Redistricting Data (P.L. 94-171) Summary File.
+  intended_use: The decennial census data are used for congressional apportionment, the redistricting of legislative bodies, the allocation of federal funds, public policy, and research. The Summary File is produced to satisfy the legal requirement to provide states with the population tabulations they need for legislative redistricting.
+  data_product_type: Summary statistics
+  data_product_region: United States
+  data_product_sector: Government
+  publication_date: '2021-08-01'
+  additional_information: |
+    - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+    - The 2020 Census Disclosure Avoidance System TopDown Algorithm: https://arxiv.org/abs/2204.08986
+
+  dp_flavor:
+    name: Zero-concentrated DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: The data eligible for protection is the Census Edited File (CEF). This is the final, confidential version of the 2020 Census data, containing a record for every person and housing unit enumerated in the census, with missing values handled through imputation.
+    unprotected_quantities: |
+      - The total population count for each state, the District of Columbia, and Puerto Rico.
+      - The total count of housing units in each census block.
+      - The count and type of occupied group quarters facilities in each census block. The specific types of group quarters facilities that are invariant are:
+        - Correctional facilities for adults
+        - Juvenile facilities
+        - Nursing facilities/skilled-nursing facilities
+        - Other institutional facilities
+        - College/university student housing
+        - Military quarters
+        - Other noninstitutional facilities
+
+  privacy_loss:
+    privacy_unit: Person-level records (for Person tables) and housing-unit-level records (for Housing Unit tables).
+    privacy_unit_description: he system uses a “bounded neighbors” definition of adjacency because the total population count of the United States and Puerto Rico is held invariant. Therefore, adjacent datasets are two CEFs that differ by the modification of a single person's record (e.g., a change to a person’s census block location), while the total number of records remains the same.
+    privacy_parameters:
+      rho: 2.63
+    privacy_parameters_description: |
+      - The final global privacy-loss budget for the 2020 Redistricting Data was \\(\rho\\)  = 2.63, which was split between the person and the housing unit data:
+        - Person Tables: \\(\rho\\) = 2.56 was used (corresponding to \\(\epsilon\\)=17.14 and \\(\delta = 10^{-10}\\).
+        - Housing Unit Tables: \\(\rho\\)  = 0.07 was used (corresponding to \\(\epsilon\\) = 2.47 and \\(\delta = 10^{-10}\\).
+      - This global budget is not applied uniformly. It is strategically allocated across different geographic levels (e.g., state, county, tract, block) and then further divided among specific data queries (e.g., total population, race, voting age) at each of those levels. The precise allocation proportions are detailed in Tables 6, 7, and 8 of “The 2020 Census Disclosure Avoidance System TopDown Algorithm” paper.
+
+
+  model:
+    model_name: Central
+    # model_name_description: ''
+    actors: |
+      - Curator: U.S. Census Bureau: collects, stores, and protects the confidential data
+      - Data subjects: The respondents of the 2020 Census, comprising over 331 million people in the United States. Their trust in the curator's ability to protect their data is essential for the quality of the census. This trust is rationalized by the Bureau's legal mandate under Title 13 of the U.S. Code to protect respondent confidentiality, a requirement reinforced by a lifelong oath taken by every employee.
+      - Data users: A wide-ranging group including state governments for redistricting, the U.S. Department of Justice for Voting Rights Act analysis, researchers, public policy makers, and the general public.
+      - Adversaries: The system is designed to protect against a wide range of potential attackers. This includes sophisticated actors who may have access to large external databases, powerful computing resources, and advanced algorithms , as well as state actors like foreign governments, corporations, and cybercriminals.
+
+
+    is_many_release: False
+    # is_many_release_description: ''
+    is_interactive: False
+    # is_interactive_description: ''
+    is_dynamic: False
+    # is_dynamic_description: ''
+
+  accounting:
+    post_processing: |
+      A series of post-processing functions are applied to make the data consistent and usable. The primary goal of post-processing is to produce a confidential, record-level Microdata Detail File (MDF) that can be used by the Census Bureau's standard tabulation systems. Key post-processing functions include:
+        - Ensuring Non-Negativity and Integrality: The system enforces that all final counts are non-negative integers, as required by the tabulation system. If adding noise results in a negative count, that value is adjusted.
+        - Enforcing Invariants and Constraints: Post-processing ensures that the final data adhere to all pre-defined invariants and other constraints. This includes holding state-level population totals to their exact enumerated values and ensuring that geographies with occupied group quarters facilities contain at least one person.
+        - Ensuring Consistency: The data are processed to be consistent both hierarchically and internally. This means that counts for smaller geographic units (like counties) sum to their parent geographies (the state), and that different characteristics within a table sum correctly to their totals. This consistency is achieved by solving a large-scale mathematical optimization problem. This is done in two primary steps for each level of the geographic hierarchy:
+          - A constrained weighted least squares optimization is performed to find a non-negative, real-valued (i.e., continuous) solution that is as close as possible to the noisy measurements while respecting the constraints.
+          - A controlled rounding problem is then solved to convert the real-valued solution into a final, non-negative integer solution.
+
+    composition: |
+      Adaptive composition under zCDP is used (because of robust and mathematically simple properties):
+        - Under zCDP, the total privacy loss is calculated by summing the privacy-loss parameter \\(\rho\\)  for each query that is applied to the data.
+        - For the TopDownAlgorith, the total \\(\rho\\)  is the sum of the \\(\rho\\)  values allocated to all queries at every level of the geographic hierarchy (nation, state, county, tract, block group, and block).
+
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: |
+      - Preprocessing: the raw census responses undergo pre-processing steps to create the CEF. This involves:
+          - Editing: Ensuring logical consistencies among characteristics for a person or household. For instance, an edit constraint ensures that a mother must be older than her natural child.
+          - Imputation: Filling in missing or misreported data for key characteristics like age, sex, race, and ethnicity to ensure every record is complete.
+          - Structural Zeros: Imposing rules based on the data schema, such as not allowing the “none of the above” combination for the race variable.
+      - Hyperparameter Tuning: the privacy loss budget \\(\rho\\)  and its allocation across different queries and geographic levels were tuned using 2010 Census data. The process was iterative, involving over 600 experimental runs. It included releasing a series of public demonstration data products to solicit feedback from data users and experts. The Census Bureau used this feedback to refine the algorithm and budget allocations.
+    mechanisms: |
+      - The TopDown algorithm, which uses the discrete Gaussian mechanism to add noise to the query answers.
+      - The system was developed by the U.S. Census Bureau. It is written in Python 3.7 and uses Gurobi 9.1 for the optimization steps. The system runs on Apache Spark 3.0.1 in an Amazon Web Services (AWS) cloud environment. Link to DAS 2020 Redistricting production code: https://github.com/uscensusbureau/DAS_2020_Redistricting_Production_Code
+      - The implementation takes specific measures to avoid vulnerabilities associated with floating-point arithmetic by using an exact sampling approach for the discrete Gaussian mechanism and by allocating the privacy-loss budget using rational numbers.
+      - The system requires a large volume of high-quality random numbers. These are generated in the AWS environment using the Intel RDRAND instruction mixed with bits from /dev/urandom.
+      - Security measures:
+        - Legal: Protection is legally mandated by Title 13 of the U.S. Code.
+        - All Census Bureau employees take a lifelong oath to protect respondent information.
+
+    justification: |
+      - Rationale for Adopting DP: Differential privacy was adopted after internal research confirmed that traditional disclosure avoidance methods, like data swapping, were vulnerable to modern database reconstruction and re-identification attacks. A 2018 simulation of such an attack on the 2010 Census data resulted in the confirmed re-identification of 52 million people (17% of the U.S. population). DP was chosen because it provides mathematically provable guarantees against a wide range of such privacy attacks.
+      - Rationale for Specific Mechanisms:
+        - The trusted-curator (central) model was chosen because it is more statistically efficient than a local model, yielding more accurate data for the same level of privacy protection.
+        - The discrete Gaussian mechanism was chosen over the geometric mechanism (used in earlier prototypes) after empirical tests demonstrated it provided better accuracy. Its statistical properties (specifically, having smaller tail probabilities) reduce the worst-case errors that can arise during the post-processing step of creating non-negative integer microdata.
+      - Validation and Verification:
+        - The system was validated through a series of public demonstration data product releases using 2010 data
+        - The Census Bureau solicited and incorporated detailed feedback from a wide array of stakeholders, including the National Academy of Sciences, federal and state partners, academic researchers, and tribal leaders.
+        - The final production parameters were set by the Data Stewardship Executive Policy Committee (DSEP) after a final review of the privacy guarantees and data accuracy demonstrated in the tuning experiments.
