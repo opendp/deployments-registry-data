@@ -9,33 +9,39 @@ deployment:
   description: ''
   intended_use: ''
   data_product_type: 'Summary statistics' # Fill in correct value.
-  data_product_region: ''
   publication_date: '1900-01-01' # Fill in correct value.
+  data_product_region: ''
+  data_product_sector: 'Technology' # Fill in correct value.
 
   # Tiers 2 and 3:
   dp_flavor:
     name: Pure DP # Fill in correct value.
+    input_metric: ''
+    bound_on_input_distance: ''
+    output_measure: ''
+    bound_on_output_distance: ''
     data_domain: '' # Tier 3
     unprotected_quantities: '' # Tier 3
 
   privacy_loss:
     privacy_unit: ''
     privacy_unit_description: ''
-    privacy_parameters: # Fill in correct value.
+    privacy_parameters: # Fill in correct value, and remove others
       epsilon: 1.0
-      # delta: ?
-      # rho: ?
+      delta: 0
+      rho: 0
     privacy_parameters_description: ''
 
   model:
     model_name: Central # Fill in correct value.
     model_name_description: ''
+    actors: ''
     is_many_release: True # Fill in correct value.
     is_many_release_description: ''
-    is_interactive: False # Fill in correct value.
-    is_interactive_description: ''
     is_dynamic: False # Fill in correct value.
     is_dynamic_description: ''
+    is_interactive: False # Fill in correct value.
+    is_interactive_description: ''
 
   accounting:
     post_processing: '' # Tier 3
@@ -45,3 +51,5 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # Tier 3
     mechanisms: '' # Tier 3
     justification: '' # Tier 3
+
+  additional_information: ''
