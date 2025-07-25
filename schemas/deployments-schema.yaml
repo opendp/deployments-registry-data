@@ -160,9 +160,9 @@ properties:
             properties:
               epsilon:
                 type: number
-              rho:
-                type: number
               delta:
+                type: number
+              rho:
                 type: number
           privacy_parameters_description:
             tier: 3
