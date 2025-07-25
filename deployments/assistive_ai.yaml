@@ -13,14 +13,17 @@ deployment:
     privacy parameters (ε=4, δ< 10-7).
   publication_date: '2020-01-01'
   additional_information: https://www.microsoft.com/en-us/research/group/msai/articles/assistive-ai-makes-replying-easier-2/
-  # dp_flavor: TODO
+  dp_flavor:
+    name: Approximate DP
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 4.0
       delta: 1.0e-07
+  model:
+    model_name: Central
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
-    mechanisms: Randomized Response
+    mechanisms: Differentially Private Set Union
     justification: '' # TODO: Fill in correct value
