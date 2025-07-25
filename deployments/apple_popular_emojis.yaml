@@ -34,7 +34,7 @@ deployment:
     privacy_unit: Event-level
     privacy_unit_description: |
       Each individual record corresponds to a single emoji-typing event on a user’s device.
-      - We infer that the function that computes the distance between between any two datasets in the data domain is the symmetric distance.
+      - No information was provided about the function that computes the distance between between any two datasets in the data domain.
       - The maximum distance between any two datasets in the data domain is 1.
     privacy_parameters:
       epsilon: 4.0
@@ -63,7 +63,7 @@ deployment:
       - Frequency Estimation and Debiasing: The server estimates the frequency of each emoji in the dictionary based on the sketch matrix, averages these values, and debiases the result, producing a final estimated count for that emoji.
       - Final Histogram Generation and Thresholding: The estimated counts for all emojis are assembled into a histogram, and thresholding is performed so that only emojis whose estimated counts are above a predetermined threshold are included in the final data product.
 
-    composition: No information were provided about composition.
+    composition: No information was provided about composition.
 
   implementation:
     pre_processing_eda_hyperparameter_tuning: 'Three parameters are explicitly set: \\(\epsilon = 4\\), number of hash functions k = 65,546 and the size of the privatized vector m = 1024. These were predetermined by the authors based on an analysis of the tradeoff between utility, server computation cost (related to k), and device bandwidth (related to m).'
@@ -80,5 +80,5 @@ deployment:
         - The privatized records are sent to the server with TLS encryption.
 
     justification: |
-      - The choice of epsilon was “based on the privacy characteristics of the underlying dataset” and is “consistent with the parameters proposed in the differential privacy research community”.
+      - The choice of \\(\epsilon\\) was “based on the privacy characteristics of the underlying dataset” and is “consistent with the parameters proposed in the differential privacy research community”.
       - The CMS algorithm yields a high number of hash collisions (mapping 2,600 emojis to 1024 bits) providing further plausible deniability.
