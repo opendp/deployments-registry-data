@@ -4,6 +4,9 @@ from yaml import load, Loader
 
 root = Path(__file__).parent.parent
 
+
+# Load schema:
+
 schema = load((root / "schemas/deployments-schema.yaml").open(), Loader=Loader)
 
 
@@ -17,6 +20,25 @@ def get_path_nodes(path, schema):
 
 path_nodes = list(get_path_nodes("", schema))
 paths = [path for path, node in path_nodes]
+
+
+# Load template:
+
+template = load((root / "tests/good_deployments/template.yaml").open(), Loader=Loader)
+
+
+def get_path_templates(path, template):
+    yield (path, template)
+    if isinstance(template, dict):
+        for subpath, subtemplate in template.items():
+            for path_template in get_path_templates(f"{path}/{subpath}", subtemplate):
+                yield path_template
+
+
+path_templates = list(get_path_templates("", template))
+
+
+# Tests:
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
@@ -62,8 +84,9 @@ def test_nodes_have_tiers(path, node):
 def test_objects_have_additional_properties_false(path, node):
     if not "properties" in node:
         return  # Only applicable to objects
-    assert not node.get("additionalProperties")
+    assert not node["additionalProperties"]
 
 
 def test_template_is_complete():
-    pass
+    template_paths = [path for path, node in path_templates]
+    assert template_paths == paths
