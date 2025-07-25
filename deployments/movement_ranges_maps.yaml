@@ -5,7 +5,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Movement Ranges Map
-  data_curator: Meta
+  data_curators:
+    - Meta
   intended_use: Health Crisis Mobility Data
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global

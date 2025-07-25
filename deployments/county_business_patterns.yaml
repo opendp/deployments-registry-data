@@ -5,7 +5,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Census County Business Patterns
-  data_curator: United States Census Bureau
+  data_curators:
+    - U.S. Census Bureau
   intended_use: Geographical Buisness Statistics
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: USA

@@ -5,7 +5,8 @@ tier: 3
 deployment:
   # Tier 1:
   name: ''
-  data_curator: ''
+  data_curators:
+    - 'U.S. Census Bureau' # Fill in correct value.
   description: ''
   intended_use: ''
   data_product_type: 'Summary statistics' # Fill in correct value.

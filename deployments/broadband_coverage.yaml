@@ -5,7 +5,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Broadband Coverage Estimates
-  data_curator: Microsoft
+  data_curators:
+    - Microsoft
   intended_use: Geographical Broadband Statistics
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: USA

@@ -42,7 +42,7 @@ properties:
     additionalProperties: False
     required:
       - name
-      - data_curator
+      - data_curators
       - description
       - intended_use
       - data_product_type
@@ -53,10 +53,29 @@ properties:
         tier: 1
         description: The name of the data product
         type: string
-      data_curator:
+      data_curators:
         tier: 1
-        description: The name of the entity publishing the data product.
-        type: string
+        description: The name of the entities publishing the data product.
+        type: array
+        items:
+          type: string
+          enum:
+            - Apple
+            - Brave
+            - Google
+            - Israeli Ministry of Health
+            - KOSTAT (National Statistics Office of Korea)
+            - LinkedIn
+            - Meta
+            - Microsoft
+            - Office of National Statistics UK
+            - OpenMined
+            - Spectus
+            - Twitter
+            - U.S. Census Bureau
+            - Wikimedia Foundation
+            # Add to this list as needed.
+        minItems: 1
       description:
         tier: 1
         description: Brief description of the data product.

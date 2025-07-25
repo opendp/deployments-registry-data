@@ -5,7 +5,9 @@ registry_authors:
 tier: 1
 deployment:
   name: Private Third Party Audits
-  data_curator: Twitter, OpenMined
+  data_curators:
+    - Twitter
+    - OpenMined
   intended_use: Synthetic Data Releases for Audits
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global

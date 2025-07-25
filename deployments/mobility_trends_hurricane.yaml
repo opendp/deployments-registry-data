@@ -5,7 +5,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Mobility Trends During Hurricane
-  data_curator: Spectus
+  data_curators:
+    - Spectus
   intended_use: Mobility Catastrophe Data
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: USA

@@ -6,7 +6,8 @@ registry_authors:
 tier: 3
 deployment:
   name: Disclosure Avoidance System for Redistricting Data
-  data_curator: U.S. Census Bureau
+  data_curators:
+    - U.S. Census Bureau
   description: Set of summary statistics (tables with counts of individuals, households, group quarters residents, or housing units with certain characteristics) published as the 2020 Census Redistricting Data (P.L. 94-171) Summary File.
   intended_use: The decennial census data are used for congressional apportionment, the redistricting of legislative bodies, the allocation of federal funds, public policy, and research. The Summary File is produced to satisfy the legal requirement to provide states with the population tabulations they need for legislative redistricting.
   data_product_type: Summary statistics

@@ -5,7 +5,8 @@ registry_authors:
 tier: 1
 deployment:
   name: User-URL Privacy Dataset
-  data_curator: Meta
+  data_curators:
+    - Meta
   intended_use: Web Browsing
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global

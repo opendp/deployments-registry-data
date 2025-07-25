@@ -5,7 +5,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Spanish-language Keyword Next-word Prediction
-  data_curator: Google
+  data_curators:
+    - Google
   intended_use: Language Model
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Spanish-Speaking Users
