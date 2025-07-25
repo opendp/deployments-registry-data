@@ -5,7 +5,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Korean Government Statistical Data Hub Platform
-  data_curator: KOSTAT (National Statistics Office of Korea)
+  data_curators:
+    - KOSTAT (National Statistics Office of Korea)
   intended_use: Goverment Data Hub
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Korea

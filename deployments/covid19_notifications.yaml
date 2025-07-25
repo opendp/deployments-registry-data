@@ -5,7 +5,9 @@ registry_authors:
 tier: 1
 deployment:
   name: COVID-19 Exposure Notification Framework
-  data_curator: Google, Apple
+  data_curators:
+    - Google
+    - Apple
   intended_use: Healthcare Exposure Notification
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Not specified

@@ -5,7 +5,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Lookup Hints
-  data_curator: Apple
+  data_curators:
+    - Apple
   intended_use: Web Browsing
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Not specified

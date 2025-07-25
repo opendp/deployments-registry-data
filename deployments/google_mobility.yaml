@@ -6,7 +6,8 @@ registry_authors:
 tier: 3
 deployment:
   name: Community Mobility Place Visits
-  data_curator: Google
+  data_curators:
+    - Google
   intended_use: Provide public-health authorities insights into how mobility patterns changed in response to COVID-19 policies (e.g., work-from-home, shelter-in-place) to help with decision-making during the pandemic.
   data_product_type: Summary statistics
   data_product_region: Global
