@@ -14,7 +14,7 @@ deployment:
     donation privacy budget (quantified by the parameter epsilon), and sets a strict limit on
     the number of contributions from a user in order to preserve their privacy... For Lookup Hints, Apple uses a privacy budget with epsilon
     of 4, and limits user contributions to two donations per day.
-  publication_date: '1999-01-01' # TODO: Is this correct?
+  publication_date: '2016-01-01' # Not in source by referenced in Tang et al. https://arxiv.org/abs/1709.02753
   additional_information: https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
   dp_flavor:
     flavor: Pure DP
