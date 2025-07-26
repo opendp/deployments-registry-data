@@ -14,7 +14,7 @@ deployment:
   publication_date: '2017-01-01'
   additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   dp_flavor:
-    flavor: Pure DP
+    name: Pure DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
