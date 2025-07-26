@@ -9,11 +9,13 @@ dev
 emoji
 emojis
 GitHub
+hyperparameters
 metadata
 microdata
 noninstitutional
 pre
 randomizer
+subsampled
 sym
 thresholded
 thresholding
