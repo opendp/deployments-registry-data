@@ -16,7 +16,7 @@ deployment:
     of 4, and limits user contributions to two donations per day.
   publication_date: '1999-01-01' # TODO: Is this correct?
   additional_information: https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
-  dp_flavor: 
+  dp_flavor:
     flavor: Pure DP
   privacy_loss:
     privacy_unit: User-level
