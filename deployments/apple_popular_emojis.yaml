@@ -42,7 +42,7 @@ deployment:
 
   model:
     model_name: Local
-    # model_name_description: ''
+    model_name_description: we choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy
     actors: |
       - User’s device (client): Hosts raw emoji-selection events and applies the LDP randomizer before any transmission. Users must trust the device’s operating system and DP library to implement DP correctly.
       - Network adversary: Any eavesdropper on the transmission channel. They rely on Transport Layer Security encryption. In the worst case, they will see the LDP version of the data, since each emoji event is randomized on device so no raw data ever leaves the user’s device.
