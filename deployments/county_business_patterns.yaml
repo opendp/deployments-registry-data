@@ -16,7 +16,7 @@ deployment:
   publication_date: '2023-01-01'
   additional_information: https://www.census.gov/topics/business-economy/disclosure/about.html
   dp_flavor:
-    flavor: Zero-concentrated DP
+    name: Zero-concentrated DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
