@@ -14,7 +14,7 @@ deployment:
     Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee.
   publication_date: '2020-01-01'
   additional_information: https://arxiv.org/abs/2002.05839
-  dp_flavor: 
+  dp_flavor:
     name: Approximate DP
   privacy_loss:
     privacy_unit: User-level
