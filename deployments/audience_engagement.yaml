@@ -25,7 +25,7 @@ deployment:
   model:
     model_name: Central
     model_name_description: The privacy model we are interested in for this work is the global privacy setting, where data
-is already stored centrally, but we want to ensure each result computed on the data is privatized.
+      is already stored centrally, but we want to ensure each result computed on the data is privatized.
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Monthly
     is_interactive: False # TODO: Is this correct?
