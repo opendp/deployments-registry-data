@@ -1,11 +1,10 @@
 status: Converted
 registry_authors:
-- Nicolas Berrios
-- Jack Fitzsimons
+- Shlomi Hod
 tier: 1
 deployment:
   name: Israel's National Registry of Live Births of 2014
-  data_curator: Israeli Ministriy of Health
+  data_curator: Israeli Ministry of Health
   intended_use: Health Data
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Israel
