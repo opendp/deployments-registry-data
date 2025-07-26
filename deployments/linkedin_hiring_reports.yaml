@@ -17,6 +17,8 @@ deployment:
   additional_information: https://arxiv.org/abs/2010.13981
   dp_flavor:
     flavor: Approximate DP
+    data_domain: '' # TODO
+    unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: Event-Month-level
     privacy_unit_description: For this use case we use event-level privacy, where the event is a user being
