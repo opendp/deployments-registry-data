@@ -15,7 +15,7 @@ deployment:
     date, we guarantee the top-employer reports are together (4.8, 4 × 10−10)-DP.
   publication_date: '2020-01-01'
   additional_information: https://arxiv.org/abs/2010.13981
-  dp_flavor: 
+  dp_flavor:
     flavor: Approximate DP
   privacy_loss:
     privacy_unit: Event-Month-level
