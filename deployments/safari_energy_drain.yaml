@@ -13,7 +13,8 @@ deployment:
     m = 32,768, k = 1024, and ✏ = 4 with p = 250,000 web domains.
   publication_date: '2017-01-01'
   additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
-  # dp_flavor: TODO
+  dp_flavor:
+    flavor: Pure DP
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description: TODO
@@ -21,7 +22,7 @@ deployment:
       epsilon: 4.0
   model:
     model_name: Local
-    # model_name_description: TODO
+    model_name_description: we choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Daily
     is_interactive: False # TODO: Is this correct?
