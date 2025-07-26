@@ -13,7 +13,7 @@ deployment:
     m = 1024, k = 65,536, and ✏ = 8.
   publication_date: '2017-01-01'
   additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
-  dp_flavor: 
+  dp_flavor:
     name: Pure DP
   privacy_loss:
     privacy_unit: User-level
