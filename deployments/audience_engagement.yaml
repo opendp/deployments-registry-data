@@ -16,6 +16,8 @@ deployment:
   additional_information: https://arxiv.org/abs/2002.05839
   dp_flavor:
     name: Approximate DP
+    data_domain: '' # TODO
+    unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: User-level
     privacy_unit_description: insights about members' content engagements while ensuring member (user) data is protected.
