@@ -20,7 +20,7 @@ deployment:
     flavor: Pure DP
   privacy_loss:
     privacy_unit: User-level
-    # privacy_unit_description: 
+    # privacy_unit_description:
     privacy_parameters:
       epsilon: 8.0
   model:
