@@ -15,6 +15,8 @@ deployment:
   additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   dp_flavor:
     name: Pure DP
+    data_domain: '' # TODO
+    unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description: TODO
