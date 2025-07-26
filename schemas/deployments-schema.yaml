@@ -72,6 +72,7 @@ properties:
         enum:
           - Summary statistics
           - Machine learning model
+          - Dataset
           # Add to this list as needed.
       publication_date:
         tier: 1
