@@ -18,6 +18,8 @@ deployment:
   additional_information: https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
   dp_flavor:
     flavor: Pure DP
+    data_domain: '' # TODO
+    unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description:
