@@ -28,8 +28,7 @@ deployment:
         - The suppression threshold (\\(\tau\\)=90) where noisy counts below 90 are removed from the final output.
 
   privacy_loss:
-    privacy_unit: |
-      User-day
+    privacy_unit: User-day
     privacy_unit_description: 'Adjacent datasets are those that differ by the data of a single user for a single day. A single user’s contribution is capped at a maximum of 10 unique pageviews per day.'
     privacy_parameters:
       rho: 0.015

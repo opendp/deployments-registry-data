@@ -38,8 +38,7 @@ deployment:
           - The suppression threshold for noisy counts (\\(\tau=3500\\))
 
   privacy_loss:
-    privacy_unit: |
-      Adjacent datasets are those that differ by a total of m pageviews.
+    privacy_unit: Adjacent datasets are those that differ by a total of m pageviews. # not sure what shorter description to write.
     privacy_unit_description: This number is 300 for data prior to February 8th, 2017, and 30 for data from February 9th, 2017, to February 5th, 2023.
     privacy_parameters:
       epsilon: 1.0
