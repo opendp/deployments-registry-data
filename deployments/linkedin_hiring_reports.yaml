@@ -16,7 +16,7 @@ deployment:
   publication_date: '2020-01-01'
   additional_information: https://arxiv.org/abs/2010.13981
   dp_flavor:
-    flavor: Approximate DP
+    name: Approximate DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
