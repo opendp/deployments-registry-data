@@ -1,0 +1,90 @@
+status: Draft
+registry_authors:
+  - Elena Ghazi
+  - Nicolas Berrios
+  - Jack Fitzsimons
+tier: 3
+deployment:
+  name: Historical Pageviews
+  data_curator: Wikimedia Foundation
+  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
+  intended_use: Help Wikipedia editors prioritize their work and support academic research.
+  data_product_type: Summary statistics
+  publication_date: '2023-06-01'
+  data_product_region: Global
+  data_product_sector: Technology
+
+  dp_flavor:
+    name: Pure DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: |
+      Hourly aggregates of pageviews older than 90 days, with columns: project, page ID, date and time, country, count.
+      This historical data was processed in two distinct batches covering the following periods:
+        - July 1, 2015, to February 8, 2017
+        - February 9, 2017, to February 5, 2023
+
+    unprotected_quantities: |
+      The following parameters were tuned on the original dataset without using DP:
+        - For data from February 9, 2017, to February 5, 2023:
+          - The number of daily pageviews protected (m=30)
+          - The ingestion threshold per pages (t = 150), meaning only pages with at least 150 global views are included in the analysis
+          - The suppression threshold for noisy counts (\\(\tau=450\\)), where noisy counts below 450 are removed from the final output
+        - For data from July 1, 2015, to February 8, 2017:
+          - The number of daily pageviews protected (m=300)
+          - The ingestion threshold for pages (t=150)
+          - The suppression threshold for noisy counts (\\(\tau=3500\\))
+
+  privacy_loss:
+    privacy_unit: |
+      Adjacent datasets are those that differ by a total of m pageviews.
+    privacy_unit_description: This number is 300 for data prior to February 8th, 2017, and 30 for data from February 9th, 2017, to February 5th, 2023.
+    privacy_parameters:
+      epsilon: 1.0
+    # privacy_parameters_description: ''
+
+  model:
+    model_name: Central
+    model_name_description: ''
+    actors: |
+      - End-user devices (clients): the individuals who browse Wikipedia.
+      - Trusted Curator (The Wikimedia Foundation): Receives client-annotated pageviews, performs server-side differential privacy (adds noise, suppresses counts), and publishes the final data.
+      - Data Consumers: The public, including Wikipedia editors and academic researchers, who use the final, privacy-preserving data product.
+
+    is_many_release: False
+    # is_many_release_description: ''
+    is_interactive: False
+    # is_interactive_description: ''
+    is_dynamic: False # Fill in correct value.
+    # is_dynamic_description: ''
+
+  accounting:
+    post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold tau is removed from the final output dataset. For 2017-2023 historical data, \\(\tau=450\\). For 2015-2017 data, \\(\tau=2500\\).'
+    composition: 'The results are published once with \\(\epsilon=1\\), and there is no additional privacy consumption.'
+
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: |
+      - The server determines the list of <page,country> groups for which to release statistics by identifying all pages that have more than a global pageview threshold (which was chosen based on the true data with no DP) and create the cross-product of those pages with a pre-defined list of countries.
+      - The hyperparameters per-user daily contribution bound, ingestion threshold, and suppression threshold (see “Unprotected Quantities” for details)  were selected by computing metrics using the true data. The authors acknowledge that the parameters are not differentially private.
+    mechanisms: |
+      - The Laplace mechanism was used to add noise to pre-aggregated sums.
+      - The algorithms were implemented using Tumult Analytics, which is built on Tumult core. The Laplace mechanism implementation used a two-sided geometric distribution.
+      - No information was provided about protection against floating point errors.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - Security measure to protect underlying data:
+        - Raw pageview logs contain no persistent user identifiers and are only kept in “current” form for 90 days; older data is aggregated hourly, reducing sensitivity.
+        - A salted hash function is used on the client side to protect the cookie that tracks visited pages, providing protection against an attacker who might obtain access to it.
+        - All raw data handling is governed by the Wikimedia Foundation’s Privacy Policy and Data Retention Guidelines. Because of the Wikimedia Foundation’s commitment to minimal data retention, this data is only kept in this form for 90 days before being aggregated.
+    justification: |
+      - The Laplace mechanism was chosen (and not Gaussian as in the current pageviews deployment) because the team only had a bound on the \\(L_1\\) sensitivity of the dataset.
+      - The thresholds were chosen after extensive experimentation by measuring accuracy metrics (relative error distribution, drop rate, spurious rate) on the true data. Since these metrics could leak information, the team “kept fine-grained utility metrics confidential throughout the tuning process, minimizing data leakage”, and chose to “only publicly communicate approximate values of global utility metrics and the algorithmic parameters obtained from this tuning process”.
+      - After an in-depth comparison of available open-source tools, the Wikimedia Foundation decided to use Tumult Analytics, framework chosen for its robustness, production-readiness, compatibility with Wikimedia’s compute infrastructure, and support for advanced features like zCDP-based privacy accounting, and started a collaboration with Tumult Labs.
+
+  additional_information: |
+    - Paper: https://arxiv.org/pdf/2308.16298
+    - Several relevant links are provided in the paper’s references, among which:
+      - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
+      - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
+      - Pageviews Differential Privacy – Historical – README: https://analytics.wikimedia.org/published/datasets/country_project_page_historical/00_README.html

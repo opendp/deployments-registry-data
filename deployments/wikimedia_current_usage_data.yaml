@@ -1,0 +1,79 @@
+status: Draft
+registry_authors:
+  - Elena Ghazi
+  - Nicolas Berrios
+  - Jack Fitzsimons
+tier: 3
+deployment:
+  name: Current Pageviews
+  data_curator: Wikimedia
+  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
+  intended_use: Help Wikipedia editors prioritize their work and support academic research.
+  data_product_type: Summary statistics
+  publication_date: '2023-06-01'
+  data_product_region: Global
+  data_product_sector: Technology
+
+  dp_flavor:
+    name: Zero-concentrated DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: 'Raw per-pageview logs for the last 90 days, each record containing: project, page ID, timestamp, country.'
+    unprotected_quantities: |
+      The following parameters were tuned on the original dataset with no privacy:
+        - The per-user daily contribution bound for unique pageviews (k=10).
+        - The ingestion threshold (t=150), meaning only pages with at least 150 global views are included in the analysis.
+        - The suppression threshold (\\(\tau\\)=90) where noisy counts below 90 are removed from the final output.
+
+  privacy_loss:
+    privacy_unit: |
+      User-day
+    privacy_unit_description: 'Adjacent datasets are those that differ by the data of a single user for a single day. A single user’s contribution is capped at a maximum of 10 unique pageviews per day.'
+    privacy_parameters:
+      rho: 0.015
+    # privacy_parameters_description: ''
+
+  model:
+    model_name: Central
+    model_name_description: The model is a client-side filtering with server-side aggregation. Although some filtering operations take place on the user’s device, we still classify it as central, since the raw data leaves the user’s device.
+    actors: |
+      - End-user devices (clients): the individuals who browse Wikipedia. Their device runs the client-side filter that only keeps the top 10 unique pageviews. Users must trust the Wikimedia Foundation to implement the DP mechanisms correctly, to protect raw logs, and to release only the noised aggregates.
+      - Trusted Curator (The Wikimedia Foundation): Receives client-annotated pageviews, performs server-side DP (adds noise, suppresses counts), and publishes the final data.
+      - Data Consumers: The public, including Wikipedia editors and academic researchers, who use the final, privacy-preserving data product. Data consumers do not need to be trusted, as they only ever see the data product which was produced under DP.
+
+    is_many_release: True
+    is_many_release_description: 'Published daily, on a rolling basis. Each user-day is treated as an independent privacy unit, with fixed parameters with \\(\rho\\) = 0.015. Since there is no overlap between days, the privacy loss does not accumulate over days for users.'
+    is_dynamic: True
+    is_dynamic_description: As users visit the site, their individual pageviews are recorded and stored in the current pageviews dataset.
+    is_interactive: False
+    # is_interactive_description: ''
+
+  accounting:
+    post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold \\(\tau\\) is removed from the final output dataset. For current data, \\(\tau\\) = 90.'
+    composition: 'There is no need for composition analysis: The data is partitioned by day, and there is no overlap between days, so the privacy loss does not accumulate.'
+
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: |
+      - Client-side filtering: Before pageview data is sent to the server, a client-side algorithm annotates each contribution with a boolean flag, which indicates whether the contribution should be included in the server side computation, the criteria being that only the first 10 unique pageviews per user, per day are included. The client uses a salted hash of the page ID to track which pages have already been counted, rather than storing raw identifiers, further reducing fingerprinting risk. This pre-processing step enables user-privacy without sending a user identifier to the server (which would be cookie-based and consistent across days).
+      - The server determines the list of <page,country> groups for which to release statistics by identifying all pages that have more than a global pageview threshold (which was chosen based on the true data with no DP) and create the cross-product of those pages with a pre-defined list of countries.
+      - The hyperparameters per-user daily contribution bound, ingestion threshold, and suppression threshold (see “Unprotected Quantities” for details)  were selected by computing metrics using the true data. The authors acknowledge that the parameters are not differentially private.
+    mechanisms: |
+      - The Gaussian mechanism was used to add noise to the pageview counts.
+      - The algorithms were implemented using Tumult Analytics, which is built on Tumult core. The Gaussian mechanism implementation used a discrete, integer-based equivalent of the Gaussian mechanism.
+      - No information was provided about protection against floating point errors.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - No information was provided about security measures in place to protect the underlying data.
+    justification: |
+      - The Gaussian mechanism was chosen because its use of the \\(L_2\\) sensitivity allowed for less noise to be added.
+      - The thresholds were chosen after extensive experimentation by measuring accuracy metrics (relative error distribution, drop rate, spurious rate) on the true data. Since these metrics could leak information, the team “kept fine-grained utility metrics confidential throughout the tuning process, minimizing data leakage”, and chose to “only publicly communicate approximate values of global utility metrics and the algorithmic parameters obtained from this tuning process”.
+      - After comparison of available open-source tools, the Wikimedia Foundation decided to use Tumult Analytics, framework chosen for its robustness, production-readiness, compatibility with Wikimedia’s compute infrastructure, and support for advanced features like zCDP-based privacy accounting, and started a collaboration with Tumult Labs.
+      - Choosing \\(\rho\\) =0.015 is considered to be conservative as it provides much stronger guarantee than \\((\epsilon,\delta)\\)-DP with \\(\epsilon=1\\) and \\(\delta = 10^{-7}\\)
+
+  additional_information: |
+    - Paper: https://arxiv.org/pdf/2308.16298
+    - Several relevant links are provided in the paper’s references, among which:
+      - Client-side filtering code: https://gerrit.wikimedia.org/r/plugins/gitiles/operations/puppet/+/refs/heads/production/modules/varnish/templates/analytics.inc.vcl.erb#171
+      - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
+      - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
