@@ -1,8 +1,8 @@
 status: Converted
 registry_authors:
-- James Honaker
 - Nicolas Berrios
 - Jack Fitzsimons
+- James Honaker
 tier: 1
 deployment:
   name: Census County Business Patterns
