@@ -18,7 +18,7 @@ deployment:
   dp_flavor:
     flavor: Zero-concentrated DP
   privacy_loss:
-    privacy_unit: Business entity
+    privacy_unit: Business establishment
     privacy_unit_description: data are protected with Per-Record Differential Privacy (PRDP).  This stage ensures that every establishment in the CBP database receives a provable privacy guarantee with respect to its existence.
     privacy_parameters:
       rho: 12.058
