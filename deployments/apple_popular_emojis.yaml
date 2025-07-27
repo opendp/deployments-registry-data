@@ -33,9 +33,7 @@ deployment:
   privacy_loss:
     privacy_unit: Event-level
     privacy_unit_description: |
-      Each individual record corresponds to a single emoji-typing event on a user’s device.
-      - No information was provided about the function that computes the distance between between any two datasets in the data domain.
-      - The maximum distance between any two datasets in the data domain is 1.
+      Each individual record corresponds to a single emoji-typing event on a user’s device. No information was provided about the function that computes the distance between between any two datasets in the data domain.
     privacy_parameters:
       epsilon: 4.0
     # privacy_parameters_description: ''

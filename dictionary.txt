@@ -1,5 +1,6 @@
 anonymization
 anonymized
+anonymizes
 cc
 cybercriminals
 dataset
@@ -10,9 +11,12 @@ emoji
 emojis
 GitHub
 hyperparameters
+ll
 metadata
 microdata
 noninstitutional
+pageview
+pageviews
 pre
 randomizer
 subsampled
@@ -20,9 +24,11 @@ sym
 thresholded
 thresholding
 timeframe
+timestamp
 timestamps
 unlinkable
 urandom
+validator
 zCDP
 ε_norm
 ε_sym

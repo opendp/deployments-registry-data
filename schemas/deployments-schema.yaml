@@ -72,6 +72,7 @@ properties:
         enum:
           - Summary statistics
           - Machine learning model
+          - Dataset
           # Add to this list as needed.
       publication_date:
         tier: 1
@@ -105,11 +106,11 @@ properties:
           name:
             tier: 2
             description: |
-              The name of the DP flavor used, like "pure DP", or "approximate DP".
+              The name of the DP flavor used, like "Pure DP", or "Approximate DP".
 
-              If a commonly-known flavor was not used, it can be expressed as "other".
+              If a commonly-known flavor was not used, it can be expressed as "Custom".
 
-              If "other" is used, then specify the `input_metric`, `bound_on_input_distance`, `output_measure`, `bound_on_output_distance`
+              If "Custom" is used, then specify the `input_metric`, `bound_on_input_distance`, `output_measure`, `bound_on_output_distance`
             type: string
             enum:
               - Pure DP
@@ -118,7 +119,7 @@ properties:
               - Renyi DP
               - Custom
           input_metric:
-            description: Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55)
+            description: Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55).
             type: string
           bound_on_input_distance:
             description: Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
@@ -131,11 +132,11 @@ properties:
             type: string
           data_domain:
             tier: 3
-            description: Actual, potential, or counterfactual datasets eligible for protection
+            description: Actual, potential, or counterfactual datasets eligible for protection.
             type: string
           unprotected_quantities:
             tier: 3
-            description: Any quantities in the data product that are unprotected by DP (e.g., statistics computed over a dataset that are released in the clear, i.e., without DP noise. Sometimes these are called “invariants.”)
+            description: Any quantities in the data product that are unprotected by DP (e.g., statistics computed over a dataset that are released in the clear, without DP noise, and sometimes called “invariants”).
             type: string
       privacy_loss:
         type: object
