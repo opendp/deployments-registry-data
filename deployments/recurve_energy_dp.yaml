@@ -1,0 +1,108 @@
+status: Draft
+registry_authors:
+  - Elena Ghazi
+tier: 3
+deployment:
+  name: Energy Differential Privacy for OhmConnect Virtual Power Plant Measurement
+  data_curator: Recurve
+  description: |
+    Aggregate summary statistics describing how much energy OhmConnect participants saved during a demand response event (during the August 14, 2020 California Blackout), relative to a matched, non-participant group. Specifically, the statistics are:
+      - Average Load Shape: A private, hour-by-hour profile of the comparison group's average 'observed' and 'predicted' energy consumption over a 24-hour period.
+      - Percent Load Change: The percentage difference between total predicted and total observed energy consumption for each group during the 3-hour event window.
+      - Difference of Load Changes: The final net impact of the OhmConnect program, calculated by subtracting the comparison group's percent load change from the treatment group's percent load change.
+    Note: The term 'Energy Differential Privacy', used in the deployment's name and throughout the paper, refers to the specific framework and open-source tools for applying differential privacy to energy data analysis.
+  intended_use: Measure the impact of OhmConnect's demand response program on electricity usage, while protecting customer privacy.
+  data_product_type: Summary statistics
+  publication_date: '2020-12-01'
+  data_product_region: California, United States
+  data_product_sector: Energy
+  dp_flavor:
+    name: Approximate DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+
+    data_domain: Hourly electricity consumption data for residential customers in MCE's service territory over a specific period of time ('the months leading up to and subsequent to the demand response event on August 14, 2020'). The dataset includes each customer's 'directly observed energy consumption' and their 'predicted energy consumption', which is a counterfactual value calculated by the CalTRACK model.
+    unprotected_quantities: |
+      - The data from the OhmConnect users is not considered sensitive because the users gave their consent for their data to be used.
+      - The number of customers in the comparison group N = 4948 is public.
+
+  privacy_loss:
+    privacy_unit: user-level
+    privacy_unit_description: Adjacent datasets differ by one customer's data in MCE's residential customer base. The specific function that computes the distance between two adjacent datasets is not explicitly provided.
+    privacy_parameters:
+      epsilon: 4.72
+      delta: 5.06e-9
+    privacy_parameters_description: |
+      Note that the final privacy parameters provided in the paper are \\(\epsilon=0.843\\) and \\(\delta\\)=4.08e-8. As Damien Desfontaines pointed out in the blog 'A list of real-world uses of differential privacy', the paper applied an incorrect sampling formula in a privacy amplification step.
+      The blog also raises the following concern: 'Note that the amplification result assumes uniformly random sampling with replacement. But the paper also mentions a stratified sampling methodology, which is slightly different: it's unclear whether the amplification result still applies. If not, then the privacy parameters are \\(\epsilon = 6.8\\) and \\(\delta = 4.08 \times 10^{-8}\\)'.
+
+  model:
+    model_name: Central
+    # model_name_description:
+    actors: |
+      - Data Owners: MCE provided the sensitive data belonging to users not participating in OhmConnect's program.
+      - Data Curator: Recurve
+      - Subjects: The residential customers in the comparison group. They must trust Recurve to properly handle their raw data and apply differential privacy mechanisms before publishing the results.
+      - Consumers: 'regulators, utilities, and implementers'.
+
+    is_many_release: False
+    # is_many_release_description: ''
+    is_dynamic: False
+    # is_dynamic_description: ''
+    is_interactive: False
+    # is_interactive_description: ''
+
+  accounting:
+    post_processing: Calculating the final net impact by taking the private 'Percent Load Change' statistic computed with DP from the comparison group and subtracting it from the non-private 'Percent Load Change' of the treatment group to produce the final 'Difference of Load Changes'.
+    composition: |
+      Basic Composition:
+        - Consumption Histogram:
+          - A private histogram query was run on the comparison group's data to understand the distribution of hourly consumption values. This was used to generate a synthetic dataset to find the \\(epsilon\\) for the Sparse Vector Technique.
+          - \\(\epsilon\\) = 0.1
+        - Sparse Vector Technique for Clamping Bound:
+          - The Sparse Vector Technique was used to privately select an upper bound for hourly energy consumption.
+          - \\(\epsilon\\) = 0.2
+        - Comparison Group Load Shape:
+          - A 'vector-valued Gaussian Mechanism query' was executed to produce the private average load shape for the comparison group. This single query produced 48 data points (24 for observed hourly usage and 24 for predicted hourly usage).
+          - \\(\epsilon\\) = 4.0 and \\(\delta\\)=4.08e-8
+        - Total Predicted and Observed Consumption Sums:
+          - Two sum queries using the Laplace Mechanism were used to calculate the inputs for the 'Percent Load Change' statistic. One query calculated the total predicted consumption and the other the total observed consumption during the 3-hour event window.
+          - \(\epsilon \) = 1.25 per query, therefore a total of \(\epsilon \) = 2.5.
+        - Total Privacy Impact Calculation:
+          - Pre-amplification: Under basic composition, the steps above yield \\(\epsilon=6.8\\) and \\(\delta\\)=4.08e-8.
+          - Because the comparison group was a sample of a larger population, the paper applies an 'amplification factor' of 0.124 to reduce the total privacy cost. The correct amplification formula yields \\(\epsilon = 4.72\\) and \\(\delta = 5.06e-9\\).
+
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: |
+      - The CalTRACK methodology was used to model and generate a 'predicted' (counterfactual) hourly energy usage for every customer in both the treatment (non-sensitive) and comparison (sensitive) groups.
+      - An upper bound was selected for hourly consumption data used for clipping in a two-step process:
+        1. Build a histogram using \\(\epsilon = 0.1\\) to understand the distribution of the data. This private histogram was then used to generate a synthetic dataset, which was used to choose the privacy budget \\(epsilon=0.2\\) to be used for selecting clamping bound using the Sparse Vector Technique.
+        2. Select a clamping bound using Sparse Vector Technique with \\(\epsilon = 0.2\\).
+      - Historical usage features (e.g., Summer MWh usage) were calculated for each customer to be used in the matching process.
+      - The GRIDmeter tool was used to select the comparison group from the larger pool of non-participants.
+      - An \\(\epsilon\\) value for the Average Load Shape was chosen using the epsilon_for_confidence_interval function from Recurve's open-source EEprivacy library to meet a pre-defined accuracy target of 'a 95% confidence interval of ±0.1 kWh'. The epsilon_for_confidence_interval function does not rely on user data, and therefore, does not consume any privacy budget.
+      - An \\(\epsilon\\) value for the Percent Load Change was 'determined stochastically to achieve approximately 1% (one percentage point) error'.
+
+    mechanisms: |
+      - The following mechanisms were used:
+        - The Gaussian Mechanism for computing the Average Load Shape.
+        - The Laplace Mechanism for the sum queries needed for the percent load change.
+        - The Sparse Vector Technique to choose the clamping bound.
+      - The mechanisms were implemented using two libraries:
+        - Recurve's open-source 'EEprivacy library' for choosing \\(\epsilon\\) values.
+        - Google's differential privacy Go library was used 'to determine the Analytical Gaussian sigma values and securely add noise', 'primarily to mitigate the floating-point attack against differential privacy'.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - No information was provided about security measures in place to protect the underlying data.
+
+    justification: |
+      - The values of \\(epsilon\\) for each of the Average Load Shape and the Percent Load Change were chosen to meet specific levels of precision.
+      - Google's differential privacy Go library was used to mitigate floating point attacks.
+      - An 'isolation attack' was simulated to demonstrate that the noise added by a Gaussian mechanism with \\(\epsilon=0.843\\) 'limits an attacker to a confidence interval of around ±1,000 kWh for hourly consumption.'
+
+  additional_information: |
+    - Applying Energy Differential Privacy To Enable Measurement of the OhmConnect Virtual Power Plant (paper): https://assets.website-files.com/5cb0a177570549b5f11b9550/5ffddb83b5ea5d67f5c43661_Quantifying%20The%20OhmConnect%20Virtual%20Power%20Plant%20During%20the%20California%20Blackouts.pdf
+    - Revenue-Grade Analysis of the OhmConnect Virtual Power Plant During the California Blackouts (blog): https://www.recurve.com/blog/revenue-grade-analysis-of-the-ohmconnect-virtual-power-plant-during-the-california-blackouts
+    - Differential Privacy for Expanding Access to Building Energy Data (paper that introduced Energy Differential Privacy): https://edp.recurve.com/uploads/8/6/5/0/8650231/aceee_paper_final.pdf
+    - A list of real-world uses of differential privacy (blog that provides the correct privacy parameters): https://desfontain.es/blog/real-world-differential-privacy.html
