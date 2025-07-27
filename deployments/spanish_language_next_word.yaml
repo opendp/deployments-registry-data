@@ -25,7 +25,7 @@ deployment:
 
   privacy_loss:
     privacy_unit: |
-      User-level
+      User-device-level
     privacy_unit_description: The output distribution of models does not change even if we add or remove all of the training examples from any one device.
     privacy_parameters:
       rho: 0.81
