@@ -10,8 +10,8 @@ deployment:
   intended_use: Statistics API
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global
-  description: With these proposed parameter values (...) and applying
-    Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee.
+  description: 'With these proposed parameter values (...) and applying
+    Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee.'
   publication_date: '2020-01-01'
   additional_information: https://arxiv.org/abs/2002.05839
   dp_flavor:
@@ -26,8 +26,8 @@ deployment:
       delta: 7.0e-09
   model:
     model_name: Central
-    model_name_description: The privacy model we are interested in for this work is the global privacy setting, where data
-      is already stored centrally, but we want to ensure each result computed on the data is privatized.
+    model_name_description: 'The privacy model we are interested in for this work is the global privacy setting, where data
+      is already stored centrally, but we want to ensure each result computed on the data is privatized.'
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Monthly
     is_interactive: False # TODO: Is this correct?
