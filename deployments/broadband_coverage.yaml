@@ -1,26 +1,83 @@
-status: Converted
+status: Draft
 registry_authors:
-- Nicolas Berrios
-- Jack Fitzsimons
-tier: 1
+  - Elena Ghazi
+  - Nicolas Berrios
+  - Jack Fitzsimons
+tier: 3
 deployment:
-  name: Broadband Coverage Estimates
+  name: Broadband Coverage
   data_curator: Microsoft
-  intended_use: Geographical Broadband Statistics
-  data_product_type: Summary statistics # TODO: Is this correct?
+  description: Publicly available U.S. Broadband Coverage dataset that reports broadband coverage percentages at a zip code-level.
+  intended_use: Allow researchers and policy makers to understand problems related to broadband access and develop solutions to improve broadband access while simultaneously preserving the privacy of individual households.
+  data_product_type: Dataset
+  publication_date: '2021-04-01'
   data_product_region: USA
-  description: 'For each of the counts queries from Microsoft Services
-    Telemetry Data, we use the Laplace Mechanism, with an epsilon of 0.1, to obtain
-    diﬀerentially private counts.'
-  publication_date: '2021-01-01'
-  additional_information: https://arxiv.org/pdf/2103.14035
-  # dp_flavor: TODO
+  data_product_sector: Technology # Telecommunication, Public Sector/Government?
+
+  dp_flavor:
+    name: Pure DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: A collection of user records derived from data Microsoft collects as part of their ongoing work to improve their software and services performance and security. The records are generated every time a device receives an update or connects to a Microsoft service, and contain the throughput speed estimated from the connection and the device’s location, which is determined at the zip code level location data via reverse IP.
+    unprotected_quantities: The published dataset includes 32,653 zip codes. The paper notes that this was "predefined based on average number of machines in the last years".
+
   privacy_loss:
-    privacy_unit: Aggregate statistics
-    # privacy_unit_description: TODO
+    privacy_unit: |
+      User-level
+    privacy_unit_description: Neighboring datasets are defined to be the addition or deletion of a single user in the data and all possible records of that user.
     privacy_parameters:
-      epsilon: 0.1
+      epsilon: 0.2
+    # privacy_parameters_description: ''
+
+  model:
+    model_name: Central
+    # model_name_description: ''
+    actors: |
+      - Users whose devices connect to Microsoft services. They must trust Microsoft to handle their data and apply the DP protections as described.
+      - Microsoft (Curator): collects the raw telemetry data, applies the Laplace mechanism to produce differentially private counts, and publishes the final data product.
+      - Data Consumers: includes “researchers and policy makers” and “federal, state, and local agencies” who only have access to the final, public data product and cannot see the underlying private data. They do not need to be trusted, as they only ever access the data product produced under DP.
+    is_many_release: False
+    # is_many_release_description: ''
+    is_dynamic: True
+    is_dynamic_description: Microsoft collects data “as part of our ongoing work to improve our software and services performance and security”. The data is generated continuously, as “every time a device receives an update or connects to a Microsoft service, we can estimate the throughput speed”.
+    is_interactive: False
+    # is_interactive_description: ''
+
+  accounting:
+    post_processing: |
+      - Negative values are clamped to zero.
+      - The final privatized Broadband Coverage Estimation was calculated using noisy counts and the number of households in each ZIP code as reported in the Department of Housing and Urban Development’s publicly available dataset.
+
+    composition: |
+      The following quantities are computed with DP (per ZIP code):
+        - Windows telemetry data:
+          - The number of devices with speed < 25 Mbps
+          - The number of devices with speed >= 25 Mbps
+        - Microsoft services data:
+          - The number of devices using Microsoft services
+          - The number of devices not using Microsoft services
+      The statistics above are each computed using a Laplace mechanism of \\(\epsilon = 0.1\\) and are used together to compute the Broadband Coverage Estimate.
+      By parallel composition:
+        - The total privacy loss corresponding to Windows telemetry data is 0.1.
+        - The total privacy loss corresponding to Microsoft services data is 0.1.
+      By sequential composition, the total privacy loss is 0.2.
+      (Note: The equation for Broadband Coverage Estimate does not use the "number of devices with speed < 25". In fact, it seems this number is never used.)
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
-    mechanisms: Laplace Mechanism
-    justification: '' # TODO: Fill in correct value
+    pre_processing_eda_hyperparameter_tuning: The 32,653 zip codes were predefined based on the average number of machines in the last years (not on the dataset being protected).
+
+    mechanisms: |
+      - The Laplace mechanism with \\(\epsilon = 0.1\\) was applied to every count query (see section on Composition for query descriptions).
+      - All DP processing was done with the OpenDP SmartNoise library: https://github.com/microsoft/USBroadbandUsagePercentages
+      - No information was provided about protection against floating point errors.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - No information was provided about security measures in place to protect the underlying data.
+    justification: |
+      - The privacy budget \\(\epsilon = 0.1\\) used to obtain the counts is chosen to be comparable to other industry differentially private data releases.
+      - The number of devices connected to the internet at broadband speed per each zip code is counted based on the Federal Communications Commission (FCC)’s definition of broadband that is 25mbps per download.
+      - "All diﬀerential privacy processing was done with the OpenDP SmartNoise library. The SmartNoise library includes a comprehensive set of diﬀerential privacy mechanisms, algorithms, and validator. The library is open source, and is maintained and vetted by OpenDP."
+      - A Monte Carlo simulation process to estimate the error introduced by DP was chosen, the rationale being that this empirical method is better for estimating the combined error from several private sources and does not result in additional privacy losses.
+  additional_information: |
+    - Paper: https://arxiv.org/abs/2103.14035
+    - Github: https://github.com/microsoft/USBroadbandUsagePercentages
