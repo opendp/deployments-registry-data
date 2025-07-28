@@ -91,4 +91,4 @@ deployment:
   additional_information: |
     - Documentation: https://storage.googleapis.com/gcp-public-data-symptom-search/COVID-19%20Search%20Trends%20symptoms%20dataset%20documentation%20.pdf?utm_source=chatgpt.com
     - Paper: https://arxiv.org/pdf/2009.01265
-    - Published data product: https://github.com/GoogleCloudPlatform/covid-19-open-data/blob/main/docs/table-search-trends.md
+    - [Published data product](https://github.com/GoogleCloudPlatform/covid-19-open-data/blob/main/docs/table-search-trends.md)
