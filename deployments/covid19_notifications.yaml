@@ -9,9 +9,9 @@ deployment:
   intended_use: Healthcare Exposure Notification
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Not specified
-  description: The central diﬀerential privacy guarantees εc that result
-    from unlinkable aggregation of ε0 = 8 metric report binary vectors, as used in
-    ENPA.
+  description: 'The central diﬀerential privacy guarantees \\(\epsilon_c\\) that result
+    from unlinkable aggregation of \\(\epsilon_0\\) = 8 metric report binary vectors, as used in
+    ENPA.'
   publication_date: '2021-01-01'
   additional_information: https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf
   # dp_flavor: TODO
