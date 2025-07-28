@@ -24,7 +24,7 @@ deployment:
       epsilon: 8.0
   model:
     model_name: Local
-    model_name_description: 'we choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy'
+    model_name_description: '[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy...'
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Daily
     is_interactive: False # TODO: Is this correct?
