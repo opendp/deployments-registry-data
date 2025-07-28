@@ -35,8 +35,8 @@ deployment:
       epsilon: 4.72
       delta: 5.06e-9
     privacy_parameters_description: |
-      Note that the final privacy parameters provided in the paper are \\(\epsilon=0.843\\) and \\(\delta\\)=4.08e-8. As Damien Desfontaines pointed out in the blog 'A list of real-world uses of differential privacy', the paper applied an incorrect sampling formula in a privacy amplification step.
-      The blog also raises the following concern: 'Note that the amplification result assumes uniformly random sampling with replacement. But the paper also mentions a stratified sampling methodology, which is slightly different: it's unclear whether the amplification result still applies. If not, then the privacy parameters are \\(\epsilon = 6.8\\) and \\(\delta = 4.08 \times 10^{-8}\\)'.
+      Note that the final privacy parameters provided in the paper are \\(\epsilon=0.843\\) and \\(\delta = 4.08 \times 10^{-8}\\). As Damien Desfontaines pointed out in the blog 'A list of real-world uses of differential privacy', the paper applied an incorrect sampling formula in a privacy amplification step.
+      The blog also raises the following concern: 'Note that the amplification result assumes uniformly random sampling with replacement. But the paper also mentions a stratified sampling methodology, which is slightly different: it's unclear whether the amplification result still applies. If not, then the privacy parameters are \\(\epsilon = 6.8\\) and \\(\delta = 4.08 \times 10^{-8}\\).
 
   model:
     model_name: Central
@@ -69,7 +69,7 @@ deployment:
           - \\(\epsilon\\) = 4.0 and \\(\delta\\)=4.08e-8
         - Total Predicted and Observed Consumption Sums:
           - Two sum queries using the Laplace Mechanism were used to calculate the inputs for the 'Percent Load Change' statistic. One query calculated the total predicted consumption and the other the total observed consumption during the 3-hour event window.
-          - \(\epsilon \) = 1.25 per query, therefore a total of \(\epsilon \) = 2.5.
+          - \\(\epsilon\\) = 1.25 per query, therefore a total of \\(\epsilon \\) = 2.5.
         - Total Privacy Impact Calculation:
           - Pre-amplification: Under basic composition, the steps above yield \\(\epsilon=6.8\\) and \\(\delta\\)=4.08e-8.
           - Because the comparison group was a sample of a larger population, the paper applies an 'amplification factor' of 0.124 to reduce the total privacy cost. The correct amplification formula yields \\(\epsilon = 4.72\\) and \\(\delta = 5.06e-9\\).
