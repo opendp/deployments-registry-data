@@ -28,8 +28,8 @@ deployment:
     privacy_unit_description: ''
     privacy_parameters: # Fill in correct value, and remove others
       epsilon: 1.0
-      delta: 0
-      rho: 0
+      delta: 1.0e-10
+      rho: 1.0
     privacy_parameters_description: ''
 
   model:
