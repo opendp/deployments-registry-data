@@ -9,9 +9,9 @@ deployment:
   intended_use: Geographical Broadband Statistics
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: USA
-  description: For each of the counts queries from Microsoft Services
+  description: 'For each of the counts queries from Microsoft Services
     Telemetry Data, we use the Laplace Mechanism, with an epsilon of 0.1, to obtain
-    diﬀerentially private counts.
+    diﬀerentially private counts.'
   publication_date: '2021-01-01'
   additional_information: https://arxiv.org/pdf/2103.14035
   # dp_flavor: TODO
