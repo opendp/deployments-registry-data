@@ -21,7 +21,7 @@ deployment:
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: Business establishment
-    privacy_unit_description: '[D]ata are protected with Per-Record Differential Privacy (PRDP).  This stage ensures that every establishment in the CBP database receives a provable privacy guarantee with respect to its existence.'
+    privacy_unit_description: "[D]ata are protected with Per-Record Differential Privacy (PRDP).  This stage ensures that every establishment in the CBP database receives a provable privacy guarantee with respect to its existence."
     privacy_parameters:
       rho: 12.058
   model:
