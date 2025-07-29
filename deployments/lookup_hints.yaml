@@ -10,10 +10,11 @@ deployment:
   intended_use: Web Browsing
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Not specified
-  description: 'The Apple differential privacy implementation incorporates the concept of a per-
+  description: |
+    "The Apple differential privacy implementation incorporates the concept of a per-
     donation privacy budget (quantified by the parameter epsilon), and sets a strict limit on
     the number of contributions from a user in order to preserve their privacy... For Lookup Hints, Apple uses a privacy budget with epsilon
-    of 4, and limits user contributions to two donations per day.'
+    of 4, and limits user contributions to two donations per day."
   publication_date: '2016-01-01' # Not in source by referenced in Tang et al. https://arxiv.org/abs/1709.02753
   additional_information: https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
   dp_flavor:
@@ -27,8 +28,7 @@ deployment:
       epsilon: 8.0
   model:
     model_name: Local
-    model_name_description: 'Apple has adopted and further developed a technique known in the academic world
-      as local differential privacy'
+    model_name_description: '"Apple has adopted and further developed a technique known in the academic world as local differential privacy."'
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Daily
     is_interactive: False # TODO: Is this correct?
