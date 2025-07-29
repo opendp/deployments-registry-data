@@ -10,9 +10,10 @@ deployment:
   intended_use: Labor Market Reports
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Not specified
-  description: 'Therefore each report is (1.2, 10−10)-DP because the ratio
+  description: |
+    "Therefore each report is (1.2, 10−10)-DP because the ratio
     that uses both counts accumulates the privacy loss.  Therefore, for each report
-    date, we guarantee the top-employer reports are together (4.8, 4 × 10−10)-DP.'
+    date, we guarantee the top-employer reports are together (4.8, 4 × 10−10)-DP."
   publication_date: '2020-01-01'
   additional_information: https://arxiv.org/abs/2010.13981
   dp_flavor:
@@ -21,9 +22,10 @@ deployment:
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: Event-Month-level
-    privacy_unit_description: 'For this use case we use event-level privacy, where the event is a user being
+    privacy_unit_description: |
+      "For this use case we use event-level privacy, where the event is a user being
       hired. We note that in our dataset, in any given 3 month period at least 95% of users are hired at
-      most once...Similarly, we guarantee that each month, the top-jobs query is (4.8, 4 × 10−10)-DP.'
+      most once...Similarly, we guarantee that each month, the top-jobs query is (4.8, 4 × 10−10)-DP."
     privacy_parameters:
       epsilon: 4.8
       delta: 4.0e-10
