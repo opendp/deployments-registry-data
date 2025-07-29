@@ -9,8 +9,7 @@ deployment:
   intended_use: Browser Statistics
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global
-  description: 'For this use case, we set the parameters for HCMS to be
-    m = 32,768, k = 1024, and \\(\epsilon\\) = 4 with p = 250,000 web domains.'
+  description: '"For this use case, we set the parameters for HCMS to be m = 32,768, k = 1024, and \\(\epsilon\\) = 4 with p = 250,000 web domains."'
   publication_date: '2017-01-01'
   additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   dp_flavor:
@@ -24,7 +23,7 @@ deployment:
       epsilon: 4.0
   model:
     model_name: Local
-    model_name_description: '[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy...'
+    model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Daily
     is_interactive: False # TODO: Is this correct?
