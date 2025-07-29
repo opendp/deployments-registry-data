@@ -20,7 +20,7 @@ deployment:
   privacy_loss:
     privacy_unit: User-level
     privacy_unit_description: |
-    "insights about members'' content engagements while ensuring member (user) data is protected."
+      "insights about members'' content engagements while ensuring member (user) data is protected."
     privacy_parameters:
       epsilon: 34.9
       delta: 7.0e-09
