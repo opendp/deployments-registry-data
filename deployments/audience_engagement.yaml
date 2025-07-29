@@ -10,8 +10,7 @@ deployment:
   intended_use: Statistics API
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global
-  description: 'With these proposed parameter values (...) and applying
-    Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee.'
+  description: '"With these proposed parameter values (...) and applying Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee."'
   publication_date: '2020-01-01'
   additional_information: https://arxiv.org/abs/2002.05839
   dp_flavor:
