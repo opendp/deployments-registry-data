@@ -26,7 +26,7 @@ jobs:
         run: pre-commit run --all-files
 
       - name: Check deployments
-        run: python scripts/check.py --skip check_url
+        run: python scripts/check.py --skip check_urls
 
       - name: Unit tests
         run: pytest -vv
