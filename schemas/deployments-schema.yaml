@@ -221,6 +221,8 @@ properties:
             description: Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
             type: string
       accounting:
+        description_long: |
+          **Privacy-loss accounting**, i.e., how privacy loss is accounted for over multiple queries to the underlying data, is described by composition and post-processing:
         type: object
         additionalProperties: False
         required:
@@ -230,10 +232,22 @@ properties:
           post_processing:
             tier: 3
             description: Functions applied to the data product after being protected under DP
+            description_long: |
+              Once differential privacy has been applied to generate a data product, functions applied to the data product thereafter, termed post-processing, do not incur additional privacy loss.
+              The impact of these functions may be important to know about for downstream applications using the data product, so they are reported for Tier 3 entries.
+              For example, imagine a data curator releasing a data product that includes counts of people in different geographic regions.
+              A privacy-protected count may be negative, but the curator may not want to publish a seemingly nonsensical count and may turn these negative counts into zeros.
             type: string
           composition:
             tier: 3
             description: How privacy loss is accounted across multiple differentially private queries, like sequential or parallel composition
+            description_long: |
+              Data products are often generated via multiple queries to the underlying data.
+              Each query to the data requires specifying values for the privacy parameters.
+              How privacy parameter values accumulate under differential privacy is described by different forms of composition.
+              Examples of composition include sequential composition and parallel composition.
+              Under sequential composition, assuming pure DP, the sum of the privacy parameter value (epsilon) per query is the total privacy parameter value.
+              Parallel composition, again assuming pure DP, says that the total privacy parameter value for a set of queries applied on disjoint subsets of the data is the maximum privacy parameter value used for one of the queries.
             type: string
       implementation:
         type: object
