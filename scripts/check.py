@@ -72,7 +72,9 @@ def check_spelling(yaml_path):
     return errors
 
 
-def check_urls(yaml_path):
+# TODO: Re-enable when URLs are only checked nightly.
+# https://github.com/opendp/deployments-registry-data/pull/84
+def disabled_check_urls(yaml_path):
     deployment = load(yaml_path.open(), Loader=Loader)
     pairs = get_all_values_paths(deployment)
     errors = []
