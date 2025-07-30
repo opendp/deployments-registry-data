@@ -32,6 +32,14 @@ properties:
     minItems: 1
   tier:
     description: The completeness of the description. For higher tiers, more fields are filled in, but this is guidance, rather than a requirement.
+    description_long: |
+      Deployments are registered at one of three **tiers**. Each increasing tier requires more information to be disclosed about the deployment, allowing for a tradeoff between ease of registration and greater transparency. Below are descriptions of each tier.
+
+      **Tier 1 (\*):** Tier 1 entries provide basic information about each deployment, such as the curator, intended use of the data product, a description of the data product, and publication date. These entries may also include more information (e.g., in the form of external links) where available.
+
+      **Tier 2 (\*\*):** Tier 2 entries provide an intermediate level of information about each deployment. They include the information required for Tier 1 entries, plus information about the flavor of differential privacy, privacy unit and privacy loss parameters, and deployment model.
+
+      **Tier 3 (\*\*\*\):** Tier 3 entries provide an advanced level of information about each deployment, including information required for Tier 1 and Tier 2 entries plus additional information. This additional information includes extra details related to the flavor of DP (such as the data domain and unprotected quantities) and a more detailed description of the privacy unit. It also includes information on privacy accounting (on post-processing and composition) and implementation & security, including rationale for implementation decisions.
     type: integer
     enum:
       - 1
@@ -70,6 +78,8 @@ properties:
       data_product_type:
         tier: 1
         description: Type of data product. This enumeration will grow over time with more examples.
+        description_long: |
+          The **data product** is the output of the differentially-private pipeline. Examples of data products include summary statistics and machine learning models.
         type: string
         enum:
           - Summary statistics
@@ -159,6 +169,8 @@ properties:
             description: Any quantities in the data product that are unprotected by DP (e.g., statistics computed over a dataset that are released in the clear, without DP noise, and sometimes called “invariants”).
             type: string
       privacy_loss:
+        description_long: |
+          Privacy loss under differential privacy is characterized by a privacy unit and privacy parameters, both described below.
         type: object
         additionalProperties: False
         required:
@@ -168,6 +180,13 @@ properties:
           privacy_unit:
             tier: 2
             description: The entity whose data changes under adjacent datasets (see above), like a user or a user’s contribution (among multiple) (based partly on Bailie et al. 2025). High-level description of the granularity of protection (e.g., user level; user-day).
+            description_long: |
+              Differential privacy aims to obscure the data of “individuals.”
+              How an individual is defined is the privacy unit.
+              For example, the privacy unit might be a person or household, or a single event (“event-level privacy”) or the set of all events associated with a particular user (“user-level privacy”).
+              In other words, the privacy unit “characterizes what [is being] protected” <a href="https://www.oreilly.com/library/view/hands-on-differential-privacy/9781492097730/" target="_blank">(pg 27, Cowan, Shoemate, Pereira 2024)</a>.
+              More formally, the privacy unit is the entity whose data changes under adjacent datasets <a href="https://www.proquest.com/docview/3217403500" target="_blank">(Bailie 2025)</a>.
+              Tier 3 entries go beyond stating a high-level description of the privacy unit and include a precise specification of what constitutes adjacent datasets.
             type: string
           privacy_unit_description:
             tier: 3
@@ -176,6 +195,12 @@ properties:
           privacy_parameters:
             tier: 2
             description: Intensity of protection, as characterized by values set for parameters like epsilon, delta, or rho. Which parameters are specified will vary according to the DP flavor.
+            description_long: |
+              Privacy-loss parameters describe the “intensity” of protection over the privacy unit <a href="https://www.proquest.com/docview/3217403500" target="_blank">(Bailie 2025)</a>.
+              Different flavors of differential privacy use different privacy parameters (e.g., ε for pure DP and ε and δ for approximate-DP).
+              They are referred to as privacy-loss parameters because smaller values mean greater protection (i.e., less loss of privacy).
+              Privacy-loss parameters cannot be interpreted without the privacy unit, as intensity of protection without knowledge of what is being protected is meaningless.
+              It often requires additional modeling and effort to translate privacy-loss parameters into real-world risk measures, and this remains an ongoing area of research.
             type: object
             additionalProperties: False
             properties:
@@ -301,6 +326,8 @@ properties:
               Parallel composition, again assuming pure DP, says that the total privacy parameter value for a set of queries applied on disjoint subsets of the data is the maximum privacy parameter value used for one of the queries.
             type: string
       implementation:
+        description_long: |
+          **Implementation** details are provided for Tier 3 entries. They include the following information:
         type: object
         additionalProperties: False
         required:
@@ -311,6 +338,9 @@ properties:
           pre_processing_eda_hyperparameter_tuning:
             tier: 3
             description: Description of any pre-processing of the data before DP protections and any exploratory data analysis conducted before DP protections, and whether privacy loss was accounted for. How were hyperparameters, like privacy loss parameters, tuned? Was privacy loss associated with this tuning accounted for?
+            description_long: |
+              How privacy loss was accounted for, if at all, during steps taken prior to the creation of the data product and application of differential privacy.
+              These steps include data pre-processing, EDA, and hyperparameter tuning (e.g., on privacy-loss parameters).
             type: string
           mechanisms:
             tier: 3
@@ -322,6 +352,9 @@ properties:
               - What measures, if any, were taken to protect against leakage due to idiosyncrasies of the computing platform?
               - What security measures are in place to protect the underlying data (i.e., the data before being processed under DP)? What access controls are in place?
               - Version of the code & github link, if available
+            description_long: |
+              Differential privacy can be achieved using several mechanisms, i.e., algorithms that take the data as input and output a privacy-protected data product.
+              Tier 3 entries describe these mechanisms and how they were implemented (e.g., using a library). These entries also describe other security-related implementation details, like what measures were taken to protect against known vulnerabilities, like floating point and timing channel attacks (e.g., see <a href="https://ieeexplore.ieee.org/abstract/document/9833672" target="_blank">(Jin, McMurtry, Rubinstein, Ohrimenko 2022)</a>. If available, code for implementation should be linked in this section.
             type: string
           justification:
             tier: 3
@@ -329,7 +362,12 @@ properties:
               Process by which any of the above choices surrounding implementation of DP were made, and well as any rationale around these decisions. Some questions that this section may answer include, but are not limited to:
 
               “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?” (Dwork Kohli Mulligan 2019)
+            description_long: |
+              Rationale for how decisions around implementation were made by the curator or others. In short, this information should answer the following questions laid out by <a href="https://escholarship.org/content/qt8vj5q8j7/qt8vj5q8j7_noSplash_3fbe06d219d4266437a90862727e5789.pdf" target="_blank">Dwork Mulligan Kohli 2019</a>: “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?
             type: string
       additional_information:
+        description_long: |
+          This section includes links to white papers, blogposts, or other sources that describe the deployment.
+          This section may also include links to the data product itself, if publicly available.
         tier: 1
         type: string
