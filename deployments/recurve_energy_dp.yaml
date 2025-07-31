@@ -4,7 +4,8 @@ registry_authors:
 tier: 3
 deployment:
   name: Energy Differential Privacy for OhmConnect Virtual Power Plant Measurement
-  data_curator: Recurve
+  data_curators:
+    - Recurve
   description: |
     Aggregate summary statistics describing how much energy OhmConnect participants saved during a demand response event (during the August 14, 2020 California Blackout), relative to a matched, non-participant group. Specifically, the statistics are:
       - Average Load Shape: A private, hour-by-hour profile of the comparison group's average 'observed' and 'predicted' energy consumption over a 24-hour period.

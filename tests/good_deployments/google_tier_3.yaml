@@ -4,7 +4,8 @@ registry_authors:
 tier: 3
 deployment:
   name: Placeholder
-  data_curator: Google
+  data_curators:
+    - Google
   description: Placeholder for tests
   intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
   data_product_type: Summary statistics

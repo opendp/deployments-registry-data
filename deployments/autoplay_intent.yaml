@@ -5,7 +5,8 @@ registry_authors:
 tier: 1
 deployment:
   name: AutoPlay Intent
-  data_curator: Apple
+  data_curators:
+    - Apple
   intended_use: Video Browser Play
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Not Specified
