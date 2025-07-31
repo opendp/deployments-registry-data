@@ -77,9 +77,11 @@ def check_quoting(yaml_path):
     return errors
 
 
-def check(yaml_path: Path):
+def check(yaml_path: Path, skip=tuple()):
     detail_checks = [
-        function for name, function in globals().items() if name.startswith("check_")
+        function
+        for name, function in globals().items()
+        if name.startswith("check_") and name not in skip
     ]
     errors = {}
     for detail_check in detail_checks:
@@ -97,19 +99,29 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "yaml_paths",
+        "--yaml_paths",
         nargs="*",
         help="If empty, checks all deployments.",
         type=Path,
     )
+    parser.add_argument(
+        "--skip",
+        nargs="*",
+        choices=[name for name in globals().keys() if name.startswith("check_")],
+        help="Checks to skip",
+        default=[],
+    )
     args = parser.parse_args()
     yaml_paths = args.yaml_paths
     if not yaml_paths:
-        yaml_paths = Path(__file__).parent.glob("deployments/*.yaml")
+        yaml_paths = list(Path(__file__).parent.parent.glob("deployments/*.yaml"))
+    if not yaml_paths:
+        print("No files selected")
+        exit(1)
     errors = {}
     for yaml_path in yaml_paths:
         print(f"Validating {yaml_path.name}...")
-        error = check(yaml_path)
+        error = check(yaml_path, skip=args.skip)
         assert isinstance(error, dict), f"Expected list, not {error}"
         if error:
             errors[yaml_path.name] = error
