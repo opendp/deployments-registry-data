@@ -11,7 +11,7 @@ deployment:
   intended_use: Power next-word-prediction for Spanish-language Gboard users.
   data_product_type: Machine learning model
   publication_date: '2022-02-01'
-  data_product_region: The model was specifically trained to power next-word prediction for Spanish-language Gboard users. The specific countries the users are in are not specified.
+  data_product_region: Global
   data_product_sector: Technology
 
   dp_flavor:

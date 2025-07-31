@@ -92,6 +92,7 @@ properties:
           - Healthcare
           - Education
           - Government
+          - Energy
           # Add to this list as needed.
 
       # Tiers 2 and 3
@@ -161,9 +162,9 @@ properties:
             properties:
               epsilon:
                 type: number
-              rho:
-                type: number
               delta:
+                type: number
+              rho:
                 type: number
           privacy_parameters_description:
             tier: 3
