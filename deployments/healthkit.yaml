@@ -10,11 +10,13 @@ deployment:
   intended_use: Health Data
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Not specified
-  description: 'We deploy CMS to observe the most popular health data
-    types with the following parameters: m = 256, k = 65,536, and ✏ = 2.'
+  description: '"We deploy CMS to observe the most popular health data types with the following parameters: m = 256, k = 65,536, and \\(\epsilon\\) = 2."'
   publication_date: '2017-01-01'
   additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
-  # dp_flavor: TODO
+  dp_flavor:
+    name: Pure DP
+    data_domain: '' # TODO
+    unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description: TODO
@@ -22,12 +24,12 @@ deployment:
       epsilon: 2.0
   model:
     model_name: Local
-    # model_name_description: TODO
+    model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Daily
     is_interactive: False # TODO: Is this correct?
   # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
-    mechanisms: Count-Min Sketch
+    mechanisms: Private Count Mean Sketch
     justification: '' # TODO: Fill in correct value

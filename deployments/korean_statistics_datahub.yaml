@@ -10,9 +10,10 @@ deployment:
   intended_use: Goverment Data Hub
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Korea
-  description: Statistics Korea is promoting the establishment of a public
+  description: |
+    "Statistics Korea is promoting the establishment of a public
     big data system that leverages cutting-edge privacy-preserving techniques to enable
-    the safe linkage and use of scattered governmental data.
+    the safe linkage and use of scattered governmental data."
   publication_date: '2021-01-01'
   additional_information: https://unstats.un.org/wiki/display/UGTTOPPT/11.+Statistics+Korea%3A+Developing+a+privacy-preserving+Statistical+Data+Hub+Platform
   # dp_flavor: TODO

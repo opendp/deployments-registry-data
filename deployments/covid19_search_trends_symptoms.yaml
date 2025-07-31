@@ -1,0 +1,95 @@
+status: Draft
+registry_authors:
+  - Elena Ghazi
+  - Nicolas Berrios
+  - Jack Fitzsimons
+tier: 3
+deployment:
+  name: COVID-19 Search Trends Symptoms
+  data_curators:
+    - Google
+  description: Summary statistics, published as an aggregated and anonymized dataset. It provides daily or weekly time series for various geographic regions, showing the relative frequency of Google searches for approximately 400 predefined symptoms. These values are normalized by the total search activity in the corresponding region to show trends over time.
+  intended_use: Help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends.
+  data_product_type: Summary statistics
+  publication_date: '2020-09-02'
+  data_product_region: Global
+  data_product_sector: Healthcare
+
+  dp_flavor:
+    name: Pure DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: Search queries from a sample of Google users. These queries are classified as either a “symptom search” if they relate to a pre-defined list of approximately 400 symptoms, or as general search activity which is used to generate the normalization counts. This data is aggregated into daily or weekly counts for a specific symptom and geographic region, at three distinct granularity levels.
+    unprotected_quantities: The paper mentions that, for each day and geographic granularity level, a user’s contribution is capped to three counts in total, and that this was justified by the observation that approximately 75% of users search at most three symptoms per day. There was no mention of the aforementioned statistic being computed under differential privacy.
+
+  privacy_loss:
+    privacy_unit: User-day
+    privacy_unit_description: |
+      The mechanism protects "every user's symptom search activity on a particular day". Adjacent datasets are those that differ by the addition or removal of one user's contribution for a single day. This contribution is strictly limited by the following bounds:
+        - Symptom Searches: A user can contribute a maximum of three symptom counts per day. Each contribution is limited to once per symptom, per day, per geographic level. Any searches exceeding these bounds are discarded.
+        - Normalization Searches: A user can contribute to at most one normalization count per day for each geographic granularity level.
+
+    privacy_parameters:
+      epsilon: 1.68
+    privacy_parameters_description: 'See details under Composition.'
+
+  model:
+    model_name: Central
+    # model_name_description: ''
+    actors: |
+      - Google Users: Individuals performing Google searches.
+      - Data Curator (Google): The central, trusted entity that collects, aggregates, anonymizes, and publishes the data.
+      - Data Consumers: Researchers, public health experts, and the public who access the published data product.
+
+    is_many_release: True
+    is_many_release_description: The data is published on a daily/weekly basis. The paper mentions “We'll continue to update this dataset while public health experts find it useful in their work to stop the spread of COVID-19.” and the interactive dashboard provides data up until 2022.
+    is_dynamic: True
+    is_dynamic_description: 'New data comes in every day and is used for subsequent releases. \\(\epsilon=1.68\\) is applied every day, and since the underlying data is new (disjoint), the overall privacy budget is \\(\epsilon = 1.68\\).'
+    is_interactive: False
+    # is_interactive_description: ''
+
+  accounting:
+    post_processing: |
+      - Computing the Reported Data: Given a particular geographic region, symptom and time interval (either day or week), the normalized search count that is published in the released dataset is computed using \\(c \times \max {(A/B),0}\\), where \\(A\\) is the noisy symptom search count, \\(B\\) is the noisy normalization count, and $c$ is a fixed, region-specific scaling factor. For each geographic region, the scaling factor \\(c\\) is chosen in a way that maps the data in the initial release of the symptoms dataset to values between 0 and 100. It is computed once using data from February 2020 to July 2020, and kept fixed for future releases.
+      - Removing Unreliable Data: A metric is only kept and published if it has a 50% or greater chance of being within 25% of its raw value. This confidence interval is computed using the noisy symptom search count and noisy normalization count; therefore, no privacy budget is spent on this step.
+      - Deciding Between Daily and Weekly Granularity
+        - Country-level data is always published with daily granularity.
+        - For all other regions, the granularity is determined based on data from February 2020 to July 2020 and kept fixed afterwards:
+          - The regions are first ordered by their total search activity from highest to lowest based on noisy normalization counts.
+          - The system starts with the highest-activity regions, publishing their metrics daily. As it moves down the list to lower-activity regions, it performs a "majority vote" check. It looks at the last 20 regions it processed and checks how many of them had over 50% of their daily metrics dropped. If 11 or more of the last 20 regions were mostly empty (i.e., had over 50% of data dropped), it permanently switches to weekly granularity for all remaining regions down the list.
+
+
+    composition: |
+      This privacy budget \\(\epsilon\\) = 1.68 is composed as follows:
+        - Symptom Search Counts (Total \\(\epsilon\\) = 1.638): This portion accounts for 97.5% of the total budget. It is allocated across geographic levels:
+          - Level 0 (Country): \\(\epsilon_0\\) = 0.168
+          - Level 1 (e.g., State): \\(\epsilon_1\\) = 0.37
+          - Level 2 (e.g., County): \\(\epsilon_2\\) = 1.1
+        - Normalization Counts (Total \\(\epsilon\\) = 0.042): This portion accounts for the remaining 2.5% of the total budget. It is allocated across geographic levels:
+          - Level 0 (Country): \\(\epsilon_0'\\) = 0.0023
+          - Level 1 (e.g., State): \\(\epsilon_1'\\) = 0.0047
+          - Level 2 (e.g., County): \\(\epsilon_2'\\) = 0.014
+
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: |
+      - Individual search queries are mapped to one or more symptoms from a predefined list.
+      - The mapped queries are aggregated by user, day, symptom, and geographic region to produce raw counts.
+      - For each day and geographic granularity level, a user can contribute at most once to any given count (per-symptom bound) and to no more than three counts in total (cross-symptom bound). Any symptom searches beyond this limit are discarded.
+
+    mechanisms: |
+      - The Laplace mechanism was used by adding Laplace noise to the symptom search count and normalization count.
+      - The noise was generated using Google’s open-source differential privacy library. https://github.com/google/differential-privacy
+      - No information was provided about protection against floating point errors.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - No information was provided about security measures in place to protect the underlying data.
+
+    justification: |
+      - The decision to bound a user’s contribution to a maximum of three different symptom counts per day was based on the observation that approximately 75% of users search for three or fewer symptoms daily.
+      - For each geographic region and symptom, data is released as either daily or weekly aggregates, depending on data quality. While the system provides daily aggregates whenever possible, it switches to weekly aggregates if privacy protections significantly affect the data's accuracy. Weekly aggregates are more robust because they are based on more data, which reduces the relative error from the added privacy noise. This choice was determined once in a differentially private manner using data from February to July 2020. After being set, the temporal granularity for a given region and symptom remains fixed for the entire duration of the dataset's release.
+
+  additional_information: |
+    - Documentation: https://storage.googleapis.com/gcp-public-data-symptom-search/COVID-19%20Search%20Trends%20symptoms%20dataset%20documentation%20.pdf?utm_source=chatgpt.com
+    - Paper: https://arxiv.org/pdf/2009.01265
+    - Published data product: https://github.com/GoogleCloudPlatform/covid-19-open-data/blob/main/docs/table-search-trends.md

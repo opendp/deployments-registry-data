@@ -59,22 +59,6 @@ properties:
         type: array
         items:
           type: string
-          enum:
-            - Apple
-            - Brave
-            - Google
-            - Israeli Ministry of Health
-            - KOSTAT (National Statistics Office of Korea)
-            - LinkedIn
-            - Meta
-            - Microsoft
-            - Office of National Statistics UK
-            - OpenMined
-            - Spectus
-            - Twitter
-            - U.S. Census Bureau
-            - Wikimedia Foundation
-            # Add to this list as needed.
         minItems: 1
       description:
         tier: 1
@@ -91,6 +75,7 @@ properties:
         enum:
           - Summary statistics
           - Machine learning model
+          - Dataset
           # Add to this list as needed.
       publication_date:
         tier: 1
@@ -110,25 +95,22 @@ properties:
           - Healthcare
           - Education
           - Government
+          - Energy
           # Add to this list as needed.
 
       # Tiers 2 and 3
       dp_flavor:
         type: object
         additionalProperties: False
-        required:
-          - name
-          - data_domain
-          - unprotected_quantities
         properties:
           name:
             tier: 2
             description: |
-              The name of the DP flavor used, like "pure DP", or "approximate DP".
+              The name of the DP flavor used, like "Pure DP", or "Approximate DP".
 
-              If a commonly-known flavor was not used, it can be expressed as "other".
+              If a commonly-known flavor was not used, it can be expressed as "Custom".
 
-              If "other" is used, then specify the `input_metric`, `bound_on_input_distance`, `output_measure`, `bound_on_output_distance`
+              If "Custom" is used, then specify the `input_metric`, `bound_on_input_distance`, `output_measure`, `bound_on_output_distance`
             type: string
             enum:
               - Pure DP
@@ -137,7 +119,7 @@ properties:
               - Renyi DP
               - Custom
           input_metric:
-            description: Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55)
+            description: Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55).
             type: string
           bound_on_input_distance:
             description: Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
@@ -150,18 +132,15 @@ properties:
             type: string
           data_domain:
             tier: 3
-            description: Actual, potential, or counterfactual datasets eligible for protection
+            description: Actual, potential, or counterfactual datasets eligible for protection.
             type: string
           unprotected_quantities:
             tier: 3
-            description: Any quantities in the data product that are unprotected by DP (e.g., statistics computed over a dataset that are released in the clear, i.e., without DP noise. Sometimes these are called “invariants.”)
+            description: Any quantities in the data product that are unprotected by DP (e.g., statistics computed over a dataset that are released in the clear, without DP noise, and sometimes called “invariants”).
             type: string
       privacy_loss:
         type: object
         additionalProperties: False
-        required:
-          - privacy_unit
-          - privacy_parameters
         properties:
           privacy_unit:
             tier: 2
@@ -179,9 +158,9 @@ properties:
             properties:
               epsilon:
                 type: number
-              rho:
-                type: number
               delta:
+                type: number
+              rho:
                 type: number
           privacy_parameters_description:
             tier: 3
@@ -189,8 +168,6 @@ properties:
       model:
         type: object
         additionalProperties: False
-        required:
-          - model_name
         properties:
           model_name:
             tier: 2
@@ -240,9 +217,6 @@ properties:
       accounting:
         type: object
         additionalProperties: False
-        required:
-          - post_processing
-          - composition
         properties:
           post_processing:
             tier: 3
@@ -255,10 +229,6 @@ properties:
       implementation:
         type: object
         additionalProperties: False
-        required:
-          - pre_processing_eda_hyperparameter_tuning
-          - mechanisms
-          - justification
         properties:
           pre_processing_eda_hyperparameter_tuning:
             tier: 3

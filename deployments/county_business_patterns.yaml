@@ -2,6 +2,7 @@ status: Converted
 registry_authors:
 - Nicolas Berrios
 - Jack Fitzsimons
+- James Honaker
 tier: 1
 deployment:
   name: Census County Business Patterns
@@ -10,15 +11,16 @@ deployment:
   intended_use: Geographical Buisness Statistics
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: USA
-  description: Noise added in the PRDP stage is randomly sampled from
-    a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is
-    12.058.
+  description: '"Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058."'
   publication_date: '2023-01-01'
   additional_information: https://www.census.gov/topics/business-economy/disclosure/about.html
-  # dp_flavor: TODO
+  dp_flavor:
+    name: Zero-concentrated DP
+    data_domain: '' # TODO
+    unprotected_quantities: '' # TODO
   privacy_loss:
-    privacy_unit: Aggregate-level
-    # privacy_unit_description: TODO
+    privacy_unit: Business establishment
+    privacy_unit_description: '"[D]ata are protected with Per-Record Differential Privacy (PRDP).  This stage ensures that every establishment in the CBP database receives a provable privacy guarantee with respect to its existence."'
     privacy_parameters:
       rho: 12.058
   model:

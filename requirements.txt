@@ -73,8 +73,6 @@ pyproject-hooks==1.2.0
     # via
     #   build
     #   pip-tools
-pyspellchecker==0.8.3
-    # via -r requirements.in
 pytest==8.4.1
     # via -r requirements.in
 python-dateutil==2.9.0.post0

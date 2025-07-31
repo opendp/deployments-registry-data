@@ -38,8 +38,8 @@ deployment:
         - Other noninstitutional facilities
 
   privacy_loss:
-    privacy_unit: Person-level records (for Person tables) and housing-unit-level records (for Housing Unit tables).
-    privacy_unit_description: he system uses a “bounded neighbors” definition of adjacency because the total population count of the United States and Puerto Rico is held invariant. Therefore, adjacent datasets are two CEFs that differ by the modification of a single person's record (e.g., a change to a person’s census block location), while the total number of records remains the same.
+    privacy_unit: Person-level; housing-unit-level
+    privacy_unit_description: The privacy unit is person-level records for Person tables and housing-unit-level records for Housing Unit tables. The system uses a “bounded neighbors” definition of adjacency because the total population count of the United States and Puerto Rico is held invariant. Therefore, adjacent datasets are two CEFs that differ by the modification of a single person's record (e.g., a change to a person’s census block location), while the total number of records remains the same.
     privacy_parameters:
       rho: 2.63
     privacy_parameters_description: |
