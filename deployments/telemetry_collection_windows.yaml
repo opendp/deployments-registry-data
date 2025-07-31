@@ -9,7 +9,7 @@ deployment:
   intended_use: Telemetry Data
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global
-  description: Data collection is performed every 6 hours, with ε = 1.
+  description: Data collection is performed every 6 hours, with \\(\epsilon\\) = 1.
   publication_date: '2017-01-01'
   additional_information: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
   # dp_flavor: TODO
