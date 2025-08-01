@@ -1,0 +1,73 @@
+status: Draft
+registry_authors:
+  - Elena Ghazi
+  - Nicolas Berrios
+  - Jack Fitzsimons
+tier: 3
+deployment:
+  name: Spanish Next Word Prediction
+  data_curator: Google
+  description: A machine learning model trained with federated learning for next‑word prediction on Spanish‑language Gboard.
+  intended_use: Power next-word-prediction for Spanish-language Gboard users.
+  data_product_type: Machine learning model
+  publication_date: '2022-02-01'
+  data_product_region: Global
+  data_product_sector: Technology
+
+  dp_flavor:
+    name: Zero-concentrated DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: Local training cache consisting of user keyboard input from eligible devices of Spanish-language Gboard users.
+    unprotected_quantities: There is no mention of unprotected quantities.
+
+  privacy_loss:
+    privacy_unit: User-device-level
+    privacy_unit_description: The output distribution of models does not change even if we add or remove all of the training examples from any one device.
+    privacy_parameters:
+      rho: 0.81
+    # privacy_parameters_description: ''
+
+  model:
+    model_name: Federated
+    # model_name_description:
+    actors: |
+      - Users/Devices of Spanish-language Gboard users. They hold their own raw data and compute model updates locally. Hence, users do not need to trust the central server with their raw data, but must trust it to correctly implement the DP mechanism.
+      - Server (Google): Receives model updates from devices, aggregates them, and adds the necessary noise to ensure DP by adding noise to one gradient and subtracting that same noise from a later gradient
+      - Consumers or potential adversaries: Gboard users who interact with the final, privacy-preserving next-word prediction model. They do not need to be trusted, as they only ever interact with the model produced under DP.
+
+    is_many_release: True
+    is_many_release_description: |
+      - The article details a single, specific training instance that “ran for 2000 rounds over six days” to produce one “production ML model”, which on its own would appear to be a one-shot release. However, the context of the Gboard service and the stated goal of smoothing "the road to later training models with improved privacy guarantees" implies this is part of a continual process of model updates over time.
+      - Privacy loss for individuals over time is managed by rate-limiting participation. The system enforces a rule that "devices participated in training at most once every 24 hours".
+      - Refreshment Timeframe and Fixed Budget: The document does not provide details on a refreshment timeframe or a fixed total amount of privacy loss allowed before the underlying data is no longer queried. It only provides the final, total privacy cost for this specific model deployment.
+
+    is_dynamic: True
+    is_dynamic_description: The data consists of “user keyboard input”, which is generated continuously as users interact with the Gboard application. The system architecture, where each “eligible device maintains a local training cache" with new data based on what the "user actually typed", is designed to work with this continuous inflow of new information.
+    is_interactive: False
+    # is_interactive_description: ''
+
+  accounting:
+    post_processing: No details were provided about post-processing.
+    composition: The article does not specifically mention composition, only that the final privacy guarantee is rho = 0.81 zCDP. It mentions that training ran for 2000 rounds over six days, and devices participated in training at most once every 24 hours.
+
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: No information is provided about pre-processing steps, EDA, or the process by which hyperparameters (privacy loss parameter or number of training rounds) were tuned.
+    mechanisms: |
+      - The mechanism is a DP variant of Follow-The-Regularized-Leader (DP-FTRL), which utilizes negatively correlated noise, added by the aggregating server (essentially, adding noise to one gradient and subtracting that same noise from a later gradient) and efficiently implements this using the Tree Aggregation algorithm.
+      - The mechanism was implemented using Google’s open-source libraries TenserFlow Federated and TensorFlow Privacy.
+      - No information was provided about protection against floating point errors.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - The primary security measure protecting the underlying data is the federated learning architecture itself, as it keeps the data on each user's device, decoupling ML training from the need to store the data in the cloud. This approach limits access to data at all stages because only minimal updates for a specific model training task are transmitted from the device.
+    justification: |
+      - The main reason behind choosing federated learning was to train machine learning models while keeping the raw training data on each user's device. This approach provides data minimization advantages, and the DP guarantee protects all of the data on each device, not just individual training examples.
+      - The project implemented user-level DP because example-level DP is not necessarily strong enough to ensure the users' data is not memorized when users can contribute multiple examples.
+      - Decision to use the DP-FTRL Algorithm over DP-FedAvg (introduced in 2018):
+        - DP-FedAvg algorithm's guarantee depended on amplification-via-sampling, which was deemed insufficient because ensuring that devices are subsampled precisely and uniformly at random from a large population would be complex and hard to verify in a real-world system where device availability fluctuates based on external factors (e.g., being idle, on Wi-Fi, and charging).
+        - DP-FTRL was chosen to address this challenge, given the observation that training convergence depends on accuracy of cumulative sums of gradients rather than individual ones, and that it is possible to provide accurate estimates of cumulative sums with a strong DP guarantee by using negatively correlated noise, since some of the privacy noise cancels out from step to step, allowing the model's learning trajectory to stay closer to the true gradient descent steps and achieve better accuracy for a given level of privacy.
+
+  additional_information: |
+    - Federated Learning with Formal Differential Privacy Guarantees (Article published on February 28, 2022): https://research.google/blog/federated-learning-with-formal-differential-privacy-guarantees/
+    - Paper that introduces the DP variant of Follow-The-Regularized-Leader (DP-FTRL) used in the deployment: Practical and Private (Deep) Learning Without Sampling or Shuffling: https://arxiv.org/pdf/2103.00039

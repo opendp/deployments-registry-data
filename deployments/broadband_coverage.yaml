@@ -11,7 +11,7 @@ deployment:
   intended_use: Allow researchers and policy makers to understand problems related to broadband access and develop solutions to improve broadband access while simultaneously preserving the privacy of individual households.
   data_product_type: Dataset
   publication_date: '2021-04-01'
-  data_product_region: Global
+  data_product_region: USA
   data_product_sector: Technology # Telecommunication, Public Sector/Government?
 
   dp_flavor:

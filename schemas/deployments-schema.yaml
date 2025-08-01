@@ -92,16 +92,13 @@ properties:
           - Healthcare
           - Education
           - Government
+          - Energy
           # Add to this list as needed.
 
       # Tiers 2 and 3
       dp_flavor:
         type: object
         additionalProperties: False
-        required:
-          - name
-          - data_domain
-          - unprotected_quantities
         properties:
           name:
             tier: 2
@@ -141,9 +138,6 @@ properties:
       privacy_loss:
         type: object
         additionalProperties: False
-        required:
-          - privacy_unit
-          - privacy_parameters
         properties:
           privacy_unit:
             tier: 2
@@ -161,9 +155,9 @@ properties:
             properties:
               epsilon:
                 type: number
-              rho:
-                type: number
               delta:
+                type: number
+              rho:
                 type: number
           privacy_parameters_description:
             tier: 3
@@ -171,8 +165,6 @@ properties:
       model:
         type: object
         additionalProperties: False
-        required:
-          - model_name
         properties:
           model_name:
             tier: 2
@@ -222,9 +214,6 @@ properties:
       accounting:
         type: object
         additionalProperties: False
-        required:
-          - post_processing
-          - composition
         properties:
           post_processing:
             tier: 3
@@ -237,10 +226,6 @@ properties:
       implementation:
         type: object
         additionalProperties: False
-        required:
-          - pre_processing_eda_hyperparameter_tuning
-          - mechanisms
-          - justification
         properties:
           pre_processing_eda_hyperparameter_tuning:
             tier: 3
