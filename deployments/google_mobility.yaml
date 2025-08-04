@@ -26,7 +26,6 @@ deployment:
         - Total time in hours spent per day at their place of residence.
         - Counts of user spending >1h at work.
     unprotected_quantities: |
-      - 5-week baseline period (2020-01-03 through 2020-02-06).
       - Rule to discard metrics for any geographic region smaller than 3km^2.
       - Contribution-bounding (<= 4 category-location pairs/day for public places, <=1 region/day for residential & work).
       - Statistical reliability rule used to filter metrics: removes data if there is a 5% or higher chance of the percentage change being incorrect by more than ±10 absolute percentage points.
@@ -60,11 +59,11 @@ deployment:
 
   accounting:
     post_processing: |
-      - Percentage Change Calculation: the final published value is a percentage change from the baseline. This is calculated by taking the ratio between the noisy metric for a specific day and the computed baseline for that day of the week (the baseline metric uses a fixed 5-week period from January 3, 2020 to February 6, 2020, by taking the median of the 5 corresponding daily noisy metrics from within that 5-week range.)
+      - Percentage Change Calculation: the final published value is a percentage change from the baseline. This is calculated by taking the ratio between the noisy metric for a specific day and the computed baseline for that day of the week (the baseline metric uses a fixed 5-week period from January 3, 2020 to February 6, 2020, by taking the median of the 5 corresponding daily noisy metrics from within that 5-week range).
       - Filtering Unreliable Metrics:
-      - Statistical Reliability: A metric is not published if there is a 5% or greater chance that the percentage change is wrong by more than ±10 absolute percentage points. This is determined by calculating confidence intervals for both the daily metric and its baseline.
-      - Geographic Size: All metrics for any geographic region smaller than 3km^2 are discarded.
-      - User Count: Metrics are also discarded if the noisy count of contributing users for a given region is smaller than 100.
+        - Statistical Reliability: A metric is not published if there is a 5% or greater chance that the percentage change is wrong by more than ±10 absolute percentage points. This is determined by calculating confidence intervals for both the daily metric and its baseline.
+        - Geographic Size: All metrics for any geographic region smaller than 3km^2 are discarded.
+        - User Count: Metrics are also discarded if the noisy count of contributing users for a given region is smaller than 100.
 
     composition: |
       Basic composition
