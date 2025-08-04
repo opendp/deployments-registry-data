@@ -31,7 +31,7 @@ deployment:
     # privacy_parameters_description: ''
 
   model:
-    model_name: Federated
+    model_name: Central
     # model_name_description:
     actors: |
       - Users/Devices of Spanish-language Gboard users. They hold their own raw data and compute model updates locally. Hence, users do not need to trust the central server with their raw data, but must trust it to correctly implement the DP mechanism.
