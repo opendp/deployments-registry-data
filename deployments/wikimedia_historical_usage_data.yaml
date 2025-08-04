@@ -82,6 +82,7 @@ deployment:
       - After an in-depth comparison of available open-source tools, the Wikimedia Foundation decided to use Tumult Analytics, framework chosen for its robustness, production-readiness, compatibility with Wikimedia’s compute infrastructure, and support for advanced features like zCDP-based privacy accounting, and started a collaboration with Tumult Labs.
 
   additional_information: |
+    - Note: The paper does not explicitly state what constitutes adjacent datasets, and it is not obvious, because the maximum contribution per user was estimated to be m. Therefore, the reported input metric and maximum input distance may need additional follow-up to verify its accuracy.
     - Paper: https://arxiv.org/pdf/2308.16298
     - Several relevant links are provided in the paper’s references, among which:
       - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
