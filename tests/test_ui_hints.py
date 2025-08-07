@@ -59,9 +59,12 @@ def out_of_order(short, long):
 
 
 @pytest.mark.parametrize(
-    "yaml_path", root.glob("deployments/*.yaml"), ids=lambda path: path.name
+    "yaml_path",
+    list(root.glob("deployments/*.yaml"))
+    + [root / "tests/good_deployments/template.yaml"],
+    ids=lambda path: path.name,
 )
-def test_fields_in_order(yaml_path):
+def test_deployments_in_order(yaml_path):
     # UI code will be simpler if it can rely on deployment YAML
     # always being in the prescribed order.
     deployment = load(yaml_path.open(), Loader=Loader)
