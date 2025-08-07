@@ -1,0 +1,13 @@
+type: object
+additionalProperties: False
+required:
+  - short_fields
+  - extra_columns
+properties:
+  short_field:
+    type: array
+    items:
+      type: string
+    minItems: 1
+  extra_columns:
+    type: object
