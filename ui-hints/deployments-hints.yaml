@@ -1,21 +1,21 @@
 short_fields:
   # Default is long format: These are the exceptions.
-  - deployment.name
-  - deployment.data_curator
-  - deployment.data_product_type
-  - deployment.data_product_region
-  - deployment.data_product_sector
-  - deployment.publication_date
-  - deployment.dp_flavor.name
-  - deployment.privacy_loss.privacy_unit
-  - deployment.privacy_loss.privacy_parameters.epsilon
-  - deployment.privacy_loss.privacy_parameters.delta
-  - deployment.privacy_loss.privacy_parameters.rho
-  - deployment.model.model_name
-  - deployment.model.is_many_release
-  - deployment.model.is_interactive
-  - deployment.model.is_dynamic
+  - /deployment/name
+  - /deployment/data_curator
+  - /deployment/data_product_type
+  - /deployment/data_product_region
+  - /deployment/data_product_sector
+  - /deployment/publication_date
+  - /deployment/dp_flavor/name
+  - /deployment/privacy_loss/privacy_unit
+  - /deployment/privacy_loss/privacy_parameters/epsilon
+  - /deployment/privacy_loss/privacy_parameters/delta
+  - /deployment/privacy_loss/privacy_parameters/rho
+  - /deployment/model/model_name
+  - /deployment/model/is_many_release
+  - /deployment/model/is_interactive
+  - /deployment/model/is_dynamic
 extra_columns:
   # Keys are the display names of columns;
   # Values are the path to the value to show.
-  "Model": deployment.model.model_name
+  "Model": /deployment/model/model_name

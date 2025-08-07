@@ -18,3 +18,11 @@ def test_hints_schema():
         f'{".".join(error.path)}: {error.message}'
         for error in validator.iter_errors(ui_hints)
     ]
+
+
+def test_short_fields_exist():
+    assert set(ui_hints["short_fields"]) < set(paths)
+
+
+def test_extra_columns_exist():
+    assert set(ui_hints["extra_columns"].values()) < set(paths)
