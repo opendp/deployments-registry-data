@@ -4,7 +4,7 @@ required:
   - short_fields
   - extra_columns
 properties:
-  short_field:
+  short_fields:
     type: array
     items:
       type: string

@@ -1,11 +1,9 @@
 from check import check
 
-from pathlib import Path
 import pytest
 import re
 
-
-root = Path(__file__).parent.parent
+from utils import root
 
 
 @pytest.mark.parametrize(
