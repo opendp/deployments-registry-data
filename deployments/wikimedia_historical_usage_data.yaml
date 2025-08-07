@@ -7,11 +7,11 @@ tier: 3
 deployment:
   name: Historical Pageviews
   data_curator: Wikimedia Foundation
-  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
   intended_use: Help Wikipedia editors prioritize their work and support academic research.
   data_product_type: Summary statistics
-  publication_date: '2023-06-01'
   data_product_region: Global
+  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
+  publication_date: '2023-06-01'
   data_product_sector: Technology
 
   dp_flavor:
@@ -54,10 +54,10 @@ deployment:
 
     is_many_release: True
     is_many_release_description: Although the historical data was published at once, we consider it multiple releases due to its daily temporal granularity.
-    is_interactive: False
-    # is_interactive_description: ''
     is_dynamic: True
     is_dynamic_description: Although the historical data was published at once, its processing was dynamic. The algorithm was designed to iterate through the historical data one day at a time, applying a distinct daily privacy budget to each, rather than analyzing the entire period retrospectively.
+    is_interactive: False
+    # is_interactive_description: ''
 
   accounting:
     post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold tau is removed from the final output dataset. For 2017-2023 historical data, \\(\tau=450\\). For 2015-2017 data, \\(\tau=2500\\).'

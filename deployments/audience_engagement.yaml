@@ -12,7 +12,6 @@ deployment:
   data_product_region: Global
   description: '"With these proposed parameter values (...) and applying Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee."'
   publication_date: '2020-01-01'
-  additional_information: https://arxiv.org/abs/2002.05839
   dp_flavor:
     name: Approximate DP
     data_domain: '' # TODO
@@ -30,8 +29,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Monthly
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Gumbel
     justification: '' # TODO: Fill in correct value
+  additional_information: https://arxiv.org/abs/2002.05839

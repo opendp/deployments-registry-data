@@ -12,7 +12,6 @@ deployment:
   description: Brave is leveraging federated learning and differential
     privacy to provide on-device browser recommendations.
   publication_date: '2021-01-01'
-  additional_information: https://brave.com/blog/federated-learning/
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: User-level
@@ -24,8 +23,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Not specified
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: DP SGD*
     justification: '' # TODO: Fill in correct value
+  additional_information: https://brave.com/blog/federated-learning/

@@ -16,7 +16,6 @@ deployment:
     Twitter, Microsoft and OpenMined to develop and test a differential privacy system
     to enable privacy preserving research across multiple online platforms.
   publication_date: '2022-01-01'
-  additional_information: https://unstats.un.org/wiki/display/UGTTOPPT/14.+Twitter+and+OpenMined%3A+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate-level
@@ -28,8 +27,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Static
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Not Specificed, Synthetic Data
     justification: '' # TODO: Fill in correct value
+  additional_information: https://unstats.un.org/wiki/display/UGTTOPPT/14.+Twitter+and+OpenMined%3A+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets

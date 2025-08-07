@@ -7,16 +7,12 @@ tier: 3
 deployment:
   name: Popular Emojis
   data_curator: Apple
-  description: Summary statistics of frequency histograms of emoji usage per locale.
   intended_use: For measurement (within Apple) of which emojis are most used, and their relative frequencies, across keyboard locales, to improve QuickType’s predictive emoji suggestions.
   data_product_type: Summary statistics
   data_product_region: Global
-  data_product_sector: Technology
+  description: Summary statistics of frequency histograms of emoji usage per locale.
   publication_date: '2017-01-01'
-  additional_information: |
-    - Link to paper: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
-    - Under "Security Measures": "The privatized records are temporarily stored on-device using data protection"; the paper points to this link https://www.apple.com/business/docs/iOS_Security_Guide.pdf
-    - The paper covers collecting aggregate statistics for different use cases: trending new words, popular emojis, popular HealthKit data types, Safari media-playback preferences, and high energy/memory domains. We only treated the popular emojis use case, treating it as one deployment.
+  data_product_sector: Technology
 
   dp_flavor:
     name: Pure DP
@@ -49,10 +45,10 @@ deployment:
 
     is_many_release: True
     is_many_release_description: The histogram is continually refreshed on a daily basis. Data transmission from a user's device occurs once per day, and there is a limit on the number of privatized records that can be transmitted daily.
-    is_interactive: False
-    # is_interactive_description: ''
     is_dynamic: True
     is_dynamic_description: The transmission of privatized records from a user's device to the server happens once per day.
+    is_interactive: False
+    # is_interactive_description: ''
 
   accounting:
     post_processing: |
@@ -80,3 +76,8 @@ deployment:
     justification: |
       - The choice of \\(\epsilon\\) was “based on the privacy characteristics of the underlying dataset” and is “consistent with the parameters proposed in the differential privacy research community”.
       - The CMS algorithm yields a high number of hash collisions (mapping 2,600 emojis to 1024 bits) providing further plausible deniability.
+
+  additional_information: |
+    - Link to paper: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+    - Under "Security Measures": "The privatized records are temporarily stored on-device using data protection"; the paper points to this link https://www.apple.com/business/docs/iOS_Security_Guide.pdf
+    - The paper covers collecting aggregate statistics for different use cases: trending new words, popular emojis, popular HealthKit data types, Safari media-playback preferences, and high energy/memory domains. We only treated the popular emojis use case, treating it as one deployment.

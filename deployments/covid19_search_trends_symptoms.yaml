@@ -7,11 +7,11 @@ tier: 3
 deployment:
   name: COVID-19 Search Trends Symptoms
   data_curator: Google
-  description: Summary statistics, published as an aggregated and anonymized dataset. It provides daily or weekly time series for various geographic regions, showing the relative frequency of Google searches for approximately 400 predefined symptoms. These values are normalized by the total search activity in the corresponding region to show trends over time.
   intended_use: Help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends.
   data_product_type: Summary statistics
-  publication_date: '2020-09-02'
   data_product_region: Global
+  description: Summary statistics, published as an aggregated and anonymized dataset. It provides daily or weekly time series for various geographic regions, showing the relative frequency of Google searches for approximately 400 predefined symptoms. These values are normalized by the total search activity in the corresponding region to show trends over time.
+  publication_date: '2020-09-02'
   data_product_sector: Healthcare
 
   dp_flavor:

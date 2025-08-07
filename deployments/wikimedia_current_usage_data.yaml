@@ -7,11 +7,11 @@ tier: 3
 deployment:
   name: Current Pageviews
   data_curator: Wikimedia Foundation
-  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
   intended_use: Help Wikipedia editors prioritize their work and support academic research.
   data_product_type: Summary statistics
-  publication_date: '2023-06-01'
   data_product_region: Global
+  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
+  publication_date: '2023-06-01'
   data_product_sector: Technology
 
   dp_flavor:

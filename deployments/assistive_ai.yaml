@@ -11,7 +11,6 @@ deployment:
   data_product_region: Global, restricted to some languages (EN, ES, FR, PR, IT)
   description: '"Currently we use differentially private algorithms with privacy parameters (\\(\epsilon\\)=4, \\(\delta\\)< 10-7)."'
   publication_date: '2020-01-01'
-  additional_information: https://www.microsoft.com/en-us/research/group/msai/articles/assistive-ai-makes-replying-easier-2/
   dp_flavor:
     name: Approximate DP
     data_domain: '' # TODO
@@ -28,3 +27,4 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Differentially Private Set Union
     justification: '' # TODO: Fill in correct value
+  additional_information: https://www.microsoft.com/en-us/research/group/msai/articles/assistive-ai-makes-replying-easier-2/

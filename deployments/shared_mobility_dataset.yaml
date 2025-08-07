@@ -13,7 +13,6 @@ deployment:
     from a zero mean Laplace distribution and yields (ϵ, δ)-differential privacy guarantee
     of ϵ = 0.66 and δ = 2.1 × 10−29, which is very strong.
   publication_date: '2022-01-01'
-  additional_information: https://www.nature.com/articles/s41467-019-12809-y
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate Statistics
@@ -32,3 +31,4 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace Mechanism
     justification: '' # TODO: Fill in correct value
+  additional_information: https://www.nature.com/articles/s41467-019-12809-y
