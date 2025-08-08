@@ -19,5 +19,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Check everything (including URLs)
-        run: python scripts/check.py
+      - name: Check deployments (including URLs)
+        run: scripts/check.py
+
+      - name: Check schema urls
+        run: scripts/check.py --yaml_path schemas/deployments-schema.yaml --only check_urls
