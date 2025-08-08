@@ -1,4 +1,4 @@
-from check import check
+from check import check, checks
 
 from pathlib import Path
 import pytest
@@ -12,7 +12,7 @@ root = Path(__file__).parent.parent
     "yaml_path", root.glob("deployments/*.yaml"), ids=lambda path: path.name
 )
 def test_real_yaml(yaml_path):
-    errors = check(yaml_path, skip=["check_urls"])
+    errors = check(yaml_path, only=checks - {"check_urls"})
     assert not errors
 
 
