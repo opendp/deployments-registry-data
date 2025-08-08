@@ -113,10 +113,6 @@ properties:
       dp_flavor:
         type: object
         additionalProperties: False
-        required:
-          - name
-          - data_domain
-          - unprotected_quantities
         properties:
           name:
             tier: 2
@@ -173,9 +169,6 @@ properties:
           Privacy loss under differential privacy is characterized by a privacy unit and privacy parameters, both described below.
         type: object
         additionalProperties: False
-        required:
-          - privacy_unit
-          - privacy_parameters
         properties:
           privacy_unit:
             tier: 2
@@ -216,8 +209,6 @@ properties:
       model:
         type: object
         additionalProperties: False
-        required:
-          - model_name
         properties:
           model_name:
             tier: 2
@@ -301,9 +292,6 @@ properties:
           **Privacy-loss accounting**, i.e., how privacy loss is accounted for over multiple queries to the underlying data, is described by composition and post-processing:
         type: object
         additionalProperties: False
-        required:
-          - post_processing
-          - composition
         properties:
           post_processing:
             tier: 3
@@ -330,10 +318,6 @@ properties:
           **Implementation** details are provided for Tier 3 entries. They include the following information:
         type: object
         additionalProperties: False
-        required:
-          - pre_processing_eda_hyperparameter_tuning
-          - mechanisms
-          - justification
         properties:
           pre_processing_eda_hyperparameter_tuning:
             tier: 3

@@ -29,7 +29,7 @@ deployment:
 
   privacy_loss:
     privacy_unit: user-level
-    privacy_unit_description: Adjacent datasets differ by one customer's data in MCE's residential customer base. The specific function that computes the distance between two adjacent datasets is not explicitly provided.
+    privacy_unit_description: Adjacent datasets differ by one customer's data in MCE's residential customer base. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is 1.
     privacy_parameters:
       epsilon: 4.72
       delta: 5.06e-9

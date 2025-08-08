@@ -25,13 +25,13 @@ deployment:
 
   privacy_loss:
     privacy_unit: User-device-level
-    privacy_unit_description: The output distribution of models does not change even if we add or remove all of the training examples from any one device.
+    privacy_unit_description: The output distribution of models does not change even if we add or remove all of the training examples from any one device. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is 1.
     privacy_parameters:
       rho: 0.81
     # privacy_parameters_description: ''
 
   model:
-    model_name: Federated
+    model_name: Central
     # model_name_description:
     actors: |
       - Users/Devices of Spanish-language Gboard users. They hold their own raw data and compute model updates locally. Hence, users do not need to trust the central server with their raw data, but must trust it to correctly implement the DP mechanism.

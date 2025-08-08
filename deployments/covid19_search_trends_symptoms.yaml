@@ -26,10 +26,11 @@ deployment:
   privacy_loss:
     privacy_unit: User-day
     privacy_unit_description: |
-      The mechanism protects "every user's symptom search activity on a particular day". Adjacent datasets are those that differ by the addition or removal of one user's contribution for a single day. This contribution is strictly limited by the following bounds:
+      The mechanism protects "every user's symptom search activity on a particular day". Adjacent datasets are those that differ by the addition or removal of one user's contribution for a single day.
+      The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
+      This contribution is strictly limited by the following bounds:
         - Symptom Searches: A user can contribute a maximum of three symptom counts per day. Each contribution is limited to once per symptom, per day, per geographic level. Any searches exceeding these bounds are discarded.
         - Normalization Searches: A user can contribute to at most one normalization count per day for each geographic granularity level.
-
     privacy_parameters:
       epsilon: 1.68
     privacy_parameters_description: 'See details under Composition.'
