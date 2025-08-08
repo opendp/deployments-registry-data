@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from pathlib import Path
 from sys import exit
 from yaml import load, Loader, dump, scan
