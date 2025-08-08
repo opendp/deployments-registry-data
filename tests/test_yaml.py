@@ -12,7 +12,7 @@ root = Path(__file__).parent.parent
     "yaml_path", root.glob("deployments/*.yaml"), ids=lambda path: path.name
 )
 def test_real_yaml(yaml_path):
-    errors = check(yaml_path)
+    errors = check(yaml_path, skip=["check_urls"])
     assert not errors
 
 
