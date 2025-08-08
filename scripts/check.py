@@ -47,7 +47,7 @@ def get_all_values_paths(node, path=""):
             yield (new_path, value)
 
 
-def disabled_check_urls(yaml_path):
+def check_urls(yaml_path):
     deployment = load(yaml_path.open(), Loader=Loader)
     pairs = get_all_values_paths(deployment)
     errors = []
