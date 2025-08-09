@@ -10,7 +10,6 @@ deployment:
   data_product_region: Israel
   description: '' # TODO: Fill in correct value
   publication_date: '2024-01-01'
-  additional_information: https://birth.dataset.pub
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Birth-level
@@ -23,8 +22,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Static
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: PrivBayes with Private Selection (Universal Microdata Scheme)
     justification: '' # TODO: Fill in correct value
+  additional_information: https://birth.dataset.pub

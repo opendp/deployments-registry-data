@@ -11,7 +11,6 @@ deployment:
   data_product_region: Not Specified
   description: '"For this use case, we set the parameters for CMS to be m = 1024, k = 65,536, and \\(\epsilon\\) = 8."'
   publication_date: '2017-01-01'
-  additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   dp_flavor:
     name: Pure DP
     data_domain: '' # TODO
@@ -32,3 +31,4 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Private Count Mean Sketch
     justification: '' # TODO: Fill in correct value
+  additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf

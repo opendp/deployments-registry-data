@@ -11,7 +11,6 @@ deployment:
   data_product_region: Global
   description: Data collection is performed every 6 hours, with \\(\epsilon\\) = 1.
   publication_date: '2017-01-01'
-  additional_information: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: User-level
@@ -24,8 +23,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: 6 hours
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Randomized Rounding
     justification: '' # TODO: Fill in correct value
+  additional_information: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/

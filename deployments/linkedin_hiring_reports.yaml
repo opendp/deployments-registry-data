@@ -15,7 +15,6 @@ deployment:
     that uses both counts accumulates the privacy loss.  Therefore, for each report
     date, we guarantee the top-employer reports are together (4.8, 4 × 10−10)-DP."
   publication_date: '2020-01-01'
-  additional_information: https://arxiv.org/abs/2010.13981
   dp_flavor:
     name: Approximate DP
     data_domain: '' # TODO
@@ -35,8 +34,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Monthly
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Gumbel
     justification: '' # TODO: Fill in correct value
+  additional_information: https://arxiv.org/abs/2010.13981

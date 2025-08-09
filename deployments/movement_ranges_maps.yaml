@@ -12,7 +12,6 @@ deployment:
   description: Resulting in a total differential privacy epsilon value
     of 2.0.
   publication_date: '2020-01-01'
-  additional_information: https://research.fb.com/blog/2020/06/protecting-privacy-in-facebook-mobility-data-during-the-covid-19-response/
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate-level
@@ -25,8 +24,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Static
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace
     justification: '' # TODO: Fill in correct value
+  additional_information: https://research.fb.com/blog/2020/06/protecting-privacy-in-facebook-mobility-data-during-the-covid-19-response/

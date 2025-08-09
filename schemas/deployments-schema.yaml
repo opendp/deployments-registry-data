@@ -67,10 +67,6 @@ properties:
         description_long: |
           The **curator** refers to the entity who published the data product. Examples of curators include specific government agencies and companies.
         type: string
-      description:
-        tier: 1
-        description: Brief description of the data product.
-        type: string
       intended_use:
         tier: 1
         description: Intended use(s) of the data product.
@@ -86,6 +82,14 @@ properties:
           - Machine learning model
           - Dataset
           # Add to this list as needed.
+      data_product_region:
+        tier: 1
+        description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
+        type: string
+      description:
+        tier: 1
+        description: Brief description of the data product.
+        type: string
       publication_date:
         tier: 1
         description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of many releases, the publication date can be expressed as the date of first publication.
@@ -93,10 +97,6 @@ properties:
           The publication **date** refers to when the data product was published or otherwise created. In cases of data products that are created under continual release, the date listed is the date of first publication.
         type: string
         format: date
-      data_product_region:
-        tier: 1
-        description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
-        type: string
       data_product_sector:
         tier: 1
         description: The industry or domain described by the data product.
@@ -108,7 +108,6 @@ properties:
           - Government
           - Energy
           # Add to this list as needed.
-
       # Tiers 2 and 3
       dp_flavor:
         type: object

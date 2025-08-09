@@ -7,11 +7,11 @@ tier: 3
 deployment:
   name: Spanish Next Word Prediction
   data_curator: Google
-  description: A machine learning model trained with federated learning for next‑word prediction on Spanish‑language Gboard.
   intended_use: Power next-word-prediction for Spanish-language Gboard users.
   data_product_type: Machine learning model
-  publication_date: '2022-02-01'
   data_product_region: Global
+  description: A machine learning model trained with federated learning for next‑word prediction on Spanish‑language Gboard.
+  publication_date: '2022-02-01'
   data_product_sector: Technology
 
   dp_flavor:

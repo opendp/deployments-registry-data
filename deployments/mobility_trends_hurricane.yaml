@@ -14,7 +14,6 @@ deployment:
     operations. Finally, the privacy budget, E, is set as follows: • E = 4 for CTU
     • E = 2 for CE • E = 1 for CED • E = 3 for SD."
   publication_date: '2022-01-01'
-  additional_information: https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate Statistics
@@ -32,3 +31,4 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace
     justification: '' # TODO: Fill in correct value
+  additional_information: https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
