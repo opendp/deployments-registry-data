@@ -11,7 +11,6 @@ deployment:
   data_product_region: Not specified
   description: '"The central diﬀerential privacy guarantees \\(\epsilon_c\\) that result from unlinkable aggregation of \\(\epsilon_0\\) = 8 metric report binary vectors, as used in ENPA."'
   publication_date: '2021-01-01'
-  additional_information: https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: User-level
@@ -25,8 +24,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Varies
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Randomized Response
     justification: '' # TODO: Fill in correct value
+  additional_information: https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf

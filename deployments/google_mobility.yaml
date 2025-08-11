@@ -10,10 +10,9 @@ deployment:
   intended_use: Provide public-health authorities insights into how mobility patterns changed in response to COVID-19 policies (e.g., work-from-home, shelter-in-place) to help with decision-making during the pandemic.
   data_product_type: Summary statistics
   data_product_region: Global
-  data_product_sector: Healthcare
   description: Summary statistics, published as the COVID-19 Community Mobility Reports, that charts percentage changes in movement trends for various location categories relative to a historical baseline. These trends analyze the number of visits to public places like retail, parks, and workplaces, and also measure the change in duration of time spent in residences.
   publication_date: '2020-04-01'
-  additional_information: https://arxiv.org/pdf/2004.04145
+  data_product_sector: Healthcare
   dp_flavor:
     name: Pure DP
     # input_metric: ''
@@ -49,11 +48,10 @@ deployment:
     is_many_release_description: |
       - Refreshment timeframe: The reports are generated on an ongoing, daily basis. The metrics are generated for each day starting on 2020-01-01. The publicly released reports show trends over several weeks, with the most recent data representing 48 hours prior.
       - Management of privacy loss over time: A method called "scaling factors" is used to manage privacy loss when the underlying computation logic needs to be updated for accuracy improvements, and re-querying all historical data with new logic would consume a significant privacy budget.
-    is_interactive: False
-    # is_interactive_description: ''
     is_dynamic: True
     is_dynamic_description: Metrics are generated for each day, starting on 2020-01-01 and ending on 2022-10-15
-
+    is_interactive: False
+    # is_interactive_description: ''
   accounting:
     post_processing: |
       - Percentage Change Calculation: the final published value is a percentage change from the baseline. This is calculated by taking the ratio between the noisy metric for a specific day and the computed baseline for that day of the week (the baseline metric uses a fixed 5-week period from January 3, 2020 to February 6, 2020, by taking the median of the 5 corresponding daily noisy metrics from within that 5-week range).
@@ -97,3 +95,5 @@ deployment:
       - Using scaling factors allows for continuous accuracy improvements with minimal impact on the overall privacy budget by grouping metrics and reusing previously generated data, rather than performing a full, costly re-computation.
       - Statistically insignificant metrics are filtered out to ensure utility and reliability of the data. This is done through a strict confidence threshold, ensuring there is at most a 5% risk of any published value being wrong by more than 10 absolute percentage points.
       - The implementation decision to bound each user's contribution to a maximum of four (category, location) pairs per day is justified by an analysis of user behavior. This threshold was chosen because it "does not significantly affect data accuracy," given that 99% of users at the U.S. county level contribute to three or fewer pairs on average.
+
+  additional_information: https://arxiv.org/pdf/2004.04145

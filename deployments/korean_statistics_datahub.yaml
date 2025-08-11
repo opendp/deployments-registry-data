@@ -14,7 +14,6 @@ deployment:
     big data system that leverages cutting-edge privacy-preserving techniques to enable
     the safe linkage and use of scattered governmental data."
   publication_date: '2021-01-01'
-  additional_information: https://unstats.un.org/wiki/display/UGTTOPPT/11.+Statistics+Korea%3A+Developing+a+privacy-preserving+Statistical+Data+Hub+Platform
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate-level
@@ -26,8 +25,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Not specified
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Unknown
     justification: '' # TODO: Fill in correct value
+  additional_information: https://unstats.un.org/wiki/display/UGTTOPPT/11.+Statistics+Korea%3A+Developing+a+privacy-preserving+Statistical+Data+Hub+Platform

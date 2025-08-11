@@ -11,7 +11,6 @@ deployment:
   data_product_region: Global
   description: '"For this use case, we set the parameters for HCMS to be m = 32,768, k = 1024, and \\(\epsilon\\) = 4 with p = 250,000 web domains."'
   publication_date: '2017-01-01'
-  additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
   dp_flavor:
     name: Pure DP
     data_domain: '' # TODO
@@ -27,8 +26,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Daily
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Hierarchical Count-Min Sketch
     justification: '' # TODO: Fill in correct value
+  additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf

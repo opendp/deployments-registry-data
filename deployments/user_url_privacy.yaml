@@ -11,7 +11,6 @@ deployment:
   data_product_region: Global
   description: εuser = 1.453 for δ = 10−5.
   publication_date: '2020-01-01'
-  additional_information: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: User-level
@@ -25,8 +24,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Static
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace
     justification: '' # TODO: Fill in correct value
+  additional_information: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2

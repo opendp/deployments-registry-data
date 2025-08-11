@@ -13,7 +13,6 @@ deployment:
     daily search activity related to COVID-19 vaccinations with (ε, δ)-diﬀerential
     privacy for ε = 2.19 and δ = 10−5.
   publication_date: '2021-01-01'
-  additional_information: https://arxiv.org/abs/2107.01179
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: User-level
@@ -27,8 +26,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Daily
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Gaussian
     justification: '' # TODO: Fill in correct value
+  additional_information: https://arxiv.org/abs/2107.01179

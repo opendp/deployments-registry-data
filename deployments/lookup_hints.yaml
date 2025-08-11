@@ -16,7 +16,6 @@ deployment:
     the number of contributions from a user in order to preserve their privacy... For Lookup Hints, Apple uses a privacy budget with epsilon
     of 4, and limits user contributions to two donations per day."
   publication_date: '2016-01-01' # Not in source by referenced in Tang et al. https://arxiv.org/abs/1709.02753
-  additional_information: https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
   dp_flavor:
     name: Pure DP
     data_domain: '' # TODO
@@ -32,8 +31,8 @@ deployment:
     is_many_release: False # TODO: Is this correct?
     is_many_release_description: Daily
     is_interactive: False # TODO: Is this correct?
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Count Mean Sketch or Hadamard Count Mean Sketch
     justification: '' # TODO: Fill in correct value
+  additional_information: https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
