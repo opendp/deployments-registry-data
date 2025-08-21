@@ -42,8 +42,8 @@ deployment:
     # release_type_description: ''
     data_source_type: dynamic
     data_source_type_description: Microsoft collects data “as part of our ongoing work to improve our software and services performance and security”. The data is generated continuously, as “every time a device receives an update or connects to a Microsoft service, we can estimate the throughput speed”.
-    is_interactive: False
-    # is_interactive_description: ''
+    access_type: non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: |

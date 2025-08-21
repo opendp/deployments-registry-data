@@ -56,8 +56,8 @@ deployment:
     release_type_description: Although the historical data was published at once, we consider it multiple releases due to its daily temporal granularity.
     data_source_type: dynamic
     data_source_type_description: Although the historical data was published at once, its processing was dynamic. The algorithm was designed to iterate through the historical data one day at a time, applying a distinct daily privacy budget to each, rather than analyzing the entire period retrospectively.
-    is_interactive: False
-    # is_interactive_description: ''
+    access_type: non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold tau is removed from the final output dataset. For 2017-2023 historical data, \\(\tau=450\\). For 2015-2017 data, \\(\tau=2500\\).'

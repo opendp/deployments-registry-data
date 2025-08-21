@@ -13,7 +13,7 @@ short_fields:
   - /deployment/privacy_loss/privacy_parameters/rho
   - /deployment/model/model_name
   - /deployment/model/release_type
-  - /deployment/model/is_interactive
+  - /deployment/model/access_type
   - /deployment/model/data_source_type
 extra_columns:
   # Keys are the display names of columns;

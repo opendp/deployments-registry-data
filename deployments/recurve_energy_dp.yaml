@@ -50,8 +50,8 @@ deployment:
     # release_type_description: ''
     data_source_type: static
     # data_source_type_description: ''
-    is_interactive: False
-    # is_interactive_description: ''
+    access_type: non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: Calculating the final net impact by taking the private 'Percent Load Change' statistic computed with DP from the comparison group and subtracting it from the non-private 'Percent Load Change' of the treatment group to produce the final 'Difference of Load Changes'.

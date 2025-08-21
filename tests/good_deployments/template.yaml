@@ -40,8 +40,8 @@ deployment:
     release_type_description: ''
     data_source_type: static # Fill in correct value.
     data_source_type_description: ''
-    is_interactive: False # Fill in correct value.
-    is_interactive_description: ''
+    access_type: non-interactive # Fill in correct value.
+    access_type_description: ''
 
   accounting:
     post_processing: '' # Tier 3

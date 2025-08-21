@@ -69,7 +69,7 @@ def test_node_has_description_long(path, node):
         "/deployment/model/actors",
         "/deployment/model/release_type_description",
         "/deployment/model/data_source_type_description",
-        "/deployment/model/is_interactive_description",
+        "/deployment/model/access_type_description",
     ]:
         assert "description_long" not in node
         pytest.skip("TODO: More description_long would be nice to have")

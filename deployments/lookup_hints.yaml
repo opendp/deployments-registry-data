@@ -30,7 +30,7 @@ deployment:
     model_name_description: '"Apple has adopted and further developed a technique known in the academic world as local differential privacy."'
     release_type: one release # TODO: Is this correct?
     release_type_description: Daily
-    is_interactive: False # TODO: Is this correct?
+    access_type: non-interactive # TODO: Is this correct?
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Count Mean Sketch or Hadamard Count Mean Sketch

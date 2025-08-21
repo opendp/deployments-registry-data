@@ -59,8 +59,8 @@ deployment:
     # release_type_description: ''
     data_source_type: static
     # data_source_type_description: ''
-    is_interactive: False
-    # is_interactive_description: ''
+    access_type: non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: |

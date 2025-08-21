@@ -47,8 +47,8 @@ deployment:
     release_type_description: The histogram is continually refreshed on a daily basis. Data transmission from a user's device occurs once per day, and there is a limit on the number of privatized records that can be transmitted daily.
     data_source_type: dynamic
     data_source_type_description: The transmission of privatized records from a user's device to the server happens once per day.
-    is_interactive: False
-    # is_interactive_description: ''
+    access_type: non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: |

@@ -26,7 +26,7 @@ deployment:
     # model_name_description: TODO
     release_type: one release # TODO: Is this correct?
     release_type_description: Static
-    is_interactive: False # TODO: Is this correct?
+    access_type: non-interactive # TODO: Is this correct?
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Gaussian

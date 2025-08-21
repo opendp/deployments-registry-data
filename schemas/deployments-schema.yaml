@@ -281,14 +281,17 @@ properties:
           data_source_type_description:
             tier: 3
             description: If more description is useful.
-          is_interactive:
+          access_type:
             tier: 2
             description: |
               Under interactive deployments, people with permission, like data analysts, can interactively query the underlying data under differential privacy. They will be returned privacy-protected query estimates.
             description_long: |
               **Interactive vs. non-interactive**: Under interactive deployments, people with permission, like data analysts, can interactively query the underlying data under differential privacy. They will be returned privacy-protected query estimates. Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
-            type: boolean
-          is_interactive_description:
+            type: string
+            enum:
+              - interactive
+              - non-interactive
+          access_type_description:
             tier: 3
             description: Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
             type: string

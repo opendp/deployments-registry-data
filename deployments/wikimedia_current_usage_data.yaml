@@ -46,8 +46,8 @@ deployment:
     release_type_description: 'Published daily, on a rolling basis. Each user-day is treated as an independent privacy unit, with fixed parameters with \\(\rho\\) = 0.015. Since there is no overlap between days, the privacy loss does not accumulate over days for users: "There is no overlap between days: the privacy parameters for each user-day are fixed and do not increase over time."'
     data_source_type: dynamic
     data_source_type_description: As users visit the site, their individual pageviews are recorded and stored in the current pageviews dataset.
-    is_interactive: False
-    # is_interactive_description: ''
+    access_type: non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold \\(\tau\\) is removed from the final output dataset. For current data, \\(\tau\\) = 90.'
