@@ -9,7 +9,7 @@ deployment:
   intended_use: Health Data
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Not specified
-  description: '"We deploy CMS to observe the most popular health data types with the following parameters: m = 256, k = 65,536, and \\(\epsilon\\) = 2."'
+  description: Summarize most commonly tracked health characteristics.
   publication_date: '2017-01-01'
   dp_flavor:
     name: Pure DP
@@ -20,6 +20,7 @@ deployment:
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 2.0
+    privacy_parameters_description: '"We deploy CMS to observe the most popular health data types with the following parameters: m = 256, k = 65,536, and \\(\epsilon\\) = 2."'
   model:
     model_name: Local
     model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
