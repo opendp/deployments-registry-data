@@ -42,11 +42,11 @@ deployment:
       - Trusted Curator (The Wikimedia Foundation): Receives client-annotated pageviews, performs server-side DP (adds noise, suppresses counts), and publishes the final data.
       - Data Consumers: The public, including Wikipedia editors and academic researchers, who use the final, privacy-preserving data product. Data consumers do not need to be trusted, as they only ever see the data product which was produced under DP.
 
-    release_type: many releases
+    release_type: Many releases
     release_type_description: 'Published daily, on a rolling basis. Each user-day is treated as an independent privacy unit, with fixed parameters with \\(\rho\\) = 0.015. Since there is no overlap between days, the privacy loss does not accumulate over days for users: "There is no overlap between days: the privacy parameters for each user-day are fixed and do not increase over time."'
-    data_source_type: dynamic
+    data_source_type: Dynamic
     data_source_type_description: As users visit the site, their individual pageviews are recorded and stored in the current pageviews dataset.
-    access_type: non-interactive
+    access_type: Non-interactive
     # access_type_description: ''
 
   accounting:

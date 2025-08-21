@@ -36,11 +36,11 @@ deployment:
     model_name: Central # Fill in correct value.
     model_name_description: ''
     actors: ''
-    release_type: many releases # Fill in correct value.
+    release_type: Many releases # Fill in correct value.
     release_type_description: ''
-    data_source_type: static # Fill in correct value.
+    data_source_type: Static # Fill in correct value.
     data_source_type_description: ''
-    access_type: non-interactive # Fill in correct value.
+    access_type: Non-interactive # Fill in correct value.
     access_type_description: ''
 
   accounting:

@@ -55,11 +55,11 @@ deployment:
       - Adversaries: The system is designed to protect against a wide range of potential attackers. This includes sophisticated actors who may have access to large external databases, powerful computing resources, and advanced algorithms , as well as state actors like foreign governments, corporations, and cybercriminals.
 
 
-    release_type: one release
+    release_type: One release
     # release_type_description: ''
-    data_source_type: static
+    data_source_type: Static
     # data_source_type_description: ''
-    access_type: non-interactive
+    access_type: Non-interactive
     # access_type_description: ''
 
   accounting:

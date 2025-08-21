@@ -23,9 +23,9 @@ deployment:
   model:
     model_name: Local
     model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
-    release_type: one release # TODO: Is this correct?
+    release_type: One release # TODO: Is this correct?
     release_type_description: Daily
-    access_type: non-interactive # TODO: Is this correct?
+    access_type: Non-interactive # TODO: Is this correct?
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Hierarchical Count-Min Sketch

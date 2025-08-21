@@ -46,11 +46,11 @@ deployment:
       - Subjects: The residential customers in the comparison group. They must trust Recurve to properly handle their raw data and apply differential privacy mechanisms before publishing the results.
       - Consumers: 'regulators, utilities, and implementers'.
 
-    release_type: one release
+    release_type: One release
     # release_type_description: ''
-    data_source_type: static
+    data_source_type: Static
     # data_source_type_description: ''
-    access_type: non-interactive
+    access_type: Non-interactive
     # access_type_description: ''
 
   accounting:

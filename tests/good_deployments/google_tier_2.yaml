@@ -20,6 +20,6 @@ deployment:
       epsilon: 1.68
   model:
     model_name: Central
-    release_type: many releases
-    access_type: non-interactive
-    data_source_type: static
+    release_type: Many releases
+    access_type: Non-interactive
+    data_source_type: Static

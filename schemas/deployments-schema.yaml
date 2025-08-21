@@ -254,15 +254,15 @@ properties:
           release_type:
             tier: 2
             description: |
-              If `one release`, the data product is comprised of one relase and it is published once.
+              If `One release`, the data product is comprised of one relase and it is published once.
 
-              If `many releases`, the data product is comprised of many release and there are many publications of it over time.
+              If `Many releases`, the data product is comprised of many release and there are many publications of it over time.
             description_long: |
               **One-shot vs. many-shot**: If the data product is one-shot, it is published once. In cases of one-shot deployments, entries should state if there are plans for future uses or publications of the data used to create the data product. If the data product is many-shot, there are many publications of it over time. Entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
             type: string
             enum:
-              - one release
-              - many releases
+              - One release
+              - Many releases
           release_type_description:
             description: |
               For one-release deployments, entries should state if there are plans for future uses or publications of the data used to create the data product.
@@ -276,8 +276,8 @@ properties:
               **Dynamic vs. static**: If the underlying data are dynamic, it means that new underlying data come in over time. On the other hand, if the underlying data are static, new data do not come in over time.
             type: string
             enum:
-              - static
-              - dynamic
+              - Static
+              - Dynamic
           data_source_type_description:
             tier: 3
             description: If more description is useful.
@@ -289,8 +289,8 @@ properties:
               **Interactive vs. non-interactive**: Under interactive deployments, people with permission, like data analysts, can interactively query the underlying data under differential privacy. They will be returned privacy-protected query estimates. Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
             type: string
             enum:
-              - interactive
-              - non-interactive
+              - Interactive
+              - Non-interactive
           access_type_description:
             tier: 3
             description: Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
