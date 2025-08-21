@@ -44,8 +44,8 @@ deployment:
       - Privacy loss for individuals over time is managed by rate-limiting participation. The system enforces a rule that "devices participated in training at most once every 24 hours".
       - Refreshment Timeframe and Fixed Budget: The document does not provide details on a refreshment timeframe or a fixed total amount of privacy loss allowed before the underlying data is no longer queried. It only provides the final, total privacy cost for this specific model deployment.
 
-    is_dynamic: True
-    is_dynamic_description: The data consists of “user keyboard input”, which is generated continuously as users interact with the Gboard application. The system architecture, where each “eligible device maintains a local training cache" with new data based on what the "user actually typed", is designed to work with this continuous inflow of new information.
+    data_source_type: dynamic
+    data_source_type_description: The data consists of “user keyboard input”, which is generated continuously as users interact with the Gboard application. The system architecture, where each “eligible device maintains a local training cache" with new data based on what the "user actually typed", is designed to work with this continuous inflow of new information.
     is_interactive: False
     # is_interactive_description: ''
 

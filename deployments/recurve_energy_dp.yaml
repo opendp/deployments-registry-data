@@ -48,8 +48,8 @@ deployment:
 
     release_type: one release
     # release_type_description: ''
-    is_dynamic: False
-    # is_dynamic_description: ''
+    data_source_type: static
+    # data_source_type_description: ''
     is_interactive: False
     # is_interactive_description: ''
 

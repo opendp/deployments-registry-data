@@ -44,8 +44,8 @@ deployment:
 
     release_type: many releases
     release_type_description: 'Published daily, on a rolling basis. Each user-day is treated as an independent privacy unit, with fixed parameters with \\(\rho\\) = 0.015. Since there is no overlap between days, the privacy loss does not accumulate over days for users: "There is no overlap between days: the privacy parameters for each user-day are fixed and do not increase over time."'
-    is_dynamic: True
-    is_dynamic_description: As users visit the site, their individual pageviews are recorded and stored in the current pageviews dataset.
+    data_source_type: dynamic
+    data_source_type_description: As users visit the site, their individual pageviews are recorded and stored in the current pageviews dataset.
     is_interactive: False
     # is_interactive_description: ''
 

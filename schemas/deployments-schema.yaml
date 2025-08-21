@@ -269,13 +269,16 @@ properties:
 
               For many-release deployments, entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
             type: string
-          is_dynamic:
+          data_source_type:
             tier: 2
             description: If the underlying data are dynamic, it means that new underlying data come in over time. On the other hand, if the underlying data are static, new data do not come in over time.
             description_long: |
               **Dynamic vs. static**: If the underlying data are dynamic, it means that new underlying data come in over time. On the other hand, if the underlying data are static, new data do not come in over time.
-            type: boolean
-          is_dynamic_description:
+            type: string
+            enum:
+              - static
+              - dynamic
+          data_source_type_description:
             tier: 3
             description: If more description is useful.
           is_interactive:

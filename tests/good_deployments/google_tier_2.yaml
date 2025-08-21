@@ -22,4 +22,4 @@ deployment:
     model_name: Central
     release_type: many releases
     is_interactive: False
-    is_dynamic: False
+    data_source_type: static

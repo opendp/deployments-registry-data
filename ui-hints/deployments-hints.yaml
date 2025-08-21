@@ -14,7 +14,7 @@ short_fields:
   - /deployment/model/model_name
   - /deployment/model/release_type
   - /deployment/model/is_interactive
-  - /deployment/model/is_dynamic
+  - /deployment/model/data_source_type
 extra_columns:
   # Keys are the display names of columns;
   # Values are the path to the value to show.

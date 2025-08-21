@@ -38,8 +38,8 @@ deployment:
     actors: ''
     release_type: many releases # Fill in correct value.
     release_type_description: ''
-    is_dynamic: False # Fill in correct value.
-    is_dynamic_description: ''
+    data_source_type: static # Fill in correct value.
+    data_source_type_description: ''
     is_interactive: False # Fill in correct value.
     is_interactive_description: ''
 

@@ -48,8 +48,8 @@ deployment:
     release_type_description: |
       - Refreshment timeframe: The reports are generated on an ongoing, daily basis. The metrics are generated for each day starting on 2020-01-01. The publicly released reports show trends over several weeks, with the most recent data representing 48 hours prior.
       - Management of privacy loss over time: A method called "scaling factors" is used to manage privacy loss when the underlying computation logic needs to be updated for accuracy improvements, and re-querying all historical data with new logic would consume a significant privacy budget.
-    is_dynamic: True
-    is_dynamic_description: Metrics are generated for each day, starting on 2020-01-01 and ending on 2022-10-15
+    data_source_type: dynamic
+    data_source_type_description: Metrics are generated for each day, starting on 2020-01-01 and ending on 2022-10-15
     is_interactive: False
     # is_interactive_description: ''
   accounting:

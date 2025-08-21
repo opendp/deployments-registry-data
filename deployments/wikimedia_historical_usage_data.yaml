@@ -54,8 +54,8 @@ deployment:
 
     release_type: many releases
     release_type_description: Although the historical data was published at once, we consider it multiple releases due to its daily temporal granularity.
-    is_dynamic: True
-    is_dynamic_description: Although the historical data was published at once, its processing was dynamic. The algorithm was designed to iterate through the historical data one day at a time, applying a distinct daily privacy budget to each, rather than analyzing the entire period retrospectively.
+    data_source_type: dynamic
+    data_source_type_description: Although the historical data was published at once, its processing was dynamic. The algorithm was designed to iterate through the historical data one day at a time, applying a distinct daily privacy budget to each, rather than analyzing the entire period retrospectively.
     is_interactive: False
     # is_interactive_description: ''
 
