@@ -11,7 +11,8 @@ deployment:
   data_product_region: Not specified
   description: Automated alerts to potential COVID-19 exposure.
   publication_date: '2021-01-01'
-  # dp_flavor: TODO
+  dp_flavor:
+    name: Approximate DP
   privacy_loss:
     privacy_unit: User-day-level
     # privacy_unit_description: TODO
