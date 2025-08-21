@@ -21,7 +21,7 @@ deployment:
     privacy_parameters:
       epsilon: 4.0
       delta: 1.0e-07
-      privacy_parameters_description: '"Currently we use differentially private algorithms with privacy parameters (\\(\epsilon\\)=4, \\(\delta\\)< 10-7)."'
+    privacy_parameters_description: '"Currently we use differentially private algorithms with privacy parameters (\\(\epsilon\\)=4, \\(\delta\\)< 10-7)."'
   model:
     model_name: Central
   implementation:
