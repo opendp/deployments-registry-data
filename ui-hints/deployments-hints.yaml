@@ -12,9 +12,9 @@ short_fields:
   - /deployment/privacy_loss/privacy_parameters/delta
   - /deployment/privacy_loss/privacy_parameters/rho
   - /deployment/model/model_name
-  - /deployment/model/is_many_release
-  - /deployment/model/is_interactive
-  - /deployment/model/is_dynamic
+  - /deployment/model/release_type
+  - /deployment/model/access_type
+  - /deployment/model/data_source_type
 extra_columns:
   # Keys are the display names of columns;
   # Values are the path to the value to show.

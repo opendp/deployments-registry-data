@@ -21,9 +21,9 @@ deployment:
   model:
     model_name: Varies
     # model_name_description: TODO
-    is_many_release: False # TODO: Is this correct?
-    is_many_release_description: Varies
-    is_interactive: False # TODO: Is this correct?
+    release_type: One release # TODO: Is this correct?
+    release_type_description: Varies
+    access_type: Non-interactive # TODO: Is this correct?
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Randomized Response

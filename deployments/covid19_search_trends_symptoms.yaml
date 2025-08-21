@@ -43,12 +43,12 @@ deployment:
       - Data Curator (Google): The central, trusted entity that collects, aggregates, anonymizes, and publishes the data.
       - Data Consumers: Researchers, public health experts, and the public who access the published data product.
 
-    is_many_release: True
-    is_many_release_description: The data is published on a daily/weekly basis. The paper mentions “We'll continue to update this dataset while public health experts find it useful in their work to stop the spread of COVID-19.” and the interactive dashboard provides data up until 2022.
-    is_dynamic: True
-    is_dynamic_description: 'New data comes in every day and is used for subsequent releases. \\(\epsilon=1.68\\) is applied every day, and since the underlying data is new (disjoint), the overall privacy budget is \\(\epsilon = 1.68\\).'
-    is_interactive: False
-    # is_interactive_description: ''
+    release_type: Many releases
+    release_type_description: The data is published on a daily/weekly basis. The paper mentions “We'll continue to update this dataset while public health experts find it useful in their work to stop the spread of COVID-19.” and the interactive dashboard provides data up until 2022.
+    data_source_type: Dynamic
+    data_source_type_description: 'New data comes in every day and is used for subsequent releases. \\(\epsilon=1.68\\) is applied every day, and since the underlying data is new (disjoint), the overall privacy budget is \\(\epsilon = 1.68\\).'
+    access_type: Non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: |

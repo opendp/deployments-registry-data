@@ -36,12 +36,12 @@ deployment:
     model_name: Central # Fill in correct value.
     model_name_description: ''
     actors: ''
-    is_many_release: True # Fill in correct value.
-    is_many_release_description: ''
-    is_dynamic: False # Fill in correct value.
-    is_dynamic_description: ''
-    is_interactive: False # Fill in correct value.
-    is_interactive_description: ''
+    release_type: Many releases # Fill in correct value.
+    release_type_description: ''
+    data_source_type: Static # Fill in correct value.
+    data_source_type_description: ''
+    access_type: Non-interactive # Fill in correct value.
+    access_type_description: ''
 
   accounting:
     post_processing: '' # Tier 3
