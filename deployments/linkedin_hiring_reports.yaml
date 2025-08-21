@@ -31,8 +31,8 @@ deployment:
   model:
     model_name: Central
     # model_name_description: TODO
-    is_many_release: False # TODO: Is this correct?
-    is_many_release_description: Monthly
+    release_type: one release # TODO: Is this correct?
+    release_type_description: Monthly
     is_interactive: False # TODO: Is this correct?
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value

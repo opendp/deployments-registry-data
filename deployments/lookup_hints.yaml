@@ -28,8 +28,8 @@ deployment:
   model:
     model_name: Local
     model_name_description: '"Apple has adopted and further developed a technique known in the academic world as local differential privacy."'
-    is_many_release: False # TODO: Is this correct?
-    is_many_release_description: Daily
+    release_type: one release # TODO: Is this correct?
+    release_type_description: Daily
     is_interactive: False # TODO: Is this correct?
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value

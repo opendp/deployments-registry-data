@@ -12,7 +12,7 @@ short_fields:
   - /deployment/privacy_loss/privacy_parameters/delta
   - /deployment/privacy_loss/privacy_parameters/rho
   - /deployment/model/model_name
-  - /deployment/model/is_many_release
+  - /deployment/model/release_type
   - /deployment/model/is_interactive
   - /deployment/model/is_dynamic
 extra_columns:

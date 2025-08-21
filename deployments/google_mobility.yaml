@@ -44,8 +44,8 @@ deployment:
       - Curator (Google)
       - Data users: primary intended audience is "public health authorities", but the reports are also available to the general public
 
-    is_many_release: True
-    is_many_release_description: |
+    release_type: many releases
+    release_type_description: |
       - Refreshment timeframe: The reports are generated on an ongoing, daily basis. The metrics are generated for each day starting on 2020-01-01. The publicly released reports show trends over several weeks, with the most recent data representing 48 hours prior.
       - Management of privacy loss over time: A method called "scaling factors" is used to manage privacy loss when the underlying computation logic needs to be updated for accuracy improvements, and re-querying all historical data with new logic would consume a significant privacy budget.
     is_dynamic: True

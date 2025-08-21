@@ -67,7 +67,7 @@ def test_node_has_description_long(path, node):
         "/deployment/model",
         "/deployment/model/model_name_description",
         "/deployment/model/actors",
-        "/deployment/model/is_many_release_description",
+        "/deployment/model/release_type_description",
         "/deployment/model/is_dynamic_description",
         "/deployment/model/is_interactive_description",
     ]:
@@ -90,7 +90,7 @@ def test_node_has_tier(path, node):
         "/deployment/dp_flavor/output_measure",
         "/deployment/dp_flavor/bound_on_output_distance",
         "/deployment/model/model_name_description",
-        "/deployment/model/is_many_release_description",
+        "/deployment/model/release_type_description",
     ]:
         assert "tier" not in node
         pytest.skip("TODO: More tiers would be nice to have")

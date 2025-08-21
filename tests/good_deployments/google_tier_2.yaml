@@ -20,6 +20,6 @@ deployment:
       epsilon: 1.68
   model:
     model_name: Central
-    is_many_release: True
+    release_type: many releases
     is_interactive: False
     is_dynamic: False

@@ -251,16 +251,19 @@ properties:
             tier: 3
             description: Who are the relevant actors in the deployment? This includes anyone who may see the data product, even partially, and including adversaries. What are their trust assumptions and what is the rationale for these trust assumptions?
             type: string
-          is_many_release:
+          release_type:
             tier: 2
             description: |
-              If `False`, the data product is comprised of one relase and it is published once.
+              If `one release`, the data product is comprised of one relase and it is published once.
 
-              If `True`, the data product is comprised of many release and there are many publications of it over time.
+              If `many releases`, the data product is comprised of many release and there are many publications of it over time.
             description_long: |
               **One-shot vs. many-shot**: If the data product is one-shot, it is published once. In cases of one-shot deployments, entries should state if there are plans for future uses or publications of the data used to create the data product. If the data product is many-shot, there are many publications of it over time. Entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
-            type: boolean
-          is_many_release_description:
+            type: string
+            enum:
+              - one release
+              - many releases
+          release_type_description:
             description: |
               For one-release deployments, entries should state if there are plans for future uses or publications of the data used to create the data product.
 

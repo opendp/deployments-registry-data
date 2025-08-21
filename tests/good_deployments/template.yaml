@@ -36,8 +36,8 @@ deployment:
     model_name: Central # Fill in correct value.
     model_name_description: ''
     actors: ''
-    is_many_release: True # Fill in correct value.
-    is_many_release_description: ''
+    release_type: many releases # Fill in correct value.
+    release_type_description: ''
     is_dynamic: False # Fill in correct value.
     is_dynamic_description: ''
     is_interactive: False # Fill in correct value.

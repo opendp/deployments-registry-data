@@ -43,8 +43,8 @@ deployment:
       - Restricted-access server: Receives privatized records, discards IPs and timestamps, permutes records, then runs sketch-based algorithms to build aggregate histograms. It is assumed that the server correctly strips metadata, but it is not trusted with raw data.
       - Internal Apple teams: View the final aggregated, thresholded emoji-frequency histogram.
 
-    is_many_release: True
-    is_many_release_description: The histogram is continually refreshed on a daily basis. Data transmission from a user's device occurs once per day, and there is a limit on the number of privatized records that can be transmitted daily.
+    release_type: many releases
+    release_type_description: The histogram is continually refreshed on a daily basis. Data transmission from a user's device occurs once per day, and there is a limit on the number of privatized records that can be transmitted daily.
     is_dynamic: True
     is_dynamic_description: The transmission of privatized records from a user's device to the server happens once per day.
     is_interactive: False
