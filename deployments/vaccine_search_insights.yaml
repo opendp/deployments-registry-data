@@ -7,19 +7,22 @@ deployment:
   name: Vaccine Search Insights
   data_curator: Google
   intended_use: Health Data
-  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_type: Summary statistics
   data_product_region: Global
-  description: The applied anonymization techniques protect every user’s
-    daily search activity related to COVID-19 vaccinations with (ε, δ)-diﬀerential
-    privacy for ε = 2.19 and δ = 10−5.
-  publication_date: '2021-01-01'
-  # dp_flavor: TODO
+  description: Dashboard and dataset of trends in searches on COVID-19 vaccination.
+  publication_date: '2021-07-02'
+  dp_flavor:
+    name: Approximate DP
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 2.19
       delta: 1.0e-05
+    privacy_parameters_description: |
+      '"The applied anonymization techniques protect every user’s
+      daily search activity related to COVID-19 vaccinations with (\\{\epsilon, \delta)\\)-diﬀerential
+      privacy for \\(\epsilon)\\ = 2.19 and \\(\delta)\\ = 10−5.'"
   model:
     model_name: Central
     # model_name_description: TODO
