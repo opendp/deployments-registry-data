@@ -8,7 +8,7 @@ deployment:
   name: User-URL Privacy Dataset
   data_curator: Meta
   intended_use: Web Browsing
-  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_type: Dataset
   data_product_region: Global
   description: '"A data set designed to allow researchers to study the distribution of URLs on Facebook and how users interacted with them."'
   publication_date: '2020-06-06'
@@ -18,8 +18,8 @@ deployment:
   privacy_loss:
     privacy_unit: User-level
     privacy_unit_description: |
-      - '"The privacy protections are “action level” (rather than the more familiar “user-level” differential 
-      privacy) in that the granularity of what is protected is not a single user, but rather a single action, 
+      - '"The privacy protections are “action level” (rather than the more familiar “user-level” differential
+      privacy) in that the granularity of what is protected is not a single user, but rather a single action,
       or user-URL-action (e.g. a user sharing a specific URL)."'
       - However, there are a limited number of actions, and total user level loss is also computed and reported for this entry.
     privacy_parameters:
@@ -27,10 +27,10 @@ deployment:
       epsilon: 1.453
       delta: 1.0e-05
     privacy_parameters_description:
-      - '"At \\(\delta = 10−5)\\, the \\(\epsilon_{user})\\ for each individual action type decreases from about 0.45 (as reported 
+      - '"At \\(\delta = 10−5)\\, the \\(\epsilon_{user})\\ for each individual action type decreases from about 0.45 (as reported
       in an earlier section) to a range between 0.34 and 0.35. The total user-level privacy consumption across all action types under
-      \\(\mu)\\-GDP is about 0.376. The total user-level privacy consumption across all action types reduces from an epsilon of 1.844 
-      (reported in an earlier section) to about 1.453. To reiterate, the privacy consumption under \\(\rho)\\-zCDP is unchanged: 
+      \\(\mu)\\-GDP is about 0.376. The total user-level privacy consumption across all action types reduces from an epsilon of 1.844
+      (reported in an earlier section) to about 1.453. To reiterate, the privacy consumption under \\(\rho)\\-zCDP is unchanged:
       \\(\rho_{user})\\ remains at 0.0052 for each individual action column and remains at 0.0728 across the entire dataset."'
   model:
     model_name: Central
