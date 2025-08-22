@@ -254,9 +254,9 @@ properties:
           release_type:
             tier: 2
             description: |
-              If `One release`, the data product is comprised of one relase and it is published once.
+              If `One release`, the data product is comprised of one release and it is published once.
 
-              If `Many releases`, the data product is comprised of many release and there are many publications of it over time.
+              If `Many releases`, the data product is comprised of many releases and there are many publications of it over time.
             description_long: |
               **One-shot vs. many-shot**: If the data product is one-shot, it is published once. In cases of one-shot deployments, entries should state if there are plans for future uses or publications of the data used to create the data product. If the data product is many-shot, there are many publications of it over time. Entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
             type: string
