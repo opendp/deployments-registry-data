@@ -12,7 +12,7 @@ deployment:
   data_product_region: Global
   description: Count the number of seconds in a six-hour window that a user uses different apps.
   publication_date: '2017-12-01'
-  dp_flavor: 
+  dp_flavor:
     name: Pure DP
   privacy_loss:
     privacy_unit: User-quarter-day-level
