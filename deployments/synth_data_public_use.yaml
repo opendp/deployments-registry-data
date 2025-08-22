@@ -6,7 +6,7 @@ tier: 1
 deployment:
   name: Synthetic Data for Public Use
   data_curator: Office of National Statistics UK
-  intended_use: Synthetic Data
+  intended_use: Synthetic data
   data_product_type: Synthetic Data
   data_product_region: United States
   description: We recommend the use of generative adversarial networks
