@@ -32,4 +32,4 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Randomized Rounding
     justification: '' # TODO: Fill in correct value
-  additional_information: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
+  additional_information: https://www.microsoft.com/en-us/research/publication/collection-telemetry-data-privately
