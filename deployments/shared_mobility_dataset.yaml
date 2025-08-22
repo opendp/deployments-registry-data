@@ -12,7 +12,7 @@ deployment:
   data_product_region: Global
   description: Intra-urban metrics on trips.
   publication_date: '2022-01-01'
-  dp_flavor: 
+  dp_flavor:
     name: Approximate DP
   privacy_loss:
     privacy_unit: User-trip-level
