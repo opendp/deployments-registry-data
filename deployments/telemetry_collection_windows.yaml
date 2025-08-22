@@ -20,8 +20,7 @@ deployment:
     privacy_parameters:
       epsilon: 1.672
     privacy_parameters_description: |
-      '"By Theorem 5, in deployment, a single round of data collection across an arbitrary large number of apps satisfies 
-      \\(\epsilon \dprime)\\-DP, where \\(\epsilon \dprime)\\ = 1.672."'
+      'By Theorem'
   model:
     model_name: Local
     # model_name_description: TODO
