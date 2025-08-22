@@ -23,7 +23,7 @@ deployment:
   model:
     model_name: Central
     # model_name_description: TODO
-    release_type: One release of daily level metrics
+    release_type: One release
     release_type_description: Static
     access_type: Non-interactive
   implementation:
