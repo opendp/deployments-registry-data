@@ -13,7 +13,7 @@ deployment:
   description: '"A data set designed to allow researchers to study the distribution of URLs on Facebook and how users interacted with them."'
   publication_date: '2020-06-06'
   dp_flavor:
-    name: zero-Concentrated DP
+    name: Zero-concentrated DP
     data_domain: User actions on a URL.
   privacy_loss:
     privacy_unit: User-level
