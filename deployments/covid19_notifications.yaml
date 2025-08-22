@@ -23,7 +23,7 @@ deployment:
   model:
     model_name: Varies
     # model_name_description: TODO
-    release_type: Many release
+    release_type: Many releases
     release_type_description: Varies
     access_type: Non-interactive
   implementation:
