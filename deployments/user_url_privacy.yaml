@@ -23,9 +23,9 @@ deployment:
       or user-URL-action (e.g. a user sharing a specific URL)."'
       - However, there are a limited number of actions, and total user level loss is also computed and reported for this entry.
     privacy_parameters:
-      rho: 0.0728
       epsilon: 1.453
       delta: 1.0e-05
+      rho: 0.0728
     privacy_parameters_description:
       - '"At \\(\delta = 10−5)\\, the \\(\epsilon_{user})\\ for each individual action type decreases from about 0.45 (as reported
       in an earlier section) to a range between 0.34 and 0.35. The total user-level privacy consumption across all action types under
