@@ -8,7 +8,7 @@ deployment:
   name: Movement Ranges Map
   data_curator: Meta
   intended_use: Health Crisis Mobility Data
-  data_product_type: Summary statistics 
+  data_product_type: Summary statistics
   data_product_region: Global
   description: Metrics on geographic movement of individuals during COVID-19.
   publication_date: '2020-06-20'
