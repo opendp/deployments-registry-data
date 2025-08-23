@@ -20,9 +20,9 @@ deployment:
       epsilon: 2.19
       delta: 1.0e-05
     privacy_parameters_description: |
-      '"The applied anonymization techniques protect every user’s
+      "The applied anonymization techniques protect every user’s
       daily search activity related to COVID-19 vaccinations with (\\{\epsilon, \delta)\\)-diﬀerential
-      privacy for \\(\epsilon)\\ = 2.19 and \\(\delta)\\ = 10−5.'"
+      privacy for \\(\epsilon)\\ = 2.19 and \\(\delta)\\ = 10−5."
   model:
     model_name: Central
     # model_name_description: TODO
