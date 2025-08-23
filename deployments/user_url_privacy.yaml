@@ -18,9 +18,9 @@ deployment:
   privacy_loss:
     privacy_unit: User-level
     privacy_unit_description: |
-      - '"The privacy protections are “action level” (rather than the more familiar “user-level” differential
-      privacy) in that the granularity of what is protected is not a single user, but rather a single action,
-      or user-URL-action (e.g. a user sharing a specific URL)."'
+      - "The privacy protections are “action level” (rather than the more familiar “user-level” differential
+        privacy) in that the granularity of what is protected is not a single user, but rather a single action,
+        or user-URL-action (e.g. a user sharing a specific URL)."
       - However, there are a limited number of actions, and total user level loss is also computed and reported for this entry.
     privacy_parameters:
       epsilon: 1.453
