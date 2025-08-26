@@ -2,8 +2,19 @@ from check import check, checks
 
 import pytest
 import re
+from collections import Counter
+from yaml import load, Loader
 
 from utils import root
+
+
+def test_unique_slugs():
+    slugs = Counter(
+        load(path.read_text(), Loader=Loader)["url_slug"]
+        for path in root.glob("deployments/*.yaml")
+    )
+    duplicates = [slug for slug, count in slugs.items() if count > 1]
+    assert not duplicates
 
 
 @pytest.mark.parametrize(

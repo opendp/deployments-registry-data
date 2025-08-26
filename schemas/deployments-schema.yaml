@@ -8,11 +8,15 @@ description: |
 type: object
 additionalProperties: False
 required:
+  - url_slug
   - status
   - registry_authors
   - tier
   - deployment
 properties:
+  url_slug:
+    description: Used to create a stable URL.
+    type: string
   status:
     description: Approval status of this record.
     type: string
