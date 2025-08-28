@@ -85,6 +85,7 @@ properties:
           - Summary statistics
           - Machine learning model
           - Dataset
+          - Synthetic data
           # Add to this list as needed.
       data_product_region:
         tier: 1

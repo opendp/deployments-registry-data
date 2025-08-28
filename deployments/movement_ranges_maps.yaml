@@ -3,28 +3,30 @@ status: Converted
 registry_authors:
 - Nicolas Berrios
 - Jack Fitzsimons
+- James Honaker
 tier: 1
 deployment:
   name: Movement Ranges Map
   data_curator: Meta
   intended_use: Health Crisis Mobility Data
-  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_type: Summary statistics
   data_product_region: Global
-  description: Resulting in a total differential privacy epsilon value
-    of 2.0.
-  publication_date: '2020-01-01'
-  # dp_flavor: TODO
+  description: Metrics on geographic movement of individuals during COVID-19.
+  publication_date: '2020-06-20'
+  dp_flavor:
+    name: Pure DP
   privacy_loss:
-    privacy_unit: Aggregate-level
+    privacy_unit: User-day-level
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 2.0
+    privacy_parameters_description: '"Resulting in a total differential privacy epsilon value of 2.0."'
   model:
     model_name: Central
     # model_name_description: TODO
-    release_type: One release # TODO: Is this correct?
+    release_type: One release
     release_type_description: Static
-    access_type: Non-interactive # TODO: Is this correct?
+    access_type: Non-interactive
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace
