@@ -1,4 +1,5 @@
 from check import check, checks
+from update_slug import update_slug
 
 import pytest
 import re
@@ -15,6 +16,14 @@ def test_unique_slugs():
     )
     duplicates = [slug for slug, count in slugs.items() if count > 1]
     assert not duplicates
+
+
+@pytest.mark.parametrize(
+    "yaml_path", root.glob("deployments/*.yaml"), ids=lambda path: path.name
+)
+def test_updated_slugs(yaml_path):
+    (old, new) = update_slug(yaml_path)
+    assert old == new, "url_slug was out of sync: updated now"
 
 
 @pytest.mark.parametrize(
