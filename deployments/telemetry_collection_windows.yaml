@@ -2,27 +2,32 @@ status: Converted
 registry_authors:
 - Nicolas Berrios
 - Jack Fitzsimons
+- James Honaker
 tier: 1
 deployment:
   name: Telemetry Collection in Windows
   data_curator: Microsoft
   intended_use: Telemetry Data
-  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_type: Summary statistics
   data_product_region: Global
-  description: Data collection is performed every 6 hours, with \\(\epsilon\\) = 1.
-  publication_date: '2017-01-01'
-  # dp_flavor: TODO
+  description: Count the number of seconds in a six-hour window that a user uses different apps.
+  publication_date: '2017-12-01'
+  dp_flavor:
+    name: Pure DP
   privacy_loss:
-    privacy_unit: User-level
+    privacy_unit: User-quarter-day-level
     # privacy_unit_description: TODO
     privacy_parameters:
-      epsilon: 1.0
+      epsilon: 1.672
+    privacy_parameters_description: |
+      '"By Theorem 5, in deployment, a single round of data collection across an arbitrary large number of apps satisfies
+      \\(epsilon \dprime)\\-DP, where \\(epsilon \dprime)\\ = 1.672."'
   model:
     model_name: Local
     # model_name_description: TODO
-    release_type: One release # TODO: Is this correct?
+    release_type: Many releases
     release_type_description: 6 hours
-    access_type: Non-interactive # TODO: Is this correct?
+    access_type: Non-interactive
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Randomized Rounding

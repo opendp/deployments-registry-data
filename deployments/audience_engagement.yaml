@@ -8,25 +8,26 @@ deployment:
   name: Audience Engagement API
   data_curator: LinkedIn
   intended_use: Statistics API
-  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_type: Summary statistics
   data_product_region: Global
-  description: '"With these proposed parameter values (...) and applying Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee."'
+  description: Aggregated summary statistics about content engagement with LinkedIn posts.
   publication_date: '2020-01-01'
   dp_flavor:
     name: Approximate DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
-    privacy_unit: User-level
+    privacy_unit: User-month-level
     privacy_unit_description: |
-      "insights about members'' content engagements while ensuring member (user) data is protected."
+      "insights about members' content engagements while ensuring member (user) data is protected."
     privacy_parameters:
       epsilon: 34.9
       delta: 7.0e-09
+    privacy_parameters_description: '"With these proposed parameter values (...) and applying Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee."'
   model:
     model_name: Central
     model_name_description: '"The privacy model we are interested in for this work is the global privacy setting, where data is already stored centrally, but we want to ensure each result computed on the data is privatized."'
-    release_type: One release # TODO: Is this correct?
+    release_type: Many releases
     release_type_description: Monthly
     access_type: Non-interactive # TODO: Is this correct?
   implementation:

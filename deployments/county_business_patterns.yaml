@@ -8,9 +8,9 @@ deployment:
   name: Census County Business Patterns
   data_curator: United States Census Bureau
   intended_use: Geographical Buisness Statistics
-  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_type: Summary statistics
   data_product_region: USA
-  description: '"Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058."'
+  description: Demonstration dataset releasing data on economic establishments.
   publication_date: '2023-01-01'
   dp_flavor:
     name: Zero-concentrated DP
@@ -21,14 +21,18 @@ deployment:
     privacy_unit_description: '"[D]ata are protected with Per-Record Differential Privacy (PRDP).  This stage ensures that every establishment in the CBP database receives a provable privacy guarantee with respect to its existence."'
     privacy_parameters:
       rho: 12.058
+    privacy_parameters_description: '"Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058."'
   model:
     model_name: Central
     # model_name_description: TODO
-    release_type: One release # TODO: Is this correct?
+    release_type: One release
     release_type_description: Static
-    access_type: Non-interactive # TODO: Is this correct?
+    access_type: Non-interactive
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Gaussian
     justification: '' # TODO: Fill in correct value
-  additional_information: https://www.census.gov/topics/business-economy/disclosure/about.html
+  additional_information: |
+    - https://www.census.gov/topics/business-economy/disclosure/about.html
+    - https://www.census.gov/data/academy/webinars/2023/differential-privacy-webinar.html
+    - https://www.census.gov/topics/business-economy/disclosure/data/tables.html

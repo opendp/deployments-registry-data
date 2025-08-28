@@ -2,33 +2,40 @@ status: Converted
 registry_authors:
 - Nicolas Berrios
 - Jack Fitzsimons
+- James Honaker
 tier: 1
 deployment:
   name: Shared Mobility Dataset
   data_curator: Google
   intended_use: Mobility Data
-  data_product_type: Summary statistics # TODO: Is this correct?
+  data_product_type: Summary statistics
   data_product_region: Global
-  description: The automated Laplace mechanism adds random noise drawn
-    from a zero mean Laplace distribution and yields (ϵ, δ)-differential privacy guarantee
-    of ϵ = 0.66 and δ = 2.1 × 10−29, which is very strong.
+  description: Intra-urban metrics on trips.
   publication_date: '2022-01-01'
-  # dp_flavor: TODO
+  dp_flavor:
+    name: Approximate DP
   privacy_loss:
-    privacy_unit: Aggregate Statistics
-    # privacy_unit_description: TODO
+    privacy_unit: User-trip-level
+    privacy_unit_description: |
+      '"This dataset contains trip flow information from over 300 million people world-wide (including residents and visitors of cities)
+      for the year 2016, aggregated weekly and with spatial granularity corresponding to S2 cells of approximately 1.27 km\\(^2)\\. ...
+      All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
     privacy_parameters:
       epsilon: 0.66
       delta: 2.1e-29
+    privacy_parameters_description: |
+      '"The automated Laplace mechanism adds random noise drawn
+      from a zero mean Laplace distribution and yields (\\(\epsilon, \delta)\\)-differential privacy guarantee
+      of \\(\epsilon = 0.66)\\ and \\(\delta = 2.1 × 10−29)\\, which is very strong."'
   model:
     model_name: Central
     # model_name_description: TODO
-    release_type: One release # TODO: Is this correct?
+    release_type: One release
     release_type_description: Static
-    access_type: Non-interactive # TODO: Is this correct?
+    access_type: Non-interactive
   # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace Mechanism
-    justification: '' # TODO: Fill in correct value
+    justification: '"All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
   additional_information: https://www.nature.com/articles/s41467-019-12809-y
