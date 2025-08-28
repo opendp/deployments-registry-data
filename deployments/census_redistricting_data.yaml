@@ -9,7 +9,7 @@ deployment:
   data_curator: U.S. Census Bureau
   intended_use: The decennial census data are used for congressional apportionment, the redistricting of legislative bodies, the allocation of federal funds, public policy, and research. The Summary File is produced to satisfy the legal requirement to provide states with the population tabulations they need for legislative redistricting.
   data_product_type: Summary statistics
-  data_product_region: United States
+  data_product_region: USA
   description: Set of summary statistics (tables with counts of individuals, households, group quarters residents, or housing units with certain characteristics) published as the 2020 Census Redistricting Data (P.L. 94-171) Summary File.
   publication_date: '2021-08-01'
   data_product_sector: Government
