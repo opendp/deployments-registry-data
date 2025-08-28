@@ -1,5 +1,22 @@
 from pathlib import Path
 import re
+from yaml import load, Loader
+
+
+def clean(messy):
+    return re.sub(r"\W+", "_", messy.lower())
+
+
+def make_slug(data):
+    deployment = data["deployment"]
+    return "_".join(
+        [
+            clean(deployment["name"]),
+            clean(deployment["data_curator"]),
+            clean(deployment["data_product_type"]),
+            clean(deployment["publication_date"].split("-")[0]),
+        ]
+    ).replace("_", "-")
 
 
 def update_slug(path: Path):
@@ -9,8 +26,10 @@ def update_slug(path: Path):
     deployment_yaml = path.read_text()
     match = re.search(r"^url_slug: (.*)", deployment_yaml)
 
+    deployment = load(deployment_yaml, Loader=Loader)
+
     old_slug = match.group(1)
-    new_slug = path.stem
+    new_slug = make_slug(deployment)
     deployment_yaml = re.sub(
         r"^url_slug: (.*)", f"url_slug: {new_slug}", deployment_yaml
     )
