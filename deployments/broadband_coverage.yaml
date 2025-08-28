@@ -8,11 +8,11 @@ deployment:
   name: Broadband Coverage
   data_curators:
     - Microsoft
-  description: Publicly available U.S. Broadband Coverage dataset that reports broadband coverage percentages at a zip code-level.
   intended_use: Allow researchers and policy makers to understand problems related to broadband access and develop solutions to improve broadband access while simultaneously preserving the privacy of individual households.
   data_product_type: Dataset
-  publication_date: '2021-04-01'
   data_product_region: USA
+  description: Publicly available U.S. Broadband Coverage dataset that reports broadband coverage percentages at a zip code-level.
+  publication_date: '2021-04-01'
   data_product_sector: Technology # Telecommunication, Public Sector/Government?
 
   dp_flavor:
@@ -27,7 +27,7 @@ deployment:
   privacy_loss:
     privacy_unit: |
       User-level
-    privacy_unit_description: Neighboring datasets are defined to be the addition or deletion of a single user in the data and all possible records of that user.
+    privacy_unit_description: Neighboring datasets are defined to be the addition or deletion of a single user in the data and all possible records of that user. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is 1.
     privacy_parameters:
       epsilon: 0.2
     # privacy_parameters_description: ''
@@ -39,12 +39,12 @@ deployment:
       - Users whose devices connect to Microsoft services. They must trust Microsoft to handle their data and apply the DP protections as described.
       - Microsoft (Curator): collects the raw telemetry data, applies the Laplace mechanism to produce differentially private counts, and publishes the final data product.
       - Data Consumers: includes “researchers and policy makers” and “federal, state, and local agencies” who only have access to the final, public data product and cannot see the underlying private data. They do not need to be trusted, as they only ever access the data product produced under DP.
-    is_many_release: False
-    # is_many_release_description: ''
-    is_dynamic: True
-    is_dynamic_description: Microsoft collects data “as part of our ongoing work to improve our software and services performance and security”. The data is generated continuously, as “every time a device receives an update or connects to a Microsoft service, we can estimate the throughput speed”.
-    is_interactive: False
-    # is_interactive_description: ''
+    release_type: One release
+    # release_type_description: ''
+    data_source_type: Dynamic
+    data_source_type_description: Microsoft collects data “as part of our ongoing work to improve our software and services performance and security”. The data is generated continuously, as “every time a device receives an update or connects to a Microsoft service, we can estimate the throughput speed”.
+    access_type: Non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: |

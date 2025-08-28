@@ -1,18 +1,16 @@
-from check import check
+from check import check, checks
 
-from pathlib import Path
 import pytest
 import re
 
-
-root = Path(__file__).parent.parent
+from utils import root
 
 
 @pytest.mark.parametrize(
     "yaml_path", root.glob("deployments/*.yaml"), ids=lambda path: path.name
 )
 def test_real_yaml(yaml_path):
-    errors = check(yaml_path)
+    errors = check(yaml_path, only=checks - {"check_urls"})
     assert not errors
 
 

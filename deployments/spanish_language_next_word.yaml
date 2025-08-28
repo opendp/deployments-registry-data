@@ -8,11 +8,11 @@ deployment:
   name: Spanish Next Word Prediction
   data_curators:
     - Google
-  description: A machine learning model trained with federated learning for next‑word prediction on Spanish‑language Gboard.
   intended_use: Power next-word-prediction for Spanish-language Gboard users.
   data_product_type: Machine learning model
-  publication_date: '2022-02-01'
   data_product_region: Global
+  description: A machine learning model trained with federated learning for next‑word prediction on Spanish‑language Gboard.
+  publication_date: '2022-02-01'
   data_product_sector: Technology
 
   dp_flavor:
@@ -26,29 +26,29 @@ deployment:
 
   privacy_loss:
     privacy_unit: User-device-level
-    privacy_unit_description: The output distribution of models does not change even if we add or remove all of the training examples from any one device.
+    privacy_unit_description: The output distribution of models does not change even if we add or remove all of the training examples from any one device. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is 1.
     privacy_parameters:
       rho: 0.81
     # privacy_parameters_description: ''
 
   model:
-    model_name: Federated
+    model_name: Central
     # model_name_description:
     actors: |
       - Users/Devices of Spanish-language Gboard users. They hold their own raw data and compute model updates locally. Hence, users do not need to trust the central server with their raw data, but must trust it to correctly implement the DP mechanism.
       - Server (Google): Receives model updates from devices, aggregates them, and adds the necessary noise to ensure DP by adding noise to one gradient and subtracting that same noise from a later gradient
       - Consumers or potential adversaries: Gboard users who interact with the final, privacy-preserving next-word prediction model. They do not need to be trusted, as they only ever interact with the model produced under DP.
 
-    is_many_release: True
-    is_many_release_description: |
+    release_type: Many releases
+    release_type_description: |
       - The article details a single, specific training instance that “ran for 2000 rounds over six days” to produce one “production ML model”, which on its own would appear to be a one-shot release. However, the context of the Gboard service and the stated goal of smoothing "the road to later training models with improved privacy guarantees" implies this is part of a continual process of model updates over time.
       - Privacy loss for individuals over time is managed by rate-limiting participation. The system enforces a rule that "devices participated in training at most once every 24 hours".
       - Refreshment Timeframe and Fixed Budget: The document does not provide details on a refreshment timeframe or a fixed total amount of privacy loss allowed before the underlying data is no longer queried. It only provides the final, total privacy cost for this specific model deployment.
 
-    is_dynamic: True
-    is_dynamic_description: The data consists of “user keyboard input”, which is generated continuously as users interact with the Gboard application. The system architecture, where each “eligible device maintains a local training cache" with new data based on what the "user actually typed", is designed to work with this continuous inflow of new information.
-    is_interactive: False
-    # is_interactive_description: ''
+    data_source_type: Dynamic
+    data_source_type_description: The data consists of “user keyboard input”, which is generated continuously as users interact with the Gboard application. The system architecture, where each “eligible device maintains a local training cache" with new data based on what the "user actually typed", is designed to work with this continuous inflow of new information.
+    access_type: Non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: No details were provided about post-processing.

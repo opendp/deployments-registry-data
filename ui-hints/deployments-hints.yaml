@@ -1,0 +1,21 @@
+short_fields:
+  # Default is long format: These are the exceptions.
+  - /deployment/name
+  - /deployment/data_curators
+  - /deployment/data_product_type
+  - /deployment/data_product_region
+  - /deployment/data_product_sector
+  - /deployment/publication_date
+  - /deployment/dp_flavor/name
+  - /deployment/privacy_loss/privacy_unit
+  - /deployment/privacy_loss/privacy_parameters/epsilon
+  - /deployment/privacy_loss/privacy_parameters/delta
+  - /deployment/privacy_loss/privacy_parameters/rho
+  - /deployment/model/model_name
+  - /deployment/model/release_type
+  - /deployment/model/access_type
+  - /deployment/model/data_source_type
+extra_columns:
+  # Keys are the display names of columns;
+  # Values are the path to the value to show.
+  "Model": /deployment/model/model_name

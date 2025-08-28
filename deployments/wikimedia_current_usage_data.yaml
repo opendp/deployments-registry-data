@@ -8,11 +8,11 @@ deployment:
   name: Current Pageviews
   data_curators:
     - Wikimedia Foundation
-  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
   intended_use: Help Wikipedia editors prioritize their work and support academic research.
   data_product_type: Summary statistics
-  publication_date: '2023-06-01'
   data_product_region: Global
+  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
+  publication_date: '2023-06-01'
   data_product_sector: Technology
 
   dp_flavor:
@@ -30,7 +30,7 @@ deployment:
 
   privacy_loss:
     privacy_unit: Device-day
-    privacy_unit_description: Adjacent datasets are those that differ by the data of a single device for a single day. Each device’s contribution is capped at a maximum of 10 unique pageviews per day. Since the implementation makes it impossible to link devices to users, the paper acknowledges that a user could visit the same page from multiple devices, and that 'this behavior could potentially be observed in the output data'.
+    privacy_unit_description: Adjacent datasets are those that differ by the data of a single device for a single day. Each device’s contribution is capped at a maximum of 10 unique pageviews per day. Since the implementation makes it impossible to link devices to users, the paper acknowledges that a user could visit the same page from multiple devices, and that 'this behavior could potentially be observed in the output data'. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
     privacy_parameters:
       rho: 0.015
     # privacy_parameters_description: ''
@@ -43,12 +43,12 @@ deployment:
       - Trusted Curator (The Wikimedia Foundation): Receives client-annotated pageviews, performs server-side DP (adds noise, suppresses counts), and publishes the final data.
       - Data Consumers: The public, including Wikipedia editors and academic researchers, who use the final, privacy-preserving data product. Data consumers do not need to be trusted, as they only ever see the data product which was produced under DP.
 
-    is_many_release: True
-    is_many_release_description: 'Published daily, on a rolling basis. Each user-day is treated as an independent privacy unit, with fixed parameters with \\(\rho\\) = 0.015. Since there is no overlap between days, the privacy loss does not accumulate over days for users.'
-    is_dynamic: True
-    is_dynamic_description: As users visit the site, their individual pageviews are recorded and stored in the current pageviews dataset.
-    is_interactive: False
-    # is_interactive_description: ''
+    release_type: Many releases
+    release_type_description: 'Published daily, on a rolling basis. Each user-day is treated as an independent privacy unit, with fixed parameters with \\(\rho\\) = 0.015. Since there is no overlap between days, the privacy loss does not accumulate over days for users: "There is no overlap between days: the privacy parameters for each user-day are fixed and do not increase over time."'
+    data_source_type: Dynamic
+    data_source_type_description: As users visit the site, their individual pageviews are recorded and stored in the current pageviews dataset.
+    access_type: Non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold \\(\tau\\) is removed from the final output dataset. For current data, \\(\tau\\) = 90.'

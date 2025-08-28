@@ -6,15 +6,15 @@ deployment:
   name: Energy Differential Privacy for OhmConnect Virtual Power Plant Measurement
   data_curators:
     - Recurve
+  intended_use: Measure the impact of OhmConnect's demand response program on electricity usage, while protecting customer privacy.
+  data_product_type: Summary statistics
+  data_product_region: California, United States
   description: |
     Aggregate summary statistics describing how much energy OhmConnect participants saved during a demand response event (during the August 14, 2020 California Blackout), relative to a matched, non-participant group. Specifically, the statistics are:
       - Average Load Shape: A private, hour-by-hour profile of the comparison group's average 'observed' and 'predicted' energy consumption over a 24-hour period.
       - Percent Load Change: The percentage difference between total predicted and total observed energy consumption for each group during the 3-hour event window.
       - Difference of Load Changes: The final net impact of the OhmConnect program, calculated by subtracting the comparison group's percent load change from the treatment group's percent load change.
-  intended_use: Measure the impact of OhmConnect's demand response program on electricity usage, while protecting customer privacy.
-  data_product_type: Summary statistics
   publication_date: '2020-12-01'
-  data_product_region: California, United States
   data_product_sector: Energy
   dp_flavor:
     name: Approximate DP
@@ -30,7 +30,7 @@ deployment:
 
   privacy_loss:
     privacy_unit: user-level
-    privacy_unit_description: Adjacent datasets differ by one customer's data in MCE's residential customer base. The specific function that computes the distance between two adjacent datasets is not explicitly provided.
+    privacy_unit_description: Adjacent datasets differ by one customer's data in MCE's residential customer base. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is 1.
     privacy_parameters:
       epsilon: 4.72
       delta: 5.06e-9
@@ -47,12 +47,12 @@ deployment:
       - Subjects: The residential customers in the comparison group. They must trust Recurve to properly handle their raw data and apply differential privacy mechanisms before publishing the results.
       - Consumers: 'regulators, utilities, and implementers'.
 
-    is_many_release: False
-    # is_many_release_description: ''
-    is_dynamic: False
-    # is_dynamic_description: ''
-    is_interactive: False
-    # is_interactive_description: ''
+    release_type: One release
+    # release_type_description: ''
+    data_source_type: Static
+    # data_source_type_description: ''
+    access_type: Non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: Calculating the final net impact by taking the private 'Percent Load Change' statistic computed with DP from the comparison group and subtracting it from the non-private 'Percent Load Change' of the treatment group to produce the final 'Difference of Load Changes'.

@@ -24,11 +24,11 @@ deployment:
   model:
     model_name: Central
     model_name_description: 'Central DP: a trusted Google curator applies the Laplace mechanism via Google’s open-source DP library before any data release.'
-    is_many_release: True
-    is_many_release_description: 'Continual: new noisy aggregates are generated and published daily (or weekly).'
-    is_interactive: False
-    is_interactive_description: PLACEHOLDER FOR TEST
-    is_dynamic: False
+    release_type: Many releases
+    release_type_description: 'Continual: new noisy aggregates are generated and published daily (or weekly).'
+    access_type: Non-interactive
+    access_type_description: PLACEHOLDER FOR TEST
+    data_source_type: Static
 
   accounting:
     post_processing: |

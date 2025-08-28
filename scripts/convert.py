@@ -42,7 +42,7 @@ def convert(old_path: Path):
                 "model_name": old_case["model"],
                 "model_name_description": "TODO",
                 "release_type": "One-shot",
-                "is_many_release_description": old_case[
+                "release_type_description": old_case[
                     "dynamic"
                 ],  # Descriptions need to be fleshed out.
                 "interactivity": "Non-interactive",

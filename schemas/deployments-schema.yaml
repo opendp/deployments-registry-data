@@ -32,6 +32,14 @@ properties:
     minItems: 1
   tier:
     description: The completeness of the description. For higher tiers, more fields are filled in, but this is guidance, rather than a requirement.
+    description_long: |
+      Deployments are registered at one of three **tiers**. Each increasing tier requires more information to be disclosed about the deployment, allowing for a tradeoff between ease of registration and greater transparency. Below are descriptions of each tier.
+
+      **Tier 1 (\*):** Tier 1 entries provide basic information about each deployment, such as the curator, intended use of the data product, a description of the data product, and publication date. These entries may also include more information (e.g., in the form of external links) where available.
+
+      **Tier 2 (\*\*):** Tier 2 entries provide an intermediate level of information about each deployment. They include the information required for Tier 1 entries, plus information about the flavor of differential privacy, privacy unit and privacy loss parameters, and deployment model.
+
+      **Tier 3 (\*\*\*\):** Tier 3 entries provide an advanced level of information about each deployment, including information required for Tier 1 and Tier 2 entries plus additional information. This additional information includes extra details related to the flavor of DP (such as the data domain and unprotected quantities) and a more detailed description of the privacy unit. It also includes information on privacy accounting (on post-processing and composition) and implementation & security, including rationale for implementation decisions.
     type: integer
     enum:
       - 1
@@ -55,15 +63,13 @@ properties:
         type: string
       data_curators:
         tier: 1
-        description: The name of the entities publishing the data product.
         type: array
         items:
           type: string
         minItems: 1
-      description:
-        tier: 1
-        description: Brief description of the data product.
-        type: string
+        description: The name of the entity publishing the data product.
+        description_long: |
+          The **curator** refers to the entity who published the data product. Examples of curators include specific government agencies and companies.
       intended_use:
         tier: 1
         description: Intended use(s) of the data product.
@@ -71,21 +77,30 @@ properties:
       data_product_type:
         tier: 1
         description: Type of data product. This enumeration will grow over time with more examples.
+        description_long: |
+          The **data product** is the output of the differentially-private pipeline. Examples of data products include summary statistics and machine learning models.
         type: string
         enum:
           - Summary statistics
           - Machine learning model
           - Dataset
+          - Synthetic data
           # Add to this list as needed.
-      publication_date:
-        tier: 1
-        description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of many releases, the publication date can be expressed as the date of first publication.
-        type: string
-        format: date
       data_product_region:
         tier: 1
         description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
         type: string
+      description:
+        tier: 1
+        description: Brief description of the data product.
+        type: string
+      publication_date:
+        tier: 1
+        description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of many releases, the publication date can be expressed as the date of first publication.
+        description_long: |
+          The publication **date** refers to when the data product was published or otherwise created. In cases of data products that are created under continual release, the date listed is the date of first publication.
+        type: string
+        format: date
       data_product_sector:
         tier: 1
         description: The industry or domain described by the data product.
@@ -97,7 +112,6 @@ properties:
           - Government
           - Energy
           # Add to this list as needed.
-
       # Tiers 2 and 3
       dp_flavor:
         type: object
@@ -111,6 +125,13 @@ properties:
               If a commonly-known flavor was not used, it can be expressed as "Custom".
 
               If "Custom" is used, then specify the `input_metric`, `bound_on_input_distance`, `output_measure`, `bound_on_output_distance`
+            description_long: |
+              Differential privacy (DP) can be achieved under different **flavors**, i.e., different standards by which privacy loss is measured.
+
+              Common flavors include <a href="https://link.springer.com/chapter/10.1007/11681878_14" target="_blank">pure DP</a> (i.e., ε-DP), <a href="https://ptolemy.berkeley.edu/projects/truststc/pubs/101/ourDataOurselves.pdf" target="_blank">approximate DP</a> (i.e., (ε, δ)-DP), <a href="https://arxiv.org/abs/1605.02065" target="_blank">zero-concentrated DP</a> (zCDP), and <a href="https://arxiv.org/abs/1702.07476" target="_blank">Rényi DP</a>.
+              A flavor is defined by its privacy relation <a href="https://projects.iq.harvard.edu/files/opendifferentialprivacy/files/opendp_programming_framework_11may2020_1_01.pdf" target="_blank">(Gaboardi Hay Vadhan 2021)</a>, consisting of an input metric, bound on input distance, output measure, and bound on output distance.
+
+              If a custom flavor of DP is used for a deployment, its entry must specify the privacy relation. Otherwise, the common name of the flavor used is provided.
             type: string
             enum:
               - Pure DP
@@ -120,15 +141,23 @@ properties:
               - Custom
           input_metric:
             description: Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55).
+            description_long: |
+              A function that computes the distance between between any two datasets in the data domain <a href="https://www.oreilly.com/library/view/hands-on-differential-privacy/9781492097730/" target="_blank">(pg 55, Cowan, Shoemate, Pereira 2024)</a>
             type: string
           bound_on_input_distance:
             description: Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
+            description_long: |
+              The differential privacy guarantee holds for any two datasets in the data domain whose distance (computed by the input metric) is less than or equal to the bound on the input distance. Pairs of datasets whose distance is within the bound are called “adjacent datasets” – the entity which changes under adjacent datasets (e.g., an individual) is the privacy unit.
             type: string
           output_measure:
             description: Function that computes the distance between probability distributions of the differentially private mechanism applied to datasets in the data domain.
+            description_long: |
+              A function that computes the distance between probability distributions of the differentially private mechanism applied to datasets in the data domain.
             type: string
           bound_on_output_distance:
             description: Maximum distance, computed by the output metric, between probability distributions of the differentially private mechanism applied to adjacent datasets.
+            description_long: |
+              The maximum distance, computed by the output measure, between probability distributions of the differentially private mechanism applied to adjacent datasets.
             type: string
           data_domain:
             tier: 3
@@ -139,12 +168,21 @@ properties:
             description: Any quantities in the data product that are unprotected by DP (e.g., statistics computed over a dataset that are released in the clear, without DP noise, and sometimes called “invariants”).
             type: string
       privacy_loss:
+        description_long: |
+          Privacy loss under differential privacy is characterized by a privacy unit and privacy parameters, both described below.
         type: object
         additionalProperties: False
         properties:
           privacy_unit:
             tier: 2
             description: The entity whose data changes under adjacent datasets (see above), like a user or a user’s contribution (among multiple) (based partly on Bailie et al. 2025). High-level description of the granularity of protection (e.g., user level; user-day).
+            description_long: |
+              Differential privacy aims to obscure the data of “individuals.”
+              How an individual is defined is the privacy unit.
+              For example, the privacy unit might be a person or household, or a single event (“event-level privacy”) or the set of all events associated with a particular user (“user-level privacy”).
+              In other words, the privacy unit “characterizes what [is being] protected” <a href="https://www.oreilly.com/library/view/hands-on-differential-privacy/9781492097730/" target="_blank">(pg 27, Cowan, Shoemate, Pereira 2024)</a>.
+              More formally, the privacy unit is the entity whose data changes under adjacent datasets <a href="https://www.proquest.com/docview/3217403500" target="_blank">(Bailie 2025)</a>.
+              Tier 3 entries go beyond stating a high-level description of the privacy unit and include a precise specification of what constitutes adjacent datasets.
             type: string
           privacy_unit_description:
             tier: 3
@@ -153,6 +191,12 @@ properties:
           privacy_parameters:
             tier: 2
             description: Intensity of protection, as characterized by values set for parameters like epsilon, delta, or rho. Which parameters are specified will vary according to the DP flavor.
+            description_long: |
+              Privacy-loss parameters describe the “intensity” of protection over the privacy unit <a href="https://www.proquest.com/docview/3217403500" target="_blank">(Bailie 2025)</a>.
+              Different flavors of differential privacy use different privacy parameters (e.g., ε for pure DP and ε and δ for approximate-DP).
+              They are referred to as privacy-loss parameters because smaller values mean greater protection (i.e., less loss of privacy).
+              Privacy-loss parameters cannot be interpreted without the privacy unit, as intensity of protection without knowledge of what is being protected is meaningless.
+              It often requires additional modeling and effort to translate privacy-loss parameters into real-world risk measures, and this remains an ongoing area of research.
             type: object
             additionalProperties: False
             properties:
@@ -172,6 +216,32 @@ properties:
           model_name:
             tier: 2
             description: Name of the deployment model. “The models differ based on how much trust individuals in the data have in a central authority data system.” (HoDP, pg 34)
+            description_long: |
+              Differential privacy must be deployed under a **deployment model**.
+              Each deployment model implies different types or levels of trust in the curator and other relevant actors.
+              Below are descriptions of three well-known deployment models:
+
+              - **Central**: The curator collects or is otherwise permitted to access data as collected from data subjects (people whose data are being protected).
+              The curator is responsible for applying differential privacy to create a privacy-protected data product that can be shared with other parties who are not permitted to see the data as collected.
+
+              - **Local**: The curator is not permitted to access data as collected from data subjects.
+              Instead, differential privacy is applied to data on the individual level, before it is sent from each data subject to the curator.
+              The curator may then be responsible for combining data subjects’ privacy-protected data in a meaningful way.
+              For an explanation of how differential privacy can be applied under the local model, see <a href="https://pair.withgoogle.com/explorables/anonymization/" target="_blank">this interactive document by Pearce and Jiang</a>.
+              For further reading, see <a href="https://uvammm.github.io/docs/dwork.pdf" target="_blank">Dwork, McSherry, Nissim, Smith 2006</a> and <a href="https://epubs.siam.org/doi/pdf/10.1137/090756090" target="_blank">Kasiviswanathan, Lee, Nissim, Raskhodnikova, Smith 2011</a>.
+
+              - **Shuffle**: This model introduces a “shuffler” actor, who sits between data subjects and the data curator.
+              Differential privacy is applied to data on the individual level before it is sent from each data subject to the shuffler.
+              The shuffler then shuffles data subjects’ privacy-protected data, then sends it to the curator.
+              The shuffling step adds an extra layer of protection because curators do not know which privacy-protected piece of data came from which data subject.
+              The curator may then be responsible for combining data subjects’ privacy protected data in a meaningful way.
+              Under the shuffle model, it is assumed that the curator and shuffler do not collude.
+              For further reading, see <a href="https://dl.acm.org/doi/pdf/10.1145/3132747.3132769" target="_blank">Bittau Erlingsson Maniatis Mironov et al. 2017</a> and <a href="https://arxiv.org/pdf/1808.01394" target="_blank">Cheu Smith Ullman Zeber Zhilyaev 2019</a>.
+
+              Specifics of how a particular model is deployed may vary.
+              For this reason, Tier 3 entries also include a description of relevant actors in the deployment, the trust assumptions associated with each actor, and rationale for these trust assumptions.
+
+              A deployment can also vary in terms of whether (1) it is one-shot or many-shot, (2) its underlying data are dynamic or static, and (3) it is interactive or non-interactive:
             type: string
             enum:
               - Local
@@ -185,54 +255,88 @@ properties:
             tier: 3
             description: Who are the relevant actors in the deployment? This includes anyone who may see the data product, even partially, and including adversaries. What are their trust assumptions and what is the rationale for these trust assumptions?
             type: string
-          is_many_release:
+          release_type:
             tier: 2
             description: |
-               If `False`, the data product is comprised of one relase and it is published once.
+              If `One release`, the data product is comprised of one release and it is published once.
 
-               If `True`, the data product is comprised of many release and there are many publications of it over time.
-            type: boolean
-          is_many_release_description:
+              If `Many releases`, the data product is comprised of many releases and there are many publications of it over time.
+            description_long: |
+              **One-shot vs. many-shot**: If the data product is one-shot, it is published once. In cases of one-shot deployments, entries should state if there are plans for future uses or publications of the data used to create the data product. If the data product is many-shot, there are many publications of it over time. Entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
+            type: string
+            enum:
+              - One release
+              - Many releases
+          release_type_description:
             description: |
               For one-release deployments, entries should state if there are plans for future uses or publications of the data used to create the data product.
 
               For many-release deployments, entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
             type: string
-          is_dynamic:
+          data_source_type:
             tier: 2
             description: If the underlying data are dynamic, it means that new underlying data come in over time. On the other hand, if the underlying data are static, new data do not come in over time.
-            type: boolean
-          is_dynamic_description:
+            description_long: |
+              **Dynamic vs. static**: If the underlying data are dynamic, it means that new underlying data come in over time. On the other hand, if the underlying data are static, new data do not come in over time.
+            type: string
+            enum:
+              - Static
+              - Dynamic
+          data_source_type_description:
             tier: 3
             description: If more description is useful.
-          is_interactive:
+          access_type:
             tier: 2
             description: |
               Under interactive deployments, people with permission, like data analysts, can interactively query the underlying data under differential privacy. They will be returned privacy-protected query estimates.
-            type: boolean
-          is_interactive_description:
+            description_long: |
+              **Interactive vs. non-interactive**: Under interactive deployments, people with permission, like data analysts, can interactively query the underlying data under differential privacy. They will be returned privacy-protected query estimates. Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
+            type: string
+            enum:
+              - Interactive
+              - Non-interactive
+          access_type_description:
             tier: 3
             description: Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
             type: string
       accounting:
+        description_long: |
+          **Privacy-loss accounting**, i.e., how privacy loss is accounted for over multiple queries to the underlying data, is described by composition and post-processing:
         type: object
         additionalProperties: False
         properties:
           post_processing:
             tier: 3
             description: Functions applied to the data product after being protected under DP
+            description_long: |
+              Once differential privacy has been applied to generate a data product, functions applied to the data product thereafter, termed post-processing, do not incur additional privacy loss.
+              The impact of these functions may be important to know about for downstream applications using the data product, so they are reported for Tier 3 entries.
+              For example, imagine a data curator releasing a data product that includes counts of people in different geographic regions.
+              A privacy-protected count may be negative, but the curator may not want to publish a seemingly nonsensical count and may turn these negative counts into zeros.
             type: string
           composition:
             tier: 3
             description: How privacy loss is accounted across multiple differentially private queries, like sequential or parallel composition
+            description_long: |
+              Data products are often generated via multiple queries to the underlying data.
+              Each query to the data requires specifying values for the privacy parameters.
+              How privacy parameter values accumulate under differential privacy is described by different forms of composition.
+              Examples of composition include sequential composition and parallel composition.
+              Under sequential composition, assuming pure DP, the sum of the privacy parameter value (epsilon) per query is the total privacy parameter value.
+              Parallel composition, again assuming pure DP, says that the total privacy parameter value for a set of queries applied on disjoint subsets of the data is the maximum privacy parameter value used for one of the queries.
             type: string
       implementation:
+        description_long: |
+          **Implementation** details are provided for Tier 3 entries. They include the following information:
         type: object
         additionalProperties: False
         properties:
           pre_processing_eda_hyperparameter_tuning:
             tier: 3
             description: Description of any pre-processing of the data before DP protections and any exploratory data analysis conducted before DP protections, and whether privacy loss was accounted for. How were hyperparameters, like privacy loss parameters, tuned? Was privacy loss associated with this tuning accounted for?
+            description_long: |
+              How privacy loss was accounted for, if at all, during steps taken prior to the creation of the data product and application of differential privacy.
+              These steps include data pre-processing, EDA, and hyperparameter tuning (e.g., on privacy-loss parameters).
             type: string
           mechanisms:
             tier: 3
@@ -244,6 +348,9 @@ properties:
               - What measures, if any, were taken to protect against leakage due to idiosyncrasies of the computing platform?
               - What security measures are in place to protect the underlying data (i.e., the data before being processed under DP)? What access controls are in place?
               - Version of the code & github link, if available
+            description_long: |
+              Differential privacy can be achieved using several mechanisms, i.e., algorithms that take the data as input and output a privacy-protected data product.
+              Tier 3 entries describe these mechanisms and how they were implemented (e.g., using a library). These entries also describe other security-related implementation details, like what measures were taken to protect against known vulnerabilities, like floating point and timing channel attacks (e.g., see <a href="https://ieeexplore.ieee.org/abstract/document/9833672" target="_blank">(Jin, McMurtry, Rubinstein, Ohrimenko 2022)</a>. If available, code for implementation should be linked in this section.
             type: string
           justification:
             tier: 3
@@ -251,7 +358,12 @@ properties:
               Process by which any of the above choices surrounding implementation of DP were made, and well as any rationale around these decisions. Some questions that this section may answer include, but are not limited to:
 
               “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?” (Dwork Kohli Mulligan 2019)
+            description_long: |
+              Rationale for how decisions around implementation were made by the curator or others. In short, this information should answer the following questions laid out by <a href="https://escholarship.org/content/qt8vj5q8j7/qt8vj5q8j7_noSplash_3fbe06d219d4266437a90862727e5789.pdf" target="_blank">Dwork Mulligan Kohli 2019</a>: “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?
             type: string
       additional_information:
+        description_long: |
+          This section includes links to white papers, blogposts, or other sources that describe the deployment.
+          This section may also include links to the data product itself, if publicly available.
         tier: 1
         type: string

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from pathlib import Path
 from sys import exit
 from yaml import load, Loader, dump, scan
@@ -47,6 +48,9 @@ def get_all_values_paths(node, path=""):
             yield (new_path, value)
 
 
+_checked_urls = set()
+
+
 def check_urls(yaml_path):
     deployment = load(yaml_path.open(), Loader=Loader)
     pairs = get_all_values_paths(deployment)
@@ -54,12 +58,15 @@ def check_urls(yaml_path):
     for path, text in pairs:
         if not isinstance(text, str):
             continue
-        urls = re.findall(r"https?://\S+", text)
+        # URL RE is a heurisitic;
+        # Alternative would be to require URLs to be in markdown links?
+        urls = re.findall(r'https?://[^ \t\n,;)"]+', text)
         for url in urls:
-            if url in known_bad_urls:
+            if url in known_bad_urls or url in _checked_urls:
                 continue
             request = requests.get(url)
-            if request.status_code != 200:
+            _checked_urls.add(url)
+            if not request.ok:
                 errors.append(f"HTTP {request.status_code} for {url}")
     return errors
 
@@ -77,9 +84,14 @@ def check_quoting(yaml_path):
     return errors
 
 
-def check(yaml_path: Path):
+checks = {name for name in globals().keys() if name.startswith("check_")}
+
+
+def check(yaml_path: Path, only=checks):
     detail_checks = [
-        function for name, function in globals().items() if name.startswith("check_")
+        function
+        for name, function in globals().items()
+        if name.startswith("check_") and name in only
     ]
     errors = {}
     for detail_check in detail_checks:
@@ -97,19 +109,37 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "yaml_paths",
+        "--yaml_paths",
         nargs="*",
         help="If empty, checks all deployments.",
         type=Path,
     )
+    mutex = parser.add_mutually_exclusive_group()
+    mutex.add_argument(
+        "--skip",
+        nargs="*",
+        choices=checks,
+        help="Checks to skip",
+        default=[],
+    )
+    mutex.add_argument(
+        "--only",
+        nargs="*",
+        choices=checks,
+        help="Only do these checks",
+        default=[],
+    )
     args = parser.parse_args()
     yaml_paths = args.yaml_paths
     if not yaml_paths:
-        yaml_paths = Path(__file__).parent.glob("deployments/*.yaml")
+        yaml_paths = list(Path(__file__).parent.parent.glob("deployments/*.yaml"))
+    if not yaml_paths:
+        print("No files selected")
+        exit(1)
     errors = {}
     for yaml_path in yaml_paths:
         print(f"Validating {yaml_path.name}...")
-        error = check(yaml_path)
+        error = check(yaml_path, only=args.only or (checks - set(args.skip)))
         assert isinstance(error, dict), f"Expected list, not {error}"
         if error:
             errors[yaml_path.name] = error

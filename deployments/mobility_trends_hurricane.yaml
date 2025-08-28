@@ -2,34 +2,38 @@ status: Converted
 registry_authors:
 - Nicolas Berrios
 - Jack Fitzsimons
+- James Honaker
 tier: 1
 deployment:
   name: Mobility Trends During Hurricane
   data_curators:
     - Spectus
   intended_use: Mobility Catastrophe Data
-  data_product_type: Summary statistics # TODO: Is this correct?
-  data_product_region: USA
-  description: |
-    "In this case, the Laplace mechanism is used for all four
-    operations. Finally, the privacy budget, E, is set as follows: • E = 4 for CTU
-    • E = 2 for CE • E = 1 for CED • E = 3 for SD."
+  data_product_type: Summary statistics
+  data_product_region: United States
+  description: Evacuation metrics for residents of Harris County, Texas during 2017 hurricane.
   publication_date: '2022-01-01'
-  additional_information: https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
-  # dp_flavor: TODO
+  dp_flavor:
+    name: Pure DP
   privacy_loss:
-    privacy_unit: Aggregate Statistics
+    privacy_unit: User-level
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 10.0
+    privacy_parameters_description: |
+      "In this case, the Laplace mechanism is used for all four operations. Finally, the privacy budget, \\(\epsilon)\\,
+      is set as follows: • \\(\epsilon = 4)\\ for CTU • \\(\epsilon = 2)\\ for CE • \\(\epsilon = 1)\\ for CED • \\(\epsilon = 3)\\ for SD."
   model:
     model_name: Central
     # model_name_description: TODO
-    is_many_release: False # TODO: Is this correct?
-    is_many_release_description: Not specified
-    is_interactive: False # TODO: Is this correct?
+    release_type: One release
+    release_type_description: Not specified
+    access_type: Non-interactive
   # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace
     justification: '' # TODO: Fill in correct value
+  additional_information: |
+    - https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
+    - https://web.archive.org/web/20221209065442/https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf

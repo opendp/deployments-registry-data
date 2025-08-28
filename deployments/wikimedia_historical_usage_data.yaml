@@ -8,11 +8,11 @@ deployment:
   name: Historical Pageviews
   data_curators:
     - Wikimedia Foundation
-  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
   intended_use: Help Wikipedia editors prioritize their work and support academic research.
   data_product_type: Summary statistics
-  publication_date: '2023-06-01'
   data_product_region: Global
+  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
+  publication_date: '2023-06-01'
   data_product_sector: Technology
 
   dp_flavor:
@@ -40,7 +40,7 @@ deployment:
 
   privacy_loss:
     privacy_unit: Bounded contribution-day
-    privacy_unit_description: Adjacent datasets are those that differ by a bounded number of pageviews for a single day. Since the historical data is pre-aggregated, it is impossible to perform per-user or per-device contribution bounding. Instead, the system protects a fixed number of daily pageviews, denoted by m. This number is 300 for data prior to February 8th, 2017, and 30 for data from February 9th, 2017, to February 5th, 2023.
+    privacy_unit_description: Adjacent datasets are those that differ by a bounded number of pageviews for a single day. Since the historical data is pre-aggregated, it is impossible to perform per-user or per-device contribution bounding. Instead, the system protects a fixed number of daily pageviews, denoted by m. This number is 300 for data prior to February 8th, 2017, and 30 for data from February 9th, 2017, to February 5th, 2023. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
     privacy_parameters:
       epsilon: 1.0
     # privacy_parameters_description: ''
@@ -53,12 +53,12 @@ deployment:
       - Trusted Curator (The Wikimedia Foundation): Receives client-annotated pageviews, performs server-side differential privacy (adds noise, suppresses counts), and publishes the final data.
       - Data Consumers: The public, including Wikipedia editors and academic researchers, who use the final, privacy-preserving data product.
 
-    is_many_release: False
-    # is_many_release_description: ''
-    is_interactive: False
-    # is_interactive_description: ''
-    is_dynamic: False # Fill in correct value.
-    # is_dynamic_description: ''
+    release_type: Many releases
+    release_type_description: Although the historical data was published at once, we consider it multiple releases due to its daily temporal granularity.
+    data_source_type: Dynamic
+    data_source_type_description: Although the historical data was published at once, its processing was dynamic. The algorithm was designed to iterate through the historical data one day at a time, applying a distinct daily privacy budget to each, rather than analyzing the entire period retrospectively.
+    access_type: Non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold tau is removed from the final output dataset. For 2017-2023 historical data, \\(\tau=450\\). For 2015-2017 data, \\(\tau=2500\\).'
@@ -83,6 +83,7 @@ deployment:
       - After an in-depth comparison of available open-source tools, the Wikimedia Foundation decided to use Tumult Analytics, framework chosen for its robustness, production-readiness, compatibility with Wikimedia’s compute infrastructure, and support for advanced features like zCDP-based privacy accounting, and started a collaboration with Tumult Labs.
 
   additional_information: |
+    - Note: The paper does not explicitly state what constitutes adjacent datasets, and it is not obvious, because the maximum contribution per user was estimated to be m. Therefore, the reported input metric and maximum input distance may need additional follow-up to verify its accuracy.
     - Paper: https://arxiv.org/pdf/2308.16298
     - Several relevant links are provided in the paper’s references, among which:
       - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy

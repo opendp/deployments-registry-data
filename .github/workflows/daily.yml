@@ -1,13 +1,10 @@
-name: Test
-
+name: Daily
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  schedule:
+    - cron: '0 6 * * *'
 
 jobs:
-  test:
+  daily:
     runs-on: ubuntu-22.04
 
     steps:
@@ -22,11 +19,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Pre-commit (format checks)
-        run: pre-commit run --all-files
+      - name: Check deployments (including URLs)
+        run: scripts/check.py
 
-      - name: Check deployments
-        run: python scripts/check.py --skip check_urls
-
-      - name: Unit tests
-        run: pytest -vv
+      - name: Check schema urls
+        run: scripts/check.py --yaml_path schemas/deployments-schema.yaml --only check_urls

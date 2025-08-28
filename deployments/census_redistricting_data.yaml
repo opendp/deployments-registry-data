@@ -8,15 +8,12 @@ deployment:
   name: Disclosure Avoidance System for Redistricting Data
   data_curators:
     - U.S. Census Bureau
-  description: Set of summary statistics (tables with counts of individuals, households, group quarters residents, or housing units with certain characteristics) published as the 2020 Census Redistricting Data (P.L. 94-171) Summary File.
   intended_use: The decennial census data are used for congressional apportionment, the redistricting of legislative bodies, the allocation of federal funds, public policy, and research. The Summary File is produced to satisfy the legal requirement to provide states with the population tabulations they need for legislative redistricting.
   data_product_type: Summary statistics
   data_product_region: United States
-  data_product_sector: Government
+  description: Set of summary statistics (tables with counts of individuals, households, group quarters residents, or housing units with certain characteristics) published as the 2020 Census Redistricting Data (P.L. 94-171) Summary File.
   publication_date: '2021-08-01'
-  additional_information: |
-    - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
-    - The 2020 Census Disclosure Avoidance System TopDown Algorithm: https://arxiv.org/abs/2204.08986
+  data_product_sector: Government
 
   dp_flavor:
     name: Zero-concentrated DP
@@ -39,7 +36,7 @@ deployment:
 
   privacy_loss:
     privacy_unit: Person-level; housing-unit-level
-    privacy_unit_description: The privacy unit is person-level records for Person tables and housing-unit-level records for Housing Unit tables. The system uses a “bounded neighbors” definition of adjacency because the total population count of the United States and Puerto Rico is held invariant. Therefore, adjacent datasets are two CEFs that differ by the modification of a single person's record (e.g., a change to a person’s census block location), while the total number of records remains the same.
+    privacy_unit_description: The privacy unit is person-level records for Person tables and housing-unit-level records for Housing Unit tables. The system uses a “bounded neighbors” definition of adjacency because the total population count of the United States and Puerto Rico is held invariant. Therefore, adjacent datasets are two CEFs that differ by the modification of a single person's record (e.g., a change to a person’s census block location), while the total number of records remains the same. The function that computes the distance between any two datasets in the data domain is the change-one distance, and the maximum distance between any two datasets in the data domain is one.
     privacy_parameters:
       rho: 2.63
     privacy_parameters_description: |
@@ -59,12 +56,12 @@ deployment:
       - Adversaries: The system is designed to protect against a wide range of potential attackers. This includes sophisticated actors who may have access to large external databases, powerful computing resources, and advanced algorithms , as well as state actors like foreign governments, corporations, and cybercriminals.
 
 
-    is_many_release: False
-    # is_many_release_description: ''
-    is_interactive: False
-    # is_interactive_description: ''
-    is_dynamic: False
-    # is_dynamic_description: ''
+    release_type: One release
+    # release_type_description: ''
+    data_source_type: Static
+    # data_source_type_description: ''
+    access_type: Non-interactive
+    # access_type_description: ''
 
   accounting:
     post_processing: |
@@ -105,3 +102,7 @@ deployment:
         - The system was validated through a series of public demonstration data product releases using 2010 data
         - The Census Bureau solicited and incorporated detailed feedback from a wide array of stakeholders, including the National Academy of Sciences, federal and state partners, academic researchers, and tribal leaders.
         - The final production parameters were set by the Data Stewardship Executive Policy Committee (DSEP) after a final review of the privacy guarantees and data accuracy demonstrated in the tuning experiments.
+
+  additional_information: |
+    - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+    - The 2020 Census Disclosure Avoidance System TopDown Algorithm: https://arxiv.org/abs/2204.08986

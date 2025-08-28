@@ -21,6 +21,6 @@ deployment:
       epsilon: 1.68
   model:
     model_name: Central
-    is_many_release: True
-    is_interactive: False
-    is_dynamic: False
+    release_type: Many releases
+    access_type: Non-interactive
+    data_source_type: Static
