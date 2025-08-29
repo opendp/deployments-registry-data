@@ -29,7 +29,7 @@ deployment:
         - The suppression threshold (\\(\tau\\)=90) where noisy counts below 90 are removed from the final output.
 
   privacy_loss:
-    privacy_unit: Device-day
+    privacy_unit: Device-day-level
     privacy_unit_description: Adjacent datasets are those that differ by the data of a single device for a single day. Each device’s contribution is capped at a maximum of 10 unique pageviews per day. Since the implementation makes it impossible to link devices to users, the paper acknowledges that a user could visit the same page from multiple devices, and that 'this behavior could potentially be observed in the output data'. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
     privacy_parameters:
       rho: 0.015

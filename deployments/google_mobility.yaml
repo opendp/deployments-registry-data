@@ -28,7 +28,7 @@ deployment:
     unprotected_quantities: No unprotected quantities mentioned.
 
   privacy_loss:
-    privacy_unit: User-day
+    privacy_unit: User-day-level
     privacy_unit_description: Adjacent datasets are obtained by adding or removing a single user’s data in a single day. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
     privacy_parameters:
       epsilon: 2.64

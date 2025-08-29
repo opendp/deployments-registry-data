@@ -9,7 +9,7 @@ deployment:
   data_curator: Office of National Statistics UK
   intended_use: Synthetic data
   data_product_type: Synthetic data
-  data_product_region: United States
+  data_product_region: USA
   description: We recommend the use of generative adversarial networks
     (GANs) possibly in conjunction with privacy-preserving mechanisms such as differential
     privacy.
