@@ -1,0 +1,53 @@
+url_slug: safety-classifier-google-2024
+status: Draft
+registry_authors:
+  - Priyanka Nanayakkara
+tier: 2
+deployment:
+  name: Safety Classifier
+  data_curators:
+    - Google
+  intended_use: To classify safety of content shown to Google users on mobile devices and ensure that users do not see unsafe content.
+  data_product_type: Machine learning model
+  data_product_region: Global
+  description:  A safety classifier (machine learning model) that detects inappropriate content; trained on differentially private synthetic data which was generated based on internal (to Google) data
+  publication_date: '2024-01-01'
+
+  data_product_sector: Technology
+
+
+  dp_flavor:
+    name: Approximate DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    # data_domain:
+
+    # unprotected_quantities:
+
+  privacy_loss:
+    privacy_unit: record-level
+    privacy_unit_description: 512-token sequences of text are considered records.
+    # privacy_parameters:
+    #   epsilon:
+    privacy_parameters_description: Privacy parameters not available.
+
+  model:
+    model_name: Central
+    # actors:
+    release_type: One release
+    data_source_type: Static
+    access_type: Non-interactive
+
+  # accounting:
+  #   post_processing:
+  #   composition:
+
+  # implementation:
+  #   pre_processing_eda_hyperparameter_tuning:
+  #   mechanisms:
+  #   justification:
+  additional_information: |
+    - Blogpost: https://research.google/blog/protecting-users-with-differentially-private-synthetic-training-data/
+    - Research paper: https://arxiv.org/pdf/2306.01684
