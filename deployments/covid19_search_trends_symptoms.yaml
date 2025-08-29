@@ -24,7 +24,7 @@ deployment:
     unprotected_quantities: The paper mentions that, for each day and geographic granularity level, a user’s contribution is capped to three counts in total, and that this was justified by the observation that approximately 75% of users search at most three symptoms per day. There was no mention of the aforementioned statistic being computed under differential privacy.
 
   privacy_loss:
-    privacy_unit: User-day
+    privacy_unit: User-day-level
     privacy_unit_description: |
       The mechanism protects "every user's symptom search activity on a particular day". Adjacent datasets are those that differ by the addition or removal of one user's contribution for a single day.
       The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
