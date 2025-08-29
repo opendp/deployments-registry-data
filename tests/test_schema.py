@@ -48,6 +48,7 @@ def test_node_has_description(path, node):
 def test_node_has_description_long(path, node):
     if path in [
         "",
+        "/url_slug",
         "/status",
         "/registry_authors",
         "/deployment",
