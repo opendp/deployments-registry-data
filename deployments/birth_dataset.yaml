@@ -6,7 +6,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Israel's National Registry of Live Births of 2014
-  data_curator: Israeli Ministry of Health
+  data_curators:
+    - Israeli Ministry of Health
   intended_use: Health Data
   data_product_type: Synthetic data
   data_product_region: Israel

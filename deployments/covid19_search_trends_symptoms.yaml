@@ -7,7 +7,8 @@ registry_authors:
 tier: 3
 deployment:
   name: COVID-19 Search Trends Symptoms
-  data_curator: Google
+  data_curators:
+    - Google
   intended_use: Help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends.
   data_product_type: Summary statistics
   data_product_region: Global

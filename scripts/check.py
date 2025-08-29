@@ -27,7 +27,7 @@ def check_schema(yaml_path):
     instance = load(yaml_path.open(), Loader=Loader)
     validator = Draft7Validator(schema, format_checker=Draft7Validator.FORMAT_CHECKER)
     return [
-        f'{".".join(error.path)}: {error.message}'
+        f'{".".join(str(el) for el in error.path)}: {error.message}'
         for error in validator.iter_errors(instance)
     ]
 

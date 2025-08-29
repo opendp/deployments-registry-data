@@ -7,7 +7,8 @@ registry_authors:
 tier: 3
 deployment:
   name: Popular Emojis
-  data_curator: Apple
+  data_curators:
+    - Apple
   intended_use: For measurement (within Apple) of which emojis are most used, and their relative frequencies, across keyboard locales, to improve QuickType’s predictive emoji suggestions.
   data_product_type: Summary statistics
   data_product_region: Global

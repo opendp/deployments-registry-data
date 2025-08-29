@@ -54,7 +54,7 @@ properties:
     additionalProperties: False
     required:
       - name
-      - data_curator
+      - data_curators
       - description
       - intended_use
       - data_product_type
@@ -65,12 +65,15 @@ properties:
         tier: 1
         description: The name of the data product
         type: string
-      data_curator:
+      data_curators:
         tier: 1
+        type: array
+        items:
+          type: string
+        minItems: 1
         description: The name of the entity publishing the data product.
         description_long: |
           The **curator** refers to the entity who published the data product. Examples of curators include specific government agencies and companies.
-        type: string
       intended_use:
         tier: 1
         description: Intended use(s) of the data product.

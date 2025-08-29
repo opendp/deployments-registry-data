@@ -7,7 +7,8 @@ registry_authors:
 tier: 3
 deployment:
   name: Historical Pageviews
-  data_curator: Wikimedia Foundation
+  data_curators:
+    - Wikimedia Foundation
   intended_use: Help Wikipedia editors prioritize their work and support academic research.
   data_product_type: Summary statistics
   data_product_region: Global

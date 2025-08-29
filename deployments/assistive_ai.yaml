@@ -6,7 +6,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Assistive AI
-  data_curator: Microsoft
+  data_curators:
+    - Microsoft
   intended_use: Email AI suggestions
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Global

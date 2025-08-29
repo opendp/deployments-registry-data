@@ -6,7 +6,8 @@ registry_authors:
 tier: 1
 deployment:
   name: HealthKit
-  data_curator: Apple
+  data_curators:
+    - Apple
   intended_use: Health Data
   data_product_type: Summary statistics # TODO: Is this correct?
   data_product_region: Not specified

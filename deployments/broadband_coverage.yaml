@@ -7,7 +7,8 @@ registry_authors:
 tier: 3
 deployment:
   name: Broadband Coverage
-  data_curator: Microsoft
+  data_curators:
+    - Microsoft
   intended_use: Allow researchers and policy makers to understand problems related to broadband access and develop solutions to improve broadband access while simultaneously preserving the privacy of individual households.
   data_product_type: Dataset
   data_product_region: USA

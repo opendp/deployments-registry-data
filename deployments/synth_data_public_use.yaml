@@ -6,7 +6,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Synthetic Data for Public Use
-  data_curator: Office of National Statistics UK
+  data_curators:
+    - Office of National Statistics UK
   intended_use: Synthetic data
   data_product_type: Synthetic data
   data_product_region: USA

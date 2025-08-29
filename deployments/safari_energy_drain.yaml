@@ -6,7 +6,8 @@ registry_authors:
 tier: 1
 deployment:
   name: Safari Energy Draining and Crashing Domains
-  data_curator: Apple
+  data_curators:
+    - Apple
   intended_use: Browser Statistics
   data_product_type: Summary statistics
   data_product_region: Global
