@@ -7,7 +7,7 @@ deployment:
   data_curator: Recurve
   intended_use: Measure the impact of OhmConnect's demand response program on electricity usage, while protecting customer privacy.
   data_product_type: Summary statistics
-  data_product_region: California, United States
+  data_product_region: California, USA
   description: |
     Aggregate summary statistics describing how much energy OhmConnect participants saved during a demand response event (during the August 14, 2020 California Blackout), relative to a matched, non-participant group. Specifically, the statistics are:
       - Average Load Shape: A private, hour-by-hour profile of the comparison group's average 'observed' and 'predicted' energy consumption over a 24-hour period.
