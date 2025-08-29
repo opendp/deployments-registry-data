@@ -90,7 +90,9 @@ def check_latex_escapes(yaml_path):
     errors = []
     for path, text in pairs:
         if isinstance(text, str) and (match := re.search(r"\\\\[^()]", text)):
-            errors.append(f'{path} contains "{match.group(0)}"')
+            errors.append(
+                f'{path} contains "{text[match.start() - 4:match.end() + 4]}"'
+            )
     return errors
 
 
