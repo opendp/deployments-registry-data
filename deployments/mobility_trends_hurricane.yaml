@@ -9,7 +9,7 @@ deployment:
   data_curator: Spectus
   intended_use: Mobility Catastrophe Data
   data_product_type: Summary statistics
-  data_product_region: United States
+  data_product_region: USA
   description: Evacuation metrics for residents of Harris County, Texas during 2017 hurricane.
   publication_date: '2022-01-01'
   dp_flavor:
