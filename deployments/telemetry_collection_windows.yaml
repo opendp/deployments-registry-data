@@ -1,18 +1,19 @@
-url_slug: telemetry-collection-in-windows-microsoft-2017
+url_slug: windows-telemetry-statistics-microsoft-2017
 status: Converted
 registry_authors:
+- Priyanka Nanayakkara
 - Nicolas Berrios
 - Jack Fitzsimons
 - James Honaker
 tier: 1
 deployment:
-  name: Telemetry Collection in Windows
+  name: Windows Telemetry Statistics
   data_curators:
     - Microsoft
-  intended_use: Telemetry Data
+  intended_use: For Microsoft to improve their products and services.
   data_product_type: Summary statistics
   data_product_region: Global
-  description: Count the number of seconds in a six-hour window that a user uses different apps.
+  description: Telemetry statistics about Microsoft users (specifically users of Windows Insiders in the Windows 10 Fall Creators Update), such as how many seconds they spent on a particular app in a six hour window.
   publication_date: '2017-12-01'
   dp_flavor:
     name: Pure DP
@@ -23,15 +24,17 @@ deployment:
       epsilon: 1.672
     privacy_parameters_description: |
       '"By Theorem 5, in deployment, a single round of data collection across an arbitrary large number of apps satisfies
-      \\(epsilon \dprime)\\-DP, where \\(epsilon \dprime)\\ = 1.672."'
+      \\(epsilon \dprime\\)-DP, where \\(epsilon \dprime\\) = 1.672."'
   model:
     model_name: Local
     # model_name_description: TODO
     release_type: Many releases
     release_type_description: 6 hours
+    data_source_type: Dynamic
     access_type: Non-interactive
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Randomized Rounding
     justification: '' # TODO: Fill in correct value
-  additional_information: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
+  additional_information: |
+    - Paper: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/

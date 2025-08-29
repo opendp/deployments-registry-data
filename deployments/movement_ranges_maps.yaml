@@ -1,6 +1,7 @@
 url_slug: movement-ranges-map-meta-2020
 status: Converted
 registry_authors:
+- Priyanka Nanayakkara
 - Nicolas Berrios
 - Jack Fitzsimons
 - James Honaker
@@ -12,8 +13,9 @@ deployment:
   intended_use: Health Crisis Mobility Data
   data_product_type: Summary statistics
   data_product_region: Global
-  description: Metrics on geographic movement of individuals during COVID-19.
+  description: Aggregate statistics describing Facebook users’ movements (or lack thereof) during the COVID-19 pandemic compared to a time period before social distancing measures
   publication_date: '2020-06-20'
+  data_product_sector: Healthcare
   dp_flavor:
     name: Pure DP
   privacy_loss:
@@ -25,11 +27,14 @@ deployment:
   model:
     model_name: Central
     # model_name_description: TODO
-    release_type: One release
+    release_type: Many releases
     release_type_description: Static
+    data_source_type: Dynamic
     access_type: Non-interactive
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace
     justification: '' # TODO: Fill in correct value
-  additional_information: https://research.fb.com/blog/2020/06/protecting-privacy-in-facebook-mobility-data-during-the-covid-19-response/
+  additional_information: |
+    - https://research.facebook.com/blog/2020/06/protecting-privacy-in-facebook-mobility-data-during-the-covid-19-response/
+    - Downloadable data product: https://data.humdata.org/dataset/movement-range-maps
