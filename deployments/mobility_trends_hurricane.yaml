@@ -22,8 +22,8 @@ deployment:
     privacy_parameters:
       epsilon: 10.0
     privacy_parameters_description: |
-      "In this case, the Laplace mechanism is used for all four operations. Finally, the privacy budget, \\(\epsilon)\\,
-      is set as follows: • \\(\epsilon = 4)\\ for CTU • \\(\epsilon = 2)\\ for CE • \\(\epsilon = 1)\\ for CED • \\(\epsilon = 3)\\ for SD."
+      "In this case, the Laplace mechanism is used for all four operations. Finally, the privacy budget, \\(\epsilon\\),
+      is set as follows: • \\(\epsilon = 4\\) for CTU • \\(\epsilon = 2\\) for CE • \\(\epsilon = 1\\) for CED • \\(\epsilon = 3\\) for SD."
   model:
     model_name: Central
     # model_name_description: TODO
