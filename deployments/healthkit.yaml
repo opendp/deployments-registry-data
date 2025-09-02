@@ -12,7 +12,7 @@ deployment:
   intended_use: To learn—internally within Apple—about popular health data types and help improve the Health app
   data_product_type: Summary statistics
   data_product_region: Global
-  description: Summary statistics about most popular health data types that Apple users record (e.g., heart rate, active calories).
+  description: Summarize most popular health data types that Apple users record (e.g., heart rate, active calories).
   publication_date: '2017-01-01'
   data_product_sector: Healthcare
   dp_flavor:
@@ -39,5 +39,5 @@ deployment:
     mechanisms: Private Count Mean Sketch
     justification: '' # TODO: Fill in correct value
   additional_information: |
-    - Paper: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+    - Paper link: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
     - Additional version: https://machinelearning.apple.com/research/learning-with-privacy-at-scale

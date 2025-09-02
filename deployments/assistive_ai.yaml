@@ -12,7 +12,7 @@ deployment:
   intended_use: The AI system was trained internally at Microsoft to be deployed in their products. The model provides suggestions for replies to emails and texts, and is intended to make responding to emails and texts easier for users. The underlying data are “hundreds of millions of Messages (Emails or chats) and their Replies called Message-Reply (MR) pairs.”
   data_product_type: Machine learning model
   data_product_region: Global
-  description: AI system that suggests potential replies to emails and texts.
+  description: Privately refining the set of responses suggested for email and chat.
   publication_date: '2020-01-01'
   dp_flavor:
     name: Approximate DP

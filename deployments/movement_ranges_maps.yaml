@@ -13,7 +13,7 @@ deployment:
   intended_use: Health Crisis Mobility Data
   data_product_type: Summary statistics
   data_product_region: Global
-  description: Aggregate statistics describing Facebook users’ movements (or lack thereof) during the COVID-19 pandemic compared to a time period before social distancing measures
+  description: Aggregate statistics describing Facebook users’ movements during the COVID-19 pandemic compared to a time period before social distancing measures
   publication_date: '2020-06-20'
   data_product_sector: Healthcare
   dp_flavor:

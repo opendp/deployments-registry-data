@@ -7,7 +7,7 @@ registry_authors:
 - James Honaker
 tier: 1
 deployment:
-  name: Windows Telemetry Statistics
+  name: Telemetry Collection in Windows
   data_curators:
     - Microsoft
   intended_use: For Microsoft to improve their products and services.
