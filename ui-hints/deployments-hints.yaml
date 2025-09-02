@@ -1,7 +1,6 @@
 short_fields:
   # Default is long format: These are the exceptions.
   - /deployment/name
-  - /deployment/data_curators
   - /deployment/data_product_type
   - /deployment/data_product_region
   - /deployment/data_product_sector
