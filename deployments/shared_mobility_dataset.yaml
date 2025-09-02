@@ -17,7 +17,7 @@ deployment:
   dp_flavor:
     name: Approximate DP
   privacy_loss:
-    privacy_unit: User-trip-level
+    privacy_unit: User-trip
     privacy_unit_description: |
       '"This dataset contains trip flow information from over 300 million people world-wide (including residents and visitors of cities)
       for the year 2016, aggregated weekly and with spatial granularity corresponding to S2 cells of approximately 1.27 km\\(^2\\). ...

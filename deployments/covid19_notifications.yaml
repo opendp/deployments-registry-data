@@ -19,7 +19,7 @@ deployment:
   dp_flavor:
     name: Approximate DP
   privacy_loss:
-    privacy_unit: User-day-level
+    privacy_unit: User-day
     privacy_unit_description: Subsections 4.1 and 4.2 of the paper provide more information.
     privacy_parameters:
       epsilon: 8.0

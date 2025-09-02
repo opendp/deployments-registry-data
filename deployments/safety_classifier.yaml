@@ -27,7 +27,7 @@ deployment:
     # unprotected_quantities:
 
   privacy_loss:
-    privacy_unit: record-level
+    privacy_unit: Record
     privacy_unit_description: 512-token sequences of text are considered records.
     # privacy_parameters:
     #   epsilon:

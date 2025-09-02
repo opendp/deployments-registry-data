@@ -189,6 +189,23 @@ properties:
               More formally, the privacy unit is the entity whose data changes under adjacent datasets <a href="https://www.proquest.com/docview/3217403500" target="_blank">(Bailie 2025)</a>.
               Tier 3 entries go beyond stating a high-level description of the privacy unit and include a precise specification of what constitutes adjacent datasets.
             type: string
+            enum:
+              - Aggregate
+              - Birth
+              - Bounded contribution-day
+              - Business establishment
+              - Device-day
+              - Event
+              - Event-Month
+              - Individual
+              - Person-level; housing-unit
+              - Record
+              - User
+              - User-day
+              - User-device
+              - User-month
+              - User-quarter-day
+              - User-trip
           privacy_unit_description:
             tier: 3
             description: A precise specification of what constitutes adjacent datasets (e.g., in terms of your dataset schema. Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55) Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.

@@ -26,8 +26,7 @@ deployment:
     unprotected_quantities: The published dataset includes 32,653 zip codes. The paper notes that this was "predefined based on average number of machines in the last years".
 
   privacy_loss:
-    privacy_unit: |
-      User-level
+    privacy_unit: User
     privacy_unit_description: Neighboring datasets are defined to be the addition or deletion of a single user in the data and all possible records of that user. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is 1.
     privacy_parameters:
       epsilon: 0.2

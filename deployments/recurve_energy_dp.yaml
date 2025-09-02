@@ -30,7 +30,7 @@ deployment:
       - The number of customers in the comparison group N = 4948 is public.
 
   privacy_loss:
-    privacy_unit: User-level
+    privacy_unit: User
     privacy_unit_description: Adjacent datasets differ by one customer's data in MCE's residential customer base. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is 1.
     privacy_parameters:
       epsilon: 4.72

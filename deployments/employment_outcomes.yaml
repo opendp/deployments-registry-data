@@ -25,7 +25,7 @@ deployment:
     # unprotected_quantities:
 
   privacy_loss:
-    privacy_unit: Individual-level
+    privacy_unit: Individual
     # privacy_unit_description:
     # privacy_parameters:
       # epsilon:

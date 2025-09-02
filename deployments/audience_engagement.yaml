@@ -20,7 +20,7 @@ deployment:
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
-    privacy_unit: User-month-level
+    privacy_unit: User-month
     privacy_unit_description: |
       "insights about members' content engagements while ensuring member (user) data is protected."
     privacy_parameters:

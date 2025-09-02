@@ -17,7 +17,7 @@ deployment:
   publication_date: '2020-01-01'
   # dp_flavor: TODO
   privacy_loss:
-    privacy_unit: Aggregate Statistics
+    privacy_unit: Aggregate
     # privacy_unit_description: TODO
     privacy_parameters: {}
   model:

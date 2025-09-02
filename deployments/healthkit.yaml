@@ -20,7 +20,7 @@ deployment:
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
-    privacy_unit: Event-level
+    privacy_unit: Event
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 2.0

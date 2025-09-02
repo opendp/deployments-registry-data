@@ -17,7 +17,7 @@ deployment:
   dp_flavor:
     name: Pure DP
   privacy_loss:
-    privacy_unit: Birth-level
+    privacy_unit: Birth
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 9.98

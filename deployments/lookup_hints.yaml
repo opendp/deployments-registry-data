@@ -23,7 +23,7 @@ deployment:
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
-    privacy_unit: User-level
+    privacy_unit: User
     # privacy_unit_description:
     privacy_parameters:
       epsilon: 8.0

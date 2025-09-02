@@ -22,7 +22,7 @@ deployment:
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
-    privacy_unit: Event-Month-level
+    privacy_unit: Event-Month
     privacy_unit_description: |
       "For this use case we use event-level privacy, where the event is a user being
       hired. We note that in our dataset, in any given 3 month period at least 95% of users are hired at
