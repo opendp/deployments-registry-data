@@ -1,24 +1,26 @@
-url_slug: healthkit-apple-2017
+url_slug: healthkit-usage-statistics-apple-2017
 status: Converted
 registry_authors:
+- Priyanka Nanayakkara
 - Nicolas Berrios
 - Jack Fitzsimons
 tier: 1
 deployment:
-  name: HealthKit
+  name: HealthKit Usage Statistics
   data_curators:
     - Apple
-  intended_use: Health Data
-  data_product_type: Summary statistics # TODO: Is this correct?
-  data_product_region: Not specified
-  description: Summarize most commonly tracked health characteristics.
+  intended_use: To learn—internally within Apple—about popular health data types and help improve the Health app
+  data_product_type: Summary statistics
+  data_product_region: Global
+  description: Summarize most popular health data types that Apple users record (e.g., heart rate, active calories).
   publication_date: '2017-01-01'
+  data_product_sector: Healthcare
   dp_flavor:
     name: Pure DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
-    privacy_unit: User-level
+    privacy_unit: Event-level
     # privacy_unit_description: TODO
     privacy_parameters:
       epsilon: 2.0
@@ -26,11 +28,16 @@ deployment:
   model:
     model_name: Local
     model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
-    release_type: One release # TODO: Is this correct?
+    release_type: Many releases
     release_type_description: Daily
-    access_type: Non-interactive # TODO: Is this correct?
+    data_source_type: Dynamic
+    access_type: Non-interactive
+
+
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Private Count Mean Sketch
     justification: '' # TODO: Fill in correct value
-  additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+  additional_information: |
+    - Paper link: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+    - Additional version: https://machinelearning.apple.com/research/learning-with-privacy-at-scale
