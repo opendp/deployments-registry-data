@@ -27,8 +27,6 @@ deployment:
     release_type: One release # TODO: Is this correct?
     release_type_description: Daily
     access_type: Non-interactive # TODO: Is this correct?
-  # resources:
-    sources: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Private Count Mean Sketch

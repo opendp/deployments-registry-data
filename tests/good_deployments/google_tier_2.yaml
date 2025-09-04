@@ -24,5 +24,6 @@ deployment:
     release_type: Many releases
     access_type: Non-interactive
     data_source_type: Static
+  resources:
     registry_authors:
       - Elena Ghazi

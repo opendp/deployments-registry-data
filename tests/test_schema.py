@@ -28,6 +28,7 @@ path_templates = list(get_path_templates("", template))
 def test_node_has_description(path, node):
     if path in [
         "/deployment",
+        "/deployment/product",
         "/deployment/dp_flavor",
         "/deployment/privacy_loss",
         "/deployment/privacy_loss/privacy_parameters/epsilon",
@@ -37,21 +38,24 @@ def test_node_has_description(path, node):
         "/deployment/model/model_name_description",
         "/deployment/accounting",
         "/deployment/implementation",
-        "/deployment/additional_information",
+        "/deployment/resources",
+        "/deployment/resources/sources",
+        "/deployment/resources/notes",
     ]:
-        assert "description" not in node
+        assert "description" not in node.keys()
         pytest.skip("TODO: More description would be nice to have")
-    assert "description" in node
+    assert "description" in node.keys()
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
 def test_node_has_description_long(path, node):
-    if path in [
+    skip_list = [
         "",
         "/url_slug",
         "/status",
         "/registry_authors",
         "/deployment",
+        "/deployment/product",
         "/deployment/product/name",
         "/deployment/product/description",
         "/deployment/product/intended_use",
@@ -71,10 +75,14 @@ def test_node_has_description_long(path, node):
         "/deployment/model/release_type_description",
         "/deployment/model/data_source_type_description",
         "/deployment/model/access_type_description",
-    ]:
-        assert "description_long" not in node
+        "/deployment/resources",
+        "/deployment/resources/notes",
+        "/deployment/resources/registry_authors",
+    ]
+    if path in skip_list:
+        assert "description_long" not in node.keys()
         pytest.skip("TODO: More description_long would be nice to have")
-    assert "description_long" in node
+    assert "description_long" in node.keys()
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
@@ -92,10 +100,11 @@ def test_node_has_tier(path, node):
         "/deployment/dp_flavor/bound_on_output_distance",
         "/deployment/model/model_name_description",
         "/deployment/model/release_type_description",
+        "/deployment/resources/registry_authors",
     ]:
-        assert "tier" not in node
+        assert "tier" not in node.keys()
         pytest.skip("TODO: More tiers would be nice to have")
-    assert "tier" in node
+    assert "tier" in node.keys()
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
