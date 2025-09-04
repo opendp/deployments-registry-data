@@ -49,7 +49,7 @@ deployment:
   #   justification:
   resources:
     sources: |
-      - Blogpost: https://research.google/blog/protecting-users-with-differentially-private-synthetic-training-data/
+      - Blog post: https://research.google/blog/protecting-users-with-differentially-private-synthetic-training-data/
       - Research paper: https://arxiv.org/pdf/2306.01684
     registry_authors:
         - Priyanka Nanayakkara
