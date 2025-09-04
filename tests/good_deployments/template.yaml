@@ -2,7 +2,7 @@ url_slug: template
 status: Draft
 tier: 3
 deployment:
-  basic_information:
+  product:
     # Tier 1:
     name: ''
     data_curators:
@@ -53,7 +53,8 @@ deployment:
     mechanisms: '' # Tier 3
     justification: '' # Tier 3
 
-  additional_information:
-    references: ''
+  resources:
+    sources: '' # white papers
+    notes: '' # other extra information
     registry_authors:
       - '' # Fill in correct value.
