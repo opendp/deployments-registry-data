@@ -37,7 +37,7 @@ deployment:
     justification: '' # TODO: Fill in correct value
   resources:
     sources: |
-      - Paper link: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+      - Paper: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
       - Additional version: https://machinelearning.apple.com/research/learning-with-privacy-at-scale
     registry_authors:
       - Priyanka Nanayakkara

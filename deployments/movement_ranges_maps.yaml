@@ -33,7 +33,7 @@ deployment:
     justification: '' # TODO: Fill in correct value
   resources:
     sources: |
-      - https://research.facebook.com/blog/2020/06/protecting-privacy-in-facebook-mobility-data-during-the-covid-19-response/
+      - Blog post: https://research.facebook.com/blog/2020/06/protecting-privacy-in-facebook-mobility-data-during-the-covid-19-response/
       - Downloadable data product: https://data.humdata.org/dataset/movement-range-maps
     registry_authors:
       - Priyanka Nanayakkara

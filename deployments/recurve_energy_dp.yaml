@@ -103,10 +103,11 @@ deployment:
 
   resources:
     sources: |
-      - Note: The term 'Energy Differential Privacy', used in the deployment's name and throughout the paper, refers to the specific framework and open-source tools for applying differential privacy to energy data analysis.
       - Applying Energy Differential Privacy To Enable Measurement of the OhmConnect Virtual Power Plant (paper): https://assets.website-files.com/5cb0a177570549b5f11b9550/5ffddb83b5ea5d67f5c43661_Quantifying%20The%20OhmConnect%20Virtual%20Power%20Plant%20During%20the%20California%20Blackouts.pdf
       - Revenue-Grade Analysis of the OhmConnect Virtual Power Plant During the California Blackouts (blog): https://www.recurve.com/blog/revenue-grade-analysis-of-the-ohmconnect-virtual-power-plant-during-the-california-blackouts
       - Differential Privacy for Expanding Access to Building Energy Data (paper that introduced Energy Differential Privacy): https://edp.recurve.com/uploads/8/6/5/0/8650231/aceee_paper_final.pdf
       - A list of real-world uses of differential privacy (blog that provides the correct privacy parameters): https://desfontain.es/blog/real-world-differential-privacy.html
+    notes: |
+      - The term 'Energy Differential Privacy', used in the deployment's name and throughout the paper, refers to the specific framework and open-source tools for applying differential privacy to energy data analysis.
     registry_authors:
       - Elena Ghazi

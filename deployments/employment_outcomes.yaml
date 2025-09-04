@@ -50,11 +50,9 @@ deployment:
   resources:
     sources: |
       - Paper: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
-
       - Documentation: https://lehd.ces.census.gov/data/pseo_documentation.html
-
-      Note: It appears that the data product is published over time, but it is not clear from the documentation alone whether the same DP system is used for these later publications. Hence, we describe this deployment as “one-release” and having “static” data to be conservative.
-
-      Finally, the paper contains parameter ranges (e.g., for \\(epsilon\\)) that were tested in the experiments section, however we did not find parameter values that were actually used in deployment.
+    notes: |
+      - It appears that the data product is published over time, but it is not clear from the documentation alone whether the same DP system is used for these later publications. Hence, we describe this deployment as “one-release” and having “static” data to be conservative.
+      - Finally, the paper contains parameter ranges (e.g., for \\(epsilon\\)) that were tested in the experiments section, however we did not find parameter values that were actually used in deployment.
     registry_authors:
         - Priyanka Nanayakkara
