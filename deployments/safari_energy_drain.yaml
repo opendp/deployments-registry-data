@@ -1,18 +1,16 @@
 url_slug: safari-energy-draining-and-crashing-domains-apple-2017
 status: Converted
-registry_authors:
-- Nicolas Berrios
-- Jack Fitzsimons
 tier: 1
 deployment:
-  name: Safari Energy Draining and Crashing Domains
-  data_curators:
-    - Apple
-  intended_use: Browser Statistics
-  data_product_type: Summary statistics
-  data_product_region: Global
-  description: Identify sites with high memory or high CPU usage.
-  publication_date: '2017-01-01'
+  product:
+    name: Safari Energy Draining and Crashing Domains
+    data_curators:
+      - Apple
+    intended_use: Browser Statistics
+    data_product_type: Summary statistics
+    data_product_region: Global
+    description: Identify sites with high memory or high CPU usage.
+    publication_date: '2017-01-01'
   dp_flavor:
     name: Pure DP
     data_domain: '' # TODO
@@ -33,4 +31,8 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Hierarchical Count-Min Sketch
     justification: '' # TODO: Fill in correct value
-  additional_information: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+  resources:
+    sources: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+    registry_authors:
+      - Nicolas Berrios
+      - Jack Fitzsimons

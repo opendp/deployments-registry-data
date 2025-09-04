@@ -1,17 +1,16 @@
 url_slug: google_tier_2
 status: Draft
-registry_authors:
-  - Elena Ghazi
 tier: 2
 deployment:
-  name: Placeholder
-  data_curators:
-    - Google
-  description: Placeholder for tests
-  intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
-  data_product_type: Summary statistics
-  data_product_region: Global
-  publication_date: "2020-09-01"
+  product:
+    name: Placeholder
+    data_curators:
+      - Google
+    description: Placeholder for tests
+    intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
+    data_product_type: Summary statistics
+    data_product_region: Global
+    publication_date: "2020-09-01"
   dp_flavor:
     name: Pure DP
     data_domain: Per-user Google search queries classified as “symptom searches” (from a predefined list of ~400 symptoms) and total search activity for normalization, aggregated as <day or week, symptom, region> at three geographic granularity levels
@@ -25,3 +24,6 @@ deployment:
     release_type: Many releases
     access_type: Non-interactive
     data_source_type: Static
+  resources:
+    registry_authors:
+      - Elena Ghazi

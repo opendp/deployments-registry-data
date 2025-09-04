@@ -1,5 +1,4 @@
 url_slug: bad
-surprise: ...
 status: Draft
 tier: 1
 deployment:
@@ -11,7 +10,7 @@ deployment:
     intended_use: ...
     data_product_type: Summary statistics
     data_product_region: ...
-    publication_date: "2026-01-01"
+    publication_date: "1/1/2026"
   resources:
     registry_authors:
       - ...

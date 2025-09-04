@@ -1,20 +1,18 @@
 url_slug: synthetic-data-for-public-use-office-of-national-statistics-uk-2020
 status: Converted
-registry_authors:
-- Nicolas Berrios
-- Jack Fitzsimons
 tier: 1
 deployment:
-  name: Synthetic Data for Public Use
-  data_curators:
-    - Office of National Statistics UK
-  intended_use: Synthetic data
-  data_product_type: Synthetic data
-  data_product_region: USA
-  description: We recommend the use of generative adversarial networks
-    (GANs) possibly in conjunction with privacy-preserving mechanisms such as differential
-    privacy.
-  publication_date: '2020-01-01'
+  product:
+    name: Synthetic Data for Public Use
+    data_curators:
+      - Office of National Statistics UK
+    intended_use: Synthetic data
+    data_product_type: Synthetic data
+    data_product_region: USA
+    description: We recommend the use of generative adversarial networks
+      (GANs) possibly in conjunction with privacy-preserving mechanisms such as differential
+      privacy.
+    publication_date: '2020-01-01'
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate Statistics
@@ -30,4 +28,8 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: DP GAN*
     justification: '' # TODO: Fill in correct value
-  additional_information: https://datasciencecampus.ons.gov.uk/projects/generative-adversarial-networks-gans-for-synthetic-dataset-generation-with-binary-classes/
+  resources:
+    sources: https://datasciencecampus.ons.gov.uk/projects/generative-adversarial-networks-gans-for-synthetic-dataset-generation-with-binary-classes/
+    registry_authors:
+      - Nicolas Berrios
+      - Jack Fitzsimons

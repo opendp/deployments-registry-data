@@ -1,20 +1,17 @@
 url_slug: historical-pageviews-wikimedia-foundation-2023
 status: Draft
-registry_authors:
-  - Elena Ghazi
-  - Nicolas Berrios
-  - Jack Fitzsimons
 tier: 3
 deployment:
-  name: Historical Pageviews
-  data_curators:
-    - Wikimedia Foundation
-  intended_use: Help Wikipedia editors prioritize their work and support academic research.
-  data_product_type: Summary statistics
-  data_product_region: Global
-  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
-  publication_date: '2023-06-01'
-  data_product_sector: Technology
+  product:
+    name: Historical Pageviews
+    data_curators:
+      - Wikimedia Foundation
+    intended_use: Help Wikipedia editors prioritize their work and support academic research.
+    data_product_type: Summary statistics
+    data_product_region: Global
+    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
+    publication_date: '2023-06-01'
+    data_product_sector: Technology
 
   dp_flavor:
     name: Pure DP
@@ -83,10 +80,15 @@ deployment:
       - The thresholds were chosen after extensive experimentation by measuring accuracy metrics (relative error distribution, drop rate, spurious rate) on the true data. Since these metrics could leak information, the team “kept fine-grained utility metrics confidential throughout the tuning process, minimizing data leakage”, and chose to “only publicly communicate approximate values of global utility metrics and the algorithmic parameters obtained from this tuning process”.
       - After an in-depth comparison of available open-source tools, the Wikimedia Foundation decided to use Tumult Analytics, framework chosen for its robustness, production-readiness, compatibility with Wikimedia’s compute infrastructure, and support for advanced features like zCDP-based privacy accounting, and started a collaboration with Tumult Labs.
 
-  additional_information: |
-    - Note: The paper does not explicitly state what constitutes adjacent datasets, and it is not obvious, because the maximum contribution per user was estimated to be m. Therefore, the reported input metric and maximum input distance may need additional follow-up to verify its accuracy.
-    - Paper: https://arxiv.org/pdf/2308.16298
-    - Several relevant links are provided in the paper’s references, among which:
-      - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
-      - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
-      - Pageviews Differential Privacy – Historical – README: https://analytics.wikimedia.org/published/datasets/country_project_page_historical/00_README.html
+  resources:
+    sources: |
+      - Note: The paper does not explicitly state what constitutes adjacent datasets, and it is not obvious, because the maximum contribution per user was estimated to be m. Therefore, the reported input metric and maximum input distance may need additional follow-up to verify its accuracy.
+      - Paper: https://arxiv.org/pdf/2308.16298
+      - Several relevant links are provided in the paper’s references, among which:
+        - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
+        - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
+        - Pageviews Differential Privacy – Historical – README: https://analytics.wikimedia.org/published/datasets/country_project_page_historical/00_README.html
+    registry_authors:
+      - Elena Ghazi
+      - Nicolas Berrios
+      - Jack Fitzsimons

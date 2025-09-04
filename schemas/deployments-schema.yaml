@@ -10,7 +10,6 @@ additionalProperties: False
 required:
   - url_slug
   - status
-  - registry_authors
   - tier
   - deployment
 properties:
@@ -28,12 +27,6 @@ properties:
       - "Approved" # Yay!
       - "Approved (Update Requested)" # Small updates requested, but still can be displayed as "Approved".
       - "Approved (Pending)" # Small updates made.
-  registry_authors:
-    description: The author(s) of this record. This refers to who filled out the entry, which might be different from who made the deployment.
-    type: array
-    items:
-      type: string
-    minItems: 1
   tier:
     description: The completeness of the description. For higher tiers, more fields are filled in, but this is guidance, rather than a requirement.
     description_long: |
@@ -53,70 +46,76 @@ properties:
     type: object
     additionalProperties: False
     required:
-      - name
-      - data_curators
-      - description
-      - intended_use
-      - data_product_type
-      - data_product_region
-      - publication_date
+      - product
     properties:
-      name:
-        tier: 1
-        description: The name of the data product
-        type: string
-      data_curators:
-        tier: 1
-        type: array
-        items:
-          type: string
-        minItems: 1
-        description: The name of the entity publishing the data product.
-        description_long: |
-          The **curator** refers to the entity who published the data product. Examples of curators include specific government agencies and companies.
-      intended_use:
-        tier: 1
-        description: Intended use(s) of the data product.
-        type: string
-      data_product_type:
-        tier: 1
-        description: Type of data product. This enumeration will grow over time with more examples.
-        description_long: |
-          The **data product** is the output of the differentially-private pipeline. Examples of data products include summary statistics and machine learning models.
-        type: string
-        enum:
-          - Summary statistics
-          - Machine learning model
-          - Dataset
-          - Synthetic data
-          - Interactive API
-          # Add to this list as needed.
-      data_product_region:
-        tier: 1
-        description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
-        type: string
-      description:
-        tier: 1
-        description: Brief description of the data product.
-        type: string
-      publication_date:
-        tier: 1
-        description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of many releases, the publication date can be expressed as the date of first publication.
-        description_long: |
-          The publication **date** refers to when the data product was published or otherwise created. In cases of data products that are created under continual release, the date listed is the date of first publication.
-        type: string
-        format: date
-      data_product_sector:
-        tier: 1
-        description: The industry or domain described by the data product.
-        type: string
-        enum:
-          - Technology
-          - Healthcare
-          - Education
-          - Government
-          - Energy
-          # Add to this list as needed.
+      product:
+        type: object
+        additionalProperties: False
+        required:
+          - name
+          - data_curators
+          - description
+          - intended_use
+          - data_product_type
+          - data_product_region
+          - publication_date
+        properties:
+          name:
+            tier: 1
+            description: The name of the data product
+            type: string
+          data_curators:
+            tier: 1
+            type: array
+            items:
+              type: string
+            minItems: 1
+            description: The name of the entity publishing the data product.
+            description_long: |
+              The **curator** refers to the entity who published the data product. Examples of curators include specific government agencies and companies.
+          intended_use:
+            tier: 1
+            description: Intended use(s) of the data product.
+            type: string
+          data_product_type:
+            tier: 1
+            description: Type of data product. This enumeration will grow over time with more examples.
+            description_long: |
+              The **data product** is the output of the differentially-private pipeline. Examples of data products include summary statistics and machine learning models.
+            type: string
+            enum:
+              - Summary statistics
+              - Machine learning model
+              - Dataset
+              - Synthetic data
+              - Interactive API
+              # Add to this list as needed.
+          data_product_region:
+            tier: 1
+            description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
+            type: string
+          description:
+            tier: 1
+            description: Brief description of the data product.
+            type: string
+          publication_date:
+            tier: 1
+            description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of many releases, the publication date can be expressed as the date of first publication.
+            description_long: |
+              The publication **date** refers to when the data product was published or otherwise created. In cases of data products that are created under continual release, the date listed is the date of first publication.
+            type: string
+            format: date
+          data_product_sector:
+            tier: 1
+            description: The industry or domain described by the data product.
+            type: string
+            enum:
+              - Technology
+              - Healthcare
+              - Education
+              - Government
+              - Energy
+              # Add to this list as needed.
       # Tiers 2 and 3
       dp_flavor:
         type: object
@@ -366,9 +365,24 @@ properties:
             description_long: |
               Rationale for how decisions around implementation were made by the curator or others. In short, this information should answer the following questions laid out by <a href="https://escholarship.org/content/qt8vj5q8j7/qt8vj5q8j7_noSplash_3fbe06d219d4266437a90862727e5789.pdf" target="_blank">Dwork Mulligan Kohli 2019</a>: “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?
             type: string
-      additional_information:
-        description_long: |
-          This section includes links to white papers, blogposts, or other sources that describe the deployment.
-          This section may also include links to the data product itself, if publicly available.
-        tier: 1
-        type: string
+      resources:
+        type: object
+        additionalProperties: False
+        required:
+          - registry_authors
+        properties:
+          sources:
+            description_long: |
+              This section includes links to white papers, blogposts, or other sources that describe the deployment.
+              This section may also include links to the data product itself, if publicly available.
+            tier: 1
+            type: string
+          notes:
+            tier: 1
+            type: string
+          registry_authors:
+            description: The author(s) of this record. This refers to who filled out the entry, which might be different from who made the deployment.
+            type: array
+            items:
+              type: string
+            minItems: 1

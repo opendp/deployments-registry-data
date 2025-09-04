@@ -1,19 +1,18 @@
 url_slug: template
 status: Draft
-registry_authors:
-  - '' # Fill in correct value.
 tier: 3
 deployment:
-  # Tier 1:
-  name: ''
-  data_curators:
-    - 'U.S. Census Bureau' # Fill in correct value.
-  intended_use: ''
-  data_product_type: 'Summary statistics' # Fill in correct value.
-  data_product_region: ''
-  description: ''
-  publication_date: '1900-01-01' # Fill in correct value.
-  data_product_sector: 'Technology' # Fill in correct value.
+  product:
+    # Tier 1:
+    name: ''
+    data_curators:
+      - 'U.S. Census Bureau' # Fill in correct value.
+    intended_use: ''
+    data_product_type: 'Summary statistics' # Fill in correct value.
+    data_product_region: ''
+    description: ''
+    publication_date: '1900-01-01' # Fill in correct value.
+    data_product_sector: 'Technology' # Fill in correct value.
 
   # Tiers 2 and 3:
   dp_flavor:
@@ -54,4 +53,8 @@ deployment:
     mechanisms: '' # Tier 3
     justification: '' # Tier 3
 
-  additional_information: ''
+  resources:
+    sources: '' # white papers
+    notes: '' # other extra information
+    registry_authors:
+      - '' # Fill in correct value.

@@ -1,20 +1,17 @@
 url_slug: popular-emojis-apple-2017
 status: Draft
-registry_authors:
-  - Elena Ghazi
-  - Nicolas Berrios
-  - Jack Fitzsimons
 tier: 3
 deployment:
-  name: Popular Emojis
-  data_curators:
-    - Apple
-  intended_use: For measurement (within Apple) of which emojis are most used, and their relative frequencies, across keyboard locales, to improve QuickType’s predictive emoji suggestions.
-  data_product_type: Summary statistics
-  data_product_region: Global
-  description: Summary statistics of frequency histograms of emoji usage per locale.
-  publication_date: '2017-01-01'
-  data_product_sector: Technology
+  product:
+    name: Popular Emojis
+    data_curators:
+      - Apple
+    intended_use: For measurement (within Apple) of which emojis are most used, and their relative frequencies, across keyboard locales, to improve QuickType’s predictive emoji suggestions.
+    data_product_type: Summary statistics
+    data_product_region: Global
+    description: Summary statistics of frequency histograms of emoji usage per locale.
+    publication_date: '2017-01-01'
+    data_product_sector: Technology
 
   dp_flavor:
     name: Pure DP
@@ -79,7 +76,12 @@ deployment:
       - The choice of \\(\epsilon\\) was “based on the privacy characteristics of the underlying dataset” and is “consistent with the parameters proposed in the differential privacy research community”.
       - The CMS algorithm yields a high number of hash collisions (mapping 2,600 emojis to 1024 bits) providing further plausible deniability.
 
-  additional_information: |
-    - Link to paper: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
-    - Under "Security Measures": "The privatized records are temporarily stored on-device using data protection"; the paper points to this link https://www.apple.com/business/docs/iOS_Security_Guide.pdf
-    - The paper covers collecting aggregate statistics for different use cases: trending new words, popular emojis, popular HealthKit data types, Safari media-playback preferences, and high energy/memory domains. We only treated the popular emojis use case, treating it as one deployment.
+  resources:
+    sources: |
+      - Link to paper: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+      - Under "Security Measures": "The privatized records are temporarily stored on-device using data protection"; the paper points to this link https://www.apple.com/business/docs/iOS_Security_Guide.pdf
+      - The paper covers collecting aggregate statistics for different use cases: trending new words, popular emojis, popular HealthKit data types, Safari media-playback preferences, and high energy/memory domains. We only treated the popular emojis use case, treating it as one deployment.
+    registry_authors:
+      - Elena Ghazi
+      - Nicolas Berrios
+      - Jack Fitzsimons

@@ -1,20 +1,17 @@
 url_slug: covid-19-search-trends-symptoms-google-2020
 status: Draft
-registry_authors:
-  - Elena Ghazi
-  - Nicolas Berrios
-  - Jack Fitzsimons
 tier: 3
 deployment:
-  name: COVID-19 Search Trends Symptoms
-  data_curators:
-    - Google
-  intended_use: Help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends.
-  data_product_type: Summary statistics
-  data_product_region: Global
-  description: Summary statistics, published as an aggregated and anonymized dataset. It provides daily or weekly time series for various geographic regions, showing the relative frequency of Google searches for approximately 400 predefined symptoms. These values are normalized by the total search activity in the corresponding region to show trends over time.
-  publication_date: '2020-09-02'
-  data_product_sector: Healthcare
+  product:
+    name: COVID-19 Search Trends Symptoms
+    data_curators:
+      - Google
+    intended_use: Help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends.
+    data_product_type: Summary statistics
+    data_product_region: Global
+    description: Summary statistics, published as an aggregated and anonymized dataset. It provides daily or weekly time series for various geographic regions, showing the relative frequency of Google searches for approximately 400 predefined symptoms. These values are normalized by the total search activity in the corresponding region to show trends over time.
+    publication_date: '2020-09-02'
+    data_product_sector: Healthcare
 
   dp_flavor:
     name: Pure DP
@@ -91,7 +88,12 @@ deployment:
       - The decision to bound a user’s contribution to a maximum of three different symptom counts per day was based on the observation that approximately 75% of users search for three or fewer symptoms daily.
       - For each geographic region and symptom, data is released as either daily or weekly aggregates, depending on data quality. While the system provides daily aggregates whenever possible, it switches to weekly aggregates if privacy protections significantly affect the data's accuracy. Weekly aggregates are more robust because they are based on more data, which reduces the relative error from the added privacy noise. This choice was determined once in a differentially private manner using data from February to July 2020. After being set, the temporal granularity for a given region and symptom remains fixed for the entire duration of the dataset's release.
 
-  additional_information: |
-    - Documentation: https://storage.googleapis.com/gcp-public-data-symptom-search/COVID-19%20Search%20Trends%20symptoms%20dataset%20documentation%20.pdf?utm_source=chatgpt.com
-    - Paper: https://arxiv.org/pdf/2009.01265
-    - Published data product: https://github.com/GoogleCloudPlatform/covid-19-open-data/blob/main/docs/table-search-trends.md
+  resources:
+    sources: |
+      - Documentation: https://storage.googleapis.com/gcp-public-data-symptom-search/COVID-19%20Search%20Trends%20symptoms%20dataset%20documentation%20.pdf?utm_source=chatgpt.com
+      - Paper: https://arxiv.org/pdf/2009.01265
+      - Published data product: https://github.com/GoogleCloudPlatform/covid-19-open-data/blob/main/docs/table-search-trends.md
+    registry_authors:
+      - Elena Ghazi
+      - Nicolas Berrios
+      - Jack Fitzsimons

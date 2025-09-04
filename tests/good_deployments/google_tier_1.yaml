@@ -1,14 +1,16 @@
 url_slug: google_tier_1
 status: Draft
-registry_authors:
-  - Elena Ghazi
 tier: 1
 deployment:
-  name: Placeholder
-  data_curators:
-    - Google
-  description: Placeholder for tests
-  intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
-  data_product_type: Summary statistics
-  data_product_region: Global
-  publication_date: "2020-09-01"
+  product:
+    name: Placeholder
+    data_curators:
+      - Google
+    description: Placeholder for tests
+    intended_use: To help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends
+    data_product_type: Summary statistics
+    data_product_region: Global
+    publication_date: "2020-09-01"
+  resources:
+    registry_authors:
+      - Elena Ghazi

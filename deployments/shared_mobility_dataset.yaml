@@ -1,19 +1,16 @@
 url_slug: shared-mobility-dataset-google-2022
 status: Converted
-registry_authors:
-- Nicolas Berrios
-- Jack Fitzsimons
-- James Honaker
 tier: 1
 deployment:
-  name: Shared Mobility Dataset
-  data_curators:
-    - Google
-  intended_use: Mobility Data
-  data_product_type: Summary statistics
-  data_product_region: Global
-  description: Intra-urban metrics on trips.
-  publication_date: '2022-01-01'
+  product:
+    name: Shared Mobility Dataset
+    data_curators:
+      - Google
+    intended_use: Mobility Data
+    data_product_type: Summary statistics
+    data_product_region: Global
+    description: Intra-urban metrics on trips.
+    publication_date: '2022-01-01'
   dp_flavor:
     name: Approximate DP
   privacy_loss:
@@ -35,9 +32,13 @@ deployment:
     release_type: One release
     release_type_description: Static
     access_type: Non-interactive
-  # additional_information: TODO
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace Mechanism
     justification: '"All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
-  additional_information: https://www.nature.com/articles/s41467-019-12809-y
+  resources:
+    sources: https://www.nature.com/articles/s41467-019-12809-y
+    registry_authors:
+      - Nicolas Berrios
+      - Jack Fitzsimons
+      - James Honaker

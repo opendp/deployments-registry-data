@@ -1,20 +1,17 @@
 url_slug: broadband-coverage-microsoft-2021
 status: Draft
-registry_authors:
-  - Elena Ghazi
-  - Nicolas Berrios
-  - Jack Fitzsimons
 tier: 3
 deployment:
-  name: Broadband Coverage
-  data_curators:
-    - Microsoft
-  intended_use: Allow researchers and policy makers to understand problems related to broadband access and develop solutions to improve broadband access while simultaneously preserving the privacy of individual households.
-  data_product_type: Dataset
-  data_product_region: USA
-  description: Publicly available U.S. Broadband Coverage dataset that reports broadband coverage percentages at a zip code-level.
-  publication_date: '2021-04-01'
-  data_product_sector: Technology # Telecommunication, Public Sector/Government?
+  product:
+    name: Broadband Coverage
+    data_curators:
+      - Microsoft
+    intended_use: Allow researchers and policy makers to understand problems related to broadband access and develop solutions to improve broadband access while simultaneously preserving the privacy of individual households.
+    data_product_type: Dataset
+    data_product_region: USA
+    description: Publicly available U.S. Broadband Coverage dataset that reports broadband coverage percentages at a zip code-level.
+    publication_date: '2021-04-01'
+    data_product_sector: Technology # Telecommunication, Public Sector/Government?
 
   dp_flavor:
     name: Pure DP
@@ -80,6 +77,11 @@ deployment:
       - The number of devices connected to the internet at broadband speed per each zip code is counted based on the Federal Communications Commission (FCC)’s definition of broadband that is 25mbps per download.
       - "All diﬀerential privacy processing was done with the OpenDP SmartNoise library. The SmartNoise library includes a comprehensive set of diﬀerential privacy mechanisms, algorithms, and validator. The library is open source, and is maintained and vetted by OpenDP."
       - A Monte Carlo simulation process to estimate the error introduced by DP was chosen, the rationale being that this empirical method is better for estimating the combined error from several private sources and does not result in additional privacy losses.
-  additional_information: |
-    - Paper: https://arxiv.org/abs/2103.14035
-    - Github: https://github.com/microsoft/USBroadbandUsagePercentages
+  resources:
+    sources: |
+      - Paper: https://arxiv.org/abs/2103.14035
+      - Github: https://github.com/microsoft/USBroadbandUsagePercentages
+    registry_authors:
+      - Elena Ghazi
+      - Nicolas Berrios
+      - Jack Fitzsimons
