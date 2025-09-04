@@ -34,7 +34,8 @@ deployment:
     mechanisms: Gaussian
     justification: '' # TODO: Fill in correct value
   resources:
-    sources: https://arxiv.org/abs/2107.01179
+    sources: |
+      - Paper: https://arxiv.org/abs/2107.01179
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
