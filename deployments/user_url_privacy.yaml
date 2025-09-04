@@ -42,7 +42,9 @@ deployment:
     mechanisms: Laplace, Modified Report Noisy Max
     justification: '' # TODO: Fill in correct value
   resources:
-    sources: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2
+    sources: |
+      - Data: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2
+      - FAQ: https://developers.facebook.com/docs/url-shares-dataset/support/faqs
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
