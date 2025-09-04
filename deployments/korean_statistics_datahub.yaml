@@ -1,21 +1,19 @@
 url_slug: korean-government-statistical-data-hub-platform-kostat-national-statistics-office-of-korea--2021
 status: Converted
-registry_authors:
-- Nicolas Berrios
-- Jack Fitzsimons
 tier: 1
 deployment:
-  name: Korean Government Statistical Data Hub Platform
-  data_curators:
-    - KOSTAT (National Statistics Office of Korea)
-  intended_use: Goverment Data Hub
-  data_product_type: Summary statistics # TODO: Is this correct?
-  data_product_region: Korea
-  description: |
-    "Statistics Korea is promoting the establishment of a public
-    big data system that leverages cutting-edge privacy-preserving techniques to enable
-    the safe linkage and use of scattered governmental data."
-  publication_date: '2021-01-01'
+  product:
+    name: Korean Government Statistical Data Hub Platform
+    data_curators:
+      - KOSTAT (National Statistics Office of Korea)
+    intended_use: Goverment Data Hub
+    data_product_type: Summary statistics # TODO: Is this correct?
+    data_product_region: Korea
+    description: |
+      "Statistics Korea is promoting the establishment of a public
+      big data system that leverages cutting-edge privacy-preserving techniques to enable
+      the safe linkage and use of scattered governmental data."
+    publication_date: '2021-01-01'
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate-level
@@ -31,4 +29,8 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Unknown
     justification: '' # TODO: Fill in correct value
-  additional_information: https://unstats.un.org/wiki/display/UGTTOPPT/11.+Statistics+Korea%3A+Developing+a+privacy-preserving+Statistical+Data+Hub+Platform
+  resources:
+    sources: https://unstats.un.org/wiki/display/UGTTOPPT/11.+Statistics+Korea%3A+Developing+a+privacy-preserving+Statistical+Data+Hub+Platform
+    registry_authors:
+      - Nicolas Berrios
+      - Jack Fitzsimons

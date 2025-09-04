@@ -1,10 +1,10 @@
 short_fields:
   # Default is long format: These are the exceptions.
-  - /deployment/name
-  - /deployment/data_product_type
-  - /deployment/data_product_region
-  - /deployment/data_product_sector
-  - /deployment/publication_date
+  - /deployment/product/name
+  - /deployment/product/data_product_type
+  - /deployment/product/data_product_region
+  - /deployment/product/data_product_sector
+  - /deployment/product/publication_date
   - /deployment/dp_flavor/name
   - /deployment/privacy_loss/privacy_unit
   - /deployment/privacy_loss/privacy_parameters/epsilon

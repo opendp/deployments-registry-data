@@ -1,19 +1,17 @@
 url_slug: assistive-ai-microsoft-2020
 status: Converted
-registry_authors:
-- Priyanka Nanayakkara
-- Nicolas Berrios
-- Jack Fitzsimons
 tier: 2
 deployment:
-  name: Assistive AI
-  data_curators:
-    - Microsoft
-  intended_use: The AI system was trained internally at Microsoft to be deployed in their products. The model provides suggestions for replies to emails and texts, and is intended to make responding to emails and texts easier for users. The underlying data are “hundreds of millions of Messages (Emails or chats) and their Replies called Message-Reply (MR) pairs.”
-  data_product_type: Machine learning model
-  data_product_region: Global
-  description: Privately refining the set of responses suggested for email and chat.
-  publication_date: '2020-01-01'
+  product:
+    name: Assistive AI
+    data_curators:
+      - Microsoft
+    intended_use: The AI system was trained internally at Microsoft to be deployed in their products. The model provides suggestions for replies to emails and texts, and is intended to make responding to emails and texts easier for users. The underlying data are “hundreds of millions of Messages (Emails or chats) and their Replies called Message-Reply (MR) pairs.”
+    data_product_type: Machine learning model
+    data_product_region: Global
+    description: Privately refining the set of responses suggested for email and chat.
+    publication_date: '2020-01-01'
+
   dp_flavor:
     name: Approximate DP
     data_domain: '' # TODO
@@ -31,7 +29,12 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Differentially Private Set Union
     justification: '' # TODO: Fill in correct value
-  additional_information: |
-    - Blogpost: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
-    - Research paper: https://arxiv.org/pdf/2002.09745
-    - Restricted to some languages (EN, ES, FR, PR, IT)
+  resources:
+    sources: |
+      - Blogpost: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
+      - Research paper: https://arxiv.org/pdf/2002.09745
+      - Restricted to some languages (EN, ES, FR, PR, IT)
+    registry_authors:
+      - Priyanka Nanayakkara
+      - Nicolas Berrios
+      - Jack Fitzsimons

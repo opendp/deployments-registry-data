@@ -1,20 +1,17 @@
 url_slug: disclosure-avoidance-system-for-redistricting-data-u-s-census-bureau-2021
 status: Draft
-registry_authors:
-  - Elena Ghazi
-  - Nicolas Berrios
-  - Jack Fitzsimons
 tier: 3
 deployment:
-  name: Disclosure Avoidance System for Redistricting Data
-  data_curators:
-    - U.S. Census Bureau
-  intended_use: The decennial census data are used for congressional apportionment, the redistricting of legislative bodies, the allocation of federal funds, public policy, and research. The Summary File is produced to satisfy the legal requirement to provide states with the population tabulations they need for legislative redistricting.
-  data_product_type: Summary statistics
-  data_product_region: USA
-  description: Set of summary statistics (tables with counts of individuals, households, group quarters residents, or housing units with certain characteristics) published as the 2020 Census Redistricting Data (P.L. 94-171) Summary File.
-  publication_date: '2021-08-01'
-  data_product_sector: Government
+  product:
+    name: Disclosure Avoidance System for Redistricting Data
+    data_curators:
+      - U.S. Census Bureau
+    intended_use: The decennial census data are used for congressional apportionment, the redistricting of legislative bodies, the allocation of federal funds, public policy, and research. The Summary File is produced to satisfy the legal requirement to provide states with the population tabulations they need for legislative redistricting.
+    data_product_type: Summary statistics
+    data_product_region: USA
+    description: Set of summary statistics (tables with counts of individuals, households, group quarters residents, or housing units with certain characteristics) published as the 2020 Census Redistricting Data (P.L. 94-171) Summary File.
+    publication_date: '2021-08-01'
+    data_product_sector: Government
 
   dp_flavor:
     name: Zero-concentrated DP
@@ -104,6 +101,11 @@ deployment:
         - The Census Bureau solicited and incorporated detailed feedback from a wide array of stakeholders, including the National Academy of Sciences, federal and state partners, academic researchers, and tribal leaders.
         - The final production parameters were set by the Data Stewardship Executive Policy Committee (DSEP) after a final review of the privacy guarantees and data accuracy demonstrated in the tuning experiments.
 
-  additional_information: |
-    - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
-    - The 2020 Census Disclosure Avoidance System TopDown Algorithm: https://arxiv.org/abs/2204.08986
+  resources:
+    sources: |
+      - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+      - The 2020 Census Disclosure Avoidance System TopDown Algorithm: https://arxiv.org/abs/2204.08986
+    registry_authors:
+      - Elena Ghazi
+      - Nicolas Berrios
+      - Jack Fitzsimons

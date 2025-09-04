@@ -1,19 +1,16 @@
 url_slug: user-url-privacy-dataset-meta-2020
 status: Converted
-registry_authors:
-- Nicolas Berrios
-- Jack Fitzsimons
-- James Honaker
 tier: 1
 deployment:
-  name: User-URL Privacy Dataset
-  data_curators:
-    - Meta
-  intended_use: Web Browsing
-  data_product_type: Dataset
-  data_product_region: Global
-  description: '"A data set designed to allow researchers to study the distribution of URLs on Facebook and how users interacted with them."'
-  publication_date: '2020-06-06'
+  product:
+    name: User-URL Privacy Dataset
+    data_curators:
+      - Meta
+    intended_use: Web Browsing
+    data_product_type: Dataset
+    data_product_region: Global
+    description: '"A data set designed to allow researchers to study the distribution of URLs on Facebook and how users interacted with them."'
+    publication_date: '2020-06-06'
   dp_flavor:
     name: Zero-concentrated DP
     data_domain: User actions on a URL.
@@ -44,4 +41,9 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Modified Report Noisy Max
     justification: '' # TODO: Fill in correct value
-  additional_information: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2
+  resources:
+    sources: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2
+    registry_authors:
+      - Nicolas Berrios
+      - Jack Fitzsimons
+      - James Honaker

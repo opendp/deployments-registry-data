@@ -1,19 +1,18 @@
 url_slug: safety-classifier-google-2024
 status: Draft
-registry_authors:
-  - Priyanka Nanayakkara
 tier: 2
 deployment:
-  name: Safety Classifier
-  data_curators:
-    - Google
-  intended_use: To classify safety of content shown to Google users on mobile devices and ensure that users do not see unsafe content.
-  data_product_type: Machine learning model
-  data_product_region: Global
-  description:  A safety classifier (machine learning model) that detects inappropriate content; trained on differentially private synthetic data which was generated based on internal (to Google) data
-  publication_date: '2024-01-01'
+  product:
+    name: Safety Classifier
+    data_curators:
+      - Google
+    intended_use: To classify safety of content shown to Google users on mobile devices and ensure that users do not see unsafe content.
+    data_product_type: Machine learning model
+    data_product_region: Global
+    description:  A safety classifier (machine learning model) that detects inappropriate content; trained on differentially private synthetic data which was generated based on internal (to Google) data
+    publication_date: '2024-01-01'
 
-  data_product_sector: Technology
+    data_product_sector: Technology
 
 
   dp_flavor:
@@ -48,6 +47,9 @@ deployment:
   #   pre_processing_eda_hyperparameter_tuning:
   #   mechanisms:
   #   justification:
-  additional_information: |
-    - Blogpost: https://research.google/blog/protecting-users-with-differentially-private-synthetic-training-data/
-    - Research paper: https://arxiv.org/pdf/2306.01684
+  resources:
+    sources: |
+      - Blogpost: https://research.google/blog/protecting-users-with-differentially-private-synthetic-training-data/
+      - Research paper: https://arxiv.org/pdf/2306.01684
+    registry_authors:
+        - Priyanka Nanayakkara

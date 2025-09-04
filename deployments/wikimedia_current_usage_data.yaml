@@ -1,20 +1,17 @@
 url_slug: current-pageviews-wikimedia-foundation-2023
 status: Draft
-registry_authors:
-  - Elena Ghazi
-  - Nicolas Berrios
-  - Jack Fitzsimons
 tier: 3
 deployment:
-  name: Current Pageviews
-  data_curators:
-    - Wikimedia Foundation
-  intended_use: Help Wikipedia editors prioritize their work and support academic research.
-  data_product_type: Summary statistics
-  data_product_region: Global
-  description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
-  publication_date: '2023-06-01'
-  data_product_sector: Technology
+  product:
+    name: Current Pageviews
+    data_curators:
+      - Wikimedia Foundation
+    intended_use: Help Wikipedia editors prioritize their work and support academic research.
+    data_product_type: Summary statistics
+    data_product_region: Global
+    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
+    publication_date: '2023-06-01'
+    data_product_sector: Technology
 
   dp_flavor:
     name: Zero-concentrated DP
@@ -72,9 +69,14 @@ deployment:
       - After comparison of available open-source tools, the Wikimedia Foundation decided to use Tumult Analytics, framework chosen for its robustness, production-readiness, compatibility with Wikimedia’s compute infrastructure, and support for advanced features like zCDP-based privacy accounting, and started a collaboration with Tumult Labs.
       - Choosing \\(\rho\\) =0.015 is considered to be conservative as it provides much stronger guarantee than \\((\epsilon,\delta)\\)-DP with \\(\epsilon=1\\) and \\(\delta = 10^{-7}\\)
 
-  additional_information: |
-    - Paper: https://arxiv.org/pdf/2308.16298
-    - Several relevant links are provided in the paper’s references, among which:
-      - Client-side filtering code: https://gerrit.wikimedia.org/r/plugins/gitiles/operations/puppet/+/refs/heads/production/modules/varnish/templates/analytics.inc.vcl.erb#171
-      - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
-      - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
+  resources:
+    sources: |
+      - Paper: https://arxiv.org/pdf/2308.16298
+      - Several relevant links are provided in the paper’s references, among which:
+        - Client-side filtering code: https://gerrit.wikimedia.org/r/plugins/gitiles/operations/puppet/+/refs/heads/production/modules/varnish/templates/analytics.inc.vcl.erb#171
+        - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
+        - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
+    registry_authors:
+      - Elena Ghazi
+      - Nicolas Berrios
+      - Jack Fitzsimons

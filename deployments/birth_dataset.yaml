@@ -1,18 +1,16 @@
 url_slug: israel-s-national-registry-of-live-births-of-2014-israeli-ministry-of-health-2024
 status: Converted
-registry_authors:
-- Shlomi Hod
-- James Honaker
 tier: 1
 deployment:
-  name: Israel's National Registry of Live Births of 2014
-  data_curators:
-    - Israeli Ministry of Health
-  intended_use: Health Data
-  data_product_type: Synthetic data
-  data_product_region: Israel
-  description: Synthetic data covering live births in Israel during 2014.
-  publication_date: '2024-02-01'
+  product:
+    name: Israel's National Registry of Live Births of 2014
+    data_curators:
+      - Israeli Ministry of Health
+    intended_use: Health Data
+    data_product_type: Synthetic data
+    data_product_region: Israel
+    description: Synthetic data covering live births in Israel during 2014.
+    publication_date: '2024-02-01'
   # dp_flavor: TODO
   dp_flavor:
     name: Pure DP
@@ -36,4 +34,8 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: PrivBayes with Private Selection (Universal Microdata Scheme)
     justification: '' # TODO: Fill in correct value
-  additional_information: https://birth.dataset.pub
+  resources:
+    sources: https://birth.dataset.pub
+    registry_authors:
+      - Shlomi Hod
+      - James Honaker
