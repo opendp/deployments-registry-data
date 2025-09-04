@@ -36,7 +36,8 @@ deployment:
   resources:
     sources: |
       - Paper: https://arxiv.org/pdf/2002.05839
-      - Note: The paper states that “data is purged within 30 days of a user leaving the ecosystem because it has a 30 day retention.” We take this to mean that the data are refreshed on a monthly basis, i.e., that leaving the ecosystem means leaving a single user session on LinkedIn as opposed to account deletion.
+    notes: |
+      - The paper states that “data is purged within 30 days of a user leaving the ecosystem because it has a 30 day retention.” We take this to mean that the data are refreshed on a monthly basis, i.e., that leaving the ecosystem means leaving a single user session on LinkedIn as opposed to account deletion.
     registry_authors:
       - Priyanka Nanayakkara
       - Nicolas Berrios
