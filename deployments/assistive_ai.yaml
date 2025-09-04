@@ -32,7 +32,7 @@ deployment:
   resources:
     sources: |
       - Blogpost: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
-      - Research paper: https://arxiv.org/pdf/2002.09745
+      - Paper: https://arxiv.org/pdf/2002.09745
     notes: |
       - Restricted to some languages (EN, ES, FR, PR, IT)
     registry_authors:
