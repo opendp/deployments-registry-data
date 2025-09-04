@@ -82,12 +82,13 @@ deployment:
 
   resources:
     sources: |
-      - Note: The paper does not explicitly state what constitutes adjacent datasets, and it is not obvious, because the maximum contribution per user was estimated to be m. Therefore, the reported input metric and maximum input distance may need additional follow-up to verify its accuracy.
       - Paper: https://arxiv.org/pdf/2308.16298
       - Several relevant links are provided in the paper’s references, among which:
         - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
         - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
         - Pageviews Differential Privacy – Historical – README: https://analytics.wikimedia.org/published/datasets/country_project_page_historical/00_README.html
+    notes: | 
+      - The paper does not explicitly state what constitutes adjacent datasets, and it is not obvious, because the maximum contribution per user was estimated to be m. Therefore, the reported input metric and maximum input distance may need additional follow-up to verify its accuracy.    
     registry_authors:
       - Elena Ghazi
       - Nicolas Berrios
