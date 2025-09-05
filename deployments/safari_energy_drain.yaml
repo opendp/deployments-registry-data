@@ -1,6 +1,6 @@
 url_slug: safari-energy-draining-and-crashing-domains-apple-2017
-status: Converted
-tier: 1
+status: Draft
+tier: 2
 deployment:
   product:
     name: Safari Energy Draining and Crashing Domains
@@ -9,30 +9,50 @@ deployment:
     intended_use: Browser Statistics
     data_product_type: Summary statistics
     data_product_region: Global
+    data_product_sector: Technology
     description: Identify sites with high memory or high CPU usage.
     publication_date: '2017-01-01'
+
   dp_flavor:
     name: Pure DP
     data_domain: '' # TODO
-    unprotected_quantities: '' # TODO
+    unprotected_quantities: |
+          - The dictionary of websites (a predefined set of D websites).
+          - Algorithm parameters: the PHCMS algorithm requires the number of hash functions (m), and the size of the privatized vector (k).
+          - The total number of records (known by the server, although not released).
+          - IP addresses and and user identity are transmitted to server, but then deleted and not used for further computations.
+
   privacy_loss:
-    privacy_unit: User-level
-    # privacy_unit_description: TODO
+    privacy_unit: event-level
+     privacy_unit_description: '"Data is privatized on the user’s device using event-level differential privacy"'
     privacy_parameters:
       epsilon: 4.0
     privacy_parameters_description: '"For this use case, we set the parameters for HCMS to be m = 32,768, k = 1024, and \\(\epsilon\\) = 4 with p = 250,000 web domains."'
+
   model:
     model_name: Local
     model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
-    release_type: One release # TODO: Is this correct?
+    release_type: Multiple releases # Note -- there are multiple releases per device & per user -- statistics are reported automatically on IoS and MacOS devices, subject to daily aggregation. There is only one aggregation query applied per-event.
     release_type_description: Daily
-    access_type: Non-interactive # TODO: Is this correct?
+    access_type: Non-interactive # pre-defined query
+
+  accounting:
+    post_processing: |
+      - Server strips IP addresses and  associated ids from each record.
+      - Aggregation - private histograms are generated through sketch mechanism PHCMS
+      - Threshold - only domain elements with counts above threshold T (level undocumented) are disclosed
+
+    composition: No information was provided about composition.
+
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
-    mechanisms: Hierarchical Count-Min Sketch
-    justification: '' # TODO: Fill in correct value
+    pre_processing_eda_hyperparameter_tuning: 'No hyperperameters are required; no EDA is described'
+    mechanisms: Private Hadamard Count Mean Sketch (PHCMS)
+    justification: '"Formal proof, described in Theorem 4.1, Theorem 4.3"'
+
   resources:
     sources: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
     registry_authors:
+      - James Honaker
+      - Micah Altman
       - Nicolas Berrios
       - Jack Fitzsimons
