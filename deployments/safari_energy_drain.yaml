@@ -1,6 +1,6 @@
 url_slug: safari-energy-draining-and-crashing-domains-apple-2017
 status: Draft
-tier: 2
+tier: 3
 deployment:
   product:
     name: Safari Energy Draining and Crashing Domains
@@ -15,7 +15,7 @@ deployment:
 
   dp_flavor:
     name: Pure DP
-    data_domain: '' # TODO
+    data_domain: 'Event-level dataset where one "event" is a web browser loading a  page, and the "measure" is the domain of the page loaded.'
     unprotected_quantities: |
           - The dictionary of websites (a predefined set of D websites).
           - Algorithm parameters: the PHCMS algorithm requires the number of hash functions (m), and the size of the privatized vector (k).
@@ -24,7 +24,7 @@ deployment:
 
   privacy_loss:
     privacy_unit: event-level
-     privacy_unit_description: '"Data is privatized on the user’s device using event-level differential privacy"'
+    privacy_unit_description: '"Data is privatized on the user’s device using event-level differential privacy"'
     privacy_parameters:
       epsilon: 4.0
     privacy_parameters_description: '"For this use case, we set the parameters for HCMS to be m = 32,768, k = 1024, and \\(\epsilon\\) = 4 with p = 250,000 web domains."'
