@@ -9,7 +9,7 @@ deployment:
       - Uber
     intended_use: To compute privacy-protected SQL queries using existing SQL
       databases, in real time, at millions-of-records scale
-    data_product_type: SQL Queries
+    data_product_type: SQL queries
     data_product_region: Global
     description: A flexible end-to-end system for computing differential privacy
       using "elastic sensitivity" over heterogeneous existing database
@@ -70,7 +70,7 @@ deployment:
       - Formal proof that elastic sensitivity is an upper bound of local sensistivity is presented.
   resources:
     sources: |
-      - Paper: https://doi.org/10.1145/3177732.3177733
+      - Paper: https://vldb.org/pvldb/vol11/p526-johnson.pdf # https://doi.org/10.1145/3177732.3177733 is not presently working
       - Blog post: https://medium.com/uber-security-privacy/uber-open-source-differential-privacy-57f31e85c57a
       - Source repo: https://github.com/uber-archive/sql-differential-privacy
     registry_authors:
