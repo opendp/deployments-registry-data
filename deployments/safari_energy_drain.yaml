@@ -32,7 +32,7 @@ deployment:
   model:
     model_name: Local
     model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
-    release_type: Multiple releases
+    release_type: Many releases
     release_type_description: Daily
     access_type: Non-interactive # pre-defined query
 
