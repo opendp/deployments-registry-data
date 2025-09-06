@@ -30,7 +30,7 @@ deployment:
     privacy_parameters:
       epsilon: 0.01
       delta: 'n^{(-\epsilon \ln(n))}'
-      privacy_parameters_description: 'these parameters are used for evaluating the deployment, in operation the parameters are set by users on query-by-query basis'
+    privacy_parameters_description: 'these parameters are used for evaluating the deployment, in operation the parameters are set by users on query-by-query basis'
 
   model:
     model_name: Central
