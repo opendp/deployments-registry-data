@@ -89,6 +89,7 @@ properties:
               - Dataset
               - Synthetic data
               - Interactive API
+              - SQL queries
               # Add to this list as needed.
           data_product_region:
             tier: 1
