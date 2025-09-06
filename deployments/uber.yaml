@@ -23,7 +23,7 @@ deployment:
     unprotected_quantities: bin labels drawn from finite domains
   privacy_loss:
     privacy_unit: Tuple-level
-    privacy_unit_description: >
+    privacy_unit_description: |
       Each record corresponds to a tuple in a single table
       of a multi-table database. Tuples do not necessarily correspond to
       individuals.
@@ -50,14 +50,14 @@ deployment:
     access_type_description: 'Authorized internal users design, execute, and receive multiple queries over an extended period of time. Privacy parameters are  determined by user, at request time.'
   accounting:
     post_processing: none described
-    composition: >
+    composition: |
       - deployment does not manage privacy budgets
       - user can compute overall privacy loss using strong composition bounds on sequential queries
   implementation:
     pre_processing_eda_hyperparameter_tuning: none described
-    mechanisms: >
+    mechanisms: |
       - The differential privacy algorithm used is bounded epsilon-delta  DP
-      - details
+      - details:
         - SQL query is analyzed compute elastic sensitivity
         - smooth sensitivity is applied to elastic sensitivity query
         - Laplace noise is added  to query results
@@ -66,10 +66,10 @@ deployment:
       - No information was provided about protection from timing attacks.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - Security measure to protect underlying data: none measured
-    justification: >
+    justification: |
       - Formal proof that elastic sensitivity is an upper bound of local sensistivity is presented.
   resources:
-    sources: >
+    sources: |
       - Paper: https://doi.org/10.1145/3177732.3177733
       - Blog post: https://medium.com/uber-security-privacy/uber-open-source-differential-privacy-57f31e85c57a
       - Source repo: https://github.com/uber-archive/sql-differential-privacy
