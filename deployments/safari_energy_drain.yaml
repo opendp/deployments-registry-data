@@ -23,7 +23,7 @@ deployment:
           - IP addresses and and user identity are transmitted to server, but then deleted and not used for further computations.
 
   privacy_loss:
-    privacy_unit: event-level
+    privacy_unit: Event-level
     privacy_unit_description: '"Data is privatized on the user’s device using event-level differential privacy"'
     privacy_parameters:
       epsilon: 4.0
@@ -32,7 +32,7 @@ deployment:
   model:
     model_name: Local
     model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
-    release_type: Multiple releases # Note -- there are multiple releases per device & per user -- statistics are reported automatically on IoS and MacOS devices, subject to daily aggregation. There is only one aggregation query applied per-event.
+    release_type: Multiple releases
     release_type_description: Daily
     access_type: Non-interactive # pre-defined query
 
@@ -51,6 +51,9 @@ deployment:
 
   resources:
     sources: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+    notes: |
+      - There are multiple releases per device & per user -- statistics are reported automatically on IoS and MacOS devices, subject to daily aggregation. 
+      - There is only one aggregation query applied per-event.
     registry_authors:
       - James Honaker
       - Micah Altman
