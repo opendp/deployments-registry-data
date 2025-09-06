@@ -1,5 +1,5 @@
 ---
-url_slug: uber-2018
+url_slug: flex-uber-2018
 status: Draft
 tier: 2
 deployment:
@@ -7,7 +7,7 @@ deployment:
     name: FLEX
     data_curators:
       - Uber
-    intended_use: to compute privacy-protected SQL queries using existing SQL
+    intended_use: To compute privacy-protected SQL queries using existing SQL
       databases, in real time, at millions-of-records scale
     data_product_type: SQL Queries
     data_product_region: Global
@@ -17,12 +17,12 @@ deployment:
     publication_date: 2018-01-01
     data_product_sector: Technology
   dp_flavor:
-    name: Bounded epsilon-delta DP
+    name: Approximate DP
     output_measure: elastic sensitivity (upper bound on local sensitivity)
     data_domain: Multi-table relational database (schema unspecifed)
     unprotected_quantities: bin labels drawn from finite domains
   privacy_loss:
-    privacy_unit: tuple-level
+    privacy_unit: Tuple-level
     privacy_unit_description: >
       Each record corresponds to a tuple in a single table
       of a multi-table database. Tuples do not necessarily correspond to
@@ -30,11 +30,11 @@ deployment:
     privacy_parameters:
       epsilon: 0.01
       delta: 'n^{(-\epsilon \ln(n))}'
-      privacy_parameters_description: 'these parameters are used for evaluating the, deployment, in operation the parameters are set by users on query-by-query basis'
+      privacy_parameters_description: 'these parameters are used for evaluating the deployment, in operation the parameters are set by users on query-by-query basis'
 
   model:
     model_name: Central
-    model_name_description: 'In this [system] we [implement] bounded differential privacy,in which x can be obtained from its neighbor y by changing (but not adding or removing) a single tuple'
+    model_name_description: '"In this [system] we [implement] bounded differential privacy,in which x can be obtained from its neighbor y by changing (but not adding or removing) a single tuple."'
     actors: >
       - domains of observation: rider and driver information, trip logs, andcustomer support interactions
       - units of observation:  unspecified
