@@ -9,9 +9,9 @@ deployment:
     intended_use: Browser Statistics
     data_product_type: Summary statistics
     data_product_region: Global
-    data_product_sector: Technology
     description: Identify sites with high memory or high CPU usage.
     publication_date: '2017-01-01'
+    data_product_sector: Technology
 
   dp_flavor:
     name: Pure DP
