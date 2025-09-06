@@ -14,7 +14,7 @@ deployment:
     description: A flexible end-to-end system for computing differential privacy
       using "elastic sensitivity" over heterogeneous existing database
       environments, at scale.
-    publication_date: 2018-01-01
+    publication_date: '2018-01-01'
     data_product_sector: Technology
   dp_flavor:
     name: Approximate DP
@@ -35,7 +35,7 @@ deployment:
   model:
     model_name: Central
     model_name_description: '"In this [system] we [implement] bounded differential privacy,in which x can be obtained from its neighbor y by changing (but not adding or removing) a single tuple."'
-    actors: >
+    actors: |
       - domains of observation: rider and driver information, trip logs, andcustomer support interactions
       - units of observation:  unspecified
       - local data collection:  unspecified
