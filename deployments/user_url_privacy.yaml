@@ -25,12 +25,12 @@ deployment:
       epsilon: 1.453
       delta: 1.0e-05
       rho: 0.0728
-    privacy_parameters_description: |
-      "At \\(\delta = 10−5\\), the \\(\epsilon_{user}\\) for each individual action type decreases from about 0.45 (as reported
-      in an earlier section) to a range between 0.34 and 0.35. The total user-level privacy consumption across all action types under
-      \\(\mu\\)-GDP is about 0.376. The total user-level privacy consumption across all action types reduces from an epsilon of 1.844
-      (reported in an earlier section) to about 1.453. To reiterate, the privacy consumption under \\(\rho\\)-zCDP is unchanged:
-      \\(\rho_{user}\\) remains at 0.0052 for each individual action column and remains at 0.0728 across the entire dataset."
+      privacy_parameters_description: |
+        "At \\(\delta = 10−5\\), the \\(\epsilon_{user}\\) for each individual action type decreases from about 0.45 (as reported
+        in an earlier section) to a range between 0.34 and 0.35. The total user-level privacy consumption across all action types under
+        \\(\mu\\)-GDP is about 0.376. The total user-level privacy consumption across all action types reduces from an epsilon of 1.844
+        (reported in an earlier section) to about 1.453. To reiterate, the privacy consumption under \\(\rho\\)-zCDP is unchanged:
+        \\(\rho_{user}\\) remains at 0.0052 for each individual action column and remains at 0.0728 across the entire dataset."
   model:
     model_name: Central
     # model_name_description: TODO
