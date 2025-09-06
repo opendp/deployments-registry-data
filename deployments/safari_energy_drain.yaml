@@ -52,7 +52,7 @@ deployment:
   resources:
     sources: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
     notes: |
-      - There are multiple releases per device & per user -- statistics are reported automatically on IoS and MacOS devices, subject to daily aggregation. 
+      - There are multiple releases per device & per user -- statistics are reported automatically on IoS and MacOS devices, subject to daily aggregation.
       - There is only one aggregation query applied per-event.
     registry_authors:
       - James Honaker
