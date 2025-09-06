@@ -208,7 +208,9 @@ properties:
               epsilon:
                 type: number
               delta:
-                type: number
+                type: |
+                  - number
+                  - string
               rho:
                 type: number
           privacy_parameters_description:
