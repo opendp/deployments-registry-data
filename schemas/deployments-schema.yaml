@@ -208,7 +208,7 @@ properties:
               epsilon:
                 type: number
               delta:
-                type: |
+                type:
                   - number
                   - string
               rho:
