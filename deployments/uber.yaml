@@ -1,0 +1,76 @@
+url_slug: flex-uber-2018
+status: Draft
+tier: 2
+deployment:
+  product:
+    name: FLEX
+    data_curators:
+      - Uber
+    intended_use: To compute privacy-protected SQL queries using existing SQL
+      databases, in real time, at millions-of-records scale
+    data_product_type: SQL queries
+    data_product_region: Global
+    description: A flexible end-to-end system for computing differential privacy
+      using "elastic sensitivity" over heterogeneous existing database
+      environments, at scale.
+    publication_date: '2018-01-01'
+    data_product_sector: Technology
+  dp_flavor:
+    name: Approximate DP
+    output_measure: elastic sensitivity (upper bound on local sensitivity)
+    data_domain: Multi-table relational database (schema unspecifed)
+    unprotected_quantities: bin labels drawn from finite domains
+  privacy_loss:
+    privacy_unit: Tuple-level
+    privacy_unit_description: |
+      Each record corresponds to a tuple in a single table
+      of a multi-table database. Tuples do not necessarily correspond to
+      individuals.
+    privacy_parameters:
+      epsilon: 0.01
+      delta: 'n^{(-\epsilon \ln(n))}'
+    privacy_parameters_description: 'these parameters are used for evaluating the deployment, in operation the parameters are set by users on query-by-query basis'
+
+  model:
+    model_name: Central
+    model_name_description: '"In this [system] we [implement] bounded differential privacy,in which x can be obtained from its neighbor y by changing (but not adding or removing) a single tuple."'
+    actors: |
+      - domains of observation: rider and driver information, trip logs, andcustomer support interactions
+      - units of observation:  unspecified
+      - local data collection:  unspecified
+      - network adversary: unspecified
+      - database controller: central controller of secure database
+      - internal database users: designs, executes and receives database queries
+    release_type: Many releases
+    release_type_description: 'Many different queries over the  database, no restriction against repeated queries over time'
+    data_source_type: Dynamic
+    data_source_type_description: Database is updated dynamically through unspecified business processes
+    access_type: Interactive
+    access_type_description: 'Authorized internal users design, execute, and receive multiple queries over an extended period of time. Privacy parameters are  determined by user, at request time.'
+  accounting:
+    post_processing: none described
+    composition: |
+      - deployment does not manage privacy budgets
+      - user can compute overall privacy loss using strong composition bounds on sequential queries
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: none described
+    mechanisms: |
+      - The differential privacy algorithm used is bounded epsilon-delta  DP
+      - details:
+        - SQL query is analyzed compute elastic sensitivity
+        - smooth sensitivity is applied to elastic sensitivity query
+        - Laplace noise is added  to query results
+      - No information was provided about the implementation of the mechanism.
+      - No information was provided about protection against floating point errors
+      - No information was provided about protection from timing attacks.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - Security measure to protect underlying data: none measured
+    justification: |
+      - Formal proof that elastic sensitivity is an upper bound of local sensistivity is presented.
+  resources:
+    sources: |
+      - Paper: https://vldb.org/pvldb/vol11/p526-johnson.pdf # https://doi.org/10.1145/3177732.3177733 is not presently working
+      - Blog post: https://medium.com/uber-security-privacy/uber-open-source-differential-privacy-57f31e85c57a
+      - Source repo: https://github.com/uber-archive/sql-differential-privacy
+    registry_authors:
+      - Micah Altman
