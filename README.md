@@ -26,11 +26,11 @@ graph TD
         Pending --> Changes["Changes Required"] --> Pending
     end
     subgraph Published
-        Approved --> Update["Approved (Update Requested)"] --> Repending["Approved (Pending)"] --> Approved
-        Repending --> Update
-
+        Approved --> Update["Approved (Update Requested)"] --> Repending["Approved (Pending)"] --> Update
+        Repending --> Approved
     end
     Pending --> Approved
+    Approved --> Changes
 ```
 
 ## Adding new deployment records
