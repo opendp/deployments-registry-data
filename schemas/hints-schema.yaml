@@ -3,6 +3,7 @@ additionalProperties: False
 required:
   - short_fields
   - extra_columns
+  - tile_names
 properties:
   short_fields:
     type: array
@@ -10,4 +11,6 @@ properties:
       type: string
     minItems: 1
   extra_columns:
+    type: object
+  tile_names:
     type: object

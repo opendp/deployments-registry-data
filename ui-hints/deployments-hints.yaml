@@ -18,3 +18,6 @@ extra_columns:
   # Keys are the display names of columns;
   # Values are the path to the value to show.
   "Model": /deployment/model/model_name
+tile_names:
+  # These tiles in the table need shorter names.
+  pre_processing_eda_hyperparameter_tuning: Pre Processing
