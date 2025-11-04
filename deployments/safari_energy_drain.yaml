@@ -20,7 +20,7 @@ deployment:
           - The dictionary of websites (a predefined set of D websites).
           - Algorithm parameters: the PHCMS algorithm requires the number of hash functions (m), and the size of the privatized vector (k).
           - The total number of records (known by the server, although not released).
-          - IP addresses and and user identity are transmitted to server, but then deleted and not used for further computations.
+          - IP addresses and user identity are transmitted to server, but then deleted and not used for further computations.
 
   privacy_loss:
     privacy_unit: Event-level
