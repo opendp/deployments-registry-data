@@ -1,0 +1,75 @@
+url_slug: sas-data-maker-vulnerable-persons-detection
+status: Draft
+tier: hopefully 2 or 3
+deployment:
+  product:
+    name: Synthetic data to test third-party solutions in financial services
+    data_curators: |
+      - Nationwide Building Society
+      - Hazy (now SAS Data Maker)
+    intended_use: Enable Nationwide to generate and use synthetic data with Differential Privacy guarantees to evaluate a third-party solution for detecting and supporting vulnerable individuals in financial services.
+    data_product_type: Synthetic data
+    data_product_region: UK
+    description: Synthetic data generated with Differential Privacy is used by Nationwide to evaluate a third-party solution for detecting and supporting vulnerable individuals in financial services. The data is produced on-premises using Hazy‘s (now SAS Data Maker) platform from over 50,000 customers, 100,000 accounts, and 50 million transactions across 18 months. It includes customer identifiers, account details, transaction amounts, and merchant information.
+    publication_date: '2020-01-01'
+    data_product_sector: Finance
+
+  dp_flavor:
+    name: Pure DP
+    data_domain: Similar to Open Banking transaction data, spanning multiple relational tables (Customers, Accounts, and Transactions tables) and covering customer personal data (direct and indirect identifiers), account details (including current accounts and credit cards), transaction amounts (such as recurring and individual payments) with merchant names and categories over an 18-month period.
+    unprotected_quantities: Individual-level transactions are modeled using a conditional Autoregressive model with added noise, but without formal DP guarantees.
+
+  privacy_loss:
+    privacy_unit: User-account-level
+    privacy_unit_description: Neighboring datasets are defined as the addition/removal of a single customer and all their linked records/accounts (such as current accounts and credit cards). Individual transactions are excluded from the privacy analysis due to the impractical noise levels required to train Autoregressive models with DP-SGD.
+    privacy_parameters:
+      epsilon: 5.0
+    privacy_parameters_description: |
+      - Customers table with static demographic information modeled through a PrivBayes network with \\(\epsilon\\) = 2.5.
+      - Accounts table with current account/credit card static information modeled through a conditional PrivBayes network with \\(\epsilon\\) = 2.5.
+
+  model:
+    model_name: Central
+    actors: |
+      - Nationwide Building Society -- owns and processes real/customer data; uses Hazy’s (now SAS Data Maker) platform to generate synthetic data from real/customer data and uses synthetic data to test third-party solutions while protecting privacy.
+      - Hazy (now SAS Data Maker) -- supplies the synthetic data generation platform installed on RetailBank’s premises; does not access or see any real/customer data.
+      - Third-party company -- provides a tool to identify vulnerable individuals; only has access to synthetic data for testing, not real/ customer data.
+    release_type: One release (per third-party company)
+    release_type_description: A single multi-table synthetic dataset, generated from 18 months of historical customer data, is released to the third-party company for testing purposes.
+    access_type: Non-interactive
+
+  accounting:
+    post_processing: |
+      - generating random synthetic IDs/names after discarding real account/transaction/merchant IDs, and merchant names, using a similar format
+      - clipping negative values
+      - rounding (selected) numerical values to integers/desired precision
+      - removing implausible records
+      - ensuring logical consistency (e.g., income > spending)
+    composition: |
+      - Sequential composition: Two PrivBayes network models (with pure DP) are trained sequentially -- one on Customers table and one on Accounts table (conditioned on Customers). Since the datasets overlap, sequential composition was used, and the total privacy budget is \\(\epsilon\\) = 5.0 (2.5 + 2.5).
+      - Group privacy: To account for the one-to-many relationship between Customers and Accounts, the number of accounts per customer is bounded to 5 in the second PrivBayes network model, ensuring privacy loss accounting under group privacy.
+
+  implementation:
+    pre_processing_eda_hyperparameter_tuning: |
+      - Preprocessing: |
+        - discarding PIIs like real account/transaction/merchant IDs, and merchant names; generating random synthetic IDs/names in a similar format
+        - discretizing numerical data in the Customers and Accounts tables (required for PrivBayes models, which operate on discrete/categorical data); after generation, values are transformed back to numerical by randomly sampling from the discretized bins
+        - normalizing data in the Transactions table (required for the Autoregressive model, which operate on continuous data); after generation, values are scaled back to their original bounds
+      - Hyperparameter Tuning: Several models are trained using different levels of \\(\epsilon\\) to determine the optimal balance of identifiability and utility. \\(\epsilon\\) = 5 is chosen as it fulfills the intended purpose while minimizing identifiability in the synthetic data, excluding discarded models from the final accounting.
+    mechanisms: |
+      The PrivBayes network model constructs a Bayesian network to break down the high-dimensional joint distribution of the dataset into low-dimensional conditional distributions. It involves two main steps:
+        - 1) uses the Exponential mechanism to add edges based on noisy mutual information scores, spending half of the privacy budget at this step
+        - 2) applies the Laplace mechanism to generate noisy contingency tables (spending the other half of the privacy budget), which are normalized into consistent conditional distributions and used for synthetic data generation
+    justification: |
+      - Synthetic data is used by Nationwide as it helps minimize the amount of personal data processed and reduces the risk of inappropriate access to customer data, while allowing for effectively testing the third-party product prior to procuring it. Nationwide ensures that real/customer data remains within its secure production environment by deploying the synthetic data solution from Hazy (now SAS Data Maker) on-premises. Moreover, a standardized contractual agreement with the third-party strictly prohibits any reidentification of real customers.
+      - PrivBayes network is chosen to model the static tables (Customers and Accounts) because it offers a strong balance between utility, privacy, computational efficiency, scalability, and interpretability.
+      - Autoregressive model is chosen to model the Transactions table because it handles time-series data effectively. However, DP is not applied to this model since DP-SGD requires adding too much noise, reducing utility to an unacceptably low level.
+
+  resources:
+    sources: |
+      - Usecase by ICO: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-sharing/privacy-enhancing-technologies/case-studies/synthetic-data-to-test-the-effectiveness-of-a-vulnerable-persons-detection-system-in-financial-services/
+      - Usecase by Nationwide: https://medium.com/nationwide-technology/hazy-synthetic-data-to-fuel-rapid-innovation-fd24f2e21685
+      - PrivBayes paper: https://dl.acm.org/doi/10.1145/3134428
+      - DoppelGANger paper: https://arxiv.org/abs/1909.13403
+    registry_authors: |
+      - Georgi Ganev
