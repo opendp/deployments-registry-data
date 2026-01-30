@@ -4,3 +4,9 @@ https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosu
 https://epubs.siam.org/doi/pdf/10.1137/090756090
 https://dl.acm.org/doi/pdf/10.1145/3132747.3132769
 https://ieeexplore.ieee.org/abstract/document/9833672
+https://edp.recurve.com/uploads/8/6/5/0/8650231/aceee_paper_final.pdf
+https://projects.iq.harvard.edu/files/opendifferentialprivacy/files/opendp_programming_framework_11may2020_1_01.pdf
+https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
+https://doi.org/10.1145/3177732.3177733
+https://medium.com/uber-security-privacy/uber-open-source-differential-privacy-57f31e85c57a
+https://analytics.wikimedia.org/published/datasets/country_project_page_historical/00_README.html
