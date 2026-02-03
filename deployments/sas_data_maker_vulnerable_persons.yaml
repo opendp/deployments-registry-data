@@ -1,10 +1,10 @@
 url_slug: sas-data-maker-vulnerable-persons-detection
 status: Draft
-tier: hopefully 2 or 3
+tier: 2 # or possibly 3?
 deployment:
   product:
     name: Synthetic data to test third-party solutions in financial services
-    data_curators: |
+    data_curators:
       - Nationwide Building Society
       - Hazy (now SAS Data Maker)
     intended_use: Enable Nationwide to generate and use synthetic data with Differential Privacy guarantees to evaluate a third-party solution for detecting and supporting vulnerable individuals in financial services.
@@ -34,7 +34,7 @@ deployment:
       - Nationwide Building Society -- owns and processes real/customer data; uses Hazy’s (now SAS Data Maker) platform to generate synthetic data from real/customer data and uses synthetic data to test third-party solutions while protecting privacy.
       - Hazy (now SAS Data Maker) -- supplies the synthetic data generation platform installed on RetailBank’s premises; does not access or see any real/customer data.
       - Third-party company -- provides a tool to identify vulnerable individuals; only has access to synthetic data for testing, not real/ customer data.
-    release_type: One release (per third-party company)
+    release_type: Many releases # TODO: But only one release per third-party company: Is "Many releases" correct?
     release_type_description: A single multi-table synthetic dataset, generated from 18 months of historical customer data, is released to the third-party company for testing purposes.
     access_type: Non-interactive
 
@@ -71,5 +71,5 @@ deployment:
       - Usecase by Nationwide: https://medium.com/nationwide-technology/hazy-synthetic-data-to-fuel-rapid-innovation-fd24f2e21685
       - PrivBayes paper: https://dl.acm.org/doi/10.1145/3134428
       - DoppelGANger paper: https://arxiv.org/abs/1909.13403
-    registry_authors: |
+    registry_authors:
       - Georgi Ganev
