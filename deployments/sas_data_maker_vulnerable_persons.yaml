@@ -1,6 +1,6 @@
 url_slug: sas-data-maker-vulnerable-persons-detection
 status: Draft
-tier: 2 # or possibly 3?
+tier: 2 # TODO: or possibly 3?
 deployment:
   product:
     name: Synthetic data to test third-party solutions in financial services
