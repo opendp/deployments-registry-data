@@ -11,6 +11,7 @@ deployment:
     data_product_region: USA
     description: Demonstration dataset releasing data on economic establishments.
     publication_date: '2023-01-01'
+    data_product_sector: Government
   dp_flavor:
     name: Zero-concentrated DP
     data_domain: '' # TODO
