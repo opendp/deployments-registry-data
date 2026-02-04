@@ -11,6 +11,7 @@ deployment:
     data_product_region: USA
     description: Evacuation metrics for residents of Harris County, Texas during 2017 hurricane.
     publication_date: '2022-01-01'
+    data_product_sector: Government # Could also be Technology, Healthcare, or new category such as Public health
   dp_flavor:
     name: Pure DP
   privacy_loss:
