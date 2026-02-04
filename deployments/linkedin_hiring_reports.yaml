@@ -14,6 +14,7 @@ deployment:
       that uses both counts accumulates the privacy loss.  Therefore, for each report
       date, we guarantee the top-employer reports are together (4.8, 4 × 10−10)-DP."
     publication_date: '2020-01-01'
+    data_product_sector: Technology
   dp_flavor:
     name: Approximate DP
     data_domain: '' # TODO
