@@ -14,6 +14,7 @@ deployment:
       big data system that leverages cutting-edge privacy-preserving techniques to enable
       the safe linkage and use of scattered governmental data."
     publication_date: '2021-01-01'
+    data_product_sector: Government
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate-level
@@ -34,3 +35,4 @@ deployment:
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
+      - James Honaker
