@@ -11,9 +11,7 @@ deployment:
     data_product_region: Global
     description:  A safety classifier (machine learning model) that detects inappropriate content; trained on differentially private synthetic data which was generated based on internal (to Google) data
     publication_date: '2024-01-01'
-
     data_product_sector: Technology
-
 
   dp_flavor:
     name: Approximate DP
