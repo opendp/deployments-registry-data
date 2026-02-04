@@ -11,6 +11,7 @@ deployment:
     data_product_region: Global
     description: Dashboard and dataset of trends in searches on COVID-19 vaccination.
     publication_date: '2021-07-02'
+    data_product_sector: Healthcare # Could also be Technology.  Could also be new topic such as 'Public health'.
   dp_flavor:
     name: Approximate DP
   privacy_loss:
