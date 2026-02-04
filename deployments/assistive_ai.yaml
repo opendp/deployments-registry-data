@@ -11,6 +11,7 @@ deployment:
     data_product_region: Global
     description: Privately refining the set of responses suggested for email and chat.
     publication_date: '2020-01-01'
+    data_product_sector: Technology
 
   dp_flavor:
     name: Approximate DP
