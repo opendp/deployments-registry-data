@@ -17,6 +17,7 @@ deployment:
       Twitter, Microsoft and OpenMined to develop and test a differential privacy system
       to enable privacy preserving research across multiple online platforms.
     publication_date: '2022-01-01'
+    data_product_sector: Technology
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate-level
