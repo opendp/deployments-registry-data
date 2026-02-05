@@ -11,6 +11,7 @@ deployment:
     data_product_region: Global
     description: Aggregated summary statistics about content engagement with LinkedIn posts.
     publication_date: '2020-01-01'
+    data_product_sector: Technology
   dp_flavor:
     name: Approximate DP
     data_domain: '' # TODO

@@ -15,6 +15,7 @@ deployment:
       the number of contributions from a user in order to preserve their privacy... For Lookup Hints, Apple uses a privacy budget with epsilon
       of 4, and limits user contributions to two donations per day."
     publication_date: '2016-01-01' # Not in source by referenced in Tang et al. https://arxiv.org/abs/1709.02753
+    data_product_sector: Technology
   dp_flavor:
     name: Pure DP
     data_domain: '' # TODO

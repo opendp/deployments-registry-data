@@ -13,6 +13,7 @@ deployment:
       (GANs) possibly in conjunction with privacy-preserving mechanisms such as differential
       privacy.
     publication_date: '2020-01-01'
+    data_product_sector: Government
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: Aggregate Statistics
@@ -33,3 +34,4 @@ deployment:
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
+      - James Honaker

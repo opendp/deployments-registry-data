@@ -11,6 +11,7 @@ deployment:
     data_product_region: Israel
     description: Synthetic data covering live births in Israel during 2014.
     publication_date: '2024-02-01'
+    data_product_sector: Healthcare
   dp_flavor:
     name: Pure DP
   privacy_loss:

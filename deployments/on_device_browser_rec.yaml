@@ -12,6 +12,7 @@ deployment:
     description: Brave is leveraging federated learning and differential
       privacy to provide on-device browser recommendations.
     publication_date: '2021-01-01'
+    data_product_sector: Technology
   # dp_flavor: TODO
   privacy_loss:
     privacy_unit: User-level
@@ -32,3 +33,4 @@ deployment:
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
+      - James Honaker
