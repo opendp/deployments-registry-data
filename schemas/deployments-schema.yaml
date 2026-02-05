@@ -116,6 +116,7 @@ properties:
               - Education
               - Government
               - Energy
+              - Finance
               # Add to this list as needed.
       # Tiers 2 and 3
       dp_flavor:
