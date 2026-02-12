@@ -68,11 +68,6 @@ deployment:
           - An “X” appears in the data cell when an individual count was suppressed because of data reasonableness requirements.
           - Whole tables were suppressed for detailed and regional groups because of population thresholds. These population thresholds ensure that published population counts reflect positive enumerated counts 99.99 percent of the time.
 
-    composition: |
-      Adaptive composition under zCDP is used (because of robust and mathematically simple properties):
-        - Under zCDP, the total privacy loss is calculated by summing the privacy-loss parameter \\(\rho\\)  for each query that is applied to the data.
-        - For the TopDownAlgorithm, the total \\(\rho\\)  is the sum of the \\(\rho\\)  values allocated to all queries at every level of the geographic hierarchy (nation, state, county, tract, block group, and block).
-
   implementation:
     mechanisms: |
       - The SafeTab-P algorithm works by calculating statistics using the confidential 2020 Census data, then adds or subtracts a small amount of statistical noise to those statistics. The amount of noise added or subtracted from each statistic is determined by the privacy-loss budget (PLB) assigned to the calculation of that statistic. PLB allocations were determined to ensure that all tables included in the Detailed DHC-A meet preestablished margins of error (uncertainty) at least 95 percent of the time.
