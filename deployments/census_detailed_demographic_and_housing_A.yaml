@@ -6,7 +6,7 @@ deployment:
     name: Disclosure Avoidance System for Detailed Demographic and Housing Data
     data_curators:
       - U.S. Census Bureau
-    intended_use: The Detailed Demographic and Housing Characteristics A (Detailed DHC-A) data files provides population counts and sex-by-age statistics for approximately 1,500 detailed race and ethnic groups and detailed American Indian and Alaska Native (AIAN) tribes and villages within the United States. These data are used for allocating government funding and by researchers such as demographers and economists.
+    intended_use: The Detailed Demographic and Housing Characteristics A (Detailed DHC-A) data files provides population counts and sex-by-age statistics for approximately 1,500 detailed race and ethnic groups and detailed American Indian, Alaska Native, and Native Hawaiian (AIANNH) areas within the United States. These data are used for allocating government funding and by researchers such as demographers and economists.
     data_product_type: Summary statistics
     data_product_region: USA
     description: Set of summary statistics (tables with population counts and sex-by-age statistics) published as the 2020 Census Detailed Demographic and Housing Characteristics File A.
