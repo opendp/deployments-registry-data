@@ -81,5 +81,6 @@ deployment:
       - 2020 Supplemental Demographic and Housing Characteristics File (S-DHC) Technical Documentation: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/supplemental-demographic-and-housing-characteristics-file/2020census-supplemental-dhc-techdoc.pdf
       - Census Bureau Releases Final 2020 Census Data Product: https://www.census.gov/newsroom/press-releases/2024/final-2020-census-data-product-s-dhc.html
       - Disclosure Avoidance and the Supplemental Demographic and Housing Characteristics File (S-DHC): How PHSafe Works: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-12.pdf
+      - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
     registry_authors:
       - Curtis Mitchell

@@ -92,5 +92,6 @@ deployment:
       - 2020 Census Detailed Demographic and Housing Characteristics File A (Detailed DHC-A) Technical Documentation: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/detailed-demographic-and-housing-characteristics-file-a/2020census-detailed-dhc-a-techdoc.pdf
       - Census Bureau Announces Release Date for 2020 Census Data Product on Race and Ethnicity: https://www.census.gov/newsroom/press-releases/2023/2020-census-detailed-dhc-a.html
       - Disclosure Avoidance Methods for the Detailed Demographic and Housing Characteristics File A (Detailed DHC-A): How SafeTab-P Works: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-05.pdf
+      - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
     registry_authors:
       - Curtis Mitchell
