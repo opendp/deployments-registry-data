@@ -3,10 +3,10 @@ status: Draft
 tier: 3
 deployment:
   product:
-    name: Disclosure Avoidance System for Detailed Demographic and Housing Data
+    name: Disclosure Avoidance System for Detailed Demographic and Housing Characteristics File B
     data_curators:
       - U.S. Census Bureau
-    intended_use: The Detailed Demographic and Housing Characteristics B (Detailed DHC-B) data files provides household type (e.g., family or nonfamily) and tenure (e.g., whether the home is owned or rented) for approximately 1,500 detailed race and ethnic groups and detailed American Indian, Alaska Native, and Native Hawaiian (AIANNH) areas within the United States. These data are used for assessing and allocating funding for government programs and by researchers such as demographers and economists.
+    intended_use: The Detailed Demographic and Housing Characteristics data file B (Detailed DHC-B, or DDHC-B) provides household type (e.g., family or nonfamily) and tenure (e.g., whether the home is owned or rented) for approximately 1,500 detailed race and ethnic groups and detailed American Indian, Alaska Native, and Native Hawaiian (AIANNH) areas within the United States. These data are used for assessing and allocating funding for government programs and by researchers such as demographers and economists.
     data_product_type: Summary statistics
     data_product_region: USA
     description: Set of summary statistics (tables with household type and tenure type statistics) published as the 2020 Census Detailed Demographic and Housing Characteristics File B.
@@ -90,5 +90,7 @@ deployment:
   resources:
     sources: |
       - 2020 Census Detailed Demographic and Housing Characteristics File B (Detailed DHC-B) Technical Documentation: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/detailed-demographic-and-housing-characteristics-file-b/2020census-detailed-dhc-b-techdoc.pdf
+      - Census Bureau to Hold Webinar on Release of 2020 Census Detailed Demographic and Housing Characteristics File B: https://www.census.gov/newsroom/press-releases/2024/webinar-2020-census-detailed-dhc-b.html
+      - Disclosure Avoidance and the 2020 Census: How SafeTab-H Works: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-11.pdf
     registry_authors:
       - Curtis Mitchell
