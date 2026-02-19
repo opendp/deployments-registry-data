@@ -1,0 +1,86 @@
+url_slug: disclosure-avoidance-system-for-supplemental-demographic-and-housing-characteristics-file-u-s-census-bureau-2024
+status: Draft
+tier: 3
+deployment:
+  product:
+    name: Disclosure Avoidance System for Supplemental Demographic and Housing Characteristics File
+    data_curators:
+      - U.S. Census Bureau
+    intended_use: The Supplemental Demographic and Housing Characteristics (Supplemental DHC, or S-DHC) data file provides combines the characteristics of households and the people living in them. These data are used for assessing and allocating funding for government programs and by researchers such as demographers and economists.
+    data_product_type: Summary statistics
+    data_product_region: USA
+    description: Set of summary statistics (tables with household type and tenure type statistics) published as the 2020 Census Supplemental Demographic and Housing Characteristics File.
+    publication_date: '2024-09-19'
+    data_product_sector: Government
+
+  dp_flavor:
+    name: Zero-concentrated DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: The Supplemental DHC tables provide counts of people living in households and the average household size, by dif- ferent characteristics (such as age, family type, and tenure)
+    unprotected_quantities: |
+      - N/A
+
+  privacy_loss:
+    privacy_unit: Person-level
+    privacy_unit_description: The privacy unit is person-level records for Person tables, housing-unit-level records for household tables, and joined person-and-housing units for S-DHC tables.
+    privacy_parameters:
+      rho: 2.515
+    privacy_parameters_description: |
+      - The final global privacy-loss budget for the 2020 Supplemental Demographic and Housing Characteristics data was \\(\rho\\)  = 2.515.
+      - This global budget is not applied uniformly. It is strategically allocated across different detailed and regional geographic levels (e.g., nation and state) and then further divided by total population, racial groups, and Hispanic/Latino origin. The precise allocation proportions are detailed on page 4-2 of the Detailed DHC-B Technical Documentation paper.
+
+
+  model:
+    model_name: Central
+    # model_name_description: ''
+    actors: |
+      - Curator: U.S. Census Bureau: collects, stores, and protects the confidential data
+      - Data subjects: The respondents of the 2020 Census, comprising over 331 million people in the United States. Their trust in the curator's ability to protect their data is essential for the quality of the census. This trust is rationalized by the Bureau's legal mandate under Title 13 of the U.S. Code to protect respondent confidentiality, a requirement reinforced by a lifelong oath taken by every employee.
+      - Data users: A wide-ranging group including state governments for redistricting and government program spending allocation, the U.S. Department of Justice for Voting Rights Act analysis, demographic and economic researchers, public policy makers, and the general public.
+      - Adversaries: The system is designed to protect against a wide range of potential attackers. This includes sophisticated actors who may have access to large external databases, powerful computing resources, and advanced algorithms , as well as state actors like foreign governments, corporations, and cybercriminals.
+
+
+    release_type: One release
+    # release_type_description: ''
+    data_source_type: Static
+    # data_source_type_description: ''
+    access_type: Non-interactive
+    # access_type_description: ''
+
+  accounting:
+    post_processing: |
+      The Supplemental Demographic and Housing Characteristics File is not consistent with the Demographic and Housing Characteristics File (DHC). Key post-processing functions include:
+        - Counts may not match across S-DHC tables.
+        - User-generated aggregations may not match the published counts.
+        - The underlying data are adjusted, through a process referred to as truncation, to not exceed household size maximum thresholds.
+
+  implementation:
+    mechanisms: |
+      - The PHSafe algorithm works by calculating statistics using the joined confidential 2020 Census Edited File population and household data, applying truncation rules, and adding or subtracting noise to the tabulated results. Then, S-DHC undergoes statistical postprocessing which ensures the data meet a series of logical constraints, such as eliminating negative values that were introduced by noise infusion.
+      - PHSafe produces privacy-protected counts for each household count and geography independently and does not enforce consistency, so counts within the Supplemental DHC may not be consistent with related counts in this or other 2020 Census data products.
+      - The system was developed by the U.S. Census Bureau using the Tumult Analytics (https://tmlt.dev/) platform. Link to DAS 2020 Supplemental DHC production code: https://github.com/uscensusbureau/DAS_2020_SDHC_Production_Code
+      - Security measures:
+        - Legal: Protection is legally mandated by Title 13 of the U.S. Code.
+        - All Census Bureau employees take a lifelong oath to protect respondent information.
+
+    justification: |
+      - Rationale for Adopting DP: Differential privacy was adopted after internal research confirmed that traditional disclosure avoidance methods, like data swapping, were vulnerable to modern database reconstruction and re-identification attacks. A 2018 simulation of such an attack on the 2010 Census data resulted in the confirmed re-identification of 52 million people (17% of the U.S. population). DP was chosen because it provides mathematically provable guarantees against a wide range of such privacy attacks.
+      - Rationale for Specific Mechanisms:
+        - The trusted-curator (central) model was chosen because it is more statistically efficient than a local model, yielding more accurate data for the same level of privacy protection.
+        - The discrete Gaussian mechanism was chosen over the geometric mechanism (used in earlier prototypes) after empirical tests demonstrated it provided better accuracy. Its statistical properties (specifically, having smaller tail probabilities) reduce the worst-case errors that can arise during the post-processing step of creating non-negative integer microdata.
+      - Validation and Verification:
+        - The system was validated through a series of public demonstration data product releases using 2010 data
+        - The Census Bureau solicited and incorporated detailed feedback from a wide array of stakeholders, including the National Academy of Sciences, federal and state partners, academic researchers, and tribal leaders.
+        - The final production parameters were set by the Data Stewardship Executive Policy Committee (DSEP) after a final review of the privacy guarantees and data accuracy demonstrated in the tuning experiments.
+
+  resources:
+    sources: |
+      - 2020 Supplemental Demographic and Housing Characteristics File (S-DHC) Technical Documentation: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/supplemental-demographic-and-housing-characteristics-file/2020census-supplemental-dhc-techdoc.pdf
+      - Census Bureau Releases Final 2020 Census Data Product: https://www.census.gov/newsroom/press-releases/2024/final-2020-census-data-product-s-dhc.html
+      - Disclosure Avoidance and the Supplemental Demographic and Housing Characteristics File (S-DHC): How PHSafe Works: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-12.pdf
+      - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+    registry_authors:
+      - Curtis Mitchell
