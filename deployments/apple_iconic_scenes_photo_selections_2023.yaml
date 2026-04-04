@@ -8,11 +8,11 @@ deployment:
     data_curators:
       - 'Apple'
     intended_use: "Identify frequently photographed iconic locations across users, enabling Apple\'s Photos app to automatically select representative images for features such as Memories, all while protecting individual user data."
-    data_product_type: 'Behavioral analytics'
-    data_product_region: 'Global'
+    data_product_type: Behavioral analytics
+    data_product_region: Global
     description: "This deployment identifies frequently photographed iconic locations across users, enabling Apple\'s Photos app to automatically select representative images for features such as Memories. The system is designed to protect individual user data while providing personalized content."
     publication_date: '2023-07-21'
-    data_product_sector: 'Technology'
+    data_product_sector: Technology
 
   # Tiers 2 and 3:
   dp_flavor:
