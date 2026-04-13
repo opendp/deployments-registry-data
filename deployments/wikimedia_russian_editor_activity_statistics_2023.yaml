@@ -1,66 +1,72 @@
-url_slug: template
+url_slug: wikimedia-russian-editor-activity-statistics-2023
 status: Draft
 tier: 3
 deployment:
   product:
     # Tier 1:
-    name: 'Wikipedia Russian Editor Activity Statistics'
+    name: Wikipedia Russian Editor Activity Statistics
     data_curators:
-      - 'Wikimedia Foundation'
-    intended_use: 'The Wikimedia Foundation has released one year of data quantifying the number of Wikipedia editors editing from Russia to help better understand the editor community in Russia.'
+      - Wikimedia Foundation
+    intended_use: The Wikimedia Foundation has released one year of data quantifying the number of Wikipedia editors editing from Russia to help better understand the editor community in Russia.
     data_product_type: Summary statistics
     data_product_region: Russia
-    description: 'The Wikimedia Foundation has released a one-time dataset of the number of Wikipedia editors editing from Russia from 2022 to 2023, requested by the Russian Wikimedia community to support analysis of the editor landscape in Russia and better understand the editor community in the country.'
+    description: The Wikimedia Foundation has released a one-time dataset of the number of Wikipedia editors editing from Russia from 2022 to 2023, requested by the Russian Wikimedia community to support analysis of the editor landscape in Russia and better understand the editor community in the country.
     publication_date: '2023-01-01'
     data_product_sector: Technology
 
   # Tiers 2 and 3:
   dp_flavor:
     name: Pure DP
-    bound_on_input_distance: ''
-    output_measure: ''
-    bound_on_output_distance: ''
-    data_domain: '' # Tier 3
-    unprotected_quantities: '' # Tier 3
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: |
+      - Raw per-project edit logs, each record containing: wiki_db, country, month, user activity level (either "1 to 4", "5 to 99", or "100 or more"), user status (anonymous, temporary or permanent) and user ID (fingerprint or name).
+      - Time period is January 2022 - 2023
+    # unprotected_quantities: '' # Tier 3
 
   privacy_loss:
     privacy_unit: User account-month-level
-    privacy_unit_description: 'The privacy unit is an Wikipedia account in Russia per month.'
+    privacy_unit_description: The privacy unit is an Wikipedia account in Russia per month.
     privacy_parameters:
       epsilon: 0.1
-    privacy_parameters_description: 'A continuous Laplace mechanism is applied to the editor counts and yields (\\(\epsilon=0.1\\))-differential privacy guarantee per account-month (sensitivity = 1, noise scale = 10).'
+    privacy_parameters_description: A continuous Laplace mechanism is applied to the editor counts and yields (\\(\epsilon=0.1\\))-differential privacy guarantee per account-month (sensitivity = 1, noise scale = 10).
 
   model:
     model_name: Central
-    model_name_description: ''
-    actors: ''
+    # model_name_description: ''
+    # actors: ''
     release_type: One release
-    release_type_description: ''
+    # release_type_description: ''
     data_source_type: Static 
-    data_source_type_description: ''
+    # data_source_type_description: ''
     access_type: Non-interactive
-    access_type_description: ''
+    # access_type_description: ''
 
   accounting:
-    post_processing: '' # Tier 3
-    composition: '' # Tier 3
+    # post_processing: '' # Tier 3
+    # composition: '' # Tier 3
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    # pre_processing_eda_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
       - Laplace Mechanism
-      - The processing piplines consisted of the following steps:
+      - The processing pipelines consists of the following steps:
         1. Pulls pre-aggregated monthly data from Wikipedia usage metadata.
         2. Sorts each editor account into exactly one activity-level bucket per month, ensuring no account overlaps into multiple partitions.
         3. Filters and isolates the dataset specifically for edits made from Russia on the Russian Wikipedia.
         4. Apply Laplace noise to counts of editor accounts (\\(\epsilon\\)=0.9; sensitivity = 1, noise scale = 10).
-    justification: "Pre-defined privacy/utility targets. Selection of privacy parmeters was perform with a more privacy-oriented approach. In their report, the Wikimedia Foundation states: \"With a privacy loss of 0.1, they could at most be ~2.5% more certain of that account\'s presence or absence.\" and also \"we\'ve taken extra privacy precautions (specifically, using differential privacy) with this data release.\""
+    justification: |
+      - Pre-defined privacy/utility targets.
+      - Selection of privacy parmeters was perform with a more privacy-oriented approach.
+      - In their report, the Wikimedia Foundation states: "With a privacy loss of 0.1, they could at most be ~2.5% more certain of that account’s presence or absence."
+      - In their report, they also state that "we have taken extra privacy precautions (specifically, using differential privacy) with this data release."
 
   resources:
     sources: |
-      - 'https://wikitech.wikimedia.org/wiki/Russian_editor_information_(2022-23)' # online description page
-      - 'https://gerrit.wikimedia.org/r/plugins/gitiles/analytics/refinery/%2B/refs/heads/master/hql/geoeditors/geoeditors_monthly.hql' # code or table building
-      - 'https://gitlab.wikimedia.org/htriedman/stat-spark3/-/blob/main/geoeditors/notebooks/04_russia_release.ipynb' # code for private data release
-    notes: '' # other extra information
+      - Online description page: https://wikitech.wikimedia.org/wiki/Russian_editor_information_(2022-23)
+      - Code or table building: https://gerrit.wikimedia.org/r/plugins/gitiles/analytics/refinery/%2B/refs/heads/master/hql/geoeditors/geoeditors_monthly.hql
+      - Code for private data release: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/blob/main/geoeditors/notebooks/04_russia_release.ipynb
+    # notes: '' # other extra information
     registry_authors:
-      - 'Michael Khavkin'
+      - Michael Khavkin
