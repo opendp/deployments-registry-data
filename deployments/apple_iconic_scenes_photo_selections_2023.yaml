@@ -1,22 +1,22 @@
-url_slug: template
+url_slug: apple-iconic-scenes-photo-selections-2023
 status: Draft
 tier: 3
 deployment:
   product:
     # Tier 1:
-    name: 'Iconic scenes and photo sections for iOS apps'
+    name: Iconic scenes and photo sections for iOS apps
     data_curators:
-      - 'Apple'
-    intended_use: "Identify frequently photographed iconic locations across users, enabling Apple\'s Photos app to automatically select representative images for features such as Memories, all while protecting individual user data."
-    data_product_type: Behavioral analytics
+      - Apple
+    intended_use: Identify frequently photographed iconic locations across users, enabling Apple’s Photos app to automatically select representative images for features such as Memories, all while protecting individual user data.
+    data_product_type: Machine learning model
     data_product_region: Global
-    description: "This deployment identifies frequently photographed iconic locations across users, enabling Apple\'s Photos app to automatically select representative images for features such as Memories. The system is designed to protect individual user data while providing personalized content."
+    description: This deployment identifies frequently photographed iconic locations across users, enabling Apple’s Photos app to automatically select representative images for features such as Memories. The system is designed to protect individual user data while providing personalized content.
     publication_date: '2023-07-21'
     data_product_sector: Technology
 
   # Tiers 2 and 3:
   dp_flavor:
-    name: Pure DP # Fill in correct value.
+    name: Pure DP
     input_metric: ''
     bound_on_input_distance: ''
     output_measure: ''
@@ -25,19 +25,19 @@ deployment:
     unprotected_quantities: '' # Tier 3
 
   privacy_loss:
-    privacy_unit: '' # The privacy unit was unclear from the infromation posted on the deployment's website by Apple https://machinelearning.apple.com/research/scenes-differential-privacy
+    privacy_unit: ''
     privacy_unit_description: ''
-    privacy_parameters: # Fill in correct value, and remove others
+    privacy_parameters:
       epsilon: 1.0
       delta: 1.5e-7
     privacy_parameters_description: ''
 
   model:
     model_name: Local
-    model_name_description: 'Local Differential Privacy'
+    model_name_description: Local Differential Privacy
     actors: ''
-    # release_type: # Unclear from Apple's descrption in their blog post.
-    # release_type_description: ''
+    release_type: Many releases
+    release_type_description: Image data is collected from users who opted in to the Analytics & Improvements feature on their Apple devices and be used for improving features in Apple’s Photos app.
     data_source_type: Dynamic
     data_source_type_description: ''
     access_type: Non-interactive
@@ -49,11 +49,16 @@ deployment:
 
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # Tier 3
-    mechanisms: 'Randomized Response with amplification through the secure aggregation protocol. The local Differential Privacy mechanism encodes a single, randomly sampled location-category pair into a tiled one-hot vector, subsequently applying randomized bit-flipping to satisfy DP guarantees.'
-    justification: "Pre-defined privacy/utility targets (Apple described in its blog post that \"We are limited to fixed precision to provide a consistent privacy assurance with our current approach, which can\'t be optimal for all locations\"). In addition, Apple is committed to balancing privacy and utility (\"We combined local noise addition with a technique called secure aggregation to address these concerns of balancing privacy with utility\")"
+    mechanisms: |
+      - Randomized Response with amplification through the secure aggregation protocol. The local Differential Privacy mechanism encodes a single, randomly sampled location-category pair into a tiled one-hot vector, subsequently applying randomized bit-flipping to satisfy DP guarantees.
+      - No explicit information regarding the privacy unit was provided on the posted online article by Apple: https://machinelearning.apple.com/research/scenes-differential-privacy
+    justification: |
+      - Pre-defined privacy/utility targets: Apple described in its blog post that "We are limited to fixed precision to provide a consistent privacy assurance with our current approach, which can’t be optimal for all locations".
+      - Apple is committed to balancing privacy and utility: "We combined local noise addition with a technique called secure aggregation to address these concerns of balancing privacy with utility"
 
   resources:
-    sources: 'https://machinelearning.apple.com/research/scenes-differential-privacy' # blogpost
+    sources: |
+      -Blogpost: https://machinelearning.apple.com/research/scenes-differential-privacy
     notes: '' # other extra information
     registry_authors:
-      - 'Michael Khavkin'
+      - Michael Khavkin

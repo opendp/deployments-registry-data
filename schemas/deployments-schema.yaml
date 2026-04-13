@@ -90,7 +90,7 @@ properties:
               - Synthetic data
               - Interactive API
               - SQL queries
-              - Behavioral analytics
+              # Add to this list as needed.
           data_product_region:
             tier: 1
             description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
