@@ -17,38 +17,38 @@ deployment:
   # Tiers 2 and 3:
   dp_flavor:
     name: Pure DP
-    input_metric: ''
-    bound_on_input_distance: ''
-    output_measure: ''
-    bound_on_output_distance: ''
-    data_domain: '' # Tier 3
-    unprotected_quantities: '' # Tier 3
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    # data_domain: '' # Tier 3
+    # unprotected_quantities: '' # Tier 3
 
   privacy_loss:
-    privacy_unit: ''
-    privacy_unit_description: ''
+    # privacy_unit: ''
+    # privacy_unit_description: ''
     privacy_parameters:
       epsilon: 1.0
       delta: 1.5e-7
-    privacy_parameters_description: ''
+    # privacy_parameters_description: ''
 
   model:
     model_name: Local
     model_name_description: Local Differential Privacy
-    actors: ''
+    # actors: ''
     release_type: Many releases
     release_type_description: Image data is collected from users who opted in to the Analytics & Improvements feature on their Apple devices and be used for improving features in Apple’s Photos app.
     data_source_type: Dynamic
-    data_source_type_description: ''
+    # data_source_type_description: ''
     access_type: Non-interactive
-    access_type_description: ''
+    # access_type_description: ''
 
   accounting:
-    post_processing: '' # Tier 3
-    composition: '' # Tier 3
+    # post_processing: '' # Tier 3
+    # composition: '' # Tier 3
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    # pre_processing_eda_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
       - Randomized Response with amplification through the secure aggregation protocol. The local Differential Privacy mechanism encodes a single, randomly sampled location-category pair into a tiled one-hot vector, subsequently applying randomized bit-flipping to satisfy DP guarantees.
       - No explicit information regarding the privacy unit was provided on the posted online article by Apple: https://machinelearning.apple.com/research/scenes-differential-privacy
@@ -58,7 +58,7 @@ deployment:
 
   resources:
     sources: |
-      -Blogpost: https://machinelearning.apple.com/research/scenes-differential-privacy
-    notes: '' # other extra information
+      - Blog post: https://machinelearning.apple.com/research/scenes-differential-privacy
+    # notes: '' # other extra information
     registry_authors:
       - Michael Khavkin
