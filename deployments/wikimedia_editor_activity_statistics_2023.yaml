@@ -22,7 +22,7 @@ deployment:
     # bound_on_output_distance: ''
     data_domain: |
       - Raw per-project edit logs, each record containing: wiki_db (corresponds to project), project, country, month, editor activity level (either "1 to 4", "5 to 99", or "100 or more") and user ID (fingerprint or name).
-      - Time period is January 2018 - present 
+      - Time period is January 2018 - present
     # unprotected_quantities: '' # Tier 3
 
   privacy_loss:
@@ -38,7 +38,7 @@ deployment:
     # actors: ''
     release_type: One release
     # release_type_description: ''
-    data_source_type: Static 
+    data_source_type: Static
     # data_source_type_description: ''
     access_type: Non-interactive
     # access_type_description: ''
@@ -60,7 +60,7 @@ deployment:
       - To provide best performance on editor counts, edit counts are not published for medium and higher risk countries.
 
     justification: |
-      - Pre-defined privacy/utility targets. 
+      - Pre-defined privacy/utility targets.
       - In their report, the Wikimedia Foundation states: "This dataset was optimized to perform well across several metrics: median relative error, relative error below 50% and relative error below 90%, spurious rate, and drop rate."
 
   resources:
