@@ -43,7 +43,7 @@ deployment:
     access_type: Non-interactive
     # access_type_description: ''
 
-  accounting:
+  # accounting:
     # post_processing: '' # Tier 3
     # composition: '' # Tier 3
 
