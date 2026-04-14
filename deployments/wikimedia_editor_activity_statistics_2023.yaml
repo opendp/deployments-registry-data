@@ -1,0 +1,72 @@
+url_slug: wikipedia-geoeditors-activity-statistics-wikimedia-foundation-2023
+status: Draft
+tier: 3
+deployment:
+  product:
+    # Tier 1:
+    name: Wikipedia Geoeditors Activity Statistics
+    data_curators:
+      - Wikimedia Foundation
+    intended_use: Release daily Wikipedia page visits at a country level, based on current and historical Wikipedia page views.
+    data_product_type: Summary statistics
+    data_product_region: Global
+    description: The Wikimedia Foundation has released differentially private statistics on editor activity (e.g., edit counts) by Wikipedia project and country from January 2018 to the present time. This has revolutionized the way the Wikimedia Foundation exposes information to the public about its projects, allowing it to release new statistics on a large scale. According to the Wikimedia Foundation, more than 135M statistics about Wikipedia page visits have been published, aggregating 325B page views in total.
+    publication_date: '2023-01-01'
+    data_product_sector: Technology
+
+  # Tiers 2 and 3:
+  dp_flavor:
+    name: Pure DP
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: |
+      - Raw per-project edit logs, each record containing: wiki_db (corresponds to project), project, country, month, editor activity level (either "1 to 4", "5 to 99", or "100 or more") and user ID (fingerprint or name).
+      - Time period is January 2018 - present
+    # unprotected_quantities: '' # Tier 3
+
+  privacy_loss:
+    privacy_unit: User-month-country-level
+    privacy_unit_description: The privacy unit is an Wikipedia editor (user) of a project in a country per month. Adjacent datasets are those that differ by the data of a single user in a country for a single month.
+    privacy_parameters:
+      epsilon: 2.0
+    privacy_parameters_description: A continuous Laplace mechanism is applied to the edit counts and yields (\\(\epsilon=2\\))-differential privacy guarantee per user-month.
+
+  model:
+    model_name: Central
+    # model_name_description: ''
+    # actors: ''
+    release_type: One release
+    # release_type_description: ''
+    data_source_type: Static
+    # data_source_type_description: ''
+    access_type: Non-interactive
+    # access_type_description: ''
+
+  # accounting:
+    # post_processing: '' # Tier 3
+    # composition: '' # Tier 3
+
+  implementation:
+    # pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    mechanisms: |
+      - Laplace Mechanism
+      - The processing pipelines consists of the following steps:
+        1. Map each editor’s monthly edit count to an activity bucket grouped by project and country.
+        2. Count the number of editors per group and add Laplace noise based on risk (\\(\epsilon\\)=1.1) for lower risk; (\\(\epsilon\\)=0.2) for medium risk; (\\(\epsilon\\)=0.1) for higher risk, sensitivity=1.
+        3. Drop groups falling below specific count thresholds (8, 45, or 95) to filter out noise.
+        4. Using only the retained groups as a keyset, calculate the sum of edits. Apply Laplace noise (\\(\epsilon\\)=0.9) and clamp the maximum edit count per user to 101.
+          - Because each editor belongs to exactly one bucket, calculating the sum is a parallel mechanism and incurs zero additional privacy loss.
+      - To provide best performance on editor counts, edit counts are not published for medium and higher risk countries.
+
+    justification: |
+      - Pre-defined privacy/utility targets.
+      - In their report, the Wikimedia Foundation states: "This dataset was optimized to perform well across several metrics: median relative error, relative error below 50% and relative error below 90%, spurious rate, and drop rate."
+
+  resources:
+    sources: |
+      - Online description page: https://analytics.wikimedia.org/published/datasets/geoeditors_monthly/00_README.html
+      - Code repository: https://gitlab.wikimedia.org/repos/security/differential-privacy/-/blob/main/differential_privacy/geoeditors_monthly.py
+    # notes: ''
+    registry_authors:
+      - Michael Khavkin
