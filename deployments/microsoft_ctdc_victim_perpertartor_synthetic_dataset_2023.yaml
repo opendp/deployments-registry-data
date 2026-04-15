@@ -27,7 +27,7 @@ deployment:
     # output_measure: ''
     # bound_on_output_distance: ''
     data_domain: |
-      - The dataset simulates ~206K synthetic records of victims and survivors of trafficking identified across 123 countries and territories, and their accounts of over 37,000 perpetrators who facilitated the trafficking process from 2005 to 2022.
+      - The dataset simulates approximately 206K synthetic records of victims and survivors of trafficking identified across 123 countries and territories, and their accounts of over 37,000 perpetrators who facilitated the trafficking process from 2005 to 2022.
       - Each record in the dataset contains information about the victim and their perpetrators:
         - The year in which the victim was registered and assisted by IOM;
         - The victim/perpetrator's gender;
