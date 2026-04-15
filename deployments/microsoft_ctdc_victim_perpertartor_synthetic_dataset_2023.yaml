@@ -1,0 +1,90 @@
+url_slug: ctdc-global-victim-perpetrator-synthetic-dataset-microsoft-international-organization-for-migration-2023
+status: Draft
+tier: 3
+deployment:
+  product:
+    # Tier 1:
+    name: CTDC Global Victim-Perpetrator Synthetic Dataset
+    data_curators:
+      - Microsoft
+      - International Organization for Migration
+    intended_use: Provides first-hand statistics on the relationships between victims and perpetrators using a synthetic dataset that preserves the statistical properties of the original victim data without representing actual victims. The dataset supports IOM and anti-trafficking actors in translating real-world case data into evidence that can inform counter-trafficking policies and build support systems for the estimated 50 million victims of forced labor globally.
+
+    data_product_type: Synthetic data
+    data_product_region: Global
+    description: |
+      - Differentially private synthetic dataset describing victim-perpetrator relations in human trafficking.
+      - The dataset includes IOM case data from over 17,000 victims and survivors of trafficking identified across 123 countries and territories, and their accounts of over 37,000 perpetrators who facilitated the trafficking process from 2005 to 2022.
+      - Generated using Microsoft's Synthetic Data Showcase.
+    publication_date: '2023-03-01'
+    data_product_sector: Government
+
+  # Tiers 2 and 3:
+  dp_flavor:
+    name: Approximate DP
+    # input_metric: ''
+    # bound_on_input_distance: ''
+    # output_measure: ''
+    # bound_on_output_distance: ''
+    data_domain: |
+      - The dataset simulates ~206K synthetic records of victims and survivors of trafficking identified across 123 countries and territories, and their accounts of over 37,000 perpetrators who facilitated the trafficking process from 2005 to 2022.
+      - Each record in the dataset contains information about the victim and their perpetrators:
+        - The year in which the victim was registered and assisted by IOM;
+        - The victim/perpetrator's gender;
+        - The victim's majority status (minor or adult);
+        - The UN continental region of the victim's/perpetrator's country of citizenship;
+        - Whether the victim was trafficked for the purpose of sexual exploitation;
+        - The relationship between the victim and the perpetrator (family, intimate partner, friend, stranger);
+        - The means of control used (abuse, kidnapping, monetary transactions)
+    # unprotected_quantities: '' # Tier 3
+
+  privacy_loss:
+    privacy_unit: User-level
+    privacy_unit_description: Each victim in the original dataset is a single privacy unit. Adjacent datasets are those that differ by the data of a single victim. None of the attribute combinations in the synthetic dataset can be linked to a single victim in the original dataset with high confidence.
+    privacy_parameters:
+      epsilon: 12.0
+      delta: 5.8e-6
+    privacy_parameters_description: A continuous Gaussian mechanism adds random noise to statistics counts for the aggregate data and samples from noisy counts for the synthetic data generation. This yields \\(\epsilon = 12.0\\) and \\(\delta = 5.8 × 10−6\\)-differential privacy guarantee.
+
+
+  model:
+    model_name: Central
+    # model_name_description: ''
+    # actors: ''
+    release_type: One release
+    # release_type_description: ''
+    data_source_type: Static
+    # data_source_type_description: ''
+    access_type: Interactive
+    access_type_description: The global victim-perpetrator synthetic data dashboard is released so analysts can visualise descriptive trends and explore the relationship between variables.
+
+  # accounting:
+  #   post_processing: '' # Tier 3
+  #   composition: '' # Tier 3
+
+  implementation:
+    # pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    mechanisms: |
+      - Continuous Gaussian mechanism
+      - The dataset was generated using Microsoft's Synthetic Data Showcase, which follows a two-stage approach:
+        - 1. differentially private aggregation:
+          - The algorithm computes counts of all attribute combinations (marginals) up to a specified reporting length.
+          - Gaussian noise, scaled by the sensitivity of each combination length, is added to these counts to satisfy \\(\epsilon, \delta\\)-differential privacy.
+          - Sensitivity is reduced via a differentially private percentile technique, and a threshold mechanism controls the inclusion of noisy counts to limit the fabrication of spurious attribute combinations.
+        - 2. Synthetic data generation from those aggregates:
+          - An aggregate-seeded sampler constructs synthetic records by iteratively sampling attributes weighted by the noisy marginal counts, without querying the original sensitive data.
+          - Since the synthetic records are derived entirely from the DP aggregates, the post-processing property of differential privacy ensures that the resulting dataset inherits the same \\(\epsilon, \delta\\)-differential privacy guarantees.
+    justification: |
+      - No explicit justitifcation of selected DP paramters.
+      - In the description, the CTDC states: "The technology has enabled CTDC to share more data and conduct more robust research while protecting privacy and civil liberties".
+      - Also, the CTDC states: "Both datasets preserve privacy by design".
+
+  resources:
+    sources: |
+      - Microsoft Research Blog: https://www.microsoft.com/en-us/research/blog/iom-and-microsoft-release-first-ever-differentially-private-synthetic-dataset-to-counter-human-trafficking/
+      - Dataset: https://www.ctdatacollaborative.org/global-victim-perpetrator-synthetic-dataset#no-back
+      - Data Codebook: https://www.ctdatacollaborative.org/sites/g/files/tmzbdl2011/files/2023-07/CTDCsyntheic_victim-perpetrator_codebook_v1.pdf
+      - Product used to generate the dataset: https://github.com/microsoft/synthetic-data-showcase
+    # notes: '' # other extra information
+    registry_authors:
+      - Michael Khavkin
