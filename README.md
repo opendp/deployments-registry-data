@@ -27,7 +27,7 @@ graph TD
     end
     subgraph Published
         subgraph Updates
-            Update["Approved (Update Requested)"] --> Repending["Approved (Pending)"]
+            Update["Approved (Update Requested)"] --> Repending["Approved (Update Pending)"]
         end
         Approved --> Update["Approved (Update Requested)"] 
         Repending --> Approved
