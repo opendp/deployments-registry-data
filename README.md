@@ -30,8 +30,8 @@ graph TD
             Update["Approved (Update Requested)"] --> Repending["Approved (Update Pending)"]
         end
         Approved --> Update["Approved (Update Requested)"] 
-        Repending --> Approved
-        Repending --> Update["Approved (Update Requested)"] 
+        Repending --> Update["Approved (Update Requested)"]
+        Repending --> Approved 
     end
     Pending --> Approved
     Approved --> Changes
