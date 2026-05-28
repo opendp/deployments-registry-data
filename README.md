@@ -26,7 +26,10 @@ graph TD
         Pending --> Changes["Changes Required"] --> Pending
     end
     subgraph Published
-        Approved --> Update["Approved (Update Requested)"] --> Repending["Approved (Pending)"] --> Update
+        subgraph Updates["&nbsp; Updates"]
+            Update["Approved \n (Update Requested)"] --> Repending["Approved \n (Update Pending)"] --> Update["Approved \n (Update Requested)"]
+        end
+        Approved --> Update["Approved \n (Update Requested)"]
         Repending --> Approved
     end
     Pending --> Approved
