@@ -29,6 +29,7 @@ graph TD
         subgraph Updates["&nbsp; Updates"]
             Update["Approved \n (Update Requested)"] --> Repending["Approved \n (Update Pending)"] --> Update["Approved \n (Update Requested)"]
         end
+        style Updates fill:#FDD
         Approved --> Update["Approved \n (Update Requested)"]
         Repending --> Approved
     end
