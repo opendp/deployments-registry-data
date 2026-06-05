@@ -8,7 +8,25 @@ description: |
 type: object
 $defs:
   annotated_string:
-    type: string
+    # TODO: oneOf should only be retained temporarily during translation;
+    # Once the translation is complete, bare strings should not be allowed.
+    # We should not ask the UI to handle both forms at the same time.
+    oneOf:
+      -
+        type: string
+      -
+        type: object
+        additionalProperties: False
+        required:
+          - value
+          - source_url
+        properties:
+          value:
+            type: string
+          source_url:
+            type: string
+          page_number:
+            type: integer
   annotated_date:
     type: string
     format: date
