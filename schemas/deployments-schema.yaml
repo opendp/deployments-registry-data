@@ -7,7 +7,43 @@ description: |
   This schema is based on ongoing research by Elena Ghazi, Priyanka Nanayakkara, and Salil Vadhan.
 type: object
 $defs:
-  annotated_string:
+  privacy_parameters:
+    type: object
+    additionalProperties: False
+    properties:
+      epsilon:
+        type: number
+      delta:
+        type:
+          - number
+          - string
+      rho:
+        type: number
+
+  evidence_source:
+    oneOf:
+      - type: object
+        additionalProperties: False
+        properties:
+          peer_reviewed_url_ref: { type: string }
+          peer_reviewed_note: { type: string }
+      - type: object
+        additionalProperties: False
+        properties:
+          formal_publication_url_ref: { type: string }
+          formal_publication_note: { type: string }
+      - type: object
+        additionalProperties: False
+        properties:
+          authorized_attestation_url_ref: { type: string }
+          authorized_attestation_note: { type: string }
+      - type: object
+        additionalProperties: False
+        properties:
+          other_source_url_ref: { type: string }
+          other_source_note: { type: string }
+
+  sourced_string:
     # TODO: oneOf should only be retained temporarily during translation;
     # Once the translation is complete, bare strings should not be allowed.
     # We should not ask the UI to handle both forms at the same time.
@@ -19,17 +55,50 @@ $defs:
         additionalProperties: False
         required:
           - value
-          - source_url
+          - evidence_sources
+        properties:
+          value: { type: string }
+          evidence_sources:
+            type: array
+            items: { $ref: "#/$defs/evidence_source" }
+
+  sourced_date:
+    # TODO: oneOf should only be retained temporarily during translation.
+    oneOf:
+      -
+        type: string
+        format: date
+      -
+        type: object
+        additionalProperties: False
+        required:
+          - value
+          - evidence_sources
         properties:
           value:
             type: string
-          source_url:
-            type: string
-          page_number: # Optional
-            type: integer
-  annotated_date:
-    type: string
-    format: date
+            format: date
+          evidence_sources:
+            type: array
+            items: { $ref: "#/$defs/evidence_source" }
+
+  sourced_privacy_parameters:
+    # TODO: oneOf should only be retained temporarily during translation.
+    oneOf:
+      -
+        $ref: "#/$defs/privacy_parameters"
+      -
+        type: object
+        additionalProperties: False
+        required:
+          - value
+          - evidence_sources
+        properties:
+          value:
+            $ref: "#/$defs/privacy_parameters"
+          evidence_sources:
+            type: array
+            items: { $ref: "#/$defs/evidence_source" }
 additionalProperties: False
 required:
   - url_slug
