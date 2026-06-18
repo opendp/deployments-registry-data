@@ -472,7 +472,9 @@ properties:
               This section includes links to white papers, blogposts, or other sources that describe the deployment.
               This section may also include links to the data product itself, if publicly available.
             tier: 1
-            type: string
+            oneOf:
+              - type: string  # TODO: drop when translation is complete.
+              - type: object  # Keys should match *_url_ref values.
           notes:
             tier: 1
             type: string
