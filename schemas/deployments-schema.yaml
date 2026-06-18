@@ -176,7 +176,7 @@ properties:
             description_long: |
               The **data product** is the output of the differentially-private pipeline. Examples of data products include summary statistics and machine learning models.
             type: string
-            enum:
+            enum:  # TODO: pull into defs
               - Summary statistics
               - Machine learning model
               - Dataset
@@ -202,7 +202,7 @@ properties:
             tier: 1
             description: The industry or domain described by the data product.
             type: string
-            enum:
+            enum:  # TODO: pull into defs
               - Technology
               - Healthcare
               - Education
@@ -231,7 +231,7 @@ properties:
 
               If a custom flavor of DP is used for a deployment, its entry must specify the privacy relation. Otherwise, the common name of the flavor used is provided.
             type: string
-            enum:
+            enum:  # TODO: pull into defs
               - Pure DP
               - Approximate DP
               - Zero-concentrated DP
@@ -343,7 +343,7 @@ properties:
 
               A deployment can also vary in terms of whether (1) it is one-shot or many-shot, (2) its underlying data are dynamic or static, and (3) it is interactive or non-interactive:
             type: string
-            enum:
+            enum:  # TODO: pull into defs
               - Local
               - Central
               - Shuffle
@@ -364,7 +364,7 @@ properties:
             description_long: |
               **One-shot vs. many-shot**: If the data product is one-shot, it is published once. In cases of one-shot deployments, entries should state if there are plans for future uses or publications of the data used to create the data product. If the data product is many-shot, there are many publications of it over time. Entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
             type: string
-            enum:
+            enum:  # TODO: pull into defs
               - One release
               - Many releases
           release_type_description:
@@ -379,7 +379,7 @@ properties:
             description_long: |
               **Dynamic vs. static**: If the underlying data are dynamic, it means that new underlying data come in over time. On the other hand, if the underlying data are static, new data do not come in over time.
             type: string
-            enum:
+            enum:  # TODO: pull into defs
               - Static
               - Dynamic
           data_source_type_description:
@@ -392,7 +392,7 @@ properties:
             description_long: |
               **Interactive vs. non-interactive**: Under interactive deployments, people with permission, like data analysts, can interactively query the underlying data under differential privacy. They will be returned privacy-protected query estimates. Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
             type: string
-            enum:
+            enum:  # TODO: pull into defs
               - Interactive
               - Non-interactive
           access_type_description:
