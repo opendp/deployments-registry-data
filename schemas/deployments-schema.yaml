@@ -169,7 +169,7 @@ properties:
           intended_use:
             tier: 1
             description: Intended use(s) of the data product.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           data_product_type:
             tier: 1
             description: Type of data product. This enumeration will grow over time with more examples.
@@ -187,17 +187,17 @@ properties:
           data_product_region:
             tier: 1
             description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           description:
             tier: 1
             description: Brief description of the data product.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           publication_date:
             tier: 1
             description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of many releases, the publication date can be expressed as the date of first publication.
             description_long: |
               The publication **date** refers to when the data product was published or otherwise created. In cases of data products that are created under continual release, the date listed is the date of first publication.
-            $ref: "#/$defs/annotated_date"
+            $ref: "#/$defs/sourced_date"
           data_product_sector:
             tier: 1
             description: The industry or domain described by the data product.
@@ -241,30 +241,30 @@ properties:
             description: Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55).
             description_long: |
               A function that computes the distance between between any two datasets in the data domain <a href="https://www.oreilly.com/library/view/hands-on-differential-privacy/9781492097730/" target="_blank">(pg 55, Cowan, Shoemate, Pereira 2024)</a>
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           bound_on_input_distance:
             description: Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
             description_long: |
               The differential privacy guarantee holds for any two datasets in the data domain whose distance (computed by the input metric) is less than or equal to the bound on the input distance. Pairs of datasets whose distance is within the bound are called “adjacent datasets” – the entity which changes under adjacent datasets (e.g., an individual) is the privacy unit.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           output_measure:
             description: Function that computes the distance between probability distributions of the differentially private mechanism applied to datasets in the data domain.
             description_long: |
               A function that computes the distance between probability distributions of the differentially private mechanism applied to datasets in the data domain.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           bound_on_output_distance:
             description: Maximum distance, computed by the output metric, between probability distributions of the differentially private mechanism applied to adjacent datasets.
             description_long: |
               The maximum distance, computed by the output measure, between probability distributions of the differentially private mechanism applied to adjacent datasets.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           data_domain:
             tier: 3
             description: Actual, potential, or counterfactual datasets eligible for protection.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           unprotected_quantities:
             tier: 3
             description: Any quantities in the data product that are unprotected by DP (e.g., statistics computed over a dataset that are released in the clear, without DP noise, and sometimes called “invariants”).
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
       privacy_loss:
         description_long: |
           Privacy loss under differential privacy is characterized by a privacy unit and privacy parameters, both described below.
@@ -281,11 +281,11 @@ properties:
               In other words, the privacy unit “characterizes what [is being] protected” <a href="https://www.oreilly.com/library/view/hands-on-differential-privacy/9781492097730/" target="_blank">(pg 27, Cowan, Shoemate, Pereira 2024)</a>.
               More formally, the privacy unit is the entity whose data changes under adjacent datasets <a href="https://www.proquest.com/docview/3217403500" target="_blank">(Bailie 2025)</a>.
               Tier 3 entries go beyond stating a high-level description of the privacy unit and include a precise specification of what constitutes adjacent datasets.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           privacy_unit_description:
             tier: 3
             description: A precise specification of what constitutes adjacent datasets (e.g., in terms of your dataset schema. Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55) Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           privacy_parameters:
             tier: 2
             description: Intensity of protection, as characterized by values set for parameters like epsilon, delta, or rho. Which parameters are specified will vary according to the DP flavor.
@@ -350,11 +350,11 @@ properties:
               - Federated
               - Varies # Present in converted records
           model_name_description:
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           actors:
             tier: 3
             description: Who are the relevant actors in the deployment? This includes anyone who may see the data product, even partially, and including adversaries. What are their trust assumptions and what is the rationale for these trust assumptions?
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           release_type:
             tier: 2
             description: |
@@ -372,7 +372,7 @@ properties:
               For one-release deployments, entries should state if there are plans for future uses or publications of the data used to create the data product.
 
               For many-release deployments, entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           data_source_type:
             tier: 2
             description: If the underlying data are dynamic, it means that new underlying data come in over time. On the other hand, if the underlying data are static, new data do not come in over time.
@@ -398,7 +398,7 @@ properties:
           access_type_description:
             tier: 3
             description: Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
       accounting:
         description_long: |
           **Privacy-loss accounting**, i.e., how privacy loss is accounted for over multiple queries to the underlying data, is described by composition and post-processing:
@@ -413,7 +413,7 @@ properties:
               The impact of these functions may be important to know about for downstream applications using the data product, so they are reported for Tier 3 entries.
               For example, imagine a data curator releasing a data product that includes counts of people in different geographic regions.
               A privacy-protected count may be negative, but the curator may not want to publish a seemingly nonsensical count and may turn these negative counts into zeros.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           composition:
             tier: 3
             description: How privacy loss is accounted across multiple differentially private queries, like sequential or parallel composition
@@ -424,7 +424,7 @@ properties:
               Examples of composition include sequential composition and parallel composition.
               Under sequential composition, assuming pure DP, the sum of the privacy parameter value (epsilon) per query is the total privacy parameter value.
               Parallel composition, again assuming pure DP, says that the total privacy parameter value for a set of queries applied on disjoint subsets of the data is the maximum privacy parameter value used for one of the queries.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
       implementation:
         description_long: |
           **Implementation** details are provided for Tier 3 entries. They include the following information:
@@ -437,7 +437,7 @@ properties:
             description_long: |
               How privacy loss was accounted for, if at all, during steps taken prior to the creation of the data product and application of differential privacy.
               These steps include data pre-processing, EDA, and hyperparameter tuning (e.g., on privacy-loss parameters).
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           mechanisms:
             tier: 3
             description: |
@@ -451,7 +451,7 @@ properties:
             description_long: |
               Differential privacy can be achieved using several mechanisms, i.e., algorithms that take the data as input and output a privacy-protected data product.
               Tier 3 entries describe these mechanisms and how they were implemented (e.g., using a library). These entries also describe other security-related implementation details, like what measures were taken to protect against known vulnerabilities, like floating point and timing channel attacks (e.g., see <a href="https://ieeexplore.ieee.org/abstract/document/9833672" target="_blank">(Jin, McMurtry, Rubinstein, Ohrimenko 2022)</a>. If available, code for implementation should be linked in this section.
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
           justification:
             tier: 3
             description: |
@@ -460,7 +460,7 @@ properties:
               “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?” (Dwork Kohli Mulligan 2019)
             description_long: |
               Rationale for how decisions around implementation were made by the curator or others. In short, this information should answer the following questions laid out by <a href="https://escholarship.org/content/qt8vj5q8j7/qt8vj5q8j7_noSplash_3fbe06d219d4266437a90862727e5789.pdf" target="_blank">Dwork Mulligan Kohli 2019</a>: “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?
-            $ref: "#/$defs/annotated_string"
+            $ref: "#/$defs/sourced_string"
       resources:
         type: object
         additionalProperties: False
