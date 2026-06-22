@@ -41,14 +41,13 @@ def test_node_has_description(path, node):
         "/deployment/resources",
         "/deployment/resources/sources",
         "/deployment/resources/notes",
+        "/deployment/resources/evidence_sources",
     ]:
         assert "description" not in node.keys()
         pytest.skip("TODO: More description would be nice to have")
     if path.endswith("_source"):
         pytest.skip("description_long not needed for every _source field")
-    if path.endswith("evidence_sources"):
-        pytest.skip("description_long not needed for evidence_sources")
-    assert "description" in node.keys()
+    assert "description" in node.keys(), f"{path} missing description"
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
@@ -111,8 +110,8 @@ def test_node_has_tier(path, node):
         assert "tier" not in node.keys()
         pytest.skip("TODO: More tiers would be nice to have")
     if path.endswith("_source"):
-        pytest.skip("tier not needed for every source field")
-    assert "tier" in node.keys()
+        pytest.skip("tier not needed for every _source field")
+    assert "tier" in node.keys(), f"{path} missing tier"
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
