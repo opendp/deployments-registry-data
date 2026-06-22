@@ -98,9 +98,10 @@ def check_latex_escapes(yaml_path):
 
 def check_evidence_sources(yaml_path):
     deployment = load(yaml_path.open(), Loader=Loader)
-    evidence_sources_keys = deployment["deployment"]["resources"][
-        "evidence_sources"
-    ].keys()
+    # TODO: When evidence_sources is required, get rid of "get".
+    evidence_sources_keys = (
+        deployment["deployment"]["resources"].get("evidence_sources", {}).keys()
+    )
 
     pairs = get_all_values_paths(deployment)
     source_pairs = [pair for pair in pairs if pair[0].endswith("_source")]
