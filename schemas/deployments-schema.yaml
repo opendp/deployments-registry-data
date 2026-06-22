@@ -414,6 +414,26 @@ properties:
               This section may also include links to the data product itself, if publicly available.
             tier: 1
             type: string
+          evidence_sources:
+            description_long: |
+              This section includes links to white papers, blogposts, or other sources that describe the deployment.
+              This section may also include links to the data product itself, if publicly available.
+            tier: 1
+            type: object
+            patternProperties:
+              ^\w+$:
+                type: object
+                properties:
+                  url: { type: string }
+                  title: { type: string }
+                  note: { type: string }
+                  base:
+                    type: string
+                    enum:
+                      - "Peer-reviewed publication"
+                      - "Formal publication by the deplying organization"
+                      - "Authorized organizational attestation"
+                      - "Other public source"
           notes:
             tier: 1
             type: string

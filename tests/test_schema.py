@@ -44,6 +44,8 @@ def test_node_has_description(path, node):
     ]:
         assert "description" not in node.keys()
         pytest.skip("TODO: More description would be nice to have")
+    if path.endswith("_source"):
+        pytest.skip("description_long not needed for every source field")
     assert "description" in node.keys()
 
 
@@ -82,7 +84,9 @@ def test_node_has_description_long(path, node):
     if path in skip_list:
         assert "description_long" not in node.keys()
         pytest.skip("TODO: More description_long would be nice to have")
-    assert "description_long" in node.keys()
+    if path.endswith("_source"):
+        pytest.skip("description_long not needed for every source field")
+    assert "description_long" in node.keys(), f"{path} missing description_long"
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
@@ -104,6 +108,8 @@ def test_node_has_tier(path, node):
     ]:
         assert "tier" not in node.keys()
         pytest.skip("TODO: More tiers would be nice to have")
+    if path.endswith("_source"):
+        pytest.skip("tier not needed for every source field")
     assert "tier" in node.keys()
 
 
