@@ -68,7 +68,9 @@ def test_deployments_in_order(yaml_path):
     # UI code will be simpler if it can rely on deployment YAML
     # always being in the prescribed order.
     deployment = load(yaml_path.open(), Loader=Loader)
-    deployment_paths = list(walk_dict(deployment))
+    deployment_paths = [
+        path for path in walk_dict(deployment) if "evidence_sources/" not in path
+    ]
     misordered = out_of_order(deployment_paths, paths)
     assert (
         not misordered

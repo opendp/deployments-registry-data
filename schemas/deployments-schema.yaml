@@ -423,6 +423,9 @@ properties:
             patternProperties:
               ^\w+$:
                 type: object
+                additionalProperties: False
+                required:
+                  - base
                 properties:
                   url: { type: string }
                   title: { type: string }

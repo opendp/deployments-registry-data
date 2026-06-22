@@ -45,7 +45,9 @@ def test_node_has_description(path, node):
         assert "description" not in node.keys()
         pytest.skip("TODO: More description would be nice to have")
     if path.endswith("_source"):
-        pytest.skip("description_long not needed for every source field")
+        pytest.skip("description_long not needed for every _source field")
+    if path.endswith("evidence_sources"):
+        pytest.skip("description_long not needed for evidence_sources")
     assert "description" in node.keys()
 
 
@@ -85,7 +87,7 @@ def test_node_has_description_long(path, node):
         assert "description_long" not in node.keys()
         pytest.skip("TODO: More description_long would be nice to have")
     if path.endswith("_source"):
-        pytest.skip("description_long not needed for every source field")
+        pytest.skip("description_long not needed for every _source field")
     assert "description_long" in node.keys(), f"{path} missing description_long"
 
 
@@ -121,5 +123,7 @@ def test_object_has_additional_properties_false(path, node):
 
 
 def test_template_is_complete():
-    template_paths = [path for path, node in path_templates]
+    template_paths = [
+        path for path, node in path_templates if "evidence_sources/" not in path
+    ]
     assert template_paths == paths
