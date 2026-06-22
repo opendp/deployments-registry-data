@@ -60,10 +60,12 @@ properties:
           - data_product_region
           - publication_date
         properties:
+          name_source: { type: string }
           name:
             tier: 1
             description: The name of the data product
             type: string
+          data_curators_source: { type: string }
           data_curators:
             tier: 1
             type: array
@@ -73,10 +75,12 @@ properties:
             description: The name of the entity publishing the data product.
             description_long: |
               The **curator** refers to the entity who published the data product. Examples of curators include specific government agencies and companies.
+          intended_use_source: { type: string }
           intended_use:
             tier: 1
             description: Intended use(s) of the data product.
             type: string
+          data_product_type_source: { type: string }
           data_product_type:
             tier: 1
             description: Type of data product. This enumeration will grow over time with more examples.
@@ -91,14 +95,17 @@ properties:
               - Interactive API
               - SQL queries
               # Add to this list as needed.
+          data_product_region_source: { type: string }
           data_product_region:
             tier: 1
             description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
             type: string
+          description_source: { type: string }
           description:
             tier: 1
             description: Brief description of the data product.
             type: string
+          publication_date_source: { type: string }
           publication_date:
             tier: 1
             description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of many releases, the publication date can be expressed as the date of first publication.
@@ -106,6 +113,7 @@ properties:
               The publication **date** refers to when the data product was published or otherwise created. In cases of data products that are created under continual release, the date listed is the date of first publication.
             type: string
             format: date
+          data_product_sector_source: { type: string }
           data_product_sector:
             tier: 1
             description: The industry or domain described by the data product.
@@ -123,6 +131,7 @@ properties:
         type: object
         additionalProperties: False
         properties:
+          name_source: { type: string }
           name:
             tier: 2
             description: |
@@ -145,30 +154,36 @@ properties:
               - Zero-concentrated DP
               - Renyi DP
               - Custom
+          input_metric_source: { type: string }
           input_metric:
             description: Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55).
             description_long: |
               A function that computes the distance between between any two datasets in the data domain <a href="https://www.oreilly.com/library/view/hands-on-differential-privacy/9781492097730/" target="_blank">(pg 55, Cowan, Shoemate, Pereira 2024)</a>
             type: string
+          bound_on_input_distance_source: { type: string }
           bound_on_input_distance:
             description: Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
             description_long: |
               The differential privacy guarantee holds for any two datasets in the data domain whose distance (computed by the input metric) is less than or equal to the bound on the input distance. Pairs of datasets whose distance is within the bound are called “adjacent datasets” – the entity which changes under adjacent datasets (e.g., an individual) is the privacy unit.
             type: string
+          output_measure_source: { type: string }
           output_measure:
             description: Function that computes the distance between probability distributions of the differentially private mechanism applied to datasets in the data domain.
             description_long: |
               A function that computes the distance between probability distributions of the differentially private mechanism applied to datasets in the data domain.
             type: string
+          bound_on_output_distance_source: { type: string }
           bound_on_output_distance:
             description: Maximum distance, computed by the output metric, between probability distributions of the differentially private mechanism applied to adjacent datasets.
             description_long: |
               The maximum distance, computed by the output measure, between probability distributions of the differentially private mechanism applied to adjacent datasets.
             type: string
+          data_domain_source: { type: string }
           data_domain:
             tier: 3
             description: Actual, potential, or counterfactual datasets eligible for protection.
             type: string
+          unprotected_quantities_source: { type: string }
           unprotected_quantities:
             tier: 3
             description: Any quantities in the data product that are unprotected by DP (e.g., statistics computed over a dataset that are released in the clear, without DP noise, and sometimes called “invariants”).
@@ -179,6 +194,7 @@ properties:
         type: object
         additionalProperties: False
         properties:
+          privacy_unit_source: { type: string }
           privacy_unit:
             tier: 2
             description: The entity whose data changes under adjacent datasets (see above), like a user or a user’s contribution (among multiple) (based partly on Bailie et al. 2025). High-level description of the granularity of protection (e.g., user level; user-day).
@@ -190,10 +206,12 @@ properties:
               More formally, the privacy unit is the entity whose data changes under adjacent datasets <a href="https://www.proquest.com/docview/3217403500" target="_blank">(Bailie 2025)</a>.
               Tier 3 entries go beyond stating a high-level description of the privacy unit and include a precise specification of what constitutes adjacent datasets.
             type: string
+          privacy_unit_description_source: { type: string }
           privacy_unit_description:
             tier: 3
             description: A precise specification of what constitutes adjacent datasets (e.g., in terms of your dataset schema. Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55) Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
             type: string
+          privacy_parameters_source: { type: string }
           privacy_parameters:
             tier: 2
             description: Intensity of protection, as characterized by values set for parameters like epsilon, delta, or rho. Which parameters are specified will vary according to the DP flavor.
@@ -214,6 +232,7 @@ properties:
                   - string
               rho:
                 type: number
+          privacy_parameters_description_source: { type: string }
           privacy_parameters_description:
             tier: 3
             description: More detail on the parameters, if necessary.
@@ -221,6 +240,7 @@ properties:
         type: object
         additionalProperties: False
         properties:
+          model_name_source: { type: string }
           model_name:
             tier: 2
             description: Name of the deployment model. “The models differ based on how much trust individuals in the data have in a central authority data system.” (HoDP, pg 34)
@@ -257,12 +277,15 @@ properties:
               - Shuffle
               - Federated
               - Varies # Present in converted records
+          model_name_description_source: { type: string }
           model_name_description:
             type: string
+          actors_source: { type: string }
           actors:
             tier: 3
             description: Who are the relevant actors in the deployment? This includes anyone who may see the data product, even partially, and including adversaries. What are their trust assumptions and what is the rationale for these trust assumptions?
             type: string
+          release_type_source: { type: string }
           release_type:
             tier: 2
             description: |
@@ -275,12 +298,14 @@ properties:
             enum:
               - One release
               - Many releases
+          release_type_description_source: { type: string }
           release_type_description:
             description: |
               For one-release deployments, entries should state if there are plans for future uses or publications of the data used to create the data product.
 
               For many-release deployments, entries should include a description of the refreshment timeframe (the amount of time after which the privacy loss budget resets), how privacy loss is managed over time, and whether a fixed amount of privacy loss is allowed before the data used to create the data product is no longer queried.
             type: string
+          data_source_type_source: { type: string }
           data_source_type:
             tier: 2
             description: If the underlying data are dynamic, it means that new underlying data come in over time. On the other hand, if the underlying data are static, new data do not come in over time.
@@ -290,9 +315,11 @@ properties:
             enum:
               - Static
               - Dynamic
+          data_source_type_description_source: { type: string }
           data_source_type_description:
             tier: 3
             description: If more description is useful.
+          access_type_source: { type: string }
           access_type:
             tier: 2
             description: |
@@ -303,6 +330,7 @@ properties:
             enum:
               - Interactive
               - Non-interactive
+          access_type_description_source: { type: string }
           access_type_description:
             tier: 3
             description: Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
@@ -313,6 +341,7 @@ properties:
         type: object
         additionalProperties: False
         properties:
+          post_processing_source: { type: string }
           post_processing:
             tier: 3
             description: Functions applied to the data product after being protected under DP
@@ -322,6 +351,7 @@ properties:
               For example, imagine a data curator releasing a data product that includes counts of people in different geographic regions.
               A privacy-protected count may be negative, but the curator may not want to publish a seemingly nonsensical count and may turn these negative counts into zeros.
             type: string
+          composition_source: { type: string }
           composition:
             tier: 3
             description: How privacy loss is accounted across multiple differentially private queries, like sequential or parallel composition
@@ -339,6 +369,7 @@ properties:
         type: object
         additionalProperties: False
         properties:
+          pre_processing_eda_hyperparameter_tuning_source: { type: string }
           pre_processing_eda_hyperparameter_tuning:
             tier: 3
             description: Description of any pre-processing of the data before DP protections and any exploratory data analysis conducted before DP protections, and whether privacy loss was accounted for. How were hyperparameters, like privacy loss parameters, tuned? Was privacy loss associated with this tuning accounted for?
@@ -346,6 +377,7 @@ properties:
               How privacy loss was accounted for, if at all, during steps taken prior to the creation of the data product and application of differential privacy.
               These steps include data pre-processing, EDA, and hyperparameter tuning (e.g., on privacy-loss parameters).
             type: string
+          mechanisms_source: { type: string }
           mechanisms:
             tier: 3
             description: |
@@ -360,6 +392,7 @@ properties:
               Differential privacy can be achieved using several mechanisms, i.e., algorithms that take the data as input and output a privacy-protected data product.
               Tier 3 entries describe these mechanisms and how they were implemented (e.g., using a library). These entries also describe other security-related implementation details, like what measures were taken to protect against known vulnerabilities, like floating point and timing channel attacks (e.g., see <a href="https://ieeexplore.ieee.org/abstract/document/9833672" target="_blank">(Jin, McMurtry, Rubinstein, Ohrimenko 2022)</a>. If available, code for implementation should be linked in this section.
             type: string
+          justification_source: { type: string }
           justification:
             tier: 3
             description: |
