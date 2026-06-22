@@ -96,6 +96,23 @@ def check_latex_escapes(yaml_path):
     return errors
 
 
+def check_evidence_sources(yaml_path):
+    deployment = load(yaml_path.open(), Loader=Loader)
+    evidence_sources_keys = deployment["deployment"]["resources"][
+        "evidence_sources"
+    ].keys()
+
+    pairs = get_all_values_paths(deployment)
+    source_pairs = [pair for pair in pairs if pair[0].endswith("_source")]
+
+    errors = []
+    for path, text in source_pairs:
+        if text not in evidence_sources_keys:
+            errors.append(f"{path} should be one of {evidence_sources_keys}")
+
+    return errors
+
+
 checks = {name for name in globals().keys() if name.startswith("check_")}
 
 
