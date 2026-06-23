@@ -2,7 +2,7 @@ url_slug: iconic-scenes-and-photo-sections-for-ios-apps-apple-2023
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name: Iconic scenes and photo sections for iOS apps
     data_curators:

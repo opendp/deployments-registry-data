@@ -2,7 +2,7 @@ url_slug: autoplay-intent-apple-2017
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: AutoPlay Intent
     data_curators:
       - Apple

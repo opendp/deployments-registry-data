@@ -2,7 +2,7 @@ url_slug: community-mobility-place-visits-google-2020
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Community Mobility Place Visits
     data_curators:
       - Google

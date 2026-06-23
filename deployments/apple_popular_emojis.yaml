@@ -2,7 +2,7 @@ url_slug: popular-emojis-apple-2017
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Popular Emojis
     data_curators:
       - Apple

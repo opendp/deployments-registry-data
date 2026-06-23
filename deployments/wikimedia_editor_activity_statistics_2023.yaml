@@ -2,7 +2,7 @@ url_slug: wikipedia-geoeditors-activity-statistics-wikimedia-foundation-2023
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name: Wikipedia Geoeditors Activity Statistics
     data_curators:

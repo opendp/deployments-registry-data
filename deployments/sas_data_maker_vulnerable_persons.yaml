@@ -2,7 +2,7 @@ url_slug: synthetic-data-to-test-third-party-solutions-in-financial-services-nat
 status: Pending
 tier: 2 # TODO: or possibly 3?
 deployment:
-  product:
+  basic:
     name: Synthetic data to test third-party solutions in financial services
     data_curators:
       - Nationwide Building Society

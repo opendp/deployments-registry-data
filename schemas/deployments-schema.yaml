@@ -46,9 +46,9 @@ properties:
     type: object
     additionalProperties: False
     required:
-      - product
+      - basic
     properties:
-      product:
+      basic:
         type: object
         additionalProperties: False
         required:

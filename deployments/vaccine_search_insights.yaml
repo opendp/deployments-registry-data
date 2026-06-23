@@ -2,7 +2,7 @@ url_slug: vaccine-search-insights-google-2021
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Vaccine Search Insights
     data_curators:
       - Google

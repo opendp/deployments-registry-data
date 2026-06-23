@@ -2,7 +2,7 @@ url_slug: safari-energy-draining-and-crashing-domains-apple-2017
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Safari Energy Draining and Crashing Domains
     data_curators:
       - Apple
