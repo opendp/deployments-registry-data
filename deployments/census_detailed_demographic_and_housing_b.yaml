@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Zero-concentrated DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: The Detailed DHC-B contains the data compiled from the questions on race, ethnicity, and housing asked of all people in the 2020 Census.
     unprotected_quantities: |
       - The total population count for each state, the District of Columbia, and Puerto Rico.

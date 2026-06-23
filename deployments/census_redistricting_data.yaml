@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Zero-concentrated DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: The data eligible for protection is the Census Edited File (CEF). This is the final, confidential version of the 2020 Census data, containing a record for every person and housing unit enumerated in the census, with missing values handled through imputation.
     unprotected_quantities: |
       - The total population count for each state, the District of Columbia, and Puerto Rico.

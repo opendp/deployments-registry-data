@@ -17,7 +17,7 @@ deployment:
     data_product_sector: Technology
   dp_flavor:
     name: Approximate DP
-    output_measure: elastic sensitivity (upper bound on local sensitivity)
+    # output_measure: elastic sensitivity (upper bound on local sensitivity)
     data_domain: Multi-table relational database (schema unspecifed)
     unprotected_quantities: bin labels drawn from finite domains
   privacy_loss:
