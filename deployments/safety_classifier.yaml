@@ -25,10 +25,10 @@ deployment:
 
   privacy_loss:
     privacy_unit: record-level
-    privacy_unit_description: 512-token sequences of text are considered records.
+    privacy_unit_details: 512-token sequences of text are considered records.
     # privacy_parameters:
     #   epsilon:
-    privacy_parameters_description: Privacy parameters not available.
+    privacy_parameters_details: Privacy parameters not available.
 
   model:
     model_name: Central

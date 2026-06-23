@@ -25,7 +25,7 @@ path_templates = list(get_path_templates("", template))
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
-def test_node_has_description(path, node):
+def test_node_has_details(path, node):
     if path in [
         "/deployment",
         "/deployment/product",
@@ -35,7 +35,7 @@ def test_node_has_description(path, node):
         "/deployment/privacy_loss/privacy_parameters/rho",
         "/deployment/privacy_loss/privacy_parameters/delta",
         "/deployment/model",
-        "/deployment/model/model_name_description",
+        "/deployment/model/model_name_details",
         "/deployment/accounting",
         "/deployment/implementation",
         "/deployment/resources",
@@ -48,7 +48,7 @@ def test_node_has_description(path, node):
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
-def test_node_has_description_long(path, node):
+def test_node_has_details_long(path, node):
     skip_list = [
         "",
         "/url_slug",
@@ -64,17 +64,17 @@ def test_node_has_description_long(path, node):
         "/deployment/dp_flavor",
         "/deployment/dp_flavor/data_domain",
         "/deployment/dp_flavor/unprotected_quantities",
-        "/deployment/privacy_loss/privacy_unit_description",
+        "/deployment/privacy_loss/privacy_unit_details",
         "/deployment/privacy_loss/privacy_parameters/epsilon",
         "/deployment/privacy_loss/privacy_parameters/delta",
         "/deployment/privacy_loss/privacy_parameters/rho",
-        "/deployment/privacy_loss/privacy_parameters_description",
+        "/deployment/privacy_loss/privacy_parameters_details",
         "/deployment/model",
-        "/deployment/model/model_name_description",
+        "/deployment/model/model_name_details",
         "/deployment/model/actors",
-        "/deployment/model/release_type_description",
-        "/deployment/model/data_source_type_description",
-        "/deployment/model/access_type_description",
+        "/deployment/model/release_type_details",
+        "/deployment/model/data_source_type_details",
+        "/deployment/model/access_type_details",
         "/deployment/resources",
         "/deployment/resources/notes",
         "/deployment/resources/registry_authors",
@@ -98,8 +98,8 @@ def test_node_has_tier(path, node):
         "/deployment/dp_flavor/bound_on_input_distance",
         "/deployment/dp_flavor/output_measure",
         "/deployment/dp_flavor/bound_on_output_distance",
-        "/deployment/model/model_name_description",
-        "/deployment/model/release_type_description",
+        "/deployment/model/model_name_details",
+        "/deployment/model/release_type_details",
         "/deployment/resources/registry_authors",
     ]:
         assert "tier" not in node.keys()

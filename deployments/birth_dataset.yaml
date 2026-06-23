@@ -16,19 +16,19 @@ deployment:
     name: Pure DP
   privacy_loss:
     privacy_unit: Birth-level
-    # privacy_unit_description: TODO
+    # privacy_unit_details: TODO
     privacy_parameters:
       epsilon: 9.98
-    privacy_parameters_description: |
+    privacy_parameters_details: |
       "The privacy loss budget was allocated as follow: \\(\epsilon = 4\\) for fitting the generative model;
       \\(\epsilon = 0.99\\) for evaluating of the dataset with a list of predefined of acceptance criteria;
       and a factor 2 is applied due to the private selection process. Therefore, the overall privacy loss budget
       is \\(\epsilon = 9.98\\)."
   model:
     model_name: Central
-    # model_name_description: TODO
+    # model_name_details: TODO
     release_type: One release
-    release_type_description: Static
+    release_type_details: Static
     access_type: Non-interactive
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value

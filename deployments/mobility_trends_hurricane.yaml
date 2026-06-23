@@ -16,17 +16,17 @@ deployment:
     name: Pure DP
   privacy_loss:
     privacy_unit: User-level
-    # privacy_unit_description: TODO
+    # privacy_unit_details: TODO
     privacy_parameters:
       epsilon: 10.0
-    privacy_parameters_description: |
+    privacy_parameters_details: |
       "In this case, the Laplace mechanism is used for all four operations. Finally, the privacy budget, \\(\epsilon\\),
       is set as follows: • \\(\epsilon = 4\\) for CTU • \\(\epsilon = 2\\) for CE • \\(\epsilon = 1\\) for CED • \\(\epsilon = 3\\) for SD."
   model:
     model_name: Central
-    # model_name_description: TODO
+    # model_name_details: TODO
     release_type: One release
-    release_type_description: Not specified
+    release_type_details: Not specified
     access_type: Non-interactive
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value

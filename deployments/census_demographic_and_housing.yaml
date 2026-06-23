@@ -34,10 +34,10 @@ deployment:
 
   privacy_loss:
     privacy_unit: Person-level; housing-unit-level
-    privacy_unit_description: The privacy unit is person-level records for Person tables and housing-unit-level records for Housing Unit tables. The system uses a “bounded neighbors” definition of adjacency because the total population count of the United States and Puerto Rico is held invariant. Therefore, adjacent datasets are two CEFs that differ by the modification of a single person's record (e.g., a change to a person’s census block location), while the total number of records remains the same. The function that computes the distance between any two datasets in the data domain is the change-one distance, and the maximum distance between any two datasets in the data domain is one.
+    privacy_unit_details: The privacy unit is person-level records for Person tables and housing-unit-level records for Housing Unit tables. The system uses a “bounded neighbors” definition of adjacency because the total population count of the United States and Puerto Rico is held invariant. Therefore, adjacent datasets are two CEFs that differ by the modification of a single person's record (e.g., a change to a person’s census block location), while the total number of records remains the same. The function that computes the distance between any two datasets in the data domain is the change-one distance, and the maximum distance between any two datasets in the data domain is one.
     privacy_parameters:
       rho: 15.29
-    privacy_parameters_description: |
+    privacy_parameters_details: |
       - The final global privacy-loss budget for the 2020 Demographic and Housing Characteristics Data was \\(\rho\\)  = 15.29, which was split between the person and the housing unit data:
         - Person Tables: \\(\rho\\) = 4.96 was used (corresponding to \\(\epsilon\\)=26.34 and \\(\delta = 10^{-10}\\).
         - Housing Unit Tables: \\(\rho\\)  = 7.70 was used (corresponding to \\(\epsilon\\) = 34.33 and \\(\delta = 10^{-10}\\).
@@ -46,7 +46,7 @@ deployment:
 
   model:
     model_name: Central
-    # model_name_description: ''
+    # model_name_details: ''
     actors: |
       - Curator: U.S. Census Bureau: collects, stores, and protects the confidential data
       - Data subjects: The respondents of the 2020 Census, comprising over 331 million people in the United States. Their trust in the curator's ability to protect their data is essential for the quality of the census. This trust is rationalized by the Bureau's legal mandate under Title 13 of the U.S. Code to protect respondent confidentiality, a requirement reinforced by a lifelong oath taken by every employee.
@@ -55,11 +55,11 @@ deployment:
 
 
     release_type: One release
-    # release_type_description: ''
+    # release_type_details: ''
     data_source_type: Static
-    # data_source_type_description: ''
+    # data_source_type_details: ''
     access_type: Non-interactive
-    # access_type_description: ''
+    # access_type_details: ''
 
   accounting:
     post_processing: |

@@ -38,25 +38,25 @@ deployment:
 
   privacy_loss:
     privacy_unit: Bounded contribution-day
-    privacy_unit_description: Adjacent datasets are those that differ by a bounded number of pageviews for a single day. Since the historical data is pre-aggregated, it is impossible to perform per-user or per-device contribution bounding. Instead, the system protects a fixed number of daily pageviews, denoted by m. This number is 300 for data prior to February 8th, 2017, and 30 for data from February 9th, 2017, to February 5th, 2023. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
+    privacy_unit_details: Adjacent datasets are those that differ by a bounded number of pageviews for a single day. Since the historical data is pre-aggregated, it is impossible to perform per-user or per-device contribution bounding. Instead, the system protects a fixed number of daily pageviews, denoted by m. This number is 300 for data prior to February 8th, 2017, and 30 for data from February 9th, 2017, to February 5th, 2023. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
     privacy_parameters:
       epsilon: 1.0
-    # privacy_parameters_description: ''
+    # privacy_parameters_details: ''
 
   model:
     model_name: Central
-    model_name_description: ''
+    model_name_details: ''
     actors: |
       - End-user devices (clients): the individuals who browse Wikipedia.
       - Trusted Curator (The Wikimedia Foundation): Receives client-annotated pageviews, performs server-side differential privacy (adds noise, suppresses counts), and publishes the final data.
       - Data Consumers: The public, including Wikipedia editors and academic researchers, who use the final, privacy-preserving data product.
 
     release_type: Many releases
-    release_type_description: Although the historical data was published at once, we consider it multiple releases due to its daily temporal granularity.
+    release_type_details: Although the historical data was published at once, we consider it multiple releases due to its daily temporal granularity.
     data_source_type: Dynamic
-    data_source_type_description: Although the historical data was published at once, its processing was dynamic. The algorithm was designed to iterate through the historical data one day at a time, applying a distinct daily privacy budget to each, rather than analyzing the entire period retrospectively.
+    data_source_type_details: Although the historical data was published at once, its processing was dynamic. The algorithm was designed to iterate through the historical data one day at a time, applying a distinct daily privacy budget to each, rather than analyzing the entire period retrospectively.
     access_type: Non-interactive
-    # access_type_description: ''
+    # access_type_details: ''
 
   accounting:
     post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold tau is removed from the final output dataset. For 2017-2023 historical data, \\(\tau=450\\). For 2015-2017 data, \\(\tau=2500\\).'

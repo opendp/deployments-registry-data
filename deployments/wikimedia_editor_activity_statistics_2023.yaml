@@ -27,21 +27,21 @@ deployment:
 
   privacy_loss:
     privacy_unit: User-month-country-level
-    privacy_unit_description: The privacy unit is an Wikipedia editor (user) of a project in a country per month. Adjacent datasets are those that differ by the data of a single user in a country for a single month.
+    privacy_unit_details: The privacy unit is an Wikipedia editor (user) of a project in a country per month. Adjacent datasets are those that differ by the data of a single user in a country for a single month.
     privacy_parameters:
       epsilon: 2.0
-    privacy_parameters_description: A continuous Laplace mechanism is applied to the edit counts and yields (\\(\epsilon=2\\))-differential privacy guarantee per user-month.
+    privacy_parameters_details: A continuous Laplace mechanism is applied to the edit counts and yields (\\(\epsilon=2\\))-differential privacy guarantee per user-month.
 
   model:
     model_name: Central
-    # model_name_description: ''
+    # model_name_details: ''
     # actors: ''
     release_type: One release
-    # release_type_description: ''
+    # release_type_details: ''
     data_source_type: Static
-    # data_source_type_description: ''
+    # data_source_type_details: ''
     access_type: Non-interactive
-    # access_type_description: ''
+    # access_type_details: ''
 
   # accounting:
     # post_processing: '' # Tier 3
