@@ -14,7 +14,7 @@ deployment:
     data_product_sector: Education
 
   dp_variant:
-    name: Pure DP
+    variant_name: Pure DP
     # input_metric: ''
     # bound_on_input_distance: ''
     # output_measure: ''

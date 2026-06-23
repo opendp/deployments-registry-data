@@ -123,7 +123,7 @@ properties:
         type: object
         additionalProperties: False
         properties:
-          name:
+          variant_name:
             tier: 2
             description: |
               The name of the DP variant used, like "Pure DP", or "Approximate DP".

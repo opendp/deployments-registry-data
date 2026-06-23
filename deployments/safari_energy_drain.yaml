@@ -14,7 +14,7 @@ deployment:
     data_product_sector: Technology
 
   dp_variant:
-    name: Pure DP
+    variant_name: Pure DP
     data_domain: 'Event-level dataset where one "event" is a web browser loading a  page, and the "measure" is the domain of the page loaded.'
     unprotected_quantities: |
           - The dictionary of websites (a predefined set of D websites).

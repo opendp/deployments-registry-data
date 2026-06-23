@@ -14,7 +14,7 @@ deployment:
     data_product_sector: Technology
 
   dp_variant:
-    name: Approximate DP
+    variant_name: Approximate DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:

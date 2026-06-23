@@ -17,7 +17,7 @@ deployment:
     publication_date: '2020-12-01'
     data_product_sector: Energy
   dp_variant:
-    name: Approximate DP
+    variant_name: Approximate DP
     # input_metric: ''
     # bound_on_input_distance: ''
     # output_measure: ''

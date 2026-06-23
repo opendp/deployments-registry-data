@@ -14,7 +14,7 @@ deployment:
     data_product_sector: Technology
 
   dp_variant:
-    name: Zero-concentrated DP
+    variant_name: Zero-concentrated DP
     # input_metric: ''
     # bound_on_input_distance: ''
     # output_measure: ''

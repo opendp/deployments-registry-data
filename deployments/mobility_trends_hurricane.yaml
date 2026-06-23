@@ -13,7 +13,7 @@ deployment:
     publication_date: '2022-01-01'
     data_product_sector: Government # Could also be Technology, Healthcare, or new category such as Public health
   dp_variant:
-    name: Pure DP
+    variant_name: Pure DP
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_description: TODO

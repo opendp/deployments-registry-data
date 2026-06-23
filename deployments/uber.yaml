@@ -16,7 +16,7 @@ deployment:
     publication_date: '2018-01-01'
     data_product_sector: Technology
   dp_variant:
-    name: Approximate DP
+    variant_name: Approximate DP
     output_measure: elastic sensitivity (upper bound on local sensitivity)
     data_domain: Multi-table relational database (schema unspecifed)
     unprotected_quantities: bin labels drawn from finite domains

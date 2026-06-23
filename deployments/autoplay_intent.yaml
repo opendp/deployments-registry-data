@@ -13,7 +13,7 @@ deployment:
     publication_date: '2017-01-01'
     data_product_sector: Technology
   dp_variant:
-    name: Pure DP
+    variant_name: Pure DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:

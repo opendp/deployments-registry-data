@@ -16,7 +16,7 @@ deployment:
 
   # Tiers 2 and 3:
   dp_variant:
-    name: Pure DP # Fill in correct value.
+    variant_name: Pure DP # Fill in correct value.
     input_metric: ''
     bound_on_input_distance: ''
     output_measure: ''

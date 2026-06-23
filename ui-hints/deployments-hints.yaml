@@ -5,7 +5,7 @@ short_fields:
   - /deployment/product/data_product_region
   - /deployment/product/data_product_sector
   - /deployment/product/publication_date
-  - /deployment/dp_variant/name
+  - /deployment/dp_variant/variant_name
   - /deployment/privacy_loss/privacy_unit
   - /deployment/privacy_loss/privacy_parameters/epsilon
   - /deployment/privacy_loss/privacy_parameters/delta

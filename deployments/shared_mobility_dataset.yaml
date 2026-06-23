@@ -13,7 +13,7 @@ deployment:
     publication_date: '2022-01-01'
     data_product_sector: Technology
   dp_variant:
-    name: Approximate DP
+    variant_name: Approximate DP
   privacy_loss:
     privacy_unit: User-trip-level
     privacy_unit_description: |

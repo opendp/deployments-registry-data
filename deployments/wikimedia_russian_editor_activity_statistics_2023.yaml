@@ -16,7 +16,7 @@ deployment:
 
   # Tiers 2 and 3:
   dp_variant:
-    name: Pure DP
+    variant_name: Pure DP
     # bound_on_input_distance: ''
     # output_measure: ''
     # bound_on_output_distance: ''

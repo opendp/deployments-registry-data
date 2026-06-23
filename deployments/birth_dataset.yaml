@@ -13,7 +13,7 @@ deployment:
     publication_date: '2024-02-01'
     data_product_sector: Healthcare
   dp_variant:
-    name: Pure DP
+    variant_name: Pure DP
   privacy_loss:
     privacy_unit: Birth-level
     # privacy_unit_description: TODO

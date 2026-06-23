@@ -15,7 +15,7 @@ deployment:
     data_product_sector: Finance
 
   dp_variant:
-    name: Pure DP
+    variant_name: Pure DP
     data_domain: Similar to Open Banking transaction data, spanning multiple relational tables (Customers, Accounts, and Transactions tables) and covering customer personal data (direct and indirect identifiers), account details (including current accounts and credit cards), transaction amounts (such as recurring and individual payments) with merchant names and categories over an 18-month period.
     unprotected_quantities: Individual-level transactions are modeled using a conditional Autoregressive model with added noise, but without formal DP guarantees.
 
