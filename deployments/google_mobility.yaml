@@ -80,7 +80,7 @@ deployment:
         - Composition: A user contributes at most once per geographic level. The total budget is the sum across the levels: 0.11*2 + 0.22 = 0.44
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: 'User contributions for public places are bounded: If a user visits more than four (category, location) pairs on a given day at a specific geographic level, four are chosen at random, and the rest are discarded. Each user can also contribute at most once per category at a given location.'
+    preprocessing_and_hyperparameter_tuning: 'User contributions for public places are bounded: If a user visits more than four (category, location) pairs on a given day at a specific geographic level, four are chosen at random, and the rest are discarded. Each user can also contribute at most once per category at a given location.'
     mechanisms: |
       - The Laplace mechanism was used for simple counts, like the number of daily visits to public places and workplaces. The DP Mean Mechanism: used to calculate the average time spent at residences.
       - The mechanisms were implemented via Google's open-source C++ Differential Privacy Library:

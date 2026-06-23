@@ -339,7 +339,7 @@ properties:
         type: object
         additionalProperties: False
         properties:
-          pre_processing_eda_hyperparameter_tuning:
+          preprocessing_and_hyperparameter_tuning:
             tier: 3
             description: Description of any pre-processing of the data before DP protections and any exploratory data analysis conducted before DP protections, and whether privacy loss was accounted for. How were hyperparameters, like privacy loss parameters, tuned? Was privacy loss associated with this tuning accounted for?
             description_long: |

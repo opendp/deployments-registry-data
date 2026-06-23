@@ -39,7 +39,7 @@ deployment:
     release_type_description: Static
     access_type: Non-interactive
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Modified Report Noisy Max
     justification: '' # TODO: Fill in correct value
   resources:

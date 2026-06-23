@@ -72,7 +72,7 @@ deployment:
           - Level 2 (e.g., County): \\(\epsilon_2'\\) = 0.014
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: |
+    preprocessing_and_hyperparameter_tuning: |
       - Individual search queries are mapped to one or more symptoms from a predefined list.
       - The mapped queries are aggregated by user, day, symptom, and geographic region to produce raw counts.
       - For each day and geographic granularity level, a user can contribute at most once to any given count (per-symptom bound) and to no more than three counts in total (cross-symptom bound). Any symptom searches beyond this limit are discarded.

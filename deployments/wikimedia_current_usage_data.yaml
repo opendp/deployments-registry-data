@@ -53,7 +53,7 @@ deployment:
     composition: 'There is no need for composition analysis: The data is partitioned by day, and there is no overlap between days, so the privacy loss does not accumulate.'
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: |
+    preprocessing_and_hyperparameter_tuning: |
       - Client-side filtering: Before pageview data is sent to the server, a client-side algorithm annotates each contribution with a boolean flag, which indicates whether the contribution should be included in the server side computation, the criteria being that only the first 10 unique pageviews per user, per day are included. The client uses a salted hash of the page ID to track which pages have already been counted, rather than storing raw identifiers, further reducing fingerprinting risk. This pre-processing step enables user-privacy without sending a user identifier to the server (which would be cookie-based and consistent across days).
       - The server determines the list of <page,country> groups for which to release statistics by identifying all pages that have more than a global pageview threshold (which was chosen based on the true data with no DP) and create the cross-product of those pages with a pre-defined list of countries.
       - The hyperparameters per-user daily contribution bound, ingestion threshold, and suppression threshold (see “Unprotected Quantities” for details)  were selected by computing metrics using the true data. The authors acknowledge that the parameters are not differentially private.

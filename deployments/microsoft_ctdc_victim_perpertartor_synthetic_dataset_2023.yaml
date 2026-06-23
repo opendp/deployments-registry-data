@@ -63,7 +63,7 @@ deployment:
   #   composition: '' # Tier 3
 
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    # preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
       - Continuous Gaussian mechanism
       - The dataset was generated using Microsoft's Synthetic Data Showcase, which follows a two-stage approach:

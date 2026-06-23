@@ -41,7 +41,7 @@ deployment:
       Basic sequential composition (counting symptoms + normalization)
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: Not available
+    preprocessing_and_hyperparameter_tuning: Not available
     mechanisms: Laplace mechanism for both symptom search and normalization counts via Google’s open-source DP library
     justification: Not available
   resources:

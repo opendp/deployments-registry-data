@@ -30,7 +30,7 @@ deployment:
     data_source_type: Dynamic
     access_type: Non-interactive
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Randomized Rounding
     justification: '' # TODO: Fill in correct value
   resources:

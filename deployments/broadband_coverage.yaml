@@ -64,7 +64,7 @@ deployment:
       By sequential composition, the total privacy loss is 0.2.
       (Note: The equation for Broadband Coverage Estimate does not use the "number of devices with speed < 25". In fact, it seems this number is never used.)
   implementation:
-    pre_processing_eda_hyperparameter_tuning: The 32,653 zip codes were predefined based on the average number of machines in the last years (not on the dataset being protected).
+    preprocessing_and_hyperparameter_tuning: The 32,653 zip codes were predefined based on the average number of machines in the last years (not on the dataset being protected).
 
     mechanisms: |
       - The Laplace mechanism with \\(\epsilon = 0.1\\) was applied to every count query (see section on Composition for query descriptions).

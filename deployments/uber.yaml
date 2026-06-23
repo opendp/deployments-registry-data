@@ -53,7 +53,7 @@ deployment:
       - deployment does not manage privacy budgets
       - user can compute overall privacy loss using strong composition bounds on sequential queries
   implementation:
-    pre_processing_eda_hyperparameter_tuning: none described
+    preprocessing_and_hyperparameter_tuning: none described
     mechanisms: |
       - The differential privacy algorithm used is bounded epsilon-delta  DP
       - details:

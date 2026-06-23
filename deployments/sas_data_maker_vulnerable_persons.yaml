@@ -50,7 +50,7 @@ deployment:
       - Group privacy: To account for the one-to-many relationship between Customers and Accounts, the number of accounts per customer is bounded to 5 in the second PrivBayes network model, ensuring privacy loss accounting under group privacy.
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: |
+    preprocessing_and_hyperparameter_tuning: |
       - Preprocessing: |
         - discarding PIIs like real account/transaction/merchant IDs, and merchant names; generating random synthetic IDs/names in a similar format
         - discretizing numerical data in the Customers and Accounts tables (required for PrivBayes models, which operate on discrete/categorical data); after generation, values are transformed back to numerical by randomly sampling from the discretized bins
