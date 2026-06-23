@@ -62,7 +62,7 @@ deployment:
       - In their report, the Wikimedia Foundation states: "With a privacy loss of 0.1, they could at most be ~2.5% more certain of that account’s presence or absence."
       - In their report, they also state that "we have taken extra privacy precautions (specifically, using differential privacy) with this data release."
 
-  resources:
+  administrative:
     sources: |
       - Online description page: https://wikitech.wikimedia.org/wiki/Russian_editor_information_(2022-23)
       - Code or table building: https://gerrit.wikimedia.org/r/plugins/gitiles/analytics/refinery/%2B/refs/heads/master/hql/geoeditors/geoeditors_monthly.hql

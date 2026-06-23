@@ -88,7 +88,7 @@ deployment:
       - The decision to bound a user’s contribution to a maximum of three different symptom counts per day was based on the observation that approximately 75% of users search for three or fewer symptoms daily.
       - For each geographic region and symptom, data is released as either daily or weekly aggregates, depending on data quality. While the system provides daily aggregates whenever possible, it switches to weekly aggregates if privacy protections significantly affect the data's accuracy. Weekly aggregates are more robust because they are based on more data, which reduces the relative error from the added privacy noise. This choice was determined once in a differentially private manner using data from February to July 2020. After being set, the temporal granularity for a given region and symptom remains fixed for the entire duration of the dataset's release.
 
-  resources:
+  administrative:
     sources: |
       - Documentation: https://storage.googleapis.com/gcp-public-data-symptom-search/COVID-19%20Search%20Trends%20symptoms%20dataset%20documentation%20.pdf?utm_source=chatgpt.com
       - Paper: https://arxiv.org/pdf/2009.01265

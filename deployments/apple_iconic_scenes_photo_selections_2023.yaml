@@ -56,7 +56,7 @@ deployment:
       - Pre-defined privacy/utility targets: Apple described in its blog post that "We are limited to fixed precision to provide a consistent privacy assurance with our current approach, which can’t be optimal for all locations".
       - Apple is committed to balancing privacy and utility: "We combined local noise addition with a technique called secure aggregation to address these concerns of balancing privacy with utility"
 
-  resources:
+  administrative:
     sources: |
       - Blog post: https://machinelearning.apple.com/research/scenes-differential-privacy
     # notes: '' # other extra information

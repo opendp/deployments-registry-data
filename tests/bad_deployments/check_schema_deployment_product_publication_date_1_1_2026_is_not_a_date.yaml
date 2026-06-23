@@ -11,6 +11,6 @@ deployment:
     data_product_type: Summary statistics
     data_product_region: ...
     publication_date: "1/1/2026"
-  resources:
+  administrative:
     registry_authors:
       - ...

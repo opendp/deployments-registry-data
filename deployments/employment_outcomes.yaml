@@ -47,7 +47,7 @@ deployment:
   #   pre_processing_eda_hyperparameter_tuning:
   #   mechanisms:
   #   justification:
-  resources:
+  administrative:
     sources: |
       - Paper: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
       - Documentation: https://lehd.ces.census.gov/data/pseo_documentation.html

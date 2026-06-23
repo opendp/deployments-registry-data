@@ -80,7 +80,7 @@ deployment:
       - The thresholds were chosen after extensive experimentation by measuring accuracy metrics (relative error distribution, drop rate, spurious rate) on the true data. Since these metrics could leak information, the team “kept fine-grained utility metrics confidential throughout the tuning process, minimizing data leakage”, and chose to “only publicly communicate approximate values of global utility metrics and the algorithmic parameters obtained from this tuning process”.
       - After an in-depth comparison of available open-source tools, the Wikimedia Foundation decided to use Tumult Analytics, framework chosen for its robustness, production-readiness, compatibility with Wikimedia’s compute infrastructure, and support for advanced features like zCDP-based privacy accounting, and started a collaboration with Tumult Labs.
 
-  resources:
+  administrative:
     sources: |
       - Paper: https://arxiv.org/pdf/2308.16298
       - Several relevant links are provided in the paper’s references, among which:

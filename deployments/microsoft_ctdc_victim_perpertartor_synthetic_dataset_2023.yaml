@@ -79,7 +79,7 @@ deployment:
       - In the description, the CTDC states: "The technology has enabled CTDC to share more data and conduct more robust research while protecting privacy and civil liberties".
       - Also, the CTDC states: "Both datasets preserve privacy by design".
 
-  resources:
+  administrative:
     sources: |
       - Microsoft Research Blog: https://www.microsoft.com/en-us/research/blog/iom-and-microsoft-release-first-ever-differentially-private-synthetic-dataset-to-counter-human-trafficking/
       - Dataset: https://www.ctdatacollaborative.org/global-victim-perpetrator-synthetic-dataset#no-back

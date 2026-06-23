@@ -30,7 +30,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Unknown
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: https://unstats.un.org/wiki/display/UGTTOPPT/11.+Statistics+Korea%3A+Developing+a+privacy-preserving+Statistical+Data+Hub+Platform
     registry_authors:
       - Nicolas Berrios
