@@ -32,7 +32,7 @@ deployment:
       epsilon: 0.1
     privacy_parameters_description: A continuous Laplace mechanism is applied to the editor counts and yields (\\(\epsilon=0.1\\))-differential privacy guarantee per account-month (sensitivity = 1, noise scale = 10).
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     # actors: ''

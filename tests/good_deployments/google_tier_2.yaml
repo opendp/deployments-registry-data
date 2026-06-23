@@ -19,7 +19,7 @@ deployment:
     privacy_unit: user-day
     privacy_parameters:
       epsilon: 1.68
-  model:
+  deployment_model:
     model_name: Central
     release_type: Many releases
     access_type: Non-interactive

@@ -34,7 +34,7 @@ deployment:
       epsilon: 1.68
     privacy_parameters_description: 'See details under Composition.'
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |

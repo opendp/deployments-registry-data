@@ -217,7 +217,7 @@ properties:
           privacy_parameters_description:
             tier: 3
             description: More detail on the parameters, if necessary.
-      model:
+      deployment_model:
         type: object
         additionalProperties: False
         properties:
