@@ -15,7 +15,7 @@ deployment:
     data_product_sector: Technology
 
   # Tiers 2 and 3:
-  dp_flavor:
+  dp_variant:
     name: Pure DP
     # bound_on_input_distance: ''
     # output_measure: ''

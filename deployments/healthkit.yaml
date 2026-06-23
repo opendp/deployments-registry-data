@@ -12,7 +12,7 @@ deployment:
     description: Summarize most popular health data types that Apple users record (e.g., heart rate, active calories).
     publication_date: '2017-01-01'
     data_product_sector: Healthcare
-  dp_flavor:
+  dp_variant:
     name: Pure DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO

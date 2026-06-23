@@ -13,7 +13,7 @@ deployment:
     publication_date: '2023-05-25'
     data_product_sector: Government
 
-  dp_flavor:
+  dp_variant:
     name: Zero-concentrated DP
     # input_metric: ''
     # bound_on_input_distance: ''

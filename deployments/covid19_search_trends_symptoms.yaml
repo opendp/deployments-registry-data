@@ -13,7 +13,7 @@ deployment:
     publication_date: '2020-09-02'
     data_product_sector: Healthcare
 
-  dp_flavor:
+  dp_variant:
     name: Pure DP
     # input_metric: ''
     # bound_on_input_distance: ''

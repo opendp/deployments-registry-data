@@ -12,7 +12,7 @@ deployment:
     description: Summary statistics, published as the COVID-19 Community Mobility Reports, that charts percentage changes in movement trends for various location categories relative to a historical baseline. These trends analyze the number of visits to public places like retail, parks, and workplaces, and also measure the change in duration of time spent in residences.
     publication_date: '2020-04-01'
     data_product_sector: Healthcare
-  dp_flavor:
+  dp_variant:
     name: Pure DP
     # input_metric: ''
     # bound_on_input_distance: ''

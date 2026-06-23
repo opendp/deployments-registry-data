@@ -12,7 +12,7 @@ deployment:
     description: Identify which websites users typically prefer to have auto-play with sound for video elements.
     publication_date: '2017-01-01'
     data_product_sector: Technology
-  dp_flavor:
+  dp_variant:
     name: Pure DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO

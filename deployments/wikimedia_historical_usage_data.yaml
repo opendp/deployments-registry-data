@@ -13,7 +13,7 @@ deployment:
     publication_date: '2023-06-01'
     data_product_sector: Technology
 
-  dp_flavor:
+  dp_variant:
     name: Pure DP
     # input_metric: ''
     # bound_on_input_distance: ''

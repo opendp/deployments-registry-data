@@ -29,7 +29,7 @@ def test_node_has_description(path, node):
     if path in [
         "/deployment",
         "/deployment/product",
-        "/deployment/dp_flavor",
+        "/deployment/dp_variant",
         "/deployment/privacy_loss",
         "/deployment/privacy_loss/privacy_parameters/epsilon",
         "/deployment/privacy_loss/privacy_parameters/rho",
@@ -61,9 +61,9 @@ def test_node_has_description_long(path, node):
         "/deployment/product/intended_use",
         "/deployment/product/data_product_region",
         "/deployment/product/data_product_sector",
-        "/deployment/dp_flavor",
-        "/deployment/dp_flavor/data_domain",
-        "/deployment/dp_flavor/unprotected_quantities",
+        "/deployment/dp_variant",
+        "/deployment/dp_variant/data_domain",
+        "/deployment/dp_variant/unprotected_quantities",
         "/deployment/privacy_loss/privacy_unit_description",
         "/deployment/privacy_loss/privacy_parameters/epsilon",
         "/deployment/privacy_loss/privacy_parameters/delta",
@@ -94,10 +94,10 @@ def test_node_has_tier(path, node):
     if path.startswith("/deployment/privacy_loss/privacy_parameters/"):
         return  # Tier not needed on individual parameters.
     if path in [
-        "/deployment/dp_flavor/input_metric",
-        "/deployment/dp_flavor/bound_on_input_distance",
-        "/deployment/dp_flavor/output_measure",
-        "/deployment/dp_flavor/bound_on_output_distance",
+        "/deployment/dp_variant/input_metric",
+        "/deployment/dp_variant/bound_on_input_distance",
+        "/deployment/dp_variant/output_measure",
+        "/deployment/dp_variant/bound_on_output_distance",
         "/deployment/model/model_name_description",
         "/deployment/model/release_type_description",
         "/deployment/resources/registry_authors",

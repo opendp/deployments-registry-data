@@ -20,7 +20,7 @@ deployment:
     data_product_sector: Government
 
   # Tiers 2 and 3:
-  dp_flavor:
+  dp_variant:
     name: Approximate DP
     # input_metric: ''
     # bound_on_input_distance: ''

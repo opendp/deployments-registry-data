@@ -16,7 +16,7 @@ deployment:
         - Difference of Load Changes: The final net impact of the OhmConnect program, calculated by subtracting the comparison group's percent load change from the treatment group's percent load change.
     publication_date: '2020-12-01'
     data_product_sector: Energy
-  dp_flavor:
+  dp_variant:
     name: Approximate DP
     # input_metric: ''
     # bound_on_input_distance: ''
