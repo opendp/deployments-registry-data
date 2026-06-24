@@ -5,7 +5,9 @@ deployment:
   product:
     name: Korean Government Statistical Data Hub Platform
     data_curators:
-      - KOSTAT (National Statistics Office of Korea)
+      -
+        data_curator_name: 'KOSTAT (National Statistics Office of Korea)'
+        data_curator_type: 'Government'
     intended_use: Goverment Data Hub
     data_product_type: Summary statistics # TODO: Is this correct?
     data_product_region: Korea

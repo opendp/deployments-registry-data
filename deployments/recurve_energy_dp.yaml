@@ -5,7 +5,9 @@ deployment:
   product:
     name: Energy Differential Privacy for OhmConnect Virtual Power Plant Measurement
     data_curators:
-      - Recurve
+      -
+        data_curator_name: 'Recurve'
+        data_curator_type: 'Industry'
     intended_use: Measure the impact of OhmConnect's demand response program on electricity usage, while protecting customer privacy.
     data_product_type: Summary statistics
     data_product_region: California, USA

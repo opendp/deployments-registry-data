@@ -5,7 +5,9 @@ deployment:
   product:
     name: Assistive AI
     data_curators:
-      - Microsoft
+      -
+        data_curator_name: 'Microsoft'
+        data_curator_type: 'Industry'
     intended_use: The AI system was trained internally at Microsoft to be deployed in their products. The model provides suggestions for replies to emails and texts, and is intended to make responding to emails and texts easier for users. The underlying data are “hundreds of millions of Messages (Emails or chats) and their Replies called Message-Reply (MR) pairs.”
     data_product_type: Machine learning model
     data_product_region: Global

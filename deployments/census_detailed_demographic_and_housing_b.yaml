@@ -5,7 +5,9 @@ deployment:
   product:
     name: Disclosure Avoidance System for Detailed Demographic and Housing Characteristics File B
     data_curators:
-      - U.S. Census Bureau
+      -
+        data_curator_name: 'U.S. Census Bureau'
+        data_curator_type: 'Government'
     intended_use: The Detailed Demographic and Housing Characteristics data file B (Detailed DHC-B, or DDHC-B) provides household type (e.g., family or nonfamily) and tenure (e.g., whether the home is owned or rented) for approximately 1,500 detailed race and ethnic groups and detailed American Indian, Alaska Native, and Native Hawaiian (AIANNH) areas within the United States. These data are used for assessing and allocating funding for government programs and by researchers such as demographers and economists.
     data_product_type: Summary statistics
     data_product_region: USA

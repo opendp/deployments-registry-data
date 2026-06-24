@@ -6,7 +6,9 @@ deployment:
   product:
     name: ...
     data_curators:
-      - U.S. Census Bureau
+      -
+        data_curator_name: 'U.S. Census Bureau'
+        data_curator_type: 'Government'
     description: ...
     intended_use: ...
     data_product_type: Summary statistics

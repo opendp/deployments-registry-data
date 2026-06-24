@@ -5,7 +5,9 @@ deployment:
   product:
     name: Broadband Coverage
     data_curators:
-      - Microsoft
+      -
+        data_curator_name: 'Microsoft'
+        data_curator_type: 'Industry'
     intended_use: Allow researchers and policy makers to understand problems related to broadband access and develop solutions to improve broadband access while simultaneously preserving the privacy of individual households.
     data_product_type: Dataset
     data_product_region: USA

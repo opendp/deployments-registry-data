@@ -5,7 +5,10 @@ deployment:
   product:
     name: COVID-19 Search Trends Symptoms
     data_curators:
-      - Google
+      -
+        data_curator_name: 'Google'
+        data_curator_type: 'Industry'
+
     intended_use: Help researchers, public health experts, and data analysts better understand the impact of COVID-19 via population-level symptom search trends.
     data_product_type: Summary statistics
     data_product_region: Global

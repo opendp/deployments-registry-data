@@ -5,7 +5,9 @@ deployment:
   product:
     name: Audience Engagement API
     data_curators:
-      - LinkedIn
+      -
+        data_curator_name: 'LinkedIn'
+        data_curator_type: 'Industry'
     intended_use: For data analysts to learn about the LinkedIn user base. For example, marketers may want to learn about the kind of content LinkedIn users engage with before they create sponsored content.
     data_product_type: Interactive API
     data_product_region: Global

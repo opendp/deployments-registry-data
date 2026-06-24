@@ -5,7 +5,9 @@ deployment:
   product:
     name: Mobility Trends During Hurricane
     data_curators:
-      - Spectus
+      -
+        data_curator_name: 'Spectus'
+        data_curator_type: 'Industry'
     intended_use: Mobility Catastrophe Data
     data_product_type: Summary statistics
     data_product_region: USA

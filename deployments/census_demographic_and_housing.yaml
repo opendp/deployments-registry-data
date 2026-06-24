@@ -5,7 +5,9 @@ deployment:
   product:
     name: Disclosure Avoidance System for Demographic and Housing Data
     data_curators:
-      - U.S. Census Bureau
+      -
+        data_curator_name: 'U.S. Census Bureau'
+        data_curator_type: 'Government'
     intended_use: The Demographic and Housing data files provide detailed demographic and housing statistics of the United States, tabulated by geography, and are used for allocating government funding and by researchers such as demographers and economists.
     data_product_type: Summary statistics
     data_product_region: USA

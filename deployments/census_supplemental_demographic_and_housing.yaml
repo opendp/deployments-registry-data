@@ -5,7 +5,9 @@ deployment:
   product:
     name: Disclosure Avoidance System for Supplemental Demographic and Housing Characteristics File
     data_curators:
-      - U.S. Census Bureau
+      -
+        data_curator_name: 'U.S. Census Bureau'
+        data_curator_type: 'Government'
     intended_use: The Supplemental Demographic and Housing Characteristics (Supplemental DHC, or S-DHC) data file provides combines the characteristics of households and the people living in them. These data are used for assessing and allocating funding for government programs and by researchers such as demographers and economists.
     data_product_type: Summary statistics
     data_product_region: USA

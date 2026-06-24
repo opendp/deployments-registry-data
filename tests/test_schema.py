@@ -29,6 +29,7 @@ def test_node_has_description(path, node):
     if path in [
         "/deployment",
         "/deployment/product",
+        "/deployment/product/data_curators",
         "/deployment/dp_flavor",
         "/deployment/privacy_loss",
         "/deployment/privacy_loss/privacy_parameters/epsilon",
@@ -57,6 +58,7 @@ def test_node_has_description_long(path, node):
         "/deployment",
         "/deployment/product",
         "/deployment/product/name",
+        "/deployment/product/data_curators",
         "/deployment/product/description",
         "/deployment/product/intended_use",
         "/deployment/product/data_product_region",

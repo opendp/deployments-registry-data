@@ -5,8 +5,12 @@ deployment:
   product:
     name: COVID-19 Exposure Notification Framework
     data_curators:
-      - Google
-      - Apple
+      -
+        data_curator_name: 'Google'
+        data_curator_type: 'Industry'
+      -
+        data_curator_name: 'Apple'
+        data_curator_type: 'Industry'
     intended_use: To help public health authorities adapt their response to the COVID-19 pandemic as it evolved.
     data_product_type: Summary statistics
     data_product_region: Global
