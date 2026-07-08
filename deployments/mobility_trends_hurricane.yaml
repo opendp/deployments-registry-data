@@ -2,7 +2,7 @@ url_slug: mobility-trends-during-hurricane-spectus-2022
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Mobility Trends During Hurricane
     data_curators:
       - Spectus

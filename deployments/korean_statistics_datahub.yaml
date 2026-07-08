@@ -2,7 +2,7 @@ url_slug: korean-government-statistical-data-hub-platform-kostat-national-statis
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Korean Government Statistical Data Hub Platform
     data_curators:
       - KOSTAT (National Statistics Office of Korea)

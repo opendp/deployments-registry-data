@@ -2,7 +2,7 @@ url_slug: wikipedia-russian-editor-activity-statistics-wikimedia-foundation-2023
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name: Wikipedia Russian Editor Activity Statistics
     data_curators:

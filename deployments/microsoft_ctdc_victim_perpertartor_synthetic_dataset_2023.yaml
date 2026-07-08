@@ -2,7 +2,7 @@ url_slug: ctdc-global-victim-perpetrator-synthetic-dataset-microsoft-internation
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name: CTDC Global Victim-Perpetrator Synthetic Dataset
     data_curators:

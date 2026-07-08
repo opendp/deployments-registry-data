@@ -2,7 +2,7 @@ url_slug: energy-differential-privacy-for-ohmconnect-virtual-power-plant-measure
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Energy Differential Privacy for OhmConnect Virtual Power Plant Measurement
     data_curators:
       - Recurve

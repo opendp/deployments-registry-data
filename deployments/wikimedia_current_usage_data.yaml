@@ -2,7 +2,7 @@ url_slug: current-pageviews-wikimedia-foundation-2023
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Current Pageviews
     data_curators:
       - Wikimedia Foundation

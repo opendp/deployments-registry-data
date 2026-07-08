@@ -2,7 +2,7 @@ url_slug: disclosure-avoidance-system-for-demographic-and-housing-data-u-s-censu
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Disclosure Avoidance System for Demographic and Housing Data
     data_curators:
       - U.S. Census Bureau

@@ -2,7 +2,7 @@ url_slug: broadband-coverage-microsoft-2021
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Broadband Coverage
     data_curators:
       - Microsoft

@@ -2,7 +2,7 @@ url_slug: private-third-party-audits-twitter-openmined-2022
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Private Third Party Audits
     data_curators:
       - Twitter

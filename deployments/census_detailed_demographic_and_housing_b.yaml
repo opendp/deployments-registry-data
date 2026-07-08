@@ -2,7 +2,7 @@ url_slug: disclosure-avoidance-system-for-detailed-demographic-and-housing-chara
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Disclosure Avoidance System for Detailed Demographic and Housing Characteristics File B
     data_curators:
       - U.S. Census Bureau

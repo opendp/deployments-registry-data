@@ -2,7 +2,7 @@ url_slug: synthetic-data-for-public-use-office-of-national-statistics-uk-2020
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Synthetic Data for Public Use
     data_curators:
       - Office of National Statistics UK
