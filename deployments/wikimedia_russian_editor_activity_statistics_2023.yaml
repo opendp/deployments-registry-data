@@ -2,7 +2,7 @@ url_slug: wikipedia-russian-editor-activity-statistics-wikimedia-foundation-2023
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name: Wikipedia Russian Editor Activity Statistics
     data_curators:
@@ -29,7 +29,7 @@ deployment:
       epsilon: 0.1
     privacy_parameters_description: A continuous Laplace mechanism is applied to the editor counts and yields (\\(\epsilon=0.1\\))-differential privacy guarantee per account-month (sensitivity = 1, noise scale = 10).
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     # actors: ''

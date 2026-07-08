@@ -2,7 +2,7 @@ url_slug: covid-19-search-trends-symptoms-google-2020
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: COVID-19 Search Trends Symptoms
     data_curators:
       - Google
@@ -30,7 +30,7 @@ deployment:
       epsilon: 1.68
     privacy_parameters_description: 'See details under Composition.'
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |
