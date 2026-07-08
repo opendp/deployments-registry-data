@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Zero-concentrated DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: The Supplemental DHC tables provide counts of people living in households and the average household size, by dif- ferent characteristics (such as age, family type, and tenure)
     unprotected_quantities: |
       - N/A

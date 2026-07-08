@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Pure DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     # data_domain:
 
     # unprotected_quantities:

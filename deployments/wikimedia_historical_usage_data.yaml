@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Pure DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: |
       Hourly aggregates of pageviews older than 90 days, with columns: project, page ID, date and time, country, count.
       This historical data was processed in two distinct batches covering the following periods:

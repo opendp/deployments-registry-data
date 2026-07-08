@@ -94,10 +94,6 @@ def test_node_has_tier(path, node):
     if path.startswith("/deployment/privacy_loss/privacy_parameters/"):
         return  # Tier not needed on individual parameters.
     if path in [
-        "/deployment/dp_flavor/input_metric",
-        "/deployment/dp_flavor/bound_on_input_distance",
-        "/deployment/dp_flavor/output_measure",
-        "/deployment/dp_flavor/bound_on_output_distance",
         "/deployment/deployment_model/model_name_description",
         "/deployment/deployment_model/release_type_description",
         "/deployment/resources/registry_authors",

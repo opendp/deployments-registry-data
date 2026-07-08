@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Zero-concentrated DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: Local training cache consisting of user keyboard input from eligible devices of Spanish-language Gboard users.
     unprotected_quantities: There is no mention of unprotected quantities.
 
