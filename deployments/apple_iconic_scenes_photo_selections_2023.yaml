@@ -32,7 +32,7 @@ deployment:
       delta: 1.5e-7
     # privacy_parameters_description: ''
 
-  model:
+  deployment_model:
     model_name: Local
     model_name_description: Local Differential Privacy
     # actors: ''

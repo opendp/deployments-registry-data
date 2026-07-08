@@ -42,7 +42,7 @@ deployment:
       - This global budget is not applied uniformly. It is strategically allocated across different detailed and regional geographic levels (e.g., state, county, Census tract) and then further divided household type and tenure at each of those levels. The precise allocation proportions are detailed on page 4-3 of the Detailed DHC-B Technical Documentation paper.
 
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |
