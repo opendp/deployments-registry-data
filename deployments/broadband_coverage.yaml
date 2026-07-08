@@ -2,7 +2,7 @@ url_slug: broadband-coverage-microsoft-2021
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Broadband Coverage
     data_curators:
       - Microsoft
@@ -30,7 +30,7 @@ deployment:
       epsilon: 0.2
     # privacy_parameters_details: ''
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_details: ''
     actors: |

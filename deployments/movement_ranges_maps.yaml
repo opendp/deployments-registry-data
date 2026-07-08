@@ -2,7 +2,7 @@ url_slug: movement-ranges-map-meta-2020
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Movement Ranges Map
     data_curators:
       - Meta
@@ -20,7 +20,7 @@ deployment:
     privacy_parameters:
       epsilon: 2.0
     privacy_parameters_details: '"Resulting in a total differential privacy epsilon value of 2.0."'
-  model:
+  deployment_model:
     model_name: Central
     # model_name_details: TODO
     release_type: Many releases

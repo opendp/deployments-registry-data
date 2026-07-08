@@ -2,7 +2,7 @@ url_slug: post-secondary-employment-outcomes-u-s-census-bureau-2019
 status: Pending
 tier: 2
 deployment:
-  product:
+  basic:
     name: Post-Secondary Employment Outcomes
     data_curators:
       - U.S. Census Bureau
@@ -30,7 +30,7 @@ deployment:
       # epsilon:
     privacy_parameters_details: Privacy parameters not available.
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_details:
     # actors:

@@ -2,7 +2,7 @@ url_slug: flex-uber-2018
 status: Pending
 tier: 2
 deployment:
-  product:
+  basic:
     name: FLEX
     data_curators:
       - Uber
@@ -31,7 +31,7 @@ deployment:
       delta: 'n^{(-\epsilon \ln(n))}'
     privacy_parameters_details: 'these parameters are used for evaluating the deployment, in operation the parameters are set by users on query-by-query basis'
 
-  model:
+  deployment_model:
     model_name: Central
     model_name_details: '"In this [system] we [implement] bounded differential privacy,in which x can be obtained from its neighbor y by changing (but not adding or removing) a single tuple."'
     actors: |

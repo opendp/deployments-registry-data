@@ -2,7 +2,7 @@ url_slug: mobility-trends-during-hurricane-spectus-2022
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Mobility Trends During Hurricane
     data_curators:
       - Spectus
@@ -22,7 +22,7 @@ deployment:
     privacy_parameters_details: |
       "In this case, the Laplace mechanism is used for all four operations. Finally, the privacy budget, \\(\epsilon\\),
       is set as follows: • \\(\epsilon = 4\\) for CTU • \\(\epsilon = 2\\) for CE • \\(\epsilon = 1\\) for CED • \\(\epsilon = 3\\) for SD."
-  model:
+  deployment_model:
     model_name: Central
     # model_name_details: TODO
     release_type: One release

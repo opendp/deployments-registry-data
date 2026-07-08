@@ -2,7 +2,7 @@ url_slug: template
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name: ''
     data_curators:
@@ -33,7 +33,7 @@ deployment:
       rho: 1.0
     privacy_parameters_details: ''
 
-  model:
+  deployment_model:
     model_name: Central # Fill in correct value.
     model_name_details: ''
     actors: ''
