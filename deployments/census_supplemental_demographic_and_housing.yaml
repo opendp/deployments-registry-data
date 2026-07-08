@@ -2,7 +2,7 @@ url_slug: disclosure-avoidance-system-for-supplemental-demographic-and-housing-c
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Disclosure Avoidance System for Supplemental Demographic and Housing Characteristics File
     data_curators:
       - U.S. Census Bureau
@@ -33,7 +33,7 @@ deployment:
       - This global budget is not applied uniformly. It is strategically allocated across different detailed and regional geographic levels (e.g., nation and state) and then further divided by total population, racial groups, and Hispanic/Latino origin. The precise allocation proportions are detailed on page 4-2 of the Detailed DHC-B Technical Documentation paper.
 
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |

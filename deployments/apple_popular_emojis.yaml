@@ -2,7 +2,7 @@ url_slug: popular-emojis-apple-2017
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Popular Emojis
     data_curators:
       - Apple
@@ -33,7 +33,7 @@ deployment:
       epsilon: 4.0
     # privacy_parameters_description: ''
 
-  model:
+  deployment_model:
     model_name: Local
     model_name_description: we choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy
     actors: |

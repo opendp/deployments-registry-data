@@ -2,7 +2,7 @@ url_slug: safari-energy-draining-and-crashing-domains-apple-2017
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Safari Energy Draining and Crashing Domains
     data_curators:
       - Apple
@@ -29,7 +29,7 @@ deployment:
       epsilon: 4.0
     privacy_parameters_description: '"For this use case, we set the parameters for HCMS to be m = 32,768, k = 1024, and \\(\epsilon\\) = 4 with p = 250,000 web domains."'
 
-  model:
+  deployment_model:
     model_name: Local
     model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
     release_type: Many releases

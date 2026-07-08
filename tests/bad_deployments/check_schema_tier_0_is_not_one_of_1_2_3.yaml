@@ -2,7 +2,7 @@ url_slug: bad
 status: Draft
 tier: 0
 deployment:
-  product:
+  basic:
     name: ...
     data_curators:
       - U.S. Census Bureau
