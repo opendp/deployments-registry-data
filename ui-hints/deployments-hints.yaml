@@ -10,14 +10,14 @@ short_fields:
   - /deployment/privacy_loss/privacy_parameters/epsilon
   - /deployment/privacy_loss/privacy_parameters/delta
   - /deployment/privacy_loss/privacy_parameters/rho
-  - /deployment/model/model_name
-  - /deployment/model/release_type
-  - /deployment/model/access_type
-  - /deployment/model/data_source_type
+  - /deployment/deployment_model/model_name
+  - /deployment/deployment_model/release_type
+  - /deployment/deployment_model/access_type
+  - /deployment/deployment_model/data_source_type
 extra_columns:
   # Keys are the display names of columns;
   # Values are the path to the value to show.
-  "Model": /deployment/model/model_name
+  "Model": /deployment/deployment_model/model_name
 tile_names:
   # These tiles in the table need shorter names.
   pre_processing_eda_hyperparameter_tuning: Pre Processing

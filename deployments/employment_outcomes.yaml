@@ -30,7 +30,7 @@ deployment:
       # epsilon:
     privacy_parameters_description: Privacy parameters not available.
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description:
     # actors:

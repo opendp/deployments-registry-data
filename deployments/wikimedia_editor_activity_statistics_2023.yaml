@@ -32,7 +32,7 @@ deployment:
       epsilon: 2.0
     privacy_parameters_description: A continuous Laplace mechanism is applied to the edit counts and yields (\\(\epsilon=2\\))-differential privacy guarantee per user-month.
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     # actors: ''

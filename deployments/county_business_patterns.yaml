@@ -22,7 +22,7 @@ deployment:
     privacy_parameters:
       rho: 12.058
     privacy_parameters_description: '"Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058."'
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: TODO
     release_type: One release

@@ -33,7 +33,7 @@ deployment:
       rho: 1.0
     privacy_parameters_description: ''
 
-  model:
+  deployment_model:
     model_name: Central # Fill in correct value.
     model_name_description: ''
     actors: ''
