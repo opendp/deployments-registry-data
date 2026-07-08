@@ -9,8 +9,8 @@ deployment:
         data_curator_name: 'Nationwide Building Society'
         data_curator_type: 'Industry'
       -
-        data_curator_name: 'Nationwide Building Society'
-        data_curator_type: 'Hazy (now SAS Data Maker)'
+        data_curator_name: 'Hazy (now SAS Data Maker)'
+        data_curator_type: 'Industry'
     intended_use: Enable Nationwide to generate and use synthetic data with Differential Privacy guarantees to evaluate a third-party solution for detecting and supporting vulnerable individuals in financial services.
     data_product_type: Synthetic data
     data_product_region: UK
