@@ -2,7 +2,7 @@ url_slug: iconic-scenes-and-photo-sections-for-ios-apps-apple-2023
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name: Iconic scenes and photo sections for iOS apps
     data_curators:
@@ -17,10 +17,6 @@ deployment:
   # Tiers 2 and 3:
   dp_flavor:
     name: Pure DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     # data_domain: '' # Tier 3
     # unprotected_quantities: '' # Tier 3
 
@@ -32,7 +28,7 @@ deployment:
       delta: 1.5e-7
     # privacy_parameters_description: ''
 
-  model:
+  deployment_model:
     model_name: Local
     model_name_description: Local Differential Privacy
     # actors: ''

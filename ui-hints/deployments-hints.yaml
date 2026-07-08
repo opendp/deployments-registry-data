@@ -1,23 +1,23 @@
 short_fields:
   # Default is long format: These are the exceptions.
-  - /deployment/product/name
-  - /deployment/product/data_product_type
-  - /deployment/product/data_product_region
-  - /deployment/product/data_product_sector
-  - /deployment/product/publication_date
+  - /deployment/basic/name
+  - /deployment/basic/data_product_type
+  - /deployment/basic/data_product_region
+  - /deployment/basic/data_product_sector
+  - /deployment/basic/publication_date
   - /deployment/dp_flavor/name
   - /deployment/privacy_loss/privacy_unit
   - /deployment/privacy_loss/privacy_parameters/epsilon
   - /deployment/privacy_loss/privacy_parameters/delta
   - /deployment/privacy_loss/privacy_parameters/rho
-  - /deployment/model/model_name
-  - /deployment/model/release_type
-  - /deployment/model/access_type
-  - /deployment/model/data_source_type
+  - /deployment/deployment_model/model_name
+  - /deployment/deployment_model/release_type
+  - /deployment/deployment_model/access_type
+  - /deployment/deployment_model/data_source_type
 extra_columns:
   # Keys are the display names of columns;
   # Values are the path to the value to show.
-  "Model": /deployment/model/model_name
+  "Model": /deployment/deployment_model/model_name
 tile_names:
   # These tiles in the table need shorter names.
   pre_processing_eda_hyperparameter_tuning: Pre Processing

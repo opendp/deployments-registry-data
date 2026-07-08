@@ -2,7 +2,7 @@ url_slug: safety-classifier-google-2024
 status: Pending
 tier: 2
 deployment:
-  product:
+  basic:
     name: Safety Classifier
     data_curators:
       - Google
@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Approximate DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     # data_domain:
 
     # unprotected_quantities:
@@ -30,7 +26,7 @@ deployment:
     #   epsilon:
     privacy_parameters_description: Privacy parameters not available.
 
-  model:
+  deployment_model:
     model_name: Central
     # actors:
     release_type: One release

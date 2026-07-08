@@ -2,7 +2,7 @@ url_slug: template
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name_source: 'example'
     name: ''
@@ -26,14 +26,6 @@ deployment:
   dp_flavor:
     name_source: 'example'
     name: Pure DP # Fill in correct value.
-    input_metric_source: 'example'
-    input_metric: ''
-    bound_on_input_distance_source: 'example'
-    bound_on_input_distance: ''
-    output_measure_source: 'example'
-    output_measure: ''
-    bound_on_output_distance_source: 'example'
-    bound_on_output_distance: ''
     data_domain_source: 'example'
     data_domain: '' # Tier 3
     unprotected_quantities_source: 'example'
@@ -52,7 +44,7 @@ deployment:
     privacy_parameters_description_source: 'example'
     privacy_parameters_description: ''
 
-  model:
+  deployment_model:
     model_name_source: 'example'
     model_name: Central # Fill in correct value.
     model_name_description_source: 'example'

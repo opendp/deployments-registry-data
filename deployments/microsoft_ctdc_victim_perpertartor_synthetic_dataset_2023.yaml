@@ -2,7 +2,7 @@ url_slug: ctdc-global-victim-perpetrator-synthetic-dataset-microsoft-internation
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name: CTDC Global Victim-Perpetrator Synthetic Dataset
     data_curators:
@@ -22,10 +22,6 @@ deployment:
   # Tiers 2 and 3:
   dp_flavor:
     name: Approximate DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: |
       - The dataset simulates approximately 206K synthetic records of victims and survivors of trafficking identified across 123 countries and territories, and their accounts of over 37,000 perpetrators who facilitated the trafficking process from 2005 to 2022.
       - Each record in the dataset contains information about the victim and their perpetrators:
@@ -47,7 +43,7 @@ deployment:
     privacy_parameters_description: A continuous Gaussian mechanism adds random noise to statistics counts for the aggregate data and samples from noisy counts for the synthetic data generation. This yields \\(\epsilon = 12.0\\) and \\(\delta = 5.8 × 10−6\\)-differential privacy guarantee.
 
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     # actors: ''

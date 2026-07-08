@@ -2,7 +2,7 @@ url_slug: disclosure-avoidance-system-for-detailed-demographic-and-housing-chara
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Disclosure Avoidance System for Detailed Demographic and Housing Characteristics File B
     data_curators:
       - U.S. Census Bureau
@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Zero-concentrated DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: The Detailed DHC-B contains the data compiled from the questions on race, ethnicity, and housing asked of all people in the 2020 Census.
     unprotected_quantities: |
       - The total population count for each state, the District of Columbia, and Puerto Rico.
@@ -42,7 +38,7 @@ deployment:
       - This global budget is not applied uniformly. It is strategically allocated across different detailed and regional geographic levels (e.g., state, county, Census tract) and then further divided household type and tenure at each of those levels. The precise allocation proportions are detailed on page 4-3 of the Detailed DHC-B Technical Documentation paper.
 
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |

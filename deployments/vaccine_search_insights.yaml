@@ -2,7 +2,7 @@ url_slug: vaccine-search-insights-google-2021
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Vaccine Search Insights
     data_curators:
       - Google
@@ -24,7 +24,7 @@ deployment:
       "The applied anonymization techniques protect every user’s
       daily search activity related to COVID-19 vaccinations with (\\(\epsilon, \delta\\))-diﬀerential
       privacy for \\(\epsilon\\) = 2.19 and \\(\delta\\) = 10−5."
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: TODO
     release_type: One release # TODO: Is this correct?

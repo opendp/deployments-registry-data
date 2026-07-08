@@ -2,7 +2,7 @@ url_slug: covid-19-search-trends-symptoms-google-2020
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: COVID-19 Search Trends Symptoms
     data_curators:
       - Google
@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Pure DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: Search queries from a sample of Google users. These queries are classified as either a “symptom search” if they relate to a pre-defined list of approximately 400 symptoms, or as general search activity which is used to generate the normalization counts. This data is aggregated into daily or weekly counts for a specific symptom and geographic region, at three distinct granularity levels.
     unprotected_quantities: The paper mentions that, for each day and geographic granularity level, a user’s contribution is capped to three counts in total, and that this was justified by the observation that approximately 75% of users search at most three symptoms per day. There was no mention of the aforementioned statistic being computed under differential privacy.
 
@@ -34,7 +30,7 @@ deployment:
       epsilon: 1.68
     privacy_parameters_description: 'See details under Composition.'
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |

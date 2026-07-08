@@ -2,7 +2,7 @@ url_slug: covid-19-exposure-notification-framework-google-apple-2021
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: COVID-19 Exposure Notification Framework
     data_curators:
       - Google
@@ -24,7 +24,7 @@ deployment:
     privacy_parameters_description: |
       - Information about how frequently the budget is refreshed is not available.
       - "The central diﬀerential privacy guarantees \\(\epsilon_c\\) that result from unlinkable aggregation of \\(\epsilon_0\\) = 8 metric report binary vectors, as used in ENPA."
-  model:
+  deployment_model:
     model_name: Varies
     # model_name_description: TODO
     release_type: Many releases

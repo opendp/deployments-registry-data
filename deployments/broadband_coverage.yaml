@@ -2,7 +2,7 @@ url_slug: broadband-coverage-microsoft-2021
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Broadband Coverage
     data_curators:
       - Microsoft
@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Pure DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: A collection of user records derived from data Microsoft collects as part of their ongoing work to improve their software and services performance and security. The records are generated every time a device receives an update or connects to a Microsoft service, and contain the throughput speed estimated from the connection and the device’s location, which is determined at the zip code level location data via reverse IP.
     unprotected_quantities: The published dataset includes 32,653 zip codes. The paper notes that this was "predefined based on average number of machines in the last years".
 
@@ -30,7 +26,7 @@ deployment:
       epsilon: 0.2
     # privacy_parameters_description: ''
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |

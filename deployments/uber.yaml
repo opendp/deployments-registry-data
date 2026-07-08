@@ -2,7 +2,7 @@ url_slug: flex-uber-2018
 status: Pending
 tier: 2
 deployment:
-  product:
+  basic:
     name: FLEX
     data_curators:
       - Uber
@@ -17,9 +17,8 @@ deployment:
     data_product_sector: Technology
   dp_flavor:
     name: Approximate DP
-    output_measure: elastic sensitivity (upper bound on local sensitivity)
     data_domain: Multi-table relational database (schema unspecifed)
-    unprotected_quantities: bin labels drawn from finite domains
+    unprotected_quantities: 'bin labels drawn from finite domains; output_measure: elastic sensitivity (upper bound on local sensitivity)'
   privacy_loss:
     privacy_unit: Tuple-level
     privacy_unit_description: |
@@ -31,7 +30,7 @@ deployment:
       delta: 'n^{(-\epsilon \ln(n))}'
     privacy_parameters_description: 'these parameters are used for evaluating the deployment, in operation the parameters are set by users on query-by-query basis'
 
-  model:
+  deployment_model:
     model_name: Central
     model_name_description: '"In this [system] we [implement] bounded differential privacy,in which x can be obtained from its neighbor y by changing (but not adding or removing) a single tuple."'
     actors: |

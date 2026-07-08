@@ -2,7 +2,7 @@ url_slug: community-mobility-place-visits-google-2020
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Community Mobility Place Visits
     data_curators:
       - Google
@@ -14,10 +14,6 @@ deployment:
     data_product_sector: Healthcare
   dp_flavor:
     name: Pure DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: |
       Location information from the subset of Google users who have opted into the Location History feature. This dataset contains records of user visits to various locations, including the time and duration of those stays. Namely, a single user’s entry for a given day at a specific geographic level would include:
         - A set of up to four (category, location) pairs for public places.
@@ -35,7 +31,7 @@ deployment:
       - Residential Metrics: calculates average time users spend at their residences: \\(\epsilon\\) = 0.44
       - Workplaces Metrics: counts how many users spent more than one hour at their workplace: \\(\epsilon\\) = 0.44
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |

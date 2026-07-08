@@ -2,7 +2,7 @@ url_slug: energy-differential-privacy-for-ohmconnect-virtual-power-plant-measure
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Energy Differential Privacy for OhmConnect Virtual Power Plant Measurement
     data_curators:
       - Recurve
@@ -18,10 +18,6 @@ deployment:
     data_product_sector: Energy
   dp_flavor:
     name: Approximate DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
 
     data_domain: Hourly electricity consumption data for residential customers in MCE's service territory over a specific period of time ('the months leading up to and subsequent to the demand response event on August 14, 2020'). The dataset includes each customer's 'directly observed energy consumption' and their 'predicted energy consumption', which is a counterfactual value calculated by the CalTRACK model.
     unprotected_quantities: |
@@ -38,7 +34,7 @@ deployment:
       Note that the final privacy parameters provided in the paper are \\(\epsilon=0.843\\) and \\(\delta = 4.08 \times 10^{-8}\\). As Damien Desfontaines pointed out in the blog 'A list of real-world uses of differential privacy', the paper applied an incorrect sampling formula in a privacy amplification step.
       The blog also raises the following concern: 'Note that the amplification result assumes uniformly random sampling with replacement. But the paper also mentions a stratified sampling methodology, which is slightly different: it's unclear whether the amplification result still applies. If not, then the privacy parameters are \\(\epsilon = 6.8\\) and \\(\delta = 4.08 \times 10^{-8}\\).
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description:
     actors: |

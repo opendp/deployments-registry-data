@@ -2,7 +2,7 @@ url_slug: disclosure-avoidance-system-for-supplemental-demographic-and-housing-c
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Disclosure Avoidance System for Supplemental Demographic and Housing Characteristics File
     data_curators:
       - U.S. Census Bureau
@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Zero-concentrated DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: The Supplemental DHC tables provide counts of people living in households and the average household size, by dif- ferent characteristics (such as age, family type, and tenure)
     unprotected_quantities: |
       - N/A
@@ -33,7 +29,7 @@ deployment:
       - This global budget is not applied uniformly. It is strategically allocated across different detailed and regional geographic levels (e.g., nation and state) and then further divided by total population, racial groups, and Hispanic/Latino origin. The precise allocation proportions are detailed on page 4-2 of the Detailed DHC-B Technical Documentation paper.
 
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |
