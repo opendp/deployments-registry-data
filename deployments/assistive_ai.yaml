@@ -2,7 +2,7 @@ url_slug: assistive-ai-microsoft-2020
 status: Pending
 tier: 2
 deployment:
-  product:
+  basic:
     name: Assistive AI
     data_curators:
       -
@@ -26,7 +26,7 @@ deployment:
       epsilon: 4.0
       delta: 1.0e-07
     privacy_parameters_description: '"Currently we use differentially private algorithms with privacy parameters (\\(\epsilon\\)=4, \\(\delta\\)< 10-7)."'
-  model:
+  deployment_model:
     model_name: Central
   implementation:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value

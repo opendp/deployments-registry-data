@@ -1,7 +1,7 @@
 url_slug: bad
 tier: 1
 deployment:
-  product:
+  basic:
     name: ...
     data_curators:
       -

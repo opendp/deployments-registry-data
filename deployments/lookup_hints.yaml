@@ -2,7 +2,7 @@ url_slug: lookup-hints-apple-2016
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Lookup Hints
     data_curators:
       -
@@ -27,7 +27,7 @@ deployment:
     # privacy_unit_description:
     privacy_parameters:
       epsilon: 8.0
-  model:
+  deployment_model:
     model_name: Local
     model_name_description: '"Apple has adopted and further developed a technique known in the academic world as local differential privacy."'
     release_type: One release # TODO: Is this correct?

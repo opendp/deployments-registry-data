@@ -2,7 +2,7 @@ url_slug: bad
 status: Draft
 tier: 1
 deployment:
-  product:
+  basic:
     name: ...
     data_curators:
       -
@@ -12,7 +12,7 @@ deployment:
     intended_use: ...
     data_product_type: Summary statistics
     data_product_region: ...
-    publication_date: "1/1/2026"
+    publication_date: 2026-01-01
   resources:
     registry_authors:
       - ...

@@ -2,7 +2,7 @@ url_slug: healthkit-usage-statistics-apple-2017
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: HealthKit Usage Statistics
     data_curators:
       -
@@ -24,7 +24,7 @@ deployment:
     privacy_parameters:
       epsilon: 2.0
     privacy_parameters_description: '"We deploy CMS to observe the most popular health data types with the following parameters: m = 256, k = 65,536, and \\(\epsilon\\) = 2."'
-  model:
+  deployment_model:
     model_name: Local
     model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
     release_type: Many releases

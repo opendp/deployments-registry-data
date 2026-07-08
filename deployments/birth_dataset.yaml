@@ -2,7 +2,7 @@ url_slug: israel-s-national-registry-of-live-births-of-2014-israeli-ministry-of-
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Israel's National Registry of Live Births of 2014
     data_curators:
       -
@@ -26,7 +26,7 @@ deployment:
       \\(\epsilon = 0.99\\) for evaluating of the dataset with a list of predefined of acceptance criteria;
       and a factor 2 is applied due to the private selection process. Therefore, the overall privacy loss budget
       is \\(\epsilon = 9.98\\)."
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: TODO
     release_type: One release

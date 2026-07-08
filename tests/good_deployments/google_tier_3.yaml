@@ -2,7 +2,7 @@ url_slug: google_tier_3
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     name: Placeholder
     data_curators:
       -
@@ -23,7 +23,7 @@ deployment:
       epsilon: 1.68
     privacy_unit_description: '“user-day”, with contribution bounding. A single privacy unit is all of one user’s searches on one day. Before adding noise, each user’s day is bounded so that they can contribute at most: 1 count per symptom and at most 3 symptom counts in total, plus at most 1 normalization count (one per day).'
     privacy_parameters_description: PLACEHOLDER FOR TEST
-  model:
+  deployment_model:
     model_name: Central
     model_name_description: 'Central DP: a trusted Google curator applies the Laplace mechanism via Google’s open-source DP library before any data release.'
     release_type: Many releases

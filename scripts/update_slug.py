@@ -8,16 +8,16 @@ def clean(messy):
 
 
 def make_slug(data):
-    product = data["deployment"]["product"]
+    basic = data["deployment"]["basic"]
     return "_".join(
         [
-            clean(product["name"]),
+            clean(basic["name"]),
             clean(
                 "-".join(
-                    curator["data_curator_name"] for curator in product["data_curators"]
+                    curator["data_curator_name"] for curator in basic["data_curators"]
                 )
             ),
-            clean(product["publication_date"].split("-")[0]),
+            clean(basic["publication_date"].split("-")[0]),
         ]
     ).replace("_", "-")
 

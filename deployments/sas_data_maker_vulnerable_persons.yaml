@@ -2,7 +2,7 @@ url_slug: synthetic-data-to-test-third-party-solutions-in-financial-services-nat
 status: Pending
 tier: 2 # TODO: or possibly 3?
 deployment:
-  product:
+  basic:
     name: Synthetic data to test third-party solutions in financial services
     data_curators:
       -
@@ -32,7 +32,7 @@ deployment:
       - Customers table with static demographic information modeled through a PrivBayes network with \\(\epsilon\\) = 2.5.
       - Accounts table with current account/credit card static information modeled through a conditional PrivBayes network with \\(\epsilon\\) = 2.5.
 
-  model:
+  deployment_model:
     model_name: Central
     actors: |
       - Nationwide Building Society -- owns and processes real/customer data; uses Hazy’s (now SAS Data Maker) platform to generate synthetic data from real/customer data and uses synthetic data to test third-party solutions while protecting privacy.

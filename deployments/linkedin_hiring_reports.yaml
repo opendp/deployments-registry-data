@@ -2,7 +2,7 @@ url_slug: linkedin-hiring-reports-linkedin-2020
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: LinkedIn Hiring Reports
     data_curators:
       -
@@ -30,7 +30,7 @@ deployment:
     privacy_parameters:
       epsilon: 4.8
       delta: 4.0e-10
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: TODO
     release_type: One release # TODO: Is this correct?

@@ -2,7 +2,7 @@ url_slug: google_tier_1
 status: Draft
 tier: 1
 deployment:
-  product:
+  basic:
     name: Placeholder
     data_curators:
       -

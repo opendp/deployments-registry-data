@@ -2,7 +2,7 @@ url_slug: current-pageviews-wikimedia-foundation-2023
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Current Pageviews
     data_curators:
       -
@@ -35,7 +35,7 @@ deployment:
       rho: 0.015
     # privacy_parameters_description: ''
 
-  model:
+  deployment_model:
     model_name: Central
     model_name_description: The model is a client-side filtering with server-side aggregation. Although some filtering operations take place on the user’s device, we still classify it as central, since the raw data leaves the user’s device.
     actors: |

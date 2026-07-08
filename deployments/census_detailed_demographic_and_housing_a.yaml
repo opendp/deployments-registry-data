@@ -2,7 +2,7 @@ url_slug: disclosure-avoidance-system-for-detailed-demographic-and-housing-chara
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Disclosure Avoidance System for Detailed Demographic and Housing Characteristics File A
     data_curators:
       -
@@ -44,7 +44,7 @@ deployment:
       - This global budget is not applied uniformly. It is strategically allocated across different geographic levels (e.g., state, county, tract, block, tribal area) and then further divided among specific data queries (e.g., total population, race, voting age) at each of those levels. The precise allocation proportions are detailed on page 4-3 of the Detailed DHC-A Technical Documentation paper.
 
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |

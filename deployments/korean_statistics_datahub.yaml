@@ -2,7 +2,7 @@ url_slug: korean-government-statistical-data-hub-platform-kostat-national-statis
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Korean Government Statistical Data Hub Platform
     data_curators:
       -
@@ -22,7 +22,7 @@ deployment:
     privacy_unit: Aggregate-level
     # privacy_unit_description: TODO
     privacy_parameters: {}
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: TODO
     release_type: One release # TODO: Is this correct?
