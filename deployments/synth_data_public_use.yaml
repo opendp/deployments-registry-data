@@ -19,7 +19,7 @@ deployment:
     privacy_unit: Aggregate Statistics
     # privacy_unit_description: TODO
     privacy_parameters: {}
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: TODO
     release_type: One release # TODO: Is this correct?

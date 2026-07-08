@@ -47,7 +47,7 @@ deployment:
     privacy_parameters_description: A continuous Gaussian mechanism adds random noise to statistics counts for the aggregate data and samples from noisy counts for the synthetic data generation. This yields \\(\epsilon = 12.0\\) and \\(\delta = 5.8 × 10−6\\)-differential privacy guarantee.
 
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     # actors: ''

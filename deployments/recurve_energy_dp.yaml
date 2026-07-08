@@ -38,7 +38,7 @@ deployment:
       Note that the final privacy parameters provided in the paper are \\(\epsilon=0.843\\) and \\(\delta = 4.08 \times 10^{-8}\\). As Damien Desfontaines pointed out in the blog 'A list of real-world uses of differential privacy', the paper applied an incorrect sampling formula in a privacy amplification step.
       The blog also raises the following concern: 'Note that the amplification result assumes uniformly random sampling with replacement. But the paper also mentions a stratified sampling methodology, which is slightly different: it's unclear whether the amplification result still applies. If not, then the privacy parameters are \\(\epsilon = 6.8\\) and \\(\delta = 4.08 \times 10^{-8}\\).
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description:
     actors: |
