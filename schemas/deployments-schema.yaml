@@ -347,7 +347,7 @@ properties:
             description_long: |
               Rationale for how decisions around implementation were made by the curator or others. In short, this information should answer the following questions laid out by <a href="https://escholarship.org/content/qt8vj5q8j7/qt8vj5q8j7_noSplash_3fbe06d219d4266437a90862727e5789.pdf" target="_blank">Dwork Mulligan Kohli 2019</a>: “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?
             type: string
-      resources:
+      administrative:
         type: object
         additionalProperties: False
         required:

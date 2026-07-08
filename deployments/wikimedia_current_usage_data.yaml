@@ -65,7 +65,7 @@ deployment:
       - After comparison of available open-source tools, the Wikimedia Foundation decided to use Tumult Analytics, framework chosen for its robustness, production-readiness, compatibility with Wikimedia’s compute infrastructure, and support for advanced features like zCDP-based privacy accounting, and started a collaboration with Tumult Labs.
       - Choosing \\(\rho\\) =0.015 is considered to be conservative as it provides much stronger guarantee than \\((\epsilon,\delta)\\)-DP with \\(\epsilon=1\\) and \\(\delta = 10^{-7}\\)
 
-  resources:
+  administrative:
     sources: |
       - Paper: https://arxiv.org/pdf/2308.16298
       - Several relevant links are provided in the paper’s references, among which:

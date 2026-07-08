@@ -30,7 +30,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Differentially Private Set Union
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: |
       - Blog post: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
       - Paper: https://arxiv.org/pdf/2002.09745

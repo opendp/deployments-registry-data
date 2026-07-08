@@ -91,7 +91,7 @@ deployment:
       - Statistically insignificant metrics are filtered out to ensure utility and reliability of the data. This is done through a strict confidence threshold, ensuring there is at most a 5% risk of any published value being wrong by more than 10 absolute percentage points.
       - The implementation decision to bound each user's contribution to a maximum of four (category, location) pairs per day is justified by an analysis of user behavior. This threshold was chosen because it "does not significantly affect data accuracy," given that 99% of users at the U.S. county level contribute to three or fewer pairs on average.
 
-  resources:
+  administrative:
     sources: https://arxiv.org/pdf/2004.04145
     registry_authors:
       - Elena Ghazi

@@ -49,7 +49,7 @@ deployment:
     mechanisms: '' # Tier 3
     justification: '' # Tier 3
 
-  resources:
+  administrative:
     sources: '' # white papers
     notes: '' # other extra information
     registry_authors:

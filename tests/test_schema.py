@@ -38,9 +38,9 @@ def test_node_has_description(path, node):
         "/deployment/deployment_model/model_name_description",
         "/deployment/accounting",
         "/deployment/implementation",
-        "/deployment/resources",
-        "/deployment/resources/sources",
-        "/deployment/resources/notes",
+        "/deployment/administrative",
+        "/deployment/administrative/sources",
+        "/deployment/administrative/notes",
     ]:
         assert "description" not in node.keys()
         pytest.skip("TODO: More description would be nice to have")
@@ -75,9 +75,9 @@ def test_node_has_description_long(path, node):
         "/deployment/deployment_model/release_type_description",
         "/deployment/deployment_model/data_source_type_description",
         "/deployment/deployment_model/access_type_description",
-        "/deployment/resources",
-        "/deployment/resources/notes",
-        "/deployment/resources/registry_authors",
+        "/deployment/administrative",
+        "/deployment/administrative/notes",
+        "/deployment/administrative/registry_authors",
     ]
     if path in skip_list:
         assert "description_long" not in node.keys()
@@ -96,7 +96,7 @@ def test_node_has_tier(path, node):
     if path in [
         "/deployment/deployment_model/model_name_description",
         "/deployment/deployment_model/release_type_description",
-        "/deployment/resources/registry_authors",
+        "/deployment/administrative/registry_authors",
     ]:
         assert "tier" not in node.keys()
         pytest.skip("TODO: More tiers would be nice to have")
