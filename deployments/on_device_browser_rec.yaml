@@ -2,7 +2,7 @@ url_slug: on-device-browser-recommendations-brave-2021
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: On-device browser recommendations
     data_curators:
       - Brave

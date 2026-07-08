@@ -2,7 +2,7 @@ url_slug: shared-mobility-dataset-google-2022
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Shared Mobility Dataset
     data_curators:
       - Google

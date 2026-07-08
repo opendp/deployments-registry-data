@@ -2,7 +2,7 @@ url_slug: telemetry-collection-in-windows-microsoft-2017
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Telemetry Collection in Windows
     data_curators:
       - Microsoft

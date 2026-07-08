@@ -2,7 +2,7 @@ url_slug: template
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name: ''
     data_curators:

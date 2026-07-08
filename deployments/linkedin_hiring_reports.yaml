@@ -2,7 +2,7 @@ url_slug: linkedin-hiring-reports-linkedin-2020
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: LinkedIn Hiring Reports
     data_curators:
       - LinkedIn

@@ -2,7 +2,7 @@ url_slug: disclosure-avoidance-system-for-redistricting-data-u-s-census-bureau-2
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Disclosure Avoidance System for Redistricting Data
     data_curators:
       - U.S. Census Bureau

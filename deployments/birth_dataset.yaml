@@ -2,7 +2,7 @@ url_slug: israel-s-national-registry-of-live-births-of-2014-israeli-ministry-of-
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Israel's National Registry of Live Births of 2014
     data_curators:
       - Israeli Ministry of Health

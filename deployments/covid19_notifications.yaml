@@ -2,7 +2,7 @@ url_slug: covid-19-exposure-notification-framework-google-apple-2021
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: COVID-19 Exposure Notification Framework
     data_curators:
       - Google

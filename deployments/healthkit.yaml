@@ -2,7 +2,7 @@ url_slug: healthkit-usage-statistics-apple-2017
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: HealthKit Usage Statistics
     data_curators:
       - Apple

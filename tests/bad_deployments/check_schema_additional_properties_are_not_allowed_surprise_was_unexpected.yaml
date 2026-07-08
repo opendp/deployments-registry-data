@@ -3,7 +3,7 @@ surprise: ...
 status: Draft
 tier: 1
 deployment:
-  product:
+  basic:
     name: ...
     data_curators:
       - U.S. Census Bureau
