@@ -2,7 +2,7 @@ url_slug: assistive-ai-microsoft-2020
 status: Pending
 tier: 2
 deployment:
-  product:
+  basic:
     name: Assistive AI
     data_curators:
       - Microsoft
@@ -24,13 +24,13 @@ deployment:
       epsilon: 4.0
       delta: 1.0e-07
     privacy_parameters_description: '"Currently we use differentially private algorithms with privacy parameters (\\(\epsilon\\)=4, \\(\delta\\)< 10-7)."'
-  model:
+  deployment_model:
     model_name: Central
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Differentially Private Set Union
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: |
       - Blog post: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
       - Paper: https://arxiv.org/pdf/2002.09745

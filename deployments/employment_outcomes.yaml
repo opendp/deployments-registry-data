@@ -2,7 +2,7 @@ url_slug: post-secondary-employment-outcomes-u-s-census-bureau-2019
 status: Pending
 tier: 2
 deployment:
-  product:
+  basic:
     name: Post-Secondary Employment Outcomes
     data_curators:
       - U.S. Census Bureau
@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Pure DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     # data_domain:
 
     # unprotected_quantities:
@@ -30,7 +26,7 @@ deployment:
       # epsilon:
     privacy_parameters_description: Privacy parameters not available.
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description:
     # actors:
@@ -47,7 +43,7 @@ deployment:
   #   preprocessing_and_hyperparameter_tuning:
   #   mechanisms:
   #   justification:
-  resources:
+  administrative:
     sources: |
       - Paper: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
       - Documentation: https://lehd.ces.census.gov/data/pseo_documentation.html

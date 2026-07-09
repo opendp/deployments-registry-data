@@ -2,7 +2,7 @@ url_slug: linkedin-hiring-reports-linkedin-2020
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: LinkedIn Hiring Reports
     data_curators:
       - LinkedIn
@@ -28,7 +28,7 @@ deployment:
     privacy_parameters:
       epsilon: 4.8
       delta: 4.0e-10
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: TODO
     release_type: One release # TODO: Is this correct?
@@ -38,7 +38,7 @@ deployment:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Gumbel
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: https://arxiv.org/abs/2010.13981
     registry_authors:
       - Nicolas Berrios

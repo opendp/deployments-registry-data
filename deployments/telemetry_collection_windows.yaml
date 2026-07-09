@@ -2,7 +2,7 @@ url_slug: telemetry-collection-in-windows-microsoft-2017
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Telemetry Collection in Windows
     data_curators:
       - Microsoft
@@ -22,7 +22,7 @@ deployment:
     privacy_parameters_description: |
       '"By Theorem 5, in deployment, a single round of data collection across an arbitrary large number of apps satisfies
       \\(\epsilon \prime \prime\\)-DP, where \\(\epsilon \prime \prime\\) = 1.672."'
-  model:
+  deployment_model:
     model_name: Local
     # model_name_description: TODO
     release_type: Many releases
@@ -33,7 +33,7 @@ deployment:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Randomized Rounding
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: |
       - Paper: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
     registry_authors:

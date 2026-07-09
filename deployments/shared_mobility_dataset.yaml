@@ -2,7 +2,7 @@ url_slug: shared-mobility-dataset-google-2022
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Shared Mobility Dataset
     data_curators:
       - Google
@@ -27,7 +27,7 @@ deployment:
       '"The automated Laplace mechanism adds random noise drawn
       from a zero mean Laplace distribution and yields (\\(\epsilon, \delta\\))-differential privacy guarantee
       of \\(\epsilon = 0.66\\) and \\(\delta = 2.1 × 10−29\\), which is very strong."'
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: TODO
     release_type: One release
@@ -37,7 +37,7 @@ deployment:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace Mechanism
     justification: '"All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
-  resources:
+  administrative:
     sources: https://www.nature.com/articles/s41467-019-12809-y
     registry_authors:
       - Nicolas Berrios

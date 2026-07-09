@@ -2,7 +2,7 @@ url_slug: google_tier_2
 status: Draft
 tier: 2
 deployment:
-  product:
+  basic:
     name: Placeholder
     data_curators:
       - Google
@@ -19,11 +19,11 @@ deployment:
     privacy_unit: user-day
     privacy_parameters:
       epsilon: 1.68
-  model:
+  deployment_model:
     model_name: Central
     release_type: Many releases
     access_type: Non-interactive
     data_source_type: Static
-  resources:
+  administrative:
     registry_authors:
       - Elena Ghazi

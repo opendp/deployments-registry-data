@@ -2,7 +2,7 @@ url_slug: disclosure-avoidance-system-for-redistricting-data-u-s-census-bureau-2
 status: Pending
 tier: 3
 deployment:
-  product:
+  basic:
     name: Disclosure Avoidance System for Redistricting Data
     data_curators:
       - U.S. Census Bureau
@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Zero-concentrated DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: The data eligible for protection is the Census Edited File (CEF). This is the final, confidential version of the 2020 Census data, containing a record for every person and housing unit enumerated in the census, with missing values handled through imputation.
     unprotected_quantities: |
       - The total population count for each state, the District of Columbia, and Puerto Rico.
@@ -44,7 +40,7 @@ deployment:
       - This global budget is not applied uniformly. It is strategically allocated across different geographic levels (e.g., state, county, tract, block) and then further divided among specific data queries (e.g., total population, race, voting age) at each of those levels. The precise allocation proportions are detailed in Tables 6, 7, and 8 of “The 2020 Census Disclosure Avoidance System TopDown Algorithm” paper.
 
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     actors: |
@@ -101,7 +97,7 @@ deployment:
         - The Census Bureau solicited and incorporated detailed feedback from a wide array of stakeholders, including the National Academy of Sciences, federal and state partners, academic researchers, and tribal leaders.
         - The final production parameters were set by the Data Stewardship Executive Policy Committee (DSEP) after a final review of the privacy guarantees and data accuracy demonstrated in the tuning experiments.
 
-  resources:
+  administrative:
     sources: |
       - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
       - The 2020 Census Disclosure Avoidance System TopDown Algorithm: https://arxiv.org/abs/2204.08986

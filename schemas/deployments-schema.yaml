@@ -46,9 +46,9 @@ properties:
     type: object
     additionalProperties: False
     required:
-      - product
+      - basic
     properties:
-      product:
+      basic:
         type: object
         additionalProperties: False
         required:
@@ -129,8 +129,6 @@ properties:
               The name of the DP flavor used, like "Pure DP", or "Approximate DP".
 
               If a commonly-known flavor was not used, it can be expressed as "Custom".
-
-              If "Custom" is used, then specify the `input_metric`, `bound_on_input_distance`, `output_measure`, `bound_on_output_distance`
             description_long: |
               Differential privacy (DP) can be achieved under different **flavors**, i.e., different standards by which privacy loss is measured.
 
@@ -145,26 +143,6 @@ properties:
               - Zero-concentrated DP
               - Renyi DP
               - Custom
-          input_metric:
-            description: Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55).
-            description_long: |
-              A function that computes the distance between between any two datasets in the data domain <a href="https://www.oreilly.com/library/view/hands-on-differential-privacy/9781492097730/" target="_blank">(pg 55, Cowan, Shoemate, Pereira 2024)</a>
-            type: string
-          bound_on_input_distance:
-            description: Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
-            description_long: |
-              The differential privacy guarantee holds for any two datasets in the data domain whose distance (computed by the input metric) is less than or equal to the bound on the input distance. Pairs of datasets whose distance is within the bound are called “adjacent datasets” – the entity which changes under adjacent datasets (e.g., an individual) is the privacy unit.
-            type: string
-          output_measure:
-            description: Function that computes the distance between probability distributions of the differentially private mechanism applied to datasets in the data domain.
-            description_long: |
-              A function that computes the distance between probability distributions of the differentially private mechanism applied to datasets in the data domain.
-            type: string
-          bound_on_output_distance:
-            description: Maximum distance, computed by the output metric, between probability distributions of the differentially private mechanism applied to adjacent datasets.
-            description_long: |
-              The maximum distance, computed by the output measure, between probability distributions of the differentially private mechanism applied to adjacent datasets.
-            type: string
           data_domain:
             tier: 3
             description: Actual, potential, or counterfactual datasets eligible for protection.
@@ -217,7 +195,7 @@ properties:
           privacy_parameters_description:
             tier: 3
             description: More detail on the parameters, if necessary.
-      model:
+      deployment_model:
         type: object
         additionalProperties: False
         properties:
@@ -369,7 +347,7 @@ properties:
             description_long: |
               Rationale for how decisions around implementation were made by the curator or others. In short, this information should answer the following questions laid out by <a href="https://escholarship.org/content/qt8vj5q8j7/qt8vj5q8j7_noSplash_3fbe06d219d4266437a90862727e5789.pdf" target="_blank">Dwork Mulligan Kohli 2019</a>: “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?
             type: string
-      resources:
+      administrative:
         type: object
         additionalProperties: False
         required:

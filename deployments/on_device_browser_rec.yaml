@@ -2,7 +2,7 @@ url_slug: on-device-browser-recommendations-brave-2021
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: On-device browser recommendations
     data_curators:
       - Brave
@@ -18,7 +18,7 @@ deployment:
     privacy_unit: User-level
     # privacy_unit_description: TODO
     privacy_parameters: {}
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: TODO
     release_type: One release # TODO: Is this correct?
@@ -28,7 +28,7 @@ deployment:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: DP SGD*
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: https://brave.com/blog/federated-learning/
     registry_authors:
       - Nicolas Berrios

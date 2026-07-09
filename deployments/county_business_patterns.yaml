@@ -2,7 +2,7 @@ url_slug: census-county-business-patterns-u-s-census-bureau-2023
 status: Pending
 tier: 1
 deployment:
-  product:
+  basic:
     name: Census County Business Patterns
     data_curators:
       - U.S. Census Bureau
@@ -22,7 +22,7 @@ deployment:
     privacy_parameters:
       rho: 12.058
     privacy_parameters_description: '"Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058."'
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: TODO
     release_type: One release
@@ -32,7 +32,7 @@ deployment:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Gaussian
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: |
       - https://www.census.gov/topics/business-economy/disclosure/about.html
       - https://www.census.gov/data/academy/webinars/2023/differential-privacy-webinar.html

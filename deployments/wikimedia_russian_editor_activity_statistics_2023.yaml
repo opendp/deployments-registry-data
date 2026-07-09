@@ -2,7 +2,7 @@ url_slug: wikipedia-russian-editor-activity-statistics-wikimedia-foundation-2023
 status: Draft
 tier: 3
 deployment:
-  product:
+  basic:
     # Tier 1:
     name: Wikipedia Russian Editor Activity Statistics
     data_curators:
@@ -17,9 +17,6 @@ deployment:
   # Tiers 2 and 3:
   dp_flavor:
     name: Pure DP
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: |
       - Raw per-project edit logs, each record containing: wiki_db, country, month, user activity level (either "1 to 4", "5 to 99", or "100 or more"), user status (anonymous, temporary or permanent) and user ID (fingerprint or name).
       - Time period is January 2022 - 2023
@@ -32,7 +29,7 @@ deployment:
       epsilon: 0.1
     privacy_parameters_description: A continuous Laplace mechanism is applied to the editor counts and yields (\\(\epsilon=0.1\\))-differential privacy guarantee per account-month (sensitivity = 1, noise scale = 10).
 
-  model:
+  deployment_model:
     model_name: Central
     # model_name_description: ''
     # actors: ''
@@ -62,7 +59,7 @@ deployment:
       - In their report, the Wikimedia Foundation states: "With a privacy loss of 0.1, they could at most be ~2.5% more certain of that account’s presence or absence."
       - In their report, they also state that "we have taken extra privacy precautions (specifically, using differential privacy) with this data release."
 
-  resources:
+  administrative:
     sources: |
       - Online description page: https://wikitech.wikimedia.org/wiki/Russian_editor_information_(2022-23)
       - Code or table building: https://gerrit.wikimedia.org/r/plugins/gitiles/analytics/refinery/%2B/refs/heads/master/hql/geoeditors/geoeditors_monthly.hql
