@@ -17,10 +17,6 @@ deployment:
 
   dp_flavor:
     name: Zero-concentrated DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: Local training cache consisting of user keyboard input from eligible devices of Spanish-language Gboard users.
     unprotected_quantities: There is no mention of unprotected quantities.
 
@@ -69,7 +65,7 @@ deployment:
         - DP-FedAvg algorithm's guarantee depended on amplification-via-sampling, which was deemed insufficient because ensuring that devices are subsampled precisely and uniformly at random from a large population would be complex and hard to verify in a real-world system where device availability fluctuates based on external factors (e.g., being idle, on Wi-Fi, and charging).
         - DP-FTRL was chosen to address this challenge, given the observation that training convergence depends on accuracy of cumulative sums of gradients rather than individual ones, and that it is possible to provide accurate estimates of cumulative sums with a strong DP guarantee by using negatively correlated noise, since some of the privacy noise cancels out from step to step, allowing the model's learning trajectory to stay closer to the true gradient descent steps and achieve better accuracy for a given level of privacy.
 
-  resources:
+  administrative:
     sources: |
       - Federated Learning with Formal Differential Privacy Guarantees (Article published on February 28, 2022): https://research.google/blog/federated-learning-with-formal-differential-privacy-guarantees/
       - Paper that introduces the DP variant of Follow-The-Regularized-Leader (DP-FTRL) used in the deployment: Practical and Private (Deep) Learning Without Sampling or Shuffling: https://arxiv.org/pdf/2103.00039

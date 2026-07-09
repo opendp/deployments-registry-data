@@ -31,7 +31,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: DP GAN*
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: https://datasciencecampus.ons.gov.uk/projects/generative-adversarial-networks-gans-for-synthetic-dataset-generation-with-binary-classes/
     registry_authors:
       - Nicolas Berrios

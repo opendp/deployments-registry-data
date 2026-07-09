@@ -51,7 +51,7 @@ deployment:
     mechanisms: Private Hadamard Count Mean Sketch (PHCMS)
     justification: '"Formal proof, described in Theorem 4.1, Theorem 4.3"'
 
-  resources:
+  administrative:
     sources: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
     notes: |
       - There are multiple releases per device & per user -- statistics are reported automatically on IoS and MacOS devices, subject to daily aggregation.

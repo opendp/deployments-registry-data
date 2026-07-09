@@ -38,7 +38,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Randomized Response
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: |
       - Paper: https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf
     registry_authors:

@@ -19,9 +19,6 @@ deployment:
   # Tiers 2 and 3:
   dp_flavor:
     name: Pure DP
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: |
       - Raw per-project edit logs, each record containing: wiki_db, country, month, user activity level (either "1 to 4", "5 to 99", or "100 or more"), user status (anonymous, temporary or permanent) and user ID (fingerprint or name).
       - Time period is January 2022 - 2023
@@ -64,7 +61,7 @@ deployment:
       - In their report, the Wikimedia Foundation states: "With a privacy loss of 0.1, they could at most be ~2.5% more certain of that account’s presence or absence."
       - In their report, they also state that "we have taken extra privacy precautions (specifically, using differential privacy) with this data release."
 
-  resources:
+  administrative:
     sources: |
       - Online description page: https://wikitech.wikimedia.org/wiki/Russian_editor_information_(2022-23)
       - Code or table building: https://gerrit.wikimedia.org/r/plugins/gitiles/analytics/refinery/%2B/refs/heads/master/hql/geoeditors/geoeditors_monthly.hql

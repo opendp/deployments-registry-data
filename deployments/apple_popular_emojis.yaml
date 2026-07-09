@@ -17,10 +17,6 @@ deployment:
 
   dp_flavor:
     name: Pure DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: Event-level dataset where one "event" is a user typing an emoji.
     unprotected_quantities: |
       - The dictionary of emojis (a predefined set of 2,600 emojis).
@@ -78,7 +74,7 @@ deployment:
       - The choice of \\(\epsilon\\) was “based on the privacy characteristics of the underlying dataset” and is “consistent with the parameters proposed in the differential privacy research community”.
       - The CMS algorithm yields a high number of hash collisions (mapping 2,600 emojis to 1024 bits) providing further plausible deniability.
 
-  resources:
+  administrative:
     sources: |
       - Paper: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
     notes: |

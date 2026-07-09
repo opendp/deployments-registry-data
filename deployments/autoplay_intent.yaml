@@ -34,7 +34,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Private Count Mean Sketch
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
     registry_authors:
       - Nicolas Berrios

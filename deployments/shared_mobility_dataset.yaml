@@ -39,7 +39,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace Mechanism
     justification: '"All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
-  resources:
+  administrative:
     sources: https://www.nature.com/articles/s41467-019-12809-y
     registry_authors:
       - Nicolas Berrios

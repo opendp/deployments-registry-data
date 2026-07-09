@@ -36,7 +36,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Gumbel
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: |
       - Paper: https://arxiv.org/pdf/2002.05839
     notes: |

@@ -34,7 +34,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Gaussian
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: |
       - https://www.census.gov/topics/business-economy/disclosure/about.html
       - https://www.census.gov/data/academy/webinars/2023/differential-privacy-webinar.html

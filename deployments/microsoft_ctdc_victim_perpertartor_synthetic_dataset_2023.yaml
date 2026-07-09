@@ -26,10 +26,6 @@ deployment:
   # Tiers 2 and 3:
   dp_flavor:
     name: Approximate DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: |
       - The dataset simulates approximately 206K synthetic records of victims and survivors of trafficking identified across 123 countries and territories, and their accounts of over 37,000 perpetrators who facilitated the trafficking process from 2005 to 2022.
       - Each record in the dataset contains information about the victim and their perpetrators:
@@ -83,7 +79,7 @@ deployment:
       - In the description, the CTDC states: "The technology has enabled CTDC to share more data and conduct more robust research while protecting privacy and civil liberties".
       - Also, the CTDC states: "Both datasets preserve privacy by design".
 
-  resources:
+  administrative:
     sources: |
       - Microsoft Research Blog: https://www.microsoft.com/en-us/research/blog/iom-and-microsoft-release-first-ever-differentially-private-synthetic-dataset-to-counter-human-trafficking/
       - Dataset: https://www.ctdatacollaborative.org/global-victim-perpetrator-synthetic-dataset#no-back
