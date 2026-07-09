@@ -13,6 +13,6 @@ deployment:
       These collapse:
       hurts markdown!
     publication_date: "2026-01-01"
-  resources:
+  administrative:
     registry_authors:
       - ...

@@ -17,9 +17,8 @@ deployment:
     data_product_sector: Technology
   dp_variant:
     variant_name: Approximate DP
-    output_measure: elastic sensitivity (upper bound on local sensitivity)
     data_domain: Multi-table relational database (schema unspecifed)
-    unprotected_quantities: bin labels drawn from finite domains
+    unprotected_quantities: 'bin labels drawn from finite domains; output_measure: elastic sensitivity (upper bound on local sensitivity)'
   privacy_loss:
     privacy_unit: Tuple-level
     privacy_unit_description: |
@@ -67,7 +66,7 @@ deployment:
       - Security measure to protect underlying data: none measured
     justification: |
       - Formal proof that elastic sensitivity is an upper bound of local sensistivity is presented.
-  resources:
+  administrative:
     sources: |
       - Paper: https://vldb.org/pvldb/vol11/p526-johnson.pdf # https://doi.org/10.1145/3177732.3177733 is not presently working
       - Blog post: https://medium.com/uber-security-privacy/uber-open-source-differential-privacy-57f31e85c57a

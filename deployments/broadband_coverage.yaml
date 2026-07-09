@@ -15,10 +15,6 @@ deployment:
 
   dp_variant:
     variant_name: Pure DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: A collection of user records derived from data Microsoft collects as part of their ongoing work to improve their software and services performance and security. The records are generated every time a device receives an update or connects to a Microsoft service, and contain the throughput speed estimated from the connection and the device’s location, which is determined at the zip code level location data via reverse IP.
     unprotected_quantities: The published dataset includes 32,653 zip codes. The paper notes that this was "predefined based on average number of machines in the last years".
 
@@ -77,7 +73,7 @@ deployment:
       - The number of devices connected to the internet at broadband speed per each zip code is counted based on the Federal Communications Commission (FCC)’s definition of broadband that is 25mbps per download.
       - "All diﬀerential privacy processing was done with the OpenDP SmartNoise library. The SmartNoise library includes a comprehensive set of diﬀerential privacy mechanisms, algorithms, and validator. The library is open source, and is maintained and vetted by OpenDP."
       - A Monte Carlo simulation process to estimate the error introduced by DP was chosen, the rationale being that this empirical method is better for estimating the combined error from several private sources and does not result in additional privacy losses.
-  resources:
+  administrative:
     sources: |
       - Paper: https://arxiv.org/abs/2103.14035
       - Github: https://github.com/microsoft/USBroadbandUsagePercentages
