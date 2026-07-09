@@ -119,6 +119,11 @@ def test_object_has_additional_properties_false(path, node):
 
 def test_template_is_complete():
     template_paths = [
-        path for path, node in path_templates if "evidence_sources/" not in path
+        # Unlike other objects in the schema, the keys of evidences_sources
+        # are user-supplied rather than being fixed, so there are keys in the template,
+        # but not in the schema.
+        path
+        for path, node in path_templates
+        if "evidence_sources/" not in path
     ]
     assert template_paths == paths
