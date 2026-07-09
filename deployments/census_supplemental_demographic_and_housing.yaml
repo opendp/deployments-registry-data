@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Zero-concentrated DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: The Supplemental DHC tables provide counts of people living in households and the average household size, by dif- ferent characteristics (such as age, family type, and tenure)
     unprotected_quantities: |
       - N/A
@@ -76,7 +72,7 @@ deployment:
         - The Census Bureau solicited and incorporated detailed feedback from a wide array of stakeholders, including the National Academy of Sciences, federal and state partners, academic researchers, and tribal leaders.
         - The final production parameters were set by the Data Stewardship Executive Policy Committee (DSEP) after a final review of the privacy guarantees and data accuracy demonstrated in the tuning experiments.
 
-  resources:
+  administrative:
     sources: |
       - 2020 Supplemental Demographic and Housing Characteristics File (S-DHC) Technical Documentation: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/supplemental-demographic-and-housing-characteristics-file/2020census-supplemental-dhc-techdoc.pdf
       - Census Bureau Releases Final 2020 Census Data Product: https://www.census.gov/newsroom/press-releases/2024/final-2020-census-data-product-s-dhc.html

@@ -33,7 +33,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Not Specificed, Synthetic Data
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: https://unstats.un.org/wiki/display/UGTTOPPT/14.+Twitter+and+OpenMined%3A+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets
     registry_authors:
       - Nicolas Berrios

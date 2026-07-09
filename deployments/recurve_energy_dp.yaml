@@ -18,10 +18,6 @@ deployment:
     data_product_sector: Energy
   dp_flavor:
     name: Approximate DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
 
     data_domain: Hourly electricity consumption data for residential customers in MCE's service territory over a specific period of time ('the months leading up to and subsequent to the demand response event on August 14, 2020'). The dataset includes each customer's 'directly observed energy consumption' and their 'predicted energy consumption', which is a counterfactual value calculated by the CalTRACK model.
     unprotected_quantities: |
@@ -101,7 +97,7 @@ deployment:
       - Google's differential privacy Go library was used to mitigate floating point attacks.
       - An 'isolation attack' was simulated to demonstrate that the noise added by a Gaussian mechanism with \\(\epsilon=0.843\\) 'limits an attacker to a confidence interval of around ±1,000 kWh for hourly consumption.'
 
-  resources:
+  administrative:
     sources: |
       - Applying Energy Differential Privacy To Enable Measurement of the OhmConnect Virtual Power Plant (paper): https://assets.website-files.com/5cb0a177570549b5f11b9550/5ffddb83b5ea5d67f5c43661_Quantifying%20The%20OhmConnect%20Virtual%20Power%20Plant%20During%20the%20California%20Blackouts.pdf
       - Revenue-Grade Analysis of the OhmConnect Virtual Power Plant During the California Blackouts (blog): https://www.recurve.com/blog/revenue-grade-analysis-of-the-ohmconnect-virtual-power-plant-during-the-california-blackouts

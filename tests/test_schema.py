@@ -38,9 +38,9 @@ def test_node_has_details(path, node):
         "/deployment/deployment_model/model_name_details",
         "/deployment/accounting",
         "/deployment/implementation",
-        "/deployment/resources",
-        "/deployment/resources/sources",
-        "/deployment/resources/notes",
+        "/deployment/administrative",
+        "/deployment/administrative/sources",
+        "/deployment/administrative/notes",
     ]:
         assert "description" not in node.keys()
         pytest.skip("TODO: More description would be nice to have")
@@ -75,9 +75,9 @@ def test_node_has_details_long(path, node):
         "/deployment/deployment_model/release_type_details",
         "/deployment/deployment_model/data_source_type_details",
         "/deployment/deployment_model/access_type_details",
-        "/deployment/resources",
-        "/deployment/resources/notes",
-        "/deployment/resources/registry_authors",
+        "/deployment/administrative",
+        "/deployment/administrative/notes",
+        "/deployment/administrative/registry_authors",
     ]
     if path in skip_list:
         assert "description_long" not in node.keys()
@@ -94,13 +94,9 @@ def test_node_has_tier(path, node):
     if path.startswith("/deployment/privacy_loss/privacy_parameters/"):
         return  # Tier not needed on individual parameters.
     if path in [
-        "/deployment/dp_flavor/input_metric",
-        "/deployment/dp_flavor/bound_on_input_distance",
-        "/deployment/dp_flavor/output_measure",
-        "/deployment/dp_flavor/bound_on_output_distance",
         "/deployment/deployment_model/model_name_details",
         "/deployment/deployment_model/release_type_details",
-        "/deployment/resources/registry_authors",
+        "/deployment/administrative/registry_authors",
     ]:
         assert "tier" not in node.keys()
         pytest.skip("TODO: More tiers would be nice to have")

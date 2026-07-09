@@ -15,10 +15,6 @@ deployment:
 
   dp_flavor:
     name: Pure DP
-    # input_metric: ''
-    # bound_on_input_distance: ''
-    # output_measure: ''
-    # bound_on_output_distance: ''
     data_domain: Search queries from a sample of Google users. These queries are classified as either a “symptom search” if they relate to a pre-defined list of approximately 400 symptoms, or as general search activity which is used to generate the normalization counts. This data is aggregated into daily or weekly counts for a specific symptom and geographic region, at three distinct granularity levels.
     unprotected_quantities: The paper mentions that, for each day and geographic granularity level, a user’s contribution is capped to three counts in total, and that this was justified by the observation that approximately 75% of users search at most three symptoms per day. There was no mention of the aforementioned statistic being computed under differential privacy.
 
@@ -88,7 +84,7 @@ deployment:
       - The decision to bound a user’s contribution to a maximum of three different symptom counts per day was based on the observation that approximately 75% of users search for three or fewer symptoms daily.
       - For each geographic region and symptom, data is released as either daily or weekly aggregates, depending on data quality. While the system provides daily aggregates whenever possible, it switches to weekly aggregates if privacy protections significantly affect the data's accuracy. Weekly aggregates are more robust because they are based on more data, which reduces the relative error from the added privacy noise. This choice was determined once in a differentially private manner using data from February to July 2020. After being set, the temporal granularity for a given region and symptom remains fixed for the entire duration of the dataset's release.
 
-  resources:
+  administrative:
     sources: |
       - Documentation: https://storage.googleapis.com/gcp-public-data-symptom-search/COVID-19%20Search%20Trends%20symptoms%20dataset%20documentation%20.pdf?utm_source=chatgpt.com
       - Paper: https://arxiv.org/pdf/2009.01265

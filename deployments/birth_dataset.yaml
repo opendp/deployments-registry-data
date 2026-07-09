@@ -34,7 +34,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: PrivBayes with Private Selection (Universal Microdata Scheme)
     justification: '' # TODO: Fill in correct value
-  resources:
+  administrative:
     sources: https://birth.dataset.pub
     registry_authors:
       - Shlomi Hod

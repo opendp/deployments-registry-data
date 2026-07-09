@@ -17,10 +17,6 @@ deployment:
   # Tiers 2 and 3:
   dp_flavor:
     name: Pure DP # Fill in correct value.
-    input_metric: ''
-    bound_on_input_distance: ''
-    output_measure: ''
-    bound_on_output_distance: ''
     data_domain: '' # Tier 3
     unprotected_quantities: '' # Tier 3
 
@@ -53,7 +49,7 @@ deployment:
     mechanisms: '' # Tier 3
     justification: '' # Tier 3
 
-  resources:
+  administrative:
     sources: '' # white papers
     notes: '' # other extra information
     registry_authors:
