@@ -100,7 +100,7 @@ def check_evidence_sources(yaml_path):
     deployment = load(yaml_path.open(), Loader=Loader)
     # TODO: When evidence_sources is required, get rid of "get".
     evidence_sources_keys = (
-        deployment["deployment"]["resources"].get("evidence_sources", {}).keys()
+        deployment["deployment"]["administrative"].get("evidence_sources", {}).keys()
     )
 
     pairs = get_all_values_paths(deployment)

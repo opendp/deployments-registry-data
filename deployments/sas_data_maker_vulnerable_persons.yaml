@@ -65,7 +65,7 @@ deployment:
       - PrivBayes network is chosen to model the static tables (Customers and Accounts) because it offers a strong balance between utility, privacy, computational efficiency, scalability, and interpretability.
       - Autoregressive model is chosen to model the Transactions table because it handles time-series data effectively. However, DP is not applied to this model since DP-SGD requires adding too much noise, reducing utility to an unacceptably low level.
 
-  resources:
+  administrative:
     sources: |
       - Usecase by ICO: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-sharing/privacy-enhancing-technologies/case-studies/synthetic-data-to-test-the-effectiveness-of-a-vulnerable-persons-detection-system-in-financial-services/
       - Usecase by Nationwide: https://medium.com/nationwide-technology/hazy-synthetic-data-to-fuel-rapid-innovation-fd24f2e21685

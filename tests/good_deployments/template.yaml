@@ -78,7 +78,7 @@ deployment:
     justification_source: 'example'
     justification: '' # Tier 3
 
-  resources:
+  administrative:
     sources: '' # white papers
     evidence_sources:
       example:
