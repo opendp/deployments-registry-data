@@ -108,10 +108,13 @@ def check_evidence_sources(yaml_path):
 
     errors = []
     for path, text in source_pairs:
-        if text not in evidence_sources_keys:
-            errors.append(
-                f"In {path}, '{text}' is not one of {list(evidence_sources_keys)}"
-            )
+        full_sources = [source.strip() for source in text.split(";")]
+        for full_source in full_sources:
+            source_key = full_source.split(",")[0].strip()
+            if source_key not in evidence_sources_keys:
+                errors.append(
+                    f"In {path}, '{source_key}' is not one of {list(evidence_sources_keys)}"
+                )
 
     return errors
 

@@ -82,9 +82,13 @@ deployment:
     sources: '' # white papers
     evidence_sources:
       example:
-        url: 'http://example.com' # Fill in correct value
-        title: 'Example' # Fill in correct value
+        url: 'http://example.com/peer-reviewed' # Fill in correct value
+        title: 'Peer-reviewed' # Fill in correct value
         base: 'Peer-reviewed publication'
+      example_2:
+        url: 'http://example.com/blog' # Fill in correct value
+        title: 'Blog' # Fill in correct value
+        base: 'Other public source'
     notes: '' # other extra information
     registry_authors:
       - '' # Fill in correct value.
