@@ -79,6 +79,11 @@ properties:
                 data_curator_type:
                   description: Category that best describes the entity publishing the data product.
                   type: string
+                  enum:
+                  - Government
+                  - Industry
+                  - Nonprofit
+                  # Add to this list as needed.
             minItems: 1
           intended_use:
             tier: 1
