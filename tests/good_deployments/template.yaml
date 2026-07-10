@@ -75,7 +75,7 @@ deployment:
     pre_processing_eda_hyperparameter_tuning: '' # Tier 3
     mechanisms_source: 'example'
     mechanisms: '' # Tier 3
-    justification_source: 'example'
+    justification_source: 'example, p. 42; example_2, free text note'
     justification: '' # Tier 3
 
   administrative:
