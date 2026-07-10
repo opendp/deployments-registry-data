@@ -408,7 +408,7 @@ properties:
                     type: string
                     enum:
                       - "Peer-reviewed publication"
-                      - "Formal publication by the deplying organization"
+                      - "Formal publication by the deploying organization"
                       - "Authorized organizational attestation"
                       - "Other public source"
           notes:
