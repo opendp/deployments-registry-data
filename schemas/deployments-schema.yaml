@@ -9,44 +9,17 @@ type: object
 additionalProperties: False
 required:
   - url_slug
-  - status
-  - tier
   - deployment
 properties:
   url_slug:
     description: Used to create a stable URL.
     type: string
-  status:
-    description: Approval status of this record.
-    type: string
-    enum:
-      - "Converted" # Automatically converted from earlier collection of "cases".
-      - "Draft" # Newly authored record.
-      - "Pending" # Waiting for review by the board.
-      - "Changes Required" # Board requires changes.
-      - "Approved" # Yay!
-      - "Approved (Update Requested)" # Small updates requested, but still can be displayed as "Approved".
-      - "Approved (Pending)" # Small updates made.
-  tier:
-    description: The completeness of the description. For higher tiers, more fields are filled in, but this is guidance, rather than a requirement.
-    description_long: |
-      Deployments are registered at one of three **tiers**. Each increasing tier requires more information to be disclosed about the deployment, allowing for a tradeoff between ease of registration and greater transparency. Below are descriptions of each tier.
-
-      **Tier 1 (\*):** Tier 1 entries provide basic information about each deployment, such as the curator, intended use of the data product, a description of the data product, and publication date. These entries may also include more information (e.g., in the form of external links) where available.
-
-      **Tier 2 (\*\*):** Tier 2 entries provide an intermediate level of information about each deployment. They include the information required for Tier 1 entries, plus information about the variant of differential privacy, privacy unit and privacy loss parameters, and deployment model.
-
-      **Tier 3 (\*\*\*\):** Tier 3 entries provide an advanced level of information about each deployment, including information required for Tier 1 and Tier 2 entries plus additional information. This additional information includes extra details related to the variant of DP (such as the data domain and unprotected quantities) and a more detailed description of the privacy unit. It also includes information on privacy accounting (on post-processing and composition) and implementation & security, including rationale for implementation decisions.
-    type: integer
-    enum:
-      - 1
-      - 2
-      - 3
   deployment:
     type: object
     additionalProperties: False
     required:
       - basic
+      - administrative
     properties:
       basic:
         type: object
@@ -351,7 +324,9 @@ properties:
         type: object
         additionalProperties: False
         required:
+          - status
           - registry_authors
+          - tier
         properties:
           sources:
             description_long: |
@@ -359,12 +334,35 @@ properties:
               This section may also include links to the data product itself, if publicly available.
             tier: 1
             type: string
-          notes:
-            tier: 1
+          status:
+            description: Approval status of this record.
             type: string
+            enum:
+              - "Converted" # Automatically converted from earlier collection of "cases".
+              - "Draft" # Newly authored record.
+              - "Pending" # Waiting for review by the board.
+              - "Changes Required" # Board requires changes.
+              - "Approved" # Yay!
+              - "Approved (Update Requested)" # Small updates requested, but still can be displayed as "Approved".
+              - "Approved (Pending)" # Small updates made.
           registry_authors:
             description: The author(s) of this record. This refers to who filled out the entry, which might be different from who made the deployment.
             type: array
             items:
               type: string
             minItems: 1
+          tier:
+            description: The completeness of the description. For higher tiers, more fields are filled in, but this is guidance, rather than a requirement.
+            description_long: |
+              Deployments are registered at one of three **tiers**. Each increasing tier requires more information to be disclosed about the deployment, allowing for a tradeoff between ease of registration and greater transparency. Below are descriptions of each tier.
+
+              **Tier 1 (\*):** Tier 1 entries provide basic information about each deployment, such as the curator, intended use of the data product, a description of the data product, and publication date. These entries may also include more information (e.g., in the form of external links) where available.
+
+              **Tier 2 (\*\*):** Tier 2 entries provide an intermediate level of information about each deployment. They include the information required for Tier 1 entries, plus information about the variant of differential privacy, privacy unit and privacy loss parameters, and deployment model.
+
+              **Tier 3 (\*\*\*\):** Tier 3 entries provide an advanced level of information about each deployment, including information required for Tier 1 and Tier 2 entries plus additional information. This additional information includes extra details related to the variant of DP (such as the data domain and unprotected quantities) and a more detailed description of the privacy unit. It also includes information on privacy accounting (on post-processing and composition) and implementation & security, including rationale for implementation decisions.
+            type: integer
+            enum:
+              - 1
+              - 2
+              - 3
