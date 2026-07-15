@@ -34,7 +34,6 @@ deployment:
     release_type: One release
     # release_type_details: ''
     data_source_type: Static
-    # data_source_type_details: ''
     access_type: Non-interactive
     # access_type_details: ''
 

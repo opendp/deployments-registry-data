@@ -48,7 +48,6 @@ deployment:
     release_type: One release
     # release_type_details: ''
     data_source_type: Static
-    # data_source_type_details: ''
     access_type: Interactive
     access_type_details: The global victim-perpetrator synthetic data dashboard is released so analysts can visualise descriptive trends and explore the relationship between variables.
 
