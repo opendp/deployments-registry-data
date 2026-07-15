@@ -15,22 +15,22 @@ deployment:
     publication_date: '2019-01-01'
     data_product_sector: Education
 
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     # data_domain:
 
     # unprotected_quantities:
 
   privacy_loss:
     privacy_unit: Individual-level
-    # privacy_unit_description:
+    # privacy_unit_details:
     # privacy_parameters:
       # epsilon:
-    privacy_parameters_description: Privacy parameters not available.
+    privacy_parameters_details: Privacy parameters not available.
 
   deployment_model:
     model_name: Central
-    # model_name_description:
+    # model_name_details:
     # actors:
     release_type: One release
     data_source_type: Static
@@ -42,7 +42,7 @@ deployment:
   #   composition:
 
   # implementation:
-  #   pre_processing_eda_hyperparameter_tuning:
+  #   preprocessing_and_hyperparameter_tuning:
   #   mechanisms:
   #   justification:
   administrative:

@@ -14,29 +14,29 @@ deployment:
     description: Intra-urban metrics on trips.
     publication_date: '2022-01-01'
     data_product_sector: Technology
-  dp_flavor:
-    name: Approximate DP
+  dp_variant:
+    variant_name: Approximate DP
   privacy_loss:
     privacy_unit: User-trip-level
-    privacy_unit_description: |
+    privacy_unit_details: |
       '"This dataset contains trip flow information from over 300 million people world-wide (including residents and visitors of cities)
       for the year 2016, aggregated weekly and with spatial granularity corresponding to S2 cells of approximately 1.27 km\\(^2\\). ...
       All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
     privacy_parameters:
       epsilon: 0.66
       delta: 2.1e-29
-    privacy_parameters_description: |
+    privacy_parameters_details: |
       '"The automated Laplace mechanism adds random noise drawn
       from a zero mean Laplace distribution and yields (\\(\epsilon, \delta\\))-differential privacy guarantee
       of \\(\epsilon = 0.66\\) and \\(\delta = 2.1 × 10−29\\), which is very strong."'
   deployment_model:
     model_name: Central
-    # model_name_description: TODO
+    # model_name_details: TODO
     release_type: One release
-    release_type_description: Static
+    release_type_details: Static
     access_type: Non-interactive
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace Mechanism
     justification: '"All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
   administrative:
