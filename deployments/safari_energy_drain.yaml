@@ -13,8 +13,8 @@ deployment:
     publication_date: '2017-01-01'
     data_product_sector: Technology
 
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     data_domain: 'Event-level dataset where one "event" is a web browser loading a  page, and the "measure" is the domain of the page loaded.'
     unprotected_quantities: |
           - The dictionary of websites (a predefined set of D websites).
@@ -24,16 +24,16 @@ deployment:
 
   privacy_loss:
     privacy_unit: Event-level
-    privacy_unit_description: '"Data is privatized on the user’s device using event-level differential privacy"'
+    privacy_unit_details: '"Data is privatized on the user’s device using event-level differential privacy"'
     privacy_parameters:
       epsilon: 4.0
-    privacy_parameters_description: '"For this use case, we set the parameters for HCMS to be m = 32,768, k = 1024, and \\(\epsilon\\) = 4 with p = 250,000 web domains."'
+    privacy_parameters_details: '"For this use case, we set the parameters for HCMS to be m = 32,768, k = 1024, and \\(\epsilon\\) = 4 with p = 250,000 web domains."'
 
   deployment_model:
     model_name: Local
-    model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
+    model_name_details: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
     release_type: Many releases
-    release_type_description: Daily
+    release_type_details: Daily
     access_type: Non-interactive # pre-defined query
 
   accounting:
@@ -45,7 +45,7 @@ deployment:
     composition: No information was provided about composition.
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: 'No hyperperameters are required; no EDA is described'
+    preprocessing_and_hyperparameter_tuning: 'No hyperperameters are required; no EDA is described'
     mechanisms: Private Hadamard Count Mean Sketch (PHCMS)
     justification: '"Formal proof, described in Theorem 4.1, Theorem 4.3"'
 

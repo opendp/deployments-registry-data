@@ -12,26 +12,26 @@ deployment:
     description: Aggregated summary statistics about content engagement with LinkedIn posts.
     publication_date: '2020-01-01'
     data_product_sector: Technology
-  dp_flavor:
-    name: Approximate DP
+  dp_variant:
+    variant_name: Approximate DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: User-month-level
-    privacy_unit_description: |
+    privacy_unit_details: |
       "insights about members' content engagements while ensuring member (user) data is protected."
     privacy_parameters:
       epsilon: 34.9
       delta: 7.0e-09
-    privacy_parameters_description: '"With these proposed parameter values (...) and applying Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee."'
+    privacy_parameters_details: '"With these proposed parameter values (...) and applying Theorem 2, we get a ﬁnal (34.9, 7 × 10−9)-DP monthly guarantee."'
   deployment_model:
     model_name: Central
-    model_name_description: '"The privacy model we are interested in for this work is the global privacy setting, where data is already stored centrally, but we want to ensure each result computed on the data is privatized."'
+    model_name_details: '"The privacy model we are interested in for this work is the global privacy setting, where data is already stored centrally, but we want to ensure each result computed on the data is privatized."'
     release_type: Many releases
-    release_type_description: The data are refreshed on a monthly basis. The budget also resets on a monthly basis.
+    release_type_details: The data are refreshed on a monthly basis. The budget also resets on a monthly basis.
     access_type: Non-interactive # TODO: Is this correct?
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Gumbel
     justification: '' # TODO: Fill in correct value
   administrative:

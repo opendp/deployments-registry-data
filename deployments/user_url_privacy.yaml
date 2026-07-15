@@ -12,12 +12,12 @@ deployment:
     description: '"A data set designed to allow researchers to study the distribution of URLs on Facebook and how users interacted with them."'
     publication_date: '2020-06-06'
     data_product_sector: Technology
-  dp_flavor:
-    name: Zero-concentrated DP
+  dp_variant:
+    variant_name: Zero-concentrated DP
     data_domain: User actions on a URL.
   privacy_loss:
     privacy_unit: User-level
-    privacy_unit_description: |
+    privacy_unit_details: |
       - "The privacy protections are “action level” (rather than the more familiar “user-level” differential
         privacy) in that the granularity of what is protected is not a single user, but rather a single action,
         or user-URL-action (e.g. a user sharing a specific URL)."
@@ -26,7 +26,7 @@ deployment:
       epsilon: 1.453
       delta: 1.0e-05
       rho: 0.0728
-    privacy_parameters_description: |
+    privacy_parameters_details: |
       "At \\(\delta = 10−5\\), the \\(\epsilon_{user}\\) for each individual action type decreases from about 0.45 (as reported
       in an earlier section) to a range between 0.34 and 0.35. The total user-level privacy consumption across all action types under
       \\(\mu\\)-GDP is about 0.376. The total user-level privacy consumption across all action types reduces from an epsilon of 1.844
@@ -34,12 +34,12 @@ deployment:
       \\(\rho_{user}\\) remains at 0.0052 for each individual action column and remains at 0.0728 across the entire dataset."
   deployment_model:
     model_name: Central
-    # model_name_description: TODO
+    # model_name_details: TODO
     release_type: One release
-    release_type_description: Static
+    release_type_details: Static
     access_type: Non-interactive
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Modified Report Noisy Max
     justification: '' # TODO: Fill in correct value
   administrative:

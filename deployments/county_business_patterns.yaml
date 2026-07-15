@@ -12,24 +12,24 @@ deployment:
     description: Demonstration dataset releasing data on economic establishments.
     publication_date: '2023-01-01'
     data_product_sector: Government
-  dp_flavor:
-    name: Zero-concentrated DP
+  dp_variant:
+    variant_name: Zero-concentrated DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: Business establishment
-    privacy_unit_description: '"[D]ata are protected with Per-Record Differential Privacy (PRDP).  This stage ensures that every establishment in the CBP database receives a provable privacy guarantee with respect to its existence."'
+    privacy_unit_details: '"[D]ata are protected with Per-Record Differential Privacy (PRDP).  This stage ensures that every establishment in the CBP database receives a provable privacy guarantee with respect to its existence."'
     privacy_parameters:
       rho: 12.058
-    privacy_parameters_description: '"Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058."'
+    privacy_parameters_details: '"Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058."'
   deployment_model:
     model_name: Central
-    # model_name_description: TODO
+    # model_name_details: TODO
     release_type: One release
-    release_type_description: Static
+    release_type_details: Static
     access_type: Non-interactive
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Gaussian
     justification: '' # TODO: Fill in correct value
   administrative:

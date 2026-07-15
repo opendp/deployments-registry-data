@@ -13,25 +13,25 @@ deployment:
     description: Measurement system which provides summary statistics to public health authorities about how often COVID-19 exposure notifications were shown on users’ devices.
     publication_date: '2021-01-01'
     data_product_sector: Healthcare
-  dp_flavor:
-    name: Approximate DP
+  dp_variant:
+    variant_name: Approximate DP
   privacy_loss:
     privacy_unit: User-day-level
-    privacy_unit_description: Subsections 4.1 and 4.2 of the paper provide more information.
+    privacy_unit_details: Subsections 4.1 and 4.2 of the paper provide more information.
     privacy_parameters:
       epsilon: 8.0
       delta: 1.0e-06
-    privacy_parameters_description: |
+    privacy_parameters_details: |
       - Information about how frequently the budget is refreshed is not available.
       - "The central diﬀerential privacy guarantees \\(\epsilon_c\\) that result from unlinkable aggregation of \\(\epsilon_0\\) = 8 metric report binary vectors, as used in ENPA."
   deployment_model:
     model_name: Varies
-    # model_name_description: TODO
+    # model_name_details: TODO
     release_type: Many releases
-    release_type_description: Varies
+    release_type_details: Varies
     access_type: Non-interactive
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Randomized Response
     justification: '' # TODO: Fill in correct value
   administrative:

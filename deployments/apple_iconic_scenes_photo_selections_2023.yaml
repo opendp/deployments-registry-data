@@ -23,44 +23,46 @@ deployment:
     data_product_sector: Technology
 
   # Tiers 2 and 3:
-  dp_flavor:
-    name_source: blog
-    name: Pure DP
+  dp_variant:
+    variant_name_source: blog
+    variant_name: Pure DP
     # data_domain: '' # Tier 3
     # unprotected_quantities: '' # Tier 3
 
   privacy_loss:
+    # privacy_unit_source: ''
     # privacy_unit: ''
-    # privacy_unit_description: ''
+    # privacy_unit_details_source: ''
+    # privacy_unit_details: ''
     privacy_parameters_source: blog
     privacy_parameters:
       epsilon: 1.0
       delta: 1.5e-7
-    # privacy_parameters_description: ''
+    # privacy_parameters_details: ''
 
   deployment_model:
     model_name_source: blog
     model_name: Local
-    model_name_description_source: blog
-    model_name_description: Local Differential Privacy
+    model_name_details_source: blog
+    model_name_details: Local Differential Privacy
     # actors: ''
     release_type_source: blog
     release_type: Many releases
-    release_type_description_source: blog
-    release_type_description: Image data is collected from users who opted in to the Analytics & Improvements feature on their Apple devices and be used for improving features in Apple’s Photos app.
+    release_type_details_source: blog
+    release_type_details: Image data is collected from users who opted in to the Analytics & Improvements feature on their Apple devices and be used for improving features in Apple’s Photos app.
     data_source_type_source: blog
     data_source_type: Dynamic
-    # data_source_type_description: ''
+    # data_source_type_details: ''
     access_type_source: blog
     access_type: Non-interactive
-    # access_type_description: ''
+    # access_type_details: ''
 
   # accounting:
     # post_processing: '' # Tier 3
     # composition: '' # Tier 3
 
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    # preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms_source: blog
     mechanisms: |
       - Randomized Response with amplification through the secure aggregation protocol. The local Differential Privacy mechanism encodes a single, randomly sampled location-category pair into a tiled one-hot vector, subsequently applying randomized bit-flipping to satisfy DP guarantees.

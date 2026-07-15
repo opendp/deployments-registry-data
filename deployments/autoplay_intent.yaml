@@ -12,24 +12,24 @@ deployment:
     description: Identify which websites users typically prefer to have auto-play with sound for video elements.
     publication_date: '2017-01-01'
     data_product_sector: Technology
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: User-level
-    # privacy_unit_description: TODO
+    # privacy_unit_details: TODO
     privacy_parameters:
       epsilon: 8.0
-    privacy_parameters_description: '"For this use case, we set the parameters for CMS to be m = 1024, k = 65,536, and \\(\epsilon\\) = 8."'
+    privacy_parameters_details: '"For this use case, we set the parameters for CMS to be m = 1024, k = 65,536, and \\(\epsilon\\) = 8."'
   deployment_model:
     model_name: Local
-    model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
+    model_name_details: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
     release_type: One release # TODO: Is this correct?
-    release_type_description: Daily
+    release_type_details: Daily
     access_type: Non-interactive # TODO: Is this correct?
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Private Count Mean Sketch
     justification: '' # TODO: Fill in correct value
   administrative:
