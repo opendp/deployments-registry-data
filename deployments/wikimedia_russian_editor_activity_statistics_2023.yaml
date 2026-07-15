@@ -15,8 +15,8 @@ deployment:
     data_product_sector: Technology
 
   # Tiers 2 and 3:
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     data_domain: |
       - Raw per-project edit logs, each record containing: wiki_db, country, month, user activity level (either "1 to 4", "5 to 99", or "100 or more"), user status (anonymous, temporary or permanent) and user ID (fingerprint or name).
       - Time period is January 2022 - 2023

@@ -12,8 +12,8 @@ deployment:
     description: Telemetry statistics about Microsoft users (specifically users of Windows Insiders in the Windows 10 Fall Creators Update), such as how many seconds they spent on a particular app in a six hour window.
     publication_date: '2017-12-01'
     data_product_sector: Technology
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
   privacy_loss:
     privacy_unit: User-quarter-day-level
     # privacy_unit_description: TODO

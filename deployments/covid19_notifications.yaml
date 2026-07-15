@@ -13,8 +13,8 @@ deployment:
     description: Measurement system which provides summary statistics to public health authorities about how often COVID-19 exposure notifications were shown on users’ devices.
     publication_date: '2021-01-01'
     data_product_sector: Healthcare
-  dp_flavor:
-    name: Approximate DP
+  dp_variant:
+    variant_name: Approximate DP
   privacy_loss:
     privacy_unit: User-day-level
     privacy_unit_description: Subsections 4.1 and 4.2 of the paper provide more information.

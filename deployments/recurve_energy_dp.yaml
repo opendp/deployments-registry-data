@@ -16,8 +16,8 @@ deployment:
         - Difference of Load Changes: The final net impact of the OhmConnect program, calculated by subtracting the comparison group's percent load change from the treatment group's percent load change.
     publication_date: '2020-12-01'
     data_product_sector: Energy
-  dp_flavor:
-    name: Approximate DP
+  dp_variant:
+    variant_name: Approximate DP
 
     data_domain: Hourly electricity consumption data for residential customers in MCE's service territory over a specific period of time ('the months leading up to and subsequent to the demand response event on August 14, 2020'). The dataset includes each customer's 'directly observed energy consumption' and their 'predicted energy consumption', which is a counterfactual value calculated by the CalTRACK model.
     unprotected_quantities: |

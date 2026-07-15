@@ -13,8 +13,8 @@ deployment:
     publication_date: '2023-05-25'
     data_product_sector: Government
 
-  dp_flavor:
-    name: Zero-concentrated DP
+  dp_variant:
+    variant_name: Zero-concentrated DP
     data_domain: "The 2020 DHC tables are sourced from two protected microdata files: a person file and a unit or household file"
     unprotected_quantities: |
       - The total population count for each state, the District of Columbia, and Puerto Rico.

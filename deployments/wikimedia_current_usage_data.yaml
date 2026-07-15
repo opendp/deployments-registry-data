@@ -13,8 +13,8 @@ deployment:
     publication_date: '2023-06-01'
     data_product_sector: Technology
 
-  dp_flavor:
-    name: Zero-concentrated DP
+  dp_variant:
+    variant_name: Zero-concentrated DP
     data_domain: 'Raw per-pageview logs for the last 90 days, each record containing: project, page ID, timestamp, country.'
     unprotected_quantities: |
       The following parameters were tuned on the original dataset with no privacy:

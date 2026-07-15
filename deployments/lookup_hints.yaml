@@ -16,8 +16,8 @@ deployment:
       of 4, and limits user contributions to two donations per day."
     publication_date: '2016-01-01' # Not in source by referenced in Tang et al. https://arxiv.org/abs/1709.02753
     data_product_sector: Technology
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:

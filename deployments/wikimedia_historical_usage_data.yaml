@@ -13,8 +13,8 @@ deployment:
     publication_date: '2023-06-01'
     data_product_sector: Technology
 
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     data_domain: |
       Hourly aggregates of pageviews older than 90 days, with columns: project, page ID, date and time, country, count.
       This historical data was processed in two distinct batches covering the following periods:

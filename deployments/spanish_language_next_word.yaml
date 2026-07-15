@@ -13,8 +13,8 @@ deployment:
     publication_date: '2022-02-01'
     data_product_sector: Technology
 
-  dp_flavor:
-    name: Zero-concentrated DP
+  dp_variant:
+    variant_name: Zero-concentrated DP
     data_domain: Local training cache consisting of user keyboard input from eligible devices of Spanish-language Gboard users.
     unprotected_quantities: There is no mention of unprotected quantities.
 

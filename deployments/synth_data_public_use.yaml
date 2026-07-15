@@ -14,7 +14,7 @@ deployment:
       privacy.
     publication_date: '2020-01-01'
     data_product_sector: Government
-  # dp_flavor: TODO
+  # dp_variant: TODO
   privacy_loss:
     privacy_unit: Aggregate Statistics
     # privacy_unit_description: TODO

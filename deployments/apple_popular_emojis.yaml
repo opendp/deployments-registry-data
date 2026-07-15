@@ -13,8 +13,8 @@ deployment:
     publication_date: '2017-01-01'
     data_product_sector: Technology
 
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     data_domain: Event-level dataset where one "event" is a user typing an emoji.
     unprotected_quantities: |
       - The dictionary of emojis (a predefined set of 2,600 emojis).

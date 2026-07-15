@@ -12,8 +12,8 @@ deployment:
     description: Intra-urban metrics on trips.
     publication_date: '2022-01-01'
     data_product_sector: Technology
-  dp_flavor:
-    name: Approximate DP
+  dp_variant:
+    variant_name: Approximate DP
   privacy_loss:
     privacy_unit: User-trip-level
     privacy_unit_description: |

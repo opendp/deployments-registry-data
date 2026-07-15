@@ -34,9 +34,9 @@ properties:
 
       **Tier 1 (\*):** Tier 1 entries provide basic information about each deployment, such as the curator, intended use of the data product, a description of the data product, and publication date. These entries may also include more information (e.g., in the form of external links) where available.
 
-      **Tier 2 (\*\*):** Tier 2 entries provide an intermediate level of information about each deployment. They include the information required for Tier 1 entries, plus information about the flavor of differential privacy, privacy unit and privacy loss parameters, and deployment model.
+      **Tier 2 (\*\*):** Tier 2 entries provide an intermediate level of information about each deployment. They include the information required for Tier 1 entries, plus information about the variant of differential privacy, privacy unit and privacy loss parameters, and deployment model.
 
-      **Tier 3 (\*\*\*\):** Tier 3 entries provide an advanced level of information about each deployment, including information required for Tier 1 and Tier 2 entries plus additional information. This additional information includes extra details related to the flavor of DP (such as the data domain and unprotected quantities) and a more detailed description of the privacy unit. It also includes information on privacy accounting (on post-processing and composition) and implementation & security, including rationale for implementation decisions.
+      **Tier 3 (\*\*\*\):** Tier 3 entries provide an advanced level of information about each deployment, including information required for Tier 1 and Tier 2 entries plus additional information. This additional information includes extra details related to the variant of DP (such as the data domain and unprotected quantities) and a more detailed description of the privacy unit. It also includes information on privacy accounting (on post-processing and composition) and implementation & security, including rationale for implementation decisions.
     type: integer
     enum:
       - 1
@@ -119,23 +119,23 @@ properties:
               - Finance
               # Add to this list as needed.
       # Tiers 2 and 3
-      dp_flavor:
+      dp_variant:
         type: object
         additionalProperties: False
         properties:
-          name:
+          variant_name:
             tier: 2
             description: |
-              The name of the DP flavor used, like "Pure DP", or "Approximate DP".
+              The name of the DP variant used, like "Pure DP", or "Approximate DP".
 
-              If a commonly-known flavor was not used, it can be expressed as "Custom".
+              If a commonly-known variant was not used, it can be expressed as "Custom".
             description_long: |
-              Differential privacy (DP) can be achieved under different **flavors**, i.e., different standards by which privacy loss is measured.
+              Differential privacy (DP) can be achieved under different **variants**, i.e., different standards by which privacy loss is measured.
 
-              Common flavors include <a href="https://link.springer.com/chapter/10.1007/11681878_14" target="_blank">pure DP</a> (i.e., ε-DP), <a href="https://ptolemy.berkeley.edu/projects/truststc/pubs/101/ourDataOurselves.pdf" target="_blank">approximate DP</a> (i.e., (ε, δ)-DP), <a href="https://arxiv.org/abs/1605.02065" target="_blank">zero-concentrated DP</a> (zCDP), and <a href="https://arxiv.org/abs/1702.07476" target="_blank">Rényi DP</a>.
-              A flavor is defined by its privacy relation <a href="https://projects.iq.harvard.edu/files/opendifferentialprivacy/files/opendp_programming_framework_11may2020_1_01.pdf" target="_blank">(Gaboardi Hay Vadhan 2021)</a>, consisting of an input metric, bound on input distance, output measure, and bound on output distance.
+              Common variants include <a href="https://link.springer.com/chapter/10.1007/11681878_14" target="_blank">pure DP</a> (i.e., ε-DP), <a href="https://ptolemy.berkeley.edu/projects/truststc/pubs/101/ourDataOurselves.pdf" target="_blank">approximate DP</a> (i.e., (ε, δ)-DP), <a href="https://arxiv.org/abs/1605.02065" target="_blank">zero-concentrated DP</a> (zCDP), and <a href="https://arxiv.org/abs/1702.07476" target="_blank">Rényi DP</a>.
+              A variant is defined by its privacy relation <a href="https://projects.iq.harvard.edu/files/opendifferentialprivacy/files/opendp_programming_framework_11may2020_1_01.pdf" target="_blank">(Gaboardi Hay Vadhan 2021)</a>, consisting of an input metric, bound on input distance, output measure, and bound on output distance.
 
-              If a custom flavor of DP is used for a deployment, its entry must specify the privacy relation. Otherwise, the common name of the flavor used is provided.
+              If a custom variant of DP is used for a deployment, its entry must specify the privacy relation. Otherwise, the common name of the variant used is provided.
             type: string
             enum:
               - Pure DP
@@ -174,10 +174,10 @@ properties:
             type: string
           privacy_parameters:
             tier: 2
-            description: Intensity of protection, as characterized by values set for parameters like epsilon, delta, or rho. Which parameters are specified will vary according to the DP flavor.
+            description: Intensity of protection, as characterized by values set for parameters like epsilon, delta, or rho. Which parameters are specified will vary according to the DP variant.
             description_long: |
               Privacy-loss parameters describe the “intensity” of protection over the privacy unit <a href="https://www.proquest.com/docview/3217403500" target="_blank">(Bailie 2025)</a>.
-              Different flavors of differential privacy use different privacy parameters (e.g., ε for pure DP and ε and δ for approximate-DP).
+              Different variants of differential privacy use different privacy parameters (e.g., ε for pure DP and ε and δ for approximate-DP).
               They are referred to as privacy-loss parameters because smaller values mean greater protection (i.e., less loss of privacy).
               Privacy-loss parameters cannot be interpreted without the privacy unit, as intensity of protection without knowledge of what is being protected is meaningless.
               It often requires additional modeling and effort to translate privacy-loss parameters into real-world risk measures, and this remains an ongoing area of research.
