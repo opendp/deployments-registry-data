@@ -13,8 +13,8 @@ deployment:
     publication_date: '2020-09-02'
     data_product_sector: Healthcare
 
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     data_domain: Search queries from a sample of Google users. These queries are classified as either a “symptom search” if they relate to a pre-defined list of approximately 400 symptoms, or as general search activity which is used to generate the normalization counts. This data is aggregated into daily or weekly counts for a specific symptom and geographic region, at three distinct granularity levels.
     unprotected_quantities: The paper mentions that, for each day and geographic granularity level, a user’s contribution is capped to three counts in total, and that this was justified by the observation that approximately 75% of users search at most three symptoms per day. There was no mention of the aforementioned statistic being computed under differential privacy.
 
@@ -68,7 +68,7 @@ deployment:
           - Level 2 (e.g., County): \\(\epsilon_2'\\) = 0.014
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: |
+    preprocessing_and_hyperparameter_tuning: |
       - Individual search queries are mapped to one or more symptoms from a predefined list.
       - The mapped queries are aggregated by user, day, symptom, and geographic region to produce raw counts.
       - For each day and geographic granularity level, a user can contribute at most once to any given count (per-symptom bound) and to no more than three counts in total (cross-symptom bound). Any symptom searches beyond this limit are discarded.

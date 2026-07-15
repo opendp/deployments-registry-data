@@ -15,8 +15,8 @@ deployment:
     data_product_sector: Technology
 
   # Tiers 2 and 3:
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     data_domain: |
       - Raw per-project edit logs, each record containing: wiki_db (corresponds to project), project, country, month, editor activity level (either "1 to 4", "5 to 99", or "100 or more") and user ID (fingerprint or name).
       - Time period is January 2018 - present
@@ -45,7 +45,7 @@ deployment:
     # composition: '' # Tier 3
 
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    # preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
       - Laplace Mechanism
       - The processing pipelines consists of the following steps:

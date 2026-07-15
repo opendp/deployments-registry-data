@@ -13,8 +13,8 @@ deployment:
     publication_date: '2023-10-21'
     data_product_sector: Government
 
-  dp_flavor:
-    name: Zero-concentrated DP
+  dp_variant:
+    variant_name: Zero-concentrated DP
     data_domain: The Detailed DHC-A contains the data compiled from the questions on race, ethnicity, sex, and age asked of all people in the 2020 Census.
     unprotected_quantities: |
       - The total population count for each state, the District of Columbia, and Puerto Rico.

@@ -15,8 +15,8 @@ deployment:
       date, we guarantee the top-employer reports are together (4.8, 4 × 10−10)-DP."
     publication_date: '2020-01-01'
     data_product_sector: Technology
-  dp_flavor:
-    name: Approximate DP
+  dp_variant:
+    variant_name: Approximate DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
@@ -35,7 +35,7 @@ deployment:
     release_type_description: Monthly
     access_type: Non-interactive # TODO: Is this correct?
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Gumbel
     justification: '' # TODO: Fill in correct value
   administrative:

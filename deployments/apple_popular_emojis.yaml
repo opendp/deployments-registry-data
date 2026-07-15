@@ -13,8 +13,8 @@ deployment:
     publication_date: '2017-01-01'
     data_product_sector: Technology
 
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     data_domain: Event-level dataset where one "event" is a user typing an emoji.
     unprotected_quantities: |
       - The dictionary of emojis (a predefined set of 2,600 emojis).
@@ -55,7 +55,7 @@ deployment:
     composition: No information was provided about composition.
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: 'Three parameters are explicitly set: \\(\epsilon = 4\\), number of hash functions k = 65,546 and the size of the privatized vector m = 1024. These were predetermined by the authors based on an analysis of the tradeoff between utility, server computation cost (related to k), and device bandwidth (related to m).'
+    preprocessing_and_hyperparameter_tuning: 'Three parameters are explicitly set: \\(\epsilon = 4\\), number of hash functions k = 65,546 and the size of the privatized vector m = 1024. These were predetermined by the authors based on an analysis of the tradeoff between utility, server computation cost (related to k), and device bandwidth (related to m).'
     mechanisms: |
       - The differential privacy algorithm used is Private Count Mean Sketch (CMS).
       - No information was provided about the implementation of the mechanism.

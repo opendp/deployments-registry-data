@@ -5,7 +5,7 @@ short_fields:
   - /deployment/basic/data_product_region
   - /deployment/basic/data_product_sector
   - /deployment/basic/publication_date
-  - /deployment/dp_flavor/name
+  - /deployment/dp_variant/variant_name
   - /deployment/privacy_loss/privacy_unit
   - /deployment/privacy_loss/privacy_parameters/epsilon
   - /deployment/privacy_loss/privacy_parameters/delta
@@ -20,4 +20,4 @@ extra_columns:
   "Model": /deployment/deployment_model/model_name
 tile_names:
   # These tiles in the table need shorter names.
-  pre_processing_eda_hyperparameter_tuning: Pre Processing
+  preprocessing_and_hyperparameter_tuning: Pre Processing

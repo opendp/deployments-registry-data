@@ -13,8 +13,8 @@ deployment:
     publication_date: '2024-09-19'
     data_product_sector: Government
 
-  dp_flavor:
-    name: Zero-concentrated DP
+  dp_variant:
+    variant_name: Zero-concentrated DP
     data_domain: The Supplemental DHC tables provide counts of people living in households and the average household size, by dif- ferent characteristics (such as age, family type, and tenure)
     unprotected_quantities: |
       - N/A

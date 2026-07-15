@@ -12,8 +12,8 @@ deployment:
     description: '"A data set designed to allow researchers to study the distribution of URLs on Facebook and how users interacted with them."'
     publication_date: '2020-06-06'
     data_product_sector: Technology
-  dp_flavor:
-    name: Zero-concentrated DP
+  dp_variant:
+    variant_name: Zero-concentrated DP
     data_domain: User actions on a URL.
   privacy_loss:
     privacy_unit: User-level
@@ -39,7 +39,7 @@ deployment:
     release_type_description: Static
     access_type: Non-interactive
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Modified Report Noisy Max
     justification: '' # TODO: Fill in correct value
   administrative:
