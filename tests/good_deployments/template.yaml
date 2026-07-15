@@ -32,6 +32,7 @@ deployment:
   deployment_model:
     model_name: Central # Fill in correct value.
     model_name_details: ''
+    trust_assumptions: ''
     actors: ''
     release_type: Many releases # Fill in correct value.
     release_type_details: ''

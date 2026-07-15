@@ -71,6 +71,7 @@ def test_node_has_details_long(path, node):
         "/deployment/privacy_loss/privacy_parameters_details",
         "/deployment/deployment_model",
         "/deployment/deployment_model/model_name_details",
+        "/deployment/deployment_model/trust_assumptions",
         "/deployment/deployment_model/actors",
         "/deployment/deployment_model/release_type_details",
         "/deployment/deployment_model/data_source_type_details",
