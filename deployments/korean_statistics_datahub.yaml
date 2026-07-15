@@ -18,13 +18,13 @@ deployment:
   # dp_variant: TODO
   privacy_loss:
     privacy_unit: Aggregate-level
-    # privacy_unit_description: TODO
+    # privacy_unit_details: TODO
     privacy_parameters: {}
   deployment_model:
     model_name: Central
-    # model_name_description: TODO
+    # model_name_details: TODO
     release_type: One release # TODO: Is this correct?
-    release_type_description: Not specified
+    release_type_details: Not specified
     access_type: Non-interactive # TODO: Is this correct?
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value

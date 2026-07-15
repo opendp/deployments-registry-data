@@ -168,7 +168,7 @@ properties:
               More formally, the privacy unit is the entity whose data changes under adjacent datasets <a href="https://www.proquest.com/docview/3217403500" target="_blank">(Bailie 2025)</a>.
               Tier 3 entries go beyond stating a high-level description of the privacy unit and include a precise specification of what constitutes adjacent datasets.
             type: string
-          privacy_unit_description:
+          privacy_unit_details:
             tier: 3
             description: A precise specification of what constitutes adjacent datasets (e.g., in terms of your dataset schema. Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55) Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
             type: string
@@ -192,7 +192,7 @@ properties:
                   - string
               rho:
                 type: number
-          privacy_parameters_description:
+          privacy_parameters_details:
             tier: 3
             description: More detail on the parameters, if necessary.
       deployment_model:
@@ -235,7 +235,7 @@ properties:
               - Shuffle
               - Federated
               - Varies # Present in converted records
-          model_name_description:
+          model_name_details:
             type: string
           actors:
             tier: 3
@@ -253,7 +253,7 @@ properties:
             enum:
               - One release
               - Many releases
-          release_type_description:
+          release_type_details:
             description: |
               For one-release deployments, entries should state if there are plans for future uses or publications of the data used to create the data product.
 
@@ -268,7 +268,7 @@ properties:
             enum:
               - Static
               - Dynamic
-          data_source_type_description:
+          data_source_type_details:
             tier: 3
             description: If more description is useful.
           access_type:
@@ -281,7 +281,7 @@ properties:
             enum:
               - Interactive
               - Non-interactive
-          access_type_description:
+          access_type_details:
             tier: 3
             description: Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
             type: string

@@ -22,23 +22,23 @@ deployment:
 
   privacy_loss:
     privacy_unit: ''
-    privacy_unit_description: ''
+    privacy_unit_details: ''
     privacy_parameters: # Fill in correct value, and remove others
       epsilon: 1.0
       delta: 1.0e-10
       rho: 1.0
-    privacy_parameters_description: ''
+    privacy_parameters_details: ''
 
   deployment_model:
     model_name: Central # Fill in correct value.
-    model_name_description: ''
+    model_name_details: ''
     actors: ''
     release_type: Many releases # Fill in correct value.
-    release_type_description: ''
+    release_type_details: ''
     data_source_type: Static # Fill in correct value.
-    data_source_type_description: ''
+    data_source_type_details: ''
     access_type: Non-interactive # Fill in correct value.
-    access_type_description: ''
+    access_type_details: ''
 
   accounting:
     post_processing: '' # Tier 3
