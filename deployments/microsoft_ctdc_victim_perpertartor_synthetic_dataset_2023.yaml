@@ -36,23 +36,23 @@ deployment:
 
   privacy_loss:
     privacy_unit: User-level
-    privacy_unit_description: Each victim in the original dataset is a single privacy unit. Adjacent datasets are those that differ by the data of a single victim. None of the attribute combinations in the synthetic dataset can be linked to a single victim in the original dataset with high confidence.
+    privacy_unit_details: Each victim in the original dataset is a single privacy unit. Adjacent datasets are those that differ by the data of a single victim. None of the attribute combinations in the synthetic dataset can be linked to a single victim in the original dataset with high confidence.
     privacy_parameters:
       epsilon: 12.0
       delta: 5.8e-6
-    privacy_parameters_description: A continuous Gaussian mechanism adds random noise to statistics counts for the aggregate data and samples from noisy counts for the synthetic data generation. This yields \\(\epsilon = 12.0\\) and \\(\delta = 5.8 × 10−6\\)-differential privacy guarantee.
+    privacy_parameters_details: A continuous Gaussian mechanism adds random noise to statistics counts for the aggregate data and samples from noisy counts for the synthetic data generation. This yields \\(\epsilon = 12.0\\) and \\(\delta = 5.8 × 10−6\\)-differential privacy guarantee.
 
 
   deployment_model:
     model_name: Central
-    # model_name_description: ''
+    # model_name_details: ''
     # actors: ''
     release_type: One release
-    # release_type_description: ''
+    # release_type_details: ''
     data_source_type: Static
-    # data_source_type_description: ''
+    # data_source_type_details: ''
     access_type: Interactive
-    access_type_description: The global victim-perpetrator synthetic data dashboard is released so analysts can visualise descriptive trends and explore the relationship between variables.
+    access_type_details: The global victim-perpetrator synthetic data dashboard is released so analysts can visualise descriptive trends and explore the relationship between variables.
 
   # accounting:
   #   post_processing: '' # Tier 3

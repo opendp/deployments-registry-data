@@ -21,7 +21,7 @@ deployment:
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: Event-Month-level
-    privacy_unit_description: |
+    privacy_unit_details: |
       "For this use case we use event-level privacy, where the event is a user being
       hired. We note that in our dataset, in any given 3 month period at least 95% of users are hired at
       most once...Similarly, we guarantee that each month, the top-jobs query is (4.8, 4 × 10−10)-DP."
@@ -30,9 +30,9 @@ deployment:
       delta: 4.0e-10
   deployment_model:
     model_name: Central
-    # model_name_description: TODO
+    # model_name_details: TODO
     release_type: One release # TODO: Is this correct?
-    release_type_description: Monthly
+    release_type_details: Monthly
     access_type: Non-interactive # TODO: Is this correct?
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value

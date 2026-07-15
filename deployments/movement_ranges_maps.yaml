@@ -16,15 +16,15 @@ deployment:
     variant_name: Pure DP
   privacy_loss:
     privacy_unit: User-day-level
-    # privacy_unit_description: TODO
+    # privacy_unit_details: TODO
     privacy_parameters:
       epsilon: 2.0
-    privacy_parameters_description: '"Resulting in a total differential privacy epsilon value of 2.0."'
+    privacy_parameters_details: '"Resulting in a total differential privacy epsilon value of 2.0."'
   deployment_model:
     model_name: Central
-    # model_name_description: TODO
+    # model_name_details: TODO
     release_type: Many releases
-    release_type_description: Static
+    release_type_details: Static
     data_source_type: Dynamic
     access_type: Non-interactive
   implementation:

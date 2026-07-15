@@ -18,15 +18,15 @@ deployment:
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: Event-level
-    # privacy_unit_description: TODO
+    # privacy_unit_details: TODO
     privacy_parameters:
       epsilon: 2.0
-    privacy_parameters_description: '"We deploy CMS to observe the most popular health data types with the following parameters: m = 256, k = 65,536, and \\(\epsilon\\) = 2."'
+    privacy_parameters_details: '"We deploy CMS to observe the most popular health data types with the following parameters: m = 256, k = 65,536, and \\(\epsilon\\) = 2."'
   deployment_model:
     model_name: Local
-    model_name_description: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
+    model_name_details: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
     release_type: Many releases
-    release_type_description: Daily
+    release_type_details: Daily
     data_source_type: Dynamic
     access_type: Non-interactive
 

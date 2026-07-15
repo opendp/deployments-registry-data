@@ -21,18 +21,18 @@ deployment:
     unprotected_quantities: 'bin labels drawn from finite domains; output_measure: elastic sensitivity (upper bound on local sensitivity)'
   privacy_loss:
     privacy_unit: Tuple-level
-    privacy_unit_description: |
+    privacy_unit_details: |
       Each record corresponds to a tuple in a single table
       of a multi-table database. Tuples do not necessarily correspond to
       individuals.
     privacy_parameters:
       epsilon: 0.01
       delta: 'n^{(-\epsilon \ln(n))}'
-    privacy_parameters_description: 'these parameters are used for evaluating the deployment, in operation the parameters are set by users on query-by-query basis'
+    privacy_parameters_details: 'these parameters are used for evaluating the deployment, in operation the parameters are set by users on query-by-query basis'
 
   deployment_model:
     model_name: Central
-    model_name_description: '"In this [system] we [implement] bounded differential privacy,in which x can be obtained from its neighbor y by changing (but not adding or removing) a single tuple."'
+    model_name_details: '"In this [system] we [implement] bounded differential privacy,in which x can be obtained from its neighbor y by changing (but not adding or removing) a single tuple."'
     actors: |
       - domains of observation: rider and driver information, trip logs, andcustomer support interactions
       - units of observation:  unspecified
@@ -41,11 +41,11 @@ deployment:
       - database controller: central controller of secure database
       - internal database users: designs, executes and receives database queries
     release_type: Many releases
-    release_type_description: 'Many different queries over the  database, no restriction against repeated queries over time'
+    release_type_details: 'Many different queries over the  database, no restriction against repeated queries over time'
     data_source_type: Dynamic
-    data_source_type_description: Database is updated dynamically through unspecified business processes
+    data_source_type_details: Database is updated dynamically through unspecified business processes
     access_type: Interactive
-    access_type_description: 'Authorized internal users design, execute, and receive multiple queries over an extended period of time. Privacy parameters are  determined by user, at request time.'
+    access_type_details: 'Authorized internal users design, execute, and receive multiple queries over an extended period of time. Privacy parameters are  determined by user, at request time.'
   accounting:
     post_processing: none described
     composition: |

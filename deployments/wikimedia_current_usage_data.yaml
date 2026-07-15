@@ -24,25 +24,25 @@ deployment:
 
   privacy_loss:
     privacy_unit: Device-day-level
-    privacy_unit_description: Adjacent datasets are those that differ by the data of a single device for a single day. Each device’s contribution is capped at a maximum of 10 unique pageviews per day. Since the implementation makes it impossible to link devices to users, the paper acknowledges that a user could visit the same page from multiple devices, and that 'this behavior could potentially be observed in the output data'. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
+    privacy_unit_details: Adjacent datasets are those that differ by the data of a single device for a single day. Each device’s contribution is capped at a maximum of 10 unique pageviews per day. Since the implementation makes it impossible to link devices to users, the paper acknowledges that a user could visit the same page from multiple devices, and that 'this behavior could potentially be observed in the output data'. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
     privacy_parameters:
       rho: 0.015
-    # privacy_parameters_description: ''
+    # privacy_parameters_details: ''
 
   deployment_model:
     model_name: Central
-    model_name_description: The model is a client-side filtering with server-side aggregation. Although some filtering operations take place on the user’s device, we still classify it as central, since the raw data leaves the user’s device.
+    model_name_details: The model is a client-side filtering with server-side aggregation. Although some filtering operations take place on the user’s device, we still classify it as central, since the raw data leaves the user’s device.
     actors: |
       - End-user devices (clients): the individuals who browse Wikipedia. Their device runs the client-side filter that only keeps the top 10 unique pageviews. Users must trust the Wikimedia Foundation to implement the DP mechanisms correctly, to protect raw logs, and to release only the noised aggregates.
       - Trusted Curator (The Wikimedia Foundation): Receives client-annotated pageviews, performs server-side DP (adds noise, suppresses counts), and publishes the final data.
       - Data Consumers: The public, including Wikipedia editors and academic researchers, who use the final, privacy-preserving data product. Data consumers do not need to be trusted, as they only ever see the data product which was produced under DP.
 
     release_type: Many releases
-    release_type_description: 'Published daily, on a rolling basis. Each user-day is treated as an independent privacy unit, with fixed parameters with \\(\rho\\) = 0.015. Since there is no overlap between days, the privacy loss does not accumulate over days for users: "There is no overlap between days: the privacy parameters for each user-day are fixed and do not increase over time."'
+    release_type_details: 'Published daily, on a rolling basis. Each user-day is treated as an independent privacy unit, with fixed parameters with \\(\rho\\) = 0.015. Since there is no overlap between days, the privacy loss does not accumulate over days for users: "There is no overlap between days: the privacy parameters for each user-day are fixed and do not increase over time."'
     data_source_type: Dynamic
-    data_source_type_description: As users visit the site, their individual pageviews are recorded and stored in the current pageviews dataset.
+    data_source_type_details: As users visit the site, their individual pageviews are recorded and stored in the current pageviews dataset.
     access_type: Non-interactive
-    # access_type_description: ''
+    # access_type_details: ''
 
   accounting:
     post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold \\(\tau\\) is removed from the final output dataset. For current data, \\(\tau\\) = 90.'

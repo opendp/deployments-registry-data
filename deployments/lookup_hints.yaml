@@ -22,14 +22,14 @@ deployment:
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: User-level
-    # privacy_unit_description:
+    # privacy_unit_details:
     privacy_parameters:
       epsilon: 8.0
   deployment_model:
     model_name: Local
-    model_name_description: '"Apple has adopted and further developed a technique known in the academic world as local differential privacy."'
+    model_name_details: '"Apple has adopted and further developed a technique known in the academic world as local differential privacy."'
     release_type: One release # TODO: Is this correct?
-    release_type_description: Daily
+    release_type_details: Daily
     access_type: Non-interactive # TODO: Is this correct?
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
