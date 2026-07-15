@@ -15,8 +15,8 @@ deployment:
     data_product_sector: Technology
 
   # Tiers 2 and 3:
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     # data_domain: '' # Tier 3
     # unprotected_quantities: '' # Tier 3
 
@@ -44,7 +44,7 @@ deployment:
     # composition: '' # Tier 3
 
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    # preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
       - Randomized Response with amplification through the secure aggregation protocol. The local Differential Privacy mechanism encodes a single, randomly sampled location-category pair into a tiled one-hot vector, subsequently applying randomized bit-flipping to satisfy DP guarantees.
       - No explicit information regarding the privacy unit was provided on the posted online article by Apple: https://machinelearning.apple.com/research/scenes-differential-privacy

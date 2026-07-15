@@ -12,8 +12,8 @@ deployment:
     description: Dashboard and dataset of trends in searches on COVID-19 vaccination.
     publication_date: '2021-07-02'
     data_product_sector: Healthcare # Could also be Technology.  Could also be new topic such as 'Public health'.
-  dp_flavor:
-    name: Approximate DP
+  dp_variant:
+    variant_name: Approximate DP
   privacy_loss:
     privacy_unit: User-level
     # privacy_unit_details: TODO
@@ -31,7 +31,7 @@ deployment:
     release_type_details: Daily
     access_type: Non-interactive # TODO: Is this correct?
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Gaussian
     justification: '' # TODO: Fill in correct value
   administrative:

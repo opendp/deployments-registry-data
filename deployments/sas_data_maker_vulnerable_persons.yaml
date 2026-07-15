@@ -14,8 +14,8 @@ deployment:
     publication_date: '2020-01-01'
     data_product_sector: Finance
 
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     data_domain: Similar to Open Banking transaction data, spanning multiple relational tables (Customers, Accounts, and Transactions tables) and covering customer personal data (direct and indirect identifiers), account details (including current accounts and credit cards), transaction amounts (such as recurring and individual payments) with merchant names and categories over an 18-month period.
     unprotected_quantities: Individual-level transactions are modeled using a conditional Autoregressive model with added noise, but without formal DP guarantees.
 
@@ -50,7 +50,7 @@ deployment:
       - Group privacy: To account for the one-to-many relationship between Customers and Accounts, the number of accounts per customer is bounded to 5 in the second PrivBayes network model, ensuring privacy loss accounting under group privacy.
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: |
+    preprocessing_and_hyperparameter_tuning: |
       - Preprocessing: |
         - discarding PIIs like real account/transaction/merchant IDs, and merchant names; generating random synthetic IDs/names in a similar format
         - discretizing numerical data in the Customers and Accounts tables (required for PrivBayes models, which operate on discrete/categorical data); after generation, values are transformed back to numerical by randomly sampling from the discretized bins

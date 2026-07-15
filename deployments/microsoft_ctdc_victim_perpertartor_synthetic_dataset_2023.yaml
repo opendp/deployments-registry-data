@@ -20,8 +20,8 @@ deployment:
     data_product_sector: Government
 
   # Tiers 2 and 3:
-  dp_flavor:
-    name: Approximate DP
+  dp_variant:
+    variant_name: Approximate DP
     data_domain: |
       - The dataset simulates approximately 206K synthetic records of victims and survivors of trafficking identified across 123 countries and territories, and their accounts of over 37,000 perpetrators who facilitated the trafficking process from 2005 to 2022.
       - Each record in the dataset contains information about the victim and their perpetrators:
@@ -59,7 +59,7 @@ deployment:
   #   composition: '' # Tier 3
 
   implementation:
-    # pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    # preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
       - Continuous Gaussian mechanism
       - The dataset was generated using Microsoft's Synthetic Data Showcase, which follows a two-stage approach:

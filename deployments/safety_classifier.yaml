@@ -13,8 +13,8 @@ deployment:
     publication_date: '2024-01-01'
     data_product_sector: Technology
 
-  dp_flavor:
-    name: Approximate DP
+  dp_variant:
+    variant_name: Approximate DP
     # data_domain:
 
     # unprotected_quantities:
@@ -38,7 +38,7 @@ deployment:
   #   composition:
 
   # implementation:
-  #   pre_processing_eda_hyperparameter_tuning:
+  #   preprocessing_and_hyperparameter_tuning:
   #   mechanisms:
   #   justification:
   administrative:

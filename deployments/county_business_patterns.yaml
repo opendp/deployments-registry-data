@@ -12,8 +12,8 @@ deployment:
     description: Demonstration dataset releasing data on economic establishments.
     publication_date: '2023-01-01'
     data_product_sector: Government
-  dp_flavor:
-    name: Zero-concentrated DP
+  dp_variant:
+    variant_name: Zero-concentrated DP
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
@@ -29,7 +29,7 @@ deployment:
     release_type_details: Static
     access_type: Non-interactive
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Gaussian
     justification: '' # TODO: Fill in correct value
   administrative:

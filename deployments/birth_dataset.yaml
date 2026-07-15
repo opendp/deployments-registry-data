@@ -12,8 +12,8 @@ deployment:
     description: Synthetic data covering live births in Israel during 2014.
     publication_date: '2024-02-01'
     data_product_sector: Healthcare
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
   privacy_loss:
     privacy_unit: Birth-level
     # privacy_unit_details: TODO
@@ -31,7 +31,7 @@ deployment:
     release_type_details: Static
     access_type: Non-interactive
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: PrivBayes with Private Selection (Universal Microdata Scheme)
     justification: '' # TODO: Fill in correct value
   administrative:

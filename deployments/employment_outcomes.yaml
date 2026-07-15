@@ -13,8 +13,8 @@ deployment:
     publication_date: '2019-01-01'
     data_product_sector: Education
 
-  dp_flavor:
-    name: Pure DP
+  dp_variant:
+    variant_name: Pure DP
     # data_domain:
 
     # unprotected_quantities:
@@ -40,7 +40,7 @@ deployment:
   #   composition:
 
   # implementation:
-  #   pre_processing_eda_hyperparameter_tuning:
+  #   preprocessing_and_hyperparameter_tuning:
   #   mechanisms:
   #   justification:
   administrative:

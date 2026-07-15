@@ -15,8 +15,8 @@ deployment:
     data_product_sector: 'Technology' # Fill in correct value.
 
   # Tiers 2 and 3:
-  dp_flavor:
-    name: Pure DP # Fill in correct value.
+  dp_variant:
+    variant_name: Pure DP # Fill in correct value.
     data_domain: '' # Tier 3
     unprotected_quantities: '' # Tier 3
 
@@ -45,7 +45,7 @@ deployment:
     composition: '' # Tier 3
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # Tier 3
+    preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: '' # Tier 3
     justification: '' # Tier 3
 
