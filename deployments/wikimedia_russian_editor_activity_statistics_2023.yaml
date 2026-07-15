@@ -31,7 +31,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # actors: ''
     release_type: One release
     # release_type_details: ''
     data_source_type: Static

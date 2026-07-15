@@ -31,7 +31,6 @@ deployment:
 
   deployment_model:
     model_name: Central # Fill in correct value.
-    actors: ''
     release_type: Many releases # Fill in correct value.
     release_type_details: ''
     data_source_type: Static # Fill in correct value.
