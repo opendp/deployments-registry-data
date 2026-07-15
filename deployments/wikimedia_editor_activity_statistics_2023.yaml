@@ -6,7 +6,9 @@ deployment:
     # Tier 1:
     name: Wikipedia Geoeditors Activity Statistics
     data_curators:
-      - Wikimedia Foundation
+      -
+        data_curator_name: 'Wikimedia Foundation'
+        data_curator_type: 'Nonprofit'
     intended_use: Release daily Wikipedia page visits at a country level, based on current and historical Wikipedia page views.
     data_product_type: Summary statistics
     data_product_region: Global

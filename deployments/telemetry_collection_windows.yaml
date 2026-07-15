@@ -5,7 +5,9 @@ deployment:
   basic:
     name: Telemetry Collection in Windows
     data_curators:
-      - Microsoft
+      -
+        data_curator_name: 'Microsoft'
+        data_curator_type: 'Industry'
     intended_use: For Microsoft to improve their products and services.
     data_product_type: Summary statistics
     data_product_region: Global

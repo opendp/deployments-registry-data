@@ -12,7 +12,11 @@ def make_slug(data):
     return "_".join(
         [
             clean(basic["name"]),
-            clean("-".join(basic["data_curators"])),
+            clean(
+                "-".join(
+                    curator["data_curator_name"] for curator in basic["data_curators"]
+                )
+            ),
             clean(basic["publication_date"].split("-")[0]),
         ]
     ).replace("_", "-")

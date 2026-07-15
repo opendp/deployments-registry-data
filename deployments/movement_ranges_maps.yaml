@@ -5,7 +5,9 @@ deployment:
   basic:
     name: Movement Ranges Map
     data_curators:
-      - Meta
+      -
+        data_curator_name: 'Meta'
+        data_curator_type: 'Industry'
     intended_use: Health Crisis Mobility Data
     data_product_type: Summary statistics
     data_product_region: Global

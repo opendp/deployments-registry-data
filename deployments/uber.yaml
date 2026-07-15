@@ -5,7 +5,9 @@ deployment:
   basic:
     name: FLEX
     data_curators:
-      - Uber
+      -
+        data_curator_name: 'Uber'
+        data_curator_type: 'Industry'
     intended_use: To compute privacy-protected SQL queries using existing SQL
       databases, in real time, at millions-of-records scale
     data_product_type: SQL queries

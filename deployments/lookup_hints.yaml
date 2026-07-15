@@ -5,7 +5,9 @@ deployment:
   basic:
     name: Lookup Hints
     data_curators:
-      - Apple
+      -
+        data_curator_name: 'Apple'
+        data_curator_type: 'Industry'
     intended_use: Web Browsing
     data_product_type: Summary statistics # TODO: Is this correct?
     data_product_region: Not specified

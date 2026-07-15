@@ -5,7 +5,9 @@ deployment:
   basic:
     name: Synthetic Data for Public Use
     data_curators:
-      - Office of National Statistics UK
+      -
+        data_curator_name: 'Office of National Statistics UK'
+        data_curator_type: 'Government'
     intended_use: Synthetic data
     data_product_type: Synthetic data
     data_product_region: USA
