@@ -45,7 +45,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details: ''
     # actors: ''
     release_type: One release
     # release_type_details: ''

@@ -41,7 +41,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    model_name_details: ''
     actors: |
       - End-user devices (clients): the individuals who browse Wikipedia.
       - Trusted Curator (The Wikimedia Foundation): Receives client-annotated pageviews, performs server-side differential privacy (adds noise, suppresses counts), and publishes the final data.

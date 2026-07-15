@@ -31,7 +31,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details: ''
     actors: |
       - Curator: U.S. Census Bureau: collects, stores, and protects the confidential data
       - Data subjects: The respondents of the 2020 Census, comprising over 331 million people in the United States. Their trust in the curator's ability to protect their data is essential for the quality of the census. This trust is rationalized by the Bureau's legal mandate under Title 13 of the U.S. Code to protect respondent confidentiality, a requirement reinforced by a lifelong oath taken by every employee.

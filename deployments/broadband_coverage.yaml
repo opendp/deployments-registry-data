@@ -28,7 +28,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details: ''
     actors: |
       - Users whose devices connect to Microsoft services. They must trust Microsoft to handle their data and apply the DP protections as described.
       - Microsoft (Curator): collects the raw telemetry data, applies the Laplace mechanism to produce differentially private counts, and publishes the final data product.
