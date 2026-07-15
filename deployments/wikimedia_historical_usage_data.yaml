@@ -59,7 +59,7 @@ deployment:
     composition: 'The results are published once with \\(\epsilon=1\\), and there is no additional privacy consumption.'
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: |
+    preprocessing_and_hyperparameter_tuning: |
       - The server determines the list of <page,country> groups for which to release statistics by identifying all pages that have more than a global pageview threshold (which was chosen based on the true data with no DP) and create the cross-product of those pages with a pre-defined list of countries.
       - The hyperparameters per-user daily contribution bound, ingestion threshold, and suppression threshold (see “Unprotected Quantities” for details)  were selected by computing metrics using the true data. The authors acknowledge that the parameters are not differentially private.
     mechanisms: |

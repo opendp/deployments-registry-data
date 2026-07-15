@@ -72,7 +72,7 @@ deployment:
         - For the TopDownAlgorithm, the total \\(\rho\\)  is the sum of the \\(\rho\\)  values allocated to all queries at every level of the geographic hierarchy (nation, state, county, tract, block group, and block).
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: |
+    preprocessing_and_hyperparameter_tuning: |
       - Preprocessing: the raw census responses undergo pre-processing steps to create the CEF. This involves:
           - Editing: Ensuring logical consistencies among characteristics for a person or household. For instance, an edit constraint ensures that a mother must be older than her natural child.
           - Imputation: Filling in missing or misreported data for key characteristics like age, sex, race, and ethnicity to ensure every record is complete.

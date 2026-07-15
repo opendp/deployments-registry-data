@@ -32,7 +32,7 @@ deployment:
 
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Private Count Mean Sketch
     justification: '' # TODO: Fill in correct value
   administrative:

@@ -20,4 +20,4 @@ extra_columns:
   "Model": /deployment/deployment_model/model_name
 tile_names:
   # These tiles in the table need shorter names.
-  pre_processing_eda_hyperparameter_tuning: Pre Processing
+  preprocessing_and_hyperparameter_tuning: Pre Processing

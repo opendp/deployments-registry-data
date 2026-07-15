@@ -34,7 +34,7 @@ deployment:
     release_type_description: Static
     access_type: Non-interactive
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace Mechanism
     justification: '"All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
   administrative:

@@ -49,7 +49,7 @@ deployment:
     composition: The article does not specifically mention composition, only that the final privacy guarantee is rho = 0.81 zCDP. It mentions that training ran for 2000 rounds over six days, and devices participated in training at most once every 24 hours.
 
   implementation:
-    pre_processing_eda_hyperparameter_tuning: No information is provided about pre-processing steps, EDA, or the process by which hyperparameters (privacy loss parameter or number of training rounds) were tuned.
+    preprocessing_and_hyperparameter_tuning: No information is provided about pre-processing steps, EDA, or the process by which hyperparameters (privacy loss parameter or number of training rounds) were tuned.
     mechanisms: |
       - The mechanism is a DP variant of Follow-The-Regularized-Leader (DP-FTRL), which utilizes negatively correlated noise, added by the aggregating server (essentially, adding noise to one gradient and subtracting that same noise from a later gradient) and efficiently implements this using the Tree Aggregation algorithm.
       - The mechanism was implemented using Google’s open-source libraries TenserFlow Federated and TensorFlow Privacy.

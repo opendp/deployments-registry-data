@@ -38,7 +38,7 @@ deployment:
   #   composition:
 
   # implementation:
-  #   pre_processing_eda_hyperparameter_tuning:
+  #   preprocessing_and_hyperparameter_tuning:
   #   mechanisms:
   #   justification:
   administrative:

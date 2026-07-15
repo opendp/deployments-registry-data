@@ -32,7 +32,7 @@ deployment:
     release_type_description: Daily
     access_type: Non-interactive # TODO: Is this correct?
   implementation:
-    pre_processing_eda_hyperparameter_tuning: '' # TODO: Fill in correct value
+    preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Count Mean Sketch or Hadamard Count Mean Sketch
     justification: '' # TODO: Fill in correct value
   administrative:
