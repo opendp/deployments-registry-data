@@ -235,17 +235,6 @@ properties:
               - Shuffle
               - Federated
               - Varies # Present in converted records
-          model_name_details:
-            type: string
-          trust_assumptions:
-            tier: 3
-            type: string
-            description: |
-              Describe relevant actors (anyone who may access the data product or underlying data) and trust assumptions for each. Include rationale for these assumptions where possible. Consider, for example, what kinds of outside information these actors may have and why.
-          actors:
-            tier: 3
-            description: Who are the relevant actors in the deployment? This includes anyone who may see the data product, even partially, and including adversaries. What are their trust assumptions and what is the rationale for these trust assumptions?
-            type: string
           release_type:
             tier: 2
             description: |
@@ -273,9 +262,6 @@ properties:
             enum:
               - Static
               - Dynamic
-          data_source_type_details:
-            tier: 3
-            description: If more description is useful.
           access_type:
             tier: 2
             description: |

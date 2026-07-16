@@ -30,7 +30,6 @@ deployment:
       delta: 4.0e-10
   deployment_model:
     model_name: Central
-    # model_name_details: TODO
     release_type: One release # TODO: Is this correct?
     release_type_details: Monthly
     access_type: Non-interactive # TODO: Is this correct?

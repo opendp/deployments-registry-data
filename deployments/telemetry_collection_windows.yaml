@@ -24,7 +24,6 @@ deployment:
       \\(\epsilon \prime \prime\\)-DP, where \\(\epsilon \prime \prime\\) = 1.672."'
   deployment_model:
     model_name: Local
-    # model_name_details: TODO
     release_type: Many releases
     release_type_details: 6 hours
     data_source_type: Dynamic

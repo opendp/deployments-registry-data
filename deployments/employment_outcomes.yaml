@@ -28,8 +28,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details:
-    # actors:
     release_type: One release
     data_source_type: Static
     access_type: Non-interactive

@@ -29,7 +29,6 @@ deployment:
       of \\(\epsilon = 0.66\\) and \\(\delta = 2.1 × 10−29\\), which is very strong."'
   deployment_model:
     model_name: Central
-    # model_name_details: TODO
     release_type: One release
     release_type_details: Static
     access_type: Non-interactive

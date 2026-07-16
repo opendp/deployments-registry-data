@@ -33,7 +33,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details: ''
     actors: |
       - Google users who have opted in to Location History. The model assumes that Google users trust Google to access their raw data and correctly apply the DP mechanisms before publication.
       - Curator (Google)
