@@ -1,5 +1,6 @@
 from pathlib import Path
 from yaml import load, Loader
+import re
 
 
 def _get_path_nodes(path, schema):
@@ -15,6 +16,6 @@ if __name__ == "__main__":
     schema = load((root / "schemas/deployments-schema.yaml").open(), Loader=Loader)
 
     path_nodes = list(_get_path_nodes("", schema))
-    paths = [path for path, node in path_nodes]
+    paths = [re.sub(r"[^/]+/", "  ", path[1:]) for path, node in path_nodes]
 
     print("\n".join(paths))
