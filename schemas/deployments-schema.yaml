@@ -276,32 +276,6 @@ properties:
             tier: 3
             description: Tier 3 entries that are interactive should also describe how the privacy loss budget is apportioned to and across analysts, and whether non-collusion between analysts is assumed. Under non-interactive deployments, people cannot interactively query the underlying data. Instead, they must interact with the published data product as is.
             type: string
-      accounting:
-        description_long: |
-          **Privacy-loss accounting**, i.e., how privacy loss is accounted for over multiple queries to the underlying data, is described by composition and post-processing:
-        type: object
-        additionalProperties: False
-        properties:
-          post_processing:
-            tier: 3
-            description: Functions applied to the data product after being protected under DP
-            description_long: |
-              Once differential privacy has been applied to generate a data product, functions applied to the data product thereafter, termed post-processing, do not incur additional privacy loss.
-              The impact of these functions may be important to know about for downstream applications using the data product, so they are reported for Tier 3 entries.
-              For example, imagine a data curator releasing a data product that includes counts of people in different geographic regions.
-              A privacy-protected count may be negative, but the curator may not want to publish a seemingly nonsensical count and may turn these negative counts into zeros.
-            type: string
-          composition:
-            tier: 3
-            description: How privacy loss is accounted across multiple differentially private queries, like sequential or parallel composition
-            description_long: |
-              Data products are often generated via multiple queries to the underlying data.
-              Each query to the data requires specifying values for the privacy parameters.
-              How privacy parameter values accumulate under differential privacy is described by different forms of composition.
-              Examples of composition include sequential composition and parallel composition.
-              Under sequential composition, assuming pure DP, the sum of the privacy parameter value (epsilon) per query is the total privacy parameter value.
-              Parallel composition, again assuming pure DP, says that the total privacy parameter value for a set of queries applied on disjoint subsets of the data is the maximum privacy parameter value used for one of the queries.
-            type: string
       implementation:
         description_long: |
           **Implementation** details are provided for Tier 3 entries. They include the following information:
@@ -329,6 +303,26 @@ properties:
               Differential privacy can be achieved using several mechanisms, i.e., algorithms that take the data as input and output a privacy-protected data product.
               Tier 3 entries describe these mechanisms and how they were implemented (e.g., using a library). These entries also describe other security-related implementation details, like what measures were taken to protect against known vulnerabilities, like floating point and timing channel attacks (e.g., see <a href="https://ieeexplore.ieee.org/abstract/document/9833672" target="_blank">(Jin, McMurtry, Rubinstein, Ohrimenko 2022)</a>. If available, code for implementation should be linked in this section.
             type: string
+          composition:
+            tier: 3
+            description: How privacy loss is accounted across multiple differentially private queries, like sequential or parallel composition
+            description_long: |
+              Data products are often generated via multiple queries to the underlying data.
+              Each query to the data requires specifying values for the privacy parameters.
+              How privacy parameter values accumulate under differential privacy is described by different forms of composition.
+              Examples of composition include sequential composition and parallel composition.
+              Under sequential composition, assuming pure DP, the sum of the privacy parameter value (epsilon) per query is the total privacy parameter value.
+              Parallel composition, again assuming pure DP, says that the total privacy parameter value for a set of queries applied on disjoint subsets of the data is the maximum privacy parameter value used for one of the queries.
+            type: string
+          post_processing:
+            tier: 3
+            description: Functions applied to the data product after being protected under DP
+            description_long: |
+              Once differential privacy has been applied to generate a data product, functions applied to the data product thereafter, termed post-processing, do not incur additional privacy loss.
+              The impact of these functions may be important to know about for downstream applications using the data product, so they are reported for Tier 3 entries.
+              For example, imagine a data curator releasing a data product that includes counts of people in different geographic regions.
+              A privacy-protected count may be negative, but the curator may not want to publish a seemingly nonsensical count and may turn these negative counts into zeros.
+            type: string
           justification:
             tier: 3
             description: |
@@ -338,6 +332,10 @@ properties:
             description_long: |
               Rationale for how decisions around implementation were made by the curator or others. In short, this information should answer the following questions laid out by <a href="https://escholarship.org/content/qt8vj5q8j7/qt8vj5q8j7_noSplash_3fbe06d219d4266437a90862727e5789.pdf" target="_blank">Dwork Mulligan Kohli 2019</a>: “What were the assumptions, modelling decisions, thresholds, and subjective decisions made in determining the implementation choices above? Why is the approach a thorough test of the stated assumptions? Was the process validated and verified? If so, how?
             type: string
+          utility:
+            tier: 3
+            description: |
+              Details about utility of the data product, if available. There is not a well-agreed-upon set of utility metrics, so we do not prescribe metrics that should be reported here. Instead, we recommend the advisory board determine how utility should be expressed.
       administrative:
         type: object
         additionalProperties: False
