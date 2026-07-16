@@ -46,6 +46,10 @@ properties:
             description: The name of the entity publishing the data product.
             description_long: |
               The **curator** refers to the entity who published the data product. Examples of curators include specific government agencies and companies.
+          description:
+            tier: 1
+            description: Brief description of the data product.
+            type: string
           intended_use:
             tier: 1
             description: Intended use(s) of the data product.
@@ -67,10 +71,6 @@ properties:
           data_product_region:
             tier: 1
             description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
-            type: string
-          description:
-            tier: 1
-            description: Brief description of the data product.
             type: string
           publication_date:
             tier: 1
@@ -145,6 +145,12 @@ properties:
             tier: 3
             description: A precise specification of what constitutes adjacent datasets (e.g., in terms of your dataset schema. Function that computes the distance between between any two datasets in the data domain (based partly on HoDP, pg 55) Maximum distance, computed by the input metric, between any two datasets in the data domain; pairs of datasets whose distance is within this bound are called “adjacent datasets”.
             type: string
+          number_of_privacy_units:
+            tier: 3
+            description: |
+              Number of privacy units (e.g., number of users, households, sets of all events associated with individual users in a day).
+              In cases where the dataset size is not public, an approximate number should be reported here.
+            type: integer
           privacy_parameters:
             tier: 2
             description: Intensity of protection, as characterized by values set for parameters like epsilon, delta, or rho. Which parameters are specified will vary according to the DP variant.
@@ -208,6 +214,12 @@ properties:
               - Shuffle
               - Federated
               - Varies # Present in converted records
+          trust_assumptions:
+            tier: 3
+            description: |
+              Describe relevant actors (anyone who may access the data product or underlying data) and trust assumptions for each.
+              Include rationale for these assumptions where possible.
+              Consider, for example, what kinds of outside information these actors may have and why.
           release_type:
             tier: 2
             description: |
@@ -309,6 +321,11 @@ properties:
             tier: 3
             description: |
               Details about utility of the data product, if available. There is not a well-agreed-upon set of utility metrics, so we do not prescribe metrics that should be reported here. Instead, we recommend the advisory board determine how utility should be expressed.
+          additional_information:
+            tier: 1
+            description: |
+              Additional details about the deployment, which could optionally include complete details of the implementation pipeline and performance data.
+              May also include links to white papers, blog posts, or other resources describing the deployment, links to the data product if publicly available, and any other miscellaneous notes that do not fit into any of the above sections.
       administrative:
         type: object
         additionalProperties: False
