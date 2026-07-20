@@ -31,9 +31,20 @@ deployment:
     mechanisms: Differentially Private Set Union
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: |
-      - Blog post: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
-      - Paper: https://arxiv.org/pdf/2002.09745
+    evidence_sources:
+      blog:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          year: 2020
+          author: Microsoft Search, Assistant and Intelligence
+          title: Assistive AI Makes Replying Easier
+          url: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
+      paper:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          year: 2022
+          title: Differentially Private Set Union
+          url: https://arxiv.org/pdf/2002.09745
     notes: |
       - Restricted to some languages (EN, ES, FR, PR, IT)
     registry_authors:

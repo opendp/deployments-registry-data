@@ -73,8 +73,13 @@ deployment:
       - The CMS algorithm yields a high number of hash collisions (mapping 2,600 emojis to 1024 bits) providing further plausible deniability.
 
   administrative:
-    sources: |
-      - Paper: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+    evidence_sources:
+      apple:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: Learning with Privacy at Scale
+          url: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+          author: Differential Privacy Team, Apple
     notes: |
       - Under "Security Measures": "The privatized records are temporarily stored on-device using data protection"; the paper points to this link https://www.apple.com/business/docs/iOS_Security_Guide.pdf
       - The paper covers collecting aggregate statistics for different use cases: trending new words, popular emojis, popular HealthKit data types, Safari media-playback preferences, and high energy/memory domains. We only treated the popular emojis use case, treating it as one deployment.
