@@ -40,6 +40,7 @@ def test_node_has_details(path, node):
         "/deployment/implementation",
         "/deployment/administrative",
         "/deployment/administrative/sources",
+        "/deployment/administrative/evidence_sources",
         "/deployment/administrative/notes",
     ]:
         assert "description" not in node.keys()
@@ -111,5 +112,7 @@ def test_object_has_additional_properties_false(path, node):
 
 
 def test_template_is_complete():
-    template_paths = [path for path, node in path_templates]
+    template_paths = [
+        path for path, node in path_templates if "evidence_sources/" not in path
+    ]
     assert template_paths == paths

@@ -359,6 +359,99 @@ properties:
               This section may also include links to the data product itself, if publicly available.
             tier: 1
             type: string
+          evidence_sources:
+            description_long: |
+              This section includes links to white papers, blogposts, or other sources that describe the deployment.
+              This section may also include links to the data product itself, if publicly available.
+            tier: 1
+            type: object
+            patternProperties:
+              ^\w+$:
+                oneOf:
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      article: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      book: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      booklet: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      conference: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      inbook: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      incollection: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      inproceedings: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      manual: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      mastersthesis: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      misc: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      phdthesis: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      proceedings: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      techreport: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      unpublished: { $ref: "#/$defs/bibtex_fields" }
           notes:
             tier: 1
             type: string
@@ -368,3 +461,50 @@ properties:
             items:
               type: string
             minItems: 1
+$defs:
+  string_or_number:
+    # We want to avoid spurious validation errors
+    # if someone enters an unquoted number in yaml.
+    # Downstream string concatenation will work either way.
+    anyOf:
+      - type: string
+      - type: number
+  evidence_source_type:
+    type: string
+    enum:
+      - Peer-reviewed publication
+      - Formal publication by the deploying organization
+      - Authorized organizational attestation
+      - Other public source
+  bibtex_fields:
+    type: object
+    additionalProperties: False
+    properties:
+      address: { type: string }
+      annote: { type: string }
+      author: { type: string }
+      booktitle: { type: string }
+      chapter: { $ref: "#/$defs/string_or_number" }
+      # crossref (https://bibtex.eu/fields/ only)
+      doi: { $ref: "#/$defs/string_or_number" }
+      edition: { $ref: "#/$defs/string_or_number" }
+      editor: { type: string }
+      email: { type: string }
+      howpublished: { type: string }
+      institution: { type: string }
+      issn: { $ref: "#/$defs/string_or_number" }
+      isbn: { $ref: "#/$defs/string_or_number" }
+      journal: { type: string }
+      month: { $ref: "#/$defs/string_or_number" }
+      note: { type: string }
+      number: { $ref: "#/$defs/string_or_number" }
+      organization: { type: string }
+      pages: { $ref: "#/$defs/string_or_number" }
+      publisher: { type: string }
+      school: { type: string }
+      type: { type: string }
+      series: { type: string }
+      title: { type: string }
+      url: { type: string }
+      volume: { $ref: "#/$defs/string_or_number" }
+      year: { $ref: "#/$defs/string_or_number" }
