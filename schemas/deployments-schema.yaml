@@ -365,77 +365,93 @@ properties:
               This section may also include links to the data product itself, if publicly available.
             tier: 1
             type: object
-            oneOf:
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  article: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  book: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  booklet: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  conference: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  inbook: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  incollection: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  inproceedings: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  manual: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  mastersthesis: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  misc: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  phdthesis: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  proceedings: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  techreport: { $ref: "#/$defs/bibtex_fields" }
-              -
-                type: object
-                additionalProperties: False
-                properties:
-                  unpublished: { $ref: "#/$defs/bibtex_fields" }
+            patternProperties:
+              ^\w+$:
+                oneOf:
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      article: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      book: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      booklet: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      conference: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      inbook: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      incollection: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      inproceedings: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      manual: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      mastersthesis: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      misc: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      phdthesis: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      proceedings: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      techreport: { $ref: "#/$defs/bibtex_fields" }
+                  -
+                    type: object
+                    additionalProperties: False
+                    properties:
+                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
+                      unpublished: { $ref: "#/$defs/bibtex_fields" }
           notes:
             tier: 1
             type: string
@@ -453,6 +469,13 @@ $defs:
     anyOf:
       - type: string
       - type: number
+  evidence_source_type:
+    type: string
+    enum:
+      - Peer-reviewed publication
+      - Formal publication by the deploying organization
+      - Authorized organizational attestation
+      - Other public source
   bibtex_fields:
     type: object
     additionalProperties: False
