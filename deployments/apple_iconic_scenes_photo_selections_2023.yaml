@@ -53,8 +53,13 @@ deployment:
       - Apple is committed to balancing privacy and utility: "We combined local noise addition with a technique called secure aggregation to address these concerns of balancing privacy with utility"
 
   administrative:
-    sources: |
-      - Blog post: https://machinelearning.apple.com/research/scenes-differential-privacy
+    evidence_sources:
+      blog_2023:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: Learning Iconic Scenes with Differential Privacy
+          url: https://machinelearning.apple.com/research/scenes-differential-privacy
+          year: 2023
     # notes: '' # other extra information
     registry_authors:
       - Michael Khavkin
