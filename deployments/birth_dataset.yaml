@@ -26,7 +26,6 @@ deployment:
       is \\(\epsilon = 9.98\\)."
   deployment_model:
     model_name: Central
-    # model_name_details: TODO
     release_type: One release
     release_type_details: Static
     access_type: Non-interactive

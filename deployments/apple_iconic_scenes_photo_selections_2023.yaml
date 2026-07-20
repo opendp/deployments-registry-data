@@ -31,11 +31,9 @@ deployment:
   deployment_model:
     model_name: Local
     model_name_details: Local Differential Privacy
-    # actors: ''
     release_type: Many releases
     release_type_details: Image data is collected from users who opted in to the Analytics & Improvements feature on their Apple devices and be used for improving features in Apple’s Photos app.
     data_source_type: Dynamic
-    # data_source_type_details: ''
     access_type: Non-interactive
     # access_type_details: ''
 

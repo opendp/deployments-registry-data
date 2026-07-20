@@ -26,7 +26,6 @@ deployment:
       - "The central diﬀerential privacy guarantees \\(\epsilon_c\\) that result from unlinkable aggregation of \\(\epsilon_0\\) = 8 metric report binary vectors, as used in ENPA."
   deployment_model:
     model_name: Varies
-    # model_name_details: TODO
     release_type: Many releases
     release_type_details: Varies
     access_type: Non-interactive

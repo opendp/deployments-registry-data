@@ -35,7 +35,6 @@ def test_node_has_details(path, node):
         "/deployment/privacy_loss/privacy_parameters/rho",
         "/deployment/privacy_loss/privacy_parameters/delta",
         "/deployment/deployment_model",
-        "/deployment/deployment_model/model_name_details",
         "/deployment/accounting",
         "/deployment/implementation",
         "/deployment/administrative",
@@ -70,11 +69,7 @@ def test_node_has_details_long(path, node):
         "/deployment/privacy_loss/privacy_parameters/rho",
         "/deployment/privacy_loss/privacy_parameters_details",
         "/deployment/deployment_model",
-        "/deployment/deployment_model/model_name_details",
-        "/deployment/deployment_model/trust_assumptions",
-        "/deployment/deployment_model/actors",
         "/deployment/deployment_model/release_type_details",
-        "/deployment/deployment_model/data_source_type_details",
         "/deployment/deployment_model/access_type_details",
         "/deployment/administrative",
         "/deployment/administrative/notes",
@@ -95,7 +90,6 @@ def test_node_has_tier(path, node):
     if path.startswith("/deployment/privacy_loss/privacy_parameters/"):
         return  # Tier not needed on individual parameters.
     if path in [
-        "/deployment/deployment_model/model_name_details",
         "/deployment/deployment_model/release_type_details",
         "/deployment/administrative/registry_authors",
     ]:

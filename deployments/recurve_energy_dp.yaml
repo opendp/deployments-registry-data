@@ -36,7 +36,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details:
     actors: |
       - Data Owners: MCE provided the sensitive data belonging to users not participating in OhmConnect's program.
       - Data Curator: Recurve
@@ -46,7 +45,6 @@ deployment:
     release_type: One release
     # release_type_details: ''
     data_source_type: Static
-    # data_source_type_details: ''
     access_type: Non-interactive
     # access_type_details: ''
 

@@ -22,7 +22,6 @@ deployment:
     privacy_parameters_details: '"Resulting in a total differential privacy epsilon value of 2.0."'
   deployment_model:
     model_name: Central
-    # model_name_details: TODO
     release_type: Many releases
     release_type_details: Static
     data_source_type: Dynamic
