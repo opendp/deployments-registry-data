@@ -72,13 +72,6 @@ properties:
             tier: 1
             description: Free text. What region does the data describe, and/or, what region's laws apply to this data product.
             type: string
-          publication_date:
-            tier: 1
-            description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of many releases, the publication date can be expressed as the date of first publication.
-            description_long: |
-              The publication **date** refers to when the data product was published or otherwise created. In cases of data products that are created under continual release, the date listed is the date of first publication.
-            type: string
-            format: date
           data_product_sector:
             tier: 1
             description: The industry or domain described by the data product.
@@ -91,6 +84,13 @@ properties:
               - Energy
               - Finance
               # Add to this list as needed.
+          publication_date:
+            tier: 1
+            description: When the data product was published, in YYYY-MM-DD format. Day and month can be set to "01" if unknown. In cases of many releases, the publication date can be expressed as the date of first publication.
+            description_long: |
+              The publication **date** refers to when the data product was published or otherwise created. In cases of data products that are created under continual release, the date listed is the date of first publication.
+            type: string
+            format: date
       # Tiers 2 and 3
       dp_variant:
         type: object
