@@ -5,7 +5,9 @@ deployment:
   basic:
     name: Disclosure Avoidance System for Detailed Demographic and Housing Characteristics File A
     data_curators:
-      - U.S. Census Bureau
+      -
+        data_curator_name: 'U.S. Census Bureau'
+        data_curator_type: 'Government'
     intended_use: The Detailed Demographic and Housing Characteristics data file A (Detailed DHC-A, or DDHC-A) provides population counts and sex-by-age statistics for approximately 1,500 detailed race and ethnic groups and detailed American Indian, Alaska Native, and Native Hawaiian (AIANNH) areas within the United States. These data are used for allocating government funding and by researchers such as demographers and economists.
     data_product_type: Summary statistics
     data_product_region: USA

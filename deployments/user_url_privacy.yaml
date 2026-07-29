@@ -5,7 +5,9 @@ deployment:
   basic:
     name: User-URL Privacy Dataset
     data_curators:
-      - Meta
+      -
+        data_curator_name: 'Meta'
+        data_curator_type: 'Industry'
     intended_use: Web Browsing
     data_product_type: Dataset
     data_product_region: Global

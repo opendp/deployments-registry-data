@@ -6,8 +6,12 @@ deployment:
     # Tier 1:
     name: CTDC Global Victim-Perpetrator Synthetic Dataset
     data_curators:
-      - Microsoft
-      - International Organization for Migration
+      -
+        data_curator_name: 'Microsoft'
+        data_curator_type: 'Industry'
+      -
+        data_curator_name: 'International Organization for Migration'
+        data_curator_type: 'Nonprofit'
     intended_use: Provides first-hand statistics on the relationships between victims and perpetrators using a synthetic dataset that preserves the statistical properties of the original victim data without representing actual victims. The dataset supports IOM and anti-trafficking actors in translating real-world case data into evidence that can inform counter-trafficking policies and build support systems for the estimated 50 million victims of forced labor globally.
 
     data_product_type: Synthetic data

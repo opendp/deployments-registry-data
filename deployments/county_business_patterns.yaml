@@ -5,7 +5,9 @@ deployment:
   basic:
     name: Census County Business Patterns
     data_curators:
-      - U.S. Census Bureau
+      -
+        data_curator_name: 'U.S. Census Bureau'
+        data_curator_type: 'Government'
     intended_use: Geographical Buisness Statistics
     data_product_type: Summary statistics
     data_product_region: USA
