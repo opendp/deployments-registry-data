@@ -1,6 +1,4 @@
 url_slug: google_tier_3
-status: Draft
-tier: 3
 deployment:
   basic:
     name: Placeholder
@@ -44,5 +42,7 @@ deployment:
       Basic sequential composition (counting symptoms + normalization)
     justification: Not available
   administrative:
+    status: Draft
     registry_authors:
       - Elena Ghazi
+    tier: 3

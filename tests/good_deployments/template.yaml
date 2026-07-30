@@ -1,6 +1,4 @@
 url_slug: template
-status: Draft
-tier: 3
 deployment:
   basic:
     # Tier 1:
@@ -50,6 +48,7 @@ deployment:
 
   administrative:
     sources: '' # white papers
-    notes: '' # other extra information
+    status: Draft
     registry_authors:
       - '' # Fill in correct value.
+    tier: 3

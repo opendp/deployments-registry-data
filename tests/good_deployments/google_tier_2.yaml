@@ -1,6 +1,4 @@
 url_slug: google_tier_2
-status: Draft
-tier: 2
 deployment:
   basic:
     name: Placeholder
@@ -27,5 +25,7 @@ deployment:
     access_type: Non-interactive
     data_source_type: Static
   administrative:
+    status: Draft
     registry_authors:
       - Elena Ghazi
+    tier: 2
