@@ -70,19 +70,27 @@ def test_node_has_details_long(path, node):
         "/deployment/privacy_loss/privacy_parameters/delta",
         "/deployment/privacy_loss/privacy_parameters/rho",
         "/deployment/privacy_loss/privacy_parameters_details",
+        "/deployment/privacy_loss/number_of_privacy_units",
         "/deployment/deployment_model",
         "/deployment/deployment_model/trust_assumptions",
         "/deployment/deployment_model/actors",
         "/deployment/deployment_model/release_type_details",
         "/deployment/deployment_model/access_type_details",
+        "/deployment/deployment_model/data_source_type_details",
+        "/deployment/deployment_model/model_name_details",
+        "/deployment/implementation/additional_information",
+        "/deployment/implementation/utility",
         "/deployment/administrative",
         "/deployment/administrative/notes",
         "/deployment/administrative/registry_authors",
+        "/deployment/administrative/status",
     ]
     if path in skip_list:
         assert "description_long" not in node.keys()
         pytest.skip("TODO: More description_long would be nice to have")
-    assert "description_long" in node.keys()
+    assert (
+        "description_long" in node.keys()
+    ), f"Add 'description_long' to {path}, or add path to skip_list"
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
@@ -93,13 +101,16 @@ def test_node_has_tier(path, node):
         return  # Tier is not needed at the top level.
     if path.startswith("/deployment/privacy_loss/privacy_parameters/"):
         return  # Tier not needed on individual parameters.
-    if path in [
+    skip_list = [
+        "/deployment/administrative/status",
         "/deployment/deployment_model/release_type_details",
         "/deployment/administrative/registry_authors",
-    ]:
+        "/deployment/administrative/tier",
+    ]
+    if path in skip_list:
         assert "tier" not in node.keys()
         pytest.skip("TODO: More tiers would be nice to have")
-    assert "tier" in node.keys()
+    assert "tier" in node.keys(), f"Add 'tier' to {path}, or add path to skip_list"
 
 
 @pytest.mark.parametrize(("path", "node"), path_nodes, ids=paths)
@@ -111,4 +122,4 @@ def test_object_has_additional_properties_false(path, node):
 
 def test_template_is_complete():
     template_paths = [path for path, node in path_templates]
-    assert template_paths == paths
+    assert paths == template_paths

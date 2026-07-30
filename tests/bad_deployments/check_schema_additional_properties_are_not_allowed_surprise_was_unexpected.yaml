@@ -1,7 +1,5 @@
 url_slug: bad
 surprise: ...
-status: Draft
-tier: 1
 deployment:
   basic:
     name: ...
@@ -17,3 +15,5 @@ deployment:
   administrative:
     registry_authors:
       - ...
+    status: Draft
+    tier: 1

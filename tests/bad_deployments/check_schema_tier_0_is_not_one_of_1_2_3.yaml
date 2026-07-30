@@ -1,6 +1,5 @@
 url_slug: bad
-status: Draft
-tier: 0
+
 deployment:
   basic:
     name: ...
@@ -14,5 +13,7 @@ deployment:
     data_product_region: ...
     publication_date: "2026-01-01"
   administrative:
+    status: Draft
+    tier: 0
     registry_authors:
       - ...
