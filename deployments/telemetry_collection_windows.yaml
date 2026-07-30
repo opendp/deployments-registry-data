@@ -1,6 +1,4 @@
 url_slug: telemetry-collection-in-windows-microsoft-2017
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Telemetry Collection in Windows
@@ -42,3 +40,5 @@ deployment:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    status: Pending
+    tier: 1

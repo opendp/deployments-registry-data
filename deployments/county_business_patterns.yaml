@@ -1,6 +1,4 @@
 url_slug: census-county-business-patterns-u-s-census-bureau-2023
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Census County Business Patterns
@@ -42,3 +40,5 @@ deployment:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    status: Pending
+    tier: 1

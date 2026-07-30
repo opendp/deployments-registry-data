@@ -1,6 +1,4 @@
 url_slug: community-mobility-place-visits-google-2020
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Community Mobility Place Visits
@@ -48,7 +46,17 @@ deployment:
     data_source_type_details: Metrics are generated for each day, starting on 2020-01-01 and ending on 2022-10-15
     access_type: Non-interactive
     # access_type_details: ''
-  accounting:
+
+  implementation:
+    preprocessing_and_hyperparameter_tuning: 'User contributions for public places are bounded: If a user visits more than four (category, location) pairs on a given day at a specific geographic level, four are chosen at random, and the rest are discarded. Each user can also contribute at most once per category at a given location.'
+    mechanisms: |
+      - The Laplace mechanism was used for simple counts, like the number of daily visits to public places and workplaces. The DP Mean Mechanism: used to calculate the average time spent at residences.
+      - The mechanisms were implemented via Google's open-source C++ Differential Privacy Library:
+        - github.com/google/differential-privacy
+        - The provided DP bounded-mean GitHub link is broken. Possible path to new file: github.com/google/differential-privacy/blob/main/cc/algorithms/bounded-mean.h
+      - No information was provided about protection against floating point errors.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - No information was provided about security measures in place to protect the underlying data.
     post_processing: |
       - Percentage Change Calculation: the final published value is a percentage change from the baseline. This is calculated by taking the ratio between the noisy metric for a specific day and the computed baseline for that day of the week (the baseline metric uses a fixed 5-week period from January 3, 2020 to February 6, 2020, by taking the median of the 5 corresponding daily noisy metrics from within that 5-week range).
       - Filtering Unreliable Metrics:
@@ -76,17 +84,6 @@ deployment:
           - \\(\epsilon\\) = 0.22 for county-level (granularity 2)
         - Composition: A user contributes at most once per geographic level. The total budget is the sum across the levels: 0.11*2 + 0.22 = 0.44
 
-  implementation:
-    preprocessing_and_hyperparameter_tuning: 'User contributions for public places are bounded: If a user visits more than four (category, location) pairs on a given day at a specific geographic level, four are chosen at random, and the rest are discarded. Each user can also contribute at most once per category at a given location.'
-    mechanisms: |
-      - The Laplace mechanism was used for simple counts, like the number of daily visits to public places and workplaces. The DP Mean Mechanism: used to calculate the average time spent at residences.
-      - The mechanisms were implemented via Google's open-source C++ Differential Privacy Library:
-        - github.com/google/differential-privacy
-        - The provided DP bounded-mean GitHub link is broken. Possible path to new file: github.com/google/differential-privacy/blob/main/cc/algorithms/bounded-mean.h
-      - No information was provided about protection against floating point errors.
-      - No information was provided about leakage due to idiosyncrasies of the computing platform.
-      - No information was provided about security measures in place to protect the underlying data.
-
     justification: |
       - Using scaling factors allows for continuous accuracy improvements with minimal impact on the overall privacy budget by grouping metrics and reusing previously generated data, rather than performing a full, costly re-computation.
       - Statistically insignificant metrics are filtered out to ensure utility and reliability of the data. This is done through a strict confidence threshold, ensuring there is at most a 5% risk of any published value being wrong by more than 10 absolute percentage points.
@@ -98,3 +95,5 @@ deployment:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
+    status: Pending
+    tier: 3

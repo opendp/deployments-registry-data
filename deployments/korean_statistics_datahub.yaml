@@ -1,6 +1,4 @@
 url_slug: korean-government-statistical-data-hub-platform-kostat-national-statistics-office-of-korea--2021
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Korean Government Statistical Data Hub Platform
@@ -37,3 +35,5 @@ deployment:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    status: Pending
+    tier: 1

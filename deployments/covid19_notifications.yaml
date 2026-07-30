@@ -1,6 +1,4 @@
 url_slug: covid-19-exposure-notification-framework-google-apple-2021
-status: Pending
-tier: 1
 deployment:
   basic:
     name: COVID-19 Exposure Notification Framework
@@ -44,3 +42,5 @@ deployment:
       - Priyanka Nanayakkara
       - Nicolas Berrios
       - Jack Fitzsimons
+    status: Pending
+    tier: 1

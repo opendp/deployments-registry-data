@@ -1,6 +1,4 @@
 url_slug: spanish-next-word-prediction-google-2022
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Spanish Next Word Prediction
@@ -45,10 +43,6 @@ deployment:
     access_type: Non-interactive
     # access_type_details: ''
 
-  accounting:
-    post_processing: No details were provided about post-processing.
-    composition: The article does not specifically mention composition, only that the final privacy guarantee is rho = 0.81 zCDP. It mentions that training ran for 2000 rounds over six days, and devices participated in training at most once every 24 hours.
-
   implementation:
     preprocessing_and_hyperparameter_tuning: No information is provided about pre-processing steps, EDA, or the process by which hyperparameters (privacy loss parameter or number of training rounds) were tuned.
     mechanisms: |
@@ -57,6 +51,9 @@ deployment:
       - No information was provided about protection against floating point errors.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - The primary security measure protecting the underlying data is the federated learning architecture itself, as it keeps the data on each user's device, decoupling ML training from the need to store the data in the cloud. This approach limits access to data at all stages because only minimal updates for a specific model training task are transmitted from the device.
+    post_processing: No details were provided about post-processing.
+    composition: The article does not specifically mention composition, only that the final privacy guarantee is rho = 0.81 zCDP. It mentions that training ran for 2000 rounds over six days, and devices participated in training at most once every 24 hours.
+
     justification: |
       - The main reason behind choosing federated learning was to train machine learning models while keeping the raw training data on each user's device. This approach provides data minimization advantages, and the DP guarantee protects all of the data on each device, not just individual training examples.
       - The project implemented user-level DP because example-level DP is not necessarily strong enough to ensure the users' data is not memorized when users can contribute multiple examples.
@@ -72,3 +69,5 @@ deployment:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
+    status: Pending
+    tier: 3

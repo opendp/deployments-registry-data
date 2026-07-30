@@ -1,6 +1,4 @@
 url_slug: safety-classifier-google-2024
-status: Pending
-tier: 2
 deployment:
   basic:
     name: Safety Classifier
@@ -34,10 +32,6 @@ deployment:
     data_source_type: Static
     access_type: Non-interactive
 
-  # accounting:
-  #   post_processing:
-  #   composition:
-
   # implementation:
   #   preprocessing_and_hyperparameter_tuning:
   #   mechanisms:
@@ -48,3 +42,5 @@ deployment:
       - Research paper: https://arxiv.org/pdf/2306.01684
     registry_authors:
         - Priyanka Nanayakkara
+    status: Pending
+    tier: 2

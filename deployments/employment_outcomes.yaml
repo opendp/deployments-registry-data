@@ -1,6 +1,4 @@
 url_slug: post-secondary-employment-outcomes-u-s-census-bureau-2019
-status: Pending
-tier: 2
 deployment:
   basic:
     name: Post-Secondary Employment Outcomes
@@ -34,21 +32,20 @@ deployment:
     data_source_type: Static
     access_type: Non-interactive
 
-
-  # accounting:
-  #   post_processing:
-  #   composition:
-
-  # implementation:
+  implementation:
   #   preprocessing_and_hyperparameter_tuning:
   #   mechanisms:
   #   justification:
+    additional_information: |
+      - It appears that the data product is published over time, but it is not clear from the documentation alone whether the same DP system is used for these later publications. Hence, we describe this deployment as “one-release” and having “static” data to be conservative.
+      - Finally, the paper contains parameter ranges (e.g., for \\(epsilon\\)) that were tested in the experiments section, however we did not find parameter values that were actually used in deployment.
+
   administrative:
     sources: |
       - Paper: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
       - Documentation: https://lehd.ces.census.gov/data/pseo_documentation.html
-    notes: |
-      - It appears that the data product is published over time, but it is not clear from the documentation alone whether the same DP system is used for these later publications. Hence, we describe this deployment as “one-release” and having “static” data to be conservative.
-      - Finally, the paper contains parameter ranges (e.g., for \\(epsilon\\)) that were tested in the experiments section, however we did not find parameter values that were actually used in deployment.
+
     registry_authors:
         - Priyanka Nanayakkara
+    status: Pending
+    tier: 2

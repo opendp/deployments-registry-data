@@ -1,6 +1,4 @@
 url_slug: vaccine-search-insights-google-2021
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Vaccine Search Insights
@@ -38,6 +36,8 @@ deployment:
   administrative:
     sources: |
       - Paper: https://arxiv.org/abs/2107.01179
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
+    tier: 1

@@ -1,6 +1,4 @@
 url_slug: private-third-party-audits-twitter-openmined-2022
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Private Third Party Audits
@@ -41,3 +39,5 @@ deployment:
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
+    status: Pending
+    tier: 1

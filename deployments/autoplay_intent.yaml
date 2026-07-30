@@ -1,6 +1,4 @@
 url_slug: autoplay-intent-apple-2017
-status: Pending
-tier: 1
 deployment:
   basic:
     name: AutoPlay Intent
@@ -36,7 +34,9 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     sources: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    tier: 1

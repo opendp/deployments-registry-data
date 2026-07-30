@@ -1,6 +1,4 @@
 url_slug: iconic-scenes-and-photo-sections-for-ios-apps-apple-2023
-status: Draft
-tier: 3
 deployment:
   basic:
     # Tier 1:
@@ -32,16 +30,11 @@ deployment:
 
   deployment_model:
     model_name: Local
-    model_name_details: Local Differential Privacy
     release_type: Many releases
     release_type_details: Image data is collected from users who opted in to the Analytics & Improvements feature on their Apple devices and be used for improving features in Apple’s Photos app.
     data_source_type: Dynamic
     access_type: Non-interactive
     # access_type_details: ''
-
-  # accounting:
-    # post_processing: '' # Tier 3
-    # composition: '' # Tier 3
 
   implementation:
     # preprocessing_and_hyperparameter_tuning: '' # Tier 3
@@ -56,5 +49,7 @@ deployment:
     sources: |
       - Blog post: https://machinelearning.apple.com/research/scenes-differential-privacy
     # notes: '' # other extra information
+    status: Draft
     registry_authors:
       - Michael Khavkin
+    tier: 3

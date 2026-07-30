@@ -1,6 +1,4 @@
 url_slug: linkedin-hiring-reports-linkedin-2020
-status: Pending
-tier: 1
 deployment:
   basic:
     name: LinkedIn Hiring Reports
@@ -45,3 +43,5 @@ deployment:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    status: Pending
+    tier: 1

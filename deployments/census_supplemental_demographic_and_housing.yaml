@@ -1,6 +1,4 @@
 url_slug: disclosure-avoidance-system-for-supplemental-demographic-and-housing-characteristics-file-u-s-census-bureau-2024
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Disclosure Avoidance System for Supplemental Demographic and Housing Characteristics File
@@ -46,12 +44,6 @@ deployment:
     access_type: Non-interactive
     # access_type_details: ''
 
-  accounting:
-    post_processing: |
-      The Supplemental Demographic and Housing Characteristics File is not consistent with the Demographic and Housing Characteristics File (DHC). Key post-processing functions include:
-        - Counts may not match across S-DHC tables.
-        - User-generated aggregations may not match the published counts.
-        - The underlying data are adjusted, through a process referred to as truncation, to not exceed household size maximum thresholds.
 
   implementation:
     mechanisms: |
@@ -61,6 +53,11 @@ deployment:
       - Security measures:
         - Legal: Protection is legally mandated by Title 13 of the U.S. Code.
         - All Census Bureau employees take a lifelong oath to protect respondent information.
+    post_processing: |
+      The Supplemental Demographic and Housing Characteristics File is not consistent with the Demographic and Housing Characteristics File (DHC). Key post-processing functions include:
+        - Counts may not match across S-DHC tables.
+        - User-generated aggregations may not match the published counts.
+        - The underlying data are adjusted, through a process referred to as truncation, to not exceed household size maximum thresholds.
 
     justification: |
       - Rationale for Adopting DP: Differential privacy was adopted after internal research confirmed that traditional disclosure avoidance methods, like data swapping, were vulnerable to modern database reconstruction and re-identification attacks. A 2018 simulation of such an attack on the 2010 Census data resulted in the confirmed re-identification of 52 million people (17% of the U.S. population). DP was chosen because it provides mathematically provable guarantees against a wide range of such privacy attacks.
@@ -80,3 +77,5 @@ deployment:
       - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
     registry_authors:
       - Curtis Mitchell
+    status: Pending
+    tier: 3

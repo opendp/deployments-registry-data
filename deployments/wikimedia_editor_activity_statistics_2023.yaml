@@ -1,6 +1,4 @@
 url_slug: wikipedia-geoeditors-activity-statistics-wikimedia-foundation-2023
-status: Draft
-tier: 3
 deployment:
   basic:
     # Tier 1:
@@ -39,10 +37,6 @@ deployment:
     access_type: Non-interactive
     # access_type_details: ''
 
-  # accounting:
-    # post_processing: '' # Tier 3
-    # composition: '' # Tier 3
-
   implementation:
     # preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
@@ -64,5 +58,7 @@ deployment:
       - Online description page: https://analytics.wikimedia.org/published/datasets/geoeditors_monthly/00_README.html
       - Code repository: https://gitlab.wikimedia.org/repos/security/differential-privacy/-/blob/main/differential_privacy/geoeditors_monthly.py
     # notes: ''
+    status: Draft
     registry_authors:
       - Michael Khavkin
+    tier: 3

@@ -228,6 +228,10 @@ properties:
               - Shuffle
               - Federated
               - Varies # Present in converted records
+          model_name_details:
+            tier: 3
+            type: string
+            description: TODO; Not included in whitepaper, but not sure where existing data should be moved.
           trust_assumptions:
             tier: 3
             type: string
@@ -266,6 +270,10 @@ properties:
             enum:
               - Static
               - Dynamic
+          data_source_type_details:
+            tier: 2
+            type: string
+            description: TODO; Not included in whitepaper, but not sure where existing data should be moved.
           access_type:
             tier: 2
             description: |

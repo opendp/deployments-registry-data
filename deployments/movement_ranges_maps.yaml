@@ -1,6 +1,4 @@
 url_slug: movement-ranges-map-meta-2020
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Movement Ranges Map
@@ -41,3 +39,5 @@ deployment:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    status: Pending
+    tier: 1

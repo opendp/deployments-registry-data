@@ -1,6 +1,4 @@
 url_slug: wikipedia-russian-editor-activity-statistics-wikimedia-foundation-2023
-status: Draft
-tier: 3
 deployment:
   basic:
     # Tier 1:
@@ -39,10 +37,6 @@ deployment:
     access_type: Non-interactive
     # access_type_details: ''
 
-  # accounting:
-    # post_processing: '' # Tier 3
-    # composition: '' # Tier 3
-
   implementation:
     # preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
@@ -64,5 +58,7 @@ deployment:
       - Code or table building: https://gerrit.wikimedia.org/r/plugins/gitiles/analytics/refinery/%2B/refs/heads/master/hql/geoeditors/geoeditors_monthly.hql
       - Code for private data release: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/blob/main/geoeditors/notebooks/04_russia_release.ipynb
     # notes: '' # other extra information
+    status: Draft
     registry_authors:
       - Michael Khavkin
+    tier: 3

@@ -1,6 +1,4 @@
 url_slug: safari-energy-draining-and-crashing-domains-apple-2017
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Safari Energy Draining and Crashing Domains
@@ -38,7 +36,9 @@ deployment:
     release_type_details: Daily
     access_type: Non-interactive # pre-defined query
 
-  accounting:
+  implementation:
+    preprocessing_and_hyperparameter_tuning: 'No hyperperameters are required; no EDA is described'
+    mechanisms: Private Hadamard Count Mean Sketch (PHCMS)
     post_processing: |
       - Server strips IP addresses and  associated ids from each record.
       - Aggregation - private histograms are generated through sketch mechanism PHCMS
@@ -46,18 +46,18 @@ deployment:
 
     composition: No information was provided about composition.
 
-  implementation:
-    preprocessing_and_hyperparameter_tuning: 'No hyperperameters are required; no EDA is described'
-    mechanisms: Private Hadamard Count Mean Sketch (PHCMS)
     justification: '"Formal proof, described in Theorem 4.1, Theorem 4.3"'
+    additional_information: |
+      - There are multiple releases per device & per user -- statistics are reported automatically on IoS and MacOS devices, subject to daily aggregation.
+      - There is only one aggregation query applied per-event.
+
 
   administrative:
     sources: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
-    notes: |
-      - There are multiple releases per device & per user -- statistics are reported automatically on IoS and MacOS devices, subject to daily aggregation.
-      - There is only one aggregation query applied per-event.
     registry_authors:
       - James Honaker
       - Micah Altman
       - Nicolas Berrios
       - Jack Fitzsimons
+    status: Pending
+    tier: 3

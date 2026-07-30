@@ -1,6 +1,4 @@
 url_slug: shared-mobility-dataset-google-2022
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Shared Mobility Dataset
@@ -40,7 +38,9 @@ deployment:
     justification: '"All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
   administrative:
     sources: https://www.nature.com/articles/s41467-019-12809-y
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    tier: 1

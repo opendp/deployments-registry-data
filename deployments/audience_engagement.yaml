@@ -1,6 +1,4 @@
 url_slug: audience-engagement-api-linkedin-2020
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Audience Engagement API
@@ -36,13 +34,16 @@ deployment:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Gumbel
     justification: '' # TODO: Fill in correct value
+    additional_information: |
+      - The paper states that “data is purged within 30 days of a user leaving the ecosystem because it has a 30 day retention.” We take this to mean that the data are refreshed on a monthly basis, i.e., that leaving the ecosystem means leaving a single user session on LinkedIn as opposed to account deletion.
+
   administrative:
     sources: |
       - Paper: https://arxiv.org/pdf/2002.05839
-    notes: |
-      - The paper states that “data is purged within 30 days of a user leaving the ecosystem because it has a 30 day retention.” We take this to mean that the data are refreshed on a monthly basis, i.e., that leaving the ecosystem means leaving a single user session on LinkedIn as opposed to account deletion.
+    status: Pending
     registry_authors:
       - Priyanka Nanayakkara
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    tier: 1

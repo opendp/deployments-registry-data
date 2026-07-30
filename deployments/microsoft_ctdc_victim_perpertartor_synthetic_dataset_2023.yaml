@@ -1,6 +1,4 @@
 url_slug: ctdc-global-victim-perpetrator-synthetic-dataset-microsoft-international-organization-for-migration-2023
-status: Draft
-tier: 3
 deployment:
   basic:
     # Tier 1:
@@ -55,10 +53,6 @@ deployment:
     access_type: Interactive
     access_type_details: The global victim-perpetrator synthetic data dashboard is released so analysts can visualise descriptive trends and explore the relationship between variables.
 
-  # accounting:
-  #   post_processing: '' # Tier 3
-  #   composition: '' # Tier 3
-
   implementation:
     # preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
@@ -85,3 +79,5 @@ deployment:
     # notes: '' # other extra information
     registry_authors:
       - Michael Khavkin
+    status: Draft
+    tier: 3

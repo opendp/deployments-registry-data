@@ -41,13 +41,11 @@ deployment:
     access_type: Non-interactive # Fill in correct value.
     access_type_details: ''
 
-  accounting:
-    post_processing: '' # Tier 3
-    composition: '' # Tier 3
-
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: '' # Tier 3
+    post_processing: '' # Tier 3
+    composition: '' # Tier 3
     justification: '' # Tier 3
 
   administrative:

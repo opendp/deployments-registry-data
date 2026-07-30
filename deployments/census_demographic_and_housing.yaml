@@ -1,6 +1,4 @@
 url_slug: disclosure-avoidance-system-for-demographic-and-housing-data-u-s-census-bureau-2023
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Disclosure Avoidance System for Demographic and Housing Data
@@ -57,20 +55,6 @@ deployment:
     access_type: Non-interactive
     # access_type_details: ''
 
-  accounting:
-    post_processing: |
-      A series of post-processing functions are applied to make the data consistent and usable. The primary goal of post-processing is to produce a confidential, record-level Microdata Detail File (MDF) that can be used by the Census Bureau's standard tabulation systems. Key post-processing functions include:
-        - Ensuring Non-Negativity and Integrality: The system enforces that all final counts are non-negative integers, as required by the tabulation system. If adding noise results in a negative count, that value is adjusted.
-        - Enforcing Invariants and Constraints: Post-processing ensures that the final data adhere to all pre-defined invariants and other constraints. This includes holding state-level population totals to their exact enumerated values and ensuring that geographies with occupied group quarters facilities contain at least one person.
-        - Ensuring Consistency: The data are processed to be consistent both hierarchically and internally. This means that counts for smaller geographic units (like counties) sum to their parent geographies (the state), and that different characteristics within a table sum correctly to their totals. This consistency is achieved by solving a large-scale mathematical optimization problem. This is done in two primary steps for each level of the geographic hierarchy:
-          - A constrained weighted least squares optimization is performed to find a non-negative, real-valued (i.e., continuous) solution that is as close as possible to the noisy measurements while respecting the constraints.
-          - A controlled rounding problem is then solved to convert the real-valued solution into a final, non-negative integer solution.
-
-    composition: |
-      Adaptive composition under zCDP is used (because of robust and mathematically simple properties):
-        - Under zCDP, the total privacy loss is calculated by summing the privacy-loss parameter \\(\rho\\)  for each query that is applied to the data.
-        - For the TopDownAlgorithm, the total \\(\rho\\)  is the sum of the \\(\rho\\)  values allocated to all queries at every level of the geographic hierarchy (nation, state, county, tract, block group, and block).
-
   implementation:
     preprocessing_and_hyperparameter_tuning: |
       - Preprocessing: the raw census responses undergo pre-processing steps to create the CEF. This involves:
@@ -86,6 +70,19 @@ deployment:
       - Security measures:
         - Legal: Protection is legally mandated by Title 13 of the U.S. Code.
         - All Census Bureau employees take a lifelong oath to protect respondent information.
+    post_processing: |
+      A series of post-processing functions are applied to make the data consistent and usable. The primary goal of post-processing is to produce a confidential, record-level Microdata Detail File (MDF) that can be used by the Census Bureau's standard tabulation systems. Key post-processing functions include:
+        - Ensuring Non-Negativity and Integrality: The system enforces that all final counts are non-negative integers, as required by the tabulation system. If adding noise results in a negative count, that value is adjusted.
+        - Enforcing Invariants and Constraints: Post-processing ensures that the final data adhere to all pre-defined invariants and other constraints. This includes holding state-level population totals to their exact enumerated values and ensuring that geographies with occupied group quarters facilities contain at least one person.
+        - Ensuring Consistency: The data are processed to be consistent both hierarchically and internally. This means that counts for smaller geographic units (like counties) sum to their parent geographies (the state), and that different characteristics within a table sum correctly to their totals. This consistency is achieved by solving a large-scale mathematical optimization problem. This is done in two primary steps for each level of the geographic hierarchy:
+          - A constrained weighted least squares optimization is performed to find a non-negative, real-valued (i.e., continuous) solution that is as close as possible to the noisy measurements while respecting the constraints.
+          - A controlled rounding problem is then solved to convert the real-valued solution into a final, non-negative integer solution.
+
+    composition: |
+      Adaptive composition under zCDP is used (because of robust and mathematically simple properties):
+        - Under zCDP, the total privacy loss is calculated by summing the privacy-loss parameter \\(\rho\\)  for each query that is applied to the data.
+        - For the TopDownAlgorithm, the total \\(\rho\\)  is the sum of the \\(\rho\\)  values allocated to all queries at every level of the geographic hierarchy (nation, state, county, tract, block group, and block).
+
 
     justification: |
       - Rationale for Adopting DP: Differential privacy was adopted after internal research confirmed that traditional disclosure avoidance methods, like data swapping, were vulnerable to modern database reconstruction and re-identification attacks. A 2018 simulation of such an attack on the 2010 Census data resulted in the confirmed re-identification of 52 million people (17% of the U.S. population). DP was chosen because it provides mathematically provable guarantees against a wide range of such privacy attacks.
@@ -106,3 +103,5 @@ deployment:
       - The 2020 Census Disclosure Avoidance System TopDown Algorithm: https://arxiv.org/abs/2204.08986
     registry_authors:
       - Curtis Mitchell
+    status: Pending
+    tier: 3

@@ -1,6 +1,4 @@
 url_slug: healthkit-usage-statistics-apple-2017
-status: Pending
-tier: 1
 deployment:
   basic:
     name: HealthKit Usage Statistics
@@ -45,3 +43,5 @@ deployment:
       - Priyanka Nanayakkara
       - Nicolas Berrios
       - Jack Fitzsimons
+    status: Pending
+    tier: 1

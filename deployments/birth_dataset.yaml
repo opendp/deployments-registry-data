@@ -1,6 +1,4 @@
 url_slug: israel-s-national-registry-of-live-births-of-2014-israeli-ministry-of-health-2024
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Israel's National Registry of Live Births of 2014
@@ -37,6 +35,8 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     sources: https://birth.dataset.pub
+    status: Pending
     registry_authors:
       - Shlomi Hod
       - James Honaker
+    tier: 1

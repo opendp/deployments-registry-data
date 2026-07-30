@@ -1,6 +1,4 @@
 url_slug: on-device-browser-recommendations-brave-2021
-status: Pending
-tier: 1
 deployment:
   basic:
     name: On-device browser recommendations
@@ -35,3 +33,5 @@ deployment:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    status: Pending
+    tier: 1

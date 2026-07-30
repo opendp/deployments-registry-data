@@ -1,6 +1,4 @@
 url_slug: covid-19-search-trends-symptoms-google-2020
-status: Pending
-tier: 3
 deployment:
   basic:
     name: COVID-19 Search Trends Symptoms
@@ -47,28 +45,6 @@ deployment:
     access_type: Non-interactive
     # access_type_details: ''
 
-  accounting:
-    post_processing: |
-      - Computing the Reported Data: Given a particular geographic region, symptom and time interval (either day or week), the normalized search count that is published in the released dataset is computed using \\(c \times \max {(A/B),0}\\), where \\(A\\) is the noisy symptom search count, \\(B\\) is the noisy normalization count, and $c$ is a fixed, region-specific scaling factor. For each geographic region, the scaling factor \\(c\\) is chosen in a way that maps the data in the initial release of the symptoms dataset to values between 0 and 100. It is computed once using data from February 2020 to July 2020, and kept fixed for future releases.
-      - Removing Unreliable Data: A metric is only kept and published if it has a 50% or greater chance of being within 25% of its raw value. This confidence interval is computed using the noisy symptom search count and noisy normalization count; therefore, no privacy budget is spent on this step.
-      - Deciding Between Daily and Weekly Granularity
-        - Country-level data is always published with daily granularity.
-        - For all other regions, the granularity is determined based on data from February 2020 to July 2020 and kept fixed afterwards:
-          - The regions are first ordered by their total search activity from highest to lowest based on noisy normalization counts.
-          - The system starts with the highest-activity regions, publishing their metrics daily. As it moves down the list to lower-activity regions, it performs a "majority vote" check. It looks at the last 20 regions it processed and checks how many of them had over 50% of their daily metrics dropped. If 11 or more of the last 20 regions were mostly empty (i.e., had over 50% of data dropped), it permanently switches to weekly granularity for all remaining regions down the list.
-
-
-    composition: |
-      This privacy budget \\(\epsilon\\) = 1.68 is composed as follows:
-        - Symptom Search Counts (Total \\(\epsilon\\) = 1.638): This portion accounts for 97.5% of the total budget. It is allocated across geographic levels:
-          - Level 0 (Country): \\(\epsilon_0\\) = 0.168
-          - Level 1 (e.g., State): \\(\epsilon_1\\) = 0.37
-          - Level 2 (e.g., County): \\(\epsilon_2\\) = 1.1
-        - Normalization Counts (Total \\(\epsilon\\) = 0.042): This portion accounts for the remaining 2.5% of the total budget. It is allocated across geographic levels:
-          - Level 0 (Country): \\(\epsilon_0'\\) = 0.0023
-          - Level 1 (e.g., State): \\(\epsilon_1'\\) = 0.0047
-          - Level 2 (e.g., County): \\(\epsilon_2'\\) = 0.014
-
   implementation:
     preprocessing_and_hyperparameter_tuning: |
       - Individual search queries are mapped to one or more symptoms from a predefined list.
@@ -81,6 +57,26 @@ deployment:
       - No information was provided about protection against floating point errors.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - No information was provided about security measures in place to protect the underlying data.
+
+    post_processing: |
+      - Computing the Reported Data: Given a particular geographic region, symptom and time interval (either day or week), the normalized search count that is published in the released dataset is computed using \\(c \times \max {(A/B),0}\\), where \\(A\\) is the noisy symptom search count, \\(B\\) is the noisy normalization count, and $c$ is a fixed, region-specific scaling factor. For each geographic region, the scaling factor \\(c\\) is chosen in a way that maps the data in the initial release of the symptoms dataset to values between 0 and 100. It is computed once using data from February 2020 to July 2020, and kept fixed for future releases.
+      - Removing Unreliable Data: A metric is only kept and published if it has a 50% or greater chance of being within 25% of its raw value. This confidence interval is computed using the noisy symptom search count and noisy normalization count; therefore, no privacy budget is spent on this step.
+      - Deciding Between Daily and Weekly Granularity
+        - Country-level data is always published with daily granularity.
+        - For all other regions, the granularity is determined based on data from February 2020 to July 2020 and kept fixed afterwards:
+          - The regions are first ordered by their total search activity from highest to lowest based on noisy normalization counts.
+          - The system starts with the highest-activity regions, publishing their metrics daily. As it moves down the list to lower-activity regions, it performs a "majority vote" check. It looks at the last 20 regions it processed and checks how many of them had over 50% of their daily metrics dropped. If 11 or more of the last 20 regions were mostly empty (i.e., had over 50% of data dropped), it permanently switches to weekly granularity for all remaining regions down the list.
+    composition: |
+      This privacy budget \\(\epsilon\\) = 1.68 is composed as follows:
+        - Symptom Search Counts (Total \\(\epsilon\\) = 1.638): This portion accounts for 97.5% of the total budget. It is allocated across geographic levels:
+          - Level 0 (Country): \\(\epsilon_0\\) = 0.168
+          - Level 1 (e.g., State): \\(\epsilon_1\\) = 0.37
+          - Level 2 (e.g., County): \\(\epsilon_2\\) = 1.1
+        - Normalization Counts (Total \\(\epsilon\\) = 0.042): This portion accounts for the remaining 2.5% of the total budget. It is allocated across geographic levels:
+          - Level 0 (Country): \\(\epsilon_0'\\) = 0.0023
+          - Level 1 (e.g., State): \\(\epsilon_1'\\) = 0.0047
+          - Level 2 (e.g., County): \\(\epsilon_2'\\) = 0.014
+
 
     justification: |
       - The decision to bound a user’s contribution to a maximum of three different symptom counts per day was based on the observation that approximately 75% of users search for three or fewer symptoms daily.
@@ -95,3 +91,5 @@ deployment:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
+    status: Pending
+    tier: 3

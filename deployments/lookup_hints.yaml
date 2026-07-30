@@ -1,6 +1,4 @@
 url_slug: lookup-hints-apple-2016
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Lookup Hints
@@ -43,3 +41,5 @@ deployment:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    status: Pending
+    tier: 1

@@ -1,6 +1,4 @@
 url_slug: synthetic-data-to-test-third-party-solutions-in-financial-services-nationwide-building-society-hazy-now-sas-data-maker--2020
-status: Pending
-tier: 2 # TODO: or possibly 3?
 deployment:
   basic:
     name: Synthetic data to test third-party solutions in financial services
@@ -42,17 +40,6 @@ deployment:
     release_type_details: A single multi-table synthetic dataset, generated from 18 months of historical customer data, is released to the third-party company for testing purposes.
     access_type: Non-interactive
 
-  accounting:
-    post_processing: |
-      - generating random synthetic IDs/names after discarding real account/transaction/merchant IDs, and merchant names, using a similar format
-      - clipping negative values
-      - rounding (selected) numerical values to integers/desired precision
-      - removing implausible records
-      - ensuring logical consistency (e.g., income > spending)
-    composition: |
-      - Sequential composition: Two PrivBayes network models (with pure DP) are trained sequentially -- one on Customers table and one on Accounts table (conditioned on Customers). Since the datasets overlap, sequential composition was used, and the total privacy budget is \\(\epsilon\\) = 5.0 (2.5 + 2.5).
-      - Group privacy: To account for the one-to-many relationship between Customers and Accounts, the number of accounts per customer is bounded to 5 in the second PrivBayes network model, ensuring privacy loss accounting under group privacy.
-
   implementation:
     preprocessing_and_hyperparameter_tuning: |
       - Preprocessing: |
@@ -64,6 +51,16 @@ deployment:
       The PrivBayes network model constructs a Bayesian network to break down the high-dimensional joint distribution of the dataset into low-dimensional conditional distributions. It involves two main steps:
         - 1) uses the Exponential mechanism to add edges based on noisy mutual information scores, spending half of the privacy budget at this step
         - 2) applies the Laplace mechanism to generate noisy contingency tables (spending the other half of the privacy budget), which are normalized into consistent conditional distributions and used for synthetic data generation
+    post_processing: |
+      - generating random synthetic IDs/names after discarding real account/transaction/merchant IDs, and merchant names, using a similar format
+      - clipping negative values
+      - rounding (selected) numerical values to integers/desired precision
+      - removing implausible records
+      - ensuring logical consistency (e.g., income > spending)
+    composition: |
+      - Sequential composition: Two PrivBayes network models (with pure DP) are trained sequentially -- one on Customers table and one on Accounts table (conditioned on Customers). Since the datasets overlap, sequential composition was used, and the total privacy budget is \\(\epsilon\\) = 5.0 (2.5 + 2.5).
+      - Group privacy: To account for the one-to-many relationship between Customers and Accounts, the number of accounts per customer is bounded to 5 in the second PrivBayes network model, ensuring privacy loss accounting under group privacy.
+
     justification: |
       - Synthetic data is used by Nationwide as it helps minimize the amount of personal data processed and reduces the risk of inappropriate access to customer data, while allowing for effectively testing the third-party product prior to procuring it. Nationwide ensures that real/customer data remains within its secure production environment by deploying the synthetic data solution from Hazy (now SAS Data Maker) on-premises. Moreover, a standardized contractual agreement with the third-party strictly prohibits any reidentification of real customers.
       - PrivBayes network is chosen to model the static tables (Customers and Accounts) because it offers a strong balance between utility, privacy, computational efficiency, scalability, and interpretability.
@@ -77,3 +74,5 @@ deployment:
       - DoppelGANger paper: https://arxiv.org/abs/1909.13403
     registry_authors:
       - Georgi Ganev
+    status: Pending
+    tier: 2 # TODO: or possibly 3?
