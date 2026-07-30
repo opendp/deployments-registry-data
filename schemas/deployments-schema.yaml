@@ -41,11 +41,25 @@ properties:
             tier: 1
             type: array
             items:
-              type: string
+              type: object
+              required:
+                - data_curator_name
+                - data_curator_type
+              properties:
+                data_curator_name:
+                  description: The name of the entity publishing the data product.
+                  description_long: |
+                    The **curator** refers to the entity who published the data product. Examples of curators include specific government agencies and companies.
+                  type: string
+                data_curator_type:
+                  description: Category that best describes the entity publishing the data product.
+                  type: string
+                  enum:
+                  - Government
+                  - Industry
+                  - Nonprofit
+                  # Add to this list as needed.
             minItems: 1
-            description: The name of the entity publishing the data product.
-            description_long: |
-              The **curator** refers to the entity who published the data product. Examples of curators include specific government agencies and companies.
           description:
             tier: 1
             description: Brief description of the data product.
@@ -215,6 +229,11 @@ properties:
               - Federated
               - Varies # Present in converted records
           trust_assumptions:
+            tier: 3
+            type: string
+            description: |
+              Describe relevant actors (anyone who may access the data product or underlying data) and trust assumptions for each. Include rationale for these assumptions where possible. Consider, for example, what kinds of outside information these actors may have and why.
+          actors:
             tier: 3
             description: |
               Describe relevant actors (anyone who may access the data product or underlying data) and trust assumptions for each.

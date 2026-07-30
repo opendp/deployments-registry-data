@@ -6,7 +6,9 @@ deployment:
     # Tier 1:
     name: ''
     data_curators:
-      - 'U.S. Census Bureau' # Fill in correct value.
+      -
+        data_curator_name: 'U.S. Census Bureau' # Fill in correct value.
+        data_curator_type: 'Government' # Fill in correct value.
     intended_use: ''
     data_product_type: 'Summary statistics' # Fill in correct value.
     data_product_region: ''
@@ -31,6 +33,8 @@ deployment:
 
   deployment_model:
     model_name: Central # Fill in correct value.
+    trust_assumptions: ''
+    actors: ''
     release_type: Many releases # Fill in correct value.
     release_type_details: ''
     data_source_type: Static # Fill in correct value.

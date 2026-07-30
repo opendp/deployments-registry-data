@@ -6,7 +6,9 @@ deployment:
     # Tier 1:
     name: Wikipedia Russian Editor Activity Statistics
     data_curators:
-      - Wikimedia Foundation
+      -
+        data_curator_name: 'Wikimedia Foundation'
+        data_curator_type: 'Nonprofit'
     intended_use: The Wikimedia Foundation has released one year of data quantifying the number of Wikipedia editors editing from Russia to help better understand the editor community in Russia.
     data_product_type: Summary statistics
     data_product_region: Russia
