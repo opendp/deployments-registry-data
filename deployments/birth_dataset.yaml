@@ -34,7 +34,15 @@ deployment:
     mechanisms: PrivBayes with Private Selection (Universal Microdata Scheme)
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: https://birth.dataset.pub
+    evidence_sources:
+      # TODO: Consider adding other, more official, sources.
+      # https://data.gov.il/dataset/birth-data/resource/b1cf2a1f-b923-40ae-a3dc-75930c3b3064/download/readme-2014-english.pdf
+      # https://arxiv.org/abs/2405.00267
+      birth_dataset:
+        evidence_source_type: Other public source
+        misc:
+          title: Release of Israel's Live Birth Dataset
+          url: https://birth.dataset.pub
     status: Pending
     registry_authors:
       - Shlomi Hod

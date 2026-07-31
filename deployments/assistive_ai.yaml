@@ -35,14 +35,14 @@ deployment:
 
   administrative:
     evidence_sources:
-      blog:
+      microsoft_2020:
         evidence_source_type: Formal publication by the deploying organization
         misc:
           year: 2020
           author: Microsoft Search, Assistant and Intelligence
           title: Assistive AI Makes Replying Easier
           url: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
-      paper:
+      microsoft_2022:
         evidence_source_type: Formal publication by the deploying organization
         misc:
           year: 2022

@@ -38,8 +38,15 @@ deployment:
       - The paper states that “data is purged within 30 days of a user leaving the ecosystem because it has a 30 day retention.” We take this to mean that the data are refreshed on a monthly basis, i.e., that leaving the ecosystem means leaving a single user session on LinkedIn as opposed to account deletion.
 
   administrative:
-    sources: |
-      - Paper: https://arxiv.org/pdf/2002.05839
+    evidence_sources:
+      linkedin_2020:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: 'LinkedIn’s Audience Engagements API: A Privacy Preserving Data Analytics System at Scale'
+          author: Ryan Rogers, Subbu Subramaniam, Sean Peng, David Durfee, Seunghyun Lee, Santosh Kumar Kancha, Shraddha Sahay, and Parvez Ahammad
+          year: 2020
+          month: November
+          url: https://arxiv.org/pdf/2002.05839
     status: Pending
     registry_authors:
       - Priyanka Nanayakkara
