@@ -95,9 +95,17 @@ deployment:
         - The final production parameters were set by the Data Stewardship Executive Policy Committee (DSEP) after a final review of the privacy guarantees and data accuracy demonstrated in the tuning experiments.
 
   administrative:
-    sources: |
-      - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
-      - The 2020 Census Disclosure Avoidance System TopDown Algorithm: https://arxiv.org/abs/2204.08986
+    evidence_sources:
+      handbook:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: Disclosure avoidance handbook for the 2020 Census
+          url: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+      algorithm:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: The 2020 Census Disclosure Avoidance System TopDown Algorithm
+          url: https://arxiv.org/abs/2204.08986
     status: Pending
     registry_authors:
       - Elena Ghazi

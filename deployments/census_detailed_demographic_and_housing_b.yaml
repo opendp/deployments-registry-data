@@ -80,11 +80,27 @@ deployment:
         - The final production parameters were set by the Data Stewardship Executive Policy Committee (DSEP) after a final review of the privacy guarantees and data accuracy demonstrated in the tuning experiments.
 
   administrative:
-    sources: |
-      - 2020 Census Detailed Demographic and Housing Characteristics File B (Detailed DHC-B) Technical Documentation: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/detailed-demographic-and-housing-characteristics-file-b/2020census-detailed-dhc-b-techdoc.pdf
-      - Census Bureau to Hold Webinar on Release of 2020 Census Detailed Demographic and Housing Characteristics File B: https://www.census.gov/newsroom/press-releases/2024/webinar-2020-census-detailed-dhc-b.html
-      - Disclosure Avoidance and the 2020 Census: How SafeTab-H Works: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-11.pdf
-      - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+    evidence_sources:
+      dhc:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: 2020 Census Detailed Demographic and Housing Characteristics File B (Detailed DHC-B) Technical Documentation
+          url: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/detailed-demographic-and-housing-characteristics-file-b/2020census-detailed-dhc-b-techdoc.pdf
+      press_release:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: Census Bureau to Hold Webinar on Release of 2020 Census Detailed Demographic and Housing Characteristics File B
+          url: https://www.census.gov/newsroom/press-releases/2024/webinar-2020-census-detailed-dhc-b.html
+      safetab:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: 'Disclosure Avoidance and the 2020 Census: How SafeTab-H Works'
+          url: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-11.pdf
+      handbook:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: Disclosure avoidance handbook for the 2020 Census
+          url: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
     status: Pending
     registry_authors:
       - Curtis Mitchell
