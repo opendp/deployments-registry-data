@@ -69,7 +69,6 @@ deployment:
         - Google's differential privacy Go library was used 'to determine the Analytical Gaussian sigma values and securely add noise', 'primarily to mitigate the floating-point attack against differential privacy'.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - No information was provided about security measures in place to protect the underlying data.
-    post_processing: Calculating the final net impact by taking the private 'Percent Load Change' statistic computed with DP from the comparison group and subtracting it from the non-private 'Percent Load Change' of the treatment group to produce the final 'Difference of Load Changes'.
     composition: |
       Basic Composition:
         - Consumption Histogram:
@@ -87,6 +86,7 @@ deployment:
         - Total Privacy Impact Calculation:
           - Pre-amplification: Under basic composition, the steps above yield \\(\epsilon=6.8\\) and \\(\delta\\)=4.08e-8.
           - Because the comparison group was a sample of a larger population, the paper applies an 'amplification factor' of 0.124 to reduce the total privacy cost. The correct amplification formula yields \\(\epsilon = 4.72\\) and \\(\delta = 5.06e-9\\).
+    post_processing: Calculating the final net impact by taking the private 'Percent Load Change' statistic computed with DP from the comparison group and subtracting it from the non-private 'Percent Load Change' of the treatment group to produce the final 'Difference of Load Changes'.
 
     justification: |
       - The values of \\(epsilon\\) for each of the Average Load Shape and the Percent Load Change were chosen to meet specific levels of precision.
@@ -102,7 +102,7 @@ deployment:
       - Revenue-Grade Analysis of the OhmConnect Virtual Power Plant During the California Blackouts (blog): https://www.recurve.com/blog/revenue-grade-analysis-of-the-ohmconnect-virtual-power-plant-during-the-california-blackouts
       - Differential Privacy for Expanding Access to Building Energy Data (paper that introduced Energy Differential Privacy): https://edp.recurve.com/uploads/8/6/5/0/8650231/aceee_paper_final.pdf
       - A list of real-world uses of differential privacy (blog that provides the correct privacy parameters): https://desfontain.es/blog/real-world-differential-privacy.html
+    status: Pending
     registry_authors:
       - Elena Ghazi
-    status: Pending
     tier: 3

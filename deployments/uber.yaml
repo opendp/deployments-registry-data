@@ -59,10 +59,10 @@ deployment:
       - No information was provided about protection from timing attacks.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - Security measure to protect underlying data: none measured
-    post_processing: none described
     composition: |
       - deployment does not manage privacy budgets
       - user can compute overall privacy loss using strong composition bounds on sequential queries
+    post_processing: none described
 
     justification: |
       - Formal proof that elastic sensitivity is an upper bound of local sensistivity is presented.
@@ -71,7 +71,7 @@ deployment:
       - Paper: https://vldb.org/pvldb/vol11/p526-johnson.pdf # https://doi.org/10.1145/3177732.3177733 is not presently working
       - Blog post: https://medium.com/uber-security-privacy/uber-open-source-differential-privacy-57f31e85c57a
       - Source repo: https://github.com/uber-archive/sql-differential-privacy
+    status: Pending
     registry_authors:
       - Micah Altman
-    status: Pending
     tier: 2

@@ -51,8 +51,8 @@ deployment:
       - No information was provided about protection against floating point errors.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - The primary security measure protecting the underlying data is the federated learning architecture itself, as it keeps the data on each user's device, decoupling ML training from the need to store the data in the cloud. This approach limits access to data at all stages because only minimal updates for a specific model training task are transmitted from the device.
-    post_processing: No details were provided about post-processing.
     composition: The article does not specifically mention composition, only that the final privacy guarantee is rho = 0.81 zCDP. It mentions that training ran for 2000 rounds over six days, and devices participated in training at most once every 24 hours.
+    post_processing: No details were provided about post-processing.
 
     justification: |
       - The main reason behind choosing federated learning was to train machine learning models while keeping the raw training data on each user's device. This approach provides data minimization advantages, and the DP guarantee protects all of the data on each device, not just individual training examples.
@@ -65,9 +65,9 @@ deployment:
     sources: |
       - Federated Learning with Formal Differential Privacy Guarantees (Article published on February 28, 2022): https://research.google/blog/federated-learning-with-formal-differential-privacy-guarantees/
       - Paper that introduces the DP variant of Follow-The-Regularized-Leader (DP-FTRL) used in the deployment: Practical and Private (Deep) Learning Without Sampling or Shuffling: https://arxiv.org/pdf/2103.00039
+    status: Pending
     registry_authors:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
-    status: Pending
     tier: 3

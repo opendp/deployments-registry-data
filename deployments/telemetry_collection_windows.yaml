@@ -10,8 +10,8 @@ deployment:
     intended_use: For Microsoft to improve their products and services.
     data_product_type: Summary statistics
     data_product_region: Global
-    publication_date: '2017-12-01'
     data_product_sector: Technology
+    publication_date: '2017-12-01'
   dp_variant:
     variant_name: Pure DP
   privacy_loss:
@@ -35,10 +35,10 @@ deployment:
   administrative:
     sources: |
       - Paper: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
+    status: Pending
     registry_authors:
       - Priyanka Nanayakkara
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
-    status: Pending
     tier: 1

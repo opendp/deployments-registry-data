@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Office of National Statistics UK'
         data_curator_type: 'Government'
-    intended_use: Synthetic data
-    data_product_type: Synthetic data
-    data_product_region: USA
     description: We recommend the use of generative adversarial networks
       (GANs) possibly in conjunction with privacy-preserving mechanisms such as differential
       privacy.
+    intended_use: Synthetic data
+    data_product_type: Synthetic data
+    data_product_region: USA
     data_product_sector: Government
     publication_date: '2020-01-01'
   # dp_variant: TODO
@@ -30,9 +30,9 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     sources: https://datasciencecampus.ons.gov.uk/projects/generative-adversarial-networks-gans-for-synthetic-dataset-generation-with-binary-classes/
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
-    status: Pending
     tier: 1

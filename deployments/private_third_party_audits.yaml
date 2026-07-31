@@ -36,8 +36,8 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     sources: https://unstats.un.org/wiki/display/UGTTOPPT/14.+Twitter+and+OpenMined%3A+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
-    status: Pending
     tier: 1

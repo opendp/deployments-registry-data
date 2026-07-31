@@ -10,8 +10,8 @@ deployment:
     intended_use: Help Wikipedia editors prioritize their work and support academic research.
     data_product_type: Summary statistics
     data_product_region: Global
-    publication_date: '2023-06-01'
     data_product_sector: Technology
+    publication_date: '2023-06-01'
 
   dp_variant:
     variant_name: Pure DP
@@ -66,8 +66,8 @@ deployment:
         - Raw pageview logs contain no persistent user identifiers and are only kept in “current” form for 90 days; older data is aggregated hourly, reducing sensitivity.
         - A salted hash function is used on the client side to protect the cookie that tracks visited pages, providing protection against an attacker who might obtain access to it.
         - All raw data handling is governed by the Wikimedia Foundation’s Privacy Policy and Data Retention Guidelines. Because of the Wikimedia Foundation’s commitment to minimal data retention, this data is only kept in this form for 90 days before being aggregated.
-    post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold tau is removed from the final output dataset. For 2017-2023 historical data, \\(\tau=450\\). For 2015-2017 data, \\(\tau=2500\\).'
     composition: 'The results are published once with \\(\epsilon=1\\), and there is no additional privacy consumption.'
+    post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold tau is removed from the final output dataset. For 2017-2023 historical data, \\(\tau=450\\). For 2015-2017 data, \\(\tau=2500\\).'
 
     justification: |
       - The Laplace mechanism was chosen (and not Gaussian as in the current pageviews deployment) because the team only had a bound on the \\(L_1\\) sensitivity of the dataset.
@@ -84,9 +84,9 @@ deployment:
         - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
         - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
         - Pageviews Differential Privacy – Historical – README: https://analytics.wikimedia.org/published/datasets/country_project_page_historical/00_README.html
+    status: Pending
     registry_authors:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
-    status: Pending
     tier: 3
