@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Wikimedia Foundation'
         data_curator_type: 'Nonprofit'
+    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
     intended_use: Help Wikipedia editors prioritize their work and support academic research.
     data_product_type: Summary statistics
     data_product_region: Global
-    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
-    publication_date: '2023-06-01'
     data_product_sector: Technology
+    publication_date: '2023-06-01'
 
   dp_variant:
     variant_name: Zero-concentrated DP
@@ -55,8 +55,8 @@ deployment:
       - No information was provided about protection against floating point errors.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - No information was provided about security measures in place to protect the underlying data.
-    post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold \\(\tau\\) is removed from the final output dataset. For current data, \\(\tau\\) = 90.'
     composition: 'There is no need for composition analysis: The data is partitioned by day, and there is no overlap between days, so the privacy loss does not accumulate.'
+    post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold \\(\tau\\) is removed from the final output dataset. For current data, \\(\tau\\) = 90.'
 
     justification: |
       - The Gaussian mechanism was chosen because its use of the \\(L_2\\) sensitivity allowed for less noise to be added.
@@ -71,9 +71,9 @@ deployment:
         - Client-side filtering code: https://gerrit.wikimedia.org/r/plugins/gitiles/operations/puppet/+/refs/heads/production/modules/varnish/templates/analytics.inc.vcl.erb#171
         - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
         - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
+    status: Pending
     registry_authors:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
-    status: Pending
     tier: 3

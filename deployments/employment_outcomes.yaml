@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'U.S. Census Bureau'
         data_curator_type: 'Government'
+    description: Summary statistics that describe earning outcomes for college graduates at different levels, including but not limited to, degree level, degree field, and state of institution.
     intended_use: For college students and prospective college students to be informed about relationships between specific fields of study and earning outcomes.
     data_product_type: Summary statistics
     data_product_region: United States
-    description: Summary statistics that describe earning outcomes for college graduates at different levels, including but not limited to, degree level, degree field, and state of institution.
-    publication_date: '2019-01-01'
     data_product_sector: Education
+    publication_date: '2019-01-01'
 
   dp_variant:
     variant_name: Pure DP
@@ -44,8 +44,7 @@ deployment:
     sources: |
       - Paper: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
       - Documentation: https://lehd.ces.census.gov/data/pseo_documentation.html
-
+    status: Pending
     registry_authors:
         - Priyanka Nanayakkara
-    status: Pending
     tier: 2

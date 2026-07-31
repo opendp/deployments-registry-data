@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'U.S. Census Bureau'
         data_curator_type: 'Government'
+    description: Set of summary statistics (tables with population counts and sex-by-age statistics) published as the 2020 Census Detailed Demographic and Housing Characteristics File A.
     intended_use: The Detailed Demographic and Housing Characteristics data file A (Detailed DHC-A, or DDHC-A) provides population counts and sex-by-age statistics for approximately 1,500 detailed race and ethnic groups and detailed American Indian, Alaska Native, and Native Hawaiian (AIANNH) areas within the United States. These data are used for allocating government funding and by researchers such as demographers and economists.
     data_product_type: Summary statistics
     data_product_region: USA
-    description: Set of summary statistics (tables with population counts and sex-by-age statistics) published as the 2020 Census Detailed Demographic and Housing Characteristics File A.
-    publication_date: '2023-10-21'
     data_product_sector: Government
+    publication_date: '2023-10-21'
 
   dp_variant:
     variant_name: Zero-concentrated DP
@@ -85,7 +85,7 @@ deployment:
       - Census Bureau Announces Release Date for 2020 Census Data Product on Race and Ethnicity: https://www.census.gov/newsroom/press-releases/2023/2020-census-detailed-dhc-a.html
       - Disclosure Avoidance Methods for the Detailed Demographic and Housing Characteristics File A (Detailed DHC-A): How SafeTab-P Works: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-05.pdf
       - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+    status: Pending
     registry_authors:
       - Curtis Mitchell
-    status: Pending
     tier: 3

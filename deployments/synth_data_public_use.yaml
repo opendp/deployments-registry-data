@@ -12,8 +12,8 @@ deployment:
     description: We recommend the use of generative adversarial networks
       (GANs) possibly in conjunction with privacy-preserving mechanisms such as differential
       privacy.
-    publication_date: '2020-01-01'
     data_product_sector: Government
+    publication_date: '2020-01-01'
   # dp_variant: TODO
   privacy_loss:
     privacy_unit: Aggregate Statistics

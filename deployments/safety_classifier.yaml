@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Google'
         data_curator_type: 'Industry'
+    description:  A safety classifier (machine learning model) that detects inappropriate content; trained on differentially private synthetic data which was generated based on internal (to Google) data
     intended_use: To classify safety of content shown to Google users on mobile devices and ensure that users do not see unsafe content.
     data_product_type: Machine learning model
     data_product_region: Global
-    description:  A safety classifier (machine learning model) that detects inappropriate content; trained on differentially private synthetic data which was generated based on internal (to Google) data
-    publication_date: '2024-01-01'
     data_product_sector: Technology
+    publication_date: '2024-01-01'
 
   dp_variant:
     variant_name: Approximate DP
@@ -40,7 +40,7 @@ deployment:
     sources: |
       - Blog post: https://research.google/blog/protecting-users-with-differentially-private-synthetic-training-data/
       - Research paper: https://arxiv.org/pdf/2306.01684
+    status: Pending
     registry_authors:
         - Priyanka Nanayakkara
-    status: Pending
     tier: 2

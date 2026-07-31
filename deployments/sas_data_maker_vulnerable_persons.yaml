@@ -9,12 +9,12 @@ deployment:
       -
         data_curator_name: 'Hazy (now SAS Data Maker)'
         data_curator_type: 'Industry'
+    description: Synthetic data generated with Differential Privacy is used by Nationwide to evaluate a third-party solution for detecting and supporting vulnerable individuals in financial services. The data is produced on-premises using Hazy‘s (now SAS Data Maker) platform from over 50,000 customers, 100,000 accounts, and 50 million transactions across 18 months. It includes customer identifiers, account details, transaction amounts, and merchant information.
     intended_use: Enable Nationwide to generate and use synthetic data with Differential Privacy guarantees to evaluate a third-party solution for detecting and supporting vulnerable individuals in financial services.
     data_product_type: Synthetic data
     data_product_region: UK
-    description: Synthetic data generated with Differential Privacy is used by Nationwide to evaluate a third-party solution for detecting and supporting vulnerable individuals in financial services. The data is produced on-premises using Hazy‘s (now SAS Data Maker) platform from over 50,000 customers, 100,000 accounts, and 50 million transactions across 18 months. It includes customer identifiers, account details, transaction amounts, and merchant information.
-    publication_date: '2020-01-01'
     data_product_sector: Finance
+    publication_date: '2020-01-01'
 
   dp_variant:
     variant_name: Pure DP

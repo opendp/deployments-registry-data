@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'U.S. Census Bureau'
         data_curator_type: 'Government'
+    description: Set of summary statistics (tables with counts of individuals, households, group quarters residents, or housing units with certain characteristics) published as the 2020 Census Redistricting Data (P.L. 94-171) Summary File.
     intended_use: The decennial census data are used for congressional apportionment, the redistricting of legislative bodies, the allocation of federal funds, public policy, and research. The Summary File is produced to satisfy the legal requirement to provide states with the population tabulations they need for legislative redistricting.
     data_product_type: Summary statistics
     data_product_region: USA
-    description: Set of summary statistics (tables with counts of individuals, households, group quarters residents, or housing units with certain characteristics) published as the 2020 Census Redistricting Data (P.L. 94-171) Summary File.
-    publication_date: '2021-08-01'
     data_product_sector: Government
+    publication_date: '2021-08-01'
 
   dp_variant:
     variant_name: Zero-concentrated DP
@@ -70,6 +70,12 @@ deployment:
       - Security measures:
         - Legal: Protection is legally mandated by Title 13 of the U.S. Code.
         - All Census Bureau employees take a lifelong oath to protect respondent information.
+
+    composition: |
+      Adaptive composition under zCDP is used (because of robust and mathematically simple properties):
+        - Under zCDP, the total privacy loss is calculated by summing the privacy-loss parameter \\(\rho\\)  for each query that is applied to the data.
+        - For the TopDownAlgorith, the total \\(\rho\\)  is the sum of the \\(\rho\\)  values allocated to all queries at every level of the geographic hierarchy (nation, state, county, tract, block group, and block).
+
     post_processing: |
       A series of post-processing functions are applied to make the data consistent and usable. The primary goal of post-processing is to produce a confidential, record-level Microdata Detail File (MDF) that can be used by the Census Bureau's standard tabulation systems. Key post-processing functions include:
         - Ensuring Non-Negativity and Integrality: The system enforces that all final counts are non-negative integers, as required by the tabulation system. If adding noise results in a negative count, that value is adjusted.
@@ -77,11 +83,6 @@ deployment:
         - Ensuring Consistency: The data are processed to be consistent both hierarchically and internally. This means that counts for smaller geographic units (like counties) sum to their parent geographies (the state), and that different characteristics within a table sum correctly to their totals. This consistency is achieved by solving a large-scale mathematical optimization problem. This is done in two primary steps for each level of the geographic hierarchy:
           - A constrained weighted least squares optimization is performed to find a non-negative, real-valued (i.e., continuous) solution that is as close as possible to the noisy measurements while respecting the constraints.
           - A controlled rounding problem is then solved to convert the real-valued solution into a final, non-negative integer solution.
-
-    composition: |
-      Adaptive composition under zCDP is used (because of robust and mathematically simple properties):
-        - Under zCDP, the total privacy loss is calculated by summing the privacy-loss parameter \\(\rho\\)  for each query that is applied to the data.
-        - For the TopDownAlgorith, the total \\(\rho\\)  is the sum of the \\(\rho\\)  values allocated to all queries at every level of the geographic hierarchy (nation, state, county, tract, block group, and block).
 
     justification: |
       - Rationale for Adopting DP: Differential privacy was adopted after internal research confirmed that traditional disclosure avoidance methods, like data swapping, were vulnerable to modern database reconstruction and re-identification attacks. A 2018 simulation of such an attack on the 2010 Census data resulted in the confirmed re-identification of 52 million people (17% of the U.S. population). DP was chosen because it provides mathematically provable guarantees against a wide range of such privacy attacks.
@@ -97,9 +98,9 @@ deployment:
     sources: |
       - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
       - The 2020 Census Disclosure Avoidance System TopDown Algorithm: https://arxiv.org/abs/2204.08986
+    status: Pending
     registry_authors:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
-    status: Pending
     tier: 3

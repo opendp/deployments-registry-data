@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'U.S. Census Bureau'
         data_curator_type: 'Government'
+    description: Set of summary statistics (tables with household type and tenure type statistics) published as the 2020 Census Detailed Demographic and Housing Characteristics File B.
     intended_use: The Detailed Demographic and Housing Characteristics data file B (Detailed DHC-B, or DDHC-B) provides household type (e.g., family or nonfamily) and tenure (e.g., whether the home is owned or rented) for approximately 1,500 detailed race and ethnic groups and detailed American Indian, Alaska Native, and Native Hawaiian (AIANNH) areas within the United States. These data are used for assessing and allocating funding for government programs and by researchers such as demographers and economists.
     data_product_type: Summary statistics
     data_product_region: USA
-    description: Set of summary statistics (tables with household type and tenure type statistics) published as the 2020 Census Detailed Demographic and Housing Characteristics File B.
-    publication_date: '2024-08-01'
     data_product_sector: Government
+    publication_date: '2024-08-01'
 
   dp_variant:
     variant_name: Zero-concentrated DP
@@ -85,7 +85,7 @@ deployment:
       - Census Bureau to Hold Webinar on Release of 2020 Census Detailed Demographic and Housing Characteristics File B: https://www.census.gov/newsroom/press-releases/2024/webinar-2020-census-detailed-dhc-b.html
       - Disclosure Avoidance and the 2020 Census: How SafeTab-H Works: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-11.pdf
       - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+    status: Pending
     registry_authors:
       - Curtis Mitchell
-    status: Pending
     tier: 3

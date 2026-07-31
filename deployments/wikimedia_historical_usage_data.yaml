@@ -6,10 +6,10 @@ deployment:
       -
         data_curator_name: 'Wikimedia Foundation'
         data_curator_type: 'Nonprofit'
+    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
     intended_use: Help Wikipedia editors prioritize their work and support academic research.
     data_product_type: Summary statistics
     data_product_region: Global
-    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
     publication_date: '2023-06-01'
     data_product_sector: Technology
 

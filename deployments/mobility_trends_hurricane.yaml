@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Spectus'
         data_curator_type: 'Industry'
+    description: Evacuation metrics for residents of Harris County, Texas during 2017 hurricane.
     intended_use: Mobility Catastrophe Data
     data_product_type: Summary statistics
     data_product_region: USA
-    description: Evacuation metrics for residents of Harris County, Texas during 2017 hurricane.
-    publication_date: '2022-01-01'
     data_product_sector: Government # Could also be Technology, Healthcare, or new category such as Public health
+    publication_date: '2022-01-01'
   dp_variant:
     variant_name: Pure DP
   privacy_loss:
@@ -35,9 +35,9 @@ deployment:
     sources: |
       - https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
       - https://web.archive.org/web/20221209065442/https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
-    status: Pending
     tier: 1

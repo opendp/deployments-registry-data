@@ -7,12 +7,12 @@ deployment:
       -
         data_curator_name: 'Wikimedia Foundation'
         data_curator_type: 'Nonprofit'
+    description: The Wikimedia Foundation has released differentially private statistics on editor activity (e.g., edit counts) by Wikipedia project and country from January 2018 to the present time. This has revolutionized the way the Wikimedia Foundation exposes information to the public about its projects, allowing it to release new statistics on a large scale. According to the Wikimedia Foundation, more than 135M statistics about Wikipedia page visits have been published, aggregating 325B page views in total.
     intended_use: Release daily Wikipedia page visits at a country level, based on current and historical Wikipedia page views.
     data_product_type: Summary statistics
     data_product_region: Global
-    description: The Wikimedia Foundation has released differentially private statistics on editor activity (e.g., edit counts) by Wikipedia project and country from January 2018 to the present time. This has revolutionized the way the Wikimedia Foundation exposes information to the public about its projects, allowing it to release new statistics on a large scale. According to the Wikimedia Foundation, more than 135M statistics about Wikipedia page visits have been published, aggregating 325B page views in total.
-    publication_date: '2023-01-01'
     data_product_sector: Technology
+    publication_date: '2023-01-01'
 
   # Tiers 2 and 3:
   dp_variant:

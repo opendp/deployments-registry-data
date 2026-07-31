@@ -10,16 +10,16 @@ deployment:
       -
         data_curator_name: 'International Organization for Migration'
         data_curator_type: 'Nonprofit'
-    intended_use: Provides first-hand statistics on the relationships between victims and perpetrators using a synthetic dataset that preserves the statistical properties of the original victim data without representing actual victims. The dataset supports IOM and anti-trafficking actors in translating real-world case data into evidence that can inform counter-trafficking policies and build support systems for the estimated 50 million victims of forced labor globally.
-
-    data_product_type: Synthetic data
-    data_product_region: Global
     description: |
       - Differentially private synthetic dataset describing victim-perpetrator relations in human trafficking.
       - The dataset includes IOM case data from over 17,000 victims and survivors of trafficking identified across 123 countries and territories, and their accounts of over 37,000 perpetrators who facilitated the trafficking process from 2005 to 2022.
       - Generated using Microsoft's Synthetic Data Showcase.
-    publication_date: '2023-03-01'
+    intended_use: Provides first-hand statistics on the relationships between victims and perpetrators using a synthetic dataset that preserves the statistical properties of the original victim data without representing actual victims. The dataset supports IOM and anti-trafficking actors in translating real-world case data into evidence that can inform counter-trafficking policies and build support systems for the estimated 50 million victims of forced labor globally.
+
+    data_product_type: Synthetic data
+    data_product_region: Global
     data_product_sector: Government
+    publication_date: '2023-03-01'
 
   # Tiers 2 and 3:
   dp_variant:
@@ -77,7 +77,7 @@ deployment:
       - Data Codebook: https://www.ctdatacollaborative.org/sites/g/files/tmzbdl2011/files/2023-07/CTDCsyntheic_victim-perpetrator_codebook_v1.pdf
       - Product used to generate the dataset: https://github.com/microsoft/synthetic-data-showcase
     # notes: '' # other extra information
+    status: Draft
     registry_authors:
       - Michael Khavkin
-    status: Draft
     tier: 3

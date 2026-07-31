@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Microsoft'
         data_curator_type: 'Industry'
+    description: Publicly available U.S. Broadband Coverage dataset that reports broadband coverage percentages at a zip code-level.
     intended_use: Allow researchers and policy makers to understand problems related to broadband access and develop solutions to improve broadband access while simultaneously preserving the privacy of individual households.
     data_product_type: Dataset
     data_product_region: USA
-    description: Publicly available U.S. Broadband Coverage dataset that reports broadband coverage percentages at a zip code-level.
-    publication_date: '2021-04-01'
     data_product_sector: Technology # Telecommunication, Public Sector/Government?
+    publication_date: '2021-04-01'
 
   dp_variant:
     variant_name: Pure DP
@@ -48,9 +48,6 @@ deployment:
       - No information was provided about protection against floating point errors.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - No information was provided about security measures in place to protect the underlying data.
-    post_processing: |
-      - Negative values are clamped to zero.
-      - The final privatized Broadband Coverage Estimation was calculated using noisy counts and the number of households in each ZIP code as reported in the Department of Housing and Urban Development’s publicly available dataset.
 
     composition: |
       The following quantities are computed with DP (per ZIP code):
@@ -66,6 +63,10 @@ deployment:
         - The total privacy loss corresponding to Microsoft services data is 0.1.
       By sequential composition, the total privacy loss is 0.2.
       (Note: The equation for Broadband Coverage Estimate does not use the "number of devices with speed < 25". In fact, it seems this number is never used.)
+
+    post_processing: |
+      - Negative values are clamped to zero.
+      - The final privatized Broadband Coverage Estimation was calculated using noisy counts and the number of households in each ZIP code as reported in the Department of Housing and Urban Development’s publicly available dataset.
 
 
     justification: |

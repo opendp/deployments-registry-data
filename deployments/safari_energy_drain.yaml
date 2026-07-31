@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
+    description: Identify sites with high memory or high CPU usage.
     intended_use: Browser Statistics
     data_product_type: Summary statistics
     data_product_region: Global
-    description: Identify sites with high memory or high CPU usage.
-    publication_date: '2017-01-01'
     data_product_sector: Technology
+    publication_date: '2017-01-01'
 
   dp_variant:
     variant_name: Pure DP
@@ -39,12 +39,11 @@ deployment:
   implementation:
     preprocessing_and_hyperparameter_tuning: 'No hyperperameters are required; no EDA is described'
     mechanisms: Private Hadamard Count Mean Sketch (PHCMS)
+    composition: No information was provided about composition.
     post_processing: |
       - Server strips IP addresses and  associated ids from each record.
       - Aggregation - private histograms are generated through sketch mechanism PHCMS
       - Threshold - only domain elements with counts above threshold T (level undocumented) are disclosed
-
-    composition: No information was provided about composition.
 
     justification: '"Formal proof, described in Theorem 4.1, Theorem 4.3"'
     additional_information: |
@@ -54,10 +53,10 @@ deployment:
 
   administrative:
     sources: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+    status: Pending
     registry_authors:
       - James Honaker
       - Micah Altman
       - Nicolas Berrios
       - Jack Fitzsimons
-    status: Pending
     tier: 3

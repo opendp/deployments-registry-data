@@ -9,12 +9,12 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
+    description: Measurement system which provides summary statistics to public health authorities about how often COVID-19 exposure notifications were shown on users’ devices.
     intended_use: To help public health authorities adapt their response to the COVID-19 pandemic as it evolved.
     data_product_type: Summary statistics
     data_product_region: Global
-    description: Measurement system which provides summary statistics to public health authorities about how often COVID-19 exposure notifications were shown on users’ devices.
-    publication_date: '2021-01-01'
     data_product_sector: Healthcare
+    publication_date: '2021-01-01'
   dp_variant:
     variant_name: Approximate DP
   privacy_loss:
@@ -38,9 +38,9 @@ deployment:
   administrative:
     sources: |
       - Paper: https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf
+    status: Pending
     registry_authors:
       - Priyanka Nanayakkara
       - Nicolas Berrios
       - Jack Fitzsimons
-    status: Pending
     tier: 1

@@ -6,15 +6,15 @@ deployment:
       -
         data_curator_name: 'LinkedIn'
         data_curator_type: 'Industry'
-    intended_use: Labor Market Reports
-    data_product_type: Summary statistics # TODO: Is this correct?
-    data_product_region: Not specified
     description: |
       "Therefore each report is (1.2, 10−10)-DP because the ratio
       that uses both counts accumulates the privacy loss.  Therefore, for each report
       date, we guarantee the top-employer reports are together (4.8, 4 × 10−10)-DP."
-    publication_date: '2020-01-01'
+    intended_use: Labor Market Reports
+    data_product_type: Summary statistics # TODO: Is this correct?
+    data_product_region: Not specified
     data_product_sector: Technology
+    publication_date: '2020-01-01'
   dp_variant:
     variant_name: Approximate DP
     data_domain: '' # TODO
@@ -39,9 +39,9 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     sources: https://arxiv.org/abs/2010.13981
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
-    status: Pending
     tier: 1

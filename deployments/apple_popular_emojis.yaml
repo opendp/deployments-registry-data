@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
+    description: Summary statistics of frequency histograms of emoji usage per locale.
     intended_use: For measurement (within Apple) of which emojis are most used, and their relative frequencies, across keyboard locales, to improve QuickType’s predictive emoji suggestions.
     data_product_type: Summary statistics
     data_product_region: Global
-    description: Summary statistics of frequency histograms of emoji usage per locale.
-    publication_date: '2017-01-01'
     data_product_sector: Technology
+    publication_date: '2017-01-01'
 
   dp_variant:
     variant_name: Pure DP
@@ -58,12 +58,12 @@ deployment:
         - The privatized records are temporarily stored on-device using data protection, rather than being immediately transmitted to the server. After a delay based on device conditions, the system randomly samples from the differentially private records subject to a predetermined limit on the number of privatized records that can be transmitted daily for each use case, and sends the sampled records to the server. These records do not include device identifiers or timestamps of when events were generated.
         - After the data is privatized, the resulting records are not sent instantaneously, but are stored on-device using data protection and sent as part of a random batch once a day.
         - The privatized records are sent to the server with TLS encryption.
+    composition: No information was provided about composition.
     post_processing: |
       - Server discards IP addresses associated with each record.
       - Aggregation and Sketch Matrix Construction: The server aggregates the anonymized, private records into a sketch matrix, which is a summary grid with 65,536 rows and 1,024 columns. Each row corresponds to a possible hash function that the user’s device could have used. For each private report received, the server uses the included index to identify which row to update , and then adds the user's noisy data to that specific row. The random noise tends to average out, allowing the underlying patterns of popular emojis to be estimated in the next step.
       - Frequency Estimation and Debiasing: The server estimates the frequency of each emoji in the dictionary based on the sketch matrix, averages these values, and debiases the result, producing a final estimated count for that emoji.
       - Final Histogram Generation and Thresholding: The estimated counts for all emojis are assembled into a histogram, and thresholding is performed so that only emojis whose estimated counts are above a predetermined threshold are included in the final data product.
-    composition: No information was provided about composition.
     justification: |
       - The choice of \\(\epsilon\\) was “based on the privacy characteristics of the underlying dataset” and is “consistent with the parameters proposed in the differential privacy research community”.
       - The CMS algorithm yields a high number of hash collisions (mapping 2,600 emojis to 1024 bits) providing further plausible deniability.

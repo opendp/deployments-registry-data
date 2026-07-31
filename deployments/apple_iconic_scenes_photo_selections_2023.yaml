@@ -7,12 +7,12 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
+    description: This deployment identifies frequently photographed iconic locations across users, enabling Apple’s Photos app to automatically select representative images for features such as Memories. The system is designed to protect individual user data while providing personalized content.
     intended_use: Identify frequently photographed iconic locations across users, enabling Apple’s Photos app to automatically select representative images for features such as Memories, all while protecting individual user data.
     data_product_type: Machine learning model
     data_product_region: Global
-    description: This deployment identifies frequently photographed iconic locations across users, enabling Apple’s Photos app to automatically select representative images for features such as Memories. The system is designed to protect individual user data while providing personalized content.
-    publication_date: '2023-07-21'
     data_product_sector: Technology
+    publication_date: '2023-07-21'
 
   # Tiers 2 and 3:
   dp_variant:

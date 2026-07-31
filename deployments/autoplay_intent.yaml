@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
+    description: Identify which websites users typically prefer to have auto-play with sound for video elements.
     intended_use: Video Browser Play
     data_product_type: Summary statistics # TODO: Is this correct?
     data_product_region: Not Specified
-    description: Identify which websites users typically prefer to have auto-play with sound for video elements.
-    publication_date: '2017-01-01'
     data_product_sector: Technology
+    publication_date: '2017-01-01'
   dp_variant:
     variant_name: Pure DP
     data_domain: '' # TODO

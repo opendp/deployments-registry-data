@@ -6,12 +6,12 @@ deployment:
       -
         data_curator_name: 'LinkedIn'
         data_curator_type: 'Industry'
+    description: Aggregated summary statistics about content engagement with LinkedIn posts.
     intended_use: For data analysts to learn about the LinkedIn user base. For example, marketers may want to learn about the kind of content LinkedIn users engage with before they create sponsored content.
     data_product_type: Interactive API
     data_product_region: Global
-    description: Aggregated summary statistics about content engagement with LinkedIn posts.
-    publication_date: '2020-01-01'
     data_product_sector: Technology
+    publication_date: '2020-01-01'
   dp_variant:
     variant_name: Approximate DP
     data_domain: '' # TODO
