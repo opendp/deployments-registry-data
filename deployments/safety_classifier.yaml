@@ -40,7 +40,7 @@ deployment:
     evidence_sources:
       blog:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Protecting users with differentially private synthetic training data
           url: https://research.google/blog/protecting-users-with-differentially-private-synthetic-training-data/
           author: Alexey Kurakin, and Natalia Ponomareva
@@ -48,7 +48,7 @@ deployment:
           month: May
       paper:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Harnessing large-language models to generate private synthetic text
           url: https://arxiv.org/abs/2306.01684
           author: Alexey Kurakin, Natalia Ponomareva, Umar Syed, Liam MacDermed, Andreas Terzis

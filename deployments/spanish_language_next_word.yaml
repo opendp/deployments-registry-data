@@ -65,7 +65,7 @@ deployment:
     evidence_sources:
       blog:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Federated Learning with Formal Differential Privacy Guarantees
           url: https://research.google/blog/federated-learning-with-formal-differential-privacy-guarantees/
           author: Brendan McMahan and Abhradeep Thakurta
@@ -74,7 +74,7 @@ deployment:
       paper:
         # Paper that introduces the DP variant of Follow-The-Regularized-Leader (DP-FTRL) used in the deployment
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Practical and Private (Deep) Learning Without Sampling or Shuffling
           url: https://arxiv.org/pdf/2103.00039
           author: Peter Kairouz, Brendan McMahan, Shuang Song, Om Thakkar, Abhradeep Thakurta, Zheng Xu

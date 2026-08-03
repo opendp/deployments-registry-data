@@ -57,12 +57,12 @@ deployment:
     evidence_sources:
       readme:
         evidence_source_type: Other public source
-        misc:
+        citation:
           title: Geoeditors Differential Privacy — Monthly
           url: https://analytics.wikimedia.org/published/datasets/geoeditors_monthly/00_README.html
       code:
         evidence_source_type: Other public source
-        misc:
+        citation:
           url: https://gitlab.wikimedia.org/repos/security/differential-privacy/-/blob/main/differential_privacy/geoeditors_monthly.py
     status: Draft
     registry_authors:

@@ -45,7 +45,7 @@ deployment:
     evidence_sources:
       data:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Facebook Privacy-Protected Full URLs Data Set
           url: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2
           author: |
@@ -55,7 +55,7 @@ deployment:
           month: June
       faq:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: URL Shares FAQ
           url: https://developers.facebook.com/docs/url-shares-dataset/support/faqs
     status: Pending

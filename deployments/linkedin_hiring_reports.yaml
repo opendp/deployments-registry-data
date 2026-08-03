@@ -41,7 +41,7 @@ deployment:
     evidence_sources:
       paper:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: A Members First Approach to Enabling LinkedIn's Labor Market Insights at Scale
           url: https://arxiv.org/abs/2010.13981
           author: Ryan Rogers, Adrian Rivera Cardoso, Koray Mancuhan, Akash Kaura, Nikhil Gahlawat, Neha Jain, Paul Ko, Parvez Ahammad

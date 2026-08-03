@@ -31,7 +31,7 @@ deployment:
     evidence_sources:
       paper:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Using Federated Learning to Improve Brave’s On-Device Recommendations While Protecting Your Privacy
           url: https://brave.com/blog/federated-learning/
           year: 2021

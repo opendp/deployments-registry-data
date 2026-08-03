@@ -38,7 +38,7 @@ deployment:
     evidence_sources:
       case_study:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: 'Twitter and OpenMined: Enabling Third-party Audits and Research Reproducibility over Unreleased Digital Assets'
           url: https://unstats.un.org/wiki/spaces/UGTTOPPT/pages/152797274/14.+Twitter+and+OpenMined+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets
           author: David Buckley

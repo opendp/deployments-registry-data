@@ -75,7 +75,7 @@ deployment:
     evidence_sources:
       apple:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Learning with Privacy at Scale
           url: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
           author: Differential Privacy Team, Apple

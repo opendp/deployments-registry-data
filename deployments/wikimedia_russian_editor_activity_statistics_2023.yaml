@@ -56,7 +56,7 @@ deployment:
     evidence_sources:
       page:
         evidence_source_type: Authorized organizational attestation
-        misc:
+        citation:
           title: Russian editor information (2022-23)
           url: https://wikitech.wikimedia.org/wiki/Russian_editor_information_(2022-23)
       # - Code or table building: https://gerrit.wikimedia.org/r/plugins/gitiles/analytics/refinery/%2B/refs/heads/master/hql/geoeditors/geoeditors_monthly.hql

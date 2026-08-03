@@ -40,7 +40,7 @@ deployment:
       # https://arxiv.org/abs/2405.00267
       birth_dataset:
         evidence_source_type: Other public source
-        misc:
+        citation:
           title: Release of Israel's Live Birth Dataset
           url: https://birth.dataset.pub
     status: Pending

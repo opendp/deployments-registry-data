@@ -369,13 +369,17 @@ properties:
             type: object
             patternProperties:
               ^\w+$:
-                oneOf:
-                  -
-                    type: object
-                    additionalProperties: False
-                    properties:
-                      evidence_source_type: { $ref: "#/$defs/evidence_source_type" }
-                      misc: { $ref: "#/$defs/bibtex_fields" }
+                type: object
+                additionalProperties: False
+                properties:
+                  evidence_source_type:
+                    type: string
+                    enum:
+                      - Peer-reviewed publication
+                      - Formal publication by the deploying organization
+                      - Authorized organizational attestation
+                      - Other public source
+                  citation: { $ref: "#/$defs/citation" }
           status:
             description: Approval status of this record.
             type: string
@@ -411,19 +415,13 @@ properties:
 $defs:
   string_or_number:
     # We want to avoid spurious validation errors
-    # if someone enters an unquoted number in yaml.
+    # just because someone enters an unquoted number in yaml.
     # Downstream string concatenation will work either way.
     anyOf:
       - type: string
       - type: number
-  evidence_source_type:
-    type: string
-    enum:
-      - Peer-reviewed publication
-      - Formal publication by the deploying organization
-      - Authorized organizational attestation
-      - Other public source
-  bibtex_fields:
+  citation:
+    # Based on the fields available in bibtex.
     type: object
     additionalProperties: False
     properties:

@@ -49,7 +49,7 @@ deployment:
     evidence_sources:
       apple_2023:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Learning Iconic Scenes with Differential Privacy
           url: https://machinelearning.apple.com/research/scenes-differential-privacy
           year: 2023

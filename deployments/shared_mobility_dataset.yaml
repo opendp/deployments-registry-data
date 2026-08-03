@@ -40,7 +40,7 @@ deployment:
     evidence_sources:
       paper:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Hierarchical organization of urban mobility and its connection with city livability
           url: https://www.nature.com/articles/s41467-019-12809-y
           author: |

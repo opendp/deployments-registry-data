@@ -73,23 +73,23 @@ deployment:
     evidence_sources:
       dhc:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: 2020 Supplemental Demographic and Housing Characteristics File (S-DHC) Technical Documentation
           url: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/supplemental-demographic-and-housing-characteristics-file/2020census-supplemental-dhc-techdoc.pdf
       press_release:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Census Bureau Releases Final 2020 Census Data Product
           url: https://www.census.gov/newsroom/press-releases/2024/final-2020-census-data-product-s-dhc.html
 
       how_it_works:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: 'Disclosure Avoidance and the Supplemental Demographic and Housing Characteristics File (S-DHC): How PHSafe Works'
           url: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-12.pdf
       handbook:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Disclosure avoidance handbook for the 2020 Census
           url: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
     status: Pending

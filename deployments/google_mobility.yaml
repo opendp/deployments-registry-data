@@ -93,7 +93,7 @@ deployment:
     evidence_sources:
       paper:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: 'Google COVID-19 Community Mobility Reports: Anonymization Process Description (version 1.1)'
           url: https://arxiv.org/pdf/2004.04145
           author: |

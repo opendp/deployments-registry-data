@@ -83,14 +83,14 @@ deployment:
     evidence_sources:
       documentation:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: COVID-19 Search Trends symptoms dataset
           url: https://storage.googleapis.com/gcp-public-data-symptom-search/COVID-19%20Search%20Trends%20symptoms%20dataset%20documentation%20.pdf
           year: 2021
           month: 2
       paper:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: 'Google COVID-19 Search Trends Symptoms Dataset: Anonymization Process Description (version 1.0)'
           author: |
             Shailesh Bavadekar, Andrew Dai, John Davis, Damien Desfontaines, Ilya Eckstein, Katie
@@ -104,7 +104,7 @@ deployment:
           url: https://arxiv.org/pdf/2009.01265
       data_product:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: COVID-19 Search Trends symptoms dataset
           url: https://github.com/GoogleCloudPlatform/covid-19-open-data/blob/main/docs/table-search-trends.md
           year: 2021

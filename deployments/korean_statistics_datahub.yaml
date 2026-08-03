@@ -32,7 +32,7 @@ deployment:
     evidence_sources:
       paper:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           url: https://unstats.un.org/wiki/display/UGTTOPPT/11.+Statistics+Korea%3A+Developing+a+privacy-preserving+Statistical+Data+Hub+Platform
           title: 'Statistics Korea: Developing a privacy-preserving Statistical Data Hub Platform'
           author: David Buckley

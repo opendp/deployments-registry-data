@@ -41,7 +41,7 @@ deployment:
     evidence_sources:
       linkedin_2020:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: 'LinkedIn’s Audience Engagements API: A Privacy Preserving Data Analytics System at Scale'
           author: Ryan Rogers, Subbu Subramaniam, Sean Peng, David Durfee, Seunghyun Lee, Santosh Kumar Kancha, Shraddha Sahay, and Parvez Ahammad
           year: 2020

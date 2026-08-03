@@ -81,7 +81,7 @@ deployment:
     evidence_sources:
       paper:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Publishing Wikipedia usage data with strong privacy guarantees
           url: https://arxiv.org/pdf/2308.16298
           author: |

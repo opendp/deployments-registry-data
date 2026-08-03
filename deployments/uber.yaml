@@ -70,7 +70,7 @@ deployment:
     evidence_sources:
       paper:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Towards Practical Differential Privacy for SQL Queries
           url: https://vldb.org/pvldb/vol11/p526-johnson.pdf # https://doi.org/10.1145/3177732.3177733 is not presently working
           author: Noah Johnson, Joseph P. Near, Dawn Song
@@ -78,7 +78,7 @@ deployment:
           volume: 11
       blog:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: Updates to Uber’s Open Source Project for Differential Privacy
           url: https://medium.com/uber-security-privacy/uber-open-source-differential-privacy-57f31e85c57a
           author: Menotti Minutillo
@@ -86,7 +86,7 @@ deployment:
           month: January
       source:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           title: sql-differential-privacy
           url: https://github.com/uber-archive/sql-differential-privacy
     status: Pending

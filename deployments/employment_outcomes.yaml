@@ -44,7 +44,7 @@ deployment:
     evidence_sources:
       paper:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           url: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
           title: 'Releasing Earnings Distributions Using Differential Privacy: Disclosure Avoidance System For Post-Secondary Employment Outcomes (PSEO)'
           author: 'Andrew Foote, Ashwin Machanavajjhala, and Kevin McKinney'
@@ -54,7 +54,7 @@ deployment:
           year: 2019
       documentation:
         evidence_source_type: Formal publication by the deploying organization
-        misc:
+        citation:
           url: https://lehd.ces.census.gov/data/pseo_documentation.html
           title: Post-Secondary Employment Outcomes (PSEO) Help and Documentation
     status: Pending
