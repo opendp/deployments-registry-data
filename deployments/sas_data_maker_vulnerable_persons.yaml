@@ -72,6 +72,38 @@ deployment:
       - Usecase by Nationwide: https://medium.com/nationwide-technology/hazy-synthetic-data-to-fuel-rapid-innovation-fd24f2e21685
       - PrivBayes paper: https://dl.acm.org/doi/10.1145/3134428
       - DoppelGANger paper: https://arxiv.org/abs/1909.13403
+    evidence_sources:
+      ico_usecase:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          url: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-sharing/privacy-enhancing-technologies/case-studies/synthetic-data-to-test-the-effectiveness-of-a-vulnerable-persons-detection-system-in-financial-services/
+          title: Synthetic data to test the effectiveness of a vulnerable person's detection system in financial services
+      nationwide_usecase:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          url: https://medium.com/nationwide-technology/hazy-synthetic-data-to-fuel-rapid-innovation-fd24f2e21685
+          title: 'Hazy: Synthetic Data to fuel Rapid Innovation'
+          author: Alexander Mikhalev
+      privbayes_paper:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          url: https://dl.acm.org/doi/10.1145/3134428
+          title: 'PrivBayes: Private Data Release via Bayesian Networks'
+          author: Jun Zhang, Graham Cormode, Cecilia M. Procopiuc, Divesh Srivastava, Xiaokui Xiao
+          year: 2017
+          month: October
+          volume: 42
+          number: 4
+          doi: https://doi.org/10.1145/313442
+          journal: ACM Transactions on Database Systems
+      doppelganger_paper:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          url: https://arxiv.org/abs/1909.13403
+          title: 'Using GANs for Sharing Networked Time Series Data: Challenges, Initial Promise, and Open Questions'
+          author: Zinan Lin, Alankar Jain, Chen Wang, Giulia Fanti, Vyas Sekar
+          doi: https://doi.org/10.48550/arXiv.1909.13403
+
     status: Pending
     registry_authors:
       - Georgi Ganev
