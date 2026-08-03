@@ -67,10 +67,6 @@ deployment:
     justification: |
       - Formal proof that elastic sensitivity is an upper bound of local sensistivity is presented.
   administrative:
-    sources: |
-      - Paper: https://vldb.org/pvldb/vol11/p526-johnson.pdf # https://doi.org/10.1145/3177732.3177733 is not presently working
-      - Blog post: https://medium.com/uber-security-privacy/uber-open-source-differential-privacy-57f31e85c57a
-      - Source repo: https://github.com/uber-archive/sql-differential-privacy
     evidence_sources:
       paper:
         evidence_source_type: Formal publication by the deploying organization

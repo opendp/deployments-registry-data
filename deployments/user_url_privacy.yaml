@@ -42,9 +42,6 @@ deployment:
     mechanisms: Laplace, Modified Report Noisy Max
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: |
-      - Data: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2
-      - FAQ: https://developers.facebook.com/docs/url-shares-dataset/support/faqs
     evidence_sources:
       data:
         evidence_source_type: Formal publication by the deploying organization

@@ -361,12 +361,6 @@ properties:
           - registry_authors
           - tier
         properties:
-          sources:
-            description_long: |
-              This section includes links to white papers, blogposts, or other sources that describe the deployment.
-              This section may also include links to the data product itself, if publicly available.
-            tier: 1
-            type: string
           evidence_sources:
             description_long: |
               This section includes links to white papers, blogposts, or other sources that describe the deployment.

@@ -29,7 +29,6 @@ deployment:
     mechanisms: DP GAN*
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: https://datasciencecampus.ons.gov.uk/projects/generative-adversarial-networks-gans-for-synthetic-dataset-generation-with-binary-classes/
     evidence_sources:
       paper:
         misc:

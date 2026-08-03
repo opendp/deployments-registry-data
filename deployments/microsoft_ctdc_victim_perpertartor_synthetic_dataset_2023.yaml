@@ -71,11 +71,6 @@ deployment:
       - Also, the CTDC states: "Both datasets preserve privacy by design".
 
   administrative:
-    sources: |
-      - Microsoft Research Blog: https://www.microsoft.com/en-us/research/blog/iom-and-microsoft-release-first-ever-differentially-private-synthetic-dataset-to-counter-human-trafficking/
-      - Dataset: https://www.ctdatacollaborative.org/global-victim-perpetrator-synthetic-dataset#no-back
-      - Data Codebook: https://www.ctdatacollaborative.org/sites/g/files/tmzbdl2011/files/2023-07/CTDCsyntheic_victim-perpetrator_codebook_v1.pdf
-      - Product used to generate the dataset: https://github.com/microsoft/synthetic-data-showcase
     evidence_sources:
       blog:
         evidence_source_type: Formal publication by the deploying organization
