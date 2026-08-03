@@ -54,10 +54,16 @@ deployment:
       - In their report, the Wikimedia Foundation states: "This dataset was optimized to perform well across several metrics: median relative error, relative error below 50% and relative error below 90%, spurious rate, and drop rate."
 
   administrative:
-    sources: |
-      - Online description page: https://analytics.wikimedia.org/published/datasets/geoeditors_monthly/00_README.html
-      - Code repository: https://gitlab.wikimedia.org/repos/security/differential-privacy/-/blob/main/differential_privacy/geoeditors_monthly.py
-    # notes: ''
+    evidence_sources:
+      readme:
+        evidence_source_type: Other public source
+        misc:
+          title: Geoeditors Differential Privacy — Monthly
+          url: https://analytics.wikimedia.org/published/datasets/geoeditors_monthly/00_README.html
+      code:
+        evidence_source_type: Other public source
+        misc:
+          url: https://gitlab.wikimedia.org/repos/security/differential-privacy/-/blob/main/differential_privacy/geoeditors_monthly.py
     status: Draft
     registry_authors:
       - Michael Khavkin

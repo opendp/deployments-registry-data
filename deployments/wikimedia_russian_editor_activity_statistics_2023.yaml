@@ -53,11 +53,14 @@ deployment:
       - In their report, they also state that "we have taken extra privacy precautions (specifically, using differential privacy) with this data release."
 
   administrative:
-    sources: |
-      - Online description page: https://wikitech.wikimedia.org/wiki/Russian_editor_information_(2022-23)
-      - Code or table building: https://gerrit.wikimedia.org/r/plugins/gitiles/analytics/refinery/%2B/refs/heads/master/hql/geoeditors/geoeditors_monthly.hql
-      - Code for private data release: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/blob/main/geoeditors/notebooks/04_russia_release.ipynb
-    # notes: '' # other extra information
+    evidence_sources:
+      page:
+        evidence_source_type: Authorized organizational attestation
+        misc:
+          title: Russian editor information (2022-23)
+          url: https://wikitech.wikimedia.org/wiki/Russian_editor_information_(2022-23)
+      # - Code or table building: https://gerrit.wikimedia.org/r/plugins/gitiles/analytics/refinery/%2B/refs/heads/master/hql/geoeditors/geoeditors_monthly.hql
+      # - Code for private data release: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/blob/main/geoeditors/notebooks/04_russia_release.ipynb
     status: Draft
     registry_authors:
       - Michael Khavkin

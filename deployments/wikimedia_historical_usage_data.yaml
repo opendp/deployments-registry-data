@@ -78,12 +78,20 @@ deployment:
 
 
   administrative:
-    sources: |
-      - Paper: https://arxiv.org/pdf/2308.16298
-      - Several relevant links are provided in the paper’s references, among which:
-        - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
-        - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
-        - Pageviews Differential Privacy – Historical – README: https://analytics.wikimedia.org/published/datasets/country_project_page_historical/00_README.html
+    evidence_sources:
+      paper:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: Publishing Wikipedia usage data with strong privacy guarantees
+          url: https://arxiv.org/pdf/2308.16298
+          author: |
+            Temilola Adeleye, Skye Berghel, Damien Desfontaines, Michael Hay,
+            Isaac Johnson, Cléo Lemoisson, Ashwin Machanavajjhala, Tom Magerlein,
+            Gabriele Modena, David Pujol, Daniel Simmons-Marengo, and Hal Triedman
+      # - Several relevant links are provided in the paper’s references, among which:
+      #   - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
+      #   - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
+      #   - Pageviews Differential Privacy – Historical – README: https://analytics.wikimedia.org/published/datasets/country_project_page_historical/00_README.html
     status: Pending
     registry_authors:
       - Elena Ghazi
