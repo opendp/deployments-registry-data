@@ -55,7 +55,7 @@ deployment:
     evidence_sources:
       example_source_1:
         evidence_source_type: "Peer-reviewed publication"
-        article:
+        misc:
           address: ''
           annote: ''
           author: ''
