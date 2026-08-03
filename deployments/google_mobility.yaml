@@ -90,7 +90,18 @@ deployment:
       - The implementation decision to bound each user's contribution to a maximum of four (category, location) pairs per day is justified by an analysis of user behavior. This threshold was chosen because it "does not significantly affect data accuracy," given that 99% of users at the U.S. county level contribute to three or fewer pairs on average.
 
   administrative:
-    sources: https://arxiv.org/pdf/2004.04145
+    evidence_sources:
+      paper:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: 'Google COVID-19 Community Mobility Reports: Anonymization Process Description (version 1.1)'
+          url: https://arxiv.org/pdf/2004.04145
+          author: |
+            Ahmet Aktay, Shailesh Bavadekar, Gwen Cossoul, John Davis, Damien Desfontaines, Alex
+            Fabrikant, Evgeniy Gabrilovich, Krishna Gadepalli, Bryant Gipson, Miguel Guevara,
+            Chaitanya Kamath, Mansi Kansal, Ali Lange, Chinmoy Mandayam, Andrew Oplinger,
+            Christopher Pluntke, Thomas Roessler, Arran Schlosberg, Tomer Shekel, Swapnil Vispute,
+            Mia Vu, Gregory Wellenius, Brian Williams, and Royce J Wilson
     status: Pending
     registry_authors:
       - Elena Ghazi

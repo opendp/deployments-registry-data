@@ -36,8 +36,15 @@ deployment:
     mechanisms: Randomized Response
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: |
-      - Paper: https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf
+    evidence_sources:
+      white_paper:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          url: https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf
+          title: Exposure Notification Privacy-preserving Analytics (ENPA) White Paper
+          author: Apple and Google
+          year: 2021
+          month: April
     status: Pending
     registry_authors:
       - Priyanka Nanayakkara
