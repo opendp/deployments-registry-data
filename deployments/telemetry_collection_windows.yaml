@@ -33,8 +33,15 @@ deployment:
     mechanisms: Laplace, Randomized Rounding
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: |
-      - Paper: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
+    evidence_sources:
+      paper:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Collecting Telemetry Data Privately
+          url: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
+          author: Bolin Ding, Janardhan (Jana) Kulkarni, Sergey Yekhanin
+          year: 2017
+          month: December
     status: Pending
     registry_authors:
       - Priyanka Nanayakkara

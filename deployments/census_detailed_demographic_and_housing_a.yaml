@@ -80,11 +80,27 @@ deployment:
         - The final production parameters were set by the Data Stewardship Executive Policy Committee (DSEP) after a final review of the privacy guarantees and data accuracy demonstrated in the tuning experiments.
 
   administrative:
-    sources: |
-      - 2020 Census Detailed Demographic and Housing Characteristics File A (Detailed DHC-A) Technical Documentation: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/detailed-demographic-and-housing-characteristics-file-a/2020census-detailed-dhc-a-techdoc.pdf
-      - Census Bureau Announces Release Date for 2020 Census Data Product on Race and Ethnicity: https://www.census.gov/newsroom/press-releases/2023/2020-census-detailed-dhc-a.html
-      - Disclosure Avoidance Methods for the Detailed Demographic and Housing Characteristics File A (Detailed DHC-A): How SafeTab-P Works: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-05.pdf
-      - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+    evidence_sources:
+      dhc:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: 2020 Census Detailed Demographic and Housing Characteristics File A (Detailed DHC-A) Technical Documentation
+          url: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/detailed-demographic-and-housing-characteristics-file-a/2020census-detailed-dhc-a-techdoc.pdf
+      press_release:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Census Bureau Announces Release Date for 2020 Census Data Product on Race and Ethnicity
+          url: https://www.census.gov/newsroom/press-releases/2023/2020-census-detailed-dhc-a.html
+      methods:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: 'Disclosure Avoidance Methods for the Detailed Demographic and Housing Characteristics File A (Detailed DHC-A): How SafeTab-P Works'
+          url: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-05.pdf
+      handbook:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Disclosure avoidance handbook for the 2020 Census
+          url: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
     status: Pending
     registry_authors:
       - Curtis Mitchell

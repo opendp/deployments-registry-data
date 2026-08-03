@@ -31,9 +31,20 @@ deployment:
     mechanisms: Laplace
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: |
-      - Blog post: https://research.facebook.com/blog/2020/06/protecting-privacy-in-facebook-mobility-data-during-the-covid-19-response/
-      - Downloadable data product: https://data.humdata.org/dataset/movement-range-maps
+    evidence_sources:
+      blog:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Protecting privacy in Facebook mobility data during the COVID-19 response
+          url: https://research.facebook.com/blog/2020/06/protecting-privacy-in-facebook-mobility-data-during-the-covid-19-response/
+          author: Amaç Herdağdelen, Alex Dow, Bogdan State, Payman Mohassel, Alex Pompe
+          year: 2020
+          month: June
+      data:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Movement Range Maps
+          url: https://data.humdata.org/dataset/movement-range-maps
     status: Pending
     registry_authors:
       - Priyanka Nanayakkara

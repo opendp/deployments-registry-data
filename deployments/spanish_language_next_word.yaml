@@ -62,9 +62,25 @@ deployment:
         - DP-FTRL was chosen to address this challenge, given the observation that training convergence depends on accuracy of cumulative sums of gradients rather than individual ones, and that it is possible to provide accurate estimates of cumulative sums with a strong DP guarantee by using negatively correlated noise, since some of the privacy noise cancels out from step to step, allowing the model's learning trajectory to stay closer to the true gradient descent steps and achieve better accuracy for a given level of privacy.
 
   administrative:
-    sources: |
-      - Federated Learning with Formal Differential Privacy Guarantees (Article published on February 28, 2022): https://research.google/blog/federated-learning-with-formal-differential-privacy-guarantees/
-      - Paper that introduces the DP variant of Follow-The-Regularized-Leader (DP-FTRL) used in the deployment: Practical and Private (Deep) Learning Without Sampling or Shuffling: https://arxiv.org/pdf/2103.00039
+    evidence_sources:
+      blog:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Federated Learning with Formal Differential Privacy Guarantees
+          url: https://research.google/blog/federated-learning-with-formal-differential-privacy-guarantees/
+          author: Brendan McMahan and Abhradeep Thakurta
+          year: 2022
+          month: February
+      paper:
+        # Paper that introduces the DP variant of Follow-The-Regularized-Leader (DP-FTRL) used in the deployment
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Practical and Private (Deep) Learning Without Sampling or Shuffling
+          url: https://arxiv.org/pdf/2103.00039
+          author: Peter Kairouz, Brendan McMahan, Shuang Song, Om Thakkar, Abhradeep Thakurta, Zheng Xu
+          year: 2021
+          month: December
+
     status: Pending
     registry_authors:
       - Elena Ghazi

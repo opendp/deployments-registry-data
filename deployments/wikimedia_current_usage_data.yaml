@@ -65,12 +65,20 @@ deployment:
       - Choosing \\(\rho\\) =0.015 is considered to be conservative as it provides much stronger guarantee than \\((\epsilon,\delta)\\)-DP with \\(\epsilon=1\\) and \\(\delta = 10^{-7}\\)
 
   administrative:
-    sources: |
-      - Paper: https://arxiv.org/pdf/2308.16298
-      - Several relevant links are provided in the paper’s references, among which:
-        - Client-side filtering code: https://gerrit.wikimedia.org/r/plugins/gitiles/operations/puppet/+/refs/heads/production/modules/varnish/templates/analytics.inc.vcl.erb#171
-        - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
-        - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
+    evidence_sources:
+      paper:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Publishing Wikipedia usage data with strong privacy guarantees
+          url: https://arxiv.org/pdf/2308.16298
+          author: |
+            Temilola Adeleye, Skye Berghel, Damien Desfontaines, Michael Hay,
+            Isaac Johnson, Cléo Lemoisson, Ashwin Machanavajjhala, Tom Magerlein,
+            Gabriele Modena, David Pujol, Daniel Simmons-Marengo, and Hal Triedman
+      # - Several relevant links are provided in the paper’s references, among which:
+      #   - Client-side filtering code: https://gerrit.wikimedia.org/r/plugins/gitiles/operations/puppet/+/refs/heads/production/modules/varnish/templates/analytics.inc.vcl.erb#171
+      #   - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
+      #   - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
     status: Pending
     registry_authors:
       - Elena Ghazi

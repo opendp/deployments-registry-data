@@ -41,9 +41,22 @@ deployment:
       - Finally, the paper contains parameter ranges (e.g., for \\(epsilon\\)) that were tested in the experiments section, however we did not find parameter values that were actually used in deployment.
 
   administrative:
-    sources: |
-      - Paper: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
-      - Documentation: https://lehd.ces.census.gov/data/pseo_documentation.html
+    evidence_sources:
+      paper:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          url: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
+          title: 'Releasing Earnings Distributions Using Differential Privacy: Disclosure Avoidance System For Post-Secondary Employment Outcomes (PSEO)'
+          author: 'Andrew Foote, Ashwin Machanavajjhala, and Kevin McKinney'
+          journal: Journal of Privacy and Confidentiality
+          volume: 9
+          number: 2
+          year: 2019
+      documentation:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          url: https://lehd.ces.census.gov/data/pseo_documentation.html
+          title: Post-Secondary Employment Outcomes (PSEO) Help and Documentation
     status: Pending
     registry_authors:
         - Priyanka Nanayakkara

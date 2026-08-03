@@ -52,11 +52,10 @@ deployment:
     additional_information: ''
 
   administrative:
-    sources: '' # white papers
     evidence_sources:
       example_source_1:
         evidence_source_type: "Peer-reviewed publication"
-        article:
+        citation:
           address: ''
           annote: ''
           author: ''
