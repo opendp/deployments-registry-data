@@ -31,6 +31,7 @@ deployment:
   administrative:
     evidence_sources:
       paper:
+        evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Generative adversarial networks (GANs) for synthetic dataset generation with binary classes
           url: https://datasciencecampus.ons.gov.uk/projects/generative-adversarial-networks-gans-for-synthetic-dataset-generation-with-binary-classes/

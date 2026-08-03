@@ -371,6 +371,9 @@ properties:
               ^\w+$:
                 type: object
                 additionalProperties: False
+                required:
+                  - evidence_source_type
+                  - citation
                 properties:
                   evidence_source_type:
                     type: string

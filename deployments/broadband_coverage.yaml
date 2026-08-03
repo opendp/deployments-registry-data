@@ -77,12 +77,14 @@ deployment:
   administrative:
     evidence_sources:
       paper:
+        evidence_source_type: Formal publication by the deploying organization
         citation:
           title: 'U.S. Broadband Coverage Data Set: A Differentially Private Data Release'
           url: https://arxiv.org/abs/2103.14035
           year: 2021
           author: Mayana Pereira, Allen Kim, Joshua Allen, Kevin White, Juan Lavista Ferres, Rahul Dodhia
       github:
+        evidence_source_type: Formal publication by the deploying organization
         citation:
           title: United States Broadband Usage Percentages Dataset
           url: https://github.com/microsoft/USBroadbandUsagePercentages
