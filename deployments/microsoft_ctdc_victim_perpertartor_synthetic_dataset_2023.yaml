@@ -76,7 +76,31 @@ deployment:
       - Dataset: https://www.ctdatacollaborative.org/global-victim-perpetrator-synthetic-dataset#no-back
       - Data Codebook: https://www.ctdatacollaborative.org/sites/g/files/tmzbdl2011/files/2023-07/CTDCsyntheic_victim-perpetrator_codebook_v1.pdf
       - Product used to generate the dataset: https://github.com/microsoft/synthetic-data-showcase
-    # notes: '' # other extra information
+    evidence_sources:
+      blog:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: IOM and Microsoft release first-ever differentially private synthetic dataset to counter human trafficking
+          url: https://www.microsoft.com/en-us/research/blog/iom-and-microsoft-release-first-ever-differentially-private-synthetic-dataset-to-counter-human-trafficking/
+          year: 2022
+          month: December
+      dataset:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: The Global Victim-Perpetrator Synthetic Dataset
+          url: https://www.ctdatacollaborative.org/global-victim-perpetrator-synthetic-dataset
+      codebook:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: 'Counter Trafficking Data Collaborative (CTDC): The Global Victim-Perpetrator Synthetic Data Codebook'
+          url: https://www.ctdatacollaborative.org/sites/g/files/tmzbdl2011/files/2023-07/CTDCsyntheic_victim-perpetrator_codebook_v1.pdf
+          year: 2022
+          month: December
+      sourcecode:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: Synthetic data showcase
+          url: https://github.com/microsoft/synthetic-data-showcase
     status: Draft
     registry_authors:
       - Michael Khavkin

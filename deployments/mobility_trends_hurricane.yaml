@@ -35,6 +35,19 @@ deployment:
     sources: |
       - https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
       - https://web.archive.org/web/20221209065442/https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
+    evidence_sources:
+      404_whitepaper:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: Differential Privacy
+          url: https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
+          year: 2022
+      archive_whitepaper:
+        evidence_source_type: Formal publication by the deploying organization # Accurate?
+        misc:
+          title: Differential Privacy
+          url: https://web.archive.org/web/20221209065442/https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
+          year: 2022
     status: Pending
     registry_authors:
       - Nicolas Berrios
