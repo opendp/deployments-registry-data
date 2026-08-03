@@ -45,6 +45,22 @@ deployment:
     sources: |
       - Data: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2
       - FAQ: https://developers.facebook.com/docs/url-shares-dataset/support/faqs
+    evidence_sources:
+      data:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: Facebook Privacy-Protected Full URLs Data Set
+          url: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TDOAPG/DGSAMS&amp;version=6.2
+          author: |
+            Messing, Solomon; DeGregorio, Christina; Hillenbrand, Bennett; King, Gary; Mahanti, Saurav;
+            Mukerjee, Zagreb; Nayak, Chaya; Persily, Nate; State, Bogdan; Wilkins, Arjun
+          year: 2020
+          month: June
+      faq:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: URL Shares FAQ
+          url: https://developers.facebook.com/docs/url-shares-dataset/support/faqs
     status: Pending
     registry_authors:
       - Nicolas Berrios
