@@ -35,7 +35,13 @@ deployment:
     mechanisms: Not Specificed, Synthetic Data
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: https://unstats.un.org/wiki/display/UGTTOPPT/14.+Twitter+and+OpenMined%3A+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets
+    evidence_sources:
+      case_study:
+        evidence_source_type: Formal publication by the deploying organization
+        misc:
+          title: 'Twitter and OpenMined: Enabling Third-party Audits and Research Reproducibility over Unreleased Digital Assets'
+          url: https://unstats.un.org/wiki/spaces/UGTTOPPT/pages/152797274/14.+Twitter+and+OpenMined+Enabling+Third-party+Audits+and+Research+Reproducibility+over+Unreleased+Digital+Assets
+          author: David Buckley
     status: Pending
     registry_authors:
       - Nicolas Berrios

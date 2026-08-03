@@ -517,7 +517,7 @@ $defs:
       booktitle: { type: string }
       chapter: { $ref: "#/$defs/string_or_number" }
       # crossref (https://bibtex.eu/fields/ only)
-      doi: { $ref: "#/$defs/string_or_number" }
+      doi: { type: string }
       edition: { $ref: "#/$defs/string_or_number" }
       editor: { type: string }
       email: { type: string }
