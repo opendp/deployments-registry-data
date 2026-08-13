@@ -38,7 +38,7 @@ deployment:
     justification: '"All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
   administrative:
     evidence_sources:
-      paper:
+      hierarchical_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Hierarchical organization of urban mobility and its connection with city livability

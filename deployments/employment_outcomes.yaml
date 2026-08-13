@@ -42,7 +42,7 @@ deployment:
 
   administrative:
     evidence_sources:
-      paper:
+      employment_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           url: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
@@ -52,7 +52,7 @@ deployment:
           volume: 9
           number: 2
           year: 2019
-      documentation:
+      employment_documentation:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           url: https://lehd.ces.census.gov/data/pseo_documentation.html

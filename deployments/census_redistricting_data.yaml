@@ -96,12 +96,12 @@ deployment:
 
   administrative:
     evidence_sources:
-      handbook:
+      census_redistricting_handbook:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Disclosure avoidance handbook for the 2020 Census
           url: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
-      algorithm:
+      census_redistricting_algorithm:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: The 2020 Census Disclosure Avoidance System TopDown Algorithm

@@ -72,26 +72,26 @@ deployment:
 
   administrative:
     evidence_sources:
-      blog:
+      ctdc_blog:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: IOM and Microsoft release first-ever differentially private synthetic dataset to counter human trafficking
           url: https://www.microsoft.com/en-us/research/blog/iom-and-microsoft-release-first-ever-differentially-private-synthetic-dataset-to-counter-human-trafficking/
           year: 2022
           month: December
-      dataset:
+      ctdc_dataset:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: The Global Victim-Perpetrator Synthetic Dataset
           url: https://www.ctdatacollaborative.org/global-victim-perpetrator-synthetic-dataset
-      codebook:
+      ctdc_codebook:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: 'Counter Trafficking Data Collaborative (CTDC): The Global Victim-Perpetrator Synthetic Data Codebook'
           url: https://www.ctdatacollaborative.org/sites/g/files/tmzbdl2011/files/2023-07/CTDCsyntheic_victim-perpetrator_codebook_v1.pdf
           year: 2022
           month: December
-      sourcecode:
+      ctdc_sourcecode:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Synthetic data showcase
