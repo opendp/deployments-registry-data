@@ -48,6 +48,7 @@ deployment:
           year: 2022
           title: Differentially Private Set Union
           url: https://arxiv.org/pdf/2002.09745
+          author: 'Sivakanth Gopi, Pankaj Gulhane, Janardhan Kulkarni, Judy Hanwen Shen, Milad Shokouhi, and Sergey Yekhanin'
     status: Pending
     registry_authors:
       - Priyanka Nanayakkara

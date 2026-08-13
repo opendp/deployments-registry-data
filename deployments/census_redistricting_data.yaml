@@ -106,6 +106,7 @@ deployment:
         citation:
           title: The 2020 Census Disclosure Avoidance System TopDown Algorithm
           url: https://arxiv.org/abs/2204.08986
+          author: ohn M. Abowd, Robert Ashmead, Ryan Cumings-Menon, Simson Garfinkel, Micah Heineck, Christine Heiss, Robert Johns, Daniel Kifer, Philip Leclerc, Ashwin Machanavajjhala, Brett Moran, William Sexton, Matthew Spence, Pavel Zhuravlev
     status: Pending
     registry_authors:
       - Elena Ghazi
