@@ -1,4 +1,4 @@
-from check import check, checks
+from check import check_local, checks
 from update_slug import update_slug
 
 import pytest
@@ -30,7 +30,7 @@ def test_updated_slugs(yaml_path):
     "yaml_path", root.glob("deployments/*.yaml"), ids=lambda path: path.name
 )
 def test_real_yaml(yaml_path):
-    errors = check(yaml_path, only=checks - {"check_urls"})
+    errors = check_local(yaml_path, only=checks - {"check_urls"})
     assert not errors
 
 
@@ -38,7 +38,7 @@ def test_real_yaml(yaml_path):
     "yaml_path", root.glob("tests/good_deployments/*.yaml"), ids=lambda path: path.name
 )
 def test_good_yaml(yaml_path):
-    errors = check(yaml_path)
+    errors = check_local(yaml_path)
     assert not errors
 
 
@@ -48,7 +48,7 @@ def test_good_yaml(yaml_path):
     ids=lambda path: path.name,
 )
 def test_bad_yaml(bad_yaml_path):
-    errors = check(bad_yaml_path)
+    errors = check_local(bad_yaml_path)
     assert errors, "Expected errors, but there aren't any"
     errors_stem = errors_to_stem(errors)
     assert errors_stem == bad_yaml_path.stem, errors
