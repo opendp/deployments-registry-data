@@ -1,6 +1,4 @@
 url_slug: mhusage-transluce-hiding-nemo-2026
-status: Draft
-tier: 3
 deployment:
   basic:
     # Tier 1:
@@ -55,17 +53,6 @@ deployment:
     access_type: Non-interactive
     access_type_details: Analysts receive the synthetic dataset and the noisy marginals as files and cannot query the underlying data.
 
-  accounting:
-    post_processing: |
-      The privacy-critical operations are limited to the computation of noisy marginals, and the selection of which noisy marginals to compute. Everything else is post-processing.
-
-      - A mixture-of-products model with 2,400 components is fitted to the noisy marginals by gradient descent, weighting each marginal by the inverse of its noise scale.
-      - 8,239 records are drawn from the fitted model. Rather than an i.i.d. draw, rows are allocated evenly across mixture components and each column's expected counts within a component are rounded to integers and shuffled. This substantially reduces sampling noise, at the cost that the released rows are not an independent sample.
-      - The two numeric columns are decoded from their bins by drawing within each bin (log-uniform in interior bins, uniform in the bin anchored at zero, truncated Pareto in the open-ended top bin).
-      - Combinations of flags that the rubric's definitions make impossible are repaired: 38 rules covering exclusions, implications, one mutually exclusive group, and two disjunctions. Repairs touched 706 of 8,239 records and changed 918 of 1.68 million cells. The rules are derived from the rubric's definitions rather than from the data; the released dataset includes the pre-repair version as well, so that the effect of this step can be measured.
-    composition: |
-      Adaptive composition under zCDP. The complete schedule of per-query costs — 204 one-way marginals, then 4,574 fixed marginals, then 3,000 (selection, measurement) pairs — is declared in advance. Which two-way marginals get selected depends on earlier answers, but their budget does not.
-
   implementation:
     preprocessing_and_hyperparameter_tuning: |
       Pre-processing consists only binning the two numeric columns at declared edges (fixed by the analyst).
@@ -79,6 +66,15 @@ deployment:
       - Composition uses OpenDP's `make_adaptive_composition` with the fixed schedule described above.
 
       The estimator is a re-implementation of MBI's mixture-of-products model, with performance optimizations. It is written in JAX.
+    composition: |
+      Adaptive composition under zCDP. The complete schedule of per-query costs — 204 one-way marginals, then 4,574 fixed marginals, then 3,000 (selection, measurement) pairs — is declared in advance. Which two-way marginals get selected depends on earlier answers, but their budget does not.
+    post_processing: |
+      The privacy-critical operations are limited to the computation of noisy marginals, and the selection of which noisy marginals to compute. Everything else is post-processing.
+
+      - A mixture-of-products model with 2,400 components is fitted to the noisy marginals by gradient descent, weighting each marginal by the inverse of its noise scale.
+      - 8,239 records are drawn from the fitted model. Rather than an i.i.d. draw, rows are allocated evenly across mixture components and each column's expected counts within a component are rounded to integers and shuffled. This substantially reduces sampling noise, at the cost that the released rows are not an independent sample.
+      - The two numeric columns are decoded from their bins by drawing within each bin (log-uniform in interior bins, uniform in the bin anchored at zero, truncated Pareto in the open-ended top bin).
+      - Combinations of flags that the rubric's definitions make impossible are repaired: 38 rules covering exclusions, implications, one mutually exclusive group, and two disjunctions. Repairs touched 706 of 8,239 records and changed 918 of 1.68 million cells. The rules are derived from the rubric's definitions rather than from the data; the released dataset includes the pre-repair version as well, so that the effect of this step can be measured.
     justification: |
       - The initial workload of always-measured marginals was chosen to preserve particularly important statistical properties of the original data. The budget split was chosen to roughly equalize the noise each family of marginals carries relative to what it measures.
       - The repair rules encode constraints that follow from the schema (for example, a conversation can only be in a criterion's bucket if it meets that criterion).
@@ -88,5 +84,7 @@ deployment:
     sources: |
       - Description of the mechanism and its utility metrics: https://behaviors.transluce.org/mental-health?detail=page:app_H_privacy_statement&detail=page:app_F_prod_features
       - Published dataset: https://huggingface.co/datasets/Transluce/MHUsage
+    status: Draft
     registry_authors:
       - Damien Desfontaines
+    tier: 3
