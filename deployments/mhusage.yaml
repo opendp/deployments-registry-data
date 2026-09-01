@@ -7,17 +7,17 @@ deployment:
       -
         data_curator_name: 'Transluce & Hiding Nemo'
         data_curator_type: 'Nonprofit'
-    intended_use: Enable external researchers to study how AI assistants respond to users experiencing mental health crises.
-    data_product_type: Synthetic data
-    data_product_region: Global
     description: |
       A differentially private synthetic version of a dataset of 8,237 conversations with AI assistants from two LLM providers (Anthropic and OpenAI), each rated against a mental-health rubric.
 
       Each conversation in the original data is described by 204 columns: the LLM provider it came from, two numeric columns (number of messages and number of words), and 201 binary rubric features. The binary features comprise 11 applicability criteria (whether a conversation qualifies for a given review criterion), 11 corresponding bucket flags (whether it was included in that criterion's review bucket), and 179 further features covering crisis acuity, mental health presentation, conversation goals, engagement style, how the user positions the assistant, social situation, and related dimensions. The rubric features were assigned by LLM judges reading the transcripts, independently for each feature.
 
       The synthetic dataset has the same schema and semantics. The noisy marginals that the mechanism measured are also published, so that analysts can derive confidence intervals for the quantities that were measured directly. The model itself is also published, so additional records can be generated as needed.
-    publication_date: '2026-09-01'
+    intended_use: Enable external researchers to study how AI assistants respond to users experiencing mental health crises.
+    data_product_type: Synthetic data
+    data_product_region: Global
     data_product_sector: Healthcare
+    publication_date: '2026-09-01'
 
   # Tiers 2 and 3:
   dp_variant:
