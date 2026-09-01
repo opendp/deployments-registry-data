@@ -26,7 +26,7 @@ deployment:
     variant_name: Zero-concentrated DP
     data_domain: Tables with one row per conversation and the 204 columns declared in the release's public schema.
     unprotected_quantities: |
-      Some very coarse utility metrics were published alongside the dataset; these were computed by comparing the synthetic data to the real data and are not covered by the privacy guarantee. 
+      Some very coarse utility metrics were published alongside the dataset; these were computed by comparing the synthetic data to the real data and are not covered by the privacy guarantee.
 
   privacy_loss:
     privacy_unit: Conversation-level
