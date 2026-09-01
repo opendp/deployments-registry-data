@@ -1,0 +1,92 @@
+url_slug: mhusage-transluce-hiding-nemo-2026
+status: Draft
+tier: 3
+deployment:
+  basic:
+    # Tier 1:
+    name: MHUsage
+    data_curators:
+      -
+        data_curator_name: 'Transluce & Hiding Nemo'
+        data_curator_type: 'Nonprofit'
+    intended_use: Enable external researchers to study how AI assistants respond to users experiencing mental health crises.
+    data_product_type: Synthetic data
+    data_product_region: Global
+    description: |
+      A differentially private synthetic version of a dataset of 8,237 conversations with AI assistants from two LLM providers (Anthropic and OpenAI), each rated against a mental-health rubric.
+
+      Each conversation in the original data is described by 204 columns: the LLM provider it came from, two numeric columns (number of messages and number of words), and 201 binary rubric features. The binary features comprise 11 applicability criteria (whether a conversation qualifies for a given review criterion), 11 corresponding bucket flags (whether it was included in that criterion's review bucket), and 179 further features covering crisis acuity, mental health presentation, conversation goals, engagement style, how the user positions the assistant, social situation, and related dimensions. The rubric features were assigned by LLM judges reading the transcripts, independently for each feature.
+
+      The synthetic dataset has the same schema and semantics. The noisy marginals that the mechanism measured are also published, so that analysts can derive confidence intervals for the quantities that were measured directly. The model itself is also published, so additional records can be generated as needed.
+    publication_date: '2026-09-01'
+    data_product_sector: Healthcare
+
+  # Tiers 2 and 3:
+  dp_variant:
+    variant_name: Zero-concentrated DP
+    data_domain: Tables with one row per conversation and the 204 columns declared in the release's public schema.
+    unprotected_quantities: |
+      Some very coarse utility metrics were published alongside the dataset; these were computed by comparing the synthetic data to the real data and are not covered by the privacy guarantee.
+
+  privacy_loss:
+    privacy_unit: Conversation-level
+    privacy_unit_details: |
+      Unbounded (add/remove-one-record) differential privacy. Two datasets are adjacent if one can be obtained from the other by adding or removing a single conversation's row; formally, adjacency is a symmetric distance of 1 under OpenDP's `symmetric_distance` metric.
+
+    privacy_parameters:
+      epsilon: 10.0
+      delta: 1.0e-05
+      rho: 1.782696
+    privacy_parameters_details: |
+      The mechanism is composed under zero-concentrated DP with a total budget of \\(\rho = 1.782696\\), which is converted to \\((\epsilon = 10, \delta = 10^{-5})\\)-DP at the end.
+
+      The \\(\rho\\) budget is divided as follows: 70% to a fixed set of 4,574 marginals; 25% to 3,000 adaptively selected two-way marginals; and 5% to the 3,000 selection steps that choose them.
+
+  deployment_model:
+    model_name: Central
+    model_name_details: The curator holds the conversation-level rubric ratings and applies the mechanism to them; only the synthetic dataset and the noisy marginals leave the curator's control.
+    actors: |
+      - The curator (Transluce, assisted by Hiding Nemo), who holds the rubric ratings and runs the mechanism.
+      - The labs whose conversations were rated, who are the source of the underlying data.
+      - Downstream analysts and the general public, who see the synthetic dataset, the noisy marginals, and the model. They are treated as potential adversaries with arbitrary side information.
+    release_type: One release
+    release_type_details: The dataset is generated once; the full budget is spent on that single release.
+    data_source_type: Static
+    access_type: Non-interactive
+    access_type_details: Analysts receive the synthetic dataset and the noisy marginals as files and cannot query the underlying data.
+
+  accounting:
+    post_processing: |
+      The privacy-critical operations are limited to the computation of noisy marginals, and the selection of which noisy marginals to compute. Everything else is post-processing.
+
+      - A mixture-of-products model with 2,400 components is fitted to the noisy marginals by gradient descent, weighting each marginal by the inverse of its noise scale.
+      - 8,239 records are drawn from the fitted model. Rather than an i.i.d. draw, rows are allocated evenly across mixture components and each column's expected counts within a component are rounded to integers and shuffled. This substantially reduces sampling noise, at the cost that the released rows are not an independent sample.
+      - The two numeric columns are decoded from their bins by drawing within each bin (log-uniform in interior bins, uniform in the bin anchored at zero, truncated Pareto in the open-ended top bin).
+      - Combinations of flags that the rubric's definitions make impossible are repaired: 38 rules covering exclusions, implications, one mutually exclusive group, and two disjunctions. Repairs touched 706 of 8,239 records and changed 918 of 1.68 million cells. The rules are derived from the rubric's definitions rather than from the data; the released dataset includes the pre-repair version as well, so that the effect of this step can be measured.
+    composition: |
+      Adaptive composition under zCDP. The complete schedule of per-query costs — 204 one-way marginals, then 4,574 fixed marginals, then 3,000 (selection, measurement) pairs — is declared in advance. Which two-way marginals get selected depends on earlier answers, but their budget does not.
+
+  implementation:
+    preprocessing_and_hyperparameter_tuning: |
+      Pre-processing consists only binning the two numeric columns at declared edges (fixed by the analyst).
+
+      Hyperparameter tuning is not accounted for.
+    mechanisms: |
+      The implementation relies on OpenDP.
+
+      - Marginal measurements use the Gaussian mechanism. They are implemented by chaining a user-defined `Transformation` (from the dataset to one flattened marginal) with OpenDP's Gaussian noise addition.
+      - AIM's marginal selection setps use the exponential mechanism. They are implemented by chaining a user-defined `Transformation` (from the dataset to the list of scores) with OpenDP's noisy-max measurement.
+      - Composition uses OpenDP's `make_adaptive_composition` with the fixed schedule described above.
+
+      The estimator is a re-implementation of MBI's mixture-of-products model, with performance optimizations. It is written in JAX.
+    justification: |
+      - The initial workload of always-measured marginals was chosen to preserve particularly important statistical properties of the original data. The budget split was chosen to roughly equalize the noise each family of marginals carries relative to what it measures.
+      - The repair rules encode constraints that follow from the schema (for example, a conversation can only be in a criterion's bucket if it meets that criterion).
+      - OpenDP was used to mitigate the risk of floating-point vulnerabilities or errors in the privacy budget accounting. Using user-defined transformations was necessary for performance reasons.
+
+  administrative:
+    sources: |
+      - Description of the mechanism and its utility metrics: https://behaviors.transluce.org/mental-health?detail=page:app_H_privacy_statement&detail=page:app_F_prod_features
+      - Published dataset: https://huggingface.co/datasets/Transluce/MHUsage
+    registry_authors:
+      - Damien Desfontaines
