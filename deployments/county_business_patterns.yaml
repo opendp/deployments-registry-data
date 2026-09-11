@@ -32,10 +32,22 @@ deployment:
     mechanisms: Gaussian
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: |
-      - https://www.census.gov/topics/business-economy/disclosure/about.html
-      - https://www.census.gov/data/academy/webinars/2023/differential-privacy-webinar.html
-      - https://www.census.gov/topics/business-economy/disclosure/data/tables.html
+    evidence_sources:
+      about:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          url: https://www.census.gov/topics/business-economy/disclosure/about.html
+          title: About Data Privacy on Business & the Economy
+      webinar:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          url: https://www.census.gov/data/academy/webinars/2023/differential-privacy-webinar.html
+          title: Researching Formal Privacy for the Census Bureau's County Business Patterns Program
+      tables:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          url: https://www.census.gov/topics/business-economy/disclosure/data/tables.html
+          title: Data Privacy Research on Businesses & the Economy Tables
     status: Pending
     registry_authors:
       - Nicolas Berrios

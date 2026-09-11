@@ -37,9 +37,23 @@ deployment:
   #   mechanisms:
   #   justification:
   administrative:
-    sources: |
-      - Blog post: https://research.google/blog/protecting-users-with-differentially-private-synthetic-training-data/
-      - Research paper: https://arxiv.org/pdf/2306.01684
+    evidence_sources:
+      safety_blog:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Protecting users with differentially private synthetic training data
+          url: https://research.google/blog/protecting-users-with-differentially-private-synthetic-training-data/
+          author: Alexey Kurakin, and Natalia Ponomareva
+          year: 2024
+          month: May
+      safety_paper:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Harnessing large-language models to generate private synthetic text
+          url: https://arxiv.org/abs/2306.01684
+          author: Alexey Kurakin, Natalia Ponomareva, Umar Syed, Liam MacDermed, Andreas Terzis
+          # There are multiple versions: Report year/month for v1 or v2?
+
     status: Pending
     registry_authors:
         - Priyanka Nanayakkara

@@ -36,9 +36,19 @@ deployment:
     mechanisms: Private Count Mean Sketch
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: |
-      - Paper: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
-      - Additional version: https://machinelearning.apple.com/research/learning-with-privacy-at-scale
+    evidence_sources:
+      healthkit_paper:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Learning with Privacy at Scale
+          url: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+          author: Differential Privacy Team, Apple
+      healthkit_additional:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Learning with Privacy at Scale
+          url: https://machinelearning.apple.com/research/learning-with-privacy-at-scale
+          author: Differential Privacy Team
     status: Pending
     registry_authors:
       - Priyanka Nanayakkara

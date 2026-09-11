@@ -81,9 +81,18 @@ deployment:
       - OpenDP was used to mitigate the risk of floating-point vulnerabilities or errors in the privacy budget accounting. Using user-defined transformations was necessary for performance reasons.
 
   administrative:
-    sources: |
-      - Description of the mechanism and its utility metrics: https://behaviors.transluce.org/mental-health?detail=page:app_H_privacy_statement&detail=page:app_F_prod_features
-      - Published dataset: https://huggingface.co/datasets/Transluce/MHUsage
+    evidence_sources:
+      transluce_report:
+        citation:
+          title: 'Mental Health Behavior Report, Appendix F: Comparing real and simulated users'
+          author: Daniel D. Johnson, Robert Friel, Cassidy Laidlaw, Luke Hewitt, Nari Johnson, Conrad Stosz, Sarah Schwettmann
+          url: https://behaviors.transluce.org/mental-health?detail=page:app_H_privacy_statement&detail=page:app_F_prod_features
+          year: 2026
+          month: August
+      transluce_data:
+        citation:
+          title: MHUsage
+          url: https://huggingface.co/datasets/Transluce/MHUsage
     status: Draft
     registry_authors:
       - Damien Desfontaines

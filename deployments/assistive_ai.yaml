@@ -34,9 +34,21 @@ deployment:
       - Restricted to some languages (EN, ES, FR, PR, IT)
 
   administrative:
-    sources: |
-      - Blog post: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
-      - Paper: https://arxiv.org/pdf/2002.09745
+    evidence_sources:
+      microsoft_2020:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          year: 2020
+          author: Microsoft Search, Assistant and Intelligence
+          title: Assistive AI Makes Replying Easier
+          url: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
+      microsoft_2022:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          year: 2022
+          title: Differentially Private Set Union
+          url: https://arxiv.org/pdf/2002.09745
+          author: 'Sivakanth Gopi, Pankaj Gulhane, Janardhan Kulkarni, Judy Hanwen Shen, Milad Shokouhi, and Sergey Yekhanin'
     status: Pending
     registry_authors:
       - Priyanka Nanayakkara

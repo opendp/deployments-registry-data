@@ -37,7 +37,20 @@ deployment:
     mechanisms: Laplace Mechanism
     justification: '"All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
   administrative:
-    sources: https://www.nature.com/articles/s41467-019-12809-y
+    evidence_sources:
+      hierarchical_paper:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Hierarchical organization of urban mobility and its connection with city livability
+          url: https://www.nature.com/articles/s41467-019-12809-y
+          author: |
+            Aleix Bassolas, Hugo Barbosa-Filho, Brian Dickinson, Xerxes Dotiwalla,
+            Paul Eastham, Riccardo Gallotti, Gourab Ghoshal, Bryant Gipson, Surendra A. Hazarie,
+            Henry Kautz, Onur Kucuktunc, Allison Lieber, Adam Sadilek & José J. Ramasco
+          year: 2019
+          month: October
+          journal: Nature Communications
+          volume: 10
     status: Pending
     registry_authors:
       - Nicolas Berrios

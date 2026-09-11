@@ -75,9 +75,17 @@ deployment:
       - "All diﬀerential privacy processing was done with the OpenDP SmartNoise library. The SmartNoise library includes a comprehensive set of diﬀerential privacy mechanisms, algorithms, and validator. The library is open source, and is maintained and vetted by OpenDP."
       - A Monte Carlo simulation process to estimate the error introduced by DP was chosen, the rationale being that this empirical method is better for estimating the combined error from several private sources and does not result in additional privacy losses.
   administrative:
-    sources: |
-      - Paper: https://arxiv.org/abs/2103.14035
-      - Github: https://github.com/microsoft/USBroadbandUsagePercentages
+    evidence_sources:
+      broadband_paper:
+        citation:
+          title: 'U.S. Broadband Coverage Data Set: A Differentially Private Data Release'
+          url: https://arxiv.org/abs/2103.14035
+          year: 2021
+          author: Mayana Pereira, Allen Kim, Joshua Allen, Kevin White, Juan Lavista Ferres, Rahul Dodhia
+      broadband_github:
+        citation:
+          title: United States Broadband Usage Percentages Dataset
+          url: https://github.com/microsoft/USBroadbandUsagePercentages
     status: Pending
     registry_authors:
       - Elena Ghazi

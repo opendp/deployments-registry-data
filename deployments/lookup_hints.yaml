@@ -36,7 +36,12 @@ deployment:
     mechanisms: Count Mean Sketch or Hadamard Count Mean Sketch
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
+    evidence_sources:
+      hints_paper:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Differential Privacy
+          url: https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf
     status: Pending
     registry_authors:
       - Nicolas Berrios

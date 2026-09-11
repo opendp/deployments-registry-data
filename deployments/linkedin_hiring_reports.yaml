@@ -38,7 +38,15 @@ deployment:
     mechanisms: Laplace, Gumbel
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: https://arxiv.org/abs/2010.13981
+    evidence_sources:
+      linkedin_paper:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: A Members First Approach to Enabling LinkedIn's Labor Market Insights at Scale
+          url: https://arxiv.org/abs/2010.13981
+          author: Ryan Rogers, Adrian Rivera Cardoso, Koray Mancuhan, Akash Kaura, Nikhil Gahlawat, Neha Jain, Paul Ko, Parvez Ahammad
+          year: 2020
+          month: October
     status: Pending
     registry_authors:
       - Nicolas Berrios

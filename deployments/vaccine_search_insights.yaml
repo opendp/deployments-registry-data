@@ -34,8 +34,13 @@ deployment:
     mechanisms: Gaussian
     justification: '' # TODO: Fill in correct value
   administrative:
-    sources: |
-      - Paper: https://arxiv.org/abs/2107.01179
+    evidence_sources:
+      vaccine_paper:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: 'Google COVID-19 Vaccination Search Insights: Anonymization Process Description'
+          url: https://arxiv.org/abs/2107.01179
+          author: Shailesh Bavadekar, Adam Boulanger, John Davis, Damien Desfontaines, Evgeniy Gabrilovich, Krishna Gadepalli, Badih Ghazi, Tague Griffith, Jai Gupta, Chaitanya Kamath, Dennis Kraft, Ravi Kumar, Akim Kumok, Yael Mayer, Pasin Manurangsi, Arti Patankar, Irippuge Milinda Perera, Chris Scott, Tomer Shekel, Benjamin Miller, Karen Smith, Charlotte Stanton, Mimi Sun, Mark Young, Gregory Wellenius
     status: Pending
     registry_authors:
       - Nicolas Berrios

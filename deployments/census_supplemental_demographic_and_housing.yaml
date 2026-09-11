@@ -70,11 +70,27 @@ deployment:
         - The final production parameters were set by the Data Stewardship Executive Policy Committee (DSEP) after a final review of the privacy guarantees and data accuracy demonstrated in the tuning experiments.
 
   administrative:
-    sources: |
-      - 2020 Supplemental Demographic and Housing Characteristics File (S-DHC) Technical Documentation: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/supplemental-demographic-and-housing-characteristics-file/2020census-supplemental-dhc-techdoc.pdf
-      - Census Bureau Releases Final 2020 Census Data Product: https://www.census.gov/newsroom/press-releases/2024/final-2020-census-data-product-s-dhc.html
-      - Disclosure Avoidance and the Supplemental Demographic and Housing Characteristics File (S-DHC): How PHSafe Works: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-12.pdf
-      - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+    evidence_sources:
+      census_supplemental_dhc:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: 2020 Supplemental Demographic and Housing Characteristics File (S-DHC) Technical Documentation
+          url: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/supplemental-demographic-and-housing-characteristics-file/2020census-supplemental-dhc-techdoc.pdf
+      census_supplemental_press_release:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Census Bureau Releases Final 2020 Census Data Product
+          url: https://www.census.gov/newsroom/press-releases/2024/final-2020-census-data-product-s-dhc.html
+      census_supplemental_how_it_works:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: 'Disclosure Avoidance and the Supplemental Demographic and Housing Characteristics File (S-DHC): How PHSafe Works'
+          url: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-12.pdf
+      census_supplemental_handbook:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          title: Disclosure avoidance handbook for the 2020 Census
+          url: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
     status: Pending
     registry_authors:
       - Curtis Mitchell
