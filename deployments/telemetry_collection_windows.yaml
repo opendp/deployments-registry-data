@@ -34,7 +34,7 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     evidence_sources:
-      paper:
+      telemetry_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Collecting Telemetry Data Privately

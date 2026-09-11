@@ -30,7 +30,7 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     evidence_sources:
-      paper:
+      gans_paper:
         citation:
           title: Generative adversarial networks (GANs) for synthetic dataset generation with binary classes
           url: https://datasciencecampus.ons.gov.uk/projects/generative-adversarial-networks-gans-for-synthetic-dataset-generation-with-binary-classes/

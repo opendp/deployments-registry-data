@@ -38,7 +38,7 @@ deployment:
   #   justification:
   administrative:
     evidence_sources:
-      blog:
+      safety_blog:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Protecting users with differentially private synthetic training data
@@ -46,7 +46,7 @@ deployment:
           author: Alexey Kurakin, and Natalia Ponomareva
           year: 2024
           month: May
-      paper:
+      safety_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Harnessing large-language models to generate private synthetic text

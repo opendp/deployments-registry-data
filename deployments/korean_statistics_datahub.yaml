@@ -30,7 +30,7 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     evidence_sources:
-      paper:
+      datahub_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           url: https://unstats.un.org/wiki/display/UGTTOPPT/11.+Statistics+Korea%3A+Developing+a+privacy-preserving+Statistical+Data+Hub+Platform

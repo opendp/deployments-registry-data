@@ -68,7 +68,7 @@ deployment:
       - Formal proof that elastic sensitivity is an upper bound of local sensistivity is presented.
   administrative:
     evidence_sources:
-      paper:
+      uber_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Towards Practical Differential Privacy for SQL Queries
@@ -76,7 +76,7 @@ deployment:
           author: Noah Johnson, Joseph P. Near, Dawn Song
           journal: Proceedings of the VLDB Endowment
           volume: 11
-      blog:
+      uber_blog:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Updates to Uber’s Open Source Project for Differential Privacy
@@ -84,7 +84,7 @@ deployment:
           author: Menotti Minutillo
           year: 2018
           month: January
-      source:
+      uber_source:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: sql-differential-privacy

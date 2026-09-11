@@ -52,7 +52,7 @@ deployment:
 
   administrative:
     evidence_sources:
-      paper:
+      safari_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Learning with Privacy at Scale

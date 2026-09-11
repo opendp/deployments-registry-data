@@ -29,7 +29,7 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     evidence_sources:
-      paper:
+      on_device_rec_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Using Federated Learning to Improve Brave’s On-Device Recommendations While Protecting Your Privacy

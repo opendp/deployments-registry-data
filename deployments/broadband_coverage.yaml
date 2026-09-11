@@ -76,13 +76,13 @@ deployment:
       - A Monte Carlo simulation process to estimate the error introduced by DP was chosen, the rationale being that this empirical method is better for estimating the combined error from several private sources and does not result in additional privacy losses.
   administrative:
     evidence_sources:
-      paper:
+      broadband_paper:
         citation:
           title: 'U.S. Broadband Coverage Data Set: A Differentially Private Data Release'
           url: https://arxiv.org/abs/2103.14035
           year: 2021
           author: Mayana Pereira, Allen Kim, Joshua Allen, Kevin White, Juan Lavista Ferres, Rahul Dodhia
-      github:
+      broadband_github:
         citation:
           title: United States Broadband Usage Percentages Dataset
           url: https://github.com/microsoft/USBroadbandUsagePercentages

@@ -99,7 +99,7 @@ def check_latex_escapes(yaml_path):
 checks = {name for name in globals().keys() if name.startswith("check_")}
 
 
-def check(yaml_path: Path, only=checks):
+def check_local(yaml_path: Path, only=checks):
     detail_checks = [
         function
         for name, function in globals().items()
@@ -113,6 +113,23 @@ def check(yaml_path: Path, only=checks):
         assert isinstance(error, list), f"Expected list, not {error}"
         if error:
             errors[name] = error
+    return errors
+
+
+def check_global(yaml_paths: list[Path]):
+    errors = {}
+    evidence_source_keys = set()
+    for yaml_path in yaml_paths:
+        deployment = load(yaml_path.open(), Loader=Loader)
+        new_keys = set(
+            deployment["deployment"]["administrative"]["evidence_sources"].keys()
+        )
+
+        if intersection := new_keys & evidence_source_keys:
+            errors[
+                yaml_path.name
+            ] = f"Keys not globally unique: {', '.join(intersection)}"
+        evidence_source_keys |= new_keys
     return errors
 
 
@@ -149,12 +166,20 @@ if __name__ == "__main__":
         print("No files selected")
         exit(1)
     errors = {}
+
+    global_error = check_global(yaml_paths)
+    if global_error:
+        errors["global"] = global_error
+
     for yaml_path in yaml_paths:
         print(f"Validating {yaml_path.name}...")
-        error = check(yaml_path, only=args.only or (checks - set(args.skip)))
-        assert isinstance(error, dict), f"Expected list, not {error}"
-        if error:
-            errors[yaml_path.name] = error
+        local_error = check_local(
+            yaml_path, only=args.only or (checks - set(args.skip))
+        )
+        assert isinstance(local_error, dict), f"Expected dict, not {local_error}"
+        if local_error:
+            errors[yaml_path.name] = local_error
+
     if errors:
         print(dump(errors))
         exit(1)

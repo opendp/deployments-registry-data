@@ -73,7 +73,7 @@ deployment:
 
   administrative:
     evidence_sources:
-      apple:
+      apple_emoji:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Learning with Privacy at Scale
