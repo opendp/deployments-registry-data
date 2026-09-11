@@ -85,6 +85,12 @@ def test_node_has_details_long(path, node):
         "/deployment/administrative/notes",
         "/deployment/administrative/registry_authors",
         "/deployment/administrative/status",
+        "/deployment/basic/data_curators_details",
+        "/deployment/basic/data_product_type_details",
+        "/deployment/basic/data_product_sector_details",
+        "/deployment/basic/publication_date_details",
+        "/deployment/dp_variant/variant_name_details",
+        "/deployment/privacy_loss/number_of_privacy_units_details",
     ]
     if path in skip_list:
         assert "description_long" not in node.keys()
