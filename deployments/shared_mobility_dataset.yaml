@@ -1,6 +1,4 @@
 url_slug: shared-mobility-dataset-google-2022
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Shared Mobility Dataset
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Google'
         data_curator_type: 'Industry'
+    description: Intra-urban metrics on trips.
     intended_use: Mobility Data
     data_product_type: Summary statistics
     data_product_region: Global
-    description: Intra-urban metrics on trips.
-    publication_date: '2022-01-01'
     data_product_sector: Technology
+    publication_date: '2022-01-01'
   dp_variant:
     variant_name: Approximate DP
   privacy_loss:
@@ -31,7 +29,6 @@ deployment:
       of \\(\epsilon = 0.66\\) and \\(\delta = 2.1 × 10−29\\), which is very strong."'
   deployment_model:
     model_name: Central
-    # model_name_details: TODO
     release_type: One release
     release_type_details: Static
     access_type: Non-interactive
@@ -41,7 +38,9 @@ deployment:
     justification: '"All trips were anonymized and aggregated by jointly applying differential privacy via the Laplace mechanism in combination with k-anonymity."'
   administrative:
     sources: https://www.nature.com/articles/s41467-019-12809-y
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    tier: 1

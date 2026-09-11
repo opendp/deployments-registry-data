@@ -1,6 +1,4 @@
 url_slug: disclosure-avoidance-system-for-supplemental-demographic-and-housing-characteristics-file-u-s-census-bureau-2024
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Disclosure Avoidance System for Supplemental Demographic and Housing Characteristics File
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'U.S. Census Bureau'
         data_curator_type: 'Government'
+    description: Set of summary statistics (tables with household type and tenure type statistics) published as the 2020 Census Supplemental Demographic and Housing Characteristics File.
     intended_use: The Supplemental Demographic and Housing Characteristics (Supplemental DHC, or S-DHC) data file provides combines the characteristics of households and the people living in them. These data are used for assessing and allocating funding for government programs and by researchers such as demographers and economists.
     data_product_type: Summary statistics
     data_product_region: USA
-    description: Set of summary statistics (tables with household type and tenure type statistics) published as the 2020 Census Supplemental Demographic and Housing Characteristics File.
-    publication_date: '2024-09-19'
     data_product_sector: Government
+    publication_date: '2024-09-19'
 
   dp_variant:
     variant_name: Zero-concentrated DP
@@ -33,7 +31,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details: ''
     actors: |
       - Curator: U.S. Census Bureau: collects, stores, and protects the confidential data
       - Data subjects: The respondents of the 2020 Census, comprising over 331 million people in the United States. Their trust in the curator's ability to protect their data is essential for the quality of the census. This trust is rationalized by the Bureau's legal mandate under Title 13 of the U.S. Code to protect respondent confidentiality, a requirement reinforced by a lifelong oath taken by every employee.
@@ -44,16 +41,9 @@ deployment:
     release_type: One release
     # release_type_details: ''
     data_source_type: Static
-    # data_source_type_details: ''
     access_type: Non-interactive
     # access_type_details: ''
 
-  accounting:
-    post_processing: |
-      The Supplemental Demographic and Housing Characteristics File is not consistent with the Demographic and Housing Characteristics File (DHC). Key post-processing functions include:
-        - Counts may not match across S-DHC tables.
-        - User-generated aggregations may not match the published counts.
-        - The underlying data are adjusted, through a process referred to as truncation, to not exceed household size maximum thresholds.
 
   implementation:
     mechanisms: |
@@ -63,6 +53,11 @@ deployment:
       - Security measures:
         - Legal: Protection is legally mandated by Title 13 of the U.S. Code.
         - All Census Bureau employees take a lifelong oath to protect respondent information.
+    post_processing: |
+      The Supplemental Demographic and Housing Characteristics File is not consistent with the Demographic and Housing Characteristics File (DHC). Key post-processing functions include:
+        - Counts may not match across S-DHC tables.
+        - User-generated aggregations may not match the published counts.
+        - The underlying data are adjusted, through a process referred to as truncation, to not exceed household size maximum thresholds.
 
     justification: |
       - Rationale for Adopting DP: Differential privacy was adopted after internal research confirmed that traditional disclosure avoidance methods, like data swapping, were vulnerable to modern database reconstruction and re-identification attacks. A 2018 simulation of such an attack on the 2010 Census data resulted in the confirmed re-identification of 52 million people (17% of the U.S. population). DP was chosen because it provides mathematically provable guarantees against a wide range of such privacy attacks.
@@ -80,5 +75,7 @@ deployment:
       - Census Bureau Releases Final 2020 Census Data Product: https://www.census.gov/newsroom/press-releases/2024/final-2020-census-data-product-s-dhc.html
       - Disclosure Avoidance and the Supplemental Demographic and Housing Characteristics File (S-DHC): How PHSafe Works: https://www2.census.gov/library/publications/decennial/2020/census-briefs/c2020br-12.pdf
       - Disclosure avoidance handbook for the 2020 Census: https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf
+    status: Pending
     registry_authors:
       - Curtis Mitchell
+    tier: 3

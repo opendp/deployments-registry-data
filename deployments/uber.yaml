@@ -1,6 +1,4 @@
 url_slug: flex-uber-2018
-status: Pending
-tier: 2
 deployment:
   basic:
     name: FLEX
@@ -8,15 +6,15 @@ deployment:
       -
         data_curator_name: 'Uber'
         data_curator_type: 'Industry'
+    description: A flexible end-to-end system for computing differential privacy
+      using "elastic sensitivity" over heterogeneous existing database
+      environments, at scale.
     intended_use: To compute privacy-protected SQL queries using existing SQL
       databases, in real time, at millions-of-records scale
     data_product_type: SQL queries
     data_product_region: Global
-    description: A flexible end-to-end system for computing differential privacy
-      using "elastic sensitivity" over heterogeneous existing database
-      environments, at scale.
-    publication_date: '2018-01-01'
     data_product_sector: Technology
+    publication_date: '2018-01-01'
   dp_variant:
     variant_name: Approximate DP
     data_domain: Multi-table relational database (schema unspecifed)
@@ -48,11 +46,6 @@ deployment:
     data_source_type_details: Database is updated dynamically through unspecified business processes
     access_type: Interactive
     access_type_details: 'Authorized internal users design, execute, and receive multiple queries over an extended period of time. Privacy parameters are  determined by user, at request time.'
-  accounting:
-    post_processing: none described
-    composition: |
-      - deployment does not manage privacy budgets
-      - user can compute overall privacy loss using strong composition bounds on sequential queries
   implementation:
     preprocessing_and_hyperparameter_tuning: none described
     mechanisms: |
@@ -66,6 +59,11 @@ deployment:
       - No information was provided about protection from timing attacks.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - Security measure to protect underlying data: none measured
+    composition: |
+      - deployment does not manage privacy budgets
+      - user can compute overall privacy loss using strong composition bounds on sequential queries
+    post_processing: none described
+
     justification: |
       - Formal proof that elastic sensitivity is an upper bound of local sensistivity is presented.
   administrative:
@@ -73,5 +71,7 @@ deployment:
       - Paper: https://vldb.org/pvldb/vol11/p526-johnson.pdf # https://doi.org/10.1145/3177732.3177733 is not presently working
       - Blog post: https://medium.com/uber-security-privacy/uber-open-source-differential-privacy-57f31e85c57a
       - Source repo: https://github.com/uber-archive/sql-differential-privacy
+    status: Pending
     registry_authors:
       - Micah Altman
+    tier: 2

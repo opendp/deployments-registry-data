@@ -1,6 +1,4 @@
 url_slug: assistive-ai-microsoft-2020
-status: Pending
-tier: 2
 deployment:
   basic:
     name: Assistive AI
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Microsoft'
         data_curator_type: 'Industry'
+    description: Privately refining the set of responses suggested for email and chat.
     intended_use: The AI system was trained internally at Microsoft to be deployed in their products. The model provides suggestions for replies to emails and texts, and is intended to make responding to emails and texts easier for users. The underlying data are “hundreds of millions of Messages (Emails or chats) and their Replies called Message-Reply (MR) pairs.”
     data_product_type: Machine learning model
     data_product_region: Global
-    description: Privately refining the set of responses suggested for email and chat.
-    publication_date: '2020-01-01'
     data_product_sector: Technology
+    publication_date: '2020-01-01'
 
   dp_variant:
     variant_name: Approximate DP
@@ -32,14 +30,17 @@ deployment:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Differentially Private Set Union
     justification: '' # TODO: Fill in correct value
+    additional_information: |
+      - Restricted to some languages (EN, ES, FR, PR, IT)
+
   administrative:
     sources: |
       - Blog post: https://www.microsoft.com/en-us/research/articles/assistive-ai-makes-replying-easier-2/
       - Paper: https://arxiv.org/pdf/2002.09745
-    notes: |
-      - Restricted to some languages (EN, ES, FR, PR, IT)
+    status: Pending
     registry_authors:
       - Priyanka Nanayakkara
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    tier: 2

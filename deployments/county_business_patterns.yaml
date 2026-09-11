@@ -1,6 +1,4 @@
 url_slug: census-county-business-patterns-u-s-census-bureau-2023
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Census County Business Patterns
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'U.S. Census Bureau'
         data_curator_type: 'Government'
+    description: Demonstration dataset releasing data on economic establishments.
     intended_use: Geographical Buisness Statistics
     data_product_type: Summary statistics
     data_product_region: USA
-    description: Demonstration dataset releasing data on economic establishments.
-    publication_date: '2023-01-01'
     data_product_sector: Government
+    publication_date: '2023-01-01'
   dp_variant:
     variant_name: Zero-concentrated DP
     data_domain: '' # TODO
@@ -26,7 +24,6 @@ deployment:
     privacy_parameters_details: '"Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058."'
   deployment_model:
     model_name: Central
-    # model_name_details: TODO
     release_type: One release
     release_type_details: Static
     access_type: Non-interactive
@@ -39,7 +36,9 @@ deployment:
       - https://www.census.gov/topics/business-economy/disclosure/about.html
       - https://www.census.gov/data/academy/webinars/2023/differential-privacy-webinar.html
       - https://www.census.gov/topics/business-economy/disclosure/data/tables.html
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    tier: 1

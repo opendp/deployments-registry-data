@@ -1,6 +1,4 @@
 url_slug: audience-engagement-api-linkedin-2020
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Audience Engagement API
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'LinkedIn'
         data_curator_type: 'Industry'
+    description: Aggregated summary statistics about content engagement with LinkedIn posts.
     intended_use: For data analysts to learn about the LinkedIn user base. For example, marketers may want to learn about the kind of content LinkedIn users engage with before they create sponsored content.
     data_product_type: Interactive API
     data_product_region: Global
-    description: Aggregated summary statistics about content engagement with LinkedIn posts.
-    publication_date: '2020-01-01'
     data_product_sector: Technology
+    publication_date: '2020-01-01'
   dp_variant:
     variant_name: Approximate DP
     data_domain: '' # TODO
@@ -36,13 +34,16 @@ deployment:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Gumbel
     justification: '' # TODO: Fill in correct value
+    additional_information: |
+      - The paper states that “data is purged within 30 days of a user leaving the ecosystem because it has a 30 day retention.” We take this to mean that the data are refreshed on a monthly basis, i.e., that leaving the ecosystem means leaving a single user session on LinkedIn as opposed to account deletion.
+
   administrative:
     sources: |
       - Paper: https://arxiv.org/pdf/2002.05839
-    notes: |
-      - The paper states that “data is purged within 30 days of a user leaving the ecosystem because it has a 30 day retention.” We take this to mean that the data are refreshed on a monthly basis, i.e., that leaving the ecosystem means leaving a single user session on LinkedIn as opposed to account deletion.
+    status: Pending
     registry_authors:
       - Priyanka Nanayakkara
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    tier: 1

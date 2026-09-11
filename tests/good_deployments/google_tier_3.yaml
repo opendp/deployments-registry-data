@@ -1,6 +1,4 @@
 url_slug: google_tier_3
-status: Draft
-tier: 3
 deployment:
   basic:
     name: Placeholder
@@ -31,8 +29,9 @@ deployment:
     access_type: Non-interactive
     access_type_details: PLACEHOLDER FOR TEST
     data_source_type: Static
-
-  accounting:
+  implementation:
+    preprocessing_and_hyperparameter_tuning: Not available
+    mechanisms: Laplace mechanism for both symptom search and normalization counts via Google’s open-source DP library
     post_processing: |
       A region-specific constant c is chosen once based on the February-July 2020 window to ensure we end up in a [0,100] percent scale.
 
@@ -41,11 +40,9 @@ deployment:
       Deciding whether to release daily or weekly granularity is made once on the initial window for top-level geopolitical subdivisions (e.g., US states) or higher-resolution granularity (e.g., US counties). Release per country is always daily.
     composition: |
       Basic sequential composition (counting symptoms + normalization)
-
-  implementation:
-    preprocessing_and_hyperparameter_tuning: Not available
-    mechanisms: Laplace mechanism for both symptom search and normalization counts via Google’s open-source DP library
     justification: Not available
   administrative:
+    status: Draft
     registry_authors:
       - Elena Ghazi
+    tier: 3

@@ -1,6 +1,4 @@
 url_slug: post-secondary-employment-outcomes-u-s-census-bureau-2019
-status: Pending
-tier: 2
 deployment:
   basic:
     name: Post-Secondary Employment Outcomes
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'U.S. Census Bureau'
         data_curator_type: 'Government'
+    description: Summary statistics that describe earning outcomes for college graduates at different levels, including but not limited to, degree level, degree field, and state of institution.
     intended_use: For college students and prospective college students to be informed about relationships between specific fields of study and earning outcomes.
     data_product_type: Summary statistics
     data_product_region: United States
-    description: Summary statistics that describe earning outcomes for college graduates at different levels, including but not limited to, degree level, degree field, and state of institution.
-    publication_date: '2019-01-01'
     data_product_sector: Education
+    publication_date: '2019-01-01'
 
   dp_variant:
     variant_name: Pure DP
@@ -30,27 +28,23 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details:
-    # actors:
     release_type: One release
     data_source_type: Static
     access_type: Non-interactive
 
-
-  # accounting:
-  #   post_processing:
-  #   composition:
-
-  # implementation:
+  implementation:
   #   preprocessing_and_hyperparameter_tuning:
   #   mechanisms:
   #   justification:
+    additional_information: |
+      - It appears that the data product is published over time, but it is not clear from the documentation alone whether the same DP system is used for these later publications. Hence, we describe this deployment as “one-release” and having “static” data to be conservative.
+      - Finally, the paper contains parameter ranges (e.g., for \\(epsilon\\)) that were tested in the experiments section, however we did not find parameter values that were actually used in deployment.
+
   administrative:
     sources: |
       - Paper: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/722/684
       - Documentation: https://lehd.ces.census.gov/data/pseo_documentation.html
-    notes: |
-      - It appears that the data product is published over time, but it is not clear from the documentation alone whether the same DP system is used for these later publications. Hence, we describe this deployment as “one-release” and having “static” data to be conservative.
-      - Finally, the paper contains parameter ranges (e.g., for \\(epsilon\\)) that were tested in the experiments section, however we did not find parameter values that were actually used in deployment.
+    status: Pending
     registry_authors:
         - Priyanka Nanayakkara
+    tier: 2

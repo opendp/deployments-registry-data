@@ -1,6 +1,4 @@
 url_slug: community-mobility-place-visits-google-2020
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Community Mobility Place Visits
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Google'
         data_curator_type: 'Industry'
+    description: Summary statistics, published as the COVID-19 Community Mobility Reports, that charts percentage changes in movement trends for various location categories relative to a historical baseline. These trends analyze the number of visits to public places like retail, parks, and workplaces, and also measure the change in duration of time spent in residences.
     intended_use: Provide public-health authorities insights into how mobility patterns changed in response to COVID-19 policies (e.g., work-from-home, shelter-in-place) to help with decision-making during the pandemic.
     data_product_type: Summary statistics
     data_product_region: Global
-    description: Summary statistics, published as the COVID-19 Community Mobility Reports, that charts percentage changes in movement trends for various location categories relative to a historical baseline. These trends analyze the number of visits to public places like retail, parks, and workplaces, and also measure the change in duration of time spent in residences.
-    publication_date: '2020-04-01'
     data_product_sector: Healthcare
+    publication_date: '2020-04-01'
   dp_variant:
     variant_name: Pure DP
     data_domain: |
@@ -35,7 +33,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details: ''
     actors: |
       - Google users who have opted in to Location History. The model assumes that Google users trust Google to access their raw data and correctly apply the DP mechanisms before publication.
       - Curator (Google)
@@ -49,14 +46,17 @@ deployment:
     data_source_type_details: Metrics are generated for each day, starting on 2020-01-01 and ending on 2022-10-15
     access_type: Non-interactive
     # access_type_details: ''
-  accounting:
-    post_processing: |
-      - Percentage Change Calculation: the final published value is a percentage change from the baseline. This is calculated by taking the ratio between the noisy metric for a specific day and the computed baseline for that day of the week (the baseline metric uses a fixed 5-week period from January 3, 2020 to February 6, 2020, by taking the median of the 5 corresponding daily noisy metrics from within that 5-week range).
-      - Filtering Unreliable Metrics:
-        - Statistical Reliability: A metric is not published if there is a 5% or greater chance that the percentage change is wrong by more than ±10 absolute percentage points. This is determined by calculating confidence intervals for both the daily metric and its baseline.
-        - Geographic Size: All metrics for any geographic region smaller than 3km^2 are discarded.
-        - User Count: Metrics are also discarded if the noisy count of contributing users for a given region is smaller than 100.
 
+  implementation:
+    preprocessing_and_hyperparameter_tuning: 'User contributions for public places are bounded: If a user visits more than four (category, location) pairs on a given day at a specific geographic level, four are chosen at random, and the rest are discarded. Each user can also contribute at most once per category at a given location.'
+    mechanisms: |
+      - The Laplace mechanism was used for simple counts, like the number of daily visits to public places and workplaces. The DP Mean Mechanism: used to calculate the average time spent at residences.
+      - The mechanisms were implemented via Google's open-source C++ Differential Privacy Library:
+        - github.com/google/differential-privacy
+        - The provided DP bounded-mean GitHub link is broken. Possible path to new file: github.com/google/differential-privacy/blob/main/cc/algorithms/bounded-mean.h
+      - No information was provided about protection against floating point errors.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - No information was provided about security measures in place to protect the underlying data.
     composition: |
       Basic composition
       - Daily Visits in Public Places: counts unique user visits to categories like retail, parks, and transit stations:
@@ -77,16 +77,12 @@ deployment:
           - \\(\epsilon\\) = 0.22 for county-level (granularity 2)
         - Composition: A user contributes at most once per geographic level. The total budget is the sum across the levels: 0.11*2 + 0.22 = 0.44
 
-  implementation:
-    preprocessing_and_hyperparameter_tuning: 'User contributions for public places are bounded: If a user visits more than four (category, location) pairs on a given day at a specific geographic level, four are chosen at random, and the rest are discarded. Each user can also contribute at most once per category at a given location.'
-    mechanisms: |
-      - The Laplace mechanism was used for simple counts, like the number of daily visits to public places and workplaces. The DP Mean Mechanism: used to calculate the average time spent at residences.
-      - The mechanisms were implemented via Google's open-source C++ Differential Privacy Library:
-        - github.com/google/differential-privacy
-        - The provided DP bounded-mean GitHub link is broken. Possible path to new file: github.com/google/differential-privacy/blob/main/cc/algorithms/bounded-mean.h
-      - No information was provided about protection against floating point errors.
-      - No information was provided about leakage due to idiosyncrasies of the computing platform.
-      - No information was provided about security measures in place to protect the underlying data.
+    post_processing: |
+      - Percentage Change Calculation: the final published value is a percentage change from the baseline. This is calculated by taking the ratio between the noisy metric for a specific day and the computed baseline for that day of the week (the baseline metric uses a fixed 5-week period from January 3, 2020 to February 6, 2020, by taking the median of the 5 corresponding daily noisy metrics from within that 5-week range).
+      - Filtering Unreliable Metrics:
+        - Statistical Reliability: A metric is not published if there is a 5% or greater chance that the percentage change is wrong by more than ±10 absolute percentage points. This is determined by calculating confidence intervals for both the daily metric and its baseline.
+        - Geographic Size: All metrics for any geographic region smaller than 3km^2 are discarded.
+        - User Count: Metrics are also discarded if the noisy count of contributing users for a given region is smaller than 100.
 
     justification: |
       - Using scaling factors allows for continuous accuracy improvements with minimal impact on the overall privacy budget by grouping metrics and reusing previously generated data, rather than performing a full, costly re-computation.
@@ -95,7 +91,9 @@ deployment:
 
   administrative:
     sources: https://arxiv.org/pdf/2004.04145
+    status: Pending
     registry_authors:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
+    tier: 3

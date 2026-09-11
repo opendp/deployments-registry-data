@@ -49,6 +49,11 @@ def test_good_yaml(yaml_path):
 )
 def test_bad_yaml(bad_yaml_path):
     errors = check(bad_yaml_path)
-    assert errors, "Expected errors"
-    clean_error = re.sub(r"\W+", " ", str(errors)).strip().replace(" ", "_").lower()
-    assert clean_error == bad_yaml_path.stem, errors
+    assert errors, "Expected errors, but there aren't any"
+    errors_stem = errors_to_stem(errors)
+    assert errors_stem == bad_yaml_path.stem, errors
+
+
+def errors_to_stem(errors):
+    short_paths = re.sub(r"\S+\.", ".", str(errors))
+    return re.sub(r"\W+", " ", short_paths).strip().replace(" ", "_").lower()

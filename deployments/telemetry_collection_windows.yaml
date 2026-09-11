@@ -1,6 +1,4 @@
 url_slug: telemetry-collection-in-windows-microsoft-2017
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Telemetry Collection in Windows
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Microsoft'
         data_curator_type: 'Industry'
+    description: Telemetry statistics about Microsoft users (specifically users of Windows Insiders in the Windows 10 Fall Creators Update), such as how many seconds they spent on a particular app in a six hour window.
     intended_use: For Microsoft to improve their products and services.
     data_product_type: Summary statistics
     data_product_region: Global
-    description: Telemetry statistics about Microsoft users (specifically users of Windows Insiders in the Windows 10 Fall Creators Update), such as how many seconds they spent on a particular app in a six hour window.
-    publication_date: '2017-12-01'
     data_product_sector: Technology
+    publication_date: '2017-12-01'
   dp_variant:
     variant_name: Pure DP
   privacy_loss:
@@ -26,7 +24,6 @@ deployment:
       \\(\epsilon \prime \prime\\)-DP, where \\(\epsilon \prime \prime\\) = 1.672."'
   deployment_model:
     model_name: Local
-    # model_name_details: TODO
     release_type: Many releases
     release_type_details: 6 hours
     data_source_type: Dynamic
@@ -38,8 +35,10 @@ deployment:
   administrative:
     sources: |
       - Paper: https://www.microsoft.com/en-us/research/publication/collecting-telemetry-data-privately/
+    status: Pending
     registry_authors:
       - Priyanka Nanayakkara
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    tier: 1

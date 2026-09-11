@@ -1,6 +1,4 @@
 url_slug: wikipedia-geoeditors-activity-statistics-wikimedia-foundation-2023
-status: Draft
-tier: 3
 deployment:
   basic:
     # Tier 1:
@@ -9,12 +7,12 @@ deployment:
       -
         data_curator_name: 'Wikimedia Foundation'
         data_curator_type: 'Nonprofit'
+    description: The Wikimedia Foundation has released differentially private statistics on editor activity (e.g., edit counts) by Wikipedia project and country from January 2018 to the present time. This has revolutionized the way the Wikimedia Foundation exposes information to the public about its projects, allowing it to release new statistics on a large scale. According to the Wikimedia Foundation, more than 135M statistics about Wikipedia page visits have been published, aggregating 325B page views in total.
     intended_use: Release daily Wikipedia page visits at a country level, based on current and historical Wikipedia page views.
     data_product_type: Summary statistics
     data_product_region: Global
-    description: The Wikimedia Foundation has released differentially private statistics on editor activity (e.g., edit counts) by Wikipedia project and country from January 2018 to the present time. This has revolutionized the way the Wikimedia Foundation exposes information to the public about its projects, allowing it to release new statistics on a large scale. According to the Wikimedia Foundation, more than 135M statistics about Wikipedia page visits have been published, aggregating 325B page views in total.
-    publication_date: '2023-01-01'
     data_product_sector: Technology
+    publication_date: '2023-01-01'
 
   # Tiers 2 and 3:
   dp_variant:
@@ -33,18 +31,11 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details: ''
-    # actors: ''
     release_type: One release
     # release_type_details: ''
     data_source_type: Static
-    # data_source_type_details: ''
     access_type: Non-interactive
     # access_type_details: ''
-
-  # accounting:
-    # post_processing: '' # Tier 3
-    # composition: '' # Tier 3
 
   implementation:
     # preprocessing_and_hyperparameter_tuning: '' # Tier 3
@@ -67,5 +58,7 @@ deployment:
       - Online description page: https://analytics.wikimedia.org/published/datasets/geoeditors_monthly/00_README.html
       - Code repository: https://gitlab.wikimedia.org/repos/security/differential-privacy/-/blob/main/differential_privacy/geoeditors_monthly.py
     # notes: ''
+    status: Draft
     registry_authors:
       - Michael Khavkin
+    tier: 3

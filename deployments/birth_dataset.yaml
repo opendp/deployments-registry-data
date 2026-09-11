@@ -1,6 +1,4 @@
 url_slug: israel-s-national-registry-of-live-births-of-2014-israeli-ministry-of-health-2024
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Israel's National Registry of Live Births of 2014
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Israeli Ministry of Health'
         data_curator_type: 'Government'
+    description: Synthetic data covering live births in Israel during 2014.
     intended_use: Health Data
     data_product_type: Synthetic data
     data_product_region: Israel
-    description: Synthetic data covering live births in Israel during 2014.
-    publication_date: '2024-02-01'
     data_product_sector: Healthcare
+    publication_date: '2024-02-01'
   dp_variant:
     variant_name: Pure DP
   privacy_loss:
@@ -28,7 +26,6 @@ deployment:
       is \\(\epsilon = 9.98\\)."
   deployment_model:
     model_name: Central
-    # model_name_details: TODO
     release_type: One release
     release_type_details: Static
     access_type: Non-interactive
@@ -38,6 +35,8 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     sources: https://birth.dataset.pub
+    status: Pending
     registry_authors:
       - Shlomi Hod
       - James Honaker
+    tier: 1

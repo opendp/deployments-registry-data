@@ -1,6 +1,4 @@
 url_slug: on-device-browser-recommendations-brave-2021
-status: Pending
-tier: 1
 deployment:
   basic:
     name: On-device browser recommendations
@@ -8,13 +6,13 @@ deployment:
       -
         data_curator_name: 'Brave'
         data_curator_type: 'Industry'
+    description: Brave is leveraging federated learning and differential
+      privacy to provide on-device browser recommendations.
     intended_use: Browsing Recommendations
     data_product_type: Summary statistics # TODO: Is this correct?
     data_product_region: Global
-    description: Brave is leveraging federated learning and differential
-      privacy to provide on-device browser recommendations.
-    publication_date: '2021-01-01'
     data_product_sector: Technology
+    publication_date: '2021-01-01'
   # dp_variant: TODO
   privacy_loss:
     privacy_unit: User-level
@@ -22,7 +20,6 @@ deployment:
     privacy_parameters: {}
   deployment_model:
     model_name: Central
-    # model_name_details: TODO
     release_type: One release # TODO: Is this correct?
     release_type_details: Not specified
     access_type: Non-interactive # TODO: Is this correct?
@@ -32,7 +29,9 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     sources: https://brave.com/blog/federated-learning/
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    tier: 1

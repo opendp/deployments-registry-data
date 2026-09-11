@@ -1,6 +1,4 @@
 url_slug: broadband-coverage-microsoft-2021
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Broadband Coverage
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Microsoft'
         data_curator_type: 'Industry'
+    description: Publicly available U.S. Broadband Coverage dataset that reports broadband coverage percentages at a zip code-level.
     intended_use: Allow researchers and policy makers to understand problems related to broadband access and develop solutions to improve broadband access while simultaneously preserving the privacy of individual households.
     data_product_type: Dataset
     data_product_region: USA
-    description: Publicly available U.S. Broadband Coverage dataset that reports broadband coverage percentages at a zip code-level.
-    publication_date: '2021-04-01'
     data_product_sector: Technology # Telecommunication, Public Sector/Government?
+    publication_date: '2021-04-01'
 
   dp_variant:
     variant_name: Pure DP
@@ -30,7 +28,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details: ''
     actors: |
       - Users whose devices connect to Microsoft services. They must trust Microsoft to handle their data and apply the DP protections as described.
       - Microsoft (Curator): collects the raw telemetry data, applies the Laplace mechanism to produce differentially private counts, and publishes the final data product.
@@ -42,10 +39,15 @@ deployment:
     access_type: Non-interactive
     # access_type_details: ''
 
-  accounting:
-    post_processing: |
-      - Negative values are clamped to zero.
-      - The final privatized Broadband Coverage Estimation was calculated using noisy counts and the number of households in each ZIP code as reported in the Department of Housing and Urban Development’s publicly available dataset.
+  implementation:
+    preprocessing_and_hyperparameter_tuning: The 32,653 zip codes were predefined based on the average number of machines in the last years (not on the dataset being protected).
+
+    mechanisms: |
+      - The Laplace mechanism with \\(\epsilon = 0.1\\) was applied to every count query (see section on Composition for query descriptions).
+      - All DP processing was done with the OpenDP SmartNoise library: https://github.com/microsoft/USBroadbandUsagePercentages
+      - No information was provided about protection against floating point errors.
+      - No information was provided about leakage due to idiosyncrasies of the computing platform.
+      - No information was provided about security measures in place to protect the underlying data.
 
     composition: |
       The following quantities are computed with DP (per ZIP code):
@@ -61,15 +63,12 @@ deployment:
         - The total privacy loss corresponding to Microsoft services data is 0.1.
       By sequential composition, the total privacy loss is 0.2.
       (Note: The equation for Broadband Coverage Estimate does not use the "number of devices with speed < 25". In fact, it seems this number is never used.)
-  implementation:
-    preprocessing_and_hyperparameter_tuning: The 32,653 zip codes were predefined based on the average number of machines in the last years (not on the dataset being protected).
 
-    mechanisms: |
-      - The Laplace mechanism with \\(\epsilon = 0.1\\) was applied to every count query (see section on Composition for query descriptions).
-      - All DP processing was done with the OpenDP SmartNoise library: https://github.com/microsoft/USBroadbandUsagePercentages
-      - No information was provided about protection against floating point errors.
-      - No information was provided about leakage due to idiosyncrasies of the computing platform.
-      - No information was provided about security measures in place to protect the underlying data.
+    post_processing: |
+      - Negative values are clamped to zero.
+      - The final privatized Broadband Coverage Estimation was calculated using noisy counts and the number of households in each ZIP code as reported in the Department of Housing and Urban Development’s publicly available dataset.
+
+
     justification: |
       - The privacy budget \\(\epsilon = 0.1\\) used to obtain the counts is chosen to be comparable to other industry differentially private data releases.
       - The number of devices connected to the internet at broadband speed per each zip code is counted based on the Federal Communications Commission (FCC)’s definition of broadband that is 25mbps per download.
@@ -79,7 +78,9 @@ deployment:
     sources: |
       - Paper: https://arxiv.org/abs/2103.14035
       - Github: https://github.com/microsoft/USBroadbandUsagePercentages
+    status: Pending
     registry_authors:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
+    tier: 3

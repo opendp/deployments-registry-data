@@ -1,6 +1,4 @@
 url_slug: mobility-trends-during-hurricane-spectus-2022
-status: Pending
-tier: 1
 deployment:
   basic:
     name: Mobility Trends During Hurricane
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Spectus'
         data_curator_type: 'Industry'
+    description: Evacuation metrics for residents of Harris County, Texas during 2017 hurricane.
     intended_use: Mobility Catastrophe Data
     data_product_type: Summary statistics
     data_product_region: USA
-    description: Evacuation metrics for residents of Harris County, Texas during 2017 hurricane.
-    publication_date: '2022-01-01'
     data_product_sector: Government # Could also be Technology, Healthcare, or new category such as Public health
+    publication_date: '2022-01-01'
   dp_variant:
     variant_name: Pure DP
   privacy_loss:
@@ -26,7 +24,6 @@ deployment:
       is set as follows: • \\(\epsilon = 4\\) for CTU • \\(\epsilon = 2\\) for CE • \\(\epsilon = 1\\) for CED • \\(\epsilon = 3\\) for SD."
   deployment_model:
     model_name: Central
-    # model_name_details: TODO
     release_type: One release
     release_type_details: Not specified
     access_type: Non-interactive
@@ -38,7 +35,9 @@ deployment:
     sources: |
       - https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
       - https://web.archive.org/web/20221209065442/https://spectus.ai/wp-content/uploads/2022/10/Spectus_DPWhitepaper_v01b.pdf
+    status: Pending
     registry_authors:
       - Nicolas Berrios
       - Jack Fitzsimons
       - James Honaker
+    tier: 1

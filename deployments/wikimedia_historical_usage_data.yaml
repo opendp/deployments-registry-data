@@ -1,6 +1,4 @@
 url_slug: historical-pageviews-wikimedia-foundation-2023
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Historical Pageviews
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Wikimedia Foundation'
         data_curator_type: 'Nonprofit'
+    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
     intended_use: Help Wikipedia editors prioritize their work and support academic research.
     data_product_type: Summary statistics
     data_product_region: Global
-    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
-    publication_date: '2023-06-01'
     data_product_sector: Technology
+    publication_date: '2023-06-01'
 
   dp_variant:
     variant_name: Pure DP
@@ -43,7 +41,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    model_name_details: ''
     actors: |
       - End-user devices (clients): the individuals who browse Wikipedia.
       - Trusted Curator (The Wikimedia Foundation): Receives client-annotated pageviews, performs server-side differential privacy (adds noise, suppresses counts), and publishes the final data.
@@ -55,10 +52,6 @@ deployment:
     data_source_type_details: Although the historical data was published at once, its processing was dynamic. The algorithm was designed to iterate through the historical data one day at a time, applying a distinct daily privacy budget to each, rather than analyzing the entire period retrospectively.
     access_type: Non-interactive
     # access_type_details: ''
-
-  accounting:
-    post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold tau is removed from the final output dataset. For 2017-2023 historical data, \\(\tau=450\\). For 2015-2017 data, \\(\tau=2500\\).'
-    composition: 'The results are published once with \\(\epsilon=1\\), and there is no additional privacy consumption.'
 
   implementation:
     preprocessing_and_hyperparameter_tuning: |
@@ -73,10 +66,16 @@ deployment:
         - Raw pageview logs contain no persistent user identifiers and are only kept in “current” form for 90 days; older data is aggregated hourly, reducing sensitivity.
         - A salted hash function is used on the client side to protect the cookie that tracks visited pages, providing protection against an attacker who might obtain access to it.
         - All raw data handling is governed by the Wikimedia Foundation’s Privacy Policy and Data Retention Guidelines. Because of the Wikimedia Foundation’s commitment to minimal data retention, this data is only kept in this form for 90 days before being aggregated.
+    composition: 'The results are published once with \\(\epsilon=1\\), and there is no additional privacy consumption.'
+    post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold tau is removed from the final output dataset. For 2017-2023 historical data, \\(\tau=450\\). For 2015-2017 data, \\(\tau=2500\\).'
+
     justification: |
       - The Laplace mechanism was chosen (and not Gaussian as in the current pageviews deployment) because the team only had a bound on the \\(L_1\\) sensitivity of the dataset.
       - The thresholds were chosen after extensive experimentation by measuring accuracy metrics (relative error distribution, drop rate, spurious rate) on the true data. Since these metrics could leak information, the team “kept fine-grained utility metrics confidential throughout the tuning process, minimizing data leakage”, and chose to “only publicly communicate approximate values of global utility metrics and the algorithmic parameters obtained from this tuning process”.
       - After an in-depth comparison of available open-source tools, the Wikimedia Foundation decided to use Tumult Analytics, framework chosen for its robustness, production-readiness, compatibility with Wikimedia’s compute infrastructure, and support for advanced features like zCDP-based privacy accounting, and started a collaboration with Tumult Labs.
+    additional_information: |
+      - The paper does not explicitly state what constitutes adjacent datasets, and it is not obvious, because the maximum contribution per user was estimated to be m. Therefore, the reported input metric and maximum input distance may need additional follow-up to verify its accuracy.
+
 
   administrative:
     sources: |
@@ -85,9 +84,9 @@ deployment:
         - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
         - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
         - Pageviews Differential Privacy – Historical – README: https://analytics.wikimedia.org/published/datasets/country_project_page_historical/00_README.html
-    notes: |
-      - The paper does not explicitly state what constitutes adjacent datasets, and it is not obvious, because the maximum contribution per user was estimated to be m. Therefore, the reported input metric and maximum input distance may need additional follow-up to verify its accuracy.
+    status: Pending
     registry_authors:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
+    tier: 3

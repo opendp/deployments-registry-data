@@ -1,6 +1,4 @@
 url_slug: current-pageviews-wikimedia-foundation-2023
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Current Pageviews
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Wikimedia Foundation'
         data_curator_type: 'Nonprofit'
+    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
     intended_use: Help Wikipedia editors prioritize their work and support academic research.
     data_product_type: Summary statistics
     data_product_region: Global
-    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin starting February 2023.
-    publication_date: '2023-06-01'
     data_product_sector: Technology
+    publication_date: '2023-06-01'
 
   dp_variant:
     variant_name: Zero-concentrated DP
@@ -46,10 +44,6 @@ deployment:
     access_type: Non-interactive
     # access_type_details: ''
 
-  accounting:
-    post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold \\(\tau\\) is removed from the final output dataset. For current data, \\(\tau\\) = 90.'
-    composition: 'There is no need for composition analysis: The data is partitioned by day, and there is no overlap between days, so the privacy loss does not accumulate.'
-
   implementation:
     preprocessing_and_hyperparameter_tuning: |
       - Client-side filtering: Before pageview data is sent to the server, a client-side algorithm annotates each contribution with a boolean flag, which indicates whether the contribution should be included in the server side computation, the criteria being that only the first 10 unique pageviews per user, per day are included. The client uses a salted hash of the page ID to track which pages have already been counted, rather than storing raw identifiers, further reducing fingerprinting risk. This pre-processing step enables user-privacy without sending a user identifier to the server (which would be cookie-based and consistent across days).
@@ -61,6 +55,9 @@ deployment:
       - No information was provided about protection against floating point errors.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - No information was provided about security measures in place to protect the underlying data.
+    composition: 'There is no need for composition analysis: The data is partitioned by day, and there is no overlap between days, so the privacy loss does not accumulate.'
+    post_processing: 'Suppression of low counts: After adding DP noise, any count that falls below a pre-defined threshold \\(\tau\\) is removed from the final output dataset. For current data, \\(\tau\\) = 90.'
+
     justification: |
       - The Gaussian mechanism was chosen because its use of the \\(L_2\\) sensitivity allowed for less noise to be added.
       - The thresholds were chosen after extensive experimentation by measuring accuracy metrics (relative error distribution, drop rate, spurious rate) on the true data. Since these metrics could leak information, the team “kept fine-grained utility metrics confidential throughout the tuning process, minimizing data leakage”, and chose to “only publicly communicate approximate values of global utility metrics and the algorithmic parameters obtained from this tuning process”.
@@ -74,7 +71,9 @@ deployment:
         - Client-side filtering code: https://gerrit.wikimedia.org/r/plugins/gitiles/operations/puppet/+/refs/heads/production/modules/varnish/templates/analytics.inc.vcl.erb#171
         - Differential Privacy: https://gitlab.wikimedia.org/repos/security/differential-privacy
         - Pageviews Differential Privacy – Current – README: https://gitlab.wikimedia.org/htriedman/stat-spark3/-/tree/main/pageview_historical/notebooks
+    status: Pending
     registry_authors:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
+    tier: 3

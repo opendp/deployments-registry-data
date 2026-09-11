@@ -1,6 +1,4 @@
 url_slug: spanish-next-word-prediction-google-2022
-status: Pending
-tier: 3
 deployment:
   basic:
     name: Spanish Next Word Prediction
@@ -8,12 +6,12 @@ deployment:
       -
         data_curator_name: 'Google'
         data_curator_type: 'Industry'
+    description: A machine learning model trained with federated learning for next‑word prediction on Spanish‑language Gboard.
     intended_use: Power next-word-prediction for Spanish-language Gboard users.
     data_product_type: Machine learning model
     data_product_region: Global
-    description: A machine learning model trained with federated learning for next‑word prediction on Spanish‑language Gboard.
-    publication_date: '2022-02-01'
     data_product_sector: Technology
+    publication_date: '2022-02-01'
 
   dp_variant:
     variant_name: Zero-concentrated DP
@@ -29,7 +27,6 @@ deployment:
 
   deployment_model:
     model_name: Central
-    # model_name_details:
     actors: |
       - Users/Devices of Spanish-language Gboard users. They hold their own raw data and compute model updates locally. Hence, users do not need to trust the central server with their raw data, but must trust it to correctly implement the DP mechanism.
       - Server (Google): Receives model updates from devices, aggregates them, and adds the necessary noise to ensure DP by adding noise to one gradient and subtracting that same noise from a later gradient
@@ -46,10 +43,6 @@ deployment:
     access_type: Non-interactive
     # access_type_details: ''
 
-  accounting:
-    post_processing: No details were provided about post-processing.
-    composition: The article does not specifically mention composition, only that the final privacy guarantee is rho = 0.81 zCDP. It mentions that training ran for 2000 rounds over six days, and devices participated in training at most once every 24 hours.
-
   implementation:
     preprocessing_and_hyperparameter_tuning: No information is provided about pre-processing steps, EDA, or the process by which hyperparameters (privacy loss parameter or number of training rounds) were tuned.
     mechanisms: |
@@ -58,6 +51,9 @@ deployment:
       - No information was provided about protection against floating point errors.
       - No information was provided about leakage due to idiosyncrasies of the computing platform.
       - The primary security measure protecting the underlying data is the federated learning architecture itself, as it keeps the data on each user's device, decoupling ML training from the need to store the data in the cloud. This approach limits access to data at all stages because only minimal updates for a specific model training task are transmitted from the device.
+    composition: The article does not specifically mention composition, only that the final privacy guarantee is rho = 0.81 zCDP. It mentions that training ran for 2000 rounds over six days, and devices participated in training at most once every 24 hours.
+    post_processing: No details were provided about post-processing.
+
     justification: |
       - The main reason behind choosing federated learning was to train machine learning models while keeping the raw training data on each user's device. This approach provides data minimization advantages, and the DP guarantee protects all of the data on each device, not just individual training examples.
       - The project implemented user-level DP because example-level DP is not necessarily strong enough to ensure the users' data is not memorized when users can contribute multiple examples.
@@ -69,7 +65,9 @@ deployment:
     sources: |
       - Federated Learning with Formal Differential Privacy Guarantees (Article published on February 28, 2022): https://research.google/blog/federated-learning-with-formal-differential-privacy-guarantees/
       - Paper that introduces the DP variant of Follow-The-Regularized-Leader (DP-FTRL) used in the deployment: Practical and Private (Deep) Learning Without Sampling or Shuffling: https://arxiv.org/pdf/2103.00039
+    status: Pending
     registry_authors:
       - Elena Ghazi
       - Nicolas Berrios
       - Jack Fitzsimons
+    tier: 3
