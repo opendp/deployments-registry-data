@@ -52,7 +52,7 @@ deployment:
           title: Harnessing large-language models to generate private synthetic text
           url: https://arxiv.org/abs/2306.01684
           author: Alexey Kurakin, Natalia Ponomareva, Umar Syed, Liam MacDermed, Andreas Terzis
-          # There are multiple versions: Report year/month for v1 or v2?
+        comment: v2 is used here, but not clear whether there are any substantial differences from v1.
 
     status: Pending
     registry_authors:

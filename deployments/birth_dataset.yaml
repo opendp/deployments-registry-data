@@ -43,6 +43,11 @@ deployment:
         citation:
           title: Release of Israel's Live Birth Dataset
           url: https://birth.dataset.pub
+        comment: |
+          Other official sources provide additional details:
+          - https://arxiv.org/abs/2405.00267
+          - https://data.gov.il/dataset/birth-data/resource/b1cf2a1f-b923-40ae-a3dc-75930c3b3064/download/readme-2014-english.pdf
+
     status: Pending
     registry_authors:
       - Shlomi Hod
