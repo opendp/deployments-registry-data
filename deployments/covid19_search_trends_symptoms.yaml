@@ -81,14 +81,14 @@ deployment:
 
   administrative:
     evidence_sources:
-      convid19_documentation:
+      covid19_documentation:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: COVID-19 Search Trends symptoms dataset
           url: https://storage.googleapis.com/gcp-public-data-symptom-search/COVID-19%20Search%20Trends%20symptoms%20dataset%20documentation%20.pdf
           year: 2021
           month: 2
-      convid19_paper:
+      covid19_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: 'Google COVID-19 Search Trends Symptoms Dataset: Anonymization Process Description (version 1.0)'
@@ -102,7 +102,7 @@ deployment:
           year: 2020
           month: September
           url: https://arxiv.org/pdf/2009.01265
-      convid19_data_product:
+      covid19_data_product:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: COVID-19 Search Trends symptoms dataset
