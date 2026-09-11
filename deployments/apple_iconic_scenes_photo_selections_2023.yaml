@@ -47,7 +47,7 @@ deployment:
 
   administrative:
     evidence_sources:
-      apple_2023:
+      apple_iconic:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Learning Iconic Scenes with Differential Privacy

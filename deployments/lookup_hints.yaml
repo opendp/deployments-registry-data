@@ -37,7 +37,7 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     evidence_sources:
-      paper:
+      hints_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Differential Privacy

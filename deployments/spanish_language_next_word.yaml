@@ -63,7 +63,7 @@ deployment:
 
   administrative:
     evidence_sources:
-      blog:
+      spanish_blog:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Federated Learning with Formal Differential Privacy Guarantees
@@ -71,7 +71,7 @@ deployment:
           author: Brendan McMahan and Abhradeep Thakurta
           year: 2022
           month: February
-      paper:
+      spanish_paper:
         # Paper that introduces the DP variant of Follow-The-Regularized-Leader (DP-FTRL) used in the deployment
         evidence_source_type: Formal publication by the deploying organization
         citation:

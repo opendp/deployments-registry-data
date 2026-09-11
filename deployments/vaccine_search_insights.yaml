@@ -35,7 +35,7 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     evidence_sources:
-      paper:
+      vaccine_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: 'Google COVID-19 Vaccination Search Insights: Anonymization Process Description'

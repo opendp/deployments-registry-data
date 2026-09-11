@@ -39,7 +39,7 @@ deployment:
     justification: '' # TODO: Fill in correct value
   administrative:
     evidence_sources:
-      paper:
+      linkedin_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: A Members First Approach to Enabling LinkedIn's Labor Market Insights at Scale

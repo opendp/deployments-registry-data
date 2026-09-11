@@ -66,7 +66,7 @@ deployment:
 
   administrative:
     evidence_sources:
-      paper:
+      wikimedia_paper:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Publishing Wikipedia usage data with strong privacy guarantees
