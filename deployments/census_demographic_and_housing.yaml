@@ -104,7 +104,7 @@ deployment:
           url: https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/demographic-and-housing-characteristics-file-and-demographic-profile/2020census-demographic-and-housing-characteristics-file-and-demographic-profile-techdoc.pdf
           author: U.S. Census Bureau
       census_press_release:
-        evidence_source_type: Formal publication by the deploying organization # TODO: Would a different type be better?
+        evidence_source_type: Formal publication by the deploying organization
         citation:
           title: Census Bureau Releases New 2020 Census Data on Age, Sex, Race, Hispanic Origin, Households and Housing
           url: https://www.census.gov/newsroom/press-releases/2023/2020-census-demographic-profile-and-dhc.html

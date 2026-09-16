@@ -386,6 +386,7 @@ properties:
                       - Authorized organizational attestation
                       - Other public source
                   citation: { $ref: "#/$defs/citation" }
+                  comment: { type: string }
           status:
             description: Approval status of this record.
             type: string
