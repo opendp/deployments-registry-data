@@ -7,20 +7,24 @@ deployment:
       -
         data_curator_name: 'Wikimedia Foundation'
         data_curator_type: 'Nonprofit'
-    description: The Wikimedia Foundation has released a one-time dataset of the number of Wikipedia editors editing from Russia from 2022 to 2023, requested by the Russian Wikimedia community to support analysis of the editor landscape in Russia and better understand the editor community in the country.
-    intended_use: The Wikimedia Foundation has released one year of data quantifying the number of Wikipedia editors editing from Russia to help better understand the editor community in Russia.
+    data_curators_details: '[citation](#page)'
+    description: The Wikimedia Foundation has released a one-time dataset of the number of Wikipedia editors editing from Russia from 2022 to 2023, requested by the Russian Wikimedia community to support analysis of the editor landscape in Russia and better understand the editor community in the country. [citation](#page)
+    intended_use: The Wikimedia Foundation has released one year of data quantifying the number of Wikipedia editors editing from Russia to help better understand the editor community in Russia. [citation](#page)
     data_product_type: Summary statistics
-    data_product_region: Russia
+    data_product_type_details: '[citation](#page)'
+    data_product_region: Russia [citation](#page)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#page)'
     publication_date: '2023-01-01'
+    publication_date_details: '[citation](#page)'
 
   # Tiers 2 and 3:
   dp_variant:
     variant_name: Pure DP
+    variant_name_details: '[citation](#page)'
     data_domain: |
       - Raw per-project edit logs, each record containing: wiki_db, country, month, user activity level (either "1 to 4", "5 to 99", or "100 or more"), user status (anonymous, temporary or permanent) and user ID (fingerprint or name).
       - Time period is January 2022 - 2023
-    # unprotected_quantities: '' # Tier 3
 
   privacy_loss:
     privacy_unit: User account-month-level
@@ -32,13 +36,11 @@ deployment:
   deployment_model:
     model_name: Central
     release_type: One release
-    # release_type_details: ''
     data_source_type: Static
     access_type: Non-interactive
-    # access_type_details: ''
+    access_type_details: '[citation](#page)'
 
   implementation:
-    # preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
       - Laplace Mechanism
       - The processing pipelines consists of the following steps:

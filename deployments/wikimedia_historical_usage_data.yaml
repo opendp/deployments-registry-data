@@ -6,15 +6,20 @@ deployment:
       -
         data_curator_name: 'Wikimedia Foundation'
         data_curator_type: 'Nonprofit'
-    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023.
-    intended_use: Help Wikipedia editors prioritize their work and support academic research.
+    data_curators_details: '[citation](#paper)'
+    description: Daily statistics of Wikipedia pageview counts, broken down by country of origin between February 2017 and February 2023. [citation](#paper)
+    intended_use: Help Wikipedia editors prioritize their work and support academic research. [citation](#paper)
     data_product_type: Summary statistics
-    data_product_region: Global
+    data_product_type_details: '[citation](#paper)'
+    data_product_region: Global [citation](#paper)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#paper)'
     publication_date: '2023-06-01'
+    publication_date_details: '[citation](#paper)'
 
   dp_variant:
     variant_name: Pure DP
+    variant_name_details: '[citation](#paper)'
     data_domain: |
       Hourly aggregates of pageviews older than 90 days, with columns: project, page ID, date and time, country, count.
       This historical data was processed in two distinct batches covering the following periods:
@@ -37,7 +42,6 @@ deployment:
     privacy_unit_details: Adjacent datasets are those that differ by a bounded number of pageviews for a single day. Since the historical data is pre-aggregated, it is impossible to perform per-user or per-device contribution bounding. Instead, the system protects a fixed number of daily pageviews, denoted by m. This number is 300 for data prior to February 8th, 2017, and 30 for data from February 9th, 2017, to February 5th, 2023. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
     privacy_parameters:
       epsilon: 1.0
-    # privacy_parameters_details: ''
 
   deployment_model:
     model_name: Central
@@ -47,11 +51,11 @@ deployment:
       - Data Consumers: The public, including Wikipedia editors and academic researchers, who use the final, privacy-preserving data product.
 
     release_type: Many releases
-    release_type_details: Although the historical data was published at once, we consider it multiple releases due to its daily temporal granularity.
+    release_type_details: Although the historical data was published at once, we consider it multiple releases due to its daily temporal granularity. [citation](#paper)
     data_source_type: Dynamic
-    data_source_type_details: Although the historical data was published at once, its processing was dynamic. The algorithm was designed to iterate through the historical data one day at a time, applying a distinct daily privacy budget to each, rather than analyzing the entire period retrospectively.
+    data_source_type_details: Although the historical data was published at once, its processing was dynamic. The algorithm was designed to iterate through the historical data one day at a time, applying a distinct daily privacy budget to each, rather than analyzing the entire period retrospectively. [citation](#paper)
     access_type: Non-interactive
-    # access_type_details: ''
+    access_type_details: '[citation](#paper)'
 
   implementation:
     preprocessing_and_hyperparameter_tuning: |

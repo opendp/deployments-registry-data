@@ -6,23 +6,26 @@ deployment:
       -
         data_curator_name: 'Brave'
         data_curator_type: 'Industry'
-    description: Brave is leveraging federated learning and differential
+    data_curators_details: '[citation](#on_device_rec_paper)'
+    description: Brave is leveraging federated learning and differential [citation](#on_device_rec_paper)
       privacy to provide on-device browser recommendations.
-    intended_use: Browsing Recommendations
+    intended_use: Browsing Recommendations [citation](#on_device_rec_paper)
     data_product_type: Summary statistics # TODO: Is this correct?
-    data_product_region: Global
+    data_product_type_details: '[citation](#on_device_rec_paper)'
+    data_product_region: Global [citation](#on_device_rec_paper)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#on_device_rec_paper)'
     publication_date: '2021-01-01'
-  # dp_variant: TODO
+    publication_date_details: '[citation](#on_device_rec_paper)'
   privacy_loss:
     privacy_unit: User-level
-    # privacy_unit_details: TODO
     privacy_parameters: {}
   deployment_model:
     model_name: Central
     release_type: One release # TODO: Is this correct?
-    release_type_details: Not specified
+    release_type_details: Not specified [citation](#on_device_rec_paper)
     access_type: Non-interactive # TODO: Is this correct?
+    access_type_details: '[citation](#on_device_rec_paper)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: DP SGD*

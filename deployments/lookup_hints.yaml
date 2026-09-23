@@ -6,31 +6,36 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
+    data_curators_details: '[citation](#hints_paper)'
     description: |
       "The Apple differential privacy implementation incorporates the concept of a per-
       donation privacy budget (quantified by the parameter epsilon), and sets a strict limit on
       the number of contributions from a user in order to preserve their privacy... For Lookup Hints, Apple uses a privacy budget with epsilon
       of 4, and limits user contributions to two donations per day."
-    intended_use: Web Browsing
+    intended_use: Web Browsing [citation](#hints_paper)
     data_product_type: Summary statistics # TODO: Is this correct?
-    data_product_region: Not specified
+    data_product_type_details: '[citation](#hints_paper)'
+    data_product_region: Not specified [citation](#hints_paper)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#hints_paper)'
     publication_date: '2016-01-01' # Not in source by referenced in Tang et al. https://arxiv.org/abs/1709.02753
+    publication_date_details: '[citation](#hints_paper)'
   dp_variant:
     variant_name: Pure DP
-    data_domain: '' # TODO
+    variant_name_details: '[citation](#hints_paper)'
+    data_domain: '' # TODO [citation](#hints_paper)
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: User-level
-    # privacy_unit_details:
     privacy_parameters:
       epsilon: 8.0
   deployment_model:
     model_name: Local
-    model_name_details: '"Apple has adopted and further developed a technique known in the academic world as local differential privacy."'
+    model_name_details: '"Apple has adopted and further developed a technique known in the academic world as local differential privacy." [citation](#hints_paper)'
     release_type: One release # TODO: Is this correct?
-    release_type_details: Daily
+    release_type_details: Daily [citation](#hints_paper)
     access_type: Non-interactive # TODO: Is this correct?
+    access_type_details: '[citation](#hints_paper)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Count Mean Sketch or Hadamard Count Mean Sketch

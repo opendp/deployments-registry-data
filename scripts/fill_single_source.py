@@ -12,11 +12,22 @@ def process(line: str, key: str):
     if m := re.match(r"(\s+)description:", line):
         print(f"{m.group(1)}data_curators_details: '{link}'")
 
-    # Single line:
+    # Single line, free text:
     if m := re.match(
-        r"(\s+)(description|intended_use|data_product_region):[^|]*$", line
+        r"(\s+)(description|intended_use|data_product_region|model_name_details|release_type_details|data_source_type_details|data_domain):[^|]*$",
+        line,
     ):
         print(f"{line.rstrip()} {link}")
+    # not free text:
+    elif m := re.match(
+        r"(\s+)(data_product_type|data_product_sector|publication_date|variant_name|access_type):.*",
+        line,
+    ):
+        print(line, end="")
+        print(f"{m.group(1)}{m.group(2)}_details: '{link}'")
+    elif m := re.match(r"\s+#\s+\w+:.*", line):
+        # drop comments
+        pass
     else:
         print(line, end="")
 

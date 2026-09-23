@@ -6,16 +6,21 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
-    description: Identify sites with high memory or high CPU usage.
-    intended_use: Browser Statistics
+    data_curators_details: '[citation](#safari_paper)'
+    description: Identify sites with high memory or high CPU usage. [citation](#safari_paper)
+    intended_use: Browser Statistics [citation](#safari_paper)
     data_product_type: Summary statistics
-    data_product_region: Global
+    data_product_type_details: '[citation](#safari_paper)'
+    data_product_region: Global [citation](#safari_paper)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#safari_paper)'
     publication_date: '2017-01-01'
+    publication_date_details: '[citation](#safari_paper)'
 
   dp_variant:
     variant_name: Pure DP
-    data_domain: 'Event-level dataset where one "event" is a web browser loading a  page, and the "measure" is the domain of the page loaded.'
+    variant_name_details: '[citation](#safari_paper)'
+    data_domain: 'Event-level dataset where one "event" is a web browser loading a  page, and the "measure" is the domain of the page loaded. [citation](#safari_paper)'
     unprotected_quantities: |
           - The dictionary of websites (a predefined set of D websites).
           - Algorithm parameters: the PHCMS algorithm requires the number of hash functions (m), and the size of the privatized vector (k).
@@ -31,10 +36,11 @@ deployment:
 
   deployment_model:
     model_name: Local
-    model_name_details: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
+    model_name_details: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..." [citation](#safari_paper)'
     release_type: Many releases
-    release_type_details: Daily
+    release_type_details: Daily [citation](#safari_paper)
     access_type: Non-interactive # pre-defined query
+    access_type_details: '[citation](#safari_paper)'
 
   implementation:
     preprocessing_and_hyperparameter_tuning: 'No hyperperameters are required; no EDA is described'

@@ -6,14 +6,19 @@ deployment:
       -
         data_curator_name: 'Google'
         data_curator_type: 'Industry'
-    description: Intra-urban metrics on trips.
-    intended_use: Mobility Data
+    data_curators_details: '[citation](#hierarchical_paper)'
+    description: Intra-urban metrics on trips. [citation](#hierarchical_paper)
+    intended_use: Mobility Data [citation](#hierarchical_paper)
     data_product_type: Summary statistics
-    data_product_region: Global
+    data_product_type_details: '[citation](#hierarchical_paper)'
+    data_product_region: Global [citation](#hierarchical_paper)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#hierarchical_paper)'
     publication_date: '2022-01-01'
+    publication_date_details: '[citation](#hierarchical_paper)'
   dp_variant:
     variant_name: Approximate DP
+    variant_name_details: '[citation](#hierarchical_paper)'
   privacy_loss:
     privacy_unit: User-trip-level
     privacy_unit_details: |
@@ -30,8 +35,9 @@ deployment:
   deployment_model:
     model_name: Central
     release_type: One release
-    release_type_details: Static
+    release_type_details: Static [citation](#hierarchical_paper)
     access_type: Non-interactive
+    access_type_details: '[citation](#hierarchical_paper)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace Mechanism

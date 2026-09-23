@@ -6,17 +6,21 @@ deployment:
       -
         data_curator_name: 'Microsoft'
         data_curator_type: 'Industry'
-    description: Telemetry statistics about Microsoft users (specifically users of Windows Insiders in the Windows 10 Fall Creators Update), such as how many seconds they spent on a particular app in a six hour window.
-    intended_use: For Microsoft to improve their products and services.
+    data_curators_details: '[citation](#telemetry_paper)'
+    description: Telemetry statistics about Microsoft users (specifically users of Windows Insiders in the Windows 10 Fall Creators Update), such as how many seconds they spent on a particular app in a six hour window. [citation](#telemetry_paper)
+    intended_use: For Microsoft to improve their products and services. [citation](#telemetry_paper)
     data_product_type: Summary statistics
-    data_product_region: Global
+    data_product_type_details: '[citation](#telemetry_paper)'
+    data_product_region: Global [citation](#telemetry_paper)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#telemetry_paper)'
     publication_date: '2017-12-01'
+    publication_date_details: '[citation](#telemetry_paper)'
   dp_variant:
     variant_name: Pure DP
+    variant_name_details: '[citation](#telemetry_paper)'
   privacy_loss:
     privacy_unit: User-quarter-day-level
-    # privacy_unit_details: TODO
     privacy_parameters:
       epsilon: 1.672
     privacy_parameters_details: |
@@ -25,9 +29,10 @@ deployment:
   deployment_model:
     model_name: Local
     release_type: Many releases
-    release_type_details: 6 hours
+    release_type_details: 6 hours [citation](#telemetry_paper)
     data_source_type: Dynamic
     access_type: Non-interactive
+    access_type_details: '[citation](#telemetry_paper)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Randomized Rounding
