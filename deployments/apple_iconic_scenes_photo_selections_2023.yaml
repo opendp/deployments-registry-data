@@ -7,16 +7,21 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
-    description: This deployment identifies frequently photographed iconic locations across users, enabling Apple’s Photos app to automatically select representative images for features such as Memories. The system is designed to protect individual user data while providing personalized content.
-    intended_use: Identify frequently photographed iconic locations across users, enabling Apple’s Photos app to automatically select representative images for features such as Memories, all while protecting individual user data.
+    data_curators_details: '[citation](#apple_iconic)'
+    description: This deployment identifies frequently photographed iconic locations across users, enabling Apple’s Photos app to automatically select representative images for features such as Memories. The system is designed to protect individual user data while providing personalized content. [citation](#apple_iconic)
+    intended_use: Identify frequently photographed iconic locations across users, enabling Apple’s Photos app to automatically select representative images for features such as Memories, all while protecting individual user data. [citation](#apple_iconic)
     data_product_type: Machine learning model
-    data_product_region: Global
+    data_product_type_details: '[citation](#apple_iconic)'
+    data_product_region: Global [citation](#apple_iconic)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#apple_iconic)'
     publication_date: '2023-07-21'
+    publication_date_details: '[citation](#apple_iconic)'
 
   # Tiers 2 and 3:
   dp_variant:
     variant_name: Pure DP
+    variant_name_details: '[citation](#apple_iconic)'
     # data_domain: '' # Tier 3
     # unprotected_quantities: '' # Tier 3
 
@@ -26,24 +31,30 @@ deployment:
     privacy_parameters:
       epsilon: 1.0
       delta: 1.5e-7
+    privacy_parameters_details: '[citation](#apple_iconic)'
     # privacy_parameters_details: ''
 
   deployment_model:
     model_name: Local
+    model_name_details: '[citation](#apple_iconic)'
     release_type: Many releases
-    release_type_details: Image data is collected from users who opted in to the Analytics & Improvements feature on their Apple devices and be used for improving features in Apple’s Photos app.
+    release_type_details: Image data is collected from users who opted in to the Analytics & Improvements feature on their Apple devices and be used for improving features in Apple’s Photos app. [citation](#apple_iconic)
     data_source_type: Dynamic
+    data_source_type_details: '[citation](#apple_iconic)'
     access_type: Non-interactive
+    access_type_details: '[citation](#apple_iconic)'
     # access_type_details: ''
 
   implementation:
     # preprocessing_and_hyperparameter_tuning: '' # Tier 3
     mechanisms: |
       - Randomized Response with amplification through the secure aggregation protocol. The local Differential Privacy mechanism encodes a single, randomly sampled location-category pair into a tiled one-hot vector, subsequently applying randomized bit-flipping to satisfy DP guarantees.
-      - No explicit information regarding the privacy unit was provided on the posted online article by Apple: https://machinelearning.apple.com/research/scenes-differential-privacy
+      - No explicit information regarding the privacy unit was provided on the posted online article by Apple.
+      - [citation](#apple_iconic)
     justification: |
       - Pre-defined privacy/utility targets: Apple described in its blog post that "We are limited to fixed precision to provide a consistent privacy assurance with our current approach, which can’t be optimal for all locations".
       - Apple is committed to balancing privacy and utility: "We combined local noise addition with a technique called secure aggregation to address these concerns of balancing privacy with utility"
+      - [citation](#apple_iconic)
 
   administrative:
     evidence_sources:
