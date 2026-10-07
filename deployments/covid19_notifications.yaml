@@ -9,14 +9,19 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
-    description: Measurement system which provides summary statistics to public health authorities about how often COVID-19 exposure notifications were shown on users’ devices.
-    intended_use: To help public health authorities adapt their response to the COVID-19 pandemic as it evolved.
+    data_curators_details: '[citation](#white_paper)'
+    description: Measurement system which provides summary statistics to public health authorities about how often COVID-19 exposure notifications were shown on users’ devices. [citation](#white_paper)
+    intended_use: To help public health authorities adapt their response to the COVID-19 pandemic as it evolved. [citation](#white_paper)
     data_product_type: Summary statistics
-    data_product_region: Global
+    data_product_type_details: '[citation](#white_paper)'
+    data_product_region: Global [citation](#white_paper)
     data_product_sector: Healthcare
+    data_product_sector_details: '[citation](#white_paper)'
     publication_date: '2021-01-01'
+    publication_date_details: '[citation](#white_paper)'
   dp_variant:
     variant_name: Approximate DP
+    variant_name_details: '[citation](#white_paper)'
   privacy_loss:
     privacy_unit: User-day-level
     privacy_unit_details: Subsections 4.1 and 4.2 of the paper provide more information.
@@ -29,8 +34,9 @@ deployment:
   deployment_model:
     model_name: Varies
     release_type: Many releases
-    release_type_details: Varies
+    release_type_details: Varies [citation](#white_paper)
     access_type: Non-interactive
+    access_type_details: '[citation](#white_paper)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Randomized Response

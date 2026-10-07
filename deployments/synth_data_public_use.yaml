@@ -6,24 +6,27 @@ deployment:
       -
         data_curator_name: 'Office of National Statistics UK'
         data_curator_type: 'Government'
-    description: We recommend the use of generative adversarial networks
+    data_curators_details: '[citation](#gans_paper)'
+    description: We recommend the use of generative adversarial networks [citation](#gans_paper)
       (GANs) possibly in conjunction with privacy-preserving mechanisms such as differential
       privacy.
-    intended_use: Synthetic data
+    intended_use: Synthetic data [citation](#gans_paper)
     data_product_type: Synthetic data
-    data_product_region: USA
+    data_product_type_details: '[citation](#gans_paper)'
+    data_product_region: USA [citation](#gans_paper)
     data_product_sector: Government
+    data_product_sector_details: '[citation](#gans_paper)'
     publication_date: '2020-01-01'
-  # dp_variant: TODO
+    publication_date_details: '[citation](#gans_paper)'
   privacy_loss:
     privacy_unit: Aggregate Statistics
-    # privacy_unit_details: TODO
     privacy_parameters: {}
   deployment_model:
     model_name: Central
     release_type: One release # TODO: Is this correct?
-    release_type_details: Static
+    release_type_details: Static [citation](#gans_paper)
     access_type: Non-interactive # TODO: Is this correct?
+    access_type_details: '[citation](#gans_paper)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: DP GAN*

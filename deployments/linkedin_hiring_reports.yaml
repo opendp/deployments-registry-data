@@ -6,18 +6,23 @@ deployment:
       -
         data_curator_name: 'LinkedIn'
         data_curator_type: 'Industry'
+    data_curators_details: '[citation](#linkedin_paper)'
     description: |
       "Therefore each report is (1.2, 10−10)-DP because the ratio
       that uses both counts accumulates the privacy loss.  Therefore, for each report
       date, we guarantee the top-employer reports are together (4.8, 4 × 10−10)-DP."
-    intended_use: Labor Market Reports
+    intended_use: Labor Market Reports [citation](#linkedin_paper)
     data_product_type: Summary statistics # TODO: Is this correct?
-    data_product_region: Not specified
+    data_product_type_details: '[citation](#linkedin_paper)'
+    data_product_region: Not specified [citation](#linkedin_paper)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#linkedin_paper)'
     publication_date: '2020-01-01'
+    publication_date_details: '[citation](#linkedin_paper)'
   dp_variant:
     variant_name: Approximate DP
-    data_domain: '' # TODO
+    variant_name_details: '[citation](#linkedin_paper)'
+    data_domain: '' # TODO [citation](#linkedin_paper)
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: Event-Month-level
@@ -31,8 +36,9 @@ deployment:
   deployment_model:
     model_name: Central
     release_type: One release # TODO: Is this correct?
-    release_type_details: Monthly
+    release_type_details: Monthly [citation](#linkedin_paper)
     access_type: Non-interactive # TODO: Is this correct?
+    access_type_details: '[citation](#linkedin_paper)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Laplace, Gumbel

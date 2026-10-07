@@ -6,17 +6,21 @@ deployment:
       -
         data_curator_name: 'Google'
         data_curator_type: 'Industry'
-    description: Dashboard and dataset of trends in searches on COVID-19 vaccination.
-    intended_use: Health Data
+    data_curators_details: '[citation](#vaccine_paper)'
+    description: Dashboard and dataset of trends in searches on COVID-19 vaccination. [citation](#vaccine_paper)
+    intended_use: Health Data [citation](#vaccine_paper)
     data_product_type: Summary statistics
-    data_product_region: Global
+    data_product_type_details: '[citation](#vaccine_paper)'
+    data_product_region: Global [citation](#vaccine_paper)
     data_product_sector: Healthcare # Could also be Technology.  Could also be new topic such as 'Public health'.
+    data_product_sector_details: '[citation](#vaccine_paper)'
     publication_date: '2021-07-02'
+    publication_date_details: '[citation](#vaccine_paper)'
   dp_variant:
     variant_name: Approximate DP
+    variant_name_details: '[citation](#vaccine_paper)'
   privacy_loss:
     privacy_unit: User-level
-    # privacy_unit_details: TODO
     privacy_parameters:
       epsilon: 2.19
       delta: 1.0e-05
@@ -27,8 +31,9 @@ deployment:
   deployment_model:
     model_name: Central
     release_type: One release # TODO: Is this correct?
-    release_type_details: Daily
+    release_type_details: Daily [citation](#vaccine_paper)
     access_type: Non-interactive # TODO: Is this correct?
+    access_type_details: '[citation](#vaccine_paper)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Gaussian

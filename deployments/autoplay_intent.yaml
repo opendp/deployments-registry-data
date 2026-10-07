@@ -6,28 +6,33 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
-    description: Identify which websites users typically prefer to have auto-play with sound for video elements.
-    intended_use: Video Browser Play
+    data_curators_details: '[citation](#apple)'
+    description: Identify which websites users typically prefer to have auto-play with sound for video elements. [citation](#apple)
+    intended_use: Video Browser Play [citation](#apple)
     data_product_type: Summary statistics # TODO: Is this correct?
-    data_product_region: Not Specified
+    data_product_type_details: '[citation](#apple)'
+    data_product_region: Not Specified [citation](#apple)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#apple)'
     publication_date: '2017-01-01'
+    publication_date_details: '[citation](#apple)'
   dp_variant:
     variant_name: Pure DP
-    data_domain: '' # TODO
+    variant_name_details: '[citation](#apple)'
+    data_domain: '' # TODO [citation](#apple)
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: User-level
-    # privacy_unit_details: TODO
     privacy_parameters:
       epsilon: 8.0
     privacy_parameters_details: '"For this use case, we set the parameters for CMS to be m = 1024, k = 65,536, and \\(\epsilon\\) = 8."'
   deployment_model:
     model_name: Local
-    model_name_details: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..."'
+    model_name_details: '"[W]e choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy..." [citation](#apple)'
     release_type: One release # TODO: Is this correct?
-    release_type_details: Daily
+    release_type_details: Daily [citation](#apple)
     access_type: Non-interactive # TODO: Is this correct?
+    access_type_details: '[citation](#apple)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Private Count Mean Sketch

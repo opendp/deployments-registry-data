@@ -32,7 +32,6 @@ deployment:
       epsilon: 1.0
       delta: 1.5e-7
     privacy_parameters_details: '[citation](#apple_iconic)'
-    # privacy_parameters_details: ''
 
   deployment_model:
     model_name: Local
@@ -43,7 +42,6 @@ deployment:
     data_source_type_details: '[citation](#apple_iconic)'
     access_type: Non-interactive
     access_type_details: '[citation](#apple_iconic)'
-    # access_type_details: ''
 
   implementation:
     # preprocessing_and_hyperparameter_tuning: '' # Tier 3

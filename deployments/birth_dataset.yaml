@@ -6,17 +6,21 @@ deployment:
       -
         data_curator_name: 'Israeli Ministry of Health'
         data_curator_type: 'Government'
-    description: Synthetic data covering live births in Israel during 2014.
-    intended_use: Health Data
+    data_curators_details: '[citation](#birth_dataset)'
+    description: Synthetic data covering live births in Israel during 2014. [citation](#birth_dataset)
+    intended_use: Health Data [citation](#birth_dataset)
     data_product_type: Synthetic data
-    data_product_region: Israel
+    data_product_type_details: '[citation](#birth_dataset)'
+    data_product_region: Israel [citation](#birth_dataset)
     data_product_sector: Healthcare
+    data_product_sector_details: '[citation](#birth_dataset)'
     publication_date: '2024-02-01'
+    publication_date_details: '[citation](#birth_dataset)'
   dp_variant:
     variant_name: Pure DP
+    variant_name_details: '[citation](#birth_dataset)'
   privacy_loss:
     privacy_unit: Birth-level
-    # privacy_unit_details: TODO
     privacy_parameters:
       epsilon: 9.98
     privacy_parameters_details: |
@@ -27,17 +31,15 @@ deployment:
   deployment_model:
     model_name: Central
     release_type: One release
-    release_type_details: Static
+    release_type_details: Static [citation](#birth_dataset)
     access_type: Non-interactive
+    access_type_details: '[citation](#birth_dataset)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: PrivBayes with Private Selection (Universal Microdata Scheme)
     justification: '' # TODO: Fill in correct value
   administrative:
     evidence_sources:
-      # TODO: Consider adding other, more official, sources.
-      # https://data.gov.il/dataset/birth-data/resource/b1cf2a1f-b923-40ae-a3dc-75930c3b3064/download/readme-2014-english.pdf
-      # https://arxiv.org/abs/2405.00267
       birth_dataset:
         evidence_source_type: Other public source
         citation:

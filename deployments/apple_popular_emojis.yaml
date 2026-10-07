@@ -6,16 +6,21 @@ deployment:
       -
         data_curator_name: 'Apple'
         data_curator_type: 'Industry'
-    description: Summary statistics of frequency histograms of emoji usage per locale.
-    intended_use: For measurement (within Apple) of which emojis are most used, and their relative frequencies, across keyboard locales, to improve QuickType’s predictive emoji suggestions.
+    data_curators_details: '[citation](#apple_emoji)'
+    description: Summary statistics of frequency histograms of emoji usage per locale. [citation](#apple_emoji)
+    intended_use: For measurement (within Apple) of which emojis are most used, and their relative frequencies, across keyboard locales, to improve QuickType’s predictive emoji suggestions. [citation](#apple_emoji)
     data_product_type: Summary statistics
-    data_product_region: Global
+    data_product_type_details: '[citation](#apple_emoji)'
+    data_product_region: Global [citation](#apple_emoji)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#apple_emoji)'
     publication_date: '2017-01-01'
+    publication_date_details: '[citation](#apple_emoji)'
 
   dp_variant:
     variant_name: Pure DP
-    data_domain: Event-level dataset where one "event" is a user typing an emoji.
+    variant_name_details: '[citation](#apple_emoji)'
+    data_domain: Event-level dataset where one "event" is a user typing an emoji. [citation](#apple_emoji)
     unprotected_quantities: |
       - The dictionary of emojis (a predefined set of 2,600 emojis).
       - Algorithm parameters: The Count Mean Sketch (CMS) algorithm requires the number of hash functions (k = 65,546) and the size of the privatized vector (m = 1024).
@@ -27,11 +32,10 @@ deployment:
       Each individual record corresponds to a single emoji-typing event on a user’s device. The function that computes the distance between any two datasets in the data domain is the symmetric distance, and the maximum distance between any two datasets in the data domain is one.
     privacy_parameters:
       epsilon: 4.0
-    # privacy_parameters_details: ''
 
   deployment_model:
     model_name: Local
-    model_name_details: we choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy
+    model_name_details: we choose not to collect raw data on the server which is required for central differential privacy; hence, we adopt local differential privacy, which is a superior form of privacy [citation](#apple_emoji)
     actors: |
       - User’s device (client): Hosts raw emoji-selection events and applies the LDP randomizer before any transmission. Users must trust the device’s operating system and DP library to implement DP correctly.
       - Network adversary: Any eavesdropper on the transmission channel. They rely on Transport Layer Security encryption. In the worst case, they will see the LDP version of the data, since each emoji event is randomized on device so no raw data ever leaves the user’s device.
@@ -39,11 +43,11 @@ deployment:
       - Internal Apple teams: View the final aggregated, thresholded emoji-frequency histogram.
 
     release_type: Many releases
-    release_type_details: The histogram is continually refreshed on a daily basis. Data transmission from a user's device occurs once per day, and there is a limit on the number of privatized records that can be transmitted daily.
+    release_type_details: The histogram is continually refreshed on a daily basis. Data transmission from a user's device occurs once per day, and there is a limit on the number of privatized records that can be transmitted daily. [citation](#apple_emoji)
     data_source_type: Dynamic
-    data_source_type_details: The transmission of privatized records from a user's device to the server happens once per day.
+    data_source_type_details: The transmission of privatized records from a user's device to the server happens once per day. [citation](#apple_emoji)
     access_type: Non-interactive
-    # access_type_details: ''
+    access_type_details: '[citation](#apple_emoji)'
 
   implementation:
     preprocessing_and_hyperparameter_tuning: 'Three parameters are explicitly set: \\(\epsilon = 4\\), number of hash functions k = 65,546 and the size of the privatized vector m = 1024. These were predetermined by the authors based on an analysis of the tradeoff between utility, server computation cost (related to k), and device bandwidth (related to m).'

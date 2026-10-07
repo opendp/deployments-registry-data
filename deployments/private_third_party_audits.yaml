@@ -9,27 +9,30 @@ deployment:
       -
         data_curator_name: 'OpenMined'
         data_curator_type: 'Industry'
-    description: In September, 2022, in conjunction with the UN General
+    data_curators_details: '[citation](#case_study)'
+    description: In September, 2022, in conjunction with the UN General [citation](#case_study)
       Assembly and Christchurch Call leaders summit, New Zealand Prime Minister Jacinda
       Ardern and French President Emmanuel Macron announced the Christchurch Initiative
       on Algorithmic Outcomes, a partnership between New Zealand, the United States,
       Twitter, Microsoft and OpenMined to develop and test a differential privacy system
       to enable privacy preserving research across multiple online platforms.
-    intended_use: Synthetic Data Releases for Audits
+    intended_use: Synthetic Data Releases for Audits [citation](#case_study)
     data_product_type: Summary statistics # TODO: Is this correct?
-    data_product_region: Global
+    data_product_type_details: '[citation](#case_study)'
+    data_product_region: Global [citation](#case_study)
     data_product_sector: Technology
+    data_product_sector_details: '[citation](#case_study)'
     publication_date: '2022-01-01'
-  # dp_variant: TODO
+    publication_date_details: '[citation](#case_study)'
   privacy_loss:
     privacy_unit: Aggregate-level
-    # privacy_unit_details: TODO
     privacy_parameters: {}
   deployment_model:
     model_name: Central
     release_type: One release # TODO: Is this correct?
-    release_type_details: Static
+    release_type_details: Static [citation](#case_study)
     access_type: Non-interactive # TODO: Is this correct?
+    access_type_details: '[citation](#case_study)'
   implementation:
     preprocessing_and_hyperparameter_tuning: '' # TODO: Fill in correct value
     mechanisms: Not Specificed, Synthetic Data
