@@ -96,6 +96,22 @@ def check_latex_escapes(yaml_path):
     return errors
 
 
+def check_internal_links(yaml_path):
+    deployment = load(yaml_path.open(), Loader=Loader)
+    pairs = get_all_values_paths(deployment)
+    evidence_sources = deployment["deployment"]["administrative"].get(
+        "evidence_sources", {}
+    )
+    bracket_keys = {f"(#{k})" for k in evidence_sources.keys()}
+    errors = []
+    for path, text in pairs:
+        matches = re.findall(r"\(#.*?\)", str(text))
+        for m in matches:
+            if m not in bracket_keys:
+                errors.append(f"{path} contains unrecognized link {m}")
+    return errors
+
+
 checks = {name for name in globals().keys() if name.startswith("check_")}
 
 
