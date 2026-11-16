@@ -14,14 +14,30 @@ deployment:
     publication_date: '2023-01-01'
   dp_variant:
     variant_name: Zero-concentrated DP
+    variant_name_details: |
+      Stage one uses Per-Record Differential Privacy (PRDP) [citation](#about). Establishments are split into smaller pieces and a DP mechanism is then run on the split data (slides 29-30) [citation](#webinar_slides).
+      The paper defines the zCDP form of this guarantee, P-per-record zCDP (P-PRzCDP): the privacy loss of each record is bounded by a public policy function P(r) of that record's values. Any rho-zCDP mechanism satisfies P-PRzCDP with the constant policy P(r) = rho (Definition 6 and Lemma 1, p. 3140) [citation](#prdp_paper).
+      This record keeps "Zero-concentrated DP" because the budget is reported in rho-zCDP terms and the schema has no per-record variant. "Custom" may fit better.
     data_domain: '' # TODO
     unprotected_quantities: '' # TODO
   privacy_loss:
     privacy_unit: Business establishment
-    privacy_unit_details: '"[D]ata are protected with Per-Record Differential Privacy (PRDP).  This stage ensures that every establishment in the CBP database receives a provable privacy guarantee with respect to its existence."'
+    privacy_unit_details: |
+      "[D]ata are protected with Per-Record Differential Privacy (PRDP).  This stage ensures that every establishment in the CBP database receives a provable privacy guarantee with respect to its existence." [citation](#about)
+      Adjacent datasets differ by adding or removing one original establishment record (slide 30) [citation](#webinar_slides); see also Definition 6, p. 3140 [citation](#prdp_paper).
+      The protection is not the same for every establishment. Establishments are split into pieces before noise is added (slides 29-30), and an establishment split into more pieces gets a weaker guarantee. The two sources state this bound in different terms:
+      - The slides use pure DP: P(r) = |A(r)| x epsilon, where |A(r)| is the number of pieces record r is split into (slide 30) [citation](#webinar_slides).
+      - The paper uses zCDP: running a rho-zCDP mechanism on the split data gives the original record P(r) = |A(r)|^2 x rho (Lemma 8, p. 3142) [citation](#prdp_paper).
+      The slides list a theta for three of the four measures: annual payroll (theta = $100,000), first quarter payroll (theta = $25,000), and employment (theta = 4); none is listed for the establishment count (slides 50-51) [citation](#webinar_slides). Reading theta as the splitting threshold is an inference from the example on slide 47 ("PRDP with theta = 10 and rho = 0.1"). The Census Bureau materials checked for this record do not define theta.
+      The Round 1 demonstration tables were computed from "synthetic microdata created solely from previously published CBP results" [citation](#demo_tables), so the establishments covered by this guarantee are the records of that synthetic input.
     privacy_parameters:
       rho: 12.058
-    privacy_parameters_details: '"Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058."'
+    privacy_parameters_details: |
+      "Noise added in the PRDP stage is randomly sampled from a discrete Gaussian distribution, and the total rho-zCDP privacy loss budget is 12.058." [citation](#about)
+      12.058 is the sum of the stage one budgets for four measures: establishments 5.066, annual payroll 1.381, first quarter payroll 1.702, and employment 3.909. These values meet the quality target that 95% of cells with at least 25 establishments have a CV of 0.10 or less (slides 50-51) [citation](#webinar_slides).
+      12.058 is therefore a total across measures, and the sources do not present it as a bound that applies to every original establishment. The slides list a theta for three of the four measures and none for the establishment count (slides 50-51). The materials checked for this record do not give a common splitting factor that would turn 12.058 into a bound for each establishment, and they give no figures for split establishments.
+      Inference, not stated by the Census Bureau: for an establishment that is not split under any of the four measures, zCDP composition gives an upper-bound parameter of rho = 12.058 for stage one [citation](#prdp_paper).
+      Stage two adds noise so that establishments in sparse cells get a minimum level of relative protection [citation](#about). The slides describe this stage as "Not formally private" (slide 46) [citation](#webinar_slides).
   deployment_model:
     model_name: Central
     release_type: One release
@@ -36,18 +52,49 @@ deployment:
       about:
         evidence_source_type: Formal publication by the deploying organization
         citation:
-          url: https://www.census.gov/topics/business-economy/disclosure/about.html
+          url: https://web.archive.org/web/20250202091807/https://www.census.gov/topics/business-economy/disclosure/about.html
           title: About Data Privacy on Business & the Economy
+        comment: |
+          Archived copy from February 2, 2025. The current version of the page no longer contains the paragraph on the demonstration tables quoted in this record.
       webinar:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           url: https://www.census.gov/data/academy/webinars/2023/differential-privacy-webinar.html
           title: Researching Formal Privacy for the Census Bureau's County Business Patterns Program
+        comment: |
+          The webinar page now says this information is no longer current, because the Census Bureau is evaluating alternative approaches to comply with a Department of Commerce administrative order prohibiting the use of noise infusion.
+      webinar_slides:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          url: https://www2.census.gov/about/training-workshops/2023/2023-04-20-differential-privacy-presentation.pdf
+          title: Researching Formal Privacy for the Census Bureau's County Business Patterns Program (slides)
+          year: 2023
+          month: April
+        comment: |
+          Slides for the April 20, 2023 webinar, presented by Census Bureau and Tumult Labs staff. Slide numbers in this record refer to this file.
       tables:
         evidence_source_type: Formal publication by the deploying organization
         citation:
           url: https://www.census.gov/topics/business-economy/disclosure/data/tables.html
           title: Data Privacy Research on Businesses & the Economy Tables
+      demo_tables:
+        evidence_source_type: Formal publication by the deploying organization
+        citation:
+          url: https://www.census.gov/topics/business-economy/disclosure/data/tables/cbp-privacy-demonstration-tables.html
+          title: 'CBP Differential Privacy Demonstration Tables: Round 1'
+      prdp_paper:
+        evidence_source_type: Peer-reviewed publication
+        citation:
+          url: https://www.vldb.org/pvldb/vol17/p3138-pujol.pdf
+          title: Privately Answering Queries on Skewed Data via Per-Record Differential Privacy
+          author: Jeremy Seeman, William Sexton, David Pujol, Ashwin Machanavajjhala
+          journal: Proceedings of the VLDB Endowment
+          volume: '17'
+          number: '11'
+          pages: 3138-3150
+          year: 2024
+        comment: |
+          Defines per-record zCDP and unit splitting. The authors are at Tumult Labs and the experiments use simulated CBP data provided by the Census Bureau, so the paper does not document the settings of this release on its own.
     status: Pending
     registry_authors:
       - Nicolas Berrios
